@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Fanstasy Player</title>
+    <link>http://aincvy.github.io/posts/</link>
+    <description>Recent content in Posts on Fanstasy Player</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Apr 2020 11:29:06 +0800</lastBuildDate>
+    
+	<atom:link href="http://aincvy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Newpost</title>
+      <link>http://aincvy.github.io/2020/newpost/</link>
+      <pubDate>Fri, 17 Apr 2020 11:29:06 +0800</pubDate>
+      
+      <guid>http://aincvy.github.io/2020/newpost/</guid>
+      <description>Let&amp;rsquo;s write something.. aa 是的.
+OK， 现在看看页面吧。。 编码应该有设置的吧。。
+// code java public static class A { public void test (String a){ System.out.println(a); } } single line hereo 中文字体</description>
+    </item>
+    
+  </channel>
+</rss>
