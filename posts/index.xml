@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Fanstasy Player</title>
-    <link>http://aincvy.github.io/posts/</link>
+    <link>http://fantasyplayer.link/posts/</link>
     <description>Recent content in Posts on Fanstasy Player</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 20 Apr 2020 22:18:24 +0800</lastBuildDate>
     
-	<atom:link href="http://aincvy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://fantasyplayer.link/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>梦境和现实的随想</title>
-      <link>http://aincvy.github.io/2020/%E6%A2%A6%E5%A2%83%E5%92%8C%E7%8E%B0%E5%AE%9E%E7%9A%84%E9%9A%8F%E6%83%B3/</link>
+      <link>http://fantasyplayer.link/2020/%E6%A2%A6%E5%A2%83%E5%92%8C%E7%8E%B0%E5%AE%9E%E7%9A%84%E9%9A%8F%E6%83%B3/</link>
       <pubDate>Mon, 20 Apr 2020 22:18:24 +0800</pubDate>
       
-      <guid>http://aincvy.github.io/2020/%E6%A2%A6%E5%A2%83%E5%92%8C%E7%8E%B0%E5%AE%9E%E7%9A%84%E9%9A%8F%E6%83%B3/</guid>
+      <guid>http://fantasyplayer.link/2020/%E6%A2%A6%E5%A2%83%E5%92%8C%E7%8E%B0%E5%AE%9E%E7%9A%84%E9%9A%8F%E6%83%B3/</guid>
       <description>起点 前些天做了个梦，然后结合最近看的书，和以前的想法，产生了一个假想。
 以下内容大部分没有科学依据，纯属猜测🤣🤣
 梦境描述 🤥 在梦里，我以为我在玩游戏，然后我的角色就成了我，我就进入到了我以为是游戏内容的那个场景里。 我在一个洞穴门口， 稍远点有一个人，我知道他是我的敌人，是我这次要战斗的目标。
@@ -41,10 +41,10 @@ Youtube 激励视频
     
     <item>
       <title>write something .. </title>
-      <link>http://aincvy.github.io/2020/newpost/</link>
+      <link>http://fantasyplayer.link/2020/newpost/</link>
       <pubDate>Fri, 17 Apr 2020 11:29:06 +0800</pubDate>
       
-      <guid>http://aincvy.github.io/2020/newpost/</guid>
+      <guid>http://fantasyplayer.link/2020/newpost/</guid>
       <description>Let&amp;rsquo;s write something.. aa 是的.
 OK， 现在看看页面吧。。 编码应该有设置的吧。。
 // code java public static class A { public void test (String a){ System.out.println(a); } } single line hereo 中文字体

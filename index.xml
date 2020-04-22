@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fanstasy Player on Fanstasy Player</title>
-    <link>http://aincvy.github.io/</link>
+    <link>http://fantasyplayer.link/</link>
     <description>Recent content in Fanstasy Player on Fanstasy Player</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Posts</title>
-      <link>http://aincvy.github.io/posts/</link>
+      <link>http://fantasyplayer.link/posts/</link>
       <pubDate>Mon, 20 Apr 2020 22:18:24 +0800</pubDate>
       
-      <guid>http://aincvy.github.io/posts/</guid>
+      <guid>http://fantasyplayer.link/posts/</guid>
       <description></description>
     </item>
     

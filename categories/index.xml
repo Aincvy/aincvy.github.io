@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Fanstasy Player</title>
-    <link>http://aincvy.github.io/categories/</link>
+    <link>http://fantasyplayer.link/categories/</link>
     <description>Recent content in Categories on Fanstasy Player</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="http://aincvy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://fantasyplayer.link/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
