@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
   <meta name="author" content="Aincvy">
-  
+  <meta name="description" content="个人博客， 技术博客， 思想分享，开发日志。">
   
   
   <link rel="prev" href="http://fantasyplayer.link/2020/%E5%85%B3%E4%BA%8E%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E7%82%B9%E6%83%B3%E6%B3%95/" />
@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Java私有类型装箱拆箱",
     "headline" : "Java私有类型装箱拆箱",
-    "description" : "",
+    "description" : "简述 在尽可能的情况下， 都应该使用 java的私有类型， 而装箱类型应该少用。\n因为 装箱的类型 会占用更多的内存。\n内存占用相关的内容    私有类型 装箱类型 内存占用(私有类型\/ 装箱类型)     boolean Boolean 1 byte \/ 16 bytes   byte Byte 1 byte \/ 16 bytes   short Short 2 bytes \/ 16 bytes   char Char 2 bytes \/ 16 bytes   int Integer 4 bytes \/ 16 bytes   long Long 8 bytes \/ 16 bytes   float Float 4 bytes \/ 16 bytes   double Double 8 bytes \/ 16 bytes     1 byte 是一个字节",
     "inLanguage" : "zh-cn",
     "author" : "Aincvy",
     "creator" : "Aincvy",
@@ -57,7 +57,7 @@
     "datePublished": "2020-04-30 21:27:47 \x2b0800 CST",
     "dateModified" : "2020-04-30 21:27:47 \x2b0800 CST",
     "url" : "http:\/\/fantasyplayer.link\/2020\/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1\/",
-    "wordCount" : "0",
+    "wordCount" : "265",
     "keywords" : [  "Fanstasy Player"]
 }
 </script>
@@ -134,7 +134,113 @@
           
           
 
-          
+          <h3 id="简述">简述</h3>
+<p>在尽可能的情况下， 都应该使用 java的<strong>私有类型</strong>， 而装箱类型应该少用。</p>
+<p>因为 装箱的类型 会占用更多的内存。</p>
+<h3 id="内存占用相关的内容">内存占用相关的内容</h3>
+<table>
+<thead>
+<tr>
+<th>私有类型</th>
+<th>装箱类型</th>
+<th align="left">内存占用(私有类型/ 装箱类型)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+<td align="left">1 byte / 16 bytes</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+<td align="left">1 byte / 16 bytes</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+<td align="left">2 bytes / 16 bytes</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Char</td>
+<td align="left">2 bytes / 16 bytes</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+<td align="left">4 bytes / 16 bytes</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+<td align="left">8 bytes / 16 bytes</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+<td align="left">4 bytes / 16 bytes</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+<td align="left">8 bytes / 16 bytes</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>1 byte 是一个字节</p>
+<p>1 byte = 8 bit</p>
+<p>1 KB = 1024 byte</p>
+</blockquote>
+<p>由表中的数据可知， 装箱类型的内存占用比私有类型大很多， 因为 装箱类型都是 <code>java class</code> 。每个对象都需要存储类信息。</p>
+<p>因此 从内存占用的角度来看，我们也应该避免使用装箱类型。</p>
+<ul>
+<li>一个数组 <code>float[5]</code> 只会占用 <code>32</code>个字节</li>
+<li>一个数组<code>Float[5]</code> (全部都是非null对象) 则会占用<code>112</code>个字节。 如果是64位非压缩指针，则需要<code>152</code> 个字节。</li>
+</ul>
+<p>由此可见 使用装箱类型则会使用很多不必要的内存占用。</p>
+<ul>
+<li>使用较多的装箱类型 将会引发更频繁的 <strong>GC</strong> 。</li>
+<li>更频繁的 <strong>GC</strong> 将会产生性能问题。</li>
+<li><em>附： 使用对象池也是为了尽可能的减少GC次数</em></li>
+</ul>
+<h3 id="如果非要使用的话">如果非要使用的话</h3>
+<p><em>在使用泛型的时候， 我们不可避免的需要使用装箱类型，这个我暂时不知道如何更好的处理。</em></p>
+<p>使用 <code>valueOf()</code> 方法， 避免使用 <code>new</code> 关键字。  因为装箱类型在JVM 里面会有缓存，所以这样做会有效的减少内存的占用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">var num1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>      <span style="color:#75715e">// in jdk13, 你会看到 &#39;Integer(int)&#39; is deprecated  这样的说明， 并且会建议你 使用 valueOf(x) 方法
+</span><span style="color:#75715e"></span>var num2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>     
+var num3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>10<span style="color:#f92672">);</span> 
+<span style="color:#75715e">// 此时会有 3个 Integer 的对象。  占用 差不多 3 x 8 = 24 个字节。
+</span><span style="color:#75715e"></span>
+var num11 <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>  
+var num12 <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>  
+var num13 <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>  
+<span style="color:#75715e">// 此时 num11,num12,num13   都是使用的同一个缓存的对象。 占用 1 x 8 = 8 个字节
+</span></code></pre></div><p>默认情况下， JVM 会缓存 -128 ~ +127 这个数字范围的 Integer 对象。</p>
+<h3 id="其他内容">其他内容</h3>
+<h4 id="关于浮点数-精度的问题">关于浮点数 精度的问题</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">var num1 <span style="color:#f92672">=</span> 1f<span style="color:#f92672">;</span>
+var num2 <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">99f</span><span style="color:#f92672">;</span>
+var num3 <span style="color:#f92672">=</span> num1 <span style="color:#f92672">-</span> num2<span style="color:#f92672">;</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;num3: &#34;</span> <span style="color:#f92672">+</span> num3<span style="color:#f92672">);</span>        <span style="color:#75715e">// num3: 0.00999999
+</span></code></pre></div><p>在上面的代码里面 , num3应该等于<code>0.001</code> 才对， 但是实际上输出的结果并不是。</p>
+<p>这和java的浮点数实现机制有关系， 虽然大部分情况下， 数据都是正常的，但是如果用的多， 那肯定会有误差。</p>
+<p>这时该怎么办呢？</p>
+<p><strong>方法一： 提升高度， 使用<code>int</code>或者<code>long</code>。</strong></p>
+<p>比如 你在写一个交易系统的时候， 假如你使用<code>float</code>类型来存放用户的余额， 并且使用<code>元</code> 作为基本单位。</p>
+<p><em>比如， 1.5  就是1块钱5角钱</em></p>
+<p>此时你想修改的话， 就把基本单位 修改成<code>分</code>, 数据类型修改成<code>long</code> 就好了。</p>
+<p><em>比如， 1.5元就 记录成 150。 这样就会避免计算错误的情况</em></p>
+<p>因为<code>int/long</code> 类型不是浮点数， 没有这样的计算问题，所以就可以避免了。</p>
+<p><strong>方法二： 使用<code>BigDecimal</code> 类型</strong></p>
+<p>这个方法在使用的时候需要很多 <code>BigDecimal</code>实例， 除非用于计算很大的数字，否则我建议你使用方法一。</p>
+<h4 id="关于反射">关于反射</h4>
+<p><code>int.class</code> 和 <code>Integer.class</code> 是不同的，其他类型应该也是一样。</p>
+<h4 id="随意吐槽">随意吐槽</h4>
+<p><em>学习编程相当长一段时间后，我才知道原来<code>java</code>和<code>javascript</code>根本没有半毛钱关系，那你们干嘛起类似的名字呀😂😂😂</em></p>
+
     </div>
 
     <div class="post-copyright">

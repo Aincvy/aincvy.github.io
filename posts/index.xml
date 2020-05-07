@@ -17,7 +17,9 @@
       <pubDate>Thu, 30 Apr 2020 21:27:47 +0800</pubDate>
       
       <guid>http://fantasyplayer.link/2020/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</guid>
-      <description></description>
+      <description>简述 在尽可能的情况下， 都应该使用 java的私有类型， 而装箱类型应该少用。
+因为 装箱的类型 会占用更多的内存。
+内存占用相关的内容    私有类型 装箱类型 内存占用(私有类型/ 装箱类型)     boolean Boolean 1 byte / 16 bytes   byte Byte 1 byte / 16 bytes   short Short 2 bytes / 16 bytes   char Char 2 bytes / 16 bytes   int Integer 4 bytes / 16 bytes   long Long 8 bytes / 16 bytes   float Float 4 bytes / 16 bytes   double Double 8 bytes / 16 bytes     1 byte 是一个字节</description>
     </item>
     
     <item>
@@ -80,10 +82,10 @@ Youtube 激励视频
     
     <item>
       <title>write something .. </title>
-      <link>http://fantasyplayer.link/2020/newpost/</link>
+      <link>http://fantasyplayer.link/2020/write-something-../</link>
       <pubDate>Fri, 17 Apr 2020 11:29:06 +0800</pubDate>
       
-      <guid>http://fantasyplayer.link/2020/newpost/</guid>
+      <guid>http://fantasyplayer.link/2020/write-something-../</guid>
       <description>Let&amp;rsquo;s write something.. aa 是的.
 OK， 现在看看页面吧。。 编码应该有设置的吧。。
 // code java public static class A { public void test (String a){ System.out.println(a); } } single line hereo 中文字体
