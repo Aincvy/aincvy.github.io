@@ -67,7 +67,11 @@
       <pubDate>Mon, 11 May 2020 21:49:36 +0800</pubDate>
       
       <guid>http://fantasyplayer.link/2020/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</guid>
-      <description></description>
+      <description>Akka Grpc 的简单入门 简介 Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。
+一些快速的链接。
+ 官方文档： https://doc.akka.io/docs/akka-grpc/current/index.html Github地址： https://github.com/akka/akka-grpc  详细内容 本篇是一个中文的使用流程把。 使用Java 语言编写代码。
+scala 语言和其他类型的编译工具的代码可以在官方文档中找到。
+协议文件 option java_multiple_files = true;option java_package = &amp;#34;example.myapp.helloworld.grpc&amp;#34;;option java_outer_classname = &amp;#34;HelloWorldProto&amp;#34;;package helloworld;// The request message containing the user&amp;#39;s name. message HelloRequest { string name = 1;}// The response message containing the greetings message HelloReply { string message = 1;}////////////////////////////////////// The greeting service definition. service GreeterService { //////////////////////  // Sends a greeting //  ////////*****/////////  // HELLO //  ////////*****/////////  rpc SayHello (HelloRequest) returns (HelloReply) {} // Comment spanning  // on several lines  rpc ItKeepsTalking (stream HelloRequest) returns (HelloReply) {} /* * C style comments */ rpc ItKeepsReplying (HelloRequest) returns (stream HelloReply) {} /* C style comments * on several lines * with non-empty heading/trailing line */ rpc StreamHellos (stream HelloRequest) returns (stream HelloReply) {} }简单的说明</description>
     </item>
     
     <item>

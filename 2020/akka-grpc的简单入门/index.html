@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Akka Grpc的简单入门",
     "headline" : "Akka Grpc的简单入门",
-    "description" : "",
+    "description" : "Akka Grpc 的简单入门 简介 Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。\n一些快速的链接。\n 官方文档： https:\/\/doc.akka.io\/docs\/akka-grpc\/current\/index.html Github地址： https:\/\/github.com\/akka\/akka-grpc  详细内容 本篇是一个中文的使用流程把。 使用Java 语言编写代码。\nscala 语言和其他类型的编译工具的代码可以在官方文档中找到。\n协议文件 option java_multiple_files = true;option java_package = \x26#34;example.myapp.helloworld.grpc\x26#34;;option java_outer_classname = \x26#34;HelloWorldProto\x26#34;;package helloworld;\/\/ The request message containing the user\x26#39;s name. message HelloRequest { string name = 1;}\/\/ The response message containing the greetings message HelloReply { string message = 1;}\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ The greeting service definition. service GreeterService { \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/  \/\/ Sends a greeting \/\/  \/\/\/\/\/\/\/\/*****\/\/\/\/\/\/\/\/\/  \/\/ HELLO \/\/  \/\/\/\/\/\/\/\/*****\/\/\/\/\/\/\/\/\/  rpc SayHello (HelloRequest) returns (HelloReply) {} \/\/ Comment spanning  \/\/ on several lines  rpc ItKeepsTalking (stream HelloRequest) returns (HelloReply) {} \/* * C style comments *\/ rpc ItKeepsReplying (HelloRequest) returns (stream HelloReply) {} \/* C style comments * on several lines * with non-empty heading\/trailing line *\/ rpc StreamHellos (stream HelloRequest) returns (stream HelloReply) {} }简单的说明",
     "inLanguage" : "zh-cn",
     "author" : "Aincvy",
     "creator" : "Aincvy",
@@ -57,7 +57,7 @@
     "datePublished": "2020-05-11 21:49:36 \x2b0800 CST",
     "dateModified" : "2020-05-11 21:49:36 \x2b0800 CST",
     "url" : "http:\/\/fantasyplayer.link\/2020\/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8\/",
-    "wordCount" : "0",
+    "wordCount" : "832",
     "keywords" : [  "Fanstasy Player"]
 }
 </script>
@@ -134,7 +134,343 @@
           
           
 
-          
+          <h2 id="akka-grpc-的简单入门">Akka Grpc 的简单入门</h2>
+<h3 id="简介">简介</h3>
+<p><code>Akka Grpc</code> 是一个 <code>rpc</code> 框架。 基于<code>akka-http</code>,<code>google protobuf</code>  构建而成。</p>
+<p>一些快速的链接。</p>
+<ul>
+<li>官方文档：  <a href="https://doc.akka.io/docs/akka-grpc/current/index.html">https://doc.akka.io/docs/akka-grpc/current/index.html</a></li>
+<li>Github地址： <a href="https://github.com/akka/akka-grpc">https://github.com/akka/akka-grpc</a></li>
+</ul>
+<h3 id="详细内容">详细内容</h3>
+<p>本篇是一个中文的使用流程把。 使用<code>Java</code> 语言编写代码。</p>
+<p><code>scala</code> 语言和其他类型的编译工具的代码可以在官方文档中找到。</p>
+<h4 id="协议文件">协议文件</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-protobuf" data-lang="protobuf"><span style="color:#66d9ef">option</span> java_multiple_files <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">option</span> java_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example.myapp.helloworld.grpc&#34;</span>;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">option</span> java_outer_classname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;HelloWorldProto&#34;</span>;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">package</span> helloworld;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">// The request message containing the user&#39;s name.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">HelloRequest</span> {<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">// The response message containing the greetings
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">HelloReply</span> {<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">string</span> <span style="color:#66d9ef">message</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">////////////////////////////////////// The greeting service definition.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">service</span> GreeterService {<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#75715e">//////////////////////
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Sends a greeting //
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">////////*****/////////
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//      HELLO       //
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">////////*****/////////
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">rpc</span> SayHello (HelloRequest) <span style="color:#66d9ef">returns</span> (HelloReply) {}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#75715e">// Comment spanning
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// on several lines
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">rpc</span> ItKeepsTalking (stream HelloRequest) <span style="color:#66d9ef">returns</span> (HelloReply) {}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#75715e">/*
+</span><span style="color:#75715e">     * C style comments
+</span><span style="color:#75715e">     */</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">rpc</span> ItKeepsReplying (HelloRequest) <span style="color:#66d9ef">returns</span> (stream HelloReply) {}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#75715e">/* C style comments
+</span><span style="color:#75715e">     * on several lines
+</span><span style="color:#75715e">     * with non-empty heading/trailing line */</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">rpc</span> StreamHellos (stream HelloRequest) <span style="color:#66d9ef">returns</span> (stream HelloReply) {}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><strong>简单的说明</strong></p>
+<p><code>message</code> 定义数据交互格式 。</p>
+<p><code>service</code> 生成rpc 调用 使用的 api</p>
+<p>格式为：</p>
+<p><code>rpc 方法名 (参数) returns (返回类型) {}</code></p>
+<p>参数和返回类型可以添加 <code>stream</code> 关键字， 表示这是一个数据流 。(持续输入， 或者持续输出)</p>
+<h4 id="生成java代码">生成java代码</h4>
+<p>我使用 <code>Maven</code> 工具作为依赖管理工具。</p>
+<p>项目的 <code>pom.xml</code> 大致内容如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;project&gt;</span>
+  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+  <span style="color:#f92672">&lt;name&gt;</span>Project name<span style="color:#f92672">&lt;/name&gt;</span>
+  <span style="color:#f92672">&lt;groupId&gt;</span>com.example<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>my-grpc-app<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>0.1-SNAPSHOT<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;properties&gt;</span>
+    <span style="color:#f92672">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#f92672">&lt;/maven.compiler.source&gt;</span>
+    <span style="color:#f92672">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#f92672">&lt;/maven.compiler.target&gt;</span>
+    <span style="color:#f92672">&lt;akka.grpc.version&gt;</span>1.0.0-M1<span style="color:#f92672">&lt;/akka.grpc.version&gt;</span>
+    <span style="color:#f92672">&lt;grpc.version&gt;</span>1.29.0<span style="color:#f92672">&lt;/grpc.version&gt;</span>
+    <span style="color:#f92672">&lt;project.encoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.encoding&gt;</span>
+  <span style="color:#f92672">&lt;/properties&gt;</span>
+  <span style="color:#f92672">&lt;dependencies&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>com.lightbend.akka.grpc<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>akka-grpc-runtime_2.12<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>${akka.grpc.version}<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;/dependencies&gt;</span>
+  <span style="color:#f92672">&lt;build&gt;</span>
+    <span style="color:#f92672">&lt;plugins&gt;</span>
+      <span style="color:#f92672">&lt;plugin&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>com.lightbend.akka.grpc<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>akka-grpc-maven-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>${akka.grpc.version}<span style="color:#f92672">&lt;/version&gt;</span>
+        <span style="color:#f92672">&lt;configuration&gt;</span>
+        	<span style="color:#f92672">&lt;generatorSettings&gt;</span>
+          	<span style="color:#f92672">&lt;serverPowerApis&gt;</span>true<span style="color:#f92672">&lt;/serverPowerApis&gt;</span>
+        	<span style="color:#f92672">&lt;/generatorSettings&gt;</span>
+        <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;executions&gt;</span>
+          <span style="color:#f92672">&lt;execution&gt;</span>
+            <span style="color:#f92672">&lt;goals&gt;</span>
+              <span style="color:#f92672">&lt;goal&gt;</span>generate<span style="color:#f92672">&lt;/goal&gt;</span>
+            <span style="color:#f92672">&lt;/goals&gt;</span>
+          <span style="color:#f92672">&lt;/execution&gt;</span>
+        <span style="color:#f92672">&lt;/executions&gt;</span>
+      <span style="color:#f92672">&lt;/plugin&gt;</span>
+    <span style="color:#f92672">&lt;/plugins&gt;</span>
+  <span style="color:#f92672">&lt;/build&gt;</span>
+<span style="color:#f92672">&lt;/project&gt;</span>
+</code></pre></div><p>这里添加一个叫<code>akka-grpc-maven-plugin</code>  的 Maven插件。 这个插件的<code>generate</code> 行为可以生成出java 代码。</p>
+<p>单独执行生成的话， 可以试试运行下面的命令生成代码。</p>
+<p><code>mvn akka-grpc:generate</code></p>
+<h4 id="编写-server-端代码">编写 server 端代码</h4>
+<h5 id="在server端-需要实现-greeterservice--接口">在<code>server</code>端 需要实现 <code>GreeterService </code> 接口。</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> example.myapp.helloworld<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.concurrent.CompletableFuture<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.concurrent.CompletionStage<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.stream.Collectors<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> akka.NotUsed<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.Materializer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.javadsl.Sink<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.javadsl.Source<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> example.myapp.helloworld.grpc.*<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreeterServiceImpl</span> <span style="color:#66d9ef">implements</span> GreeterService <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Materializer mat<span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">GreeterServiceImpl</span><span style="color:#f92672">(</span>Materializer mat<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mat</span> <span style="color:#f92672">=</span> mat<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> CompletionStage<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span>HelloRequest in<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sayHello to &#34;</span> <span style="color:#f92672">+</span> in<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+    HelloReply reply <span style="color:#f92672">=</span> HelloReply<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> in<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">return</span> CompletableFuture<span style="color:#f92672">.</span><span style="color:#a6e22e">completedFuture</span><span style="color:#f92672">(</span>reply<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> CompletionStage<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">itKeepsTalking</span><span style="color:#f92672">(</span>Source<span style="color:#f92672">&lt;</span>HelloRequest<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> in<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sayHello to in stream...&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> in<span style="color:#f92672">.</span><span style="color:#a6e22e">runWith</span><span style="color:#f92672">(</span>Sink<span style="color:#f92672">.</span><span style="color:#a6e22e">seq</span><span style="color:#f92672">(),</span> mat<span style="color:#f92672">)</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">thenApply</span><span style="color:#f92672">(</span>elements <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+        String elementsStr <span style="color:#f92672">=</span> elements<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>elem <span style="color:#f92672">-&gt;</span> elem<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">())</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> HelloReply<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> elementsStr<span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+      <span style="color:#f92672">});</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> Source<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">itKeepsReplying</span><span style="color:#f92672">(</span>HelloRequest in<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sayHello to &#34;</span> <span style="color:#f92672">+</span> in<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with stream of chars&#34;</span><span style="color:#f92672">);</span>
+    List<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> characters <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> in<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">())</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">chars</span><span style="color:#f92672">().</span><span style="color:#a6e22e">mapToObj</span><span style="color:#f92672">(</span>c <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)</span> c<span style="color:#f92672">).</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+    <span style="color:#66d9ef">return</span> Source<span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span>characters<span style="color:#f92672">)</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>character <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> HelloReply<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMessage</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>character<span style="color:#f92672">)).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+      <span style="color:#f92672">});</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> Source<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">streamHellos</span><span style="color:#f92672">(</span>Source<span style="color:#f92672">&lt;</span>HelloRequest<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> in<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sayHello to stream...&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> in<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>request <span style="color:#f92672">-&gt;</span> HelloReply<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">());</span>
+  <span style="color:#f92672">}</span>
+   
+<span style="color:#f92672">}</span>
+</code></pre></div><p>实现<code>GreeterService </code> 接口， 完成自己的需求即可。</p>
+<h5 id="启动类">启动类</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> example.myapp.helloworld<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> akka.actor.ActorSystem<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.http.javadsl.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.ActorMaterializer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.Materializer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.typesafe.config.Config<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.typesafe.config.ConfigFactory<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> example.myapp.helloworld.grpc.*<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.util.concurrent.CompletionStage<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreeterServer</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// important to enable HTTP/2 in ActorSystem&#39;s config
+</span><span style="color:#75715e"></span>    Config conf <span style="color:#f92672">=</span> ConfigFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">parseString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;akka.http.server.preview.enable-http2 = on&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">withFallback</span><span style="color:#f92672">(</span>ConfigFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultApplication</span><span style="color:#f92672">());</span>
+
+    <span style="color:#75715e">// Akka ActorSystem Boot
+</span><span style="color:#75715e"></span>    ActorSystem sys <span style="color:#f92672">=</span> ActorSystem<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;HelloWorld&#34;</span><span style="color:#f92672">,</span> conf<span style="color:#f92672">);</span>
+
+    run<span style="color:#f92672">(</span>sys<span style="color:#f92672">).</span><span style="color:#a6e22e">thenAccept</span><span style="color:#f92672">(</span>binding <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;gRPC server bound to: &#34;</span> <span style="color:#f92672">+</span> binding<span style="color:#f92672">.</span><span style="color:#a6e22e">localAddress</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">});</span>
+
+    <span style="color:#75715e">// ActorSystem threads will keep the app alive until `system.terminate()` is called
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> CompletionStage<span style="color:#f92672">&lt;</span>ServerBinding<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>ActorSystem sys<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    Materializer mat <span style="color:#f92672">=</span> ActorMaterializer<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>sys<span style="color:#f92672">);</span>
+
+    <span style="color:#75715e">// Instantiate implementation
+</span><span style="color:#75715e"></span>    GreeterService impl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> GreeterServiceImpl<span style="color:#f92672">(</span>mat<span style="color:#f92672">);</span>
+
+    <span style="color:#66d9ef">return</span> Http<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>sys<span style="color:#f92672">).</span><span style="color:#a6e22e">bindAndHandleAsync</span><span style="color:#f92672">(</span>
+      GreeterServiceHandlerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>impl<span style="color:#f92672">,</span> sys<span style="color:#f92672">),</span>
+      ConnectHttp<span style="color:#f92672">.</span><span style="color:#a6e22e">toHost</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;127.0.0.1&#34;</span><span style="color:#f92672">,</span> 8080<span style="color:#f92672">),</span>
+      mat<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>需要在配置文件里面指定下面的参数</p>
+<p><code>akka.http.server.preview.enable-http2 = on</code></p>
+<h4 id="编写-client-代码">编写 client 代码</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> example.myapp.helloworld<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.util.Arrays<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.concurrent.CompletionStage<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.concurrent.TimeUnit<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.stream.Collectors<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.time.Duration<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> io.grpc.StatusRuntimeException<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> akka.Done<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.NotUsed<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.actor.ActorSystem<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.ActorMaterializer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.Materializer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.stream.javadsl.Source<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> akka.grpc.GrpcClientSettings<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> example.myapp.helloworld.grpc.*<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreeterClient</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+    String serverHost <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">int</span> serverPort <span style="color:#f92672">=</span> 8080<span style="color:#f92672">;</span>
+
+    ActorSystem system <span style="color:#f92672">=</span> ActorSystem<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;HelloWorldClient&#34;</span><span style="color:#f92672">);</span>
+    Materializer materializer <span style="color:#f92672">=</span> ActorMaterializer<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>system<span style="color:#f92672">);</span>
+
+    <span style="color:#75715e">// Configure the client by code:
+</span><span style="color:#75715e"></span>    GrpcClientSettings settings <span style="color:#f92672">=</span> GrpcClientSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">connectToServiceAt</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;127.0.0.1&#34;</span><span style="color:#f92672">,</span> 8080<span style="color:#f92672">,</span> system<span style="color:#f92672">);</span>
+
+    <span style="color:#75715e">// Or via application.conf:
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// GrpcClientSettings settings = GrpcClientSettings.fromConfig(GreeterService.name, system);
+</span><span style="color:#75715e"></span>
+    GreeterServiceClient client <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+      client <span style="color:#f92672">=</span> GreeterServiceClient<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>settings<span style="color:#f92672">,</span> materializer<span style="color:#f92672">,</span> system<span style="color:#f92672">.</span><span style="color:#a6e22e">dispatcher</span><span style="color:#f92672">());</span>
+
+      singleRequestReply<span style="color:#f92672">(</span>client<span style="color:#f92672">);</span>
+      streamingRequest<span style="color:#f92672">(</span>client<span style="color:#f92672">);</span>
+      streamingReply<span style="color:#f92672">(</span>client<span style="color:#f92672">,</span> materializer<span style="color:#f92672">);</span>
+      streamingRequestReply<span style="color:#f92672">(</span>client<span style="color:#f92672">,</span> materializer<span style="color:#f92672">);</span>
+
+
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>StatusRuntimeException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Status: &#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getStatus</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>client <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+      system<span style="color:#f92672">.</span><span style="color:#a6e22e">terminate</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">singleRequestReply</span><span style="color:#f92672">(</span>GreeterService client<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    HelloRequest request <span style="color:#f92672">=</span> HelloRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Alice&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+    CompletionStage<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">&gt;</span> reply <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">sayHello</span><span style="color:#f92672">(</span>request<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;got single reply: &#34;</span> <span style="color:#f92672">+</span> reply<span style="color:#f92672">.</span><span style="color:#a6e22e">toCompletableFuture</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>5<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">));</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">streamingRequest</span><span style="color:#f92672">(</span>GreeterService client<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>HelloRequest<span style="color:#f92672">&gt;</span> requests <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Alice&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Bob&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Peter&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> HelloRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>name<span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">())</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+    CompletionStage<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">&gt;</span> reply <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">itKeepsTalking</span><span style="color:#f92672">(</span>Source<span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span>requests<span style="color:#f92672">));</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;got single reply for streaming requests: &#34;</span> <span style="color:#f92672">+</span>
+        reply<span style="color:#f92672">.</span><span style="color:#a6e22e">toCompletableFuture</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>5<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">));</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">streamingReply</span><span style="color:#f92672">(</span>GreeterService client<span style="color:#f92672">,</span> Materializer mat<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    HelloRequest request <span style="color:#f92672">=</span> HelloRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Alice&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+    Source<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> responseStream <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">itKeepsReplying</span><span style="color:#f92672">(</span>request<span style="color:#f92672">);</span>
+    CompletionStage<span style="color:#f92672">&lt;</span>Done<span style="color:#f92672">&gt;</span> done <span style="color:#f92672">=</span>
+      responseStream<span style="color:#f92672">.</span><span style="color:#a6e22e">runForeach</span><span style="color:#f92672">(</span>reply <span style="color:#f92672">-&gt;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;got streaming reply: &#34;</span> <span style="color:#f92672">+</span> reply<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">()),</span> mat<span style="color:#f92672">);</span>
+
+    done<span style="color:#f92672">.</span><span style="color:#a6e22e">toCompletableFuture</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>60<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">streamingRequestReply</span><span style="color:#f92672">(</span>GreeterService client<span style="color:#f92672">,</span> Materializer mat<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    Duration interval <span style="color:#f92672">=</span> Duration<span style="color:#f92672">.</span><span style="color:#a6e22e">ofSeconds</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+    Source<span style="color:#f92672">&lt;</span>HelloRequest<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> requestStream <span style="color:#f92672">=</span> Source
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">tick</span><span style="color:#f92672">(</span>interval<span style="color:#f92672">,</span> interval<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;tick&#34;</span><span style="color:#f92672">)</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">zipWithIndex</span><span style="color:#f92672">()</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>pair <span style="color:#f92672">-&gt;</span> pair<span style="color:#f92672">.</span><span style="color:#a6e22e">second</span><span style="color:#f92672">())</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>i <span style="color:#f92672">-&gt;</span> HelloRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">newBuilder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Alice-&#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">())</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">take</span><span style="color:#f92672">(</span>10<span style="color:#f92672">)</span>
+      <span style="color:#f92672">.</span><span style="color:#a6e22e">mapMaterializedValue</span><span style="color:#f92672">(</span>m <span style="color:#f92672">-&gt;</span> NotUsed<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">());</span>
+
+    Source<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">,</span> NotUsed<span style="color:#f92672">&gt;</span> responseStream <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">streamHellos</span><span style="color:#f92672">(</span>requestStream<span style="color:#f92672">);</span>
+    CompletionStage<span style="color:#f92672">&lt;</span>Done<span style="color:#f92672">&gt;</span> done <span style="color:#f92672">=</span>
+      responseStream<span style="color:#f92672">.</span><span style="color:#a6e22e">runForeach</span><span style="color:#f92672">(</span>reply <span style="color:#f92672">-&gt;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;got streaming reply: &#34;</span> <span style="color:#f92672">+</span> reply<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">()),</span> mat<span style="color:#f92672">);</span>
+
+    done<span style="color:#f92672">.</span><span style="color:#a6e22e">toCompletableFuture</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>60<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>主要是构造一个<code>GreeterServiceClient</code> 对象， 用于进行 <code>rpc</code> 调用即可。</p>
+<p>基本上使用 就是上面的内容。 官方文档还提供一种添加 <code>Metadata</code> 参数的方法。 有兴趣的可以看看官方文档，作者回复<code>issue</code> 的频率很高， 有问题可以去问问。</p>
+<h3 id="生产者消费者模式">生产者/消费者模式</h3>
+<p>我的经验告诉我， 这个rpc库不能像常规的socket那样互发消息， 比如服务端要推送消息给客户端的时候就不太好用。</p>
+<p>如果服务端不能推送消息给客户端的话， 那么就只能让客户端不停的轮询服务器，这里是比较浪费流量和性能的。 🐤🐤</p>
+<p>我考虑的解决方法是 <em>生产者/消费者模式 😺</em></p>
+<p><code>Source</code> 类可以通过一个叫<a href="https://doc.akka.io/japi/akka/current/akka/stream/scaladsl/Source.html#fromPublisher(org.reactivestreams.Publisher)">fromPublisher</a> 的方法把一个<code>Publisher</code> 转成<code>Source</code> 。</p>
+<p><a href="https://doc.akka.io/docs/akka/current/stream/operators/Source/fromPublisher.html">Usage</a></p>
+<p>给一段代码 应该就可以明白怎么使用了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Publisher publisher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SubmissionPublisher<span style="color:#f92672">&lt;</span>HelloReply<span style="color:#f92672">&gt;();</span>
+<span style="color:#75715e">// publisher.offer(xx)  即可发送消息
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">return</span> JavaFlowSupport<span style="color:#f92672">.</span><span style="color:#a6e22e">Source</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fromPublisher</span><span style="color:#f92672">(</span>publisher<span style="color:#f92672">);</span>
+</code></pre></div><p><code>Source.fromPublisher()</code> 方法需要使用<code>akka-stream</code> 库，有兴趣的朋友可以试着研究下。</p>
+<h3 id="faq">FAQ</h3>
+<h4 id="akka-260-生成代码后报错"><code>akka 2.6.0</code> 生成代码后报错。</h4>
+<p>使用更高的版本， 比如 <code>akka 2.6.4 </code> 即可以解决问题。</p>
+<p>如果非要使用 2.6.0 的话， 需要自己手动修改生成出来的代码， 不推荐这种方式。</p>
+<h4 id="如果我完全不懂akka-我可以使用akka-grpc-吗">如果我完全不懂<code>akka</code> 我可以使用<code>akka-grpc</code> 吗</h4>
+<p>可以是可以。。  但是难度不小， 这个库是基于 <code>akka</code>,<code>akka-stream</code>,<code>akka-http</code> 的。 其中异步响应式流框架<code>akka-stream</code> 有很多API， 在<code>akka-grpc</code> 里面应该都是可用的。</p>
+<p>所以想好好使用这个框架的话， 可能也需要花时间去学习另外一个框架。</p>
+
     </div>
 
     <div class="post-copyright">
