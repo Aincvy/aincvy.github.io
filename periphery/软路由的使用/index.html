@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Aincvy">
+  <meta name="description" content="个人博客， 技术博客， 思想分享，开发日志。">
+  <meta name="keywords" content="幻想系玩家, 技术博客">
+  
+  
+  
+  <link rel="canonical" href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           pfSense 软路由的使用 | Fanstasy Player
+       
+  </title>
+  <meta name="title" content="pfSense 软路由的使用 | Fanstasy Player">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/fantasyplayer.link\/"
+    },
+    "articleSection" : "periphery",
+    "name" : "pfSense 软路由的使用",
+    "headline" : "pfSense 软路由的使用",
+    "description" : "简述  软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0\/24 自用 LAN 口2 192.168.100.0\/24 因某些原因分享网络给其他一起合租的租客使用。  开始 我现在是电信1000M\/100M 的宽带， 之前使用的不到300块钱的 TPLink 路由器在 speedtest.cn 上只能跑700M 左右的下行。 更换了之后能跑到1000M 左右， 感觉还是 OK 的。\nESXI 没有使用虚拟机的读者可以跳过这一部分。\n我目前的情况是这样的\n pfSense 作为主路由  其他虚拟机 我的无线路由器  我的 PC 台式机 我的无线设备， 笔记本电脑，平板，手机等   千兆交换机1  其他租客1的路由 其他租客2的路由      因为不知道博客的主题是否支持流程图就先用这种表达方式了。\n新建 VMkernel 网卡 我本来是使用的别的路由， 现在的 esxi 的管理地址是192.168.0.23 ， 我更换为pfSense 之后，就没这个网段了， 所以需要处理下 esxi 的 web 管理地址的问题。",
+    "inLanguage" : "zh-cn",
+    "author" : "Aincvy",
+    "creator" : "Aincvy",
+    "publisher": "Aincvy",
+    "accountablePerson" : "Aincvy",
+    "copyrightHolder" : "Aincvy",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-06-27 20:49:31 \x2b0800 CST",
+    "dateModified" : "2020-06-27 20:49:31 \x2b0800 CST",
+    "url" : "http:\/\/fantasyplayer.link\/periphery\/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8\/",
+    "wordCount" : "655",
+    "keywords" : [  "Fanstasy Player"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://fantasyplayer.link/">Fanstasy Player</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://fantasyplayer.link/">Fanstasy Player</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">pfSense 软路由的使用</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://fantasyplayer.link/" rel="author">Aincvy</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-06-27 itemprop="datePublished">June 27, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="简述">简述</h3>
+<ul>
+<li>软路由系统: <code>pfSense</code>， 基于<code>FreeBSD</code></li>
+<li>软路由是放在 <code>esxi</code>上的一个虚拟机</li>
+<li>使用电信拨号上网</li>
+<li>LAN 口1 <code>192.168.200.0/24</code> 自用</li>
+<li>LAN 口2 <code>192.168.100.0/24</code> 因某些原因分享网络给其他一起合租的租客使用。</li>
+</ul>
+<h2 id="开始">开始</h2>
+<p>我现在是电信1000M/100M 的宽带， 之前使用的不到300块钱的 TPLink 路由器在 speedtest.cn 上只能跑700M 左右的下行。 更换了之后能跑到1000M 左右， 感觉还是 OK 的。</p>
+<h3 id="esxi">ESXI</h3>
+<p><em>没有使用虚拟机的读者可以跳过这一部分。</em></p>
+<p>我目前的情况是这样的</p>
+<ul>
+<li><code>pfSense</code> 作为主路由
+<ul>
+<li>其他虚拟机</li>
+<li>我的无线路由器
+<ul>
+<li>我的 PC 台式机</li>
+<li>我的无线设备， 笔记本电脑，平板，手机等</li>
+</ul>
+</li>
+<li>千兆交换机1
+<ul>
+<li>其他租客1的路由</li>
+<li>其他租客2的路由</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>因为不知道博客的主题是否支持流程图就先用这种表达方式了。</em></p>
+<h4 id="新建-vmkernel-网卡">新建 VMkernel 网卡</h4>
+<p>我本来是使用的别的路由， 现在的 esxi 的管理地址是<code>192.168.0.23</code> ， 我更换为pfSense 之后，就没这个网段了， 所以需要处理下 esxi 的 web 管理地址的问题。</p>
+<ol>
+<li>新建虚拟交换机
+<ol>
+<li>名字起个有含义的就可以， 比如<code>MyRoute</code></li>
+<li>上行链路， 选择一个要连接路由器的网口即可（我的自用服务器上有4个网口）</li>
+</ol>
+</li>
+<li>新建端口组
+<ol>
+<li>名字示例：  <code>esxiPort</code></li>
+<li><code>VLAN</code> 填0 即可</li>
+<li>虚拟交换机 选择我们上一步创建好的。</li>
+</ol>
+</li>
+<li>新建 VMkernel 网卡
+<ol>
+<li>端口组选择上一部创建的</li>
+<li>IP上选择 <code>仅 IPv4</code> 应该就可以了</li>
+<li>IPv4设置 选择静态
+<ol>
+<li>我给自用网络设计的网段是 <code>192.168.200.1-192.168.200.254</code></li>
+<li>所以我给 VMkernel 的地址是<code>192.168.200.10</code> 同一个网段应该就 OK 了</li>
+<li>子网掩码填写<code>255.255.255.0</code> 即可</li>
+<li>服务选择 <code>管理</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>现在差不多就可以从新地址上访问了。
+<ol>
+<li>不使用其他路由的情况下， 把网线从电脑上直连服务器上选择的那个网口。</li>
+<li>本机 PC 的地址也设置在 <code>192.168.200.x</code> 网段里面</li>
+<li>打开浏览器 访问 <code>192.168.200.10</code> 应该就可以访问了。</li>
+</ol>
+</li>
+</ol>
+<h4 id="其他口的网络设置">其他口的网络设置</h4>
+<ol>
+<li>WAN  口
+<ol>
+<li>添加一个虚拟交换机
+<ol>
+<li>比如起名叫 <code>WAN_PPPOE</code></li>
+<li>上行链路选择链接电信光猫使用的网口</li>
+</ol>
+</li>
+<li>新建一个端口组
+<ol>
+<li>比如起名叫<code>pppoe1</code></li>
+<li>选择 <code>WAN_PPPOE</code> 虚拟交换机</li>
+<li><code>VLAN ID</code> 选择0</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>LAN 口
+<ol>
+<li>因为要使用我们自己的 LAN 管理 esxi 所以会使用之前建立好的<code>MyRoute</code>虚拟交换机</li>
+<li>新建一个端口组
+<ol>
+<li>比如起名叫 <code>pfSenseMyRouteLan</code></li>
+<li>虚拟交换机选择 <code>MyRoute</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>其他人使用的 网口
+<ol>
+<li>新建一个虚拟交换机 <code>OTHERS_ROUTE</code> ，网口选择别的，用于链接千兆交换机1</li>
+<li>新建一个端口组 <code>OthersRoute</code> 使用 <code>OTHERS_ROUTE </code> 作为虚拟交换机</li>
+</ol>
+</li>
+</ol>
+<h3 id="pfsense">pfSense</h3>
+<p>从 <a href="https://www.pfsense.org/download/">https://www.pfsense.org/download/</a> 官网地址上下载最新的镜像即可。</p>
+<p>如果需要安装在全新的物理机上， 下载一个镜像写入的工具， 比如 软碟通，啥的把镜像写入 U盘，然后从 U盘中启动。</p>
+<p>如果是安装在虚拟机里面， 则新建一个虚拟机， 分配配置，选择镜像文件。</p>
+<p>我使用的虚拟机配置如下</p>
+<ul>
+<li>2 x 2 = 4核 的 CPU (<em>E5-2650v2</em>)</li>
+<li>4GB 内存</li>
+<li>600GB 硬盘（本来想用<code>squid</code>做透明代理的，所以给的多）</li>
+<li>3个网络适配器
+<ul>
+<li>WAN 口1个  <em>端口组 pppoe1</em></li>
+<li>LAN 口1个   <em>端口组 pfSenseMyRouteLan</em></li>
+<li>其他人的网络口 1个  <em>端口组 OthersRoute</em></li>
+</ul>
+</li>
+</ul>
+<p>安装过程一般是下一步下一步就好了， 中间可能需要指定 WAN 口，LAN 口。使用 esxi 的读者查看网络适配器的 mac 地址即可辨认， 物理机的读者 我这里的办法只有尝试了。。</p>
+<p>这里需要说明一下， 设置好的之后口 是可以变化的。</p>
+<p>LAN 口的地址， 我是设置为的 <code>192.168.200.1</code>  ，然后设置 DHCP 服务为启用， 地址池可以填写<code>192.168.200.100-192.168.200.254</code></p>
+<p>WAN 口，其实可以先忽略， 或者设置成 从 DHCP 获取地址。</p>
+<p>非常需要安装记录的读者 请百度/谷歌搜索一下，这类资料还是很多的。</p>
+<h4 id="链接-web-管理页面">链接 web 管理页面</h4>
+<p>此时，我的电脑使用网线链接 pfSense 上指定的 LAN 口，并且地址是 <code>192.168.200.x</code>。</p>
+<p>我一般会先 使用命令<code>ping 192.168.200.1</code> 看看网络通不通。</p>
+<p>可以 ping 的到的话，就说明 Luck， 可以使用 web 界面管理了。  👍  👍 👍</p>
+<p>不能访问的读者， 很可能是连错 网口了。</p>
+<p>如果你连接了正确的网口， 但是 ip 地址没有给你自动设置好。</p>
+<p>你可能需要手动设置，信息填写如下</p>
+<ul>
+<li>地址: <code>192.168.200.100</code></li>
+<li>子网掩码: <code>255.255.255.0</code></li>
+<li>网关: <code>192.168.200.1</code></li>
+</ul>
+<p>如何查看当前的 ip 地址呢？</p>
+<p>Windows: <code>ipconfig /all</code></p>
+<p>Linux: <code>ifconfig</code></p>
+<h4 id="web-管理界面">web 管理界面</h4>
+<p>成功访问到<code>192.168.200.1</code> 之后， 使用 <code>admin/pfsense</code> 进行登录，首次登录可能有点慢。</p>
+<p>首次登录之后会要求设置一些事情。</p>
+<p>地址按照上面说的填写即可。</p>
+<p>时区选择自己所在的区域， 我一般选择 <code>Asia/Shanghai</code></p>
+<p>成功设置之后， 看到的界面是 <code>Dashboard</code> ，可以从导航栏中的<code>Status/Dashboard</code>按钮打开。</p>
+<h4 id="电信拨号">电信拨号</h4>
+<ul>
+<li>
+<p>使用网线链接电信光猫和 <code>WAN_PPPOE</code> 对应的网口。</p>
+</li>
+<li>
+<p>在 web 管理界面选择 <code>Interfaces/WAN</code> 进入 WAN接口的管理界面</p>
+</li>
+<li>
+<p><code>IPv4 Configuration Type</code>  选择 <code>PPPoE</code> ,<code>IPv6</code> 的配置可以不用管</p>
+</li>
+<li>
+<p><code>MTU</code> 填写<code>1480</code></p>
+</li>
+<li>
+<p>向下滑动， 会看到 <code>PPPoE Configuration</code> 填写宽带的用户名密码即可。</p>
+<ul>
+<li>注意，电信师傅给的用户名密码， 可能需要添加<code>ad</code>开头才能使用</li>
+<li>原因我暂时不知道。</li>
+</ul>
+</li>
+<li>
+<p><code>Dial on demand</code> 勾选。 这个选项可以使宽带断线重连。</p>
+</li>
+<li>
+<p><strong>Idle timeout</strong>: <code>172800</code></p>
+</li>
+<li>
+<p><strong>Reserved Networks</strong>: 两个都勾选</p>
+</li>
+<li>
+<p>填写完成之后点击 <strong>save</strong> 保存， 之后会提示 是否<code>apply changes</code>  ，选择<code>Yes</code></p>
+</li>
+<li>
+<p>之后可能会卡一会， 因为会进行宽带拨号。</p>
+</li>
+<li>
+<p>这里需要注意下， 如果你刚从别的路由把网线拔下来， 可能需要换个光猫上的网口。</p>
+</li>
+<li>
+<p>点击导航栏<code>Status/Interfaces</code>   可以查看几个网络适配器的状态。 此时的 WAN 口有一个<strong>Status</strong></p>
+<ul>
+<li>值为 up 表示链接成功， 并且会有 ip 和 dns 服务器的信息</li>
+<li>值为 down 表示链接失败</li>
+</ul>
+</li>
+<li>
+<pre><code>Status up
+PPPoE up 
+Uptime 1d 20:23:57
+IPv4 Address *.*.*.*
+Subnet mask IPv4 255.255.255.255
+Gateway IPv4 *.*.*.*
+IPv6 Link Local fe80::20c:29ff:fef8:3670%em0
+Gateway IPv6 fe80::ce1a:faff:feed:920
+DNS servers
+116.228.111.118
+180.168.255.18
+MTU 1480
+In/out packets
+52170750/29521762 (63.12 GiB/3.75 GiB)
+In/out packets (pass)
+52170750/29521762 (63.12 GiB/3.75 GiB)
+In/out packets (block)
+23698174/3 (406.33 MiB/189 B)
+In/out errors 0/0
+Collisions 0
+</code></pre></li>
+<li>
+<p>大概信息为上图那样，就是说明链接成功了。 (<code>*.*.*.*</code> 是隐藏信息)</p>
+</li>
+</ul>
+<h4 id="上网">上网</h4>
+<p>能成功拨号的话， 就差不多快能上网了。</p>
+<p>此时你可以尝试一下， 如果你能上网，那么 OK， 就没太多事情了。</p>
+<p>如果你不能，就检查下<code>Firewall/Rules/Lan</code> 的内容，此时一般都是防火墙规则的问题。</p>
+<p>查看你是否有 类似这样的标记</p>
+<p>✔️(绿色的) <code>IPv4*  LAN net  *  *  *  *  none  deault allow xxx</code></p>
+<p>如果没有的话，自己新加一个。</p>
+<ul>
+<li>Action: Pass</li>
+<li>Interface: Lan</li>
+<li>Protocol: Any</li>
+<li>Source: any</li>
+<li>Destination: any</li>
+<li>Description: allow lan access internet</li>
+</ul>
+<p>保存后应用 应该就可以上网了。 （如果前面没有 block/reject 的规则的话。。）</p>
+<p>我设置<code>OtherRoute</code>的规则在后面指出。</p>
+<h4 id="端口转发">端口转发</h4>
+<p><strong>内网访问映射出去的端口</strong></p>
+<p>先启用内网可以访问映射的端口，不然只有外网能访问的话就很不方便。</p>
+<p>点击<code>System/Advanced/Firewall &amp; NAT</code></p>
+<p>向下滑动， 找到<code>Network Address Translation</code> 标题。</p>
+<p>勾选 <code>Enable NAT Reflection for 1:1 NAT</code> 和<code>Enable automatic outbound NAT for Reflection</code>  然后 保存就可以了。</p>
+<p><strong>添加要映射的端口</strong></p>
+<p>点击<code>Firewall/NAT/Port Forward</code></p>
+<p>点击<code>add</code> 添加一条新的规则。</p>
+<ul>
+<li><code>Destination port range</code> 填写端口范围， 单端口就写相同值</li>
+<li><code>Redirect target IP</code> 填写内网的 ip,比如 <code>192.168.200.33</code></li>
+<li><code>Redirect target port</code> 填写端口</li>
+<li><code>Description</code> 写一个有意义的描述</li>
+<li>点击保存， 然后应用。</li>
+<li>应该就可以访问了。</li>
+</ul>
+<h2 id="本次操作我碰到的其他问题">本次操作我碰到的其他问题</h2>
+<h3 id="tplink-路由器怎么做ap-模式">TPLink 路由器怎么做AP 模式</h3>
+<ol>
+<li>设置路由地址为手动， 然后设置为<code>192.168.200.99 </code> （没被使用的任意地址即可）</li>
+<li>把pfSense 的 Lan 口 链接到路由器的随意 Lan 口（<em>比如 Lan 口1</em>）</li>
+<li>我的电脑链接 路由器的其他 Lan 口</li>
+<li>路由器的 <code>Wan</code>口空着。</li>
+<li>此时电脑和链接的无线设备应该都可以上网了</li>
+</ol>
+<h3 id="其他租客的防火墙规则我是怎么设置的">其他租客的防火墙规则我是怎么设置的？</h3>
+<p>默认情况下， <code>192.168.100.x</code> 是可以访问到<code>192.168.200.x</code> 的， 就是说其他租客有可能会访问到我自己的虚拟机，自己的设备， 这是我不希望看到的。</p>
+<p>所以我的防火墙规则是这样的。</p>
+<ul>
+<li>点击<code>Firewall/Rules/OthersRoute</code></li>
+<li>点击 add 添加第一条规则
+<ul>
+<li>Action: Pass</li>
+<li>Protocol: Any</li>
+<li>Source: OthersRoute net</li>
+<li>Destination: Network, 192.168.100.1 / 24</li>
+<li>Description: allow others access their other devices</li>
+<li>点击 Save 保存</li>
+</ul>
+</li>
+<li>点击 add 添加第二条规则
+<ul>
+<li>Action: Block</li>
+<li>Protocol: Any</li>
+<li>Source: OthersRoute net</li>
+<li>Destination: Network, 192.168.0.0 / 16</li>
+<li>Description: deny others access mylab</li>
+<li>点击保存</li>
+</ul>
+</li>
+<li>点击 add 添加第三条规则
+<ul>
+<li>Action: Pass</li>
+<li>Protocol: Any</li>
+<li>Source: OthersRoute net</li>
+<li>Destination: any</li>
+<li>Description: allow others access internet</li>
+<li>点击保存</li>
+</ul>
+</li>
+<li>这三条规则让他们不能访问除了<code>192.168.100.x</code> 的其他局域网内容。 从而避免他们访问到我的虚拟机。 第三条规则是允许他们访问互联网</li>
+<li>规则是按照顺序来判断的，符合哪个规则就使用哪个 Action 。</li>
+</ul>
+<h3 id="我是如何给其他人限速的呢">我是如何给其他人限速的呢？</h3>
+<p>先添加限速器， 然后使用就可以了。</p>
+<ul>
+<li>点击 <code>Firewall/Traffic Shaper/Limiters</code></li>
+<li>点击 add  新建下载速度的限速器
+<ul>
+<li>Enable: 勾选</li>
+<li>Name: DownloadLimiter</li>
+<li>Bandwidth: 300 Mbit/s</li>
+<li>点击 Save 保存</li>
+</ul>
+</li>
+<li>点击 add 新建上传速度的限速器
+<ul>
+<li>Enable: 勾选</li>
+<li>Name: UploadLimiter</li>
+<li>Bandwidth: 30 Mbit/s</li>
+<li>点击 Save 保存</li>
+</ul>
+</li>
+<li>如果需要应用， 则应用一下。</li>
+<li>点击<code>Firewall/Rules/OthersRoute</code>  找到防火墙规则</li>
+<li>找到第三条规则（<em>其他人可以访问互联网的那条</em>）</li>
+<li>点击 笔形状的按钮 进行编辑操作。</li>
+<li>滑动到最下面， 点击 <code>Display Advanced</code> 按钮</li>
+<li>滑动到下面，找到 <code>In / Out pipe</code> 第一个下拉框选择<code>UploadLimiter</code> ,第二个下拉框选择<code>DownloadLimiter</code> 。</li>
+<li>保存然后应用就可以了。</li>
+<li>PS: 速度根据自己的需求调整即可。</li>
+</ul>
+<p><em>谢谢阅读  😃😃😃😃</em></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Aincvy </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://fantasyplayer.link/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://fantasyplayer.link/">Aincvy</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
