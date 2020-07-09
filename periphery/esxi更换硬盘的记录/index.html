@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Aincvy">
+  <meta name="description" content="个人博客， 技术博客， 思想分享，开发日志。">
+  <meta name="keywords" content="幻想系玩家, 技术博客">
+  
+  <link rel="prev" href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" />
+  <link rel="next" href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
+  <link rel="canonical" href="http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           ESXi更换硬盘的记录 | Fanstasy Player
+       
+  </title>
+  <meta name="title" content="ESXi更换硬盘的记录 | Fanstasy Player">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/fantasyplayer.link\/"
+    },
+    "articleSection" : "periphery",
+    "name" : "ESXi更换硬盘的记录",
+    "headline" : "ESXi更换硬盘的记录",
+    "description" : "简述 家里使用的服务器，主要硬盘消耗是 openmediavault。\n就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMachine。\n因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。\n（个人来说 会每周六晚上看一部电影，看完的也没删，所以比较费空间 😂）\n本文使用的步骤是冷迁移，笔者是个菜鸡，暂时没有用到 vCenter\n详细步骤 （冷迁移） 简述就是，关闭并移动虚拟机， 然后卸掉旧硬盘， 使用 U 盘重新安装 ESXi，并恢复配置。\n注：迁移系统的话，才需要重装。\n我现在有3块硬盘\n 2T 得硬盘， 里面放了系统和部分虚拟机 4T 得硬盘， 里面全是虚拟机 12T 得硬盘， 新买的，目标硬盘。  步骤大概分为下面几步应该就 OK 了。\n 链接新的硬盘到现在的 ESXi 主机上。SATA 或者 NVME 应该都可以，只要 能识别就 OK。记得关机操作。。 开机后，登录 web 控制面板， 基于新的硬盘创建一个数据存储  左侧导航器其次选择存储 \/ 数据存储 \/ 新建数据存储 创建新的 VMFS 存储 给一个名称， 比如 _12T_ 选择该硬盘， 版本上似乎 5和6都可以。   关闭位于想更换硬盘上的所有虚拟机。  如果分区是基于两块硬盘创建得， 则可以将全部的虚拟机移动过去 比如我的分区1 是基于一块2T 的硬盘， 一块4T 的硬盘， 我就是把全部的虚拟机关闭移动的。   打开数据浏览存储器， 进行移动  左侧导航栏依次选择 存储 \/ 数据存储 \/ 数据存储浏览器 此时会看到两个及以上的数据存储区域， 点开一个之后，里面的每一个文件夹基本都是一个虚拟机。 点击文件夹，点击移动， 目标选择新的硬盘对应的存储区域 (_12T_) 静静等待完成就可以了。 笔者移动了大概6TB 的文件， 花了差不多24~36个小时，笔者是普通的机械硬盘。   拆除不需要的硬盘。。  把想要拆掉的硬盘排除掉。 比如 一个数据区域里面两个硬盘的话，则考虑选择不需要的硬盘，或者是需要的硬盘，点击删除分区表， 之后该硬盘就会从数据分区中移出，但是笔者不知道这么做有没有什么副作用。。 如果该硬盘对应着一个数据区域，则先把该区域删除掉，再删除分区表。   如果你不需要迁移系统的话， 这时应该已经 OK 了， 重新注册下虚拟机应该就差不多要成功了。  一般情况下， 再 『我已复制』 和『我已移动』 中 你应该选择『我已复制』 否则的话，可能虚拟机就无法启动了。 但是点击我已复制，网卡的 MAC 地址会变化，初除此之外应该还有别的变化。 我第一个虚拟机 pfSense ，点击的『我已移动』 之后就没能成功启动 😹😹😹 ​ 点了之后， 虚拟机的基本配置也没办法修改， 不知道为啥。。   接下来是如果你需要迁移系统的操作。  为什么要迁移系统？ 原因当然很简单啦， 因为系统装在了一块小的硬盘上。 机箱里没更多放硬盘的位置了。   导出 当前的 ESXi 的主机配置。  官方文档： https:\/\/kb.",
+    "inLanguage" : "zh-cn",
+    "author" : "Aincvy",
+    "creator" : "Aincvy",
+    "publisher": "Aincvy",
+    "accountablePerson" : "Aincvy",
+    "copyrightHolder" : "Aincvy",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-09 20:24:27 \x2b0800 CST",
+    "dateModified" : "2020-07-09 20:24:27 \x2b0800 CST",
+    "url" : "http:\/\/fantasyplayer.link\/periphery\/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95\/",
+    "wordCount" : "277",
+    "keywords" : [  "Fanstasy Player"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://fantasyplayer.link/">Fanstasy Player</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://fantasyplayer.link/">Fanstasy Player</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">ESXi更换硬盘的记录</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://fantasyplayer.link/" rel="author">Aincvy</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-09 itemprop="datePublished">July 9, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="简述">简述</h2>
+<p>家里使用的服务器，主要硬盘消耗是 <code>openmediavault</code>。</p>
+<p>就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持<code>TimeMachine</code>。</p>
+<p>因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。</p>
+<p>（<em>个人来说 会每周六晚上看一部电影，看完的也没删，所以比较费空间 😂</em>）</p>
+<p><strong>本文使用的步骤是冷迁移，笔者是个菜鸡，暂时没有用到 vCenter</strong></p>
+<h2 id="详细步骤--冷迁移">详细步骤  （冷迁移）</h2>
+<p>简述就是，关闭并移动虚拟机， 然后卸掉旧硬盘， 使用 U 盘重新安装 ESXi，并恢复配置。</p>
+<p>注：迁移系统的话，才需要重装。</p>
+<p>我现在有3块硬盘</p>
+<ul>
+<li><code>2T</code> 得硬盘， 里面放了系统和部分虚拟机</li>
+<li><code>4T</code> 得硬盘， 里面全是虚拟机</li>
+<li><code>12T</code> 得硬盘， 新买的，目标硬盘。</li>
+</ul>
+<p>步骤大概分为下面几步应该就 OK 了。</p>
+<ol>
+<li>链接新的硬盘到现在的 ESXi 主机上。<em>SATA 或者 NVME 应该都可以，只要 能识别就 OK。记得关机操作。。</em></li>
+<li>开机后，登录 web 控制面板， 基于新的硬盘创建一个数据存储
+<ol>
+<li>左侧导航器其次选择<code>存储 / 数据存储 / 新建数据存储</code></li>
+<li>创建新的 VMFS 存储</li>
+<li>给一个名称， 比如 <code>_12T_</code></li>
+<li>选择该硬盘， 版本上似乎 5和6都可以。</li>
+</ol>
+</li>
+<li>关闭位于想更换硬盘上的所有虚拟机。
+<ol>
+<li>如果分区是基于两块硬盘创建得， 则可以将全部的虚拟机移动过去</li>
+<li>比如我的分区1 是基于一块2T 的硬盘， 一块4T 的硬盘， 我就是把全部的虚拟机关闭移动的。</li>
+</ol>
+</li>
+<li>打开数据浏览存储器， 进行移动
+<ol>
+<li>左侧导航栏依次选择 <code>存储 / 数据存储 / 数据存储浏览器</code></li>
+<li>此时会看到两个及以上的数据存储区域， 点开一个之后，里面的每一个文件夹基本都是一个虚拟机。</li>
+<li>点击文件夹，点击移动， 目标选择新的硬盘对应的存储区域 (<code>_12T_</code>)</li>
+<li>静静等待完成就可以了。  笔者移动了大概6TB 的文件， 花了差不多24~36个小时，笔者是普通的机械硬盘。</li>
+</ol>
+</li>
+<li>拆除不需要的硬盘。。
+<ol>
+<li>把想要拆掉的硬盘排除掉。</li>
+<li>比如 一个数据区域里面两个硬盘的话，则考虑选择不需要的硬盘，或者是需要的硬盘，点击删除分区表， 之后该硬盘就会从数据分区中移出，但是笔者不知道这么做有没有什么副作用。。</li>
+<li>如果该硬盘对应着一个数据区域，则先把该区域删除掉，再删除分区表。</li>
+</ol>
+</li>
+<li>如果你不需要迁移系统的话， 这时应该已经 OK 了， 重新注册下虚拟机应该就差不多要成功了。
+<ol>
+<li>一般情况下， 再 『我已复制』 和『我已移动』 中 你应该选择『我已复制』</li>
+<li>否则的话，可能虚拟机就无法启动了。  但是点击我已复制，网卡的 MAC 地址会变化，初除此之外应该还有别的变化。</li>
+<li>我第一个虚拟机 <code>pfSense</code> ，点击的『我已移动』  之后就没能成功启动 😹😹😹 ​</li>
+<li>点了之后， 虚拟机的基本配置也没办法修改， 不知道为啥。。</li>
+</ol>
+</li>
+<li>接下来是如果你需要迁移系统的操作。
+<ol>
+<li>为什么要迁移系统？  原因当然很简单啦， 因为系统装在了一块小的硬盘上。 机箱里没更多放硬盘的位置了。</li>
+</ol>
+</li>
+<li>导出 当前的 ESXi 的主机配置。
+<ol>
+<li>官方文档：  <a href="https://kb.vmware.com/s/article/2042141">https://kb.vmware.com/s/article/2042141</a></li>
+<li>中文译本： <a href="https://kb.vmware.com/s/article/2042141?lang=zh_CN">https://kb.vmware.com/s/article/2042141?lang=zh_CN</a></li>
+<li>我是在 ESXi 的命令行上进行操作的。</li>
+</ol>
+</li>
+<li>下载或者使用你原来的 ESXi 的ISO 镜像， 然后安装新系统。
+<ol>
+<li>如果你是超微的主板， 则可以考虑使用 IPMI 来管理，很方便的。</li>
+<li>如果没有的话， 只能使用电脑的显示器了， 或者购买一个15寸的小显示器 😂</li>
+<li>原来是怎么安装的，现在就怎么安装就好了。</li>
+<li>至于安装位置， 选择具有空闲空间的硬盘，据说 ESXi在安装的时候会自动识别硬盘上的内容， 不会操作 VMFS 分区的里面文件。 （<em>但是我还不能确定这种说法的正确性</em>）</li>
+<li>我个人的话， 是使用的空闲硬盘，没有数据的硬盘。</li>
+</ol>
+</li>
+<li>成功进去到 web 管理界面之后， 进行配置的还原工作
+<ol>
+<li>如果你是使用的当初的安装镜像， 那么恭喜你，应该能正常操作。</li>
+<li>如果你是使用了别的镜像（<em>当初的安装镜像找不到了之类的原因</em>）</li>
+<li>那么操作就变得复杂起来了。   可见此文的2楼： <a href="https://communities.vmware.com/thread/554205">https://communities.vmware.com/thread/554205</a></li>
+<li>我的操作是这样的。
+<ol>
+<li>拷贝原有配置， 做一个备份。</li>
+<li>我是在 Windows 的机器上进行操作的， 我一般使用<code>360压缩</code> 这是我一直在用的唯一一个360的软件 😂😂😂</li>
+<li>但是 360压缩工具不支持<code>tar.gz/tgz</code> 文件的打包</li>
+<li>我利用备份配置的方法在新系统上进行一次备份，导出。 然后把文件下载到本地。</li>
+<li>将原来的配置文件解压， 并把全部文件上传到 ESXi 里面的 <code>/tmp/abc</code> 文件夹（文件夹需要自己创建， 使用<code>sftp</code>上传)</li>
+<li>将现有配置文件的<code>Manifest</code>文件拷贝到第5步上传的文件夹里面， 覆盖掉原有的文件</li>
+<li>使用 <code>cd /tmp/abc &amp;&amp; tar -czvf configBundle.tgz *</code> 类似的命令完成打包 （abc 为你的文件夹名字）</li>
+<li>使用 <code>mv configBundle.tgz ../</code> 的命令把文件移动到 <code>/tmp</code> 目录</li>
+<li>然后使用命令 <code>vim-cmd -d info /hostsvc/firmware/restore_config 1 /tmp/configBundle.tgz</code> 强制还原配置</li>
+<li>之后应该会重启一下， 然后绝大部分配置都回来了。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>使用步骤6进行注册虚拟机即可。</li>
+<li>到目前为止， 冷迁移应该已经算完成了， 不过我发现了部分虚拟机还是无法启动的问题， 可能部分设置需要重新操作一下。。</li>
+</ol>
+<h2 id="笔者的瞎比操作">笔者的瞎比操作</h2>
+<p>在这种极其小白的情况下， 操作步骤往往得靠摸索和瞎想。</p>
+<p>我现在有3块硬盘</p>
+<ul>
+<li><code>2T</code> 得硬盘， 里面放了系统和部分虚拟机</li>
+<li><code>4T</code> 得硬盘， 里面全是虚拟机</li>
+<li><code>12T</code> 得硬盘， 新买的，目标硬盘。</li>
+</ul>
+<p>我得想法是， 把2T硬盘里面得数据直接全部拷贝到12T 盘里， 然后启动应该就可以了。</p>
+<p>并且，我真的这么操作了， 我使用 Windows 得软件<code>DiskGenius</code> 进行硬盘扇区拷贝，这是一种按照扇区拷贝得方式，速度极其慢， 使用了差不多4~5个小时才完成2T 文件得拷贝。</p>
+<p>拷贝完成后， 我满心欢喜得用12T 硬盘代替了2T 得硬盘， 打开服务器。</p>
+<p>🐦🐦🐦🐦🐦 🐦🐦</p>
+<p>不行， 提示错误：</p>
+<pre><code>bank5 not a vmware boot bank 
+bank6 not a vmware boot bank 
+no hypervisor found
+</code></pre><p>我搜了下，搜了下，差不多都是说重装就好了， ESXi 不会覆盖之前得 VMFS ，然后重装了。 然后现在约等于好了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Aincvy </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/>http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://fantasyplayer.link/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" class="prev" rel="prev" title="pfSense 软路由的使用"><i class="iconfont icon-left"></i>&nbsp;pfSense 软路由的使用</a>
+         
+        
+        <a href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="[占位]软路由上的DNS使用记录">[占位]软路由上的DNS使用记录&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://fantasyplayer.link/">Aincvy</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

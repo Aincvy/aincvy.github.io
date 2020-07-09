@@ -6,10 +6,37 @@
     <description>Recent content in Peripheries on Fanstasy Player</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Jun 2020 20:49:31 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2020 20:25:06 +0800</lastBuildDate>
     
 	<atom:link href="http://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[占位]软路由上的DNS使用记录</title>
+      <link>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 09 Jul 2020 20:25:06 +0800</pubDate>
+      
+      <guid>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ESXi更换硬盘的记录</title>
+      <link>http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 09 Jul 2020 20:24:27 +0800</pubDate>
+      
+      <guid>http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <description>简述 家里使用的服务器，主要硬盘消耗是 openmediavault。
+就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMachine。
+因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。
+（个人来说 会每周六晚上看一部电影，看完的也没删，所以比较费空间 😂）
+本文使用的步骤是冷迁移，笔者是个菜鸡，暂时没有用到 vCenter
+详细步骤 （冷迁移） 简述就是，关闭并移动虚拟机， 然后卸掉旧硬盘， 使用 U 盘重新安装 ESXi，并恢复配置。
+注：迁移系统的话，才需要重装。
+我现在有3块硬盘
+ 2T 得硬盘， 里面放了系统和部分虚拟机 4T 得硬盘， 里面全是虚拟机 12T 得硬盘， 新买的，目标硬盘。  步骤大概分为下面几步应该就 OK 了。
+ 链接新的硬盘到现在的 ESXi 主机上。SATA 或者 NVME 应该都可以，只要 能识别就 OK。记得关机操作。。 开机后，登录 web 控制面板， 基于新的硬盘创建一个数据存储  左侧导航器其次选择存储 / 数据存储 / 新建数据存储 创建新的 VMFS 存储 给一个名称， 比如 _12T_ 选择该硬盘， 版本上似乎 5和6都可以。   关闭位于想更换硬盘上的所有虚拟机。  如果分区是基于两块硬盘创建得， 则可以将全部的虚拟机移动过去 比如我的分区1 是基于一块2T 的硬盘， 一块4T 的硬盘， 我就是把全部的虚拟机关闭移动的。   打开数据浏览存储器， 进行移动  左侧导航栏依次选择 存储 / 数据存储 / 数据存储浏览器 此时会看到两个及以上的数据存储区域， 点开一个之后，里面的每一个文件夹基本都是一个虚拟机。 点击文件夹，点击移动， 目标选择新的硬盘对应的存储区域 (_12T_) 静静等待完成就可以了。 笔者移动了大概6TB 的文件， 花了差不多24~36个小时，笔者是普通的机械硬盘。   拆除不需要的硬盘。。  把想要拆掉的硬盘排除掉。 比如 一个数据区域里面两个硬盘的话，则考虑选择不需要的硬盘，或者是需要的硬盘，点击删除分区表， 之后该硬盘就会从数据分区中移出，但是笔者不知道这么做有没有什么副作用。。 如果该硬盘对应着一个数据区域，则先把该区域删除掉，再删除分区表。   如果你不需要迁移系统的话， 这时应该已经 OK 了， 重新注册下虚拟机应该就差不多要成功了。  一般情况下， 再 『我已复制』 和『我已移动』 中 你应该选择『我已复制』 否则的话，可能虚拟机就无法启动了。 但是点击我已复制，网卡的 MAC 地址会变化，初除此之外应该还有别的变化。 我第一个虚拟机 pfSense ，点击的『我已移动』 之后就没能成功启动 😹😹😹 ​ 点了之后， 虚拟机的基本配置也没办法修改， 不知道为啥。。   接下来是如果你需要迁移系统的操作。  为什么要迁移系统？ 原因当然很简单啦， 因为系统装在了一块小的硬盘上。 机箱里没更多放硬盘的位置了。   导出 当前的 ESXi 的主机配置。  官方文档： https://kb.</description>
+    </item>
     
     <item>
       <title>pfSense 软路由的使用</title>
