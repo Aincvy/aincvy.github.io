@@ -22,10 +22,10 @@
   <title>
        
        
-           [占位]软路由上的DNS使用记录 | Fanstasy Player
+           软路由上的DNS使用记录 | Fanstasy Player
        
   </title>
-  <meta name="title" content="[占位]软路由上的DNS使用记录 | Fanstasy Player">
+  <meta name="title" content="软路由上的DNS使用记录 | Fanstasy Player">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "http:\/\/fantasyplayer.link\/"
     },
     "articleSection" : "periphery",
-    "name" : "[占位]软路由上的DNS使用记录",
-    "headline" : "[占位]软路由上的DNS使用记录",
-    "description" : "",
+    "name" : "软路由上的DNS使用记录",
+    "headline" : "软路由上的DNS使用记录",
+    "description" : "简述  软路由系统： pfSense 使用的 DNS 服务： DNS Resolver 可以考虑的 DNS 服务： BIND DNS  笔者曾经成功的设置好了 BIND DNS ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下自带的DNS Resolver ，非常简单，一次搞定。\n详细内容 DNS Resolver pfSense 自带这个包，而且这个是默认启用的服务，不需要安装新的 package。\n点击导航栏的Services \/ DNS Resolver \/ General Settings 即可打开常规设置的面板。\n向下拉取， 找到 Host Overrides 的字样， 点击下面的 \x2b Add 按钮。\n比如我现在想添加 owncloud.home.link\t192.168.200.33 这样的一条记录。\n Host: owncloud Domain: home.link IP Address: 192.168.200.33 Description: owncloud 如果你有另外一个域名也指向 192.168.200.33 比如 blog.home.link 那么可以在 Additional Names for this Host 里面直接追加 Host name: blog Domain: home.",
     "inLanguage" : "zh-cn",
     "author" : "Aincvy",
     "creator" : "Aincvy",
@@ -57,7 +57,7 @@
     "datePublished": "2020-07-09 20:25:06 \x2b0800 CST",
     "dateModified" : "2020-07-09 20:25:06 \x2b0800 CST",
     "url" : "http:\/\/fantasyplayer.link\/periphery\/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95\/",
-    "wordCount" : "0",
+    "wordCount" : "376",
     "keywords" : [  "Fanstasy Player"]
 }
 </script>
@@ -108,7 +108,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">[占位]软路由上的DNS使用记录</h1>
+        <h1 class="post-title" itemprop="name headline">软路由上的DNS使用记录</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://fantasyplayer.link/" rel="author">Aincvy</a> with ♥ 
                 <span class="post-time">
@@ -134,7 +134,136 @@
           
           
 
-          
+          <h2 id="简述">简述</h2>
+<ul>
+<li>软路由系统： <code>pfSense</code></li>
+<li>使用的 DNS 服务： <code>DNS Resolver</code></li>
+<li>可以考虑的 DNS 服务： <code>BIND DNS</code></li>
+</ul>
+<p>笔者曾经成功的设置好了 <code>BIND DNS</code> ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下自带的<code>DNS Resolver</code> ，非常简单，一次搞定。</p>
+<h2 id="详细内容">详细内容</h2>
+<h3 id="dns-resolver">DNS Resolver</h3>
+<p><code>pfSense</code> 自带这个包，而且这个是默认启用的服务，不需要安装新的 package。</p>
+<p>点击导航栏的<code>Services / DNS Resolver / General Settings</code> 即可打开常规设置的面板。</p>
+<p>向下拉取， 找到  <code>Host Overrides</code> 的字样， 点击下面的 <code>+ Add</code> 按钮。</p>
+<p>比如我现在想添加 <code>owncloud.home.link		192.168.200.33</code> 这样的一条记录。</p>
+<ul>
+<li>Host: 		owncloud</li>
+<li>Domain: 	home.link</li>
+<li>IP Address:   192.168.200.33</li>
+<li>Description:  owncloud</li>
+<li>如果你有另外一个域名也指向 192.168.200.33  比如 blog.home.link</li>
+<li>那么可以在 Additional Names for this Host 里面直接追加</li>
+<li>Host name: 	blog</li>
+<li>Domain: 	home.link</li>
+<li>Description: blog</li>
+</ul>
+<p>然后点击 <strong>Save</strong> 按钮即可保存。</p>
+<p>返回到 General Settings 窗口之后可能会提示你需要 应用变化， 此时点击 Apply 应用下即可。</p>
+<hr>
+<p>现在在客户机里面尝试命令 <code>ping owncloud.home.link</code> 可以看到有没有成功解析。</p>
+<p>使用<code>nslookup owncloud.home.link</code> 也是可以的。</p>
+<p>✅ 如果成功了， 那么你把想要解析的记录都添加进去即可。</p>
+<p>❌ 如果没有成功。。  则需要调试下。</p>
+<p>使用命令 <code>nslookup owncloud.home.link 192.168.200.1</code>  查看是否能成功解析。</p>
+<p>此处的 <code>192.168.200.1</code> 是 pfSense 的LAN 地址。也是 DNS 服务所在的地址。</p>
+<p>❌ 不能成功解析的话， 就查看上一步的操作，看看有没有问题，有没有写错。</p>
+<p>✅ 能成功解析的话， 说明客户机的 DNS 服务器没有使用 <code>192.168.200.1</code> 。</p>
+<p>在客户机里面使用下面的命令查看当前使用的 DNS 服务器。</p>
+<ul>
+<li>Windows :  <code>ipconfig /all</code>
+<ul>
+<li>在结果里面查看 DNS 服务器对应的 IP 地址即可。</li>
+</ul>
+</li>
+<li>Mac/Linux:  <code>cat /etc/resolv.conf</code>
+<ul>
+<li><strong>nameserver</strong> 字样后面跟着的是当前使用的 DNS 服务器</li>
+</ul>
+</li>
+</ul>
+<p>此时，结果值应该没有<code>192.168.200.1</code> 或者除了 <code>192.168.200.1</code> 之外还存在其他的 DNS 服务器。</p>
+<p><em>注： 如果存在多个 DNS 服务器，则是随机使用其中一个，而不是按序使用</em></p>
+<p>客户机如果是手动指定的 DNS 服务器， 则设定为 <code>192.168.200.1</code>即可。</p>
+<p>如果是依赖软路由的 <strong>DHCP服务</strong>，则设置下即可。</p>
+<p>打开菜单栏 <code>Services / DHCP Server / LAN</code></p>
+<p>下拉找到 <strong>Servers</strong> 标题， 里面有部分是 DNS Servers。 留空或者设置第一条为<code>192.168.200.1</code>，其他都留空 应该可以解决问题了。</p>
+<p>注意： 客户机需要重新请求 DHCP 才能生效， 简单来说就是把网线拔掉5秒再插上去应该就可以了。</p>
+<h3 id="bind-dns">BIND DNS</h3>
+<p>这个工具，我使用过好几次， 因为我重装了 pfSense 好几次。。 前几次折腾了挺久之后可以用了，本次无论如何折腾都不行， 所以就放弃了。 （本次的包是通过配置还原安装的， 不知道有没有关联。。 ）</p>
+<p>所以本部分内容可能是无价值的， 你可以选择跳过不读。</p>
+<p>我个人对这个工具的感觉是：  极其难用</p>
+<p>好了， 吐槽结束， 让我们开始设置把。</p>
+<p>简单来说， 大概需要做下面的步骤。</p>
+<ol>
+<li>添加一个 <code>View</code></li>
+<li>添加一个或者几个 <code>Zone</code></li>
+<li>关闭其他的 DNS 服务（DNS Resolver/DNS Forwarder 等)</li>
+<li>启用 BIND DNS</li>
+</ol>
+<p>点击 <code>Services / BIND DNS Server</code> 可以打开 BIND 的设置面板。</p>
+<h4 id="添加-view">添加 View</h4>
+<p>点击 Views Tab, 点击  Add 按钮</p>
+<ul>
+<li>View Name: LanView</li>
+<li>Description: Default View Of LAN</li>
+<li>Recursion: Yes</li>
+<li>match-clients: any</li>
+<li>allow-recursion: any 或者 localnets</li>
+<li>Custom Options:</li>
+</ul>
+<p>点击 Save 保存即可。</p>
+<h4 id="添加-zone">添加 Zone</h4>
+<p>一个 Zone 差不多对应一个 Domain ,就是一个域名。</p>
+<p>比如我的域名是 <code>owncloud.home.link &amp;&amp; blog.home.link</code> ，我建立的 ZONE 就是<code>home.link</code> <code>owncloud &amp;&amp; blog</code> 则是在 zone 里面填写的。</p>
+<ul>
+<li>
+<p>Domain Zone Configuration</p>
+<ul>
+<li>Disable This Zone:	unchecked ( 不勾选 )</li>
+<li>Zone Name:	home.link</li>
+<li>Description: zone of homelink</li>
+<li>Zone Type: Master</li>
+<li>View: LanView</li>
+</ul>
+</li>
+<li>
+<p>Master Zone Configuration:</p>
+<ul>
+<li>TTL: 128</li>
+<li>Name Server: 192.168.200.1     (也许不对，但是我感觉是这样配置的。。)</li>
+<li>Base Domain IP: 192.168.200.1</li>
+<li>allow-query: any</li>
+</ul>
+</li>
+<li>
+<p>Zone Domain records:</p>
+<ul>
+<li>Record: owncloud</li>
+<li>Type: A</li>
+<li>Priority:</li>
+<li>Alias or IP address: 192.168.200.33</li>
+</ul>
+</li>
+</ul>
+<p>点击 Save 保存即可。</p>
+<h4 id="关闭其他-dns-服务">关闭其他 DNS 服务</h4>
+<p>在 <code>Services</code> 菜单栏里面找找， 带 <strong>DNS</strong> 字样的可能都是， 点击进去之后， 第一个选项 <code>Enable</code> 确认是未勾选状态即可。</p>
+<h4 id="启动-bind-dns">启动 BIND DNS</h4>
+<ul>
+<li>Daemon Settings
+<ul>
+<li>Enable BIND: checked  (勾选)</li>
+<li>IP Version: IPv4</li>
+<li>Listen on: LAN &amp;&amp; loopback  ( 按住 CTRL 可以选俩）</li>
+</ul>
+</li>
+</ul>
+<p>点击 Save 即可。</p>
+<p>过一会 服务应该就启动了，使用 <code>nslookup www.baidu.com 192.168.200.1</code> 可以先试试 BIND DNS 有没有成功启动， 然后使用<code>nslookup</code> 命令测试自己填写的域名即可。</p>
+<h2 id="扩展阅读">扩展阅读</h2>
+<p>nslookup 命令 OK， 但是 ping 不通是怎么回事？<a href="https://plantegg.github.io/2019/01/09/%E5%B0%B1%E6%98%AF%E8%A6%81%E4%BD%A0%E6%87%82ping--nslookup-OK-but-ping-fail/">https://plantegg.github.io/2019/01/09/%E5%B0%B1%E6%98%AF%E8%A6%81%E4%BD%A0%E6%87%82ping&ndash;nslookup-OK-but-ping-fail/</a></p>
+
     </div>
 
     <div class="post-copyright">
