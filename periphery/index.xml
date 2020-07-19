@@ -6,10 +6,19 @@
     <description>Recent content in Peripheries on Fanstasy Player</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jul 2020 20:25:06 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 10:52:13 +0800</lastBuildDate>
     
 	<atom:link href="http://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[占位]关于linux扩充分区的随笔</title>
+      <link>http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Sun, 19 Jul 2020 10:52:13 +0800</pubDate>
+      
+      <guid>http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>软路由上的DNS使用记录</title>

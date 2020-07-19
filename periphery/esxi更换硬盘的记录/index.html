@@ -57,7 +57,7 @@
     "datePublished": "2020-07-09 20:24:27 \x2b0800 CST",
     "dateModified" : "2020-07-09 20:24:27 \x2b0800 CST",
     "url" : "http:\/\/fantasyplayer.link\/periphery\/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95\/",
-    "wordCount" : "277",
+    "wordCount" : "322",
     "keywords" : [  "Fanstasy Player"]
 }
 </script>
@@ -251,6 +251,32 @@
 bank6 not a vmware boot bank 
 no hypervisor found
 </code></pre><p>我搜了下，搜了下，差不多都是说重装就好了， ESXi 不会覆盖之前得 VMFS ，然后重装了。 然后现在约等于好了。</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="q-更换了硬盘之后无法启动虚拟机">Q： 更换了硬盘之后无法启动虚拟机</h3>
+<p>A： 先检查一下你的虚拟机有无快照， 经过我的经验来看，有快照的虚拟机都无法成功启动，而没快照的则都可以。</p>
+<p>当你的虚拟机<strong>存在快照</strong>的时候。 （如果不存在，我也不知道是什么情况）</p>
+<ul>
+<li>
+<p>你可以尝试下『整合磁盘』 功能。</p>
+</li>
+<li>
+<p>不行的话， 则检查下你的虚拟机配置， 对比硬盘空间大小 和你原来的大小是否一致？</p>
+<ul>
+<li>不一致的话，则<strong>删除</strong>现在的那个小的硬盘， 然后<strong>添加现有磁盘</strong>， 选择虚拟机目录里面的磁盘</li>
+<li>操作结束之后保存， 然后启动虚拟机。 <em>也许这个时候就能启动了🎉</em></li>
+</ul>
+</li>
+<li>
+<p>还不行的话， 就考虑这样操作下， 我也不知道原理是啥   😂 😂</p>
+<ul>
+<li>参考链接： <a href="https://getsysadminblog.com/2017/04/21/how-to-fix-a-general-system-error-occurred-vim-fault-genericvmconfigfault-when-creating-or-removing-snapshots-in-vmware/">https://getsysadminblog.com/2017/04/21/how-to-fix-a-general-system-error-occurred-vim-fault-genericvmconfigfault-when-creating-or-removing-snapshots-in-vmware/</a></li>
+<li>新建一个虚拟机，设置成和原来虚拟机差不多的配置</li>
+<li>移出默认创建的磁盘， 保存，下一步。  如果你看到了 『在创建成功后启动虚拟机的电源』 这个选项的话， <strong>不要</strong>勾选它。</li>
+<li>成功创建虚拟机之后， 选择添加现有硬盘， 选择原来虚拟机的那个目录里面的磁盘，应该是一个快照磁盘。 保存配置，然后 在现在那个虚拟机上进行『整合磁盘』 的功能</li>
+<li>完成后， 试着启动<strong>原来的</strong> 虚拟机（就是不能启动的那个） 此时应该就可以成功启动了 🎉🎉🎉🎉</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
