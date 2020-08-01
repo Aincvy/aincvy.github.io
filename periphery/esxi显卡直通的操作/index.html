@@ -9,9 +9,9 @@
   <meta name="description" content="个人博客， 技术博客， 思想分享，开发日志。">
   <meta name="keywords" content="幻想系玩家, 技术博客">
   
-  <link rel="prev" href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
-  <link rel="next" href="http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/" />
-  <link rel="canonical" href="http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/" />
+  <link rel="prev" href="http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/" />
+  
+  <link rel="canonical" href="http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           [占位]关于linux扩充分区的随笔 | Fanstasy Player
+           Esxi显卡直通的操作 | Fanstasy Player
        
   </title>
-  <meta name="title" content="[占位]关于linux扩充分区的随笔 | Fanstasy Player">
+  <meta name="title" content="Esxi显卡直通的操作 | Fanstasy Player">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "http:\/\/fantasyplayer.link\/"
     },
     "articleSection" : "periphery",
-    "name" : "[占位]关于linux扩充分区的随笔",
-    "headline" : "[占位]关于linux扩充分区的随笔",
-    "description" : "",
+    "name" : "Esxi显卡直通的操作",
+    "headline" : "Esxi显卡直通的操作",
+    "description" : "这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。\nESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(重新引导)ESXi 主机。\n把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（编辑 \/ 添加 PCI-E设备）\n编辑虚拟机的配置， 添加或者设置 这个配置项： hypervisor.cpuid.v0 = FALSE\n虚拟机的操作 打开虚拟机， 进入系统，关闭和禁用vm-tools （这个会阻碍显卡驱动）\n安装显卡驱动， 重启。\n如果是 Windows 系统， 可以考虑使用 远程桌面链接这个工具链接系统， 查看显卡驱动有无成功安装。\n局域网设备也可以考虑AnyDesk 这个工具。\n安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。\n如果打不开虚拟机或者全部弄好了之后，可以考虑使用 vga.present = FALSE 禁用 ESXi提供的显卡。\n至此，应该 就可以正常使用了。",
     "inLanguage" : "zh-cn",
     "author" : "Aincvy",
     "creator" : "Aincvy",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Aincvy",
     "copyrightHolder" : "Aincvy",
     "copyrightYear" : "2020",
-    "datePublished": "2020-07-19 10:52:13 \x2b0800 CST",
-    "dateModified" : "2020-07-19 10:52:13 \x2b0800 CST",
-    "url" : "http:\/\/fantasyplayer.link\/periphery\/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94\/",
-    "wordCount" : "0",
+    "datePublished": "2020-07-31 23:46:23 \x2b0800 CST",
+    "dateModified" : "2020-07-31 23:46:23 \x2b0800 CST",
+    "url" : "http:\/\/fantasyplayer.link\/periphery\/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C\/",
+    "wordCount" : "46",
     "keywords" : [  "Fanstasy Player"]
 }
 </script>
@@ -112,11 +112,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">[占位]关于linux扩充分区的随笔</h1>
+        <h1 class="post-title" itemprop="name headline">Esxi显卡直通的操作</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://fantasyplayer.link/" rel="author">Aincvy</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-07-19 itemprop="datePublished">July 19, 2020</time>
+                on <time datetime=2020-07-31 itemprop="datePublished">July 31, 2020</time>
                 </span>
                 in
                 
@@ -138,7 +138,20 @@
           
           
 
-          
+          <p>这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。</p>
+<h3 id="esxi-的操作">ESXi 的操作</h3>
+<p>登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(<em>重新引导</em>)ESXi 主机。</p>
+<p>把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（<em>编辑 / 添加 PCI-E设备</em>）</p>
+<p>编辑虚拟机的配置， 添加或者设置 这个配置项： <code>hypervisor.cpuid.v0 = FALSE</code></p>
+<h3 id="虚拟机的操作">虚拟机的操作</h3>
+<p>打开虚拟机， 进入系统，关闭和禁用<code>vm-tools</code>  （这个会阻碍显卡驱动）</p>
+<p>安装显卡驱动， 重启。</p>
+<p>如果是 Windows 系统， 可以考虑使用 <code>远程桌面链接</code>这个工具链接系统， 查看显卡驱动有无成功安装。</p>
+<p>局域网设备也可以考虑<code>AnyDesk</code> 这个工具。</p>
+<p>安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。</p>
+<p>如果打不开虚拟机或者全部弄好了之后，可以考虑使用 <code>vga.present = FALSE</code> 禁用 ESXi提供的显卡。</p>
+<p>至此，应该 就可以正常使用了。</p>
+
     </div>
 
     <div class="post-copyright">
@@ -152,7 +165,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/>http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</span>
+                    <a href=http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/>http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</span>
             </p>
             
             
@@ -169,10 +182,8 @@
 
     <div class="post-nav">
         
-        <a href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="软路由上的DNS使用记录"><i class="iconfont icon-left"></i>&nbsp;软路由上的DNS使用记录</a>
+        <a href="http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/" class="prev" rel="prev" title="[占位]关于linux扩充分区的随笔"><i class="iconfont icon-left"></i>&nbsp;[占位]关于linux扩充分区的随笔</a>
          
-        
-        <a href="http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/" class="next" rel="next" title="Esxi显卡直通的操作">Esxi显卡直通的操作&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

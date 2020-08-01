@@ -6,10 +6,29 @@
     <description>Recent content in Peripheries on Fanstasy Player</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 19 Jul 2020 10:52:13 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 23:46:23 +0800</lastBuildDate>
     
 	<atom:link href="http://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Esxi显卡直通的操作</title>
+      <link>http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 31 Jul 2020 23:46:23 +0800</pubDate>
+      
+      <guid>http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <description>这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。
+ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(重新引导)ESXi 主机。
+把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（编辑 / 添加 PCI-E设备）
+编辑虚拟机的配置， 添加或者设置 这个配置项： hypervisor.cpuid.v0 = FALSE
+虚拟机的操作 打开虚拟机， 进入系统，关闭和禁用vm-tools （这个会阻碍显卡驱动）
+安装显卡驱动， 重启。
+如果是 Windows 系统， 可以考虑使用 远程桌面链接这个工具链接系统， 查看显卡驱动有无成功安装。
+局域网设备也可以考虑AnyDesk 这个工具。
+安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。
+如果打不开虚拟机或者全部弄好了之后，可以考虑使用 vga.present = FALSE 禁用 ESXi提供的显卡。
+至此，应该 就可以正常使用了。</description>
+    </item>
     
     <item>
       <title>[占位]关于linux扩充分区的随笔</title>
