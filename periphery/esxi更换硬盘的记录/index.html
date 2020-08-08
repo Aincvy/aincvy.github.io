@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
   <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
-  <meta name="author" content="Aincvy">
-  <meta name="description" content="个人博客， 技术博客， 思想分享，开发日志。">
-  <meta name="keywords" content="幻想系玩家, 技术博客">
   
-  <link rel="prev" href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" />
-  <link rel="next" href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
-  <link rel="canonical" href="http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/" />
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" />
+  <link rel="next" href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,49 +24,72 @@
   <title>
        
        
-           ESXi更换硬盘的记录 | Fanstasy Player
+           ESXi更换硬盘的记录 | Fanstasy Player / 幻想系玩家
        
   </title>
-  <meta name="title" content="ESXi更换硬盘的记录 | Fanstasy Player">
+  <meta name="title" content="ESXi更换硬盘的记录 | Fanstasy Player / 幻想系玩家">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  
-  
- 
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ESXi更换硬盘的记录"/>
+<meta name="twitter:description" content="简述 家里使用的服务器，主要硬盘消耗是 openmediavault。
+就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMachine。
+因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。
+（个人来说 会每周六晚上看一部电影，看完的也没删，所以比较费空间 😂）
+本文使用的步骤是冷迁移，笔者是个菜鸡，暂时没有用到 vCenter
+详细步骤 （冷迁移） 简述就是，关闭并移动虚拟机， 然后卸掉旧硬盘， 使用 U 盘重新安装 ESXi，并恢复配置。
+注：迁移系统的话，才需要重装。
+我现在有3块硬盘
+ 2T 得硬盘， 里面放了系统和部分虚拟机 4T 得硬盘， 里面全是虚拟机 12T 得硬盘， 新买的，目标硬盘。  步骤大概分为下面几步应该就 OK 了。
+ 链接新的硬盘到现在的 ESXi 主机上。SATA 或者 NVME 应该都可以，只要 能识别就 OK。记得关机操作。。 开机后，登录 web 控制面板， 基于新的硬盘创建一个数据存储  左侧导航器其次选择存储 / 数据存储 / 新建数据存储 创建新的 VMFS 存储 给一个名称， 比如 _12T_ 选择该硬盘， 版本上似乎 5和6都可以。   关闭位于想更换硬盘上的所有虚拟机。  如果分区是基于两块硬盘创建得， 则可以将全部的虚拟机移动过去 比如我的分区1 是基于一块2T 的硬盘， 一块4T 的硬盘， 我就是把全部的虚拟机关闭移动的。   打开数据浏览存储器， 进行移动  左侧导航栏依次选择 存储 / 数据存储 / 数据存储浏览器 此时会看到两个及以上的数据存储区域， 点开一个之后，里面的每一个文件夹基本都是一个虚拟机。 点击文件夹，点击移动， 目标选择新的硬盘对应的存储区域 (_12T_) 静静等待完成就可以了。 笔者移动了大概6TB 的文件， 花了差不多24~36个小时，笔者是普通的机械硬盘。   拆除不需要的硬盘。。  把想要拆掉的硬盘排除掉。 比如 一个数据区域里面两个硬盘的话，则考虑选择不需要的硬盘，或者是需要的硬盘，点击删除分区表， 之后该硬盘就会从数据分区中移出，但是笔者不知道这么做有没有什么副作用。。 如果该硬盘对应着一个数据区域，则先把该区域删除掉，再删除分区表。   如果你不需要迁移系统的话， 这时应该已经 OK 了， 重新注册下虚拟机应该就差不多要成功了。  一般情况下， 再 『我已复制』 和『我已移动』 中 你应该选择『我已复制』 否则的话，可能虚拟机就无法启动了。 但是点击我已复制，网卡的 MAC 地址会变化，初除此之外应该还有别的变化。 我第一个虚拟机 pfSense ，点击的『我已移动』 之后就没能成功启动 😹😹😹 ​ 点了之后， 虚拟机的基本配置也没办法修改， 不知道为啥。。   接下来是如果你需要迁移系统的操作。  为什么要迁移系统？ 原因当然很简单啦， 因为系统装在了一块小的硬盘上。 机箱里没更多放硬盘的位置了。   导出 当前的 ESXi 的主机配置。  官方文档： https://kb."/>
 
-<script type="application/ld+json">
- "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "mainEntityOfPage": {
-         "@type": "WebPage",
-         "@id": "http:\/\/fantasyplayer.link\/"
-    },
-    "articleSection" : "periphery",
-    "name" : "ESXi更换硬盘的记录",
-    "headline" : "ESXi更换硬盘的记录",
-    "description" : "简述 家里使用的服务器，主要硬盘消耗是 openmediavault。\n就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMachine。\n因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。\n（个人来说 会每周六晚上看一部电影，看完的也没删，所以比较费空间 😂）\n本文使用的步骤是冷迁移，笔者是个菜鸡，暂时没有用到 vCenter\n详细步骤 （冷迁移） 简述就是，关闭并移动虚拟机， 然后卸掉旧硬盘， 使用 U 盘重新安装 ESXi，并恢复配置。\n注：迁移系统的话，才需要重装。\n我现在有3块硬盘\n 2T 得硬盘， 里面放了系统和部分虚拟机 4T 得硬盘， 里面全是虚拟机 12T 得硬盘， 新买的，目标硬盘。  步骤大概分为下面几步应该就 OK 了。\n 链接新的硬盘到现在的 ESXi 主机上。SATA 或者 NVME 应该都可以，只要 能识别就 OK。记得关机操作。。 开机后，登录 web 控制面板， 基于新的硬盘创建一个数据存储  左侧导航器其次选择存储 \/ 数据存储 \/ 新建数据存储 创建新的 VMFS 存储 给一个名称， 比如 _12T_ 选择该硬盘， 版本上似乎 5和6都可以。   关闭位于想更换硬盘上的所有虚拟机。  如果分区是基于两块硬盘创建得， 则可以将全部的虚拟机移动过去 比如我的分区1 是基于一块2T 的硬盘， 一块4T 的硬盘， 我就是把全部的虚拟机关闭移动的。   打开数据浏览存储器， 进行移动  左侧导航栏依次选择 存储 \/ 数据存储 \/ 数据存储浏览器 此时会看到两个及以上的数据存储区域， 点开一个之后，里面的每一个文件夹基本都是一个虚拟机。 点击文件夹，点击移动， 目标选择新的硬盘对应的存储区域 (_12T_) 静静等待完成就可以了。 笔者移动了大概6TB 的文件， 花了差不多24~36个小时，笔者是普通的机械硬盘。   拆除不需要的硬盘。。  把想要拆掉的硬盘排除掉。 比如 一个数据区域里面两个硬盘的话，则考虑选择不需要的硬盘，或者是需要的硬盘，点击删除分区表， 之后该硬盘就会从数据分区中移出，但是笔者不知道这么做有没有什么副作用。。 如果该硬盘对应着一个数据区域，则先把该区域删除掉，再删除分区表。   如果你不需要迁移系统的话， 这时应该已经 OK 了， 重新注册下虚拟机应该就差不多要成功了。  一般情况下， 再 『我已复制』 和『我已移动』 中 你应该选择『我已复制』 否则的话，可能虚拟机就无法启动了。 但是点击我已复制，网卡的 MAC 地址会变化，初除此之外应该还有别的变化。 我第一个虚拟机 pfSense ，点击的『我已移动』 之后就没能成功启动 😹😹😹 ​ 点了之后， 虚拟机的基本配置也没办法修改， 不知道为啥。。   接下来是如果你需要迁移系统的操作。  为什么要迁移系统？ 原因当然很简单啦， 因为系统装在了一块小的硬盘上。 机箱里没更多放硬盘的位置了。   导出 当前的 ESXi 的主机配置。  官方文档： https:\/\/kb.",
-    "inLanguage" : "zh-cn",
-    "author" : "Aincvy",
-    "creator" : "Aincvy",
-    "publisher": "Aincvy",
-    "accountablePerson" : "Aincvy",
-    "copyrightHolder" : "Aincvy",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-07-09 20:24:27 \x2b0800 CST",
-    "dateModified" : "2020-07-09 20:24:27 \x2b0800 CST",
-    "url" : "http:\/\/fantasyplayer.link\/periphery\/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95\/",
-    "wordCount" : "322",
-    "keywords" : [  "Fanstasy Player"]
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ESXi更换硬盘的记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  322 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2020-07-09T20:24:27\x2b08:00",
+  "dateModified": "2020-07-09T20:24:27\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
 }
 </script>
-
 </head>
 
   
+
 
 
   <body class="">
@@ -72,7 +97,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://fantasyplayer.link/">Fanstasy Player</a>
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -83,13 +108,16 @@
                 
                 <a class="menu-item" href="/periphery/" title="">Periphery</a>
                 
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
         </div>
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://fantasyplayer.link/">Fanstasy Player</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -104,22 +132,27 @@
                 
                 <a class="menu-item" href="/periphery/" title="">Periphery</a>
                 
+                <a class="menu-item" href="/about" title="">About</a>
+                
         </div>
     </div>
 </nav>
+
     	 <main class="main">
           <div class="container">
       		
-<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+<article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">ESXi更换硬盘的记录</h1>
+        <h1 class="post-title">ESXi更换硬盘的记录</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="http://fantasyplayer.link/" rel="author">Aincvy</a> with ♥ 
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-07-09 itemprop="datePublished">July 9, 2020</time>
+                    on <time datetime=2020-07-09 >9 July 2020</time>
                 </span>
                 in
                 
+                <i class="iconfont icon-timer"></i>
+                2 min
         </div>
     </header>
     <div class="post-content">
@@ -288,16 +321,65 @@ no hypervisor found
              
             <p class="copyright-item">
                 <span>Author:</span>
-                <span>Aincvy </span>
+                <span>hideDragon </span>
                 </p>
             
            
-             
             <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/>http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</span>
+                    <span>Words:</span>
+                   <span>322</span>
             </p>
             
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%259B%25B4%25E6%258D%25A2%25E7%25A1%25AC%25E7%259B%2598%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=ESXi%e6%9b%b4%e6%8d%a2%e7%a1%ac%e7%9b%98%e7%9a%84%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%259B%25B4%25E6%258D%25A2%25E7%25A1%25AC%25E7%259B%2598%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%259B%25B4%25E6%258D%25A2%25E7%25A1%25AC%25E7%259B%2598%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=ESXi%e6%9b%b4%e6%8d%a2%e7%a1%ac%e7%9b%98%e7%9a%84%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%259B%25B4%25E6%258D%25A2%25E7%25A1%25AC%25E7%259B%2598%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=ESXi%e6%9b%b4%e6%8d%a2%e7%a1%ac%e7%9b%98%e7%9a%84%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
             
     </div>
 
@@ -305,23 +387,48 @@ no hypervisor found
     <div class="post-tags">
         
         <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="http://fantasyplayer.link/">home</a></span>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" class="prev" rel="prev" title="pfSense 软路由的使用"><i class="iconfont icon-left"></i>&nbsp;pfSense 软路由的使用</a>
+        <a href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" class="prev" rel="prev" title="pfSense 软路由的使用"><i class="iconfont icon-dajiantou"></i>&nbsp;pfSense 软路由的使用</a>
          
         
-        <a href="http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="软路由上的DNS使用记录">软路由上的DNS使用记录&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="软路由上的DNS使用记录">软路由上的DNS使用记录&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
     <div class="post-comment">
           
-                 
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'yourdiscussshortname';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
           
     </div>
 </article>
@@ -333,15 +440,11 @@ no hypervisor found
         
         <span itemprop="copyrightYear">2020 - 2020</span>
         
-        <span class="with-love">
-    	 <i class="iconfont icon-love"></i> 
-         </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="http://fantasyplayer.link/">Aincvy</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
          
 
-         
-		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
     </div>
 </footer>
 
@@ -361,6 +464,10 @@ no hypervisor found
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
+
+
+
 
 
 

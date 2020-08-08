@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Peripheries on Fanstasy Player</title>
-    <link>http://fantasyplayer.link/periphery/</link>
-    <description>Recent content in Peripheries on Fanstasy Player</description>
+    <title>Peripheries on Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/periphery/</link>
+    <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     <lastBuildDate>Fri, 31 Jul 2020 23:46:23 +0800</lastBuildDate>
     
-	<atom:link href="http://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Esxi显卡直通的操作</title>
-      <link>http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <link>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 31 Jul 2020 23:46:23 +0800</pubDate>
       
-      <guid>http://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
       <description>这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。
 ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(重新引导)ESXi 主机。
 把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（编辑 / 添加 PCI-E设备）
@@ -32,19 +32,19 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
     
     <item>
       <title>[占位]关于linux扩充分区的随笔</title>
-      <link>http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</link>
+      <link>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sun, 19 Jul 2020 10:52:13 +0800</pubDate>
       
-      <guid>http://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     
     <item>
       <title>软路由上的DNS使用记录</title>
-      <link>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <link>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 09 Jul 2020 20:25:06 +0800</pubDate>
       
-      <guid>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
       <description>简述  软路由系统： pfSense 使用的 DNS 服务： DNS Resolver 可以考虑的 DNS 服务： BIND DNS  笔者曾经成功的设置好了 BIND DNS ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下自带的DNS Resolver ，非常简单，一次搞定。
 详细内容 DNS Resolver pfSense 自带这个包，而且这个是默认启用的服务，不需要安装新的 package。
 点击导航栏的Services / DNS Resolver / General Settings 即可打开常规设置的面板。
@@ -55,10 +55,10 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
     
     <item>
       <title>ESXi更换硬盘的记录</title>
-      <link>http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <link>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 09 Jul 2020 20:24:27 +0800</pubDate>
       
-      <guid>http://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
       <description>简述 家里使用的服务器，主要硬盘消耗是 openmediavault。
 就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMachine。
 因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。
@@ -73,10 +73,10 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
     
     <item>
       <title>pfSense 软路由的使用</title>
-      <link>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sat, 27 Jun 2020 20:49:31 +0800</pubDate>
       
-      <guid>http://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>简述  软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给其他一起合租的租客使用。  开始 我现在是电信1000M/100M 的宽带， 之前使用的不到300块钱的 TPLink 路由器在 speedtest.cn 上只能跑700M 左右的下行。 更换了之后能跑到1000M 左右， 感觉还是 OK 的。
 ESXI 没有使用虚拟机的读者可以跳过这一部分。
 我目前的情况是这样的

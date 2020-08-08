@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Fanstasy Player</title>
-    <link>http://fantasyplayer.link/tags/</link>
-    <description>Recent content in Tags on Fanstasy Player</description>
+    <title>Tags on Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/</link>
+    <description>Recent content in Tags on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     
-	<atom:link href="http://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
