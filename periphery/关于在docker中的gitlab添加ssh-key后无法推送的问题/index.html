@@ -10,9 +10,9 @@
   
   
   
-  <link rel="prev" href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/" />
-  <link rel="next" href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" />
-  <link rel="canonical" href="https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/" />
+  <link rel="prev" href="https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,10 +24,10 @@
   <title>
        
        
-           Esxi显卡直通的操作 | Fanstasy Player / 幻想系玩家
+           关于在docker中的gitlab,添加ssh key后无法推送的问题 | Fanstasy Player / 幻想系玩家
        
   </title>
-  <meta name="title" content="Esxi显卡直通的操作 | Fanstasy Player / 幻想系玩家">
+  <meta name="title" content="关于在docker中的gitlab,添加ssh key后无法推送的问题 | Fanstasy Player / 幻想系玩家">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,27 +35,24 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Esxi显卡直通的操作"/>
-<meta name="twitter:description" content="这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。
-ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(重新引导)ESXi 主机。
-把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（编辑 / 添加 PCI-E设备）
-编辑虚拟机的配置， 添加或者设置 这个配置项： hypervisor.cpuid.v0 = FALSE
-虚拟机的操作 打开虚拟机， 进入系统，关闭和禁用vm-tools （这个会阻碍显卡驱动）
-安装显卡驱动， 重启。
-如果是 Windows 系统， 可以考虑使用 远程桌面链接这个工具链接系统， 查看显卡驱动有无成功安装。
-局域网设备也可以考虑AnyDesk 这个工具。
-安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。
-如果打不开虚拟机或者全部弄好了之后，可以考虑使用 vga.present = FALSE 禁用 ESXi提供的显卡。
-至此，应该 就可以正常使用了。"/>
+<meta name="twitter:title" content="关于在docker中的gitlab,添加ssh key后无法推送的问题"/>
+<meta name="twitter:description" content="在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多人都推荐使用ssh的方式推送，这样也不需要用户名和密码。
+我按照常规方式配置好ssh key之后，竟然无法推送。应该是提示了 “ssh: connect to host port 22: Connection refused”。
+经过调试，我发现 我的gitlab 是装在docker里面的。
+22端口是我的debian 虚拟机的sshd 服务在使用， 而不是gitlab 容器在使用。
+所以我在git客户端上指定一下gitlab的端口 就好了。
+参考下面的命令：
+git remote add origin ssh://user@host:1234/srv/git/example
+ 1234 是端口号， 修改成你使用的即可。 user 是gitlab的用户名 host 是gitlab所在的主机 在gitlab的项目主界面， 把HTTP切换成SSH 就可以得到SSH的地址， 然后添加下端口应该就可以了。  "/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Esxi显卡直通的操作",
+  "headline": "关于在docker中的gitlab,添加ssh key后无法推送的问题",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/fantasyplayer.link\/periphery\/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C\/"
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98\/"
   },
   "image": {
     "@type": "ImageObject",
@@ -65,10 +62,10 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
   },
   "genre": "periphery",
   
-  "wordcount":  46 ,
-  "url": "https:\/\/fantasyplayer.link\/periphery\/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C\/",
-  "datePublished": "2020-07-31T23:46:23\x2b08:00",
-  "dateModified": "2020-07-31T23:46:23\x2b08:00",
+  "wordcount":  42 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98\/",
+  "datePublished": "2020-08-17T10:52:13\x2b08:00",
+  "dateModified": "2020-08-17T10:52:13\x2b08:00",
   
   "publisher": {
     "@type": "Organization",
@@ -144,11 +141,11 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">Esxi显卡直通的操作</h1>
+        <h1 class="post-title">关于在docker中的gitlab,添加ssh key后无法推送的问题</h1>
         <div class="post-meta">
             Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
                 <span class="post-time">
-                    on <time datetime=2020-07-31 >31 July 2020</time>
+                    on <time datetime=2020-08-17 >17 August 2020</time>
                 </span>
                 in
                 
@@ -172,19 +169,19 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
           
           
 
-          <p>这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。</p>
-<h3 id="esxi-的操作">ESXi 的操作</h3>
-<p>登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(<em>重新引导</em>)ESXi 主机。</p>
-<p>把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（<em>编辑 / 添加 PCI-E设备</em>）</p>
-<p>编辑虚拟机的配置， 添加或者设置 这个配置项： <code>hypervisor.cpuid.v0 = FALSE</code></p>
-<h3 id="虚拟机的操作">虚拟机的操作</h3>
-<p>打开虚拟机， 进入系统，关闭和禁用<code>vm-tools</code>  （这个会阻碍显卡驱动）</p>
-<p>安装显卡驱动， 重启。</p>
-<p>如果是 Windows 系统， 可以考虑使用 <code>远程桌面链接</code>这个工具链接系统， 查看显卡驱动有无成功安装。</p>
-<p>局域网设备也可以考虑<code>AnyDesk</code> 这个工具。</p>
-<p>安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。</p>
-<p>如果打不开虚拟机或者全部弄好了之后，可以考虑使用 <code>vga.present = FALSE</code> 禁用 ESXi提供的显卡。</p>
-<p>至此，应该 就可以正常使用了。</p>
+          <p>在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多人都推荐使用<code>ssh</code>的方式推送，这样也不需要用户名和密码。</p>
+<p>我按照常规方式配置好<code>ssh key</code>之后，竟然无法推送。应该是提示了 “ssh: connect to host port 22: Connection refused”。</p>
+<p>经过调试，我发现 <strong>我的gitlab 是装在docker里面的</strong>。</p>
+<p>22端口是我的debian 虚拟机的sshd 服务在使用， 而不是gitlab 容器在使用。</p>
+<p>所以我在git客户端上指定一下gitlab的端口 就好了。</p>
+<p>参考下面的命令：</p>
+<p><code>git remote add origin ssh://user@host:1234/srv/git/example</code></p>
+<ul>
+<li>1234 是端口号， 修改成你使用的即可。</li>
+<li>user 是gitlab的用户名</li>
+<li>host 是gitlab所在的主机</li>
+<li>在gitlab的项目主界面， 把<code>HTTP</code>切换成<code>SSH</code> 就可以得到SSH的地址， 然后添加下端口应该就可以了。</li>
+</ul>
 
     </div>
 
@@ -198,7 +195,7 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>46</span>
+                   <span>42</span>
             </p>
             
             <p class="copyright-item">
@@ -207,13 +204,13 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%2598%25BE%25E5%258D%25A1%25E7%259B%25B4%25E9%2580%259A%25E7%259A%2584%25E6%2593%258D%25E4%25BD%259C%2f&amp;text=Esxi%e6%98%be%e5%8d%a1%e7%9b%b4%e9%80%9a%e7%9a%84%e6%93%8d%e4%bd%9c&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%2585%25B3%25E4%25BA%258E%25E5%259C%25A8docker%25E4%25B8%25AD%25E7%259A%2584gitlab%25E6%25B7%25BB%25E5%258A%25A0ssh-key%25E5%2590%258E%25E6%2597%25A0%25E6%25B3%2595%25E6%258E%25A8%25E9%2580%2581%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;text=%e5%85%b3%e4%ba%8e%e5%9c%a8docker%e4%b8%ad%e7%9a%84gitlab%2c%e6%b7%bb%e5%8a%a0ssh%20key%e5%90%8e%e6%97%a0%e6%b3%95%e6%8e%a8%e9%80%81%e7%9a%84%e9%97%ae%e9%a2%98&amp;via=Aincvy" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
       
       
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%2598%25BE%25E5%258D%25A1%25E7%259B%25B4%25E9%2580%259A%25E7%259A%2584%25E6%2593%258D%25E4%25BD%259C%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%2585%25B3%25E4%25BA%258E%25E5%259C%25A8docker%25E4%25B8%25AD%25E7%259A%2584gitlab%25E6%25B7%25BB%25E5%258A%25A0ssh-key%25E5%2590%258E%25E6%2597%25A0%25E6%25B3%2595%25E6%258E%25A8%25E9%2580%2581%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f" target="_blank" title="Share on Facebook">
           <i class="iconfont icon-facebook"></i>
         </a>
         
@@ -221,7 +218,7 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%2598%25BE%25E5%258D%25A1%25E7%259B%25B4%25E9%2580%259A%25E7%259A%2584%25E6%2593%258D%25E4%25BD%259C%2f&amp;title=Esxi%e6%98%be%e5%8d%a1%e7%9b%b4%e9%80%9a%e7%9a%84%e6%93%8d%e4%bd%9c" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%2585%25B3%25E4%25BA%258E%25E5%259C%25A8docker%25E4%25B8%25AD%25E7%259A%2584gitlab%25E6%25B7%25BB%25E5%258A%25A0ssh-key%25E5%2590%258E%25E6%2597%25A0%25E6%25B3%2595%25E6%258E%25A8%25E9%2580%2581%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=%e5%85%b3%e4%ba%8e%e5%9c%a8docker%e4%b8%ad%e7%9a%84gitlab%2c%e6%b7%bb%e5%8a%a0ssh%20key%e5%90%8e%e6%97%a0%e6%b3%95%e6%8e%a8%e9%80%81%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
@@ -237,7 +234,7 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
           
 
           
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fesxi%25E6%2598%25BE%25E5%258D%25A1%25E7%259B%25B4%25E9%2580%259A%25E7%259A%2584%25E6%2593%258D%25E4%25BD%259C%2f&amp;title=Esxi%e6%98%be%e5%8d%a1%e7%9b%b4%e9%80%9a%e7%9a%84%e6%93%8d%e4%bd%9c" target="_blank" title="Share on Douban ">
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%2585%25B3%25E4%25BA%258E%25E5%259C%25A8docker%25E4%25B8%25AD%25E7%259A%2584gitlab%25E6%25B7%25BB%25E5%258A%25A0ssh-key%25E5%2590%258E%25E6%2597%25A0%25E6%25B3%2595%25E6%258E%25A8%25E9%2580%2581%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=%e5%85%b3%e4%ba%8e%e5%9c%a8docker%e4%b8%ad%e7%9a%84gitlab%2c%e6%b7%bb%e5%8a%a0ssh%20key%e5%90%8e%e6%97%a0%e6%b3%95%e6%8e%a8%e9%80%81%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
             <i class="iconfont icon-douban"></i>
           </a>
           
@@ -265,10 +262,8 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
 
     <div class="post-nav">
         
-        <a href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/" class="prev" rel="prev" title="[占位]关于linux扩充分区的随笔"><i class="iconfont icon-dajiantou"></i>&nbsp;[占位]关于linux扩充分区的随笔</a>
+        <a href="https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/" class="prev" rel="prev" title="Esxi显卡直通的操作"><i class="iconfont icon-dajiantou"></i>&nbsp;Esxi显卡直通的操作</a>
          
-        
-        <a href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" class="next" rel="next" title="关于在docker中的gitlab,添加ssh key后无法推送的问题">关于在docker中的gitlab,添加ssh key后无法推送的问题&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
