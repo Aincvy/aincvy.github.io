@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           家里的网络图示 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="家里的网络图示 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="家里的网络图示"/>
+<meta name="twitter:description" content="图示 其他说明 我家里就一台二手服务器,所有的虚拟机都在这台服务器里。
+pfSense 的作用  pppoe 拨号上网 DHCP 服务  推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSense自身的地址。 推送的 dns 服务器为192.168.200.33 即debian-work的地址，而非pfSense的地址。   squid 透明缓存静态资源 | 估计图片，视频比较多把。。 但是我目前只能缓存 http 的。httpds 的则会被跳过。 DNS 服务器  主要是自己家里用的域名解析 然后再请求外部的 DNS 服务器    openwrt 的作用  旁路由 科学上网  debian-work 的作用  主要使用 docker 放一些服务 (mysql/redis/xxx...) nextcloud 类似owncloud 。 用于外网可访问的私人存储服务，我主要存储些流程图，思维导图，代码 之类的。 pi-hole 是一个按照域名阻止广告的服务， 但是好像没啥用。 这个还能做域名黑名单，防止其他人浏览， 但是我一个人住， 这个对我来说也没啥用。 git 服务， gogs是我在外网使用的服务， 里面主要存储一些小的代码库。 gitlab则是我在家里的使用的服务， 一般用于存储unity的项目， 里面的资源文件比较多。  openmediavalut 的作用  充当 NAS 。 家里的主要存储服务 主要存储游戏，电影，系统镜像，软件镜像等的内容 开启 苹果的文件协议，支持 TimeMachine 进行备份。 开启 SMB 协议， 支持这个协议的电脑，手机 都可以访问里面的文件。 （小米投影仪也支持） PLEX ，安装了之后可以在外网看家里的电影， 但是清晰度似乎不是很好。  win10下载机 &amp;&amp; win7 游戏机  没啥好说的， 下载就是 百度云，迅雷等。 显卡直通之后就可以使用 虚拟机玩游戏了， 我目前用模拟器玩玩手游稍多一点。我使用 anydesk 远程， 但是感觉效果不是很理想。  DNS 的链路  使用DHCP 获取地址的设备，默认 DNS 服务器都是 debian-work debian-work里的服务是pi-hole 在提供， pi-hole的上游 DNS 服务器为openwrt openwrt则是有两个 dns 服务，一个是dnsmasq,另外一个是clash 。 dnsmasq 的请求被设置成转发给clash 。 clash的上游服务器有 N 个， 其中有一个是pfSense ，这样的话， 就可以提供本地域名的解析了。  参考阅读 软路由上的DNS使用记录"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "家里的网络图示",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  122 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA\/",
+  "datePublished": "2020-08-29T12:55:39\x2b08:00",
+  "dateModified": "2020-08-29T12:55:39\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">家里的网络图示</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-08-29 >29 August 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="图示">图示</h2>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/img/periphery/home_network.png" alt="Home Network" class="lazyload"><figcaption class="image-caption">Home Network</figcaption></figure></p>
+<h2 id="其他说明">其他说明</h2>
+<p><strong>我家里就一台二手服务器,所有的虚拟机都在这台服务器里。</strong></p>
+<h3 id="pfsense-的作用">pfSense 的作用</h3>
+<ol>
+<li>pppoe 拨号上网</li>
+<li>DHCP 服务
+<ol>
+<li>推送的网关为 <code>192.168.200.2</code> 即 <code>openwrt</code>的地址， 而非<code>pfSense</code>自身的地址。</li>
+<li>推送的 dns 服务器为<code>192.168.200.33</code> 即<code>debian-work</code>的地址，而非<code>pfSense</code>的地址。</li>
+</ol>
+</li>
+<li>squid 透明缓存静态资源 |  估计图片，视频比较多把。。  但是我目前只能缓存 http 的。httpds 的则会被跳过。</li>
+<li>DNS 服务器
+<ol>
+<li>主要是自己家里用的域名解析</li>
+<li>然后再请求外部的 DNS 服务器</li>
+</ol>
+</li>
+</ol>
+<h3 id="openwrt-的作用">openwrt 的作用</h3>
+<ol>
+<li>旁路由</li>
+<li>科学上网</li>
+</ol>
+<h3 id="debian-work-的作用">debian-work 的作用</h3>
+<ol>
+<li>主要使用 <code>docker</code> 放一些服务 (<code>mysql/redis/xxx...</code>)</li>
+<li><code>nextcloud</code> 类似<code>owncloud</code> 。 用于外网可访问的私人存储服务，我主要存储些流程图，思维导图，代码 之类的。</li>
+<li><code>pi-hole</code> 是一个按照域名阻止广告的服务，  但是好像没啥用。 这个还能做域名黑名单，防止其他人浏览，  但是我一个人住， 这个对我来说也没啥用。</li>
+<li><code>git 服务</code>， <code>gogs</code>是我在外网使用的服务， 里面主要存储一些小的代码库。 <code>gitlab</code>则是我在家里的使用的服务， 一般用于存储<code>unity</code>的项目， 里面的资源文件比较多。</li>
+</ol>
+<h3 id="openmediavalut-的作用">openmediavalut 的作用</h3>
+<ol>
+<li>充当 NAS 。  家里的主要存储服务</li>
+<li>主要存储游戏，电影，系统镜像，软件镜像等的内容</li>
+<li>开启 苹果的文件协议，支持 TimeMachine 进行备份。</li>
+<li>开启 SMB 协议， 支持这个协议的电脑，手机 都可以访问里面的文件。 （小米投影仪也支持）</li>
+<li>PLEX ，安装了之后可以在外网看家里的电影， 但是清晰度似乎不是很好。</li>
+</ol>
+<h3 id="win10下载机--win7-游戏机">win10下载机 &amp;&amp; win7 游戏机</h3>
+<ol>
+<li>没啥好说的， 下载就是 百度云，迅雷等。</li>
+<li>显卡直通之后就可以使用 虚拟机玩游戏了， 我目前用模拟器玩玩手游稍多一点。我使用 <code>anydesk</code> 远程， 但是感觉效果不是很理想。</li>
+</ol>
+<h3 id="dns-的链路">DNS 的链路</h3>
+<ol>
+<li>使用<code>DHCP</code> 获取地址的设备，默认 DNS 服务器都是 <code>debian-work</code></li>
+<li><code>debian-work</code>里的服务是<code>pi-hole</code> 在提供， <code>pi-hole</code>的上游 DNS 服务器为<code>openwrt</code></li>
+<li><code>openwrt</code>则是有两个 dns 服务，一个是<code>dnsmasq</code>,另外一个是<code>clash</code> 。 <code>dnsmasq</code> 的请求被设置成转发给<code>clash</code>  。</li>
+<li><code>clash</code>的上游服务器有 N 个， 其中有一个是<code>pfSense</code> ，这样的话， 就可以提供本地域名的解析了。</li>
+</ol>
+<h2 id="参考阅读">参考阅读</h2>
+<p><a href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">软路由上的DNS使用记录</a></p>
+<p><a href="https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/">esxi显卡直通的操作</a></p>
+<p><a href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/">软路由的使用</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>122</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E9%2587%258C%25E7%259A%2584%25E7%25BD%2591%25E7%25BB%259C%25E5%259B%25BE%25E7%25A4%25BA%2f&amp;text=%e5%ae%b6%e9%87%8c%e7%9a%84%e7%bd%91%e7%bb%9c%e5%9b%be%e7%a4%ba&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E9%2587%258C%25E7%259A%2584%25E7%25BD%2591%25E7%25BB%259C%25E5%259B%25BE%25E7%25A4%25BA%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E9%2587%258C%25E7%259A%2584%25E7%25BD%2591%25E7%25BB%259C%25E5%259B%25BE%25E7%25A4%25BA%2f&amp;title=%e5%ae%b6%e9%87%8c%e7%9a%84%e7%bd%91%e7%bb%9c%e5%9b%be%e7%a4%ba" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E9%2587%258C%25E7%259A%2584%25E7%25BD%2591%25E7%25BB%259C%25E5%259B%25BE%25E7%25A4%25BA%2f&amp;title=%e5%ae%b6%e9%87%8c%e7%9a%84%e7%bd%91%e7%bb%9c%e5%9b%be%e7%a4%ba" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="关于在docker中的gitlab,添加ssh key后无法推送的问题"><i class="iconfont icon-dajiantou"></i>&nbsp;关于在docker中的gitlab,添加ssh key后无法推送的问题</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

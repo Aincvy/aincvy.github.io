@@ -6,10 +6,20 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Aug 2020 10:52:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 12:55:39 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>家里的网络图示</title>
+      <link>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</link>
+      <pubDate>Sat, 29 Aug 2020 12:55:39 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</guid>
+      <description>图示 其他说明 我家里就一台二手服务器,所有的虚拟机都在这台服务器里。
+pfSense 的作用  pppoe 拨号上网 DHCP 服务  推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSense自身的地址。 推送的 dns 服务器为192.168.200.33 即debian-work的地址，而非pfSense的地址。   squid 透明缓存静态资源 | 估计图片，视频比较多把。。 但是我目前只能缓存 http 的。httpds 的则会被跳过。 DNS 服务器  主要是自己家里用的域名解析 然后再请求外部的 DNS 服务器    openwrt 的作用  旁路由 科学上网  debian-work 的作用  主要使用 docker 放一些服务 (mysql/redis/xxx...) nextcloud 类似owncloud 。 用于外网可访问的私人存储服务，我主要存储些流程图，思维导图，代码 之类的。 pi-hole 是一个按照域名阻止广告的服务， 但是好像没啥用。 这个还能做域名黑名单，防止其他人浏览， 但是我一个人住， 这个对我来说也没啥用。 git 服务， gogs是我在外网使用的服务， 里面主要存储一些小的代码库。 gitlab则是我在家里的使用的服务， 一般用于存储unity的项目， 里面的资源文件比较多。  openmediavalut 的作用  充当 NAS 。 家里的主要存储服务 主要存储游戏，电影，系统镜像，软件镜像等的内容 开启 苹果的文件协议，支持 TimeMachine 进行备份。 开启 SMB 协议， 支持这个协议的电脑，手机 都可以访问里面的文件。 （小米投影仪也支持） PLEX ，安装了之后可以在外网看家里的电影， 但是清晰度似乎不是很好。  win10下载机 &amp;amp;&amp;amp; win7 游戏机  没啥好说的， 下载就是 百度云，迅雷等。 显卡直通之后就可以使用 虚拟机玩游戏了， 我目前用模拟器玩玩手游稍多一点。我使用 anydesk 远程， 但是感觉效果不是很理想。  DNS 的链路  使用DHCP 获取地址的设备，默认 DNS 服务器都是 debian-work debian-work里的服务是pi-hole 在提供， pi-hole的上游 DNS 服务器为openwrt openwrt则是有两个 dns 服务，一个是dnsmasq,另外一个是clash 。 dnsmasq 的请求被设置成转发给clash 。 clash的上游服务器有 N 个， 其中有一个是pfSense ，这样的话， 就可以提供本地域名的解析了。  参考阅读 软路由上的DNS使用记录</description>
+    </item>
     
     <item>
       <title>关于在docker中的gitlab,添加ssh key后无法推送的问题</title>
@@ -42,7 +52,7 @@ ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显�
 如果是 Windows 系统， 可以考虑使用 远程桌面链接这个工具链接系统， 查看显卡驱动有无成功安装。
 局域网设备也可以考虑AnyDesk 这个工具。
 安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。
-如果打不开虚拟机或者全部弄好了之后，可以考虑使用 vga.present = FALSE 禁用 ESXi提供的显卡。
+~~如果打不开虚拟机或者全部弄好了之后，可以考虑使用 vga.present = FALSE 禁用 ESXi提供的显卡。~~加了之后我就打不开了。。。 不知道为啥😂😂😂
 至此，应该 就可以正常使用了。</description>
     </item>
     
