@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/java8localdatetime%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Mysql 时区的问题 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Mysql 时区的问题 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mysql 时区的问题"/>
+<meta name="twitter:description" content="在链接字符串尾部添加参数 serverTimezone=Asia/Shanghai 即可让 mysql 的链接使用上海的时区。
+其他说明 我刚开始尝试的是 serverTimezone=GMT&#43;8 但是不知道为啥，没有生效。 目前考虑可能是 &#43;的问题, 使用GMT%2b8 可能有效（笔者没有尝试）。 这是 URLEncode 之后的代码。
+如果在服务器上使用 yum/apt 等包管理器进行安装， mysql应该会使用系统的时区， 这个时候得客户端一般是不需要指定时区的。
+我们这次是使用 docker 安装的， 默认可能是 GMT&#43;0 的时区。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mysql 时区的问题",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  27 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98\/",
+  "datePublished": "2020-09-07T21:33:07\x2b08:00",
+  "dateModified": "2020-09-07T21:33:07\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Mysql 时区的问题</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-09-07 >7 September 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>在链接字符串尾部添加参数 <code>serverTimezone=Asia/Shanghai</code>  即可让 mysql 的链接使用上海的时区。</p>
+<h3 id="其他说明">其他说明</h3>
+<p>我刚开始尝试的是 <code>serverTimezone=GMT+8</code>  但是不知道为啥，没有生效。  目前考虑可能是 <code>+</code>的问题, 使用<code>GMT%2b8</code>   可能有效（<em>笔者没有尝试</em>）。  这是 <strong>URLEncode</strong> 之后的代码。</p>
+<p>如果在服务器上使用 <code>yum/apt</code> 等包管理器进行安装， mysql应该会使用系统的时区， 这个时候得客户端一般是不需要指定时区的。</p>
+<p>我们这次是使用 <code>docker</code> 安装的， 默认可能是 <code>GMT+0</code> 的时区。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>27</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fmysql-%25E6%2597%25B6%25E5%258C%25BA%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;text=Mysql%20%e6%97%b6%e5%8c%ba%e7%9a%84%e9%97%ae%e9%a2%98&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2fmysql-%25E6%2597%25B6%25E5%258C%25BA%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fmysql-%25E6%2597%25B6%25E5%258C%25BA%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=Mysql%20%e6%97%b6%e5%8c%ba%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fmysql-%25E6%2597%25B6%25E5%258C%25BA%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=Mysql%20%e6%97%b6%e5%8c%ba%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/java8localdatetime%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" class="prev" rel="prev" title="Java8LocalDateTime以及相关内容"><i class="iconfont icon-dajiantou"></i>&nbsp;Java8LocalDateTime以及相关内容</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
