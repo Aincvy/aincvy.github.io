@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           在bash脚本中拼接参数的问题 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="在bash脚本中拼接参数的问题 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在bash脚本中拼接参数的问题"/>
+<meta name="twitter:description" content="在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。
+笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。
+拼接的参数会自动使用一个引号括起来， rsync 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。
+我刚开始好像是使用一个单一的变量来尝试控制参数。（大约1，2个月以前的东西​，记得不是很清楚😂)
+# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=&#39;--include=&#34;*.jar&#34;&#39; # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &#34;$folder/config.json&#34; ]] then include_arg=&#39;$include_arg --include=&#34;*config.json&#34;&#39; fi sshpass -e rsync -avz &#34;$include_arg&#34; --exclude=&#34;*&#34; ./ root@xx:/root 上述代码中， 最后一段里面的 &quot;$include_arg&quot; 变量，经过我的测试，基本都会被解释成&quot;--include=*.jar --include=*config.json&quot; 。
+这个参数肯定是有问题的，rsync识别不出来。
+经过在stackOverflow 上的搜索，发现使用数组可以处理掉这个问题。
+代码修改成如下所示的情况， 就可以正常使用了。
+# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=(--include=&#34;*.jar&#34; --include=&#34;lib&#34;) # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &#34;$folder/config.json&#34; ]] then include_arg&#43;=(--include=&#34;*config.json&#34;) fi sshpass -e rsync -avz &#34;${include_arg[@]}&#34; --exclude=&#34;*&#34; ."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在bash脚本中拼接参数的问题",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  77 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98\/",
+  "datePublished": "2020-09-14T20:38:01\x2b08:00",
+  "dateModified": "2020-09-14T20:38:01\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">在bash脚本中拼接参数的问题</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-09-14 >14 September 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>在脚本里面使用<code>rsync</code> 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。</p>
+<p>笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。</p>
+<p>拼接的参数会自动使用一个引号括起来， <code>rsync</code> 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。</p>
+<p>我刚开始好像是使用一个单一的变量来尝试控制参数。（<em>大约1，2个月以前的东西​，记得不是很清楚😂</em>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 本部分代码没有经过测试， 只是给个示例来说明一下。</span>
+include_arg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--include=&#34;*.jar&#34;&#39;</span>
+
+<span style="color:#75715e"># 如果本地存在 config.json 文件， 就发送过去</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> test -e <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">/config.json&#34;</span> <span style="color:#f92672">]]</span> 
+<span style="color:#66d9ef">then</span>
+	include_arg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$include_arg --include=&#34;*config.json&#34;&#39;</span>
+<span style="color:#66d9ef">fi</span>
+sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span>$include_arg<span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ root@xx:/root
+</code></pre></div><p>上述代码中， 最后一段里面的 <code>&quot;$include_arg&quot;</code> 变量，经过我的测试，基本都会被解释成<code>&quot;--include=*.jar --include=*config.json&quot;</code> 。</p>
+<p>这个参数肯定是有问题的，<code>rsync</code>识别不出来。</p>
+<p>经过在<code>stackOverflow</code> 上的搜索，发现使用数组可以处理掉这个问题。</p>
+<p>代码修改成如下所示的情况， 就可以正常使用了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 本部分代码没有经过测试， 只是给个示例来说明一下。</span>
+include_arg<span style="color:#f92672">=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.jar&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># 如果本地存在 config.json 文件， 就发送过去</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> test -e <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">/config.json&#34;</span> <span style="color:#f92672">]]</span> 
+<span style="color:#66d9ef">then</span>
+	include_arg<span style="color:#f92672">+=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*config.json&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">fi</span>
+sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>include_arg[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ root@xx:/root
+</code></pre></div><p>修改成这样之后， <code>${include_arg[@]}</code> 会展开成3个独立的参数传给<code>rsync</code>。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>77</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8bash%25E8%2584%259A%25E6%259C%25AC%25E4%25B8%25AD%25E6%258B%25BC%25E6%258E%25A5%25E5%258F%2582%25E6%2595%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;text=%e5%9c%a8bash%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%8b%bc%e6%8e%a5%e5%8f%82%e6%95%b0%e7%9a%84%e9%97%ae%e9%a2%98&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8bash%25E8%2584%259A%25E6%259C%25AC%25E4%25B8%25AD%25E6%258B%25BC%25E6%258E%25A5%25E5%258F%2582%25E6%2595%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8bash%25E8%2584%259A%25E6%259C%25AC%25E4%25B8%25AD%25E6%258B%25BC%25E6%258E%25A5%25E5%258F%2582%25E6%2595%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=%e5%9c%a8bash%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%8b%bc%e6%8e%a5%e5%8f%82%e6%95%b0%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8bash%25E8%2584%259A%25E6%259C%25AC%25E4%25B8%25AD%25E6%258B%25BC%25E6%258E%25A5%25E5%258F%2582%25E6%2595%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=%e5%9c%a8bash%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%8b%bc%e6%8e%a5%e5%8f%82%e6%95%b0%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" class="prev" rel="prev" title="家里的网络图示"><i class="iconfont icon-dajiantou"></i>&nbsp;家里的网络图示</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

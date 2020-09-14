@@ -6,10 +6,27 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Aug 2020 12:55:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 20:38:01 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在bash脚本中拼接参数的问题</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 14 Sep 2020 20:38:01 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。
+笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。
+拼接的参数会自动使用一个引号括起来， rsync 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。
+我刚开始好像是使用一个单一的变量来尝试控制参数。（大约1，2个月以前的东西​，记得不是很清楚😂)
+# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=&amp;#39;--include=&amp;#34;*.jar&amp;#34;&amp;#39; # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &amp;#34;$folder/config.json&amp;#34; ]] then include_arg=&amp;#39;$include_arg --include=&amp;#34;*config.json&amp;#34;&amp;#39; fi sshpass -e rsync -avz &amp;#34;$include_arg&amp;#34; --exclude=&amp;#34;*&amp;#34; ./ root@xx:/root 上述代码中， 最后一段里面的 &amp;quot;$include_arg&amp;quot; 变量，经过我的测试，基本都会被解释成&amp;quot;--include=*.jar --include=*config.json&amp;quot; 。
+这个参数肯定是有问题的，rsync识别不出来。
+经过在stackOverflow 上的搜索，发现使用数组可以处理掉这个问题。
+代码修改成如下所示的情况， 就可以正常使用了。
+# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=(--include=&amp;#34;*.jar&amp;#34; --include=&amp;#34;lib&amp;#34;) # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &amp;#34;$folder/config.json&amp;#34; ]] then include_arg+=(--include=&amp;#34;*config.json&amp;#34;) fi sshpass -e rsync -avz &amp;#34;${include_arg[@]}&amp;#34; --exclude=&amp;#34;*&amp;#34; .</description>
+    </item>
     
     <item>
       <title>家里的网络图示</title>
