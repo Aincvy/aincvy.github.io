@@ -6,10 +6,19 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Sep 2020 21:33:07 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 20:33:04 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java字节操作的简单描述</title>
+      <link>https://fantasyplayer.link/program/java%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/</link>
+      <pubDate>Mon, 21 Sep 2020 20:33:04 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/java%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/</guid>
+      <description>byte[]和 int 互相转换 // 将 byte[] 转换成 int byte[] input = {(byte)0x65, (byte)0xFF, (byte)0x31 }; // 使用大端的方式转换成 int ： x == 0x65FF31 int x = (input[0] &amp;amp; 0xFF) &amp;lt;&amp;lt; 16 | (input[1] &amp;amp; 0xFF) &amp;lt;&amp;lt; 8 | (input[2] &amp;amp; 0xFF) &amp;lt;&amp;lt; 0; // 使用小端的方式转换成 int : y == 0x31FF65 int y = (input[0] &amp;amp; 0xFF) &amp;lt;&amp;lt; 0 | (input[1] &amp;amp; 0xFF) &amp;lt;&amp;lt; 8 | (input[2] &amp;amp; 0xFF) &amp;lt;&amp;lt; 16; 介绍一些概念  一个 int 由4个字节组成，分别记作 x0,x1,x2,x3 一个字节由8个位(bit) 组成， 每个 bit的值只能为1或者0 一个 int 由 32个位(bit) 组成。 | 是按位或的操作符， 当第一项的第n位或者第二项的第n位的值为1 ，结果的第 n 位就是1 &amp;amp; 是按位与的操作符， 当两项中的第 n 位的值都是1， 则结果的第 n 位的值就是1  解释 在大端模式下， 组成 int 的字节数量不够的时候， 省略左边的值（我猜的😂）。</description>
+    </item>
     
     <item>
       <title>Mysql 时区的问题</title>
