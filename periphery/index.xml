@@ -6,10 +6,36 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Sep 2020 20:38:01 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2020 20:11:23 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>从TimeMachine中恢复文件</title>
+      <link>https://fantasyplayer.link/periphery/%E4%BB%8Etimemachine%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 12 Oct 2020 20:11:23 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E4%BB%8Etimemachine%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%96%87%E4%BB%B6/</guid>
+      <description>笔者的 TimeMachine 是使用 MacbookPro 进行备份的， 因为购买是256G 的硬盘，所以额外追加了一块移动 SSD。
+待补充。。</description>
+    </item>
+    
+    <item>
+      <title>小白装机记录贴(首次尝试AMD)</title>
+      <link>https://fantasyplayer.link/periphery/%E5%B0%8F%E7%99%BD%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95%E8%B4%B4%E9%A6%96%E6%AC%A1%E5%B0%9D%E8%AF%95amd/</link>
+      <pubDate>Mon, 12 Oct 2020 20:10:44 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E5%B0%8F%E7%99%BD%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95%E8%B4%B4%E9%A6%96%E6%AC%A1%E5%B0%9D%E8%AF%95amd/</guid>
+      <description>前言： 听说 AMD 的 CPU 现在性能已经吊打Intel， 而且价格还比 Intel 的低， 所以就在年初的时候入手了3900X+X570 PRO ， 结果在装机的时候闹出了些笑话。。
+大神直接略过本篇就可以了， 当然也可以当个乐子看。
+如果你和我一样也是一个小白的话， 希望本文能帮助到你。
+简单的列出一下笔者使用的配置
+ AMD 3900X 华硕 PRIME X570 PRO 微星 GTX1070 金士顿 8G * 2 之前买的闪迪 500G SSD 长城 650W 金牌G6全模组电源  踩坑记录 AMD 的主流 CPU是不带核显的 我本来以为AMD 和英特尔一样 有个核显， 而装机的时候本着用少量配件快速点亮机器的想法，我就没装显卡。。。
+结果开机的时候，就一直卡在主板的 VGA 白灯上，进不去系统。
+根据我以前的经验， 可能是哪点没插好，我就重新拔插内存， 硬盘啥的， 都没用。。 后来百度搜了下， 看到有人说： 可能是 CPU 问题。
+我就想着把 CPU重新拔插下， 结果。。 在弄 CPU 的时候手滑了， CPU 磕到了机箱上了， 针脚直接弯了不少（AMD 的针脚在 CPU 上， 而非主板上）。</description>
+    </item>
     
     <item>
       <title>在bash脚本中拼接参数的问题</title>
