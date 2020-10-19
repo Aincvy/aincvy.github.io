@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/%E5%B0%8F%E7%99%BD%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95%E8%B4%B4%E9%A6%96%E6%AC%A1%E5%B0%9D%E8%AF%95amd/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           黑苹果的几次安装记录 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="黑苹果的几次安装记录 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="黑苹果的几次安装记录"/>
+<meta name="twitter:description" content="从我的安装经验来看， 黑苹果的安装非常简单，只是有点耗时而已。
+教程地址： https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html
+下面是使用教程的几个前提：
+ 你有一定的英文阅读水平。 你具有耐心， 可以使用搜索引擎去尝试解决问题。 你使用 Intel 的CPU 和 AMD的显卡， 或者你将要更换。 （非必需 😂） 有一个大于8G的空闲U盘。 当前电脑可以运行一个系统（Windows/Linux 都可以)  笔者跟随这个教程，成功在公司电脑， 个人家里电脑上安装了 Mac 系统的 Catalina 版本。
+关于AMD的CPU，有一些功能会在成功安装后无法使用。
+以下引用上面教程原文
+ Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:
+ Virtual Machines relying on AppleHV This includes VMWare, Parallels, Docker, Android Studios, etc VirtualBox is the sole exception as they have their own hypervisor VMware 10 and Parallels 13."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "黑苹果的几次安装记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  278 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2020-10-19T21:35:39\x2b08:00",
+  "dateModified": "2020-10-19T21:35:39\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">黑苹果的几次安装记录</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-10-19 >19 October 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                2 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>从我的安装经验来看， 黑苹果的安装非常简单，只是有点耗时而已。</p>
+<p>教程地址：  <a href="https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html">https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html</a></p>
+<p>下面是使用教程的几个前提：</p>
+<ul>
+<li>你有一定的英文阅读水平。</li>
+<li>你具有耐心， 可以使用搜索引擎去尝试解决问题。</li>
+<li>你使用 Intel 的CPU 和 AMD的显卡， 或者你将要更换。 （<em>非必需 😂</em>）</li>
+<li>有一个大于8G的空闲U盘。</li>
+<li>当前电脑可以运行一个系统（Windows/Linux 都可以)</li>
+</ul>
+<p>笔者跟随这个教程，成功在公司电脑， 个人家里电脑上安装了 Mac 系统的 Catalina 版本。</p>
+<p>关于AMD的CPU，有一些功能会在成功安装后无法使用。</p>
+<p><em>以下引用上面教程原文</em></p>
+<blockquote>
+<p>Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:</p>
+<ul>
+<li>Virtual Machines relying on AppleHV</li>
+<li>This includes VMWare, Parallels, Docker, Android Studios, etc</li>
+<li>VirtualBox is the sole exception as they have their own hypervisor</li>
+<li>VMware 10 and Parallels 13.1.0 do support their own hypervisor, however using such outdated VM software poses a large security threat</li>
+<li>Adobe Support</li>
+<li>Most of Adobe&rsquo;s suite relies on Intel&rsquo;s Memfast instruction set, resulting in crashes with AMD CPUs</li>
+<li>You can disable functionality like RAW support to avoid the crashing: <a href="https://gist.github.com/naveenkrdy/26760ac5135deed6d0bb8902f6ceb6bd">Adobe Fixes</a></li>
+<li>32-Bit support</li>
+<li>For those still relying on 32-Bit software in Mojave and below, note that the Vanilla patches do not support 32-bit instructions</li>
+<li>A work-around is to install a <a href="https://amd-osx.com/download/kernel.html">custom kernel</a>, however you lose iMessage support</li>
+<li>Stability issues on many apps</li>
+<li>Audio-based apps are the most prone to issues, ie. Logic Pro</li>
+<li>DaVinci Resolve has been known to have sporadic issues as well</li>
+</ul>
+</blockquote>
+<p>N卡的话， 则是因为在mac上没有驱动， 只能使用老旧的 webDriver，所以不推荐。</p>
+<p>AMD的GPU， 笔者尝试的 Rx580, 5700XT 都是免驱的，装好系统，插上显卡就可以使用了。</p>
+<p>耐心看几遍上面的教程， 选好硬件， 很容易就可以安装了。</p>
+<p>笔者家里的电脑安装的是 Mac/Windows双系统， Windows用于打游戏， Mac用于编码，写作等。</p>
+<p>这样选择的原因是想工作/娱乐分离， 在公司安装黑苹果是因为想使用一套软件工具。</p>
+<p>还有另外一个原因是， 我之前公司电脑是Windows的。 平时我都不关机，有一日我早上到公司的时候 发现系统的注册表坏了， 就莫名其妙的坏了， 我不知道发生了什么。。   我只好拿同事的注册表复制过来，试试。 折腾了一段时间，勉强能用了， 但是还有不少问题。。  一般来说， Mac就不会有这个问题。</p>
+<p>但 Mac有些别的问题。。</p>
+<ul>
+<li>Mac在系统升级之后，部分软件可能就无法使用了， 就需要更新软件，而部分软件授权是跟着版本来的。  （<strong>不过因为Mac系统升级是需要手动确认的， 不更新就没什么问题。</strong>）</li>
+<li>Mac上的软件正版大多都很贵。。</li>
+</ul>
+<h4 id="还有一个timemachine相关的内容">还有一个TimeMachine相关的内容</h4>
+<p>我之前使用的淘宝购买的 Macbook pro 15.6寸的。  因为预算问题，购买的128G硬盘空间。</p>
+<p>后来使用过程中发现 内存有点不够，所以购买了一个1T的 M.2 SSD 和一个硬盘盒。这样当做外接硬盘使用，我给硬盘分了两个分区， 一个叫 <code>mac_extend</code> 给mac使用， 还有一部分想给Windows使用（<em>虽然一次也没使用过😂</em>)</p>
+<p>在设置TimeMachine的时候， 手动把备份<code>mac_extend</code>的屏蔽项 去掉， 让TimeMachine备份 mac_extend 分区。</p>
+<p>在对家里电脑安装黑苹果的时候，我把外接的硬盘拆掉，放进主板里给黑苹果使用。  因为部分配置的问题，我在安装过程中，把全盘格掉了。</p>
+<p>后来折腾了一下， 成功进入了mac系统的安装界面。 我选择了 从TimeMachine中恢复系统的选项， 等恢复结束之后， 我发现我的 mac_extend 分区没了。。</p>
+<p>经过一番折腾， 我发现TimeMachine里面的文件还是存在的， 按照下面的方法就可以恢复。</p>
+<ol>
+<li>利用磁盘工具 建立一个叫做 <code>mac_extend</code>的分区。 （和之前的分区保持相同的名字）</li>
+<li>划分的空间要比备份的大， 但是不必完全一样。</li>
+<li>文件系统我是用的 APFS。</li>
+<li>进入TimeMachine ， 找到 <code>XXX的iMac</code> 这个目录，会发现里面有一个叫做<code>mac_extend</code>的目录， 进入之后会发现 文件还在。</li>
+<li>我是进入这个目录之后， 使用CMD+A全选， 然后点击下面的恢复。</li>
+<li>等待若干时间之后就成功恢复了全部的文件。  （<strong>部分文件可能需要输入密码才能恢复</strong>）</li>
+</ol>
+<p><em>使用TimeMachine恢复系统， 会有部分软件丢失配置， 部分变成未激活状态。</em></p>
+<p>以上。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>278</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E9%25BB%2591%25E8%258B%25B9%25E6%259E%259C%25E7%259A%2584%25E5%2587%25A0%25E6%25AC%25A1%25E5%25AE%2589%25E8%25A3%2585%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=%e9%bb%91%e8%8b%b9%e6%9e%9c%e7%9a%84%e5%87%a0%e6%ac%a1%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E9%25BB%2591%25E8%258B%25B9%25E6%259E%259C%25E7%259A%2584%25E5%2587%25A0%25E6%25AC%25A1%25E5%25AE%2589%25E8%25A3%2585%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E9%25BB%2591%25E8%258B%25B9%25E6%259E%259C%25E7%259A%2584%25E5%2587%25A0%25E6%25AC%25A1%25E5%25AE%2589%25E8%25A3%2585%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=%e9%bb%91%e8%8b%b9%e6%9e%9c%e7%9a%84%e5%87%a0%e6%ac%a1%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E9%25BB%2591%25E8%258B%25B9%25E6%259E%259C%25E7%259A%2584%25E5%2587%25A0%25E6%25AC%25A1%25E5%25AE%2589%25E8%25A3%2585%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=%e9%bb%91%e8%8b%b9%e6%9e%9c%e7%9a%84%e5%87%a0%e6%ac%a1%e5%ae%89%e8%a3%85%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/periphery/%E5%B0%8F%E7%99%BD%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95%E8%B4%B4%E9%A6%96%E6%AC%A1%E5%B0%9D%E8%AF%95amd/" class="prev" rel="prev" title="小白装机记录贴(首次尝试AMD)"><i class="iconfont icon-dajiantou"></i>&nbsp;小白装机记录贴(首次尝试AMD)</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
