@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" />
+  <link rel="next" href="https://fantasyplayer.link/program/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/" />
+  <link rel="canonical" href="https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           [状态机变种]有关状态栈的一些记录 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="[状态机变种]有关状态栈的一些记录 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[状态机变种]有关状态栈的一些记录"/>
+<meta name="twitter:description" content="写这篇文章的时候，笔者还是一个很菜的菜鸟， 本文可能有误。
+我在弄我们公司的项目的时候。 地图 上面的每一个实体，我是当作一个单位来看的。每隔若干毫秒对地图所有的实体进行一个update ，更新他们的状态。
+在更新他们的状态的时候，往往需要根据他们的当前状态来决定怎么更新他们。这可以用状态机来实现。 也可以考虑用行为树来实现。但是我不会。。 所以我采用了一种简单版本的状态机来做。
+所有的状态如下列表
+ 等待 眩晕 移动 站立 追击 使用技能 被嘲讽  我本来是记录一个实体就一个状态。根据不同的状态做事情。但是有个问题是，如果这个实体进行等待中了， 在他等待结束的时候就需要调整他的状态。 我本来是根据一些别的参数（当前是否有移动路径，当前是否有追击对象） 来做调整的。 但是这样做容易出bug.. 而且很不好。
+所以我做了一些调整。 我现在让每个单位身上不是具有一个状态。而是具有一个状态栈。 这样就能比较良好的处理各个状态之间的转换。尤其是处理等待，眩晕的时候。
+默认的栈顶是一个 站立 状态。 当有新的状态进来的时候 直接入栈。 当该状态结束的时候 则把该状态出栈。
+比如 站立的时候 因为某种需求变成移动状态了。 然后就一直移动，直到 到达目的地。然后 退回成站立状态。 比如在移动追击某个敌人的时候 转换成了施放技能的状态。 等技能释放 结束之后 还是在 追击状态。
+个人觉得，这种情况实现起来比行为树简单一些。 然后出问题的情况比 单一状态的那种 要小一些。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[状态机变种]有关状态栈的一些记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  49 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2016-12-27T21:11:56\x2b08:00",
+  "dateModified": "2016-12-27T21:11:56\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">[状态机变种]有关状态栈的一些记录</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2016-12-27 >27 December 2016</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><strong>写这篇文章的时候，笔者还是一个很菜的菜鸟， 本文可能有误。</strong></p>
+<p>我在弄我们公司的项目的时候。 地图
+上面的每一个实体，我是当作一个单位来看的。每隔若干毫秒对地图所有的实体进行一个update
+，更新他们的状态。</p>
+<p>在更新他们的状态的时候，往往需要根据他们的当前状态来决定怎么更新他们。这可以用状态机来实现。
+也可以考虑用行为树来实现。但是我不会。。 所以我采用了一种简单版本的状态机来做。</p>
+<p>所有的状态如下列表</p>
+<ol>
+<li>等待</li>
+<li>眩晕</li>
+<li>移动</li>
+<li>站立</li>
+<li>追击</li>
+<li>使用技能</li>
+<li>被嘲讽</li>
+</ol>
+<p>我本来是记录一个实体就一个状态。根据不同的状态做事情。但是有个问题是，如果这个实体进行等待中了， 在他等待结束的时候就需要调整他的状态。 我本来是根据一些别的参数（当前是否有移动路径，当前是否有追击对象） 来做调整的。 但是这样做容易出bug.. 而且很不好。</p>
+<p>所以我做了一些调整。 我现在让每个单位身上不是具有一个状态。而是具有一个状态栈。 这样就能比较良好的处理各个状态之间的转换。尤其是处理等待，眩晕的时候。</p>
+<p>默认的栈顶是一个 站立 状态。 当有新的状态进来的时候 直接入栈。 当该状态结束的时候 则把该状态出栈。</p>
+<p>比如 站立的时候 因为某种需求变成移动状态了。 然后就一直移动，直到 到达目的地。然后 退回成站立状态。 比如在移动追击某个敌人的时候 转换成了施放技能的状态。 等技能释放 结束之后 还是在 追击状态。</p>
+<p>个人觉得，这种情况实现起来比行为树简单一些。 然后出问题的情况比 单一状态的那种 要小一些。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>49</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E7%258A%25B6%25E6%2580%2581%25E6%259C%25BA%25E5%258F%2598%25E7%25A7%258D%25E6%259C%2589%25E5%2585%25B3%25E7%258A%25B6%25E6%2580%2581%25E6%25A0%2588%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=%5b%e7%8a%b6%e6%80%81%e6%9c%ba%e5%8f%98%e7%a7%8d%5d%e6%9c%89%e5%85%b3%e7%8a%b6%e6%80%81%e6%a0%88%e7%9a%84%e4%b8%80%e4%ba%9b%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E7%258A%25B6%25E6%2580%2581%25E6%259C%25BA%25E5%258F%2598%25E7%25A7%258D%25E6%259C%2589%25E5%2585%25B3%25E7%258A%25B6%25E6%2580%2581%25E6%25A0%2588%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E7%258A%25B6%25E6%2580%2581%25E6%259C%25BA%25E5%258F%2598%25E7%25A7%258D%25E6%259C%2589%25E5%2585%25B3%25E7%258A%25B6%25E6%2580%2581%25E6%25A0%2588%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=%5b%e7%8a%b6%e6%80%81%e6%9c%ba%e5%8f%98%e7%a7%8d%5d%e6%9c%89%e5%85%b3%e7%8a%b6%e6%80%81%e6%a0%88%e7%9a%84%e4%b8%80%e4%ba%9b%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E7%258A%25B6%25E6%2580%2581%25E6%259C%25BA%25E5%258F%2598%25E7%25A7%258D%25E6%259C%2589%25E5%2585%25B3%25E7%258A%25B6%25E6%2580%2581%25E6%25A0%2588%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=%5b%e7%8a%b6%e6%80%81%e6%9c%ba%e5%8f%98%e7%a7%8d%5d%e6%9c%89%e5%85%b3%e7%8a%b6%e6%80%81%e6%a0%88%e7%9a%84%e4%b8%80%e4%ba%9b%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="So 动态库引用问题"><i class="iconfont icon-dajiantou"></i>&nbsp;So 动态库引用问题</a>
+         
+        
+        <a href="https://fantasyplayer.link/program/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/" class="next" rel="next" title="Java私有类型装箱拆箱">Java私有类型装箱拆箱&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

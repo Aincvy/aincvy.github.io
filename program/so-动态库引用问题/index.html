@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/java-%E8%AE%A1%E7%AE%97-%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E8%BF%91%E4%BC%BC%E9%95%BF%E5%BA%A6-%E7%82%AE%E5%BC%B9%E7%9A%84%E8%BF%91%E4%BC%BC%E9%A3%9E%E8%A1%8C%E6%97%B6%E9%97%B4/" />
+  <link rel="next" href="https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" />
+  <link rel="canonical" href="https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           So 动态库引用问题 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="So 动态库引用问题 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="So 动态库引用问题"/>
+<meta name="twitter:description" content="如果一个动态库 a.so 依赖了另外一个动态库 b.so .
+那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比如 明明代码写的是调用 b.so 内的函数 add ，在执行的时候却调用了 sub函数。 当碰到这种情况的时候， 重新编译一下a.so 库就好了。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "So 动态库引用问题",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  22 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98\/",
+  "datePublished": "2016-12-06T21:20:43\x2b08:00",
+  "dateModified": "2016-12-06T21:20:43\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">So 动态库引用问题</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2016-12-06 >6 December 2016</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>如果一个动态库 a.so 依赖了另外一个动态库 b.so .</p>
+<p>那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比如 明明代码写的是调用 b.so 内的函数 add ，在执行的时候却调用了 sub函数。 当碰到这种情况的时候， 重新编译一下a.so 库就好了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>22</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fso-%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%25BC%2595%25E7%2594%25A8%25E9%2597%25AE%25E9%25A2%2598%2f&amp;text=So%20%e5%8a%a8%e6%80%81%e5%ba%93%e5%bc%95%e7%94%a8%e9%97%ae%e9%a2%98&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2fso-%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%25BC%2595%25E7%2594%25A8%25E9%2597%25AE%25E9%25A2%2598%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fso-%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%25BC%2595%25E7%2594%25A8%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=So%20%e5%8a%a8%e6%80%81%e5%ba%93%e5%bc%95%e7%94%a8%e9%97%ae%e9%a2%98" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fso-%25E5%258A%25A8%25E6%2580%2581%25E5%25BA%2593%25E5%25BC%2595%25E7%2594%25A8%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=So%20%e5%8a%a8%e6%80%81%e5%ba%93%e5%bc%95%e7%94%a8%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/java-%E8%AE%A1%E7%AE%97-%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E8%BF%91%E4%BC%BC%E9%95%BF%E5%BA%A6-%E7%82%AE%E5%BC%B9%E7%9A%84%E8%BF%91%E4%BC%BC%E9%A3%9E%E8%A1%8C%E6%97%B6%E9%97%B4/" class="prev" rel="prev" title="Java 计算 抛物线的近似长度 炮弹的近似飞行时间"><i class="iconfont icon-dajiantou"></i>&nbsp;Java 计算 抛物线的近似长度 炮弹的近似飞行时间</a>
+         
+        
+        <a href="https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="[状态机变种]有关状态栈的一些记录">[状态机变种]有关状态栈的一些记录&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

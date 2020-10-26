@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/git-%E5%88%86%E6%94%AF%E6%8F%8F%E8%BF%B0/" />
+  <link rel="next" href="https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/" />
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/git-%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E5%88%B0%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Git 如何克隆代码到已经存在的文件夹内 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Git 如何克隆代码到已经存在的文件夹内 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git 如何克隆代码到已经存在的文件夹内"/>
+<meta name="twitter:description" content="这里不能再使用clone 方法了。
+ 打开 git bash(windows 下) 利用 cd 命令 切换到 要克隆到的目录的位置 比如： mkdir projectA &amp;&amp; cd projectA 输入命令： git init 在当前目录下初始化一个仓库 输入命令： git pull [url] 从目标仓库中拉取文件到本地 输入命令： git remote add origin [url] 添加一个远程分支 输入命令： git add . 把当前目录的文件添加到提交列表 输入命令： git commit 填写提交消息， 然后输入 :wq 结束 输入命令： git push –set-upstream origin master 推送代码， 会要求你输入用户名和密码 以后再推送的时候 直接输入 git push 就好了。 如果你使用什么IDE的话， 如果IDE 有GIT 的插件的话，那么现在应该就可以看到GIT 的信息了  "/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git 如何克隆代码到已经存在的文件夹内",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/git-%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E5%88%B0%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  63 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/git-%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E5%88%B0%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85\/",
+  "datePublished": "2016-04-12T21:43:47\x2b08:00",
+  "dateModified": "2016-04-12T21:43:47\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Git 如何克隆代码到已经存在的文件夹内</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2016-04-12 >12 April 2016</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>这里不能再使用clone 方法了。</p>
+<ol>
+<li>打开 git bash(windows 下)</li>
+<li>利用 cd 命令 切换到 要克隆到的目录的位置 比如： <code>mkdir projectA &amp;&amp; cd projectA</code></li>
+<li>输入命令： <code>git init</code> 在当前目录下初始化一个仓库</li>
+<li>输入命令： <code>git pull [url]</code> 从目标仓库中拉取文件到本地</li>
+<li>输入命令： <code>git remote add origin [url]</code> 添加一个远程分支</li>
+<li>输入命令： <code>git add .</code> 把当前目录的文件添加到提交列表</li>
+<li>输入命令： <code>git commit</code> 填写提交消息， 然后输入 <code>:wq</code> 结束</li>
+<li>输入命令： <code>git push –set-upstream origin master</code> 推送代码， 会要求你输入用户名和密码</li>
+<li>以后再推送的时候 直接输入 git push 就好了。 如果你使用什么IDE的话， 如果IDE 有GIT 的插件的话，那么现在应该就可以看到GIT 的信息了</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>63</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgit-%25E5%25A6%2582%25E4%25BD%2595%25E5%2585%258B%25E9%259A%2586%25E4%25BB%25A3%25E7%25A0%2581%25E5%2588%25B0%25E5%25B7%25B2%25E7%25BB%258F%25E5%25AD%2598%25E5%259C%25A8%25E7%259A%2584%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E5%2586%2585%2f&amp;text=Git%20%e5%a6%82%e4%bd%95%e5%85%8b%e9%9a%86%e4%bb%a3%e7%a0%81%e5%88%b0%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b9%e5%86%85&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgit-%25E5%25A6%2582%25E4%25BD%2595%25E5%2585%258B%25E9%259A%2586%25E4%25BB%25A3%25E7%25A0%2581%25E5%2588%25B0%25E5%25B7%25B2%25E7%25BB%258F%25E5%25AD%2598%25E5%259C%25A8%25E7%259A%2584%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E5%2586%2585%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgit-%25E5%25A6%2582%25E4%25BD%2595%25E5%2585%258B%25E9%259A%2586%25E4%25BB%25A3%25E7%25A0%2581%25E5%2588%25B0%25E5%25B7%25B2%25E7%25BB%258F%25E5%25AD%2598%25E5%259C%25A8%25E7%259A%2584%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E5%2586%2585%2f&amp;title=Git%20%e5%a6%82%e4%bd%95%e5%85%8b%e9%9a%86%e4%bb%a3%e7%a0%81%e5%88%b0%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b9%e5%86%85" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgit-%25E5%25A6%2582%25E4%25BD%2595%25E5%2585%258B%25E9%259A%2586%25E4%25BB%25A3%25E7%25A0%2581%25E5%2588%25B0%25E5%25B7%25B2%25E7%25BB%258F%25E5%25AD%2598%25E5%259C%25A8%25E7%259A%2584%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E5%2586%2585%2f&amp;title=Git%20%e5%a6%82%e4%bd%95%e5%85%8b%e9%9a%86%e4%bb%a3%e7%a0%81%e5%88%b0%e5%b7%b2%e7%bb%8f%e5%ad%98%e5%9c%a8%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b9%e5%86%85" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/periphery/git-%E5%88%86%E6%94%AF%E6%8F%8F%E8%BF%B0/" class="prev" rel="prev" title="Git 分支描述"><i class="iconfont icon-dajiantou"></i>&nbsp;Git 分支描述</a>
+         
+        
+        <a href="https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/" class="next" rel="next" title="前几天，我的vps 被黑了">前几天，我的vps 被黑了&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

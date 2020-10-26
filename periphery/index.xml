@@ -164,5 +164,66 @@ ESXI 没有使用虚拟机的读者可以跳过这一部分。
 新建 VMkernel 网卡 我本来是使用的别的路由， 现在的 esxi 的管理地址是192.168.0.23 ， 我更换为pfSense 之后，就没这个网段了， 所以需要处理下 esxi 的 web 管理地址的问题。</description>
     </item>
     
+    <item>
+      <title>从阿里云上把系统弄到本地的一些记录</title>
+      <link>https://fantasyplayer.link/periphery/%E4%BB%8E%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8A%E6%8A%8A%E7%B3%BB%E7%BB%9F%E5%BC%84%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 11 Aug 2018 21:08:58 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E4%BB%8E%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8A%E6%8A%8A%E7%B3%BB%E7%BB%9F%E5%BC%84%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
+      <description>声明： 本人在操作的时候 并不算完美的恢复了，只是现在是可用了，使用的平台是虚拟机（esxi 6.5) 里面恢复的
+先推荐一个 工具 mondo rescue: http://www.mondorescue.org/
+这个工具可以用来备份磁盘和在本地进行恢复。 不过似乎有点bug , 并且你磁盘过大的时候似乎也不太友好。
+至于这个工具怎么用， 网上资料一堆， 直接在阿里云上进行运行即可， 不过需要你有足够的空余磁盘。 我之前是全盘备份， 26G左右的文件， 打包后 大约15G多。我碰到的情况是 生成4个iso 文件， 然后全部下载到本地 ，进行恢复就好了。
+但是这里有个不是很友好的地方，如果你要把系统恢复到物理机的话， 你可能要多备几个U盘。 恢复流程大概就是先把 第一个iso镜像文件（文件名结尾为 01的iso文件） 写入 U盘/光盘 然后让物理机从 该设备启动。 会看到一个界面， 想要全盘恢复就输入nuke 之后会提示你插入第二个光盘 并按enter键。 想要节省时间的话， 就提前把第二个镜像写入 U盘或者光盘， 看到提示就 切换一下，然后按enter。
+如果你是使用虚拟机就比较简单， 直接把镜像文件切换 按enter键就可以了。
+对了用虚拟机的话， 只给虚拟机一个cd-rom设备就可以了， 看到提示就更换挂载的镜像文件， 然后按enter。
+我这里是换硬盘恢复的， 会提示 挂载点变更， 类似 mountlist has changed之类的提示， 问我是否要更新这个， 按确定进行更新， 然后操作一下。 其实这里应该只是修改引导， 让你恢复之后的系统可以启动。
+我这里碰到了一个问题，无法解决。 就是恢复之后 会有一个文件把我的磁盘占满， 我本来用50G的空间， 不行， 改成80G之后还不行， 我感觉是工具出bug了。</description>
+    </item>
+    
+    <item>
+      <title>Protobuf number overflow 的解决方法</title>
+      <link>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 10 May 2017 21:11:12 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>基本信息:
+ java 服务端 网络框架用的 netty Unity的客户端，用的 tcpClient. 通信协议选择的 protobuf. java端采用的是谷歌提供的解析器， 而客户端则采用的protobuf-net 我在设计中 使用了一个叫 GameMsg 的协议来封装所有协议的内容。  在本来中设计中 使用了一个 string paramStr = 1;  的字段来存放协议的具体内容。 然后发现 在 unity 端中 如果协议的属性带有负数， 则报出一个 number overflow 的异常。 把 string 改成 bytes 就好了。
+如果是 java 和java 这样通信， string 是允许的。 但是 unity 不行。</description>
+    </item>
+    
+    <item>
+      <title>前几天，我的vps 被黑了</title>
+      <link>https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/</link>
+      <pubDate>Sun, 07 Aug 2016 21:33:32 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/</guid>
+      <description>具体情况我也不知道， 不清楚他是怎么黑进去的。。
+上周三晚上好像。 我在网吧玩剑灵， 截了一些图， 在下机之前的时候准备上传到网盘里面。 结果， 网盘的速度超慢，超慢的。 我就用手机连接服务器的ssh ，看看什么情况。 一看不要紧。 我发现一个叫做 minerd 的程序 吃满了CPU 。。
+我当时就心里一咯噔， 不会被黑了吧。。 但是当时已经很晚了。 我也急着回去睡觉了。 卡就卡呗， 先把图传了。 一会儿，终于把图给传上去了。 然后我登录阿里云的后台管理页面， 把VPS 给停掉了。
+第二天到了公司。 我就打了一个小差，看看这个到底是什么鬼。 一百度 minerd ，果然有一些记录。 据说 这个是被黑了。 用来挖比特币和 进行DDOS 攻击。 kill 了进程， 删除了文件， 一会 这个文件又出现了， 然后进程复活。。
+百度出的资料也不多。 一般就是说 清理掉定时任务。 删除没用的用户。我都试了。 然而还是不行。。 蛋碎一地啊 有没有。。
+弄到后来， 我让文件继续存在在上面了。 然后把我文件的权限给干掉了 使用命令chmod 000 minerd 设置了权限。 然后 kill 掉他的进程。。 好像就是好了。 等以后有机会 我再仔细看看 这个东西到底怎么解决掉。。 这是一个暂时的方法，我最近事情也比较多，没什么时间弄它。</description>
+    </item>
+    
+    <item>
+      <title>Git 如何克隆代码到已经存在的文件夹内</title>
+      <link>https://fantasyplayer.link/periphery/git-%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E5%88%B0%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85/</link>
+      <pubDate>Tue, 12 Apr 2016 21:43:47 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/git-%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E5%88%B0%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85/</guid>
+      <description>这里不能再使用clone 方法了。
+ 打开 git bash(windows 下) 利用 cd 命令 切换到 要克隆到的目录的位置 比如： mkdir projectA &amp;amp;&amp;amp; cd projectA 输入命令： git init 在当前目录下初始化一个仓库 输入命令： git pull [url] 从目标仓库中拉取文件到本地 输入命令： git remote add origin [url] 添加一个远程分支 输入命令： git add . 把当前目录的文件添加到提交列表 输入命令： git commit 填写提交消息， 然后输入 :wq 结束 输入命令： git push –set-upstream origin master 推送代码， 会要求你输入用户名和密码 以后再推送的时候 直接输入 git push 就好了。 如果你使用什么IDE的话， 如果IDE 有GIT 的插件的话，那么现在应该就可以看到GIT 的信息了  </description>
+    </item>
+    
+    <item>
+      <title>Git 分支描述</title>
+      <link>https://fantasyplayer.link/periphery/git-%E5%88%86%E6%94%AF%E6%8F%8F%E8%BF%B0/</link>
+      <pubDate>Tue, 12 Apr 2016 21:43:19 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/git-%E5%88%86%E6%94%AF%E6%8F%8F%E8%BF%B0/</guid>
+      <description> 创建分支： git branch [name] 切换分支: git checkout &amp;lt;branch&amp;gt; 列出所有分支： git branch -a 删除某个本地分支： git branch -d [name] 提交分支到远端 git push –set-upstream origin &amp;lt;branch&amp;gt; 删除远程分支： git push origin –delete &amp;lt;branch&amp;gt; 合并分支： git checkout master; git merge fix1; # 将 fix1 分支合并到 master 分支上  </description>
+    </item>
+    
   </channel>
 </rss>

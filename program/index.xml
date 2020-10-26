@@ -124,5 +124,60 @@ scala 语言和其他类型的编译工具的代码可以在官方文档中找�
 内存占用相关的内容    私有类型 装箱类型 内存占用(私有类型/ 装箱类型)     boolean Boolean 1 byte / 16 bytes   byte Byte 1 byte / 16 bytes   short Short 2 bytes / 16 bytes   char Char 2 bytes / 16 bytes   int Integer 4 bytes / 16 bytes   long Long 8 bytes / 16 bytes   float Float 4 bytes / 16 bytes   double Double 8 bytes / 16 bytes     1 byte 是一个字节</description>
     </item>
     
+    <item>
+      <title>[状态机变种]有关状态栈的一些记录</title>
+      <link>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 27 Dec 2016 21:11:56 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
+      <description>写这篇文章的时候，笔者还是一个很菜的菜鸟， 本文可能有误。
+我在弄我们公司的项目的时候。 地图 上面的每一个实体，我是当作一个单位来看的。每隔若干毫秒对地图所有的实体进行一个update ，更新他们的状态。
+在更新他们的状态的时候，往往需要根据他们的当前状态来决定怎么更新他们。这可以用状态机来实现。 也可以考虑用行为树来实现。但是我不会。。 所以我采用了一种简单版本的状态机来做。
+所有的状态如下列表
+ 等待 眩晕 移动 站立 追击 使用技能 被嘲讽  我本来是记录一个实体就一个状态。根据不同的状态做事情。但是有个问题是，如果这个实体进行等待中了， 在他等待结束的时候就需要调整他的状态。 我本来是根据一些别的参数（当前是否有移动路径，当前是否有追击对象） 来做调整的。 但是这样做容易出bug.. 而且很不好。
+所以我做了一些调整。 我现在让每个单位身上不是具有一个状态。而是具有一个状态栈。 这样就能比较良好的处理各个状态之间的转换。尤其是处理等待，眩晕的时候。
+默认的栈顶是一个 站立 状态。 当有新的状态进来的时候 直接入栈。 当该状态结束的时候 则把该状态出栈。
+比如 站立的时候 因为某种需求变成移动状态了。 然后就一直移动，直到 到达目的地。然后 退回成站立状态。 比如在移动追击某个敌人的时候 转换成了施放技能的状态。 等技能释放 结束之后 还是在 追击状态。
+个人觉得，这种情况实现起来比行为树简单一些。 然后出问题的情况比 单一状态的那种 要小一些。</description>
+    </item>
+    
+    <item>
+      <title>So 动态库引用问题</title>
+      <link>https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 06 Dec 2016 21:20:43 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>如果一个动态库 a.so 依赖了另外一个动态库 b.so .
+那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比如 明明代码写的是调用 b.so 内的函数 add ，在执行的时候却调用了 sub函数。 当碰到这种情况的时候， 重新编译一下a.so 库就好了。</description>
+    </item>
+    
+    <item>
+      <title>Java 计算 抛物线的近似长度 炮弹的近似飞行时间</title>
+      <link>https://fantasyplayer.link/program/java-%E8%AE%A1%E7%AE%97-%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E8%BF%91%E4%BC%BC%E9%95%BF%E5%BA%A6-%E7%82%AE%E5%BC%B9%E7%9A%84%E8%BF%91%E4%BC%BC%E9%A3%9E%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Sun, 20 Nov 2016 21:22:43 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/java-%E8%AE%A1%E7%AE%97-%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E8%BF%91%E4%BC%BC%E9%95%BF%E5%BA%A6-%E7%82%AE%E5%BC%B9%E7%9A%84%E8%BF%91%E4%BC%BC%E9%A3%9E%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+      <description>记录一下 我是怎么计算抛物线的近似长度 。。 想当初我找了抛物线长度的计算公式， 找了好久都没找到简单方便的。。。
+首先普及一下相关公式 ：
+抛物线的一般方程: y=ax²+bx+c ，抛物线的顶点式： y=a(x-h)²+k (a≠0，k为常数） 根本炮弹的出发点和目标位置， 以及策划的配置表， 我可以获得到 抛物线线段的起始点， 和终点， 以及抛物线的顶点 （1/2距离，策划配置） 利用抛物线的顶点式可以计算出抛物线的方程式。 计算出方程式之后， 就可以根据 相应的x 计算出y的坐标。
+然后把起始点和终点之间的距离分段。 比如x的步长是0.15， 那么计算出 (0,0) 到 (0.15,y[根据方程式计算出值]) 的三角形斜边距离。 继续推进 x, 计算出 (0.15,y1) 到 (0.30,y2) 的距离。 一直从起始点(0,0) 到 终点(x,0) 这样就可以求出 这个抛物线线段的近似距离。 然后 炮弹的飞行时间， 就是距离除以速度就Ok 了。
+大致就是下图这样的。</description>
+    </item>
+    
+    <item>
+      <title>Netty和cocos2dx一起使用碰到的问题</title>
+      <link>https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 17 Apr 2016 21:36:18 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>简述一下环境：　java netty 的服务端， cocos2dx 的客户端
+昨天测试的时候 发生了一个奇怪的现象。 服务端在本地跑的时候， 都是正常的。 放到阿里云的服务器上面去的时候。 在客户端与服务端进行第一次连接的时候一切OK，然后第二次连接的时候 就出现了问题。。。 问题具体发生的原因我现在也还没弄明白。。。
+然后，我就查阅了一下 有关 windows select IO 异步模型的资料。 虽然这病没有帮助我解决问题， 但总归是有了些启发。
+然后我想，我加一下发送的数据包的长度进去吧。 于是乎，我在 netty 上面加了一个 解码器， 标注了发来的数据包会标准它的长度。 然后客户端在发送的时候会先发一个 表示长度的数据。 一般是采用 4个字节长度的大小。
+因为大小端的问题， 在弄长度的时候 也发生了乱七八糟的问题。长度不能正确被解析，因为我也没有什么经验，所以好多元素对于我来说都是未知的。 我也不能确定问题到底在哪， 所以也比较蛋疼。 这种时候， 没办法，只能使用排除法了。 我先写了一个 java 的类 来测试大小端的问题。
+我使用 java.nio.bytebuffer 类来生成byte数组。 我先 使用 putInt 方法， 将要发送的字节数量 put 进去， 然后在放入具体的数据。
+Socket socket = new Socket(&amp;#34;127.0.0.1&amp;#34;, 7000); ByteBuffer buffer = ByteBuffer.allocate(1024); buffer.putInt(8); buffer.putInt(1); buffer.putInt(2); socket.getOutputStream().write(buffer.array(), 0, 12); socket.</description>
+    </item>
+    
   </channel>
 </rss>
