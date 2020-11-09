@@ -6,10 +6,57 @@
     <description>Recent content in Caprices on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Sep 2020 22:07:02 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2020 21:24:00 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/caprice/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于自利的一些闲谈</title>
+      <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%88%A9%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%B2%E8%B0%88/</link>
+      <pubDate>Mon, 09 Nov 2020 21:24:00 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%88%A9%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%B2%E8%B0%88/</guid>
+      <description>自利代表你由权利为了自己而生存。它不代表你可以伤害别人，也不代表你必需舍弃心爱的人以满足自身的需求，更不代表你可以为了自身利益而剥削他人。
+​	来自 《专业投机原理》 维克托·斯波朗迪
+ 我以前总觉得自利是一个贬义词，当然自私也是。 但是在我接触了上述概念之后，我的想法发生了一些改变。
+​
+下面的 自私，自利的含义都是常规含义， 和上述引用的内容含义不相同。
+一般来说，我们很少说自己 自私，自利。 我们都是指责别人自私，自利。
+这些指责的潜台词应该是“你应该帮助我， 你应该分享你的东西给我， 等等” 。 这些潜台词的含义是让他人对我产生好处， 而不是让我对他人产生好处。
+所以， 当某人说你自私，自利的时候， 往往代表了你没有满足他对你的需求，预期等。 所以一般情况下，你可以不用特别在乎这些评价。
+​
+当然，在下面的例子中，稍微有点不同。
+A 因为想购买一件心怡的物品，所以向B借了200块钱。 B同意了借钱给A。 A 按时还钱给了 B。 过了一段时间。 B因为手头不足，所以开口向A借了300块钱。 A以自己没钱拒绝了 （其实有而且近期不会使用这笔钱）。 在上述的例子中， A 就有一些自私。 （笔者并不建议做A这种类型的人。。）
+​
+追求更好的生活是需要付出代价的， 你需要努力学习，工作，减少休息和娱乐的时间。
+所以在你取得一定成就之后， 你可以分享给别人一些成果， 但是你绝对没有义务分享给别人。无论他人是否指责你自私，自利。
+帮助别人是一种美德。 但你不应该将它视为义务。
+一般情况下，你不应该优先考虑它，你应该优先考虑的应该只有你自己。 （这是不是典型的自私语句？ 😂）
+我们来到这个世界上不是为了满足他人预期的。 （他人 包括任何人）</description>
+    </item>
+    
+    <item>
+      <title>关于jetbrains Agent的一些了解</title>
+      <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8Ejetbrains-agent%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/</link>
+      <pubDate>Mon, 09 Nov 2020 21:23:41 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8Ejetbrains-agent%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/</guid>
+      <description>这是一个较为人知的Jetbrains 家族的破解插件，基本上百度搜一搜就能下载的到。
+本插件的作者已经不更新了， 作者博文地址： https://zhile.io/2018/08/25/jetbrains-license-server-crack.html
+就笔者的经验来看， 基本上 2020.1.3及以下版本应该是可以正常使用的，再高的版本就需要填写激活参数。
+目前可以尝试下面的链接进行激活， 但是估计过段时间就不能使用了。
+https://justcode.ikeepstudying.com/2020/10/2020-10-28-%e4%ba%b2%e6%b5%8b%e6%9c%89%e6%95%88%ef%bc%9aintellij-idea-2020-2-3-%e6%9c%80%e6%96%b0%e6%bf%80%e6%b4%bb%e7%a0%b4%e8%a7%a3%e6%96%b9%e6%b3%95-%e6%bf%80%e6%b4%bb%e5%88%b0-2089-%e5%b9%b4/
+​
+笔者目前还不清楚这种做法的原理是什么， 但是有以下猜测。
+ 估计激活参数会对应一些内容， 可以使用的账号 或者激活服务器等。 在一定时间之后，发布者把绑定的账号或者激活服务器关掉， 参数就不能再使用了， 需要使用别的参数重新激活。
+ 实在觉得麻烦，或者找不到相关内容的时候 可以试试淘宝激活。
+在淘宝购买的时候，推荐购买 激活码/自定义账号的方式， 千万不要购买破解版以及插件啥的。
+店家给你远程安装的那种方式也不建议。 这里的意思是说完全没必要花钱去购买一个可以免费获取且不稳定的东西。
+就笔者来说， 曾经再2018年的时候买过一次自定义账号激活的方式，使用的时候没发现什么问题。 前段时间又买了一次， 目前还没有什么问题。 但是笔者刚刚查看购买记录，发现店家已经把宝贝删除了，估计那个店铺是一个临时店铺， 所以这个账号能用到什么时候，笔者也不是很清楚。。
+​
+附： 使用插件破解了的IDE，在打开之后如果不关闭的话， 应该一直是可以使用的。（笔者在Mac系统下基本不会关闭 ）</description>
+    </item>
     
     <item>
       <title>生活习惯建议</title>
@@ -145,10 +192,10 @@ PS2： 本文可能并没有任何科学依据， 所以请当成扩展阅读来
     
     <item>
       <title>自学 - 改善生活的必需技能</title>
-      <link>https://fantasyplayer.link/caprice/%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://fantasyplayer.link/caprice/%E8%87%AA%E5%AD%A6-%E6%94%B9%E5%96%84%E7%94%9F%E6%B4%BB%E7%9A%84%E5%BF%85%E9%9C%80%E6%8A%80%E8%83%BD/</link>
       <pubDate>Mon, 01 Jun 2020 21:22:15 +0800</pubDate>
       
-      <guid>https://fantasyplayer.link/caprice/%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://fantasyplayer.link/caprice/%E8%87%AA%E5%AD%A6-%E6%94%B9%E5%96%84%E7%94%9F%E6%B4%BB%E7%9A%84%E5%BF%85%E9%9C%80%E6%8A%80%E8%83%BD/</guid>
       <description>简述 自学是什么？ 自学 。 对于任何一个想要进步的人来说， 都应该必备的技能。
 下面引用百度百科的一句话 - 百度百科
  自学，有多种含义，可以是指人吸收接纳事物的能力。也指一种状态，即在没有接受指导和教育的情况下掌握某种技能。
