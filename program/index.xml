@@ -6,10 +6,22 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Oct 2020 20:22:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 Dec 2020 18:48:17 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>代码规范建议</title>
+      <link>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</link>
+      <pubDate>Mon, 07 Dec 2020 18:48:17 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</guid>
+      <description>笔者在公司里面写的内容，本文经过部分删减。
+命名规范 # 1. 属性/成员 命名   静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子
+  /** * 消息的线程数量 */ public static final int MSG_THREAD_NUM = 8; /** * redis 连接池的 线程数量 */ public static final int REDIS_CONNECTION_POOL_SIZE = 4;     私有的实例属性 采用 驼峰命名法。 并需要使用单行注释 简单说明下含义、
+ 经常出现的变量名可以不写注释。 Map Or MapSubMap 需要写明 key 和 value的含义。 如果是关键字开头的命名，比如 do ,for 可用_ 下划线开头， 比如_forConsole, _doWorkTime 尽量不要使用这种关键字开头的命名 😄。    方法名采用 驼峰命名法， 并需要添加 javadoc 注释， 在必要的时候 也需要写明参数的含义。</description>
+    </item>
     
     <item>
       <title>关于单元测试的一点小想法</title>

@@ -9,6 +9,15 @@
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Programs</title>
+      <link>https://fantasyplayer.link/program/</link>
+      <pubDate>Mon, 07 Dec 2020 18:48:17 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Caprices</title>
       <link>https://fantasyplayer.link/caprice/</link>
       <pubDate>Wed, 02 Dec 2020 17:44:51 +0800</pubDate>
@@ -23,15 +32,6 @@
       <pubDate>Mon, 16 Nov 2020 20:21:13 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programs</title>
-      <link>https://fantasyplayer.link/program/</link>
-      <pubDate>Mon, 05 Oct 2020 20:22:34 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/program/</guid>
       <description></description>
     </item>
     
@@ -93,6 +93,8 @@
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
+&lt;p&gt;###灵魂要发出声音。&lt;/p&gt;
+&lt;p&gt;加入不了羊群， 就要变成孤狼，或者狮子， 或者死亡。&lt;/p&gt;
 &lt;h3 id=&#34;我难以改变自己-想要前进-但是感觉又极度排斥前进---不知道你呢&#34;&gt;&lt;strong&gt;我难以改变自己， 想要前进， 但是感觉又极度排斥前进。   不知道你呢？&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;目前考虑的原因如下。&lt;/p&gt;
 &lt;p&gt;实现目标的瞬间和之后是快乐的， 但是追求目标的过程是痛苦的。一般来说，避免痛苦的需求会大于追求快乐的欲望。  所以我停滞不前。&lt;/p&gt;
