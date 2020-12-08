@@ -2,6 +2,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://fantasyplayer.link/series/</loc>
+      
+      <lastmod>2020-12-08T11:13:24+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://fantasyplayer.link/series/%E5%AE%AB%E6%AE%BF1/</loc>
+      
+      <lastmod>2020-12-08T11:13:24+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://fantasyplayer.link/program/</loc>
       
       <lastmod>2020-12-07T18:48:17+08:00</lastmod>
