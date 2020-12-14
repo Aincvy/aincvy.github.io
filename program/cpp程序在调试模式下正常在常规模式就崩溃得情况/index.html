@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Cpp程序在调试模式下正常，在常规模式就崩溃得情况 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Cpp程序在调试模式下正常，在常规模式就崩溃得情况 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cpp程序在调试模式下正常，在常规模式就崩溃得情况"/>
+<meta name="twitter:description" content="笔者前几天在使用cpp(c&#43;&#43;)写代码得时候， 发现一个很蛋疼得问题， 在使用lldb进行调试得时候，程序完全正常，没有错误。 而退出调试模式， 使用命令行运行程序得时候， 则会触发内存错误。
+经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。
+这可能是一个非常基础得错误。。 但是笔者一般写Java得时候 是不需要考虑这个问题得。。😂😂 😂
+大致情况是这样得。
+class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do something ..  } // do something ..  } private: // 手里正在拿得东西  Thing* m_onHand; } 在调试模式下， 上述代码得属性部分 m_onHand 是一个nullptr，这会产生预期的行为。
+而非调试模式下，似乎就不是一个nullptr ， 则会产生不可预期得内存错误。 😢😢😢
+笔者使用得解决办法就是在声明得时候这么写： Thing* m_onHand = nullptr;
+除此之外， 笔者还搜索到了一种可能性。
+链接在此： https://stackoverflow.com/questions/186237/program-only-crashes-as-release-build-how-to-debug/186285#186285
+下面是原文引用：
+ In 100% of the cases I&rsquo;ve seen or heard of, where a C or C&#43;&#43; program runs fine in the debugger but fails when run outside, the cause has been writing past the end of a function local array."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cpp程序在调试模式下正常，在常规模式就崩溃得情况",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  114 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5\/",
+  "datePublished": "2020-12-14T21:22:30\x2b08:00",
+  "dateModified": "2020-12-14T21:22:30\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Cpp程序在调试模式下正常，在常规模式就崩溃得情况</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-12-14 >14 December 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>笔者前几天在使用cpp(<em>c++</em>)写代码得时候， 发现一个很蛋疼得问题， 在使用<code>lldb</code>进行调试得时候，程序完全正常，没有错误。 而退出调试模式， 使用命令行运行程序得时候， 则会触发内存错误。</p>
+<p>经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。</p>
+<p>这可能是一个非常基础得错误。。 但是笔者一般写Java得时候 是不需要考虑这个问题得。。😂😂 😂</p>
+<p>大致情况是这样得。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">void</span> take(Thing<span style="color:#f92672">*</span> thing){
+  	<span style="color:#66d9ef">if</span>( m_onHand <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span> ){
+      <span style="color:#75715e">// do something ..
+</span><span style="color:#75715e"></span>    }
+    
+    <span style="color:#75715e">// do something ..
+</span><span style="color:#75715e"></span>  }
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  <span style="color:#75715e">// 手里正在拿得东西
+</span><span style="color:#75715e"></span>  Thing<span style="color:#f92672">*</span> m_onHand;
+}
+</code></pre></div><p>在调试模式下， 上述代码得属性部分 <code>m_onHand</code> 是一个<code>nullptr</code>，这会产生预期的行为。</p>
+<p>而非调试模式下，似乎就不是一个<code>nullptr</code> ， 则会产生不可预期得内存错误。 😢😢😢</p>
+<p>笔者使用得解决办法就是在声明得时候这么写： <code>Thing* m_onHand = nullptr;</code></p>
+<p>除此之外， 笔者还搜索到了一种可能性。</p>
+<p>链接在此： <a href="https://stackoverflow.com/questions/186237/program-only-crashes-as-release-build-how-to-debug/186285#186285">https://stackoverflow.com/questions/186237/program-only-crashes-as-release-build-how-to-debug/186285#186285</a></p>
+<p>下面是原文引用：</p>
+<blockquote>
+<p>In 100% of the cases I&rsquo;ve seen or heard of, where a C or C++ program runs fine in the debugger but fails when run outside, the cause has been writing past the end of a function local array. (The debugger puts more on the stack, so you&rsquo;re less likely to overwrite something important.)</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>114</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp%25E7%25A8%258B%25E5%25BA%258F%25E5%259C%25A8%25E8%25B0%2583%25E8%25AF%2595%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%258B%25E6%25AD%25A3%25E5%25B8%25B8%25E5%259C%25A8%25E5%25B8%25B8%25E8%25A7%2584%25E6%25A8%25A1%25E5%25BC%258F%25E5%25B0%25B1%25E5%25B4%25A9%25E6%25BA%2583%25E5%25BE%2597%25E6%2583%2585%25E5%2586%25B5%2f&amp;text=Cpp%e7%a8%8b%e5%ba%8f%e5%9c%a8%e8%b0%83%e8%af%95%e6%a8%a1%e5%bc%8f%e4%b8%8b%e6%ad%a3%e5%b8%b8%ef%bc%8c%e5%9c%a8%e5%b8%b8%e8%a7%84%e6%a8%a1%e5%bc%8f%e5%b0%b1%e5%b4%a9%e6%ba%83%e5%be%97%e6%83%85%e5%86%b5&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp%25E7%25A8%258B%25E5%25BA%258F%25E5%259C%25A8%25E8%25B0%2583%25E8%25AF%2595%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%258B%25E6%25AD%25A3%25E5%25B8%25B8%25E5%259C%25A8%25E5%25B8%25B8%25E8%25A7%2584%25E6%25A8%25A1%25E5%25BC%258F%25E5%25B0%25B1%25E5%25B4%25A9%25E6%25BA%2583%25E5%25BE%2597%25E6%2583%2585%25E5%2586%25B5%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp%25E7%25A8%258B%25E5%25BA%258F%25E5%259C%25A8%25E8%25B0%2583%25E8%25AF%2595%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%258B%25E6%25AD%25A3%25E5%25B8%25B8%25E5%259C%25A8%25E5%25B8%25B8%25E8%25A7%2584%25E6%25A8%25A1%25E5%25BC%258F%25E5%25B0%25B1%25E5%25B4%25A9%25E6%25BA%2583%25E5%25BE%2597%25E6%2583%2585%25E5%2586%25B5%2f&amp;title=Cpp%e7%a8%8b%e5%ba%8f%e5%9c%a8%e8%b0%83%e8%af%95%e6%a8%a1%e5%bc%8f%e4%b8%8b%e6%ad%a3%e5%b8%b8%ef%bc%8c%e5%9c%a8%e5%b8%b8%e8%a7%84%e6%a8%a1%e5%bc%8f%e5%b0%b1%e5%b4%a9%e6%ba%83%e5%be%97%e6%83%85%e5%86%b5" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp%25E7%25A8%258B%25E5%25BA%258F%25E5%259C%25A8%25E8%25B0%2583%25E8%25AF%2595%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%258B%25E6%25AD%25A3%25E5%25B8%25B8%25E5%259C%25A8%25E5%25B8%25B8%25E8%25A7%2584%25E6%25A8%25A1%25E5%25BC%258F%25E5%25B0%25B1%25E5%25B4%25A9%25E6%25BA%2583%25E5%25BE%2597%25E6%2583%2585%25E5%2586%25B5%2f&amp;title=Cpp%e7%a8%8b%e5%ba%8f%e5%9c%a8%e8%b0%83%e8%af%95%e6%a8%a1%e5%bc%8f%e4%b8%8b%e6%ad%a3%e5%b8%b8%ef%bc%8c%e5%9c%a8%e5%b8%b8%e8%a7%84%e6%a8%a1%e5%bc%8f%e5%b0%b1%e5%b4%a9%e6%ba%83%e5%be%97%e6%83%85%e5%86%b5" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/" class="prev" rel="prev" title="代码规范建议"><i class="iconfont icon-dajiantou"></i>&nbsp;代码规范建议</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
