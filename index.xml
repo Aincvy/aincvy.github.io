@@ -9,20 +9,20 @@
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Peripheries</title>
+      <link>https://fantasyplayer.link/periphery/</link>
+      <pubDate>Mon, 04 Jan 2021 20:18:04 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Caprices</title>
       <link>https://fantasyplayer.link/caprice/</link>
       <pubDate>Mon, 28 Dec 2020 20:18:20 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/caprice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Peripheries</title>
-      <link>https://fantasyplayer.link/periphery/</link>
-      <pubDate>Mon, 14 Dec 2020 21:45:55 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/periphery/</guid>
       <description></description>
     </item>
     
