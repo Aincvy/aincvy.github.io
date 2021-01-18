@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           自制脚本语言   词法分析与语法分析 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="自制脚本语言   词法分析与语法分析 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自制脚本语言   词法分析与语法分析"/>
+<meta name="twitter:description" content="本篇来描述如何做语法分析和词法分析。
+有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。
+ 手写的优势  灵活性比较高 可以提供较好的错误提示   手写的劣势  在没有基础的情况下，可能会需要更多的时间来完成这件事 可能会出现一些BUG   使用第三方工具的优势  较为出名的第三方工具往往都比较稳定 只需要关心语法结构， 而不用特别关心如何实现。   使用第三方工具的劣势  不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。 错误提示可能不够精确。    一般来说，使用哪种方式看读者的喜好。 笔者下面介绍一下部分已知的工具是使用哪种方式实现的。
+ 《两周自制脚本语言》 提供的是手写方式。 lua 是使用的手写方式。 早期的mysql 应该是使用的第三方工具。 （因为它给的提示特别烂。。）  第三方工具 因为使用第三方工具比较简单， 所以笔者采用的是第三方工具的方式。
+下面介绍一下笔者知道的几种工具。
+ 词法分析器： flex(lex) doc 。 这是一个工具，只不过名字不太一样。 语法分析器： yacc(bison) doc 。 这是一个工具，只不过名字不太一样。 语法分析&#43;词法分析： tree-sitter doc 。  笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， 这两个工具是一起配合使用的。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "自制脚本语言   词法分析与语法分析",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  691 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/",
+  "datePublished": "2021-01-18T20:18:27\x2b08:00",
+  "dateModified": "2021-01-18T20:18:27\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">自制脚本语言   词法分析与语法分析</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-01-18 >18 January 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                4 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本篇来描述如何做语法分析和词法分析。</p>
+<p>有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。</p>
+<ul>
+<li>手写的优势
+<ul>
+<li>灵活性比较高</li>
+<li>可以提供较好的错误提示</li>
+</ul>
+</li>
+<li>手写的劣势
+<ul>
+<li>在没有基础的情况下，可能会需要更多的时间来完成这件事</li>
+<li>可能会出现一些BUG</li>
+</ul>
+</li>
+<li>使用第三方工具的优势
+<ul>
+<li>较为出名的第三方工具往往都比较稳定</li>
+<li>只需要关心语法结构， 而不用特别关心如何实现。</li>
+</ul>
+</li>
+<li>使用第三方工具的劣势
+<ul>
+<li>不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。</li>
+<li>错误提示可能不够精确。</li>
+</ul>
+</li>
+</ul>
+<p>一般来说，使用哪种方式看读者的喜好。 笔者下面介绍一下部分已知的工具是使用哪种方式实现的。</p>
+<ul>
+<li>《两周自制脚本语言》 提供的是手写方式。</li>
+<li>lua  是使用的手写方式。</li>
+<li>早期的mysql 应该是使用的第三方工具。  （<em>因为它给的提示特别烂。。</em>）</li>
+</ul>
+<h2 id="第三方工具">第三方工具</h2>
+<p>因为使用第三方工具比较简单， 所以笔者采用的是第三方工具的方式。</p>
+<p>下面介绍一下笔者知道的几种工具。</p>
+<ul>
+<li>词法分析器： flex(lex)  <a href="http://dinosaur.compilertools.net/lex/index.html">doc</a> 。  <em>这是一个工具，只不过名字不太一样。</em></li>
+<li>语法分析器： yacc(bison)  <a href="https://www.gnu.org/software/bison/manual/html_node/index.html">doc</a> 。  <em>这是一个工具，只不过名字不太一样。</em></li>
+<li>语法分析+词法分析： tree-sitter  <a href="https://tree-sitter.github.io/tree-sitter/">doc</a>  。</li>
+</ul>
+<p>笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， 这两个工具是一起配合使用的。</p>
+<p>Tree-sitter 则是一个单独使用的工具，  下面笔者就来更详细的介绍一下这几个工具。</p>
+<h3 id="tree-sitter">Tree-sitter</h3>
+<p>这里先说一下tree-sitter 这个工具。  这个工具使用js 来编写语法文件， 可以配合atom的插件来实现语法高亮。</p>
+<p>Atom 是一个代码编辑器， 和VS Code 类似。 Atom的功能没有大型IDE那么强大， 但是也勉强够用了。</p>
+<p>Atom提供插件机制， 读者可以自行为读者的脚本语言编写一个语法高亮插件。 而Atom的语法高亮插件就是基于tree-sitter 提供的API的。</p>
+<p><a href="https://github.com/Aincvy/langX-atom">langX的Atom插件源码</a>   <a href="https://github.com/Aincvy/langX-tree-sitter">langX的tree-sitter源码</a></p>
+<p>tree-sitter是基于 Node.js 来运行的， 在编写语法的时候 只需要编辑一个叫做<code>grammer.js</code>的文件。</p>
+<p>tree-sitter 可以使用一些函数来简化语法文件的编写， 比如 <code>optional()</code>,<code>repeat()</code>,<code>seq()</code>, <code>choice()</code> 等。 而yacc则不能使用函数， 只能写规则。</p>
+<h3 id="lex--yacc">lex + yacc</h3>
+<p>这两个工具也比较简单。</p>
+<p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件， a.y是语法分析文件。</p>
+<p>a.y这个文件可能乍一看 内容很长， 但是其实并不复杂，都是按照一定的逻辑进行编写的。</p>
+<h4 id="词法分析工具lex">词法分析工具lex</h4>
+<p>flex 在mac平台上可以使用 <code>brew install flex</code> 进行安装。</p>
+<p>在 debian/ubuntu 上可以考虑使用 <code>sudo apt install flex</code> 来进行安装。</p>
+<p>lex的语法是使用 <code>%%</code> 符号进行分割。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 用户定义内容
+
+%{
+#include &#34;y.tab.h&#34;
+
+// 当前行
+int now_line = 1 ;
+// 当前列
+int column = 0;
+
+void comment(void);
+void count(void);
+
+%}
+
+%%
+
+// 词法内容 
+&#34;/*&#34;			{ comment(); }
+&#34;//&#34;[^\n]*      { /* consume //-comment */  }
+
+&#34;auto&#34; {count(); return KEY_AUTO;}
+&#34;if&#34; {count(); return KEY_IF;}
+&#34;else&#34; {count(); return KEY_ELSE;}
+&#34;while&#34; {count(); return KEY_WHILE;}
+
+
+\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
+[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
+
+0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
+(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
+
+&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
+&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
+&#34;{&#34; {count(); return &#39;{&#39;; }
+&#34;}&#34; {count(); return &#39;}&#39;; }
+
+[\n]   {count(); now_line++; }
+
+%%
+
+// 其他代码内容
+
+void comment(void)
+{
+	char c, prev = 0;
+
+	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
+	{
+		if (c == &#39;\n&#39;) {
+			now_line++ ;
+			column = 0;
+		}
+		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
+			return;
+		prev = c;
+	}
+	//error(&#34;unterminated comment&#34;);
+}
+
+void count(void)
+{
+	int i;
+
+	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
+		if (yytext[i] == &#39;\n&#39;){
+			column = 0;
+		} else if (yytext[i] == &#39;\t&#39;)
+			column += 8 - (column % 8);
+		else {
+			column++;
+		}
+	}
+
+	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
+}
+
+// **语法高亮可能存在问题**
+</code></pre></div><p>其中 词法内容是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
+<p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入cpp代码。  而 其他代码内容则不需要符号，直接编写cpp代码即可。</p>
+<p>读者可以先看看 langX的这部分代码是如何编写的， 然后再使用搜索引擎搜索一下lex相关的文章就明白了。</p>
+<p>编写文件之后， 可以直接使用 <code>lex a.l</code> 的形式来生成<code>lex.yy.c</code> 文件。</p>
+<p>####语法分析工具 yacc</p>
+<p>yacc 在mac平台上使用命令<code>brew install bison</code> 来进行安装。</p>
+<p>在debian/ubuntu平台上，可以使用<code>sudo apt install bison</code>  来进行安装。</p>
+<p>默认情况下， yacc使用LR(1) 的方式进行语法分析， 但是可以使用<code>%glr-parser</code> 标记使其使用glr的方式进行语法分析。</p>
+<p>Yacc 同样使用符号<code>%%</code> 进行三段式分割，使用 <code>%{</code> 和<code>%}</code> 来插入c代码。</p>
+<p>第一阶段的部分内容的说明：</p>
+<ul>
+<li><code>%union{}</code>  这个结构就是 在lex 中的变量<code>yylval</code> 的数据类型。</li>
+<li><code>%token</code>  用于声明token，每一个token 将会生成一个宏定义。 在源码包含<code>y.tab.h</code> 头文件之后即可使用。 在lex 中return 的也是这个。</li>
+<li><code>%type&lt;X&gt;</code> 并非token 的中间类型，主要方便语法文件的抽象。 <code>X</code> 则表示类型，具体值为<code>%union{}</code> 中的字段名</li>
+<li><code>%nonassoc</code>   无关联性的优先级指示。</li>
+<li><code>%left</code> 用于指定左结合的<code>%token</code> 。 例如： <code>,</code> <code>+</code> <code>-</code> 等等。</li>
+<li><code>%right</code> 用于指定右结合的<code>%token</code>。 例如：<code>=</code> <code>+=</code>  <code>-=</code> 等等</li>
+<li><code>%glr-parser</code> 指示 yacc使用 glr的方式解析语法。</li>
+<li><code>%start</code>  指定一个语法规则的入口</li>
+</ul>
+<p>第二阶段就是纯粹的语法规则了。</p>
+<p>下面看一段代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本部分内容只是一些示例，并不能直接使用
+program
+	: statement_list
+	;
+
+statement_list
+    : statement_list statement      { execAndFreeNode($2); }
+    |
+	;
+
+statement
+	: _extra_nothing     { $$ = $1; }
+	| out_declare_stmt    { $$ = $1; }
+	| con_ctl_stmt   { $$ = $1; }
+	| simple_stmt    { $$ = $1; }
+	| try_stmt       { $$ = $1; }
+    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
+	;
+
+_extra_nothing
+    : &#39;;&#39;         { $$ = NULL; }
+    ;
+
+out_declare_stmt
+    : func_declare_stmt          { $$ = $1; }
+    | class_declare_stmt         { $$ = $1; }
+    | namespace_declare_stmt     { $$ = $1; }
+    | namespace_ref_stmt        { $$ = $1; }
+    ;
+ 
+// 命名空间的声明语句
+namespace_declare_stmt
+	: KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
+	;
+
+// 引用命名空间
+namespace_ref_stmt
+    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
+    ;
+
+namespace_name_stmt
+	: id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
+	| namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
+	;
+ 
+int_expr
+    : TINTEGER { $$ = intNode($1); }
+    ;
+
+double_expr
+	: TDOUBLE { $$ = number($1); }
+	;
+
+</code></pre></div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
+<ul>
+<li>
+<p>语法规则基本上是 <code>规则名称：子规则1 { 碰到这个子规则执行的语句} | 子规则2 {碰到这个规则执行的语句} ;</code></p>
+</li>
+<li>
+<p><code>$$</code> 表示规则名称的结果， 即当前规则向上返回的时候 返回的内容</p>
+</li>
+<li>
+<p><code>$1,$2...</code>  <code>$n</code>表示第n个元素。</p>
+</li>
+<li>
+<p><code>//</code> 表示单行注释</p>
+</li>
+<li>
+<p><code>number($1);  intNode($1);</code>  这些是笔者自定义的函数， 用于生成一个<code>XNode*</code> 。 上述代码中的<code>double_expr/int_expr...</code> 等等基本上都是 <code>%type&lt;node&gt;</code> 是一个<code>XNode*</code> 类型。</p>
+</li>
+<li>
+<p>上述内容选自 文件：  <a href="https://github.com/Aincvy/langX/blob/dev/extern/a.y">https://github.com/Aincvy/langX/blob/dev/extern/a.y</a>    配合该文件一起看这篇博文可能更容易理解一些。</p>
+</li>
+<li>
+<p>这里还有一些需要注意的地方是，仔细看<code>statement_list</code> 规则， 它可以是<code>statement_list statement</code> 或者一个空。</p>
+<ul>
+<li>当``statement_list<code>  是空的时候， 会匹配只有一条</code>statement<code>的规则。即:</code>statement_list = statement`</li>
+<li>当匹配两条语句的时候就会出现下面的情况。
+<ul>
+<li><code>statement statement</code>       每个<code>statement</code> 表示一条语句</li>
+<li><code>EMPTY statement statement</code>   EMPTY和 空是一样的，这么写是为了更清晰的表达这里可以有一个空。</li>
+<li><code>statement_list statement</code>     ③将<code>EMPTY statement</code> 归约成一个<code>statement_list</code></li>
+<li><code>statement_list</code>  继续归约。</li>
+</ul>
+</li>
+<li>当匹配三条及三条以上语句的时候和两条语句类似。</li>
+<li>归约就是 <code>reduce</code> 。  上面的③可能不是很好理解。 但其实很简单。
+<ul>
+<li>因为<code>statement_list</code>可以是一个EMPTY。 对原语句进行替换，所以可以写成 <code>statement_list statement statement</code></li>
+<li>使用规则 <code>statement_list: statement_list statement;</code> 对上面那条语句进行替换，就可以得到 <code>statement_list statement</code>  。  （<em>reduce前两个元素变成一个元素。</em>）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>第三阶段可以写一些c代码。在langX中，笔者就在这段写了一个<code>main </code>方法。</p>
+<p>当语法文件编写结束之后可以使用命令<code>yacc -dv a.y</code>  来生成<code>y.tab.h</code>,<code>y.tab.c</code> 这两个文件和一些分析冲突使用的调试文件。</p>
+<h3 id="其他">其他</h3>
+<p>Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以笔者目前只是使用它来做语法高亮。</p>
+<p>在使用lex+yacc 的时候， 建议刚开始从一些小的文件开始， 慢慢熟悉结构了之后 自然就会把文件写的较为复杂了。  当复杂到一定程度之后 可能会碰到很多冲突(<em>shift/reduce,reduce/reduce</em>)的警告，此时就需要考虑对语法文件进行重构， 笔者建议使用思维导图进行整理思路。 <em>注： 警告不是一定要解决的，但是建议解决。</em></p>
+<p>语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的。 （<em>替换会产生成本就是了😂</em>）</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>691</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;text=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20%20%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20%20%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20%20%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" class="prev" rel="prev" title="如何自制脚本语言 - 开篇"><i class="iconfont icon-dajiantou"></i>&nbsp;如何自制脚本语言 - 开篇</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

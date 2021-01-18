@@ -6,10 +6,24 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Jan 2021 21:13:45 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jan 2021 20:18:27 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自制脚本语言   词法分析与语法分析</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 18 Jan 2021 20:18:27 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</guid>
+      <description>本篇来描述如何做语法分析和词法分析。
+有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。
+ 手写的优势  灵活性比较高 可以提供较好的错误提示   手写的劣势  在没有基础的情况下，可能会需要更多的时间来完成这件事 可能会出现一些BUG   使用第三方工具的优势  较为出名的第三方工具往往都比较稳定 只需要关心语法结构， 而不用特别关心如何实现。   使用第三方工具的劣势  不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。 错误提示可能不够精确。    一般来说，使用哪种方式看读者的喜好。 笔者下面介绍一下部分已知的工具是使用哪种方式实现的。
+ 《两周自制脚本语言》 提供的是手写方式。 lua 是使用的手写方式。 早期的mysql 应该是使用的第三方工具。 （因为它给的提示特别烂。。）  第三方工具 因为使用第三方工具比较简单， 所以笔者采用的是第三方工具的方式。
+下面介绍一下笔者知道的几种工具。
+ 词法分析器： flex(lex) doc 。 这是一个工具，只不过名字不太一样。 语法分析器： yacc(bison) doc 。 这是一个工具，只不过名字不太一样。 语法分析+词法分析： tree-sitter doc 。  笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， 这两个工具是一起配合使用的。</description>
+    </item>
     
     <item>
       <title>如何自制脚本语言 - 开篇</title>
