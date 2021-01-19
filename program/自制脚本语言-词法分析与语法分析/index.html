@@ -24,10 +24,10 @@
   <title>
        
        
-           自制脚本语言   词法分析与语法分析 | Fanstasy Player / 幻想系玩家
+           自制脚本语言 - 词法分析与语法分析 | Fanstasy Player / 幻想系玩家
        
   </title>
-  <meta name="title" content="自制脚本语言   词法分析与语法分析 | Fanstasy Player / 幻想系玩家">
+  <meta name="title" content="自制脚本语言 - 词法分析与语法分析 | Fanstasy Player / 幻想系玩家">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,19 +35,20 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="自制脚本语言   词法分析与语法分析"/>
+<meta name="twitter:title" content="自制脚本语言 - 词法分析与语法分析"/>
 <meta name="twitter:description" content="本篇来描述如何做语法分析和词法分析。
 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。
- 手写的优势  灵活性比较高 可以提供较好的错误提示   手写的劣势  在没有基础的情况下，可能会需要更多的时间来完成这件事 可能会出现一些BUG   使用第三方工具的优势  较为出名的第三方工具往往都比较稳定 只需要关心语法结构， 而不用特别关心如何实现。   使用第三方工具的劣势  不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。 错误提示可能不够精确。    一般来说，使用哪种方式看读者的喜好。 笔者下面介绍一下部分已知的工具是使用哪种方式实现的。
- 《两周自制脚本语言》 提供的是手写方式。 lua 是使用的手写方式。 早期的mysql 应该是使用的第三方工具。 （因为它给的提示特别烂。。）  第三方工具 因为使用第三方工具比较简单， 所以笔者采用的是第三方工具的方式。
+ 手写的优势  灵活性比较高 可以提供较好的错误提示给脚本语言的用户   手写的劣势  在没有基础的情况下，可能会需要更多的时间来完成这件事 可能会出现一些BUG   使用第三方工具的优势  较为出名的第三方工具往往都比较稳定 只需要关心语法结构， 而不用特别关心如何实现。   使用第三方工具的劣势  不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。 提供给脚本语言用户的错误提示可能不够精确。    一般来说，使用哪种方式看读者的喜好。 笔者下面介绍一下部分已知的工具是使用哪种方式实现的。
+ 《两周自制脚本语言》 提供的是手写方式。 lua 是使用的手写方式。 早期的mysql 应该是使用的第三方工具。 （因为它给的提示特别烂。。）  第三方工具 因为使用第三方工具比较简单， 所以笔者采用第三方工具的方式来实现langX的词法解析与语法解析。
 下面介绍一下笔者知道的几种工具。
- 词法分析器： flex(lex) doc 。 这是一个工具，只不过名字不太一样。 语法分析器： yacc(bison) doc 。 这是一个工具，只不过名字不太一样。 语法分析&#43;词法分析： tree-sitter doc 。  笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， 这两个工具是一起配合使用的。"/>
+ 词法分析器： flex(lex) doc 。 语法分析器： yacc(bison) doc 。 语法分析&#43;词法分析： tree-sitter doc 。  笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， lex&#43;yacc是一起配合使用的。
+Tree-sitter 则是一个单独使用的工具， 下面笔者就来更详细的介绍一下这几个工具。"/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "自制脚本语言   词法分析与语法分析",
+  "headline": "自制脚本语言 - 词法分析与语法分析",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/"
@@ -60,7 +61,7 @@
   },
   "genre": "program",
   
-  "wordcount":  691 ,
+  "wordcount":  712 ,
   "url": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/",
   "datePublished": "2021-01-18T20:18:27\x2b08:00",
   "dateModified": "2021-01-18T20:18:27\x2b08:00",
@@ -143,7 +144,7 @@
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">自制脚本语言   词法分析与语法分析</h1>
+        <h1 class="post-title">自制脚本语言 - 词法分析与语法分析</h1>
         <div class="post-meta">
             Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
                 <span class="post-time">
@@ -177,7 +178,7 @@
 <li>手写的优势
 <ul>
 <li>灵活性比较高</li>
-<li>可以提供较好的错误提示</li>
+<li>可以提供较好的错误提示给脚本语言的用户</li>
 </ul>
 </li>
 <li>手写的劣势
@@ -195,7 +196,7 @@
 <li>使用第三方工具的劣势
 <ul>
 <li>不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。</li>
-<li>错误提示可能不够精确。</li>
+<li>提供给脚本语言用户的错误提示可能不够精确。</li>
 </ul>
 </li>
 </ul>
@@ -206,30 +207,37 @@
 <li>早期的mysql 应该是使用的第三方工具。  （<em>因为它给的提示特别烂。。</em>）</li>
 </ul>
 <h2 id="第三方工具">第三方工具</h2>
-<p>因为使用第三方工具比较简单， 所以笔者采用的是第三方工具的方式。</p>
+<p>因为使用第三方工具比较简单， 所以笔者采用第三方工具的方式来实现langX的词法解析与语法解析。</p>
 <p>下面介绍一下笔者知道的几种工具。</p>
 <ul>
-<li>词法分析器： flex(lex)  <a href="http://dinosaur.compilertools.net/lex/index.html">doc</a> 。  <em>这是一个工具，只不过名字不太一样。</em></li>
-<li>语法分析器： yacc(bison)  <a href="https://www.gnu.org/software/bison/manual/html_node/index.html">doc</a> 。  <em>这是一个工具，只不过名字不太一样。</em></li>
+<li>词法分析器： flex(lex)  <a href="http://dinosaur.compilertools.net/lex/index.html">doc</a> 。</li>
+<li>语法分析器： yacc(bison)  <a href="https://www.gnu.org/software/bison/manual/html_node/index.html">doc</a> 。</li>
 <li>语法分析+词法分析： tree-sitter  <a href="https://tree-sitter.github.io/tree-sitter/">doc</a>  。</li>
 </ul>
-<p>笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， 这两个工具是一起配合使用的。</p>
+<p>笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， lex+yacc是一起配合使用的。</p>
 <p>Tree-sitter 则是一个单独使用的工具，  下面笔者就来更详细的介绍一下这几个工具。</p>
 <h3 id="tree-sitter">Tree-sitter</h3>
 <p>这里先说一下tree-sitter 这个工具。  这个工具使用js 来编写语法文件， 可以配合atom的插件来实现语法高亮。</p>
 <p>Atom 是一个代码编辑器， 和VS Code 类似。 Atom的功能没有大型IDE那么强大， 但是也勉强够用了。</p>
 <p>Atom提供插件机制， 读者可以自行为读者的脚本语言编写一个语法高亮插件。 而Atom的语法高亮插件就是基于tree-sitter 提供的API的。</p>
-<p><a href="https://github.com/Aincvy/langX-atom">langX的Atom插件源码</a>   <a href="https://github.com/Aincvy/langX-tree-sitter">langX的tree-sitter源码</a></p>
+<p><a href="https://github.com/Aincvy/langX-atom">langX的Atom插件源码</a>  , <a href="https://github.com/Aincvy/langX-tree-sitter">langX的tree-sitter源码</a></p>
 <p>tree-sitter是基于 Node.js 来运行的， 在编写语法的时候 只需要编辑一个叫做<code>grammer.js</code>的文件。</p>
 <p>tree-sitter 可以使用一些函数来简化语法文件的编写， 比如 <code>optional()</code>,<code>repeat()</code>,<code>seq()</code>, <code>choice()</code> 等。 而yacc则不能使用函数， 只能写规则。</p>
+<p>tree-sitter可以生成在程序里面使用的语法分析文件(<em>*.h,*</em>.c)， 但是笔者并没有使用相关的内容。</p>
+<p>更多详细的内容可以阅读官方文档： <a href="https://tree-sitter.github.io/tree-sitter/">https://tree-sitter.github.io/tree-sitter/</a></p>
 <h3 id="lex--yacc">lex + yacc</h3>
-<p>这两个工具也比较简单。</p>
-<p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件， a.y是语法分析文件。</p>
-<p>a.y这个文件可能乍一看 内容很长， 但是其实并不复杂，都是按照一定的逻辑进行编写的。</p>
+<p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件(<em>lex</em>)， a.y是语法分析文件(<em>yacc</em>)。</p>
+<p>这两文件可能乍一看 内容很长， 但是其实并不复杂，都是按照一定的规则进行编写的。</p>
 <h4 id="词法分析工具lex">词法分析工具lex</h4>
 <p>flex 在mac平台上可以使用 <code>brew install flex</code> 进行安装。</p>
 <p>在 debian/ubuntu 上可以考虑使用 <code>sudo apt install flex</code> 来进行安装。</p>
-<p>lex的语法是使用 <code>%%</code> 符号进行分割。</p>
+<p>lex的语法是使用 <code>%%</code> 符号进行分割, 整个文件将会被两个<code>%%</code> 分割成三块。</p>
+<ul>
+<li>用户定义内容</li>
+<li>词法规则</li>
+<li>其他代码</li>
+</ul>
+<p>下面的示例代码节选自 a.l 文件。 （<em>语法高亮可能存在问题</em>）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 用户定义内容
 
 %{
@@ -308,47 +316,47 @@ void count(void)
 	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
 }
 
-// **语法高亮可能存在问题**
-</code></pre></div><p>其中 词法内容是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
-<p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入cpp代码。  而 其他代码内容则不需要符号，直接编写cpp代码即可。</p>
+</code></pre></div><p>其中 词法规则部分是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
+<p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入c/cpp代码。  而 其他代码内容则不需要符号，直接编写c/cpp代码即可。</p>
 <p>读者可以先看看 langX的这部分代码是如何编写的， 然后再使用搜索引擎搜索一下lex相关的文章就明白了。</p>
-<p>编写文件之后， 可以直接使用 <code>lex a.l</code> 的形式来生成<code>lex.yy.c</code> 文件。</p>
-<p>####语法分析工具 yacc</p>
+<p>编写文件之后， 可以直接使用命令 <code>lex a.l</code> 来生成<code>lex.yy.c</code> 文件。 （<code>lex [filename]</code>）</p>
+<h4 id="语法分析工具-yacc">语法分析工具 yacc</h4>
 <p>yacc 在mac平台上使用命令<code>brew install bison</code> 来进行安装。</p>
 <p>在debian/ubuntu平台上，可以使用<code>sudo apt install bison</code>  来进行安装。</p>
 <p>默认情况下， yacc使用LR(1) 的方式进行语法分析， 但是可以使用<code>%glr-parser</code> 标记使其使用glr的方式进行语法分析。</p>
 <p>Yacc 同样使用符号<code>%%</code> 进行三段式分割，使用 <code>%{</code> 和<code>%}</code> 来插入c代码。</p>
-<p>第一阶段的部分内容的说明：</p>
+<p>第一部分的部分内容的说明：</p>
 <ul>
 <li><code>%union{}</code>  这个结构就是 在lex 中的变量<code>yylval</code> 的数据类型。</li>
 <li><code>%token</code>  用于声明token，每一个token 将会生成一个宏定义。 在源码包含<code>y.tab.h</code> 头文件之后即可使用。 在lex 中return 的也是这个。</li>
-<li><code>%type&lt;X&gt;</code> 并非token 的中间类型，主要方便语法文件的抽象。 <code>X</code> 则表示类型，具体值为<code>%union{}</code> 中的字段名</li>
+<li><code>%type&lt;X&gt;</code> 用于声明一个并非token 的中间类型，主要方便语法文件的抽象。 <code>X</code> 则表示类型，具体值为<code>%union{}</code> 中的字段名</li>
 <li><code>%nonassoc</code>   无关联性的优先级指示。</li>
 <li><code>%left</code> 用于指定左结合的<code>%token</code> 。 例如： <code>,</code> <code>+</code> <code>-</code> 等等。</li>
 <li><code>%right</code> 用于指定右结合的<code>%token</code>。 例如：<code>=</code> <code>+=</code>  <code>-=</code> 等等</li>
 <li><code>%glr-parser</code> 指示 yacc使用 glr的方式解析语法。</li>
 <li><code>%start</code>  指定一个语法规则的入口</li>
 </ul>
-<p>第二阶段就是纯粹的语法规则了。</p>
-<p>下面看一段代码。</p>
+<p>第二部分就是纯粹的语法规则了。</p>
+<p>第三部分可以写一些c代码。在langX中，笔者在这段就只写了一个<code>main </code>方法。</p>
+<p>下面看一段<strong>语法规则</strong>的代码。 （<em>即 第二部分</em>）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本部分内容只是一些示例，并不能直接使用
 program
-	: statement_list
-	;
+    : statement_list
+    ;
 
 statement_list
     : statement_list statement      { execAndFreeNode($2); }
     |
-	;
+    ;
 
 statement
-	: _extra_nothing     { $$ = $1; }
-	| out_declare_stmt    { $$ = $1; }
-	| con_ctl_stmt   { $$ = $1; }
-	| simple_stmt    { $$ = $1; }
-	| try_stmt       { $$ = $1; }
+    : _extra_nothing     { $$ = $1; }
+    | out_declare_stmt    { $$ = $1; }
+    | con_ctl_stmt   { $$ = $1; }
+    | simple_stmt    { $$ = $1; }
+    | try_stmt       { $$ = $1; }
     | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
-	;
+    ;
 
 _extra_nothing
     : &#39;;&#39;         { $$ = NULL; }
@@ -363,8 +371,8 @@ out_declare_stmt
  
 // 命名空间的声明语句
 namespace_declare_stmt
-	: KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
-	;
+    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
+    ;
 
 // 引用命名空间
 namespace_ref_stmt
@@ -372,17 +380,17 @@ namespace_ref_stmt
     ;
 
 namespace_name_stmt
-	: id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
-	| namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
-	;
+    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
+    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
+    ;
  
 int_expr
     : TINTEGER { $$ = intNode($1); }
     ;
 
 double_expr
-	: TDOUBLE { $$ = number($1); }
-	;
+    : TDOUBLE { $$ = number($1); }
+    ;
 
 </code></pre></div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
 <ul>
@@ -399,7 +407,7 @@ double_expr
 <p><code>//</code> 表示单行注释</p>
 </li>
 <li>
-<p><code>number($1);  intNode($1);</code>  这些是笔者自定义的函数， 用于生成一个<code>XNode*</code> 。 上述代码中的<code>double_expr/int_expr...</code> 等等基本上都是 <code>%type&lt;node&gt;</code> 是一个<code>XNode*</code> 类型。</p>
+<p><code>number($1);  intNode($1);</code>  这些是笔者自定义的函数， 用于生成一个<code>XNode*</code> 。 上述代码中的<code>double_expr/int_expr...</code> 等等基本上都是使用 <code>%type&lt;node&gt;</code> 进行声明的，所以都是一个<code>XNode*</code> 类型。</p>
 </li>
 <li>
 <p>上述内容选自 文件：  <a href="https://github.com/Aincvy/langX/blob/dev/extern/a.y">https://github.com/Aincvy/langX/blob/dev/extern/a.y</a>    配合该文件一起看这篇博文可能更容易理解一些。</p>
@@ -407,7 +415,7 @@ double_expr
 <li>
 <p>这里还有一些需要注意的地方是，仔细看<code>statement_list</code> 规则， 它可以是<code>statement_list statement</code> 或者一个空。</p>
 <ul>
-<li>当``statement_list<code>  是空的时候， 会匹配只有一条</code>statement<code>的规则。即:</code>statement_list = statement`</li>
+<li>当<code>statement_list</code>  是空的时候， 会匹配只有一条<code>statement</code> 的规则。即: <code>statement_list = statement</code></li>
 <li>当匹配两条语句的时候就会出现下面的情况。
 <ul>
 <li><code>statement statement</code>       每个<code>statement</code> 表示一条语句</li>
@@ -426,12 +434,21 @@ double_expr
 </ul>
 </li>
 </ul>
-<p>第三阶段可以写一些c代码。在langX中，笔者就在这段写了一个<code>main </code>方法。</p>
 <p>当语法文件编写结束之后可以使用命令<code>yacc -dv a.y</code>  来生成<code>y.tab.h</code>,<code>y.tab.c</code> 这两个文件和一些分析冲突使用的调试文件。</p>
 <h3 id="其他">其他</h3>
-<p>Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以笔者目前只是使用它来做语法高亮。</p>
-<p>在使用lex+yacc 的时候， 建议刚开始从一些小的文件开始， 慢慢熟悉结构了之后 自然就会把文件写的较为复杂了。  当复杂到一定程度之后 可能会碰到很多冲突(<em>shift/reduce,reduce/reduce</em>)的警告，此时就需要考虑对语法文件进行重构， 笔者建议使用思维导图进行整理思路。 <em>注： 警告不是一定要解决的，但是建议解决。</em></p>
-<p>语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的。 （<em>替换会产生成本就是了😂</em>）</p>
+<p>Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以当时就选择了lex+yacc, 笔者目前只是使用tree-sitter来做语法高亮。</p>
+<p>在使用lex+yacc 的时候， 建议刚开始从一些小的文件开始， 慢慢熟悉结构了之后 自然就会把文件写的较为复杂了。  当复杂到一定程度之后 可能会碰到很多冲突(<em>shift/reduce,reduce/reduce</em>)的警告，此时就需要考虑对语法文件进行重构， 笔者建议使用思维导图进行整理思路。 <em>注： 部分警告不是一定要解决的，但是建议能解决的都解决掉。</em></p>
+<p>语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的，即你目前可以选择lex+yacc,后面不爽了可以换成纯手写的。 （<em>替换会产生成本就是了😂</em>）</p>
+<h3 id="拓展阅读">拓展阅读</h3>
+<p>本文的内容有点偏于介绍性，而非入门型， 所以建议笔者同时阅读下面的文章以深入了解lex&amp;&amp;yacc。</p>
+<ul>
+<li>
+<p><a href="https://segmentfault.com/a/1190000000396608">https://segmentfault.com/a/1190000000396608</a></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/728e4011a61e">https://www.jianshu.com/p/728e4011a61e</a></p>
+</li>
+</ul>
 
     </div>
 
@@ -445,7 +462,7 @@ double_expr
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>691</span>
+                   <span>712</span>
             </p>
             
             <p class="copyright-item">
@@ -454,7 +471,7 @@ double_expr
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;text=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20%20%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;text=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20-%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90&amp;via=Aincvy" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
@@ -468,7 +485,7 @@ double_expr
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20%20%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20-%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
@@ -484,7 +501,7 @@ double_expr
           
 
           
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20%20%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on Douban ">
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%2580-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%20-%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on Douban ">
             <i class="iconfont icon-douban"></i>
           </a>
           
@@ -512,7 +529,7 @@ double_expr
 
     <div class="post-nav">
         
-        <a href="https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" class="prev" rel="prev" title="如何自制脚本语言 - 开篇"><i class="iconfont icon-dajiantou"></i>&nbsp;如何自制脚本语言 - 开篇</a>
+        <a href="https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" class="prev" rel="prev" title="自制脚本语言 - 开篇"><i class="iconfont icon-dajiantou"></i>&nbsp;自制脚本语言 - 开篇</a>
          
         
     </div>
