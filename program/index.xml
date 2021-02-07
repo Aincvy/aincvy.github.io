@@ -6,17 +6,36 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Jan 2021 20:18:27 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Feb 2021 14:59:56 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>自制脚本语言 - 类型相关内容的介绍</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Sun, 07 Feb 2021 14:59:56 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/</guid>
+      <description>本篇来描述一下 类型相关的内容。
+脚本语言引擎需要提供一些基本类型和至少一个复杂类型的抽象(类，表等)。
+基本类型 就拿JAVA语言的基本类型来举例： boolean,byte,char,short,int,long,float,double
+其中的每一个类型都是基本元素，基本上在使用的时候不会拆分成更小的类型。
+除了上述的关于数值的类型之外， 常用的还有一个字符串类型。 （在Java中 字符串不算基本类型。算引用类型。但在读者自己开发的脚本语言中，则可以自己定义。）
+笔者在langX中定义的基本类型有下面几个：
+ 数值类型 （整数， 浮点数， 布尔） null 类型 字符串类型 数组 函数  别的复杂类型基本上都需要使用上述的类型进行组成。
+复杂类型的抽象 基本上可以理解为JAVA里的类， lua里的表。
+下面请看一个JAVA的代码片段。
+@Data public class Student { // 唯一编号  private int id; // 姓名  private String name; // 年龄  private int age; // 是否毕业了  private boolean graduation; public boolean isGraduation(){ return graduation; } } 上面描述一个叫 Student的类， 即一个复杂类型。这个类由字段，方法，注解组成，其中大部分字段使用的基本类型， 还有部分字段使用的是复杂类型（字符串）。
+这个类是一个具体的复杂类型， 为了使脚本语言引擎可以支持这个复杂类型， 我们需要实现一套机制。 这套机制可以表述一个复杂类型。</description>
+    </item>
+    
+    <item>
       <title>自制脚本语言 - 词法分析与语法分析</title>
-      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</link>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</link>
       <pubDate>Mon, 18 Jan 2021 20:18:27 +0800</pubDate>
       
-      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</guid>
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</guid>
       <description>本篇来描述如何做语法分析和词法分析。
 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。
  手写的优势  灵活性比较高 可以提供较好的错误提示给脚本语言的用户   手写的劣势  在没有基础的情况下，可能会需要更多的时间来完成这件事 可能会出现一些BUG   使用第三方工具的优势  较为出名的第三方工具往往都比较稳定 只需要关心语法结构， 而不用特别关心如何实现。   使用第三方工具的劣势  不够灵活，如果某些特性第三方工具没有的话，很可能就实现不了了。 提供给脚本语言用户的错误提示可能不够精确。    一般来说，使用哪种方式看读者的喜好。 笔者下面介绍一下部分已知的工具是使用哪种方式实现的。
