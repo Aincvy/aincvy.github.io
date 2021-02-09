@@ -6,10 +6,26 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Feb 2021 14:59:56 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 15:25:44 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cpp 踩坑记录</title>
+      <link>https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 09 Feb 2021 15:25:44 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。
+更多解释可见： https://stackoverflow.com/a/1946730/11226492
+一个可能的场景是这样的： 有一个项目A， 有一个项目B， 项目B依赖项目的A的头文件，且两个项目都由同一个人开发。
+现在项目B是在项目A内部的， 且项目B使用的是相对路径引用的项目A的头文件。
+大致的文件夹结构如下所示。
+A + source + include + modProject + + B + + + include + + + source + README.md 目前的情况是： 在B的源代码里面使用诸如 ../../include/abc.h 的形式引用A的头文件。
+开发这些项目的开发者发觉这样写不太美观，而且不方便拓展。所以决定将项目A的头文件安装到/usr/local/include/A 目录下 。
+这时，就需要把项目B里面的所有引用位置都纠正了，否则就可能出现重定义的情况。 （这里只讨论使用 #param once 的情况，使用宏定义的方式应该不会出现这样的情况。 ）</description>
+    </item>
     
     <item>
       <title>自制脚本语言 - 类型相关内容的介绍</title>
@@ -81,13 +97,12 @@ https://github.com/lua/lua
 经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。
 这可能是一个非常基础得错误。。 但是笔者一般写Java得时候 是不需要考虑这个问题得。。😂😂 😂
 大致情况是这样得。
-class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do something ..  } // do something ..  } private: // 手里正在拿得东西  Thing* m_onHand; } 在调试模式下， 上述代码得属性部分 m_onHand 是一个nullptr，这会产生预期的行为。
+// 物品类， 占位使用 class Thing { } class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do something ..  } // do something ..  } private: // 手里正在拿得东西  Thing* m_onHand; } 在调试模式下， 上述代码得属性部分 m_onHand 是一个nullptr，这会产生预期的行为。
 而非调试模式下，似乎就不是一个nullptr ， 则会产生不可预期得内存错误。 😢😢😢
 笔者使用得解决办法就是在声明得时候这么写： Thing* m_onHand = nullptr;
 除此之外， 笔者还搜索到了一种可能性。
 链接在此： https://stackoverflow.com/questions/186237/program-only-crashes-as-release-build-how-to-debug/186285#186285
-下面是原文引用：
- In 100% of the cases I&amp;rsquo;ve seen or heard of, where a C or C++ program runs fine in the debugger but fails when run outside, the cause has been writing past the end of a function local array.</description>
+下面是原文引用：</description>
     </item>
     
     <item>

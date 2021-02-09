@@ -40,13 +40,12 @@
 经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。
 这可能是一个非常基础得错误。。 但是笔者一般写Java得时候 是不需要考虑这个问题得。。😂😂 😂
 大致情况是这样得。
-class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do something ..  } // do something ..  } private: // 手里正在拿得东西  Thing* m_onHand; } 在调试模式下， 上述代码得属性部分 m_onHand 是一个nullptr，这会产生预期的行为。
+// 物品类， 占位使用 class Thing { } class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do something ..  } // do something ..  } private: // 手里正在拿得东西  Thing* m_onHand; } 在调试模式下， 上述代码得属性部分 m_onHand 是一个nullptr，这会产生预期的行为。
 而非调试模式下，似乎就不是一个nullptr ， 则会产生不可预期得内存错误。 😢😢😢
 笔者使用得解决办法就是在声明得时候这么写： Thing* m_onHand = nullptr;
 除此之外， 笔者还搜索到了一种可能性。
 链接在此： https://stackoverflow.com/questions/186237/program-only-crashes-as-release-build-how-to-debug/186285#186285
-下面是原文引用：
- In 100% of the cases I&rsquo;ve seen or heard of, where a C or C&#43;&#43; program runs fine in the debugger but fails when run outside, the cause has been writing past the end of a function local array."/>
+下面是原文引用："/>
 
   <script type="application/ld+json">
 {
@@ -65,7 +64,7 @@ class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do
   },
   "genre": "program",
   
-  "wordcount":  114 ,
+  "wordcount":  121 ,
   "url": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5\/",
   "datePublished": "2020-12-14T21:22:30\x2b08:00",
   "dateModified": "2020-12-14T21:22:30\x2b08:00",
@@ -180,7 +179,12 @@ class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do
 <p>经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。</p>
 <p>这可能是一个非常基础得错误。。 但是笔者一般写Java得时候 是不需要考虑这个问题得。。😂😂 😂</p>
 <p>大致情况是这样得。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 物品类， 占位使用
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thing</span> {
+  
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
   <span style="color:#66d9ef">void</span> take(Thing<span style="color:#f92672">*</span> thing){
   	<span style="color:#66d9ef">if</span>( m_onHand <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span> ){
@@ -215,7 +219,7 @@ class Person { public: void take(Thing* thing){ if( m_onHand == nullptr ){ // do
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>114</span>
+                   <span>121</span>
             </p>
             
             <p class="copyright-item">
