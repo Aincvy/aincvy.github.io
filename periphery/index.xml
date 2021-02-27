@@ -6,10 +6,28 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Jan 2021 22:28:55 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Feb 2021 10:37:27 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>家用服务器突然断电的后续情况处理</title>
+      <link>https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 27 Feb 2021 10:37:27 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/</guid>
+      <description>前些天，不知道什么原因，家里突然跳闸了。等来电的时候，家里服务器就出现了一些状况，所以开帖记录一下是什么状况，以及笔者是如何处理的。
+笔者的家用服务器使用的是ESXi 系统。 ESXi 系统本身没有什么问题， 大部分虚拟机也没有什么问题，只有一个debian 9 的虚拟机出现了问题。 而这个虚拟机运行了笔者大部分的服务，所以这次问题让笔者大感头痛。
+debian 9 的问题列表 虚拟机启动 虚拟机无法启动，在启动的时候 提示文件系统有问题。
+提示内容大概为： /dev/sda1 contains a file system with errors, check forced 
+解决方案是： At the (initramfs) prompt, type fsck -f /dev/sda1 to check/repair your file system.
+大致意思是在可以输入命令的时候， 输入fsck -f /dev/sda1 进行文件系统的修复。 当碰到询问的时候输入 y 进行修复。
+这个修复不是很完美的， 可能会导致部分文件内容出现问题。
+docker 容器全坏 笔者成功启动了debian 虚拟机之后， 发现虚拟机上的大部分docker 容器都坏了。 而且docker service 无法正常启动。
+经过排查之后， 笔者发现是原来容器的配置文件都损坏了。
+ docker 数据存放的默认目录： /var/lib/docker containers 里面存放了所有的容器数据 volumes 存放了数据卷  容器的文件夹里面， 存在一个叫做config.</description>
+    </item>
     
     <item>
       <title>Openwrt的ipv6的dhcp功能</title>

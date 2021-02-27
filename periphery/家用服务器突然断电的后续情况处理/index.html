@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           家用服务器突然断电的后续情况处理 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="家用服务器突然断电的后续情况处理 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="家用服务器突然断电的后续情况处理"/>
+<meta name="twitter:description" content="前些天，不知道什么原因，家里突然跳闸了。等来电的时候，家里服务器就出现了一些状况，所以开帖记录一下是什么状况，以及笔者是如何处理的。
+笔者的家用服务器使用的是ESXi 系统。 ESXi 系统本身没有什么问题， 大部分虚拟机也没有什么问题，只有一个debian 9 的虚拟机出现了问题。 而这个虚拟机运行了笔者大部分的服务，所以这次问题让笔者大感头痛。
+debian 9 的问题列表 虚拟机启动 虚拟机无法启动，在启动的时候 提示文件系统有问题。
+提示内容大概为： /dev/sda1 contains a file system with errors, check forced 
+解决方案是： At the (initramfs) prompt, type fsck -f /dev/sda1 to check/repair your file system.
+大致意思是在可以输入命令的时候， 输入fsck -f /dev/sda1 进行文件系统的修复。 当碰到询问的时候输入 y 进行修复。
+这个修复不是很完美的， 可能会导致部分文件内容出现问题。
+docker 容器全坏 笔者成功启动了debian 虚拟机之后， 发现虚拟机上的大部分docker 容器都坏了。 而且docker service 无法正常启动。
+经过排查之后， 笔者发现是原来容器的配置文件都损坏了。
+ docker 数据存放的默认目录： /var/lib/docker containers 里面存放了所有的容器数据 volumes 存放了数据卷  容器的文件夹里面， 存在一个叫做config."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "家用服务器突然断电的后续情况处理",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  116 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86\/",
+  "datePublished": "2021-02-27T10:37:27\x2b08:00",
+  "dateModified": "2021-02-27T10:37:27\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">家用服务器突然断电的后续情况处理</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-02-27 >27 February 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>前些天，不知道什么原因，家里突然跳闸了。等来电的时候，家里服务器就出现了一些状况，所以开帖记录一下是什么状况，以及笔者是如何处理的。</p>
+<p>笔者的家用服务器使用的是ESXi 系统。 ESXi 系统本身没有什么问题， 大部分虚拟机也没有什么问题，只有一个debian 9 的虚拟机出现了问题。 而这个虚拟机运行了笔者大部分的服务，所以这次问题让笔者大感头痛。</p>
+<h2 id="debian-9-的问题列表">debian 9 的问题列表</h2>
+<h3 id="虚拟机启动">虚拟机启动</h3>
+<p>虚拟机无法启动，在启动的时候 提示文件系统有问题。</p>
+<p>提示内容大概为： <code>/dev/sda1 contains a file system with errors, check forced </code></p>
+<p>解决方案是：  At the (initramfs) prompt, type <code>fsck -f /dev/sda1</code> to check/repair your file system.</p>
+<p>大致意思是在可以输入命令的时候， 输入<code>fsck -f /dev/sda1</code> 进行文件系统的修复。  当碰到询问的时候输入 <code>y</code> 进行修复。</p>
+<p>这个修复不是很完美的， 可能会导致部分文件内容出现问题。</p>
+<h3 id="docker-容器全坏">docker 容器全坏</h3>
+<p>笔者成功启动了debian 虚拟机之后， 发现虚拟机上的大部分docker 容器都坏了。 而且docker service 无法正常启动。</p>
+<p>经过排查之后， 笔者发现是原来容器的配置文件都损坏了。</p>
+<ul>
+<li>docker 数据存放的默认目录： <code>/var/lib/docker</code></li>
+<li><code>containers</code> 里面存放了所有的容器数据</li>
+<li><code>volumes</code> 存放了数据卷</li>
+</ul>
+<p>容器的文件夹里面， 存在一个叫做<code>config.v2.json</code> 的文件， 记录了容器的配置。 笔者发现不少容器的这个配置文件都损坏了， 即该文件不在是一个json文件。 而是一个看似损坏了的二进制文件， 内容已经不再可用了。</p>
+<p>解决方案： 删除原来坏掉的容器， 重新建立即可。</p>
+<p><strong>在动手删除旧的数据之前，记得先备份一下。</strong></p>
+<p>如果读者使用的是<code>docker-compose</code> 方式建立的话， 就可以很方便的重新恢复， 否则就麻烦一些。</p>
+<p>如果读者使用的是文件夹映射，那么文件应该没有丢。  如果使用的是docker管理的卷的话， 数据应该也没有丢。</p>
+<h3 id="mysql-无法启动">mysql 无法启动</h3>
+<p>容器恢复之后， 笔者的mysql 也还是无法启动。。  原因不知。。</p>
+<p><em>笔者每次家用服务器意外断电之后， mysql 基本上都会损坏。。 😂</em></p>
+<p>折腾了一番， 笔者并没有发现很好的办法， 只得使用几个月前备份的sql文件恢复了。。  （<em>因为笔者的数据也不算特别重要， 所以也懒得完全恢复了。。</em> ）</p>
+<p>之后笔者写了几个脚本，添加了crontab 的任务，让mysql 每周自动备份一次。</p>
+<h2 id="其他">其他</h2>
+<p>每次恢复都需要时间和精力， 如果经常发生断电的话， 就很令人头疼。。  这时就可以考虑入手一个便宜的UPS。  在突然断电之后 给予服务器正常关机的时间。 （<em>部分ups支持在断电后，自动给机器发送关机命令。 但是一般支持的都是Windows，Linux系统</em>）</p>
+<p>参考阅读：  <a href="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/">家里的网络图示</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>116</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E7%2594%25A8%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E7%25AA%2581%25E7%2584%25B6%25E6%2596%25AD%25E7%2594%25B5%25E7%259A%2584%25E5%2590%258E%25E7%25BB%25AD%25E6%2583%2585%25E5%2586%25B5%25E5%25A4%2584%25E7%2590%2586%2f&amp;text=%e5%ae%b6%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%aa%81%e7%84%b6%e6%96%ad%e7%94%b5%e7%9a%84%e5%90%8e%e7%bb%ad%e6%83%85%e5%86%b5%e5%a4%84%e7%90%86&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E7%2594%25A8%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E7%25AA%2581%25E7%2584%25B6%25E6%2596%25AD%25E7%2594%25B5%25E7%259A%2584%25E5%2590%258E%25E7%25BB%25AD%25E6%2583%2585%25E5%2586%25B5%25E5%25A4%2584%25E7%2590%2586%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E7%2594%25A8%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E7%25AA%2581%25E7%2584%25B6%25E6%2596%25AD%25E7%2594%25B5%25E7%259A%2584%25E5%2590%258E%25E7%25BB%25AD%25E6%2583%2585%25E5%2586%25B5%25E5%25A4%2584%25E7%2590%2586%2f&amp;title=%e5%ae%b6%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%aa%81%e7%84%b6%e6%96%ad%e7%94%b5%e7%9a%84%e5%90%8e%e7%bb%ad%e6%83%85%e5%86%b5%e5%a4%84%e7%90%86" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%25AE%25B6%25E7%2594%25A8%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E7%25AA%2581%25E7%2584%25B6%25E6%2596%25AD%25E7%2594%25B5%25E7%259A%2584%25E5%2590%258E%25E7%25BB%25AD%25E6%2583%2585%25E5%2586%25B5%25E5%25A4%2584%25E7%2590%2586%2f&amp;title=%e5%ae%b6%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%aa%81%e7%84%b6%e6%96%ad%e7%94%b5%e7%9a%84%e5%90%8e%e7%bb%ad%e6%83%85%e5%86%b5%e5%a4%84%e7%90%86" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/" class="prev" rel="prev" title="Openwrt的ipv6的dhcp功能"><i class="iconfont icon-dajiantou"></i>&nbsp;Openwrt的ipv6的dhcp功能</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
