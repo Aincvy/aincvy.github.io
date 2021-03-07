@@ -6,10 +6,24 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Feb 2021 15:25:44 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Mar 2021 10:07:09 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自制脚本语言[4] 数值运算</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Sun, 07 Mar 2021 10:07:09 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</guid>
+      <description>本篇来描述一下数值运算相关的内容。
+本篇描述的只是最简单的实现方式， 并没有提供什么优化技巧。
+详细内容 数值运算应该编程里必不可少的一部分， 所以一个脚本语言引擎应该需要实现数值运算的功能。
+下面来看一段代码。
+a = 1; b = 2; c = a + b; d = a - b; e = a / d; f = a * b; g = a % d; h = a ^ b; i = a | b; j = a &amp;amp; b; k = ~ a ; 大概需要实现的运算类型就是 加减乘除，取模以及位运算。 读者可以根据自己的需求只实现部分的运算符号， 或者实现更多的符号。 （自定义新的符号）
+基本逻辑 这里只讨论单个运算符， 不讨论多个运算符的情况。 比如 d = a + b + c 这种暂时不讨论。</description>
+    </item>
     
     <item>
       <title>Cpp 踩坑记录</title>
