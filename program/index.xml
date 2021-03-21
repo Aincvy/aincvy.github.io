@@ -6,17 +6,30 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Mar 2021 10:07:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Mar 2021 11:24:13 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>自制脚本语言[4] 数值运算</title>
-      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</link>
+      <title>自制脚本语言[4.2] 复合数值运算</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.2-%E5%A4%8D%E5%90%88%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Sun, 21 Mar 2021 11:24:13 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.2-%E5%A4%8D%E5%90%88%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</guid>
+      <description>本篇来描述一下类似 a + b + c 得运算内容。
+同样，本篇只是说明一个可用于实现得概念模型， 并没有提供什么优化技巧。
+详细内容 上一节我们讨论了两元运算， 现在我们讨论一下存在更多元素得运算表达式。
+下面来看一段代码。
+a = 1; b = 2; c = 3; d = a + b + c; e = a - b - c; f = a * b + c; g = a + b * c; h = a + b + c + a + c; i = a + b * c + a ; 基本逻辑 上面得例子在运算得时候至少存在3个元素，这在实现上并不需要修改上节所实现得逻辑，而是需要在生成抽象语法树(AST)得地方下功夫。</description>
+    </item>
+    
+    <item>
+      <title>自制脚本语言[4.1] 数值运算</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.1-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</link>
       <pubDate>Sun, 07 Mar 2021 10:07:09 +0800</pubDate>
       
-      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</guid>
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.1-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/</guid>
       <description>本篇来描述一下数值运算相关的内容。
 本篇描述的只是最简单的实现方式， 并没有提供什么优化技巧。
 详细内容 数值运算应该编程里必不可少的一部分， 所以一个脚本语言引擎应该需要实现数值运算的功能。
