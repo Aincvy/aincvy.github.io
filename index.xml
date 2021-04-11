@@ -9,6 +9,15 @@
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Caprices</title>
+      <link>https://fantasyplayer.link/caprice/</link>
+      <pubDate>Sun, 11 Apr 2021 09:38:53 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/caprice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Peripheries</title>
       <link>https://fantasyplayer.link/periphery/</link>
       <pubDate>Mon, 05 Apr 2021 21:30:41 +0800</pubDate>
@@ -23,15 +32,6 @@
       <pubDate>Sun, 21 Mar 2021 11:24:13 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Caprices</title>
-      <link>https://fantasyplayer.link/caprice/</link>
-      <pubDate>Sun, 14 Mar 2021 16:44:21 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/caprice/</guid>
       <description></description>
     </item>
     
