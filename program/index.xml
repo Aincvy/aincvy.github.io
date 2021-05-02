@@ -6,10 +6,45 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 11:24:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 May 2021 16:41:53 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自制脚本语言[5.1] if-else分支语句</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.1-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/</link>
+      <pubDate>Sun, 02 May 2021 16:41:53 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.1-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/</guid>
+      <description>本篇来尝试描述下if-else语句如何进行实现。
+基本内容 语法树部分 先掏出之前给读者看过的这张图， 然后笔者来解释一下其中的内容。
+显而易见， 左侧部分是源代码， 右侧部分是一个大致的AST图示。
+前两个部分就是一个赋值语句， 一个声明语句。 没什么好描述的。
+由图示可知下面的内容。
+ 把if-else 语句 拆分成了一个单独的if语句和一个单独的else语句 把if语句继续拆分成一个condition部分，一个执行代码块部分。 所以我们现在就有了三个小部分。  if.condition if的 条件部分 if.block if的代码块部分 else else 语句的代码块部分   这三个小块的逻辑也比较简单。 if.condition == true的时候执行if.block 否则执行else  直接在AST上进行运算 如果像现在的langX一样直接在语法树上进行运算的话， 按照下面的方式处理应该就可以了。
+笔者现在不建议这样做，因为字节码在进行跳转的时候应该比这种方式简单太多了。
+ 先运算if.condition 部分的代码， 然后把结果保存 在if块的地方判断结果， 并把if.condition的结果设置成自己的结果  如果if.condition部分是true 则执行if.block。 否则什么都不做   在if_else部分 判断if节点的值， 如果为false，则执行else部分  字节码部分 使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。
+就像我们前面说过的， 字节码是一条一条指令进行执行的， 所以我们再适当的地方插入适当的跳转指令即可。
+我们先来看几个自定义指令。 基于栈的指令。
+ cjmp 有条件的跳转指令 全写应该是：condition jump  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 这个指令首先获取栈顶元素， 并将该元素出栈 之后判断栈顶元素的值， 如果值是false的话， 就跳转， 否则此指令无任何效果   jmp 无条件的跳转指令  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 直接跳转到指定的行数   seti 设置一个变量的值为一个整形数字  seti [varName] [intValue]   dec 声明一个变量 abci i 结尾的表示有一个参数是直接的int值。 很可能是第二个参数。 label: 使用冒号结尾的当做一个标签， 去掉冒号的部分即为标签的名字。 在真正的字节码里面应该是不直接使用变量名的， 而是会把变量名转换成数组的索引。 笔者目前只用于示意说明，所以这样写了。  下面看一段模拟指令。 （伪代码）</description>
+    </item>
+    
+    <item>
+      <title>Cpp 踩坑记录</title>
+      <link>https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 01 May 2021 15:25:44 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。
+更多解释可见： https://stackoverflow.com/a/1946730/11226492
+一个可能的场景是这样的： 有一个项目A， 有一个项目B， 项目B依赖项目的A的头文件，且两个项目都由同一个人开发。
+现在项目B是在项目A内部的， 且项目B使用的是相对路径引用的项目A的头文件。
+大致的文件夹结构如下所示。
+A + source + include + modProject + + B + + + include + + + source + README.md 目前的情况是： 在B的源代码里面使用诸如 ../../include/abc.h 的形式引用A的头文件。
+开发这些项目的开发者发觉这样写不太美观，而且不方便拓展。所以决定将项目A的头文件安装到/usr/local/include/A 目录下 。
+这时，就需要把项目B里面的所有引用位置都纠正了，否则就可能出现重定义的情况。 （这里只讨论使用 #param once 的情况，使用宏定义的方式应该不会出现这样的情况。 ）</description>
+    </item>
     
     <item>
       <title>自制脚本语言[4.2] 复合数值运算</title>
@@ -39,27 +74,32 @@ a = 1; b = 2; c = a + b; d = a - b; e = a / d; f = a * b; g = a % d; h = a ^ b; 
     </item>
     
     <item>
-      <title>Cpp 踩坑记录</title>
-      <link>https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Tue, 09 Feb 2021 15:25:44 +0800</pubDate>
+      <title>自制脚本语言[3.2]抽象语法树的简单介绍</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.2-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Sun, 07 Feb 2021 16:00:56 +0800</pubDate>
       
-      <guid>https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
-      <description>#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。
-更多解释可见： https://stackoverflow.com/a/1946730/11226492
-一个可能的场景是这样的： 有一个项目A， 有一个项目B， 项目B依赖项目的A的头文件，且两个项目都由同一个人开发。
-现在项目B是在项目A内部的， 且项目B使用的是相对路径引用的项目A的头文件。
-大致的文件夹结构如下所示。
-A + source + include + modProject + + B + + + include + + + source + README.md 目前的情况是： 在B的源代码里面使用诸如 ../../include/abc.h 的形式引用A的头文件。
-开发这些项目的开发者发觉这样写不太美观，而且不方便拓展。所以决定将项目A的头文件安装到/usr/local/include/A 目录下 。
-这时，就需要把项目B里面的所有引用位置都纠正了，否则就可能出现重定义的情况。 （这里只讨论使用 #param once 的情况，使用宏定义的方式应该不会出现这样的情况。 ）</description>
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.2-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</guid>
+      <description>基本内容 在进行了正确的语法分析之后，会生成抽象语法树。
+一般情况下是一段代码生成一个抽象语法树。 （常见的情况是一个文件或者一块代码。）
+本篇来简单的描述一下抽象语法树的内容， 由于笔者的知识储备并不是特别的深，所以可能还需要读者阅读更多的资料。
+抽象语法树就是一个树，树是一种基本的数据结构， 主要是由节点构成。
+下面定义来自维基百科。
+ 每个节点都只有有限个子节点或无子节点； 没有父节点的节点称为根节点； 每一个非根节点有且只有一个父节点； 除了根节点外，每个子节点可以分为多个不相交的子树； 树里面没有环路(cycle)  词法分析会从字符流中生成出词法单元， 然后由语法分析进行组装，产生一个AST（抽象语法树）。 基本上来说，树上的每一个节点都是一个词法单元。
+下面来看一些示例图。(点击图片可以查看大图)
+数值运算
+if语句
+实际上的树要比笔者给的图更加复杂， 因为在设计的时候， 会考虑如何复用， 所以会进行抽象。 再进行了一定的抽象之后， 会多出一些层次， 但是那些多出来的内容在理解AST的时候是不太重要的。
+只要能够组织基本的AST， 那么复杂的其实也不难。 基本上来说， 复杂的AST只是一个量变和正常量变带来的些许复杂度。
+代码示例 下面给出一些langX的代码示例， 辅助读者理解这部分内容。
+struct Node { NodeType type; // 在执行结束之后是否进行 free 操作  bool freeOnExecuted; // 当前节点的值 . 如果当前结点是一个常量数字， 则free 的时候会施放这个值得内存  Object *value; // 万能指针 ， 主要用于放置参数什么的  void *ptr_u; // 节点状态  NodeState state; // 当前节点所在的文件信息  NodeFileInfo fileinfo; // 后置值 ， 如果当前节点为一个 变量节点， 当前属性则为有用  Object *postposition; Variable *var_obj; Constant *con_obj; Operator *opr_obj; ArrayInfo *arr_obj; }; // 节点的文件信息 struct NodeFileInfo { // 文件名  // const char * filename;  // 修改成 std::string 试试，上面的那个类型要处理一下  std::string filename; // 行号  int lineno; }; struct Constant { int iValue; double dValue; char* sValue; char cValue; // 当前常量是否是一个 bool 类型得元素  bool flagBool = false; }; // 数组声明时使用 struct XArrayNode { // 数组名字  char * name; // 数组长度  int length; // 变量长度索引 .</description>
     </item>
     
     <item>
-      <title>自制脚本语言[3] 环境与节点运算的值</title>
-      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803-%E7%8E%AF%E5%A2%83%E4%B8%8E%E8%8A%82%E7%82%B9%E8%BF%90%E7%AE%97%E7%9A%84%E5%80%BC/</link>
+      <title>自制脚本语言[3.1] 环境与节点运算的值</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.1-%E7%8E%AF%E5%A2%83%E4%B8%8E%E8%8A%82%E7%82%B9%E8%BF%90%E7%AE%97%E7%9A%84%E5%80%BC/</link>
       <pubDate>Sun, 07 Feb 2021 15:00:56 +0800</pubDate>
       
-      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803-%E7%8E%AF%E5%A2%83%E4%B8%8E%E8%8A%82%E7%82%B9%E8%BF%90%E7%AE%97%E7%9A%84%E5%80%BC/</guid>
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.1-%E7%8E%AF%E5%A2%83%E4%B8%8E%E8%8A%82%E7%82%B9%E8%BF%90%E7%AE%97%E7%9A%84%E5%80%BC/</guid>
       <description>本篇来描述一下 ”环境“相关的内容。
 这部分内容是笔者从《两周自制脚本语言》这本书上学来的。
 简单来说 环境就是一个K-V形式的Map。
@@ -75,7 +115,7 @@ A + source + include + modProject + + B + + + include + + + source + README.md �
     </item>
     
     <item>
-      <title>自制脚本语言 - 类型相关内容的介绍</title>
+      <title>自制脚本语言[2] 类型相关内容的介绍</title>
       <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Sun, 07 Feb 2021 14:59:56 +0800</pubDate>
       
@@ -94,7 +134,7 @@ A + source + include + modProject + + B + + + include + + + source + README.md �
     </item>
     
     <item>
-      <title>自制脚本语言 - 词法分析与语法分析</title>
+      <title>自制脚本语言[1] 词法分析与语法分析</title>
       <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</link>
       <pubDate>Mon, 18 Jan 2021 20:18:27 +0800</pubDate>
       
