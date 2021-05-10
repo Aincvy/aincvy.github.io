@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%84%8F%E8%A7%81%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Gitlab升级操作记录 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Gitlab升级操作记录 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gitlab升级操作记录"/>
+<meta name="twitter:description" content="笔者使用docker的方式安装的gitlab, 升级操作十分的简单。
+这里有两篇官方的文档可以阅读一下。
+  https://docs.gitlab.com/ee/raketasks/backup_restore.html
+  https://docs.gitlab.com/omnibus/docker/README.html
+  https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations
+  第一个链接的内容是关于备份和恢复的， 第二个则是关于 docker 镜像的详细介绍，第三个链接则是升级的建议。
+建议读者在进行操作之前，先进行一次备份。
+笔者的操作方式是 先升级 minor,然后升级patch . 然后升级 major 。
+在这个链接Docker hub: gitlab CE寻找指定版本的镜像即可。
+gitlab的版本号格式是： (Major).(Minor).(Patch)
+举个🌰🌰， gitlab的版本号是 12.10.6
+ 12 表示主版本 大版本 10 表示次要的版本号 小版本 6 表示🍮 补丁  更详细的信息可以阅读升级建议。 链接地址在上方。
+理论上来说， 先做好备份， 然后按照笔者的流程进行升级， 应该问题不大。
+大版本应该是不能跨版本升级的，最好1个1个的来升级大版本。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Gitlab升级操作记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "periphery",
+  
+  "wordcount":  43 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2021-05-10T21:55:20\x2b08:00",
+  "dateModified": "2021-05-10T21:55:20\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Gitlab升级操作记录</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-05-10 >10 May 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>笔者使用docker的方式安装的gitlab, 升级操作十分的简单。</p>
+<p>这里有两篇官方的文档可以阅读一下。</p>
+<ul>
+<li>
+<p><a href="https://docs.gitlab.com/ee/raketasks/backup_restore.html">https://docs.gitlab.com/ee/raketasks/backup_restore.html</a></p>
+</li>
+<li>
+<p><a href="https://docs.gitlab.com/omnibus/docker/README.html">https://docs.gitlab.com/omnibus/docker/README.html</a></p>
+</li>
+<li>
+<p><a href="https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations">https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations</a></p>
+</li>
+</ul>
+<p>第一个链接的内容是关于备份和恢复的， 第二个则是关于 docker 镜像的详细介绍，第三个链接则是升级的建议。</p>
+<p><strong>建议读者在进行操作之前，先进行一次备份。</strong></p>
+<p>笔者的操作方式是 先升级 minor,然后升级patch . 然后升级 major 。</p>
+<p>在这个链接<a href="https://hub.docker.com/r/gitlab/gitlab-ce/tags/?page=1&amp;ordering=last_updated">Docker hub: gitlab CE</a>寻找指定版本的镜像即可。</p>
+<p>gitlab的版本号格式是： <code>(Major).(Minor).(Patch)</code></p>
+<p>举个🌰🌰， gitlab的版本号是 <code>12.10.6</code></p>
+<ul>
+<li><code>12</code> 表示主版本 <em>大版本</em></li>
+<li><code>10</code> 表示次要的版本号 <em>小版本</em></li>
+<li><code>6</code> 表示🍮      <em>补丁</em></li>
+</ul>
+<p><em>更详细的信息可以阅读升级建议。 链接地址在上方。</em></p>
+<p>理论上来说， 先做好备份， 然后按照笔者的流程进行升级， 应该问题不大。</p>
+<p><em>大版本应该是不能跨版本升级的，最好1个1个的来升级大版本。</em></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>43</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgitlab%25E5%258D%2587%25E7%25BA%25A7%25E6%2593%258D%25E4%25BD%259C%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=Gitlab%e5%8d%87%e7%ba%a7%e6%93%8d%e4%bd%9c%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgitlab%25E5%258D%2587%25E7%25BA%25A7%25E6%2593%258D%25E4%25BD%259C%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgitlab%25E5%258D%2587%25E7%25BA%25A7%25E6%2593%258D%25E4%25BD%259C%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Gitlab%e5%8d%87%e7%ba%a7%e6%93%8d%e4%bd%9c%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgitlab%25E5%258D%2587%25E7%25BA%25A7%25E6%2593%258D%25E4%25BD%259C%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Gitlab%e5%8d%87%e7%ba%a7%e6%93%8d%e4%bd%9c%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%84%8F%E8%A7%81%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/" class="prev" rel="prev" title="黑苹果因为多个意外意见挂了的事情的记录贴"><i class="iconfont icon-dajiantou"></i>&nbsp;黑苹果因为多个意外意见挂了的事情的记录贴</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
