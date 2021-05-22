@@ -6,10 +6,31 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 May 2021 16:41:53 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 May 2021 15:10:02 +0800</lastBuildDate>
     
 	<atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自制脚本语言[5.2] if-else_if-else语句</title>
+      <link>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.2-if-else_if-else%E8%AF%AD%E5%8F%A5/</link>
+      <pubDate>Sat, 22 May 2021 15:10:02 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.2-if-else_if-else%E8%AF%AD%E5%8F%A5/</guid>
+      <description>本篇来尝试描述一下if-else_if-else 语句如何进行实现。
+基本内容 语法树部分 先上图。
+这里给的只是一个示例的语法树图示， 读者可以根据自己的需求进行修改。
+笔者的想法是， 使用一个if_else节点作为根节点， 它的所有子节点是N个if节点和一个else节点。
+由图可知，根节点下面有2个if节点， 和一个else 节点。 每个节点的内容和上篇类似，这里就不再赘述了。
+对比上篇文章的内容， 笔者省略了condition等中间块。
+直接在 AST上进行运算 笔者今天突然发现，上篇提到的跳转问题其实是可以解决的，目前大概有下面两个想法。
+ 给每个节点设置一个出口节点， 即当前节点成功执行/失败之后， 跳到出口节点执行。  此方法似乎会有点浪费内存   在线程状态上 添加一个或多个出口节点， 用于跳转。 似乎上述方法都没有使用字节码简单。  言归正传， 如果要在上面的语法树上直接运算的话， 笔者建议的方式是这样的。
+if_else节点按顺序依次执行每个子节点， 如果碰到执行成功的或者全部子节点执行结束， 就直接从if_else节点中返回出去。
+因为else 节点是放在最后面的， 所以不需要额外处理它。
+使用字节码进行运算 这部分其实很简单， 笔者只大致说一下思路。
+下面说的指令都是笔者自定义的字节码指令。
+ 定义一个出口标签end_of_if_else 在a == 0的逻辑判断语句之后生成一条 条件跳转语句cjmp， 跳转到else if语句的开始部分。 在print(&amp;quot;a == 0&amp;quot;); 函数语句的调用之后附加一条无条件跳转语句jmp， 跳转到end_of_if_else 在a &amp;gt; 0 的逻辑判断语句之后生成一条 条件跳转语句cjmp，跳转到else语句开始的地方。 我们在生成字节码的时候应该是从AST的最里面的节点开始的， 所以这个其实还是挺简单就可以实现的。  上述描述中，笔者省略了部分类似的地方。</description>
+    </item>
     
     <item>
       <title>自制脚本语言[5.1] if-else分支语句</title>
@@ -24,7 +45,7 @@
 由图示可知下面的内容。
  把if-else 语句 拆分成了一个单独的if语句和一个单独的else语句 把if语句继续拆分成一个condition部分，一个执行代码块部分。 所以我们现在就有了三个小部分。  if.condition if的 条件部分 if.block if的代码块部分 else else 语句的代码块部分   这三个小块的逻辑也比较简单。 if.condition == true的时候执行if.block 否则执行else  直接在AST上进行运算 如果像现在的langX一样直接在语法树上进行运算的话， 按照下面的方式处理应该就可以了。
 笔者现在不建议这样做，因为字节码在进行跳转的时候应该比这种方式简单太多了。
- 先运算if.condition 部分的代码， 然后把结果保存 在if块的地方判断结果， 并把if.condition的结果设置成自己的结果  如果if.condition部分是true 则执行if.block。 否则什么都不做   在if_else部分 判断if节点的值， 如果为false，则执行else部分  字节码部分 使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。
+ 先运算if.condition 部分的代码， 然后把结果保存 在if块的地方判断结果， 并把if.condition的结果设置成自己的结果  如果if.condition部分是true 则执行if.block。 否则什么都不做   在if_else部分 判断if节点的值， 如果为false，则执行else部分  使用字节码进行运算 使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。
 就像我们前面说过的， 字节码是一条一条指令进行执行的， 所以我们再适当的地方插入适当的跳转指令即可。
 我们先来看几个自定义指令。 基于栈的指令。
  cjmp 有条件的跳转指令 全写应该是：condition jump  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 这个指令首先获取栈顶元素， 并将该元素出栈 之后判断栈顶元素的值， 如果值是false的话， 就跳转， 否则此指令无任何效果   jmp 无条件的跳转指令  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 直接跳转到指定的行数   seti 设置一个变量的值为一个整形数字  seti [varName] [intValue]   dec 声明一个变量 abci i 结尾的表示有一个参数是直接的int值。 很可能是第二个参数。 label: 使用冒号结尾的当做一个标签， 去掉冒号的部分即为标签的名字。 在真正的字节码里面应该是不直接使用变量名的， 而是会把变量名转换成数组的索引。 笔者目前只用于示意说明，所以这样写了。  下面看一段模拟指令。 （伪代码）</description>

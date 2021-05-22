@@ -11,7 +11,7 @@
   
   
   <link rel="prev" href="https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" />
-  
+  <link rel="next" href="https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.2-if-else_if-else%E8%AF%AD%E5%8F%A5/" />
   <link rel="canonical" href="https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.1-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,7 +43,7 @@
 由图示可知下面的内容。
  把if-else 语句 拆分成了一个单独的if语句和一个单独的else语句 把if语句继续拆分成一个condition部分，一个执行代码块部分。 所以我们现在就有了三个小部分。  if.condition if的 条件部分 if.block if的代码块部分 else else 语句的代码块部分   这三个小块的逻辑也比较简单。 if.condition == true的时候执行if.block 否则执行else  直接在AST上进行运算 如果像现在的langX一样直接在语法树上进行运算的话， 按照下面的方式处理应该就可以了。
 笔者现在不建议这样做，因为字节码在进行跳转的时候应该比这种方式简单太多了。
- 先运算if.condition 部分的代码， 然后把结果保存 在if块的地方判断结果， 并把if.condition的结果设置成自己的结果  如果if.condition部分是true 则执行if.block。 否则什么都不做   在if_else部分 判断if节点的值， 如果为false，则执行else部分  字节码部分 使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。
+ 先运算if.condition 部分的代码， 然后把结果保存 在if块的地方判断结果， 并把if.condition的结果设置成自己的结果  如果if.condition部分是true 则执行if.block。 否则什么都不做   在if_else部分 判断if节点的值， 如果为false，则执行else部分  使用字节码进行运算 使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。
 就像我们前面说过的， 字节码是一条一条指令进行执行的， 所以我们再适当的地方插入适当的跳转指令即可。
 我们先来看几个自定义指令。 基于栈的指令。
  cjmp 有条件的跳转指令 全写应该是：condition jump  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 这个指令首先获取栈顶元素， 并将该元素出栈 之后判断栈顶元素的值， 如果值是false的话， 就跳转， 否则此指令无任何效果   jmp 无条件的跳转指令  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 直接跳转到指定的行数   seti 设置一个变量的值为一个整形数字  seti [varName] [intValue]   dec 声明一个变量 abci i 结尾的表示有一个参数是直接的int值。 很可能是第二个参数。 label: 使用冒号结尾的当做一个标签， 去掉冒号的部分即为标签的名字。 在真正的字节码里面应该是不直接使用变量名的， 而是会把变量名转换成数组的索引。 笔者目前只用于示意说明，所以这样写了。  下面看一段模拟指令。 （伪代码）"/>
@@ -210,10 +210,10 @@
 </li>
 <li>在<code>if_else</code>部分 判断<code>if</code>节点的值， 如果为<code>false</code>，则执行<code>else</code>部分</li>
 </ol>
-<h3 id="字节码部分">字节码部分</h3>
+<h3 id="使用字节码进行运算">使用字节码进行运算</h3>
 <p>使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。</p>
 <p>就像我们前面说过的， 字节码是一条一条指令进行执行的， 所以我们再适当的地方插入适当的跳转指令即可。</p>
-<p>我们先来看几个自定义指令。  <em>基于栈的指令。</em></p>
+<p>我们先来看几个<strong>自定义指令</strong>。  <em>基于栈的指令。</em></p>
 <ul>
 <li><code>cjmp</code>     有条件的跳转指令  全写应该是：<code>condition jump</code>
 <ul>
@@ -348,6 +348,8 @@ end_of_if:
         
         <a href="https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="Cpp 踩坑记录"><i class="iconfont icon-dajiantou"></i>&nbsp;Cpp 踩坑记录</a>
          
+        
+        <a href="https://fantasyplayer.link/program/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.2-if-else_if-else%E8%AF%AD%E5%8F%A5/" class="next" rel="next" title="自制脚本语言[5.2] if-else_if-else语句">自制脚本语言[5.2] if-else_if-else语句&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
