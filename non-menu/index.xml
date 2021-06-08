@@ -7,26 +7,5 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 08 Jun 2021 11:28:45 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/non-menu/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>小故事 - 宫殿</title>
-      <link>https://fantasyplayer.link/non-menu/story-palace/</link>
-      <pubDate>Tue, 08 Jun 2021 11:28:45 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/story-palace/</guid>
-      <description>宫殿 一个虚构的小故事。
-描述了一位踏入了一个异常的宫殿的探险者的经历。
-未完待续。。
-第一篇</description>
-    </item>
-    
-    <item>
-      <title>如何自制脚本语言</title>
-      <link>https://fantasyplayer.link/non-menu/self-programming-lang/</link>
-      <pubDate>Tue, 08 Jun 2021 11:26:02 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/self-programming-lang/</guid>
-      <description>如何自制脚本语言 开篇</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.1-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/" />
+  <link rel="next" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.1-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" />
+  <link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.2-%E5%A4%8D%E5%90%88%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           自制脚本语言[4.2] 复合数值运算 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="自制脚本语言[4.2] 复合数值运算 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自制脚本语言[4.2] 复合数值运算"/>
+<meta name="twitter:description" content="本篇来描述一下类似 a &#43; b &#43; c 得运算内容。
+同样，本篇只是说明一个可用于实现得概念模型， 并没有提供什么优化技巧。
+详细内容 上一节我们讨论了两元运算， 现在我们讨论一下存在更多元素得运算表达式。
+下面来看一段代码。
+a = 1; b = 2; c = 3; d = a &#43; b &#43; c; e = a - b - c; f = a * b &#43; c; g = a &#43; b * c; h = a &#43; b &#43; c &#43; a &#43; c; i = a &#43; b * c &#43; a ; 基本逻辑 上面得例子在运算得时候至少存在3个元素，这在实现上并不需要修改上节所实现得逻辑，而是需要在生成抽象语法树(AST)得地方下功夫。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "自制脚本语言[4.2] 复合数值运算",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.2-%E5%A4%8D%E5%90%88%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "non-menu",
+  
+  "wordcount":  202 ,
+  "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.2-%E5%A4%8D%E5%90%88%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97\/",
+  "datePublished": "2021-03-21T11:24:13\u002b08:00",
+  "dateModified": "2021-03-21T11:24:13\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">自制脚本语言[4.2] 复合数值运算</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-03-21 >21 March 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本篇来描述一下类似 <code>a + b + c</code> 得运算内容。</p>
+<p><em>同样，本篇只是说明一个可用于实现得概念模型， 并没有提供什么优化技巧。</em></p>
+<h2 id="详细内容">详细内容</h2>
+<p>上一节我们讨论了两元运算， 现在我们讨论一下存在更多元素得运算表达式。</p>
+<p>下面来看一段代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a = 1;
+b = 2;
+c = 3;
+
+d = a + b + c;
+e = a - b - c;
+f = a * b + c;
+g = a + b * c;
+
+h = a + b + c + a + c;
+i = a + b * c + a ;
+</code></pre></div><h3 id="基本逻辑">基本逻辑</h3>
+<p>上面得例子在运算得时候至少存在3个元素，这在实现上并不需要修改上节所实现得逻辑，而是需要在生成抽象语法树(<em>AST</em>)得地方下功夫。</p>
+<p>先来看一下表达式 <code>d = a + b + c;</code> 得计算过程。</p>
+<ol>
+<li>计算 <code>a + b</code> 得值 并保存， 假设为 <code>t1</code></li>
+<li>计算 <code>t1 + c</code> 得值并保存， 假设为 <code>t2</code></li>
+<li>将 <code>t2</code>得值 赋值给变量<code>d</code></li>
+</ol>
+<p>看到了吗， 这里得核心逻辑就是拆分， 把多个元素拆成二元运算来分别计算。</p>
+<p>下面再来看一下表达式<code>g = a + b * c;</code> 得计算过程</p>
+<ol>
+<li>计算<code>b * c</code> 得值 并保存， 假设为<code>t1</code></li>
+<li>计算<code>a + t1</code> 得值 并保存， 假设为<code>t2</code></li>
+<li>将<code>t2</code>得值， 赋值给变量d</li>
+</ol>
+<p>这里和上面得例子， 有一点不同得是需要先计算<code>b*c</code> ，因为乘法得优先级比加法更高。</p>
+<p>如果读者使用了 <code>yacc</code> 做AST(<em>抽象语法树，下面都简称为AST</em>)得生成，那么在指定了符号得优先级之后，yacc会自动处理这种问题。</p>
+<p>其他的AST生成工具，应该也有类似得功能， 如果是自行实现AST生成，那么就需要注意这方面得问题了。</p>
+<p>产生的AST结构大致如下图所示。 (<em>点击可以查看大图</em>)</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/img/program/node_a+b+c.png" alt="AST " class="lazyload"><figcaption class="image-caption">AST </figcaption></figure></p>
+<p>要计算最顶层得<code>+</code>号，需要先计算他得子节点， 按照这个逻辑就可以实现符号优先级了。</p>
+<h3 id="如果生成字节码得话">如果生成字节码得话</h3>
+<p>字节码就是指令序列，当前小节仅是提供一个思路。</p>
+<p>根据优先级 按序生成即可。</p>
+<p>下面给一段示例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本部分采用基于栈得指令来说明
+
+// a + b + c
+push a            // 将变量a得值压栈
+push b            // 将变量b得值压栈
+add               // 取出栈顶两个元素进行相加， 结果放回栈顶
+push c            // 将变量c得值压栈
+add               // 同上
+                  // 此时栈顶就一个元素了，该元素是运算结果
+									
+// a + b * c 
+                  // 此处使用新的栈
+push b            // 将变量b得值压栈
+push c            // 将变量c得值压栈
+mul               // 取出栈顶两个元素进行相乘， 结果放回栈顶
+push a            // 将变量a得值压栈
+add               // 取出栈顶两个元素进行相加， 结果放回栈顶
+                  // 此时栈顶就一个元素了，该元素是运算结果
+</code></pre></div><p>读者可能无法理解这部分内容，没关系，后面会懂得。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>202</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25804.2-%25E5%25A4%258D%25E5%2590%2588%25E6%2595%25B0%25E5%2580%25BC%25E8%25BF%2590%25E7%25AE%2597%2f&amp;text=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b4.2%5d%20%e5%a4%8d%e5%90%88%e6%95%b0%e5%80%bc%e8%bf%90%e7%ae%97&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25804.2-%25E5%25A4%258D%25E5%2590%2588%25E6%2595%25B0%25E5%2580%25BC%25E8%25BF%2590%25E7%25AE%2597%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25804.2-%25E5%25A4%258D%25E5%2590%2588%25E6%2595%25B0%25E5%2580%25BC%25E8%25BF%2590%25E7%25AE%2597%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b4.2%5d%20%e5%a4%8d%e5%90%88%e6%95%b0%e5%80%bc%e8%bf%90%e7%ae%97" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25804.2-%25E5%25A4%258D%25E5%2590%2588%25E6%2595%25B0%25E5%2580%25BC%25E8%25BF%2590%25E7%25AE%2597%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b4.2%5d%20%e5%a4%8d%e5%90%88%e6%95%b0%e5%80%bc%e8%bf%90%e7%ae%97" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.1-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/" class="prev" rel="prev" title="自制脚本语言[4.1] 数值运算"><i class="iconfont icon-dajiantou"></i>&nbsp;自制脚本语言[4.1] 数值运算</a>
+         
+        
+        <a href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.1-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" class="next" rel="next" title="自制脚本语言[5.1] if-else分支语句">自制脚本语言[5.1] if-else分支语句&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-WCK6MK84E4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+     </div>
+  </body>
+</html>
