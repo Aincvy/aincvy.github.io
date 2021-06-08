@@ -5,10 +5,6 @@
     <link>https://fantasyplayer.link/tags/</link>
     <description>Recent content in Tags on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    
-	<atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language><atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

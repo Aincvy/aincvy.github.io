@@ -5,7 +5,7 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2020 16:02:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 May 2021 13:36:35 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -18,9 +18,18 @@
     </item>
     
     <item>
+      <title>Non-menus</title>
+      <link>https://fantasyplayer.link/non-menu/</link>
+      <pubDate>Sat, 22 May 2021 15:10:02 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programs</title>
       <link>https://fantasyplayer.link/program/</link>
-      <pubDate>Sat, 22 May 2021 15:10:02 +0800</pubDate>
+      <pubDate>Sat, 01 May 2021 15:25:44 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/program/</guid>
       <description></description>
@@ -32,15 +41,6 @@
       <pubDate>Sun, 11 Apr 2021 09:38:53 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/caprice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Series</title>
-      <link>https://fantasyplayer.link/series/</link>
-      <pubDate>Tue, 08 Dec 2020 11:13:24 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/series/</guid>
       <description></description>
     </item>
     
