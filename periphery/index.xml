@@ -45,11 +45,11 @@ gitlab的版本号格式是： (Major).(Minor).(Patch)
     </item>
     
     <item>
-      <title>黑苹果因为多个意外意见挂了的事情的记录贴</title>
-      <link>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%84%8F%E8%A7%81%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</link>
+      <title>黑苹果因为多个意外情况挂了的事情的记录贴</title>
+      <link>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%83%85%E5%86%B5%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</link>
       <pubDate>Mon, 05 Apr 2021 21:30:41 +0800</pubDate>
       
-      <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%84%8F%E8%A7%81%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</guid>
+      <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%83%85%E5%86%B5%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</guid>
       <description>由于笔者使用的是黑苹果，所以能正常使用的话，尽量不升级比较好。 如果想升级的话， 还需要更新OpenCore的版本， 可能还会碰到各种乱七八糟的问题。 同时，笔者感觉Big Sur 并不是太好，所以完全没有升级的打算。
 但是，意外总是会有的。 前些天， 笔者因为手误，点到了现在安装升级的选项。。 虽然及时的点击了取消， 但还是触发了一些悲剧操作。 本帖就是来记录一下这件事情的。
 事后， 笔者想禁止掉系统的升级提示弹窗， 但是发现好像不行了。 自从 10.15.7 的版本之后， 系统升级的通知好像就无法禁止了。 网上一般提供的是这个命令 sudo softwareupdate --ignore &amp;quot;macOS Catalina&amp;quot; ，笔者再使用的时候会提示 下面的内容。
@@ -224,7 +224,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <description>从我的安装经验来看， 黑苹果的安装非常简单，只是有点耗时而已。
 教程地址： https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html
 下面是使用教程的几个前提：
- 你有一定的英文阅读水平。 你具有耐心， 可以使用搜索引擎去尝试解决问题。 你使用 Intel 的CPU 和 AMD的显卡， 或者你将要更换。 （非必需 😂） 有一个大于8G的空闲U盘。 当前电脑可以运行一个系统（Windows/Linux 都可以)  笔者跟随这个教程，成功在公司电脑， 个人家里电脑上安装了 Mac 系统的 Catalina 版本。
+ 你有一定的英文阅读水平。 你具有耐心， 可以使用搜索引擎去尝试解决问题。 你使用 Intel 的CPU 和 AMD的显卡， 或者你将要更换。 （非必需 😂） 有一个大于8G的空闲U盘。 当前电脑可以运行一个系统（Windows/Linux 都可以) 在选购硬件的时候，笔者建议选购一个不带无线网卡的主板， 然后自购一个免驱网卡（大多数都带蓝牙）。 而这个网卡再Windows下基本上也都有驱动，可以正常使用。 如果一个电脑有两个物理蓝牙设备，就有点麻烦。  笔者跟随这个教程，成功在公司电脑， 个人家里电脑上安装了 Mac 系统的 Catalina 版本。
 关于AMD的CPU，有一些功能会在成功安装后无法使用。
 以下引用上面教程原文
  Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:
