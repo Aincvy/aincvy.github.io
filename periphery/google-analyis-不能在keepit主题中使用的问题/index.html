@@ -10,9 +10,9 @@
   
   
   
-  <link rel="prev" href="https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
-  <link rel="next" href="https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" />
-  <link rel="canonical" href="https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
+  <link rel="prev" href="https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,10 +24,10 @@
   <title>
        
        
-           Rider卡在了开启界面的解决办法 | Fanstasy Player / 幻想系玩家
+           Google Analyis 不能在keepIt主题中使用的问题 | Fanstasy Player / 幻想系玩家
        
   </title>
-  <meta name="title" content="Rider卡在了开启界面的解决办法 | Fanstasy Player / 幻想系玩家">
+  <meta name="title" content="Google Analyis 不能在keepIt主题中使用的问题 | Fanstasy Player / 幻想系玩家">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,23 +35,24 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Rider卡在了开启界面的解决办法"/>
-<meta name="twitter:description" content="在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。
-原因可能是因为项目的缓存坏掉了， 所以就无法启动。
-解决方案是清理掉缓存。
-笔者使用的操作方法比较粗暴，直接删除了整个Rider相关的目录。
- 关闭Rider 删除文件夹 c:\users\[username]\AppData\Local\JetBrains\Rider[version] 删除文件夹 c:\users\[username]\AppData\Roming\JetBrains\Rider[version] 开启Rider  注意， 这种方法下也会删掉rider安装的插件等。 也许有直接清理项目缓存的方法， 但是笔者并没有去找。
-拓展阅读 https://rider-support.jetbrains.com/hc/en-us/articles/207803955-Where-are-the-ReSharper-cache-files-kept-
-https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intellij-idea-like-eclipses-clean"/>
+<meta name="twitter:title" content="Google Analyis 不能在keepIt主题中使用的问题"/>
+<meta name="twitter:description" content="KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。
+https://github.com/Fastbyte01/KeepIt
+笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。
+经过一番搜索之后， 笔者发现，这个主题似乎只支持老版的谷歌分析的API。 即UA- 开头的跟踪ID，而GA- 开头的则不支持。
+知道了问题， 解决起来就简单了， 在谷歌分析的管理后台中创建一个老版本的应用就可以了。
+当然， 也可以考虑修改模板文件， 使其兼容GA- 版本的API。 不过笔者觉得那样做有一点麻烦，所以就没有那样做。
+拓展阅读
+https://stackoverflow.com/questions/64993368/my-google-analytics-setup-for-hugo-is-not-working"/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Rider卡在了开启界面的解决办法",
+  "headline": "Google Analyis 不能在keepIt主题中使用的问题",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/fantasyplayer.link\/periphery\/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95\/"
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98\/"
   },
   "image": {
     "@type": "ImageObject",
@@ -61,10 +62,10 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
   },
   "genre": "periphery",
   
-  "wordcount":  20 ,
-  "url": "https:\/\/fantasyplayer.link\/periphery\/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95\/",
-  "datePublished": "2021-05-24T13:36:35\u002b08:00",
-  "dateModified": "2021-05-24T13:36:35\u002b08:00",
+  "wordcount":  22 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98\/",
+  "datePublished": "2021-07-19T17:11:25\u002b08:00",
+  "dateModified": "2021-07-19T17:11:25\u002b08:00",
   
   "publisher": {
     "@type": "Organization",
@@ -144,11 +145,11 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">Rider卡在了开启界面的解决办法</h1>
+        <h1 class="post-title">Google Analyis 不能在keepIt主题中使用的问题</h1>
         <div class="post-meta">
             Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
                 <span class="post-time">
-                    on <time datetime=2021-05-24 >24 May 2021</time>
+                    on <time datetime=2021-07-19 >19 July 2021</time>
                 </span>
                 in
                 
@@ -172,20 +173,14 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
           
           
 
-          <p>在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。</p>
-<p>原因可能是因为项目的缓存坏掉了， 所以就无法启动。</p>
-<p>解决方案是清理掉缓存。</p>
-<p>笔者使用的操作方法比较粗暴，直接删除了整个Rider相关的目录。</p>
-<ol>
-<li>关闭Rider</li>
-<li>删除文件夹 <code>c:\users\[username]\AppData\Local\JetBrains\Rider[version]</code></li>
-<li>删除文件夹 <code>c:\users\[username]\AppData\Roming\JetBrains\Rider[version]</code></li>
-<li>开启Rider</li>
-</ol>
-<p><strong>注意， 这种方法下也会删掉rider安装的插件等。 也许有直接清理项目缓存的方法， 但是笔者并没有去找。</strong></p>
-<h4 id="拓展阅读">拓展阅读</h4>
-<p><a href="https://rider-support.jetbrains.com/hc/en-us/articles/207803955-Where-are-the-ReSharper-cache-files-kept-">https://rider-support.jetbrains.com/hc/en-us/articles/207803955-Where-are-the-ReSharper-cache-files-kept-</a></p>
-<p><a href="https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intellij-idea-like-eclipses-clean">https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intellij-idea-like-eclipses-clean</a></p>
+          <p>KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。</p>
+<p><a href="https://github.com/Fastbyte01/KeepIt">https://github.com/Fastbyte01/KeepIt</a></p>
+<p>笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。</p>
+<p>经过一番搜索之后， 笔者发现，这个主题似乎只支持老版的谷歌分析的API。 即<code>UA-</code> 开头的跟踪ID，而<code>GA-</code> 开头的则不支持。</p>
+<p>知道了问题， 解决起来就简单了， 在谷歌分析的管理后台中创建一个老版本的应用就可以了。</p>
+<p>当然， 也可以考虑修改模板文件， 使其兼容<code>GA-</code> 版本的API。 不过笔者觉得那样做有一点麻烦，所以就没有那样做。</p>
+<p><strong>拓展阅读</strong></p>
+<p><a href="https://stackoverflow.com/questions/64993368/my-google-analytics-setup-for-hugo-is-not-working">https://stackoverflow.com/questions/64993368/my-google-analytics-setup-for-hugo-is-not-working</a></p>
 
     </div>
 
@@ -199,7 +194,7 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>20</span>
+                   <span>22</span>
             </p>
             
             <p class="copyright-item">
@@ -208,13 +203,13 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2frider%25E5%258D%25A1%25E5%259C%25A8%25E4%25BA%2586%25E5%25BC%2580%25E5%2590%25AF%25E7%2595%258C%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E5%258A%259E%25E6%25B3%2595%2f&amp;text=Rider%e5%8d%a1%e5%9c%a8%e4%ba%86%e5%bc%80%e5%90%af%e7%95%8c%e9%9d%a2%e7%9a%84%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgoogle-analyis-%25E4%25B8%258D%25E8%2583%25BD%25E5%259C%25A8keepit%25E4%25B8%25BB%25E9%25A2%2598%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;text=Google%20Analyis%20%e4%b8%8d%e8%83%bd%e5%9c%a8keepIt%e4%b8%bb%e9%a2%98%e4%b8%ad%e4%bd%bf%e7%94%a8%e7%9a%84%e9%97%ae%e9%a2%98&amp;via=Aincvy" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
       
       
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2frider%25E5%258D%25A1%25E5%259C%25A8%25E4%25BA%2586%25E5%25BC%2580%25E5%2590%25AF%25E7%2595%258C%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E5%258A%259E%25E6%25B3%2595%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgoogle-analyis-%25E4%25B8%258D%25E8%2583%25BD%25E5%259C%25A8keepit%25E4%25B8%25BB%25E9%25A2%2598%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f" target="_blank" title="Share on Facebook">
           <i class="iconfont icon-facebook"></i>
         </a>
         
@@ -222,7 +217,7 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2frider%25E5%258D%25A1%25E5%259C%25A8%25E4%25BA%2586%25E5%25BC%2580%25E5%2590%25AF%25E7%2595%258C%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E5%258A%259E%25E6%25B3%2595%2f&amp;title=Rider%e5%8d%a1%e5%9c%a8%e4%ba%86%e5%bc%80%e5%90%af%e7%95%8c%e9%9d%a2%e7%9a%84%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgoogle-analyis-%25E4%25B8%258D%25E8%2583%25BD%25E5%259C%25A8keepit%25E4%25B8%25BB%25E9%25A2%2598%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=Google%20Analyis%20%e4%b8%8d%e8%83%bd%e5%9c%a8keepIt%e4%b8%bb%e9%a2%98%e4%b8%ad%e4%bd%bf%e7%94%a8%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
@@ -238,7 +233,7 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
           
 
           
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2frider%25E5%258D%25A1%25E5%259C%25A8%25E4%25BA%2586%25E5%25BC%2580%25E5%2590%25AF%25E7%2595%258C%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E5%258A%259E%25E6%25B3%2595%2f&amp;title=Rider%e5%8d%a1%e5%9c%a8%e4%ba%86%e5%bc%80%e5%90%af%e7%95%8c%e9%9d%a2%e7%9a%84%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" target="_blank" title="Share on Douban ">
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fgoogle-analyis-%25E4%25B8%258D%25E8%2583%25BD%25E5%259C%25A8keepit%25E4%25B8%25BB%25E9%25A2%2598%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=Google%20Analyis%20%e4%b8%8d%e8%83%bd%e5%9c%a8keepIt%e4%b8%bb%e9%a2%98%e4%b8%ad%e4%bd%bf%e7%94%a8%e7%9a%84%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
             <i class="iconfont icon-douban"></i>
           </a>
           
@@ -266,10 +261,8 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
 
     <div class="post-nav">
         
-        <a href="https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="Gitlab升级操作记录"><i class="iconfont icon-dajiantou"></i>&nbsp;Gitlab升级操作记录</a>
+        <a href="https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="prev" rel="prev" title="Rider卡在了开启界面的解决办法"><i class="iconfont icon-dajiantou"></i>&nbsp;Rider卡在了开启界面的解决办法</a>
          
-        
-        <a href="https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="next" rel="next" title="Google Analyis 不能在keepIt主题中使用的问题">Google Analyis 不能在keepIt主题中使用的问题&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
