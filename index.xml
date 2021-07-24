@@ -5,8 +5,26 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Jul 2021 17:11:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Jul 2021 11:42:39 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Non-menus</title>
+      <link>https://fantasyplayer.link/non-menu/</link>
+      <pubDate>Sat, 24 Jul 2021 11:42:39 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programs</title>
+      <link>https://fantasyplayer.link/program/</link>
+      <pubDate>Fri, 23 Jul 2021 18:51:51 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Peripheries</title>
@@ -14,15 +32,6 @@
       <pubDate>Mon, 19 Jul 2021 17:11:25 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Non-menus</title>
-      <link>https://fantasyplayer.link/non-menu/</link>
-      <pubDate>Thu, 24 Jun 2021 15:38:47 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/</guid>
       <description></description>
     </item>
     
@@ -54,18 +63,18 @@
 &lt;h2 id=&#34;小说和故事类&#34;&gt;小说和故事类&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;基本上是瞎写的内容。&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../non-menu/story-palace/&#34;&gt;宫殿&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../non-menu/story-palace/&#34;&gt;宫殿&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;镜隐之初&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../non-menu/story-mirror/&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第一篇&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Programs</title>
-      <link>https://fantasyplayer.link/program/</link>
-      <pubDate>Sat, 01 May 2021 15:25:44 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/program/</guid>
-      <description></description>
     </item>
     
     <item>
