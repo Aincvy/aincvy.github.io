@@ -5,24 +5,24 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Jul 2021 14:14:53 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Aug 2021 14:43:20 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Non-menus</title>
-      <link>https://fantasyplayer.link/non-menu/</link>
-      <pubDate>Sat, 31 Jul 2021 14:14:53 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Programs</title>
       <link>https://fantasyplayer.link/program/</link>
-      <pubDate>Fri, 23 Jul 2021 18:51:51 +0800</pubDate>
+      <pubDate>Sat, 07 Aug 2021 14:43:20 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/program/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Non-menus</title>
+      <link>https://fantasyplayer.link/non-menu/</link>
+      <pubDate>Sat, 31 Jul 2021 16:30:03 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/</guid>
       <description></description>
     </item>
     
