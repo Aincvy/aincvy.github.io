@@ -6,7 +6,19 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Sep 2021 09:26:04 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 11:45:44 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>谷歌v8引擎的尝试</title>
+      <link>https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
+      <pubDate>Sat, 18 Sep 2021 11:45:44 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
+      <description>谷歌V8是一个用于执行js脚本的引擎。
+详细内容 Isolate  一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间是完全隔离的, 它们不能够有任何共享的资源。如果不显式创建 Isolate, 会自动创建一个默认的 Isolate。
+ 下面给出一些相关代码。
+// Initialize V8. v8::V8::InitializeICUDefaultLocation(execPath); v8::V8::InitializeExternalStartupData(execPath); std::unique_ptr&amp;lt;v8::Platform&amp;gt; platform = v8::platform::NewDefaultPlatform(); v8::V8::InitializePlatform(platform.get()); v8::V8::Initialize(); // Create a new Isolate and make it the current one. v8::Isolate::CreateParams createParams; createParams.array_buffer_allocator = v8::ArrayBuffer::Allocator::NewDefaultAllocator(); auto isolate = v8::Isolate::New(createParams); auto isolate_scope = std::make_unique&amp;lt;v8::Isolate::Scope&amp;gt;(isolate); g_V8Runtime = new V8Runtime{ std::move(platform), isolate, createParams.array_buffer_allocator, std::move(isolate_scope), }; // 销毁 dbg(&amp;#34;destroy js engine..&amp;#34;); g_V8Runtime-&amp;gt;isolateScope.reset(); if (g_V8Runtime-&amp;gt;isolate) { g_V8Runtime-&amp;gt;isolate-&amp;gt;Dispose(); g_V8Runtime-&amp;gt;isolate = nullptr; } v8::V8::Dispose(); v8::V8::ShutdownPlatform(); if (g_V8Runtime-&amp;gt;arrayBufferAllocator) { delete g_V8Runtime-&amp;gt;arrayBufferAllocator; g_V8Runtime-&amp;gt;arrayBufferAllocator = nullptr; } Initialize V8.</description>
+    </item>
+    
     <item>
       <title>Abseil 初体验</title>
       <link>https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
