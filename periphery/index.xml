@@ -6,7 +6,19 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Jul 2021 17:11:25 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 17:33:35 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vscode开发c&#43;&#43; 介绍</title>
+      <link>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Sat, 25 Sep 2021 17:33:35 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+      <description>笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。
+笔者是使用Mac版本的 vs code，不过应该都差不多把。
+拓展 vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。
+ llvm-vs-code-extensions.vscode-clangd  https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd llvm 出的插件， 基于 clangd ，使用LSP通信。 这个插件的自动补全感觉比微软出的c/c++插件好一些。 自动完成 编译错误和警告 跳转到定义/声明 代码格式化 （clang-format) 简单的重构 （提取变量， 重命名什么的） 这个插件附带 clang-tidy和clang-format， 分别用于代码分析和格式化。 （CLion应该也是基于clangd的， 这个插件提供的警告部分还不错。 格式化功能，笔者觉得略逊于 CLion。）   ms-vscode.cpptools-extension-pack  https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack 这个是一个插件包， 包含了几个插件。 如果觉得这个插件包的内容太臃肿了， 可以考虑不装。   ms-vscode.cpptools  https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools 微软官方的 cpp插件， 这个和 clangd 一起安装的时候要禁用这个插件的 IntelliSense 功能。 这个插件好像提供 debug 功能 。 （笔者没有使用过， 笔者基本上是使用lldb命令）   twxs.cmake  https://marketplace.visualstudio.com/items?itemName=twxs.cmake cmake 语法支持   ms-vscode.</description>
+    </item>
+    
     <item>
       <title>Google Analyis 不能在keepIt主题中使用的问题</title>
       <link>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
