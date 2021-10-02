@@ -10,7 +10,7 @@
     <item>
       <title>自制脚本语言[附.1] 字节码列表</title>
       <link>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/</link>
-      <pubDate>Sat, 31 Jul 2021 14:14:53 +0800</pubDate>
+      <pubDate>Sat, 02 Oct 2021 15:14:53 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/</guid>
       <description>本文为想法草稿，并没有真实实践过。
@@ -22,6 +22,29 @@
   [varName/localIndex] 大致和[varName/index]一样， 只是这里的localIndex表示一个局部变量表的索引。
   [index/value] 表示这里应该是一个索引，以防止歧义。 但是在编写伪代码的时候，笔者可能会直接给予一个值。
   常规指令  cjmp [label/index]  有条件的跳转指令 全写应该是：condition jump 此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 这个指令首先获取栈顶元素， 并将该元素出栈 之后判断栈顶元素的值， 如果值是false的话， 就跳转， 否则此指令无任何效果   jmp [label/index]  无条件的跳转指令 此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 直接跳转到指定的行数   set [varName/localIndex] [value]  设置一个局部变量表的元素的值 此指令会在计算的时候重新检测类型   get [varName/localIndex]  将一个局部变量表里面的值获取， 然后压栈。   dec [varName/localIndex]  此指令应该是不需要的。 声明一个变量 , 此指令的作用应该类似于 set [varName/localIndex] null  即将某个栈帧的值初始化成一个null值。   label:  使用冒号结尾的当做一个标签， 去掉冒号的部分即为标签的名字。   call [funcName]  调用一个函数 此指令会创建一个新的栈， 压入当前的栈顶，然后切换到新的栈。 按照参数顺序将参数入栈。 此时的栈已经是新的栈了。 此指令后面必需存在一个execute指令。   execute  执行一个函数的具体内容， 此指令必需跟在call 后面。 创建新的局部变量表， 并将栈中的全部元素，按照顺序复制到局部变量表中。  直接复制的话， 会出现先从局部变量表中复制到栈上， 然后从栈上再复制到新的局部变量表中的事情。 这样做的好处应该是实现起来稍微简单一些。 不过应该会存在一些性能上的浪费， 如果想避免性能问题的话， 可以考虑将元素留在栈中，不进行复制。 如果这样的话， [localIndex] 参数就需要能够区分是指的栈，还是局部变量表。 一般的做法可能是使用正负数。   清空当前栈中的全部元素。 切换到函数自身的字节码指令中。 从0开始执行。   return  当函数的全部字节码执行完毕 或者碰到return关键字的时候，应该放入此指令。 切换到之前到局部变量表。 将当前栈中的剩余元素视为返回值，进行暂存。 一般单返回值的情况下就只有一个元素。 切换到之前的栈中， 并将栈顶元素出栈。 即删除函数使用的那个栈。 将暂存的返回值按照顺序压栈。 这样做看起来多进行了1次复制， 可以考虑优化。 切换到之前的字节码列表中， 并将对应的索引恢复。    逻辑判断指令  lt/lte [varName/localIndex] [index/value]  检测localIndex 的值是否小于/小于等于 后面所指示的值。 并将 true/false的结果压栈   gt/gte [varName/localIndex] [index/value]  检测localIndex 的值是否大于/大于等于 后面所指示的值。 并将 true/false的结果压栈   eq [varName/localIndex] [index/value]  检测localIndex 的值是否等于 后面所指示的值。 并将 true/false的结果压栈   reverse  将栈顶的布尔值出栈， 反转， 然后再压栈。    类型限定指令 使用类型限定指令应该可以增加效率。</description>
+    </item>
+    
+    <item>
+      <title>自制脚本语言[6.1] 函数</title>
+      <link>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sat, 02 Oct 2021 14:43:13 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/</guid>
+      <description>本篇来尝试描述一下函数如何实现。
+基本内容 主要思路 函数的主要目的基本上是复用，隔离变量等。
+为了能实现复用的目的，需要保存函数内部的字节码，以及每次在调用函数的时候需要生成新的变量环境。
+变量环境 这里先描述一下笔者所说的变量环境是个什么东西。
+笔者曾经在 3.1章节环境与节点运算的值 简单的介绍过这个东西。笔者在langX里面使用是一个叫做环境的词。
+即 Enviroment，里面所有的变量都是使用一个std::map保存的，变量名作为key, 变量值作为value。
+在现代编程语言里面，似乎都是使用栈的方式，他们使用索引作为key, 值为value。
+笔者的langX因为经验不足的问题， 并没有做栈上的值， 都是做堆上的值， 栈上保存的都是指针， 这并不是一个好的设计。
+内置的数字类型应该保存原值，而不是使用指针的形式。
+无论是使用map，还是栈，异或局部变量表等等， 在函数代码真正执行前都应该准备一个新的，以隔离函数内外的变量。
+字节码 或者 AST 节点 因为函数需要复用， 所以就需要把函数的执行指令保存起来， 而不是执行一遍就丢掉。
+AST节点额外内容
+笔者在写langX的时候，会把临时计算的值保存到 AST节点上， 这样就需要在函数执行前，或者执行结束后清掉所有的值， 否则会产生一些未定义的行为。 就是可能会产生一些很难找到原因的，莫名其妙的bug。
+另外，这也是一个不好的设计， 完全不推荐使用。
+总结 函数上来说， 新的东西不太多， 它更像是一个包装，把之前的东西使用新的方式组合和使用。</description>
     </item>
     
     <item>
