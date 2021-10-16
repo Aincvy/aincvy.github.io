@@ -58,7 +58,7 @@
   },
   "genre": "periphery",
   
-  "wordcount":  272 ,
+  "wordcount":  398 ,
   "url": "https:\/\/fantasyplayer.link\/periphery\/vscode%E5%BC%80%E5%8F%91c\u002b\u002b%E7%9A%84%E4%BD%93%E9%AA%8C\/",
   "datePublished": "2021-09-25T17:33:35\u002b08:00",
   "dateModified": "2021-09-25T17:33:35\u002b08:00",
@@ -321,11 +321,65 @@
 <span style="color:#e6db74">&#34;editor.formatOnPaste&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span><span style="color:#960050;background-color:#1e0010">,</span>
 <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">使用</span> <span style="color:#960050;background-color:#1e0010">代码段等提示的时候</span> <span style="color:#960050;background-color:#1e0010">也会产生代码补全</span>
 <span style="color:#e6db74">&#34;editor.suggest.snippetsPreventQuickSuggestions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">,</span>
-</code></pre></div><h2 id="总结">总结</h2>
+</code></pre></div><h2 id="编译和运行">编译和运行</h2>
+<h3 id="添加配置">添加配置</h3>
+<p><strong>如果使用了 Cmake 插件， 这一步可以不做。</strong></p>
+<p>左侧工具栏里有一个 编译和运行的按钮，点一下就能看到调试界面了。</p>
+<p>点击上方的下拉框之后，选择“添加配置” 或者点击右侧的齿轮按钮应该都能到<code>launch.json</code>文件的编辑界面，只不过点击“添加配置”的时候， 会自动添加一个示例的配置项。</p>
+<p>笔者是 Mac 系统下， 使用 lldb 进行调试的，下面给出一下笔者的配置内容，给读者一个参考。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;(lldb) 启动&#34;</span>,
+  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;cppdbg&#34;</span>,
+  <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+  <span style="color:#f92672">&#34;program&#34;</span>: <span style="color:#e6db74">&#34;${command:cmake.launchTargetPath}&#34;</span>,
+  <span style="color:#f92672">&#34;args&#34;</span>: [],
+  <span style="color:#f92672">&#34;stopAtEntry&#34;</span>: <span style="color:#66d9ef">false</span>,
+  <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
+  <span style="color:#f92672">&#34;environment&#34;</span>: [
+    {
+      <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">add</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">directory</span> <span style="color:#960050;background-color:#1e0010">where</span> <span style="color:#960050;background-color:#1e0010">our</span> <span style="color:#960050;background-color:#1e0010">target</span> <span style="color:#960050;background-color:#1e0010">was</span> <span style="color:#960050;background-color:#1e0010">built</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">PATHs</span>
+      <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">it</span> <span style="color:#960050;background-color:#1e0010">gets</span> <span style="color:#960050;background-color:#1e0010">resolved</span> <span style="color:#960050;background-color:#1e0010">by</span> <span style="color:#960050;background-color:#1e0010">CMake</span> <span style="color:#960050;background-color:#1e0010">Tools:</span>
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;PATH&#34;</span>,
+      <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;${env:PATH}:${command:cmake.getLaunchTargetDirectory}&#34;</span>
+    },
+  ],
+  <span style="color:#f92672">&#34;externalConsole&#34;</span>: <span style="color:#66d9ef">true</span>,
+  <span style="color:#f92672">&#34;MIMode&#34;</span>: <span style="color:#e6db74">&#34;lldb&#34;</span>
+}
+</code></pre></div><p>笔者使用了 <code>cmake</code>插件提供的值， 而没有具体指定。</p>
+<h3 id="启动和调试">启动和调试</h3>
+<p><del>添加了正确的配置项之后， 程序应该就可以在 VS Code 中调试了。</del></p>
+<p>使用 cmake 插件的时候，可以使用下面的方式启动程序。</p>
+<ul>
+<li>使用 <code>Ctrl+F5</code> 或者点击底部状态栏的小虫子🐞按钮 打开程序进行调试。</li>
+<li>使用<code>Shift+F5</code> 或者点击底部状态栏的播放按钮 ▶正常运行程序。</li>
+</ul>
+<p>如果没有使用 cmake 插件的话， 就需要按照上一部分添加配置项。</p>
+<ul>
+<li>之后还是在底部状态栏， 可能看到配置项的名字，点一下应该就可以了。</li>
+</ul>
+<p>可以在行号左侧点击一下，以添加断点。</p>
+<p>在程序碰到致命错误或者断点的时候会暂停执行程序，当程序暂停之后可以在调试界面看到更多信息。</p>
+<p>底部还有一个<code>DEBUG CONSOLE</code> ，这是一个调试用控制台，输入变量名用于查看变量的值， 还能执行部分函数。但是好像不支持其他命令。</p>
+<p>将鼠标放到对应代码上， 也可以看到当前的值。</p>
+<p>这个<code>DEBUG CONSOLE</code>有一个问题， 那就是打印出来的文字并不好看。  每一行基本都是使用<code>@&quot;内容&quot;</code>的形式。 其中内容字符串里面的转义字符并不会被转义，而是直接打印出来。</p>
+<p>成功启动调试之后， 会有一个小小的工具栏在VS Code 窗口的中间正上方的位置，可以重启，结束调试，步进，按行执行等。</p>
+<h3 id="拓展阅读">拓展阅读</h3>
+<ul>
+<li><a href="https://github.com/microsoft/vscode-cmake-tools/blob/develop/docs/debug-launch.md#debug-using-a-launchjson-file">https://github.com/microsoft/vscode-cmake-tools/blob/develop/docs/debug-launch.md#debug-using-a-launchjson-file</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/debugging">https://code.visualstudio.com/docs/editor/debugging</a></li>
+</ul>
+<h2 id="总结">总结</h2>
 <p>有了上面的这些插件之后， 就可以正常工作了。</p>
 <p>虽然还是有一些不太严重的不足：</p>
 <ul>
-<li>switch 不能自动补全缺失的 case 项</li>
+<li><del>switch 不能自动补全缺失的 case 项</del>
+<ul>
+<li>似乎是<code>cmantic</code>插件带有的功能， 可以补全缺少的 case 项目。 具体操作是鼠标点击一下 switch 关键字中间的任意位置，之后左侧应该会出现一个蓝色的按钮，点击一下会有一个按钮，再点一下按钮就会补全 case 项了。</li>
+<li>但是 补全的列表，只有最后一项有 <code>break</code>，其他项目需要自己手动添加。</li>
+<li>如果存在 <code>default</code>关键字，就不会追加缺少的 case项。</li>
+</ul>
+</li>
 <li>代码段的功能不是很好用  (if/for/while之类的)</li>
 <li>代码格式化有点蛋疼， 不像 Jetbrains家族的那些， 自带的就很舒服。
 <ul>
@@ -333,7 +387,7 @@
 </ul>
 </li>
 </ul>
-<p>笔者目前是使用命令行手动make 和run的，所以编译运行相关的功能还没有测试过，不知道是否好用。</p>
+<p><del>笔者目前是使用命令行手动make 和run的，所以编译运行相关的功能还没有测试过，不知道是否好用。</del></p>
 <p>总体来说，还是比较满意的。   <em>有部分插件，笔者还没来得及也没有细究。</em></p>
 
     </div>
@@ -348,7 +402,7 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>272</span>
+                   <span>398</span>
             </p>
             
             <p class="copyright-item">
