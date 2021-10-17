@@ -5,8 +5,17 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Oct 2021 10:28:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Oct 2021 11:08:01 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Non-menus</title>
+      <link>https://fantasyplayer.link/non-menu/</link>
+      <pubDate>Sun, 17 Oct 2021 11:08:01 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Caprices</title>
@@ -14,15 +23,6 @@
       <pubDate>Sun, 10 Oct 2021 10:28:28 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/caprice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Non-menus</title>
-      <link>https://fantasyplayer.link/non-menu/</link>
-      <pubDate>Sat, 02 Oct 2021 15:14:53 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/</guid>
       <description></description>
     </item>
     
@@ -70,7 +70,7 @@
 &lt;p&gt;镜隐之初&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../non-menu/story-mirror/&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;第一篇&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fantasyplayer.link/non-menu/story-mirror/1.-%E9%82%A3%E5%A4%A9/&#34;&gt;第一篇&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
