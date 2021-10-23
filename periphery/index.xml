@@ -6,7 +6,18 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Sep 2021 17:33:35 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Oct 2021 11:10:48 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win10装不上蓝牙驱动的问题记录</title>
+      <link>https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 23 Oct 2021 11:10:48 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <description>笔者的原因是因为系统中已经有一个蓝牙设备处于激活中了，把那个设备禁用了之后就好了。
+似乎不禁用那个设备也可以安装驱动， 但是设备无法正常运转。
+两个蓝牙设备则分别是： 板载蓝牙和一个 PCI-e 的蓝牙设备。</description>
+    </item>
+    
     <item>
       <title>Vscode开发c&#43;&#43; 介绍</title>
       <link>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
