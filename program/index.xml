@@ -6,7 +6,24 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Sep 2021 11:45:44 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Nov 2021 16:35:43 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; Notes for Pro 读书笔记</title>
+      <link>https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 03 Nov 2021 16:35:43 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <description>笔者这几天抽空读完了这本C++ Notes for Professionals book， 所以写一篇读书笔记， 记录下笔者还记得的内容。
+https://goalkicker.com/CPlusPlusBook/
+详细内容 本篇内容基本上都是以 c++17的版本来写的。
+绝大部分代码都是纯手写，可能会出现部分错误。
+class, struct 关键字   class关键字用于定义一个类， struct关键字用于定义一个结构。
+  类和结构大体一致， 是可以在内部进行转换的。区别在于 类的默认访问修饰符是private，而结构是public。
+  并且在一些地方，两个关键字是可以互换的。比如： enum class x{}; enum struct x{};
+  在类继承的时候， 如果没有给访问修饰符， 则是会一个默认的。 请看下面的示例。
+struct B1 {}; class B2 {}; struct D1: B1{}; // 等同于： struct D1: public B1{}; 因为 B1是一个 struct struct D2: B2{}; // 等用于： struct D2: private B2{}; 因为 B2 是一个 class  class D3: B1{}; // 等同于 D1 class D4: B2{}; // 等同于 D2 模板的理解   c++的模板在笔者的理解里面更偏向于是一种代码生成技术。</description>
+    </item>
+    
     <item>
       <title>谷歌v8引擎的尝试</title>
       <link>https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
