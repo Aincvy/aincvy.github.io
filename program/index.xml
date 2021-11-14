@@ -15,6 +15,7 @@
       <guid>https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>笔者这几天抽空读完了这本C++ Notes for Professionals book， 所以写一篇读书笔记， 记录下笔者还记得的内容。
 https://goalkicker.com/CPlusPlusBook/
+这本书对于从c 转向 cpp 的读者挺有帮助的， 笔者感觉。
 详细内容 本篇内容基本上都是以 c++17的版本来写的。
 绝大部分代码都是纯手写，可能会出现部分错误。
 class, struct 关键字   class关键字用于定义一个类， struct关键字用于定义一个结构。

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/" />
+  <link rel="next" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%807.1-%E7%B1%BB/" />
+  <link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.2-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           自制脚本语言[6.2] 匿名函数 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="自制脚本语言[6.2] 匿名函数 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自制脚本语言[6.2] 匿名函数"/>
+<meta name="twitter:description" content="本篇来描述一下匿名函数的实现。
+基本内容 langX 代码示例 onEvent =&gt; (flag, callback) { // xxx } callEvent =&gt; (flag, data){ local cb = findCallback(flag); if( cb ){ cb(data); } } registerListeners =&gt; { // 这里的第二个参数就是一个匿名函数。 onEvent(1, data =&gt; { println(&#34;[DEBUG] event 1 = &#34; &#43; data.toString()); }); onEvent(2, data =&gt; { println(&#34;[DEBUG] event 2 = &#34; &#43; data.toString()); }); } 笔者在 langX 里面使用了类似函数声明的语法来声明一个匿名函数。
+当一个函数的参数需求另外一个函数的时候， 使用匿名函数很方便。
+主要思路 设计了合适的语法之后， 解析该语法生成一个函数结构即可。 实现了函数这个功能之后， 这一部分做起来还是比较简单的。
+在处理函数名称的地方， 给一个空字符串或者 nullptr之类的即可。
+匿名函数除了没有名字之外， 其他行为和函数几乎一样。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "自制脚本语言[6.2] 匿名函数",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.2-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "non-menu",
+  
+  "wordcount":  147 ,
+  "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.2-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0\/",
+  "datePublished": "2021-11-14T10:25:13\u002b08:00",
+  "dateModified": "2021-11-14T10:25:13\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">自制脚本语言[6.2] 匿名函数</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-11-14 >14 November 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本篇来描述一下匿名函数的实现。</p>
+<h2 id="基本内容">基本内容</h2>
+<h3 id="langx-代码示例">langX 代码示例</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">onEvent =&gt; (flag, callback) {
+	// xxx
+}
+
+callEvent =&gt; (flag, data){
+	local cb = findCallback(flag);
+	if( cb ){
+		cb(data);
+	}
+}
+
+registerListeners =&gt; {
+	// 这里的第二个参数就是一个匿名函数。
+	onEvent(1, data =&gt; {
+		println(&#34;[DEBUG] event 1 = &#34; + data.toString());
+	});
+	onEvent(2, data =&gt; {
+		println(&#34;[DEBUG] event 2 = &#34; + data.toString());
+	});
+}
+</code></pre></div><p>笔者在 langX 里面使用了类似函数声明的语法来声明一个匿名函数。</p>
+<p>当一个函数的参数需求另外一个函数的时候， 使用匿名函数很方便。</p>
+<h3 id="主要思路">主要思路</h3>
+<p>设计了合适的语法之后， 解析该语法生成一个函数结构即可。  实现了函数这个功能之后， 这一部分做起来还是比较简单的。</p>
+<p>在处理函数名称的地方， 给一个空字符串或者 <code>nullptr</code>之类的即可。</p>
+<p>匿名函数除了没有名字之外， 其他行为和函数几乎一样。</p>
+<h3 id="一些其他问题">一些其他问题</h3>
+<p>在大多数语言里面， 匿名函数似乎都可以引用创建时候的变量环境的值。</p>
+<p>举个🌰， cpp 里面有一个捕捉列表， 用于捕获声明时环境的值。 而 js 可以直接使用。</p>
+<p>看下面的 js 代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callWrapper</span>(<span style="color:#a6e22e">cb</span> <span style="color:#f92672">=</span> Function()) {
+  <span style="color:#a6e22e">cb</span>();
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>() {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
+  <span style="color:#a6e22e">callWrapper</span>(<span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>); <span style="color:#75715e">// bar
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  });
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>);  <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">test</span>();
+</code></pre></div><p><em>点击链接 <a href="https://jsfiddle.net/qpgjLsrd/">https://jsfiddle.net/qpgjLsrd/</a> 应该可以尝试一下。 控制台的输出结果在右下角的 Console 窗口里面，点一下Console标题会出现窗口。</em></p>
+<p><em>直接打开 Chrome， 按下F12打开开发者工具，找到 Console,也能执行上面的代码。</em></p>
+<p>看上面的代码， <code>callWrapper</code>函数的参数是一个匿名函数， 该匿名函数内部并没有一个叫做 foo 的变量， foo 是出现在了 匿名函数的上面。</p>
+<p>那么， 这个该如何实现呢？  <em>这里笔者仅提供几个思路，因为笔者并没有真正实现过。</em></p>
+<ul>
+<li>将匿名函数的执行环境从声明环境上拓展出来。
+<ul>
+<li>可以选择继承自 匿名函数的声明环境</li>
+<li>匿名函数自身内部的变量还是要储存在内部。</li>
+<li>让匿名函数在搜索变量的时候先从父环境中搜索。</li>
+</ul>
+</li>
+<li>在做语法分析的时候， 锁定变量出现的位置， 然后在真正创建匿名函数的时候引用变量</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>匿名函数 似乎也被叫做 闭包， lambda 表达式等。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>147</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25806.2-%25E5%258C%25BF%25E5%2590%258D%25E5%2587%25BD%25E6%2595%25B0%2f&amp;text=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b6.2%5d%20%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25806.2-%25E5%258C%25BF%25E5%2590%258D%25E5%2587%25BD%25E6%2595%25B0%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25806.2-%25E5%258C%25BF%25E5%2590%258D%25E5%2587%25BD%25E6%2595%25B0%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b6.2%5d%20%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25806.2-%25E5%258C%25BF%25E5%2590%258D%25E5%2587%25BD%25E6%2595%25B0%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b6.2%5d%20%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/" class="prev" rel="prev" title="自制脚本语言[附.1] 字节码列表"><i class="iconfont icon-dajiantou"></i>&nbsp;自制脚本语言[附.1] 字节码列表</a>
+         
+        
+        <a href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%807.1-%E7%B1%BB/" class="next" rel="next" title="自制脚本语言[7.1] 类">自制脚本语言[7.1] 类&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-198975995-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+     </div>
+  </body>
+</html>

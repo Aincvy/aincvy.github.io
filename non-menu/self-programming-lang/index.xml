@@ -8,6 +8,33 @@
     <language>en</language>
     <lastBuildDate>Tue, 08 Jun 2021 11:26:02 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/non-menu/self-programming-lang/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>自制脚本语言[7.1] 类</title>
+      <link>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%807.1-%E7%B1%BB/</link>
+      <pubDate>Sun, 14 Nov 2021 11:19:19 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%807.1-%E7%B1%BB/</guid>
+      <description>本篇来尝试描述一下类如何实现。
+类是面向对象编程的基础， 即使不实现一个完全的类， 也应该实现一个可以储存复合数据的结构。
+一般情况下，都会将类实例化出来的东西叫做对象。 关于面向对象的思想，不属于本篇的讨论范围。
+本篇所讨论的仅仅是基本的实现方式， 关于如何优化内存的内容，暂时不讨论。
+基本内容 langX 代码示例 // 声明一个类 Student { name; age = 10 ; Student =&amp;gt; (name,age){ this.name = name; this.age = age; printInfo(&amp;#34;in ctor.&amp;#34;); } a =&amp;gt; { print(&amp;#34;hello,a!\n&amp;#34;);} printInfo =&amp;gt; (a3){ print(&amp;#34;name: &amp;#34; + name + &amp;#34;\n&amp;#34;); print(&amp;#34;age: &amp;#34; + age + &amp;#34;\n&amp;#34; ); print(&amp;#34;a3: &amp;#34; + a3 + &amp;#34;\n&amp;#34;);} } // 声明一个对象 s2 = new Student(&amp;#34;hideDragon&amp;#34;,20); b = s2.age; c = s2.</description>
+    </item>
+    
+    <item>
+      <title>自制脚本语言[6.2] 匿名函数</title>
+      <link>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.2-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sun, 14 Nov 2021 10:25:13 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.2-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/</guid>
+      <description>本篇来描述一下匿名函数的实现。
+基本内容 langX 代码示例 onEvent =&amp;gt; (flag, callback) { // xxx } callEvent =&amp;gt; (flag, data){ local cb = findCallback(flag); if( cb ){ cb(data); } } registerListeners =&amp;gt; { // 这里的第二个参数就是一个匿名函数。 onEvent(1, data =&amp;gt; { println(&amp;#34;[DEBUG] event 1 = &amp;#34; + data.toString()); }); onEvent(2, data =&amp;gt; { println(&amp;#34;[DEBUG] event 2 = &amp;#34; + data.toString()); }); } 笔者在 langX 里面使用了类似函数声明的语法来声明一个匿名函数。
+当一个函数的参数需求另外一个函数的时候， 使用匿名函数很方便。
+主要思路 设计了合适的语法之后， 解析该语法生成一个函数结构即可。 实现了函数这个功能之后， 这一部分做起来还是比较简单的。
+在处理函数名称的地方， 给一个空字符串或者 nullptr之类的即可。
+匿名函数除了没有名字之外， 其他行为和函数几乎一样。</description>
+    </item>
+    
+    <item>
       <title>自制脚本语言[附.1] 字节码列表</title>
       <link>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/</link>
       <pubDate>Sat, 02 Oct 2021 15:14:53 +0800</pubDate>
@@ -31,20 +58,17 @@
       
       <guid>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/</guid>
       <description>本篇来尝试描述一下函数如何实现。
-基本内容 主要思路 函数的主要目的基本上是复用，隔离变量等。
+基本内容 langX 代码示例 // 函数声明 funa =&amp;gt; { a = 1 ; funb(); // 内置函数调用 println(&amp;#34;funa&amp;#34; + a); } funb =&amp;gt; (x){ println(&amp;#34;funb: &amp;#34; + a); a = 101 ; } // call function funa(); 如上所述， langX 使用 函数名称 =&amp;gt; (参数列表) {函数体} 的风格来声明一个函数， 读者也可以完全设计出自己想要的语法结构。
+主要思路 函数的主要目的基本上是复用，隔离变量等。
 为了能实现复用的目的，需要保存函数内部的字节码，以及每次在调用函数的时候需要生成新的变量环境。
 变量环境 这里先描述一下笔者所说的变量环境是个什么东西。
-笔者曾经在 3.1章节环境与节点运算的值 简单的介绍过这个东西。笔者在langX里面使用是一个叫做环境的词。
-即 Enviroment，里面所有的变量都是使用一个std::map保存的，变量名作为key, 变量值作为value。
-在现代编程语言里面，似乎都是使用栈的方式，他们使用索引作为key, 值为value。
+笔者曾经在 3.1章节环境与节点运算的值 简单的介绍过这个东西。
+笔者在langX里面使用是一个叫做环境的词， 即 Enviroment。里面所有的变量都是使用一个std::map保存的，变量名作为key, 变量值作为value。
+在现代编程语言里面，似乎都是使用栈或者数组的方式，他们使用索引作为key, 值为value。
 笔者的langX因为经验不足的问题， 并没有做栈上的值， 都是做堆上的值， 栈上保存的都是指针， 这并不是一个好的设计。
 内置的数字类型应该保存原值，而不是使用指针的形式。
 无论是使用map，还是栈，异或局部变量表等等， 在函数代码真正执行前都应该准备一个新的，以隔离函数内外的变量。
-字节码 或者 AST 节点 因为函数需要复用， 所以就需要把函数的执行指令保存起来， 而不是执行一遍就丢掉。
-AST节点额外内容
-笔者在写langX的时候，会把临时计算的值保存到 AST节点上， 这样就需要在函数执行前，或者执行结束后清掉所有的值， 否则会产生一些未定义的行为。 就是可能会产生一些很难找到原因的，莫名其妙的bug。
-另外，这也是一个不好的设计， 完全不推荐使用。
-总结 函数上来说， 新的东西不太多， 它更像是一个包装，把之前的东西使用新的方式组合和使用。</description>
+字节码 或者 AST 节点 因为函数需要复用， 所以就需要把函数的执行指令保存起来， 而不是执行一遍就丢掉。</description>
     </item>
     
     <item>
