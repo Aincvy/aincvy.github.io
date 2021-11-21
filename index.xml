@@ -5,8 +5,26 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Nov 2021 11:19:19 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Nov 2021 12:16:17 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Caprices</title>
+      <link>https://fantasyplayer.link/caprice/</link>
+      <pubDate>Sun, 21 Nov 2021 12:16:17 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/caprice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peripheries</title>
+      <link>https://fantasyplayer.link/periphery/</link>
+      <pubDate>Sun, 21 Nov 2021 12:05:09 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Non-menus</title>
@@ -23,24 +41,6 @@
       <pubDate>Wed, 03 Nov 2021 16:35:43 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Peripheries</title>
-      <link>https://fantasyplayer.link/periphery/</link>
-      <pubDate>Sat, 23 Oct 2021 11:10:48 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/periphery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Caprices</title>
-      <link>https://fantasyplayer.link/caprice/</link>
-      <pubDate>Sun, 10 Oct 2021 10:28:28 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/caprice/</guid>
       <description></description>
     </item>
     
