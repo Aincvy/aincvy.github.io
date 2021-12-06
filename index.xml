@@ -5,8 +5,17 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Nov 2021 12:16:17 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 Dec 2021 10:59:02 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Non-menus</title>
+      <link>https://fantasyplayer.link/non-menu/</link>
+      <pubDate>Sun, 05 Dec 2021 10:59:02 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/non-menu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Caprices</title>
@@ -23,15 +32,6 @@
       <pubDate>Sun, 21 Nov 2021 12:05:09 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Non-menus</title>
-      <link>https://fantasyplayer.link/non-menu/</link>
-      <pubDate>Sun, 14 Nov 2021 11:19:19 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/</guid>
       <description></description>
     </item>
     
