@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Backward Cpp库的使用记录 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Backward Cpp库的使用记录 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Backward Cpp库的使用记录"/>
+<meta name="twitter:description" content="基本内容 项目地址： https://github.com/bombela/backward-cpp
+这个库是一个用于在程序崩溃的时候打印堆栈信息和代码信息的 c&#43;&#43;库。
+笔者是在 mac 系统上尝试使用的，该库的尝试结果如下：
+ 可以打印函数名，但无法打印文件名和行号， 有时候连函数名也无法打印。 详情可见： https://github.com/bombela/backward-cpp/issues/231 据说在 linux 平台上是可以完美打印信息的， 笔者并没有尝试过。  至于怎么使用这个库， 作者在主页上写的很清楚， 这里就不再赘述了。
+其他 libdwarf 笔者寻找的到的库在 mac 上编译有一点点问题，处理一下就好了。 注意，即使编译好了这个库，也无法打印文件名和行号
+libdwarf 在mac平台上编译有问题， 添加 target_link_libraries(${target} PUBLIC ${LIBELF_LIBRARIES} &quot;z&quot;) &ldquo;z&rdquo; 库的链接即可。 添加到 Cmake 的配置文件里面。
+安装的时候， include 会提示有问题， 笔者是采取手动复制的情况。 即手动复制文件夹到 /usr/local/include/libwarf 里。 build/config.h 不知道有没有用，一起复制过去了。
+输出一个宏定义的值 #define XSTR(x) STR(x) #define STR(x) #x  #pragma message &#34;The value of BACKWARD_HAS_BACKTRACE_SYMBOL: &#34; XSTR(BACKWARD_HAS_BACKTRACE_SYMBOL) #pragma message &#34;The value of BACKWARD_HAS_UNWIND: &#34; XSTR(BACKWARD_HAS_UNWIND) #pragma message &#34;The value of BACKWARD_HAS_BACKTRACE: &#34; XSTR(BACKWARD_HAS_BACKTRACE) 可见上述代码， 定义了XSTR, STR 两个宏之后， 使用 XSTR(name) 的形式即可以打印一个宏的值。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Backward Cpp库的使用记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  84 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2021-12-11T16:51:47\u002b08:00",
+  "dateModified": "2021-12-11T16:51:47\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Backward Cpp库的使用记录</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-12-11 >11 December 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="基本内容">基本内容</h2>
+<p>项目地址： <a href="https://github.com/bombela/backward-cpp">https://github.com/bombela/backward-cpp</a></p>
+<p>这个库是一个用于在程序崩溃的时候打印堆栈信息和代码信息的 c++库。</p>
+<p>笔者是在 mac 系统上尝试使用的，该库的尝试结果如下：</p>
+<ul>
+<li>可以打印函数名，但无法打印文件名和行号，  有时候连函数名也无法打印。</li>
+<li>详情可见： <a href="https://github.com/bombela/backward-cpp/issues/231">https://github.com/bombela/backward-cpp/issues/231</a></li>
+<li>据说在 linux 平台上是可以完美打印信息的， 笔者并没有尝试过。</li>
+</ul>
+<p><em>至于怎么使用这个库， 作者在主页上写的很清楚， 这里就不再赘述了。</em></p>
+<h2 id="其他">其他</h2>
+<h3 id="libdwarf">libdwarf</h3>
+<p>笔者寻找的到的库在 mac 上编译有一点点问题，处理一下就好了。 <strong>注意，即使编译好了这个库，也无法打印文件名和行号</strong></p>
+<p>libdwarf 在mac平台上编译有问题， 添加 <code>target_link_libraries(${target} PUBLIC ${LIBELF_LIBRARIES} &quot;z&quot;)</code>   &ldquo;z&rdquo; 库的链接即可。 <em>添加到 Cmake 的配置文件里面。</em></p>
+<p>安装的时候， include 会提示有问题， 笔者是采取手动复制的情况。  即手动复制文件夹到 <code>/usr/local/include/libwarf</code> 里。
+<code>build/config.h</code> 不知道有没有用，一起复制过去了。</p>
+<h3 id="输出一个宏定义的值">输出一个宏定义的值</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#define XSTR(x) STR(x)
+</span><span style="color:#75715e">#define STR(x) #x
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE_SYMBOL: &#34; XSTR(BACKWARD_HAS_BACKTRACE_SYMBOL)
+</span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_UNWIND: &#34; XSTR(BACKWARD_HAS_UNWIND)
+</span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE: &#34; XSTR(BACKWARD_HAS_BACKTRACE)
+</span></code></pre></div><p>可见上述代码， 定义了<code>XSTR, STR</code> 两个宏之后， 使用 <code>XSTR(name)</code> 的形式即可以打印一个宏的值。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>84</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fbackward-cppd%25E5%25BA%2593%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=Backward%20Cpp%e5%ba%93%e7%9a%84%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2fbackward-cppd%25E5%25BA%2593%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fbackward-cppd%25E5%25BA%2593%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Backward%20Cpp%e5%ba%93%e7%9a%84%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fbackward-cppd%25E5%25BA%2593%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Backward%20Cpp%e5%ba%93%e7%9a%84%e4%bd%bf%e7%94%a8%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="prev" rel="prev" title="C&#43;&#43; Notes for Pro 读书笔记"><i class="iconfont icon-dajiantou"></i>&nbsp;C&#43;&#43; Notes for Pro 读书笔记</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-198975995-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+     </div>
+  </body>
+</html>
