@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Libuv 异步通知的实现 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Libuv 异步通知的实现 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Libuv 异步通知的实现"/>
+<meta name="twitter:description" content="主要内容 主要思路 问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。 本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Libuv 异步通知的实现",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  586 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0\/",
+  "datePublished": "2021-12-25T11:47:09\u002b08:00",
+  "dateModified": "2021-12-25T11:47:09\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Libuv 异步通知的实现</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-12-25 >25 December 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                2 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="主要内容">主要内容</h2>
+<h3 id="主要思路">主要思路</h3>
+<p>问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。</p>
+<p>本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。</p>
+<p>笔者没有并没有深入研究过 libuv 这个库， 所以背后原理并不是很了解， 这里只给出如何做。</p>
+<p>下面是一些代码内容：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 纯手写代码， 并没有经过测试
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;uv.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;thread&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">struct</span> {
+  uv_loop_t<span style="color:#f92672">*</span> uvLoop <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+  uv_async_t<span style="color:#f92672">*</span> uvAsync <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+  
+} status;
+
+<span style="color:#75715e">// 回调函数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">callback</span>(uv_async_t <span style="color:#f92672">*</span>handle){
+  <span style="color:#66d9ef">auto</span> p <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)handle<span style="color:#f92672">-&gt;</span>data;
+  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  free(p);
+}
+
+<span style="color:#75715e">// 线程 A 的函数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">threadA</span>(){
+  status.uvAsync <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> uv_async_t();
+  <span style="color:#75715e">// uv loop init
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">auto</span> uvLoop <span style="color:#f92672">=</span> (uv_loop_t<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(uv_loop_t));
+  status.uvLoop <span style="color:#f92672">=</span> uvLoop;
+  uv_loop_init(uvLoop);
+  uv_async_init(uvLoop, status.uvAsync, callback);
+  
+  <span style="color:#75715e">// 循环执行事件
+</span><span style="color:#75715e"></span>  uv_run(uvLoop, UV_RUN_DEFAULT);
+  <span style="color:#75715e">//while(true){
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  uv_run(uvLoop, UV_RUN_NOWAIT);    // 只执行1个事件，且无堵塞
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>  
+  <span style="color:#75715e">// 释放内存
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// free uv
+</span><span style="color:#75715e"></span>  uv_loop_close(status<span style="color:#f92672">-&gt;</span>uvLoop);
+  free(status<span style="color:#f92672">-&gt;</span>uvLoop);
+  status<span style="color:#f92672">-&gt;</span>uvLoop <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+  <span style="color:#66d9ef">delete</span> status<span style="color:#f92672">-&gt;</span>uvAsync;
+  status<span style="color:#f92672">-&gt;</span>uvAsync <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+}
+
+<span style="color:#75715e">// 线程 B 的函数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">threadB</span>(){
+  <span style="color:#75715e">// 睡眠500毫秒 等待uv 初始化
+</span><span style="color:#75715e"></span>  std<span style="color:#f92672">::</span>this_thread<span style="color:#f92672">::</span>sleep_for(std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>milliseconds(<span style="color:#ae81ff">500</span>));
+  
+  <span style="color:#75715e">// 
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">auto</span> async <span style="color:#f92672">=</span> g_UIStatus<span style="color:#f92672">-&gt;</span>uvAsync;
+  <span style="color:#75715e">// 准备数据
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">auto</span> p <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)calloc(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+  <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  async<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> p;
+  <span style="color:#75715e">// 发送给另外一个线程
+</span><span style="color:#75715e"></span>  uv_async_send(async);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>){
+  std<span style="color:#f92672">::</span><span style="color:#66d9ef">thread</span>  t(threadB);
+  threadA();
+  t.join();
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><p>先初始化一个<code>uv_loop_t</code>和 一个<code>uv_async_t</code> ，之后在附属线程先准备数据， 然后使用<code>uv_async_send()</code>函数发送数据即可。</p>
+<p><strong>注意：</strong> 这样做有一个缺点， 即 <code>uv_async_t</code> 一次只能保存1个数据， 如果前一个数据没有被使用，然后又来了一个数据，此时前一个数据会被顶掉。 <em>可能会产生内存泄露。</em></p>
+<p>选择一个线程安全的队列可以避免这个问题， 但是笔者并没有找到合适的线程安全的队列库，估计要使用互斥锁，条件变量自己手写一个。</p>
+<h2 id="拓展阅读">拓展阅读</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/268894227">C++创建对象时区分圆括号( )和大括号{ }</a></li>
+<li><a href="https://github.com/fffaraz/awesome-cpp#standard-libraries">GitHub - fffaraz/awesome-cpp: A curated list of awesome C++ (or C) frameworks, libraries, resources, and shiny things. Inspired by awesome-&hellip; stuff.</a></li>
+<li><a href="https://stackoverflow.com/a/17329626/11226492">uv_run()函数的第二个参数详解</a></li>
+<li><a href="http://docs.libuv.org/en/v1.x/guide/threads.html#synchronization-primitives">Threads — libuv documentation</a></li>
+<li><a href="https://stackoverflow.com/a/15718043/11226492">Can I do custom events with libuv?</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>586</span>
+            </p>
+
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2flibuv-%25E5%25BC%2582%25E6%25AD%25A5%25E9%2580%259A%25E7%259F%25A5%25E7%259A%2584%25E5%25AE%259E%25E7%258E%25B0%2f&amp;text=Libuv%20%e5%bc%82%e6%ad%a5%e9%80%9a%e7%9f%a5%e7%9a%84%e5%ae%9e%e7%8e%b0&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2flibuv-%25E5%25BC%2582%25E6%25AD%25A5%25E9%2580%259A%25E7%259F%25A5%25E7%259A%2584%25E5%25AE%259E%25E7%258E%25B0%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2flibuv-%25E5%25BC%2582%25E6%25AD%25A5%25E9%2580%259A%25E7%259F%25A5%25E7%259A%2584%25E5%25AE%259E%25E7%258E%25B0%2f&amp;title=Libuv%20%e5%bc%82%e6%ad%a5%e9%80%9a%e7%9f%a5%e7%9a%84%e5%ae%9e%e7%8e%b0" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2flibuv-%25E5%25BC%2582%25E6%25AD%25A5%25E9%2580%259A%25E7%259F%25A5%25E7%259A%2584%25E5%25AE%259E%25E7%258E%25B0%2f&amp;title=Libuv%20%e5%bc%82%e6%ad%a5%e9%80%9a%e7%9f%a5%e7%9a%84%e5%ae%9e%e7%8e%b0" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="Backward Cpp库的使用记录"><i class="iconfont icon-dajiantou"></i>&nbsp;Backward Cpp库的使用记录</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-198975995-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+     </div>
+  </body>
+</html>

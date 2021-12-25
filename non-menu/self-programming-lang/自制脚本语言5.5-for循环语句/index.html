@@ -36,17 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="自制脚本语言[5.5] for循环语句"/>
-<meta name="twitter:description" content="本篇来尝试描述一下for循环语句如何实现。
-基本内容 语法树部分 先上图。
-笔者这里给出了一个简单的for语句， 并附上了一个示意的AST结构。
-for语句看起来复杂， 但是还是比较简单的， 只是他的子节点比别的语句多了几个而已。
-基本上来看， for 语句可以看做这样的形式 for 小括号内 语句块 。 而小括号内 又可以看成第一阶段;条件语句;第三阶段 。 把所有的元素展开合并之后就得到了上图的四个子元素。 其中第一阶段只在循环开始的时候执行1次， 而第三阶段则在每次循环体运行之后运行一次。
- for_1 第一阶段 condition 条件语句 for_3 第三阶段 loop_body 循环体 （语句块）  condition条件部分 和其他的循环语句， if语句的一样， 在语法分析上，基本是可以共用一个部分。
-for语句的实现思路也比较简单， 先执行for_1语句， 然后执行condition语句， 如果是true就执行loop_body块，然后执行for_3，否则跳出循环。
-for_1 -&gt; condition -&gt; loop_body -&gt; for_3 -&gt; condition -&gt; loop_body -&gt; for_3 -&gt; condition(false) -&gt; break
-不知道读者能不能看得懂上面的流程。。。 😂
-直接在AST上进行运算 像往常一样， 在AST上运算的时候， 跳转不是很好做。 其次， 循环体里面的所有节点的值记得注意一下， 否则可能会出现BUG。
-实现思路就按照上面说的内容进行实现就可以了， 如果在实现的过程中发现了什么问题， 往往是节点执行流程的设计有问题， 重新矫正一下那部分即可。"/>
+<meta name="twitter:description" content="本篇来尝试描述一下for循环语句如何实现。 基本内容 语法树部分 先上图。 笔者这里给出了一个简单的for语句， 并附上了一个示意的AST结构。 for"/>
 
   <script type="application/ld+json">
 {
@@ -65,7 +55,7 @@ for_1 -&gt; condition -&gt; loop_body -&gt; for_3 -&gt; condition -&gt; loop_bod
   },
   "genre": "non-menu",
   
-  "wordcount":  154 ,
+  "wordcount":  789 ,
   "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.5-for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5\/",
   "datePublished": "2021-07-31T13:38:55\u002b08:00",
   "dateModified": "2021-07-31T13:38:55\u002b08:00",
@@ -157,7 +147,7 @@ for_1 -&gt; condition -&gt; loop_body -&gt; for_3 -&gt; condition -&gt; loop_bod
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                1 min
+                2 min
         </div>
     </header>
     <div class="post-content">
@@ -259,9 +249,9 @@ end_of_loop:
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>154</span>
+                   <span>789</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -304,6 +294,7 @@ end_of_loop:
           
 
           
+
 </span>
                 
             </p>
@@ -378,7 +369,7 @@ end_of_loop:
 
 
     
-    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.10.0/css/lightgallery.min.css" rel="stylesheet">
       
      <script src="/js/vendor_gallery.min.js" async="" ></script>
     

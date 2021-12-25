@@ -36,17 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="自制脚本语言[5.1] if-else分支语句"/>
-<meta name="twitter:description" content="本篇来尝试描述下if-else语句如何进行实现。
-基本内容 语法树部分 先掏出之前给读者看过的这张图， 然后笔者来解释一下其中的内容。
-显而易见， 左侧部分是源代码， 右侧部分是一个大致的AST图示。
-前两个部分就是一个赋值语句， 一个声明语句。 没什么好描述的。
-由图示可知下面的内容。
- 把if-else 语句 拆分成了一个单独的if语句和一个单独的else语句 把if语句继续拆分成一个condition部分，一个执行代码块部分。 所以我们现在就有了三个小部分。  if.condition if的 条件部分 if.block if的代码块部分 else else 语句的代码块部分   这三个小块的逻辑也比较简单。 if.condition == true的时候执行if.block 否则执行else  直接在AST上进行运算 如果像现在的langX一样直接在语法树上进行运算的话， 按照下面的方式处理应该就可以了。
-笔者现在不建议这样做，因为字节码在进行跳转的时候应该比这种方式简单太多了。
- 先运算if.condition 部分的代码， 然后把结果保存 在if块的地方判断结果， 并把if.condition的结果设置成自己的结果  如果if.condition部分是true 则执行if.block。 否则什么都不做   在if_else部分 判断if节点的值， 如果为false，则执行else部分  使用字节码进行运算 使用字节码尝试实现的话，核心部分应该在于跳转，所以加上适当的跳转字节码即可。
-就像我们前面说过的， 字节码是一条一条指令进行执行的， 所以我们再适当的地方插入适当的跳转指令即可。
-我们先来看几个自定义指令。 基于栈的指令。
- cjmp 有条件的跳转指令 全写应该是：condition jump  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 这个指令首先获取栈顶元素， 并将该元素出栈 之后判断栈顶元素的值， 如果值是false的话， 就跳转， 否则此指令无任何效果   jmp 无条件的跳转指令  此指令存在一个参数， 表示要跳到的指令序号。 由于序号在本文中难以确定， 且可能会变化， 所以使用标签来代指。 直接跳转到指定的行数   seti 设置一个变量的值为一个整形数字  seti [varName] [intValue]   dec 声明一个变量 abci i 结尾的表示有一个参数是直接的int值。 很可能是第二个参数。 label: 使用冒号结尾的当做一个标签， 去掉冒号的部分即为标签的名字。 在真正的字节码里面应该是不直接使用变量名的， 而是会把变量名转换成数组的索引。 笔者目前只用于示意说明，所以这样写了。 附加阅读 字节码列表  字节码列表 里面的字节码进行了适当的优化， 所以和本篇内容略微有些出入。    下面看一段模拟指令。 （伪代码）"/>
+<meta name="twitter:description" content="本篇来尝试描述下if-else语句如何进行实现。 基本内容 语法树部分 先掏出之前给读者看过的这张图， 然后笔者来解释一下其中的内容。 显而易见， 左侧"/>
 
   <script type="application/ld+json">
 {
@@ -65,7 +55,7 @@
   },
   "genre": "non-menu",
   
-  "wordcount":  151 ,
+  "wordcount":  1331 ,
   "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%805.1-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5\/",
   "datePublished": "2021-05-02T16:41:53\u002b08:00",
   "dateModified": "2021-05-02T16:41:53\u002b08:00",
@@ -157,7 +147,7 @@
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                1 min
+                3 min
         </div>
     </header>
     <div class="post-content">
@@ -284,9 +274,9 @@ end_of_if:
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>151</span>
+                   <span>1331</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -329,6 +319,7 @@ end_of_if:
           
 
           
+
 </span>
                 
             </p>
@@ -403,7 +394,7 @@ end_of_if:
 
 
     
-    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.10.0/css/lightgallery.min.css" rel="stylesheet">
       
      <script src="/js/vendor_gallery.min.js" async="" ></script>
     

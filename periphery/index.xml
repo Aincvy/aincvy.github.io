@@ -13,10 +13,7 @@
       <pubDate>Sun, 21 Nov 2021 12:05:09 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/mac-%E9%94%AE%E7%9B%98%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E5%88%97%E8%A1%A8/</guid>
-      <description>   名称 键盘符号 备选符号     Control key ctrl ^   Option key alt ⌥ option   Command key cmd ⌘ command    Shift key ⇧ shift   Caps Lock ⇪ ⇓ CapsLock      https://www.key-shortcut.com/en/mac-osx/command-keys-mac
-  https://www.posterpresentations.com/alt-code-cheatsheet.html
-  https://www.alt-codes.net/
-  </description>
+      <description>名称 键盘符号 备选符号 Control key ctrl ^ Option key alt ⌥ option Command key cmd ⌘ command  Shift key ⇧ shift Caps Lock ⇪ ⇓ CapsLock https://www.key-shortcut.com/en/mac-osx/command-keys-mac https://www.posterpresentations.com/alt-code-cheatsheet.html https://www.alt-codes.net/</description>
     </item>
     
     <item>
@@ -25,9 +22,7 @@
       <pubDate>Sat, 23 Oct 2021 11:10:48 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
-      <description>笔者的原因是因为系统中已经有一个蓝牙设备处于激活中了，把那个设备禁用了之后就好了。
-似乎不禁用那个设备也可以安装驱动， 但是设备无法正常运转。
-两个蓝牙设备则分别是： 板载蓝牙和一个 PCI-e 的蓝牙设备。</description>
+      <description>笔者的原因是因为系统中已经有一个蓝牙设备处于激活中了，把那个设备禁用了之后就好了。 似乎不禁用那个设备也可以安装驱动， 但是设备无法正常运转。 两</description>
     </item>
     
     <item>
@@ -36,10 +31,7 @@
       <pubDate>Sat, 25 Sep 2021 17:33:35 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
-      <description>笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。
-笔者是使用Mac版本的 vs code，不过应该都差不多把。
-拓展 vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。
- llvm-vs-code-extensions.vscode-clangd  https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd llvm 出的插件， 基于 clangd ，使用LSP通信。 这个插件的自动补全感觉比微软出的c/c++插件好一些。 自动完成 编译错误和警告 跳转到定义/声明 代码格式化 （clang-format) 简单的重构 （提取变量， 重命名什么的） 这个插件附带 clang-tidy和clang-format， 分别用于代码分析和格式化。 （CLion应该也是基于clangd的， 这个插件提供的警告部分还不错。 格式化功能，笔者觉得略逊于 CLion。）   ms-vscode.cpptools-extension-pack  https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack 这个是一个插件包， 包含了几个插件。 如果觉得这个插件包的内容太臃肿了， 可以考虑不装。   ms-vscode.cpptools  https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools 微软官方的 cpp插件， 这个和 clangd 一起安装的时候要禁用这个插件的 IntelliSense 功能。 这个插件好像提供 debug 功能 。 （笔者没有使用过， 笔者基本上是使用lldb命令）   twxs.cmake  https://marketplace.visualstudio.com/items?itemName=twxs.cmake cmake 语法支持   ms-vscode.</description>
+      <description>笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。 笔者是使用Mac版本的 vs code，不过应该都差不多把</description>
     </item>
     
     <item>
@@ -48,14 +40,7 @@
       <pubDate>Mon, 19 Jul 2021 17:11:25 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。
-https://github.com/Fastbyte01/KeepIt
-笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。
-经过一番搜索之后， 笔者发现，这个主题似乎只支持老版的谷歌分析的API。 即UA- 开头的跟踪ID，而GA- 开头的则不支持。
-知道了问题， 解决起来就简单了， 在谷歌分析的管理后台中创建一个老版本的应用就可以了。
-当然， 也可以考虑修改模板文件， 使其兼容GA- 版本的API。 不过笔者觉得那样做有一点麻烦，所以就没有那样做。
-拓展阅读
-https://stackoverflow.com/questions/64993368/my-google-analytics-setup-for-hugo-is-not-working</description>
+      <description>KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。 https://github.com/Fastbyte01/KeepIt 笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。 经过一番搜索之后，</description>
     </item>
     
     <item>
@@ -64,13 +49,7 @@ https://stackoverflow.com/questions/64993368/my-google-analytics-setup-for-hugo-
       <pubDate>Mon, 24 May 2021 13:36:35 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。
-原因可能是因为项目的缓存坏掉了， 所以就无法启动。
-解决方案是清理掉缓存。
-笔者使用的操作方法比较粗暴，直接删除了整个Rider相关的目录。
- 关闭Rider 删除文件夹 c:\users\[username]\AppData\Local\JetBrains\Rider[version] 删除文件夹 c:\users\[username]\AppData\Roming\JetBrains\Rider[version] 开启Rider  注意， 这种方法下也会删掉rider安装的插件等。 也许有直接清理项目缓存的方法， 但是笔者并没有去找。
-拓展阅读 https://rider-support.jetbrains.com/hc/en-us/articles/207803955-Where-are-the-ReSharper-cache-files-kept-
-https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intellij-idea-like-eclipses-clean</description>
+      <description>在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。 原因可能是因为项目的缓存坏掉了， 所以就无法启动。 解决方案是</description>
     </item>
     
     <item>
@@ -79,20 +58,7 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
       <pubDate>Mon, 10 May 2021 21:55:20 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
-      <description>笔者使用docker的方式安装的gitlab, 升级操作十分的简单。
-这里有两篇官方的文档可以阅读一下。
-  https://docs.gitlab.com/ee/raketasks/backup_restore.html
-  https://docs.gitlab.com/omnibus/docker/README.html
-  https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations
-  第一个链接的内容是关于备份和恢复的， 第二个则是关于 docker 镜像的详细介绍，第三个链接则是升级的建议。
-建议读者在进行操作之前，先进行一次备份。
-笔者的操作方式是 先升级 minor,然后升级patch . 然后升级 major 。
-在这个链接Docker hub: gitlab CE寻找指定版本的镜像即可。
-gitlab的版本号格式是： (Major).(Minor).(Patch)
-举个🌰🌰， gitlab的版本号是 12.10.6
- 12 表示主版本 大版本 10 表示次要的版本号 小版本 6 表示🍮 补丁  更详细的信息可以阅读升级建议。 链接地址在上方。
-理论上来说， 先做好备份， 然后按照笔者的流程进行升级， 应该问题不大。
-大版本应该是不能跨版本升级的，最好1个1个的来升级大版本。</description>
+      <description>笔者使用docker的方式安装的gitlab, 升级操作十分的简单。 这里有两篇官方的文档可以阅读一下。 https://docs.gitlab.com/ee/raketasks/backup_restore.html https://docs.gitlab.com/omnibus/docker/README.html https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations 第一个链接的内容是关于备份和恢复的</description>
     </item>
     
     <item>
@@ -101,10 +67,7 @@ gitlab的版本号格式是： (Major).(Minor).(Patch)
       <pubDate>Mon, 05 Apr 2021 21:30:41 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%83%85%E5%86%B5%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</guid>
-      <description>由于笔者使用的是黑苹果，所以能正常使用的话，尽量不升级比较好。 如果想升级的话， 还需要更新OpenCore的版本， 可能还会碰到各种乱七八糟的问题。 同时，笔者感觉Big Sur 并不是太好，所以完全没有升级的打算。
-但是，意外总是会有的。 前些天， 笔者因为手误，点到了现在安装升级的选项。。 虽然及时的点击了取消， 但还是触发了一些悲剧操作。 本帖就是来记录一下这件事情的。
-事后， 笔者想禁止掉系统的升级提示弹窗， 但是发现好像不行了。 自从 10.15.7 的版本之后， 系统升级的通知好像就无法禁止了。 网上一般提供的是这个命令 sudo softwareupdate --ignore &amp;quot;macOS Catalina&amp;quot; ，笔者再使用的时候会提示 下面的内容。
-Ignored updates: ( ) Software Update can only ignore updates that are eligible for installation. If the label provided to ignore is not in the above list, it is not eligible to be ignored. Ignoring software updates is deprecated. The ability to ignore individual updates will be removed in a future release of macOS.</description>
+      <description>由于笔者使用的是黑苹果，所以能正常使用的话，尽量不升级比较好。 如果想升级的话， 还需要更新OpenCore的版本， 可能还会碰到各种乱七八糟的问</description>
     </item>
     
     <item>
@@ -113,10 +76,7 @@ Ignored updates: ( ) Software Update can only ignore updates that are eligible f
       <pubDate>Sun, 28 Mar 2021 12:16:25 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/crontab%E7%A2%B0%E5%88%B0%E5%BE%97%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
-      <description>笔者碰到得问题有两个：
- 程序好像没执行 重定向输出到了文件，但是却没有看到文件。  笔者得有问题得时候，定时任务大概是这样得：
-# move film on 10AM at every saturday 0 10 * * 6 /Users/alias/Projects/self-use-scripts/trello/shMoveFilm.sh &amp;gt;/Users/alias/temp/log/moveFilm.log 2&amp;gt;&amp;amp;1 # move blog 35 2 * * 1 /Users/alias/Projects/self-use-scripts/trello/shMoveBlog.sh &amp;gt;/Users/alias/temp/log/moveBlog.log 2&amp;gt;&amp;amp;1 # clean blog 0 2 * * 3 /Users/alias/Projects/self-use-scripts/trello/shRun.sh clean blog &amp;gt;&amp;gt;/Users/alias/temp/log/clean.log 2&amp;gt;&amp;amp;1 修改之后，能成功运行得脚本 大概是这样得：
-SHELL=/usr/bin/sh PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin # move film on 10AM at every saturday 0 2 * * 6 (/usr/bin/sh /home/yohello/soft/self-use-scripts/trello/shMoveFilm.sh 2&amp;gt;&amp;amp;1) &amp;gt;/home/yohello/log/trello/moveFilm.log # move blog 35 2 * * 0 (/usr/bin/sh /home/yohello/soft/self-use-scripts/trello/shMoveBlog.</description>
+      <description>笔者碰到得问题有两个： 程序好像没执行 重定向输出到了文件，但是却没有看到文件。 笔者得有问题得时候，定时任务大概是这样得： # move film on 10AM at every saturday 0 10 *</description>
     </item>
     
     <item>
@@ -125,16 +85,7 @@ SHELL=/usr/bin/sh PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/
       <pubDate>Sat, 27 Feb 2021 10:37:27 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/</guid>
-      <description>前些天，不知道什么原因，家里突然跳闸了。等来电的时候，家里服务器就出现了一些状况，所以开帖记录一下是什么状况，以及笔者是如何处理的。
-笔者的家用服务器使用的是ESXi 系统。 ESXi 系统本身没有什么问题， 大部分虚拟机也没有什么问题，只有一个debian 9 的虚拟机出现了问题。 而这个虚拟机运行了笔者大部分的服务，所以这次问题让笔者大感头痛。
-debian 9 的问题列表 虚拟机启动 虚拟机无法启动，在启动的时候 提示文件系统有问题。
-提示内容大概为： /dev/sda1 contains a file system with errors, check forced 
-解决方案是： At the (initramfs) prompt, type fsck -f /dev/sda1 to check/repair your file system.
-大致意思是在可以输入命令的时候， 输入fsck -f /dev/sda1 进行文件系统的修复。 当碰到询问的时候输入 y 进行修复。
-这个修复不是很完美的， 可能会导致部分文件内容出现问题。
-docker 容器全坏 笔者成功启动了debian 虚拟机之后， 发现虚拟机上的大部分docker 容器都坏了。 而且docker service 无法正常启动。
-经过排查之后， 笔者发现是原来容器的配置文件都损坏了。
- docker 数据存放的默认目录： /var/lib/docker containers 里面存放了所有的容器数据 volumes 存放了数据卷  容器的文件夹里面， 存在一个叫做config.</description>
+      <description>前些天，不知道什么原因，家里突然跳闸了。等来电的时候，家里服务器就出现了一些状况，所以开帖记录一下是什么状况，以及笔者是如何处理的。 笔者的家</description>
     </item>
     
     <item>
@@ -143,12 +94,7 @@ docker 容器全坏 笔者成功启动了debian 虚拟机之后， 发现虚拟�
       <pubDate>Mon, 25 Jan 2021 22:28:55 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</guid>
-      <description>笔者曾经有一段时间发现，在Windows机器上设置了ipv4的dns服务器之后没有效果。 之前返回的是什么，修改之后返回的还是什么。。 在把ipv6关掉之后修改才会生效。
-笔者最近发现是因为openwrt的 ipv6的dhcp服务的原因，把ipv6的dhcp服务关掉之后，一切就正常了，Windows机器也不需要禁用ipv6了。
-笔者使用openwrt做旁路由，使用pfSense做主路由。
-ipv4的dhcp服务由pfSense提供，pfSense会把openwrt的地址作为网关和dns服务器分配给客户机。
-似乎是因为 windows 和安卓在开了ipv6得时候， 会主动使用ipv6得dns 而忽略ipv4的dns。
-在openwrt中找到 network &amp;gt; interface &amp;gt; LAN edit &amp;gt; DHCP Server &amp;gt; IPV6 全部停用即可停用 LAN接口的服务， 如果存在多个接口，则可能需要每一个接口都设置一下。</description>
+      <description>笔者曾经有一段时间发现，在Windows机器上设置了ipv4的dns服务器之后没有效果。 之前返回的是什么，修改之后返回的还是什么。。 在把ip</description>
     </item>
     
     <item>
@@ -157,19 +103,7 @@ ipv4的dhcp服务由pfSense提供，pfSense会把openwrt的地址作为网关和
       <pubDate>Mon, 04 Jan 2021 20:18:04 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E4%BB%8B%E7%BB%8D%E4%BB%A5%E4%B8%8Btrello%E8%BF%99%E4%B8%AA%E7%9C%8B%E6%9D%BF%E5%B7%A5%E5%85%B7/</guid>
-      <description>简介 这个一个看板工具。
-以前个人是免费得无限看板， 前一段时间被Atlassian 收购之后，最近好像只能以团队为单位了。（可能是收购，具体是什么情况笔者并不清楚。 但是现在trello属于Atlassian旗下了）
-创建看板必需选择一个团队， 一个免费团队可以创建10个看板。如果需要更多看板， 就需要升级到企业服务。 企业服务得收费价格是： 如果按年计费，每位用户每月只需支付 $9.99 即可保留企业服务 。
-好在一个免费用户可以创建多个团队，所以就可以拥有较多得看板。 实际在使用上来说，稍微节省一些，10个看板也是够用得。
-Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.(免费)
-详细内容 看板得结构 一个团队可以拥有N个看板， 每个看板里面可以用于N个列表，每个列表里面可以拥有N个卡片。
-所以trello主要有3个组件构成 ： 看板，列表，卡片。
-看板和列表都比较简单，卡片得内容就复杂一些。
-每个卡片都可以拥有下面得属性。
- 名字，描述 到期日 评论（可以评论N次） 标签（颜色标签，可以添加自定义得文字到标签上） 清单（就是一个todo列表，一个卡片可以存在多个清单） 附件 (上传图片附件得时候会自动在列表里面显示) 自定义字段 （需要一个Power-up） 等等  拓展 PowerUps Trello 提供一些拓展， 用于增强看板得功能。
-免费用户似乎每个看板只能安装1个power-up，而Trello Gold 可以安装3个，企业版本可以装无限个。
-下面介绍一下笔者使用过得一些拓展。
- 自定义字段  可以给卡片增加自定义字段。 增加的字段可以显示在列表上。 有下面几个类型得字段可以添加 复选框 日期 下拉类型 编号 （可能就是数字） 文本   日历  可以将存在到期日的卡片显示在对应的日期上。 具体效果类似 google calendar   diagrams.</description>
+      <description>简介 这个一个看板工具。 以前个人是免费得无限看板， 前一段时间被Atlassian 收购之后，最近好像只能以团队为单位了。（可能是收购，具体是什么</description>
     </item>
     
     <item>
@@ -178,29 +112,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 14 Dec 2020 21:45:55 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E6%B5%85%E8%B0%88%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E5%90%84%E4%B8%AA%E8%81%8C%E4%B8%9A/</guid>
-      <description>就是一些很简单得介绍。
-策划 制作人 制作人一般情况下是整个项目得负责人，如果是创业公司得话，制作人可能会由老板担当。
-主策划 策划得头目，基本上负责整个策划部门得管理。
-主策划有时候是由制作人兼任得。
-在主策划和制作人是两个人得时候， 主策划往往需要听从制作人得指示做事。 不过一般情况下，制作人给得意见可能都是一个比较宽阔得，而具体细化和拆分任务是主策划得工作。
-数值策划 调整数值得人员，一般被主策划管理。 一般情况下，每个项目都至少有一个数值。
-数值策划得主要工作职责是做装备得属性， 关卡得难度等内容。
-剧情策划 一般是写故事得话。 除非非常大型得项目，否则一般公司没有这个人员把。
-文案策划 类似剧情策划，主要是做一些起名得工作把， 可能还会有翻译得工作。 一般小公司没有这个职位。
-执行策划 简称， 打杂得。 基本上就是很多策划得活都做一些。
-系统策划 负责外围系统得功能设计，表格设计等。 一般可能和执行策划得工作是混在一起得。
-工作职责大概如下：
- 设计一个活动 设计一个功能 （签到， 每日任务，成就等） 跟踪程序实现得进度 可能还需要对功能进行简单得测试。  前端 前端主程 前端程序得头目。 一般可能负责框架得建立，功能任务得分发。
-项目初期得时候可能很忙， 到了中后期应该会慢慢得闲下来。 但是也不好说， 中后期可能会去参加业务功能得开发。
-中高级 前端程序 主要是根据策划得需求， 来实现一些业务逻辑得功能。
-大多是铺功能得， 一般不会过多得涉及框架相关得内容。
-初级 前端程序 一般公司可能不招这个岗位， 毕竟很多公司招人都是一年工作经验起步。
-这时，笔者又想起了那副图： 我该如何在没有经验得情况下去找到一份需要工作经验得工作。。？ 😂
-这个职位约等于实习生了把， 可能主要以学习为主， 开发得任务一般都比较少把。
-后端 后端得结构和前端类似， 这里就直接略过了。
-一般情况下， 一个功能得实现需要前后端至少各一人。
-前端需要和美术进行交流， 而后端不需要。
-美术 主美 美术部门得头头。 指导和确定美术风格，管理和分发美术任务。</description>
+      <description>就是一些很简单得介绍。 策划 制作人 制作人一般情况下是整个项目得负责人，如果是创业公司得话，制作人可能会由老板担当。 主策划 策划得头目，基本上负责</description>
     </item>
     
     <item>
@@ -209,22 +121,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 16 Nov 2020 20:21:13 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/ipad-air4-%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%90%8E%E5%BE%97%E6%84%9F%E6%83%B3/</guid>
-      <description>刚发售就订购了的 Air4 ，最近使用了一段时间， 来写写感受。
-其实是实在不知道博客写什么了，来凑的内容😂😂😂。。。
-随便说说 我购买的主要目的是： 看番剧和漫画，以及偶尔看看股票。
-基本来说， iPad已经满足了我的需求。 我也买了手写笔， 目前主要画趋势线的时候用一下，平时不怎么用。 笔者没学过画画， 也没准备用这个做笔记。
-因为笔者这个人的好奇心比较严重， 所以用了一段时间之后就想看看iPad还能做些什么。 所以去知乎、谷歌搜了搜，发现似乎大多数推荐的用途都是上课和做笔记。 笔者不是学生，一般不看网课什么的，所以使用iPad记笔记对笔者来说没啥吸引力。。 笔者学习新知识的时候一般选择看书的方式，在看书的时候如果有什么想法会使用手机记录下来（使用一个叫做Day one 的日记程序）。
-笔者突然想找点游戏玩玩（估计也是找一找，下一下，然后不玩。。因为没什么时间）。 不搜不知道， 一搜吓一跳。 完全没看到什么好玩的游戏。。 笔者想找那些单机的RPG类游戏， 然后发现大多数的推荐都是一样的几种游戏， 感觉都不是很好玩。 不少被推荐的游戏都是像素画风，笔者不喜欢这类，笔者较为喜欢3A画质类的游戏。
-后来，笔者和朋友聊天的时候，无意间听到朋友说“iPad不就是个大号的手机嘛”。笔者考虑了一下，觉得这句话说的也对啊， 把iPad当成一个大号的手机使用也不错。 然后就把 社交工具，邮件工具，斗鱼等下载了一下，又安装了Trello 等工具。
-最近，笔者突然想起来一个叫steam link的应用可以用于流式传输玩游戏。简单来说就是，我在自己的电脑上安装steam，然后下载几个想玩的游戏到电脑上。 在 iPad上安装steam link这个应用， 设置好之后就可以在iPad上玩电脑的游戏了。
-笔者试玩了一下 奥日与黑暗森林，感觉还可以， 没有出现什么卡顿的现象，操作也较为流畅。笔者使用的是屏幕上的虚拟手柄， 这样的好处是可以把iPad拿起来玩。 当然也可以使用xbox手柄， ps手柄等。
-注意： iPad和电脑要处于同一局域网下，连接速度最好要大于100M。
-在这种体系下，笔者推测 iPad充当的角色为： 显示器+音频播放器+控制输入， 实际的运算还是PC上完成的。（可能绝大多数的云游戏都是这类把。）
-保护方面 笔者购买了保护套和钢化膜， 下面简单的谈谈这两个东西。
-钢化膜 这玩意像镜子一样， 当屏幕是黑色的和镜子的区别不是特别大。 在使用的时候，部分情况下，也很像镜子， 反光严重， 影响使用。
-好处呢就是，在目前的情况下，我感觉指纹不是特别多了，而且现在不怕擦， 用卫生纸沾点水在上面擦擦也完全不担心了。还有就是边吃饭边使用iPad的时候不怕油飞到屏幕上了。
-保护套 这玩意真重， 感觉重量和iPad本身不相上下，甚至可能比iPad还重。
-好处嘛，因为选择的是定制的，所以我觉得自己选的图都很漂亮。 其次可以让屏幕站起来， 在放在桌子上和床上的时候比较方面，不用手拿。 将保护套合上的时候，可以防水防尘把。</description>
+      <description>刚发售就订购了的 Air4 ，最近使用了一段时间， 来写写感受。 其实是实在不知道博客写什么了，来凑的内容😂😂😂。。。 随便说说 我购买的主要目的是： 看番剧和</description>
     </item>
     
     <item>
@@ -233,22 +130,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 02 Nov 2020 20:08:20 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/kindle%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</guid>
-      <description>如果你喜欢看电子书，或者黑白漫画， 笔者建议你购买一个Kindle。
-喜欢看漫画 可以买32G的， 不喜欢则可以购买8G的。
-如果你两样都不喜欢， 笔者则不建议你购买Kindle。
-简述 笔者使用Kindle 已经是第11个月了，基本上使用频率比较高。
-笔者主要用来看电子书和漫画。
-网上盗版资源非常多，可以很方便的下载到很多书籍。
-这里要声明一下：在有经济能力的情况下， 建议购买正版，支持创作者。 但是在没有经济能力的情况下，建议观看盗版，增加自己的知识。等到自己的经济能力上来之后，可以再补票。 其次，书籍还是看一看内容才知道好不好， 购买了一本骗钱的书籍，就会白白浪费金钱。 而先看看免费资源则会避免这个问题。
-建议，支持正版书籍 👍👍👍
-笔者今年看过的书籍如下
-笔者在去年看过的书籍不超过3本
-对比 实体书对比   相比于实体书， kindle搬家的时候特别轻便， 这个是我购买Kindle的主要原因。
-  实体书真的太重了， 太多了。笔者之前比较喜欢买书，但是不怎么喜欢看书 😂 现在书架上还有一半以上没翻过的书籍。。。
-  实体书比较大， 拿起来的时候也不方便。（相对来说）
-  实体书比较有威势，会吓退我阅读的欲望。。 因为感觉太厚了。。 kindle则比较轻薄，并且我使用kindle看书的时候不会在意字数有多少，一般也不在意什么时候能读完。
-  相对来说， 实体书也是有一些有点的。
- 实体书在做小的笔记的时候非常好用。 可以购买很漂亮的书签， 增加看书的愉悦度。 可以用一些标签纸在页码上打标记， 这样在后面用到的时候比较好快速查找。  手机对比  可能就是屏幕的优势了把。。 kindle的屏幕是墨水屏，对比手机来说， 没有那么伤眼。 kindle上分心的东西不多，原装系统没有任何娱乐应用（游戏，视频等）。 电量充足， 我一般好久才会充一次kindle， 而手机天天充电。 屏幕稍大。  平板对比   屏幕区别， 以及应用区别。</description>
+      <description>如果你喜欢看电子书，或者黑白漫画， 笔者建议你购买一个Kindle。 喜欢看漫画 可以买32G的， 不喜欢则可以购买8G的。 如果你两样都不喜欢， 笔者</description>
     </item>
     
     <item>
@@ -257,13 +139,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 02 Nov 2020 20:07:43 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%BD%BF%E7%94%A8chrome%E6%B5%8F%E8%A7%88%E7%BD%91%E9%A1%B5%E7%9A%84%E6%97%B6%E5%80%99%E6%AD%BB%E6%9C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>公司安装的黑苹果系统， 在浏览部分网站的时候死机， 鼠标和键盘都没反应，只能强制重启。
-我的解决方案是： 关闭Chrome 的硬件加速。
-相关链接在此： https://support.google.com/chrome/thread/16089385?hl=en&amp;amp;msgid=16383919
-就笔者目前来说，下列情况触发了死机操作：
- 在知乎浏览的时候，点击 gif图片的缩略图。 （经过上述操作，现在已经解决 ✅) 浏览其他部分网站的时候， 打开该网站就直接死机。 （因为忘记了是哪些网站，所以没有办法再进行测试） 使用 网易MuMu模拟器打开龙族幻想的时候。  笔者目前在公司使用的是AMD 的580 显卡， 经过沟通得知，该卡是一张矿卡， 性能上可能不稳定。
-平时使用的时候没什么问题，运行耗费性能的程序可能就会挂了。
-笔者家里使用是一张新购的蓝宝石 5700XT， 暂时没发现死机的情况， 可以正常使用。 所以其他软件触发的死机可能是显卡的问题。</description>
+      <description>公司安装的黑苹果系统， 在浏览部分网站的时候死机， 鼠标和键盘都没反应，只能强制重启。 我的解决方案是： 关闭Chrome 的硬件加速。 相关链接在此：</description>
     </item>
     
     <item>
@@ -272,14 +148,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 19 Oct 2020 21:35:39 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
-      <description>从我的安装经验来看， 黑苹果的安装非常简单，只是有点耗时而已。
-教程地址： https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html
-下面是使用教程的几个前提：
- 你有一定的英文阅读水平。 你具有耐心， 可以使用搜索引擎去尝试解决问题。 你使用 Intel 的CPU 和 AMD的显卡， 或者你将要更换。 （非必需 😂） 有一个大于8G的空闲U盘。 当前电脑可以运行一个系统（Windows/Linux 都可以) 在选购硬件的时候，笔者建议选购一个不带无线网卡的主板， 然后自购一个免驱网卡（大多数都带蓝牙）。 而这个网卡再Windows下基本上也都有驱动，可以正常使用。 如果一个电脑有两个物理蓝牙设备，就有点麻烦。  笔者跟随这个教程，成功在公司电脑， 个人家里电脑上安装了 Mac 系统的 Catalina 版本。
-关于AMD的CPU，有一些功能会在成功安装后无法使用。
-以下引用上面教程原文
- Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:
- Virtual Machines relying on AppleHV This includes VMWare, Parallels, Docker, Android Studios, etc VirtualBox is the sole exception as they have their own hypervisor VMware 10 and Parallels 13.</description>
+      <description>从我的安装经验来看， 黑苹果的安装非常简单，只是有点耗时而已。 教程地址： https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html 下面是使用教程的几个前提： 你有一定的英文阅读水平。 你具有耐心， 可以使</description>
     </item>
     
     <item>
@@ -288,14 +157,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 12 Oct 2020 20:10:44 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%B0%8F%E7%99%BD%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95%E8%B4%B4%E9%A6%96%E6%AC%A1%E5%B0%9D%E8%AF%95amd/</guid>
-      <description>前言： 听说 AMD 的 CPU 现在性能已经吊打Intel， 而且价格还比 Intel 的低， 所以就在年初的时候入手了3900X+X570 PRO ， 结果在装机的时候闹出了些笑话。。
-大神直接略过本篇就可以了， 当然也可以当个乐子看。
-如果你和我一样也是一个小白的话， 希望本文能帮助到你。
-简单的列出一下笔者使用的配置
- AMD 3900X 华硕 PRIME X570 PRO 微星 GTX1070 金士顿 8G * 2 之前买的闪迪 500G SSD 长城 650W 金牌G6全模组电源  踩坑记录 AMD 的主流 CPU是不带核显的 我本来以为AMD 和英特尔一样 有个核显， 而装机的时候本着用少量配件快速点亮机器的想法，我就没装显卡。。。
-结果开机的时候，就一直卡在主板的 VGA 白灯上，进不去系统。
-根据我以前的经验， 可能是哪点没插好，我就重新拔插内存， 硬盘啥的， 都没用。。 后来百度搜了下， 看到有人说： 可能是 CPU 问题。
-我就想着把 CPU重新拔插下， 结果。。 在弄 CPU 的时候手滑了， CPU 磕到了机箱上了， 针脚直接弯了不少（AMD 的针脚在 CPU 上， 而非主板上）。</description>
+      <description>前言： 听说 AMD 的 CPU 现在性能已经吊打Intel， 而且价格还比 Intel 的低， 所以就在年初的时候入手了3900X+X570 PRO ， 结果在装机的时候闹出了些笑话</description>
     </item>
     
     <item>
@@ -304,15 +166,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Mon, 14 Sep 2020 20:38:01 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。
-笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。
-拼接的参数会自动使用一个引号括起来， rsync 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。
-我刚开始好像是使用一个单一的变量来尝试控制参数。（大约1，2个月以前的东西​，记得不是很清楚😂)
-# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=&amp;#39;--include=&amp;#34;*.jar&amp;#34;&amp;#39; # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &amp;#34;$folder/config.json&amp;#34; ]] then include_arg=&amp;#39;$include_arg --include=&amp;#34;*config.json&amp;#34;&amp;#39; fi sshpass -e rsync -avz &amp;#34;$include_arg&amp;#34; --exclude=&amp;#34;*&amp;#34; ./ root@xx:/root 上述代码中， 最后一段里面的 &amp;quot;$include_arg&amp;quot; 变量，经过我的测试，基本都会被解释成&amp;quot;--include=*.jar --include=*config.json&amp;quot; 。
-这个参数肯定是有问题的，rsync识别不出来。
-经过在stackOverflow 上的搜索，发现使用数组可以处理掉这个问题。
-代码修改成如下所示的情况， 就可以正常使用了。
-# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=(--include=&amp;#34;*.jar&amp;#34; --include=&amp;#34;lib&amp;#34;) # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &amp;#34;$folder/config.json&amp;#34; ]] then include_arg+=(--include=&amp;#34;*config.json&amp;#34;) fi sshpass -e rsync -avz &amp;#34;${include_arg[@]}&amp;#34; --exclude=&amp;#34;*&amp;#34; .</description>
+      <description>在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。 笔者刚开始在做这件事的时候碰到了一</description>
     </item>
     
     <item>
@@ -321,8 +175,7 @@ Atlassian 旗下还有一款比较好用得git GUI客户端工具： Sourcetree.
       <pubDate>Sat, 29 Aug 2020 12:55:39 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</guid>
-      <description>图示 其他说明 我家里就一台二手服务器,所有的虚拟机都在这台服务器里。
-pfSense 的作用  pppoe 拨号上网 DHCP 服务  推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSense自身的地址。 推送的 dns 服务器为192.168.200.33 即debian-work的地址，而非pfSense的地址。   squid 透明缓存静态资源 | 估计图片，视频比较多把。。 但是我目前只能缓存 http 的。httpds 的则会被跳过。 DNS 服务器  主要是自己家里用的域名解析 然后再请求外部的 DNS 服务器    openwrt 的作用  旁路由 科学上网  debian-work 的作用  主要使用 docker 放一些服务 (mysql/redis/xxx...) nextcloud 类似owncloud 。 用于外网可访问的私人存储服务，我主要存储些流程图，思维导图，代码 之类的。 pi-hole 是一个按照域名阻止广告的服务， 但是好像没啥用。 这个还能做域名黑名单，防止其他人浏览， 但是我一个人住， 这个对我来说也没啥用。 git 服务， gogs是我在外网使用的服务， 里面主要存储一些小的代码库。 gitlab则是我在家里的使用的服务， 一般用于存储unity的项目， 里面的资源文件比较多。  openmediavalut 的作用  充当 NAS 。 家里的主要存储服务 主要存储游戏，电影，系统镜像，软件镜像等的内容 开启 苹果的文件协议，支持 TimeMachine 进行备份。 开启 SMB 协议， 支持这个协议的电脑，手机 都可以访问里面的文件。 （小米投影仪也支持） PLEX ，安装了之后可以在外网看家里的电影， 但是清晰度似乎不是很好。  win10下载机 &amp;amp;&amp;amp; win7 游戏机  没啥好说的， 下载就是 百度云，迅雷等。 显卡直通之后就可以使用 虚拟机玩游戏了， 我目前用模拟器玩玩手游稍多一点。我使用 anydesk 远程， 但是感觉效果不是很理想。  DNS 的链路  使用DHCP 获取地址的设备，默认 DNS 服务器都是 debian-work debian-work里的服务是pi-hole 在提供， pi-hole的上游 DNS 服务器为openwrt openwrt则是有两个 dns 服务，一个是dnsmasq,另外一个是clash 。 dnsmasq 的请求被设置成转发给clash 。 clash的上游服务器有 N 个， 其中有一个是pfSense ，这样的话， 就可以提供本地域名的解析了。  参考阅读 软路由上的DNS使用记录</description>
+      <description>图示 其他说明 我家里就一台二手服务器,所有的虚拟机都在这台服务器里。 pfSense 的作用 pppoe 拨号上网 DHCP 服务 推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSe</description>
     </item>
     
     <item>
@@ -331,14 +184,7 @@ pfSense 的作用  pppoe 拨号上网 DHCP 服务  推送的网关为 192.168.20
       <pubDate>Mon, 17 Aug 2020 10:52:13 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多人都推荐使用ssh的方式推送，这样也不需要用户名和密码。
-我按照常规方式配置好ssh key之后，竟然无法推送。应该是提示了 “ssh: connect to host port 22: Connection refused”。
-经过调试，我发现 我的gitlab 是装在docker里面的。
-22端口是我的debian 虚拟机的sshd 服务在使用， 而不是gitlab 容器在使用。
-所以我在git客户端上指定一下gitlab的端口 就好了。
-参考下面的命令：
-git remote add origin ssh://user@host:1234/srv/git/example
- 1234 是端口号， 修改成你使用的即可。 user 是gitlab的用户名 host 是gitlab所在的主机 在gitlab的项目主界面， 把HTTP切换成SSH 就可以得到SSH的地址， 然后添加下端口应该就可以了。  </description>
+      <description>在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多</description>
     </item>
     
     <item>
@@ -347,21 +193,7 @@ git remote add origin ssh://user@host:1234/srv/git/example
       <pubDate>Fri, 31 Jul 2020 23:46:23 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
-      <description>这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。
-ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(重新引导)ESXi 主机。
-把显卡和显卡的HDMI 音频设备添加到虚拟机里面。（编辑 / 添加 PCI-E设备）
-编辑虚拟机的配置， 添加或者设置 这个配置项： hypervisor.cpuid.v0 = FALSE
-虚拟机的操作 打开虚拟机， 进入系统，关闭和禁用vm-tools （这个会阻碍显卡驱动）
-安装显卡驱动， 重启。
-如果是 Windows 系统， 可以考虑使用 远程桌面链接这个工具链接系统， 查看显卡驱动有无成功安装。
-局域网设备也可以考虑AnyDesk 这个工具。
-安装显卡驱动的时候可能没那么容易成功。。。 需要点耐心。
-如果打不开虚拟机或者全部弄好了之后，可以考虑使用 vga.present = FALSE 禁用 ESXi提供的显卡。 加了之后我就打不开了。。。 不知道为啥😂😂😂
-至此，应该 就可以正常使用了。
-游戏体验 笔者直通了一个AMD的 R9 270，实测的话， 尝试玩了下面几个游戏。
-DNF 是可以玩的， 无论是单机版，还是官网版本都是可以玩的。 听说 DNF 不吃显卡， 不知道是不是真的。
-洛奇英雄传单机版。 这个我是使用 anydesk 远程链接的， 鼠标操作有问题， 就稍微玩了一下。
-steam 有一个家用流式传输的功能， 可以远程玩一些游戏。 并且这个功能可以串流非 steam 库的游戏，笔者当初好像使用了这个功能玩洛奇的单机版， 应该是可以玩的。</description>
+      <description>这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。 ESXi 的操作 登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启</description>
     </item>
     
     <item>
@@ -370,12 +202,7 @@ steam 有一个家用流式传输的功能， 可以远程玩一些游戏。 并
       <pubDate>Sun, 19 Jul 2020 10:52:13 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</guid>
-      <description>简介 之前给OpenMediaVault的硬盘空间不够大， 新增硬盘似乎不太方便， 就考虑扩大硬盘空间， 踩了坑之后终于弄好了。
-有下面的要点， 先简单提一下。
- MBR 分区表最大只能支持2TB 空间大小 GPT 分区表能支持 大于2TB 的空间 fdisk 这个工具似乎也只能支持2TB 空间大小 parted 这个工具支持大于2TB 空间的  流程 大概思路有两个，如下所说。
- 使用 fdisk 的操作流程。
- 谨慎操作， 这个流程有可能让你的数据全部丢失！ 查看原有分区的 扇区数， 并记录起始扇区位置。一个磁盘只有一个分区的话，起始位置一般是2048 。 确保要扩充的分区后面没有别的分区， 否则建议新建一个分区。 删除要扩充的分区。 新建一个同类型的分区 起始扇区位置 和前面查询到的 要保持一致。 一定要保持一致，否则数据会丢 结束扇区填写， 好像可以填写具体的大小(500G这种)。 给的默认结束扇区应该是整个磁盘的空间（前提是空间小于2TB） 保存 并写入分区表 resize2fs 命令 把分区同步到文件系统。   使用parted命令 （建议）
- 输入命令 parted [dev] dev 表示设备位置,一般是 /dev/sdx print 查看磁盘分区表 resizepart 1 Y 3848GB 命令扩大1号分区的空间大小  1 按需填写位置 Y 表示自动确认 3848GB 表示具体大小   quit 退出即可。 上一部应该会自动写入分区表 可查看空间大小有无更新， 没有的话可以尝试resize2fs 更新一下  </description>
+      <description>简介 之前给OpenMediaVault的硬盘空间不够大， 新增硬盘似乎不太方便， 就考虑扩大硬盘空间， 踩了坑之后终于弄好了。 有下面的要点， 先简单</description>
     </item>
     
     <item>
@@ -384,12 +211,7 @@ steam 有一个家用流式传输的功能， 可以远程玩一些游戏。 并
       <pubDate>Thu, 09 Jul 2020 20:25:06 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
-      <description>简述  软路由系统： pfSense 使用的 DNS 服务： DNS Resolver 可以考虑的 DNS 服务： BIND DNS  笔者曾经成功的设置好了 BIND DNS ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下自带的DNS Resolver ，非常简单，一次搞定。
-详细内容 DNS Resolver pfSense 自带这个包，而且这个是默认启用的服务，不需要安装新的 package。
-点击导航栏的Services / DNS Resolver / General Settings 即可打开常规设置的面板。
-向下拉取， 找到 Host Overrides 的字样， 点击下面的 + Add 按钮。
-比如我现在想添加 owncloud.home.link	192.168.200.33 这样的一条记录。
- Host: owncloud Domain: home.link IP Address: 192.168.200.33 Description: owncloud 如果你有另外一个域名也指向 192.168.200.33 比如 blog.home.link 那么可以在 Additional Names for this Host 里面直接追加 Host name: blog Domain: home.</description>
+      <description>简述 软路由系统： pfSense 使用的 DNS 服务： DNS Resolver 可以考虑的 DNS 服务： BIND DNS 笔者曾经成功的设置好了 BIND DNS ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下</description>
     </item>
     
     <item>
@@ -398,16 +220,7 @@ steam 有一个家用流式传输的功能， 可以远程玩一些游戏。 并
       <pubDate>Thu, 09 Jul 2020 20:24:27 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
-      <description>简述 家里使用的服务器，主要硬盘消耗是 openmediavault。
-就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMachine。
-因为存储的电影越来越多， 所以准备扩大下磁盘， 踩了点坑之后，成功更换了硬盘。
-（个人来说 会每周六晚上看一部电影，看完的也没删，所以比较费空间 😂）
-本文使用的步骤是冷迁移，笔者是个菜鸡，暂时没有用到 vCenter
-详细步骤 （冷迁移） 简述就是，关闭并移动虚拟机， 然后卸掉旧硬盘， 使用 U 盘重新安装 ESXi，并恢复配置。
-注：迁移系统的话，才需要重装。
-我现在有3块硬盘
- 2T 得硬盘， 里面放了系统和部分虚拟机 4T 得硬盘， 里面全是虚拟机 12T 得硬盘， 新买的，目标硬盘。  步骤大概分为下面几步应该就 OK 了。
- 链接新的硬盘到现在的 ESXi 主机上。SATA 或者 NVME 应该都可以，只要 能识别就 OK。记得关机操作。。 开机后，登录 web 控制面板， 基于新的硬盘创建一个数据存储  左侧导航器其次选择存储 / 数据存储 / 新建数据存储 创建新的 VMFS 存储 给一个名称， 比如 _12T_ 选择该硬盘， 版本上似乎 5和6都可以。   关闭位于想更换硬盘上的所有虚拟机。  如果分区是基于两块硬盘创建得， 则可以将全部的虚拟机移动过去 比如我的分区1 是基于一块2T 的硬盘， 一块4T 的硬盘， 我就是把全部的虚拟机关闭移动的。   打开数据浏览存储器， 进行移动  左侧导航栏依次选择 存储 / 数据存储 / 数据存储浏览器 此时会看到两个及以上的数据存储区域， 点开一个之后，里面的每一个文件夹基本都是一个虚拟机。 点击文件夹，点击移动， 目标选择新的硬盘对应的存储区域 (_12T_) 静静等待完成就可以了。 笔者移动了大概6TB 的文件， 花了差不多24~36个小时，笔者是普通的机械硬盘。   拆除不需要的硬盘。。  把想要拆掉的硬盘排除掉。 比如 一个数据区域里面两个硬盘的话，则考虑选择不需要的硬盘，或者是需要的硬盘，点击删除分区表， 之后该硬盘就会从数据分区中移出，但是笔者不知道这么做有没有什么副作用。。 如果该硬盘对应着一个数据区域，则先把该区域删除掉，再删除分区表。   如果你不需要迁移系统的话， 这时应该已经 OK 了， 重新注册下虚拟机应该就差不多要成功了。  一般情况下， 再 『我已复制』 和『我已移动』 中 你应该选择『我已复制』 否则的话，可能虚拟机就无法启动了。 但是点击我已复制，网卡的 MAC 地址会变化，初除此之外应该还有别的变化。 我第一个虚拟机 pfSense ，点击的『我已移动』 之后就没能成功启动 😹😹😹 ​ 点了之后， 虚拟机的基本配置也没办法修改， 不知道为啥。。   接下来是如果你需要迁移系统的操作。  为什么要迁移系统？ 原因当然很简单啦， 因为系统装在了一块小的硬盘上。 机箱里没更多放硬盘的位置了。   导出 当前的 ESXi 的主机配置。  官方文档： https://kb.</description>
+      <description>简述 家里使用的服务器，主要硬盘消耗是 openmediavault。 就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMa</description>
     </item>
     
     <item>
@@ -416,11 +229,7 @@ steam 有一个家用流式传输的功能， 可以远程玩一些游戏。 并
       <pubDate>Sat, 27 Jun 2020 20:49:31 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>简述  软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给其他一起合租的租客使用。  开始 我现在是电信1000M/100M 的宽带， 之前使用的不到300块钱的 TPLink 路由器在 speedtest.cn 上只能跑700M 左右的下行。 更换了之后能跑到1000M 左右， 感觉还是 OK 的。
-ESXI 没有使用虚拟机的读者可以跳过这一部分。
-我目前的情况是这样的
- pfSense 作为主路由  其他虚拟机 我的无线路由器  我的 PC 台式机 我的无线设备， 笔记本电脑，平板，手机等   千兆交换机1  其他租客1的路由 其他租客2的路由      因为不知道博客的主题是否支持流程图就先用这种表达方式了。
-新建 VMkernel 网卡 我本来是使用的别的路由， 现在的 esxi 的管理地址是192.168.0.23 ， 我更换为pfSense 之后，就没这个网段了， 所以需要处理下 esxi 的 web 管理地址的问题。</description>
+      <description>简述 软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给</description>
     </item>
     
     <item>
@@ -429,15 +238,7 @@ ESXI 没有使用虚拟机的读者可以跳过这一部分。
       <pubDate>Sat, 11 Aug 2018 21:08:58 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E4%BB%8E%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8A%E6%8A%8A%E7%B3%BB%E7%BB%9F%E5%BC%84%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
-      <description>声明： 本人在操作的时候 并不算完美的恢复了，只是现在是可用了，使用的平台是虚拟机（esxi 6.5) 里面恢复的
-先推荐一个 工具 mondo rescue: http://www.mondorescue.org/
-这个工具可以用来备份磁盘和在本地进行恢复。 不过似乎有点bug , 并且你磁盘过大的时候似乎也不太友好。
-至于这个工具怎么用， 网上资料一堆， 直接在阿里云上进行运行即可， 不过需要你有足够的空余磁盘。 我之前是全盘备份， 26G左右的文件， 打包后 大约15G多。我碰到的情况是 生成4个iso 文件， 然后全部下载到本地 ，进行恢复就好了。
-但是这里有个不是很友好的地方，如果你要把系统恢复到物理机的话， 你可能要多备几个U盘。 恢复流程大概就是先把 第一个iso镜像文件（文件名结尾为 01的iso文件） 写入 U盘/光盘 然后让物理机从 该设备启动。 会看到一个界面， 想要全盘恢复就输入nuke 之后会提示你插入第二个光盘 并按enter键。 想要节省时间的话， 就提前把第二个镜像写入 U盘或者光盘， 看到提示就 切换一下，然后按enter。
-如果你是使用虚拟机就比较简单， 直接把镜像文件切换 按enter键就可以了。
-对了用虚拟机的话， 只给虚拟机一个cd-rom设备就可以了， 看到提示就更换挂载的镜像文件， 然后按enter。
-我这里是换硬盘恢复的， 会提示 挂载点变更， 类似 mountlist has changed之类的提示， 问我是否要更新这个， 按确定进行更新， 然后操作一下。 其实这里应该只是修改引导， 让你恢复之后的系统可以启动。
-我这里碰到了一个问题，无法解决。 就是恢复之后 会有一个文件把我的磁盘占满， 我本来用50G的空间， 不行， 改成80G之后还不行， 我感觉是工具出bug了。</description>
+      <description>声明： 本人在操作的时候 并不算完美的恢复了，只是现在是可用了，使用的平台是虚拟机（esxi 6.5) 里面恢复的 先推荐一个 工具 mondo rescue: http://www.mondorescue.org/ 这个工具可以用来备份</description>
     </item>
     
     <item>
@@ -446,9 +247,7 @@ ESXI 没有使用虚拟机的读者可以跳过这一部分。
       <pubDate>Wed, 10 May 2017 21:11:12 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-      <description>基本信息:
- java 服务端 网络框架用的 netty Unity的客户端，用的 tcpClient. 通信协议选择的 protobuf. java端采用的是谷歌提供的解析器， 而客户端则采用的protobuf-net 我在设计中 使用了一个叫 GameMsg 的协议来封装所有协议的内容。  在本来中设计中 使用了一个 string paramStr = 1;  的字段来存放协议的具体内容。 然后发现 在 unity 端中 如果协议的属性带有负数， 则报出一个 number overflow 的异常。 把 string 改成 bytes 就好了。
-如果是 java 和java 这样通信， string 是允许的。 但是 unity 不行。</description>
+      <description>基本信息: java 服务端 网络框架用的 netty Unity的客户端，用的 tcpClient. 通信协议选择的 protobuf. java端采用的是谷歌提供的解析器， 而客户端则采用的protobu</description>
     </item>
     
     <item>
@@ -457,12 +256,7 @@ ESXI 没有使用虚拟机的读者可以跳过这一部分。
       <pubDate>Sun, 07 Aug 2016 21:33:32 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/</guid>
-      <description>具体情况我也不知道， 不清楚他是怎么黑进去的。。
-上周三晚上好像。 我在网吧玩剑灵， 截了一些图， 在下机之前的时候准备上传到网盘里面。 结果， 网盘的速度超慢，超慢的。 我就用手机连接服务器的ssh ，看看什么情况。 一看不要紧。 我发现一个叫做 minerd 的程序 吃满了CPU 。。
-我当时就心里一咯噔， 不会被黑了吧。。 但是当时已经很晚了。 我也急着回去睡觉了。 卡就卡呗， 先把图传了。 一会儿，终于把图给传上去了。 然后我登录阿里云的后台管理页面， 把VPS 给停掉了。
-第二天到了公司。 我就打了一个小差，看看这个到底是什么鬼。 一百度 minerd ，果然有一些记录。 据说 这个是被黑了。 用来挖比特币和 进行DDOS 攻击。 kill 了进程， 删除了文件， 一会 这个文件又出现了， 然后进程复活。。
-百度出的资料也不多。 一般就是说 清理掉定时任务。 删除没用的用户。我都试了。 然而还是不行。。 蛋碎一地啊 有没有。。
-弄到后来， 我让文件继续存在在上面了。 然后把我文件的权限给干掉了 使用命令chmod 000 minerd 设置了权限。 然后 kill 掉他的进程。。 好像就是好了。 等以后有机会 我再仔细看看 这个东西到底怎么解决掉。。 这是一个暂时的方法，我最近事情也比较多，没什么时间弄它。</description>
+      <description>具体情况我也不知道， 不清楚他是怎么黑进去的。。 上周三晚上好像。 我在网吧玩剑灵， 截了一些图， 在下机之前的时候准备上传到网盘里面。 结果， 网盘的速</description>
     </item>
     
     <item>
@@ -471,8 +265,7 @@ ESXI 没有使用虚拟机的读者可以跳过这一部分。
       <pubDate>Tue, 12 Apr 2016 21:43:47 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/git-%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81%E5%88%B0%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85/</guid>
-      <description>这里不能再使用clone 方法了。
- 打开 git bash(windows 下) 利用 cd 命令 切换到 要克隆到的目录的位置 比如： mkdir projectA &amp;amp;&amp;amp; cd projectA 输入命令： git init 在当前目录下初始化一个仓库 输入命令： git pull [url] 从目标仓库中拉取文件到本地 输入命令： git remote add origin [url] 添加一个远程分支 输入命令： git add . 把当前目录的文件添加到提交列表 输入命令： git commit 填写提交消息， 然后输入 :wq 结束 输入命令： git push –set-upstream origin master 推送代码， 会要求你输入用户名和密码 以后再推送的时候 直接输入 git push 就好了。 如果你使用什么IDE的话， 如果IDE 有GIT 的插件的话，那么现在应该就可以看到GIT 的信息了  </description>
+      <description>这里不能再使用clone 方法了。 打开 git bash(windows 下) 利用 cd 命令 切换到 要克隆到的目录的位置 比如： mkdir projectA &amp;amp;&amp;amp; cd projectA 输入命令： git init 在当前目录下初始化一个仓库 输入</description>
     </item>
     
     <item>
@@ -481,7 +274,7 @@ ESXI 没有使用虚拟机的读者可以跳过这一部分。
       <pubDate>Tue, 12 Apr 2016 21:43:19 +0800</pubDate>
       
       <guid>https://fantasyplayer.link/periphery/git-%E5%88%86%E6%94%AF%E6%8F%8F%E8%BF%B0/</guid>
-      <description> 创建分支： git branch [name] 切换分支: git checkout &amp;lt;branch&amp;gt; 列出所有分支： git branch -a 删除某个本地分支： git branch -d [name] 提交分支到远端 git push –set-upstream origin &amp;lt;branch&amp;gt; 删除远程分支： git push origin –delete &amp;lt;branch&amp;gt; 合并分支： git checkout master; git merge fix1; # 将 fix1 分支合并到 master 分支上  </description>
+      <description>创建分支： git branch [name] 切换分支: git checkout &amp;lt;branch&amp;gt; 列出所有分支： git branch -a 删除某个本地分支： git branch -d [name] 提交分支到远端 git push –set-upstream origin &amp;lt;branch&amp;gt; 删除远程分支：</description>
     </item>
     
   </channel>

@@ -36,15 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在bash脚本中拼接参数的问题"/>
-<meta name="twitter:description" content="在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。
-笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。
-拼接的参数会自动使用一个引号括起来， rsync 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。
-我刚开始好像是使用一个单一的变量来尝试控制参数。（大约1，2个月以前的东西​，记得不是很清楚😂)
-# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=&#39;--include=&#34;*.jar&#34;&#39; # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &#34;$folder/config.json&#34; ]] then include_arg=&#39;$include_arg --include=&#34;*config.json&#34;&#39; fi sshpass -e rsync -avz &#34;$include_arg&#34; --exclude=&#34;*&#34; ./ root@xx:/root 上述代码中， 最后一段里面的 &quot;$include_arg&quot; 变量，经过我的测试，基本都会被解释成&quot;--include=*.jar --include=*config.json&quot; 。
-这个参数肯定是有问题的，rsync识别不出来。
-经过在stackOverflow 上的搜索，发现使用数组可以处理掉这个问题。
-代码修改成如下所示的情况， 就可以正常使用了。
-# 本部分代码没有经过测试， 只是给个示例来说明一下。 include_arg=(--include=&#34;*.jar&#34; --include=&#34;lib&#34;) # 如果本地存在 config.json 文件， 就发送过去 if [[ test -e &#34;$folder/config.json&#34; ]] then include_arg&#43;=(--include=&#34;*config.json&#34;) fi sshpass -e rsync -avz &#34;${include_arg[@]}&#34; --exclude=&#34;*&#34; ."/>
+<meta name="twitter:description" content="在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。 笔者刚开始在做这件事的时候碰到了一"/>
 
   <script type="application/ld+json">
 {
@@ -63,7 +55,7 @@
   },
   "genre": "periphery",
   
-  "wordcount":  77 ,
+  "wordcount":  463 ,
   "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98\/",
   "datePublished": "2020-09-14T20:38:01\u002b08:00",
   "dateModified": "2020-09-14T20:38:01\u002b08:00",
@@ -214,9 +206,9 @@ sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span><span style="color
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>77</span>
+                   <span>463</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -259,6 +251,7 @@ sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span><span style="color
           
 
           
+
 </span>
                 
             </p>

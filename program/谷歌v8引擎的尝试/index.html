@@ -36,10 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="谷歌v8引擎的尝试"/>
-<meta name="twitter:description" content="谷歌V8是一个用于执行js脚本的引擎。
-详细内容 Isolate  一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间是完全隔离的, 它们不能够有任何共享的资源。如果不显式创建 Isolate, 会自动创建一个默认的 Isolate。
- 下面给出一些相关代码。
-// Initialize V8. v8::V8::InitializeICUDefaultLocation(execPath); v8::V8::InitializeExternalStartupData(execPath); std::unique_ptr&lt;v8::Platform&gt; platform = v8::platform::NewDefaultPlatform(); v8::V8::InitializePlatform(platform.get()); v8::V8::Initialize(); // Create a new Isolate and make it the current one. v8::Isolate::CreateParams createParams; createParams.array_buffer_allocator = v8::ArrayBuffer::Allocator::NewDefaultAllocator(); auto isolate = v8::Isolate::New(createParams); auto isolate_scope = std::make_unique&lt;v8::Isolate::Scope&gt;(isolate); g_V8Runtime = new V8Runtime{ std::move(platform), isolate, createParams.array_buffer_allocator, std::move(isolate_scope), }; // 销毁 dbg(&#34;destroy js engine..&#34;); g_V8Runtime-&gt;isolateScope.reset(); if (g_V8Runtime-&gt;isolate) { g_V8Runtime-&gt;isolate-&gt;Dispose(); g_V8Runtime-&gt;isolate = nullptr; } v8::V8::Dispose(); v8::V8::ShutdownPlatform(); if (g_V8Runtime-&gt;arrayBufferAllocator) { delete g_V8Runtime-&gt;arrayBufferAllocator; g_V8Runtime-&gt;arrayBufferAllocator = nullptr; } Initialize V8."/>
+<meta name="twitter:description" content="谷歌V8是一个用于执行js脚本的引擎。 详细内容 Isolate 一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间"/>
 
   <script type="application/ld+json">
 {
@@ -58,7 +55,7 @@
   },
   "genre": "program",
   
-  "wordcount":  256 ,
+  "wordcount":  1149 ,
   "url": "https:\/\/fantasyplayer.link\/program\/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95\/",
   "datePublished": "2021-09-18T11:45:44\u002b08:00",
   "dateModified": "2021-09-18T11:45:44\u002b08:00",
@@ -150,7 +147,7 @@
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                2 min
+                3 min
         </div>
     </header>
     <div class="post-content">
@@ -287,9 +284,9 @@ Isolate<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">oper
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>256</span>
+                   <span>1149</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -332,6 +329,7 @@ Isolate<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">oper
           
 
           
+
 </span>
                 
             </p>

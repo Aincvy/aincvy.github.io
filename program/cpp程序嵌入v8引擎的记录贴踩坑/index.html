@@ -36,17 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cpp程序嵌入v8引擎的(踩坑)记录贴"/>
-<meta name="twitter:description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。
-长话短说 笔者使用的是Mac 系统，使用命令 brew install v8 即可安装v8库。
-安装成功之后，在这里应该可以找到需要的文件：  /usr/local/opt/v8/libexec/ 。
-/usr/local/opt/v8 是一个软连接， 它的真实目录这里就不介绍了， 如果读者想知道的话， 可以自行使用命令查看一下。
-可以使用命令d8 来检查一下安装是否成功了， 那是一个可以执行js语句的命令行程序。
-cmake 如果使用cmake 的话， 可能还需要这个 https://github.com/metacall/core/blob/develop/cmake/FindV8.cmake
-可以使用类似如下的代码使用这个FindV8.cmake
-# 先使用 wget 或者其他工具把该文件下载到本地， 并保存到项目目录下的cmake 子目录。 # add directory set(CMAKE_MODULE_PATH APPEND &#34;${CMAKE_SOURCE_DIR}/cmake/&#34; )# sight 是笔者正在做的一个工具。 add_executable(sight program.cpp)# V8 set(V8_DIR &#34;/usr/local/opt/v8/libexec/&#34;)find_package(V8 REQUIRED)target_include_directories(sight PRIVATE ${V8_INCLUDE_DIR})# 如果没有这个定义 在程序运行的时候 好像会报错 target_compile_definitions(sight PRIVATE V8_COMPRESS_POINTERS V8_31BIT_SMIS_ON_64BIT_ARCH)# 链接库 target_link_libraries(sight PRIVATE ${V8_LIBRARIES})关于V8_COMPRESS_POINTERS宏定义的拓展阅读部分： https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689
-常规方式 如果不使用cmake的话， 可以手动添加目录。
-下面介绍一下相关的目录内容。
- 头文件目录： /usr/local/opt/v8/libexec/include 库文件目录： /usr/local/opt/v8/libexec/  libv8."/>
+<meta name="twitter:description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统"/>
 
   <script type="application/ld+json">
 {
@@ -65,7 +55,7 @@ cmake 如果使用cmake 的话， 可能还需要这个 https://github.com/metac
   },
   "genre": "program",
   
-  "wordcount":  303 ,
+  "wordcount":  1704 ,
   "url": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91\/",
   "datePublished": "2021-07-23T18:51:51\u002b08:00",
   "dateModified": "2021-07-23T18:51:51\u002b08:00",
@@ -157,7 +147,7 @@ cmake 如果使用cmake 的话， 可能还需要这个 https://github.com/metac
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                2 min
+                4 min
         </div>
     </header>
     <div class="post-content">
@@ -329,9 +319,9 @@ ninja -C out/x64.release
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>303</span>
+                   <span>1704</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -374,6 +364,7 @@ ninja -C out/x64.release
           
 
           
+
 </span>
                 
             </p>

@@ -36,7 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java字节操作的简单描述"/>
-<meta name="twitter:description" content="byte[]和 int 互相转换 // 将 byte[] 转换成 int byte[] input = {(byte)0x65, (byte)0xFF, (byte)0x31 }; // 使用大端的方式转换成 int ： x == 0x65FF31 int x = (input[0] &amp; 0xFF) &lt;&lt; 16 | (input[1] &amp; 0xFF) &lt;&lt; 8 | (input[2] &amp; 0xFF) &lt;&lt; 0; // 使用小端的方式转换成 int : y == 0x31FF65 int y = (input[0] &amp; 0xFF) &lt;&lt; 0 | (input[1] &amp; 0xFF) &lt;&lt; 8 | (input[2] &amp; 0xFF) &lt;&lt; 16; 介绍一些概念  一个 int 由4个字节组成，分别记作 x0,x1,x2,x3 一个字节由8个位(bit) 组成， 每个 bit的值只能为1或者0 一个 int 由 32个位(bit) 组成。 | 是按位或的操作符， 当第一项的第n位或者第二项的第n位的值为1 ，结果的第 n 位就是1 &amp; 是按位与的操作符， 当两项中的第 n 位的值都是1， 则结果的第 n 位的值就是1  解释 在大端模式下， 组成 int 的字节数量不够的时候， 省略左边的值（我猜的😂）。"/>
+<meta name="twitter:description" content="byte[]和 int 互相转换 // 将 byte[] 转换成 int byte[] input = {(byte)0x65, (byte)0xFF, (byte)0x31 }; // 使用大端的方式转换成 int ： x == 0x65FF31 int x = (input[0] &amp; 0xFF) &lt;&lt; 16 | (input[1] &amp; 0xFF) &lt;&lt; 8 | (input[2] &amp; 0xFF) &lt;&lt; 0; // 使用小端的方式"/>
 
   <script type="application/ld+json">
 {
@@ -55,7 +55,7 @@
   },
   "genre": "program",
   
-  "wordcount":  299 ,
+  "wordcount":  867 ,
   "url": "https:\/\/fantasyplayer.link\/program\/java%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0\/",
   "datePublished": "2020-09-21T20:33:04\u002b08:00",
   "dateModified": "2020-09-21T20:33:04\u002b08:00",
@@ -248,9 +248,9 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>299</span>
+                   <span>867</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -293,6 +293,7 @@
           
 
           
+
 </span>
                 
             </p>

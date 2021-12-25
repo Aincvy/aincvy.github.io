@@ -36,17 +36,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="自制脚本语言[2] 类型相关内容的介绍"/>
-<meta name="twitter:description" content="本篇来描述一下 类型相关的内容。
-脚本语言引擎需要提供一些基本类型和至少一个复杂类型的抽象(类，表等)。
-基本类型 就拿JAVA语言的基本类型来举例： boolean,byte,char,short,int,long,float,double
-其中的每一个类型都是基本元素，基本上在使用的时候不会拆分成更小的类型。
-除了上述的关于数值的类型之外， 常用的还有一个字符串类型。 （在Java中 字符串不算基本类型。算引用类型。但在读者自己开发的脚本语言中，则可以自己定义。）
-笔者在langX中定义的基本类型有下面几个：
- 数值类型 （整数， 浮点数， 布尔） null 类型 字符串类型 数组 函数  别的复杂类型基本上都需要使用上述的类型进行组成。
-复杂类型的抽象 基本上可以理解为JAVA里的类， lua里的表。
-下面请看一个JAVA的代码片段。
-@Data public class Student { // 唯一编号  private int id; // 姓名  private String name; // 年龄  private int age; // 是否毕业了  private boolean graduation; public boolean isGraduation(){ return graduation; } } 上面描述一个叫 Student的类， 即一个复杂类型。这个类由字段，方法，注解组成，其中大部分字段使用的基本类型， 还有部分字段使用的是复杂类型（字符串）。
-这个类是一个具体的复杂类型， 为了使脚本语言引擎可以支持这个复杂类型， 我们需要实现一套机制。 这套机制可以表述一个复杂类型。"/>
+<meta name="twitter:description" content="本篇来描述一下 类型相关的内容。 脚本语言引擎需要提供一些基本类型和至少一个复杂类型的抽象(类，表等)。 基本类型 就拿JAVA语言的基本类型来举例"/>
 
   <script type="application/ld+json">
 {
@@ -65,7 +55,7 @@
   },
   "genre": "non-menu",
   
-  "wordcount":  232 ,
+  "wordcount":  1387 ,
   "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D\/",
   "datePublished": "2021-02-07T14:59:56\u002b08:00",
   "dateModified": "2021-02-07T14:59:56\u002b08:00",
@@ -157,7 +147,7 @@
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                2 min
+                3 min
         </div>
     </header>
     <div class="post-content">
@@ -303,9 +293,9 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>232</span>
+                   <span>1387</span>
             </p>
-            
+
             <p class="copyright-item">
                 
                 <span>Share:</span>
@@ -348,6 +338,7 @@
           
 
           
+
 </span>
                 
             </p>
