@@ -273,10 +273,10 @@
 <h3 id="clangd">clangd</h3>
 <p>即<code>llvm-vs-code-extensions.vscode-clangd</code>拓展。</p>
 <p>这个插件需要 Cmake 生成一个额外的文件指示编译命令。 可以在<code>CMakeLists.txt</code>文件添加下面这行生成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILECOMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILECOMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>如果提示插件找不到 <code>clangd</code>，可以让插件自动下载一个。</p>
 <p>参数可以使用类似下面的内容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;clangd.arguments&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;clangd.arguments&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
         <span style="color:#e6db74">&#34;-background-index&#34;</span>,
         <span style="color:#e6db74">&#34;--compile-commands-dir=./build&#34;</span>,
         <span style="color:#e6db74">&#34;-clang-tidy&#34;</span>,
@@ -296,7 +296,7 @@
 </ul>
 <p>每个人对格式的感觉不一样， 建议手动从头撸一份配置。</p>
 <p>这里有一点 笔者要说一下。  <code>clang-format</code>不能处理这种情况。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> (f1.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Regular) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> (f1.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Regular) {
   <span style="color:#66d9ef">return</span> true;
 } <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> ((f1.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory) 
            <span style="color:#f92672">||</span> (f1.fileType <span style="color:#f92672">!=</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">!=</span> ProjectFileType<span style="color:#f92672">::</span>Directory)) {
@@ -311,20 +311,20 @@
 </ul>
 <h3 id="vs-code">vs-code</h3>
 <p>vs-code 本身也有一些可以调整的选项。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">自动保存</span>   <span style="color:#ae81ff">5</span><span style="color:#960050;background-color:#1e0010">s保存一次</span>
-<span style="color:#e6db74">&#34;files.autoSave&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;afterDelay&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#75715e">// 自动保存   5s保存一次
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;files.autoSave&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;afterDelay&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
 <span style="color:#e6db74">&#34;files.autoSaveDelay&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">5000</span><span style="color:#960050;background-color:#1e0010">,</span>
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">粘贴之后自动对齐格式</span>
-<span style="color:#e6db74">&#34;editor.formatOnPaste&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span><span style="color:#960050;background-color:#1e0010">,</span>
-<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">使用</span> <span style="color:#960050;background-color:#1e0010">代码段等提示的时候</span> <span style="color:#960050;background-color:#1e0010">也会产生代码补全</span>
-<span style="color:#e6db74">&#34;editor.suggest.snippetsPreventQuickSuggestions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">,</span>
+<span style="color:#75715e">// 粘贴之后自动对齐格式
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;editor.formatOnPaste&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span><span style="color:#960050;background-color:#1e0010">,</span>
+<span style="color:#75715e">// 使用 代码段等提示的时候 也会产生代码补全
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;editor.suggest.snippetsPreventQuickSuggestions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">,</span>
 </code></pre></div><h2 id="编译和运行">编译和运行</h2>
 <h3 id="添加配置">添加配置</h3>
 <p><strong>如果使用了 Cmake 插件， 这一步可以不做。</strong></p>
 <p>左侧工具栏里有一个 编译和运行的按钮，点一下就能看到调试界面了。</p>
 <p>点击上方的下拉框之后，选择“添加配置” 或者点击右侧的齿轮按钮应该都能到<code>launch.json</code>文件的编辑界面，只不过点击“添加配置”的时候， 会自动添加一个示例的配置项。</p>
 <p>笔者是 Mac 系统下， 使用 lldb 进行调试的，下面给出一下笔者的配置内容，给读者一个参考。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;(lldb) 启动&#34;</span>,
   <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;cppdbg&#34;</span>,
   <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
@@ -334,9 +334,9 @@
   <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
   <span style="color:#f92672">&#34;environment&#34;</span>: [
     {
-      <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">add</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">directory</span> <span style="color:#960050;background-color:#1e0010">where</span> <span style="color:#960050;background-color:#1e0010">our</span> <span style="color:#960050;background-color:#1e0010">target</span> <span style="color:#960050;background-color:#1e0010">was</span> <span style="color:#960050;background-color:#1e0010">built</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">PATHs</span>
-      <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">it</span> <span style="color:#960050;background-color:#1e0010">gets</span> <span style="color:#960050;background-color:#1e0010">resolved</span> <span style="color:#960050;background-color:#1e0010">by</span> <span style="color:#960050;background-color:#1e0010">CMake</span> <span style="color:#960050;background-color:#1e0010">Tools:</span>
-      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;PATH&#34;</span>,
+      <span style="color:#75715e">// add the directory where our target was built to the PATHs
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// it gets resolved by CMake Tools:
+</span><span style="color:#75715e"></span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;PATH&#34;</span>,
       <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;${env:PATH}:${command:cmake.getLaunchTargetDirectory}&#34;</span>
     },
   ],

@@ -167,7 +167,7 @@
           
 
           <h2 id="byte和-int-互相转换">byte[]和 int 互相转换</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 将 byte[] 转换成 int
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 将 byte[] 转换成 int
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> input <span style="color:#f92672">=</span> <span style="color:#f92672">{(</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)</span>0x65<span style="color:#f92672">,</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)</span>0xFF<span style="color:#f92672">,</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">)</span>0x31 <span style="color:#f92672">};</span>
 
 <span style="color:#75715e">// 使用大端的方式转换成 int ：  x == 0x65FF31
@@ -205,7 +205,7 @@
 <li><a href="https://baike.baidu.com/item/%E5%A4%A7%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F">大小端模式 - 百度百科</a></li>
 <li><a href="https://blog.csdn.net/xiaochunyong/article/details/7748713">Java 位运算(移位、位与、或、异或、非）</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 将 int  转换成 byte[]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 将 int  转换成 byte[]
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> 0x31FF65<span style="color:#f92672">;</span>
 
 <span style="color:#75715e">// 使用大端的方式转换:  { 0x65, 0xFF, 0x31}
@@ -231,7 +231,7 @@
 <li><code>x &amp; 0xFF</code> 会得到 第一个字节。  因为 <code>0xFF</code> 的值是 <code>1111 1111</code> 而按位与需要两项第 n 位都为1的时候结果才为1。 <code>0xFF</code> 可以理解成 <code>0x000000FF</code> 所以在这8个1之前还有24个0 ，那些值将会被忽略。</li>
 </ul>
 <h2 id="操作位">操作位</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">bool f <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&amp;</span> 1 <span style="color:#f92672">&lt;&lt;</span> n <span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">;</span>      <span style="color:#75715e">// 检测第 n 位是否为1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">bool f <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&amp;</span> 1 <span style="color:#f92672">&lt;&lt;</span> n <span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">;</span>      <span style="color:#75715e">// 检测第 n 位是否为1
 </span><span style="color:#75715e"></span>i <span style="color:#f92672">|=</span> 1 <span style="color:#f92672">&lt;&lt;</span> n<span style="color:#f92672">;</span>          		   <span style="color:#75715e">// 将第 n 位设置为 1
 </span><span style="color:#75715e"></span>i <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~(</span>1 <span style="color:#f92672">&lt;&lt;</span> n<span style="color:#f92672">);</span>     		   <span style="color:#75715e">// 将第 n 位设置为 0
 </span><span style="color:#75715e"></span>i <span style="color:#f92672">^=</span> 1 <span style="color:#f92672">&lt;&lt;</span> n<span style="color:#f92672">;</span>     		   <span style="color:#75715e">// 切换第 n 位的值 （1变0， 0变1）

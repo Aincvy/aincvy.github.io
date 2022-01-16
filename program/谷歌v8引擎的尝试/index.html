@@ -173,7 +173,7 @@
 <p>一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间是完全隔离的, 它们不能够有任何共享的资源。如果不显式创建 Isolate, 会自动创建一个默认的 Isolate。</p>
 </blockquote>
 <p>下面给出一些相关代码。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// Initialize V8.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// Initialize V8.
 </span><span style="color:#75715e"></span>v8<span style="color:#f92672">::</span>V8<span style="color:#f92672">::</span>InitializeICUDefaultLocation(execPath);
 v8<span style="color:#f92672">::</span>V8<span style="color:#f92672">::</span>InitializeExternalStartupData(execPath);
 std<span style="color:#f92672">::</span>unique_ptr<span style="color:#f92672">&lt;</span>v8<span style="color:#f92672">::</span>Platform<span style="color:#f92672">&gt;</span> platform <span style="color:#f92672">=</span> v8<span style="color:#f92672">::</span>platform<span style="color:#f92672">::</span>NewDefaultPlatform();
@@ -212,10 +212,10 @@ v8<span style="color:#f92672">::</span>V8<span style="color:#f92672">::</span>Sh
 <p>在多线程环境下，可以选择每个线程都创建一个单独<code>Isolate</code> ，对于笔者目前的项目来说， 选择的是采用一个单独的线程执行js脚本。当其他线程有执行脚本的需求的时候都会选择将任务发送给这个线程。</p>
 <p>在线程结束之前应该将 <code>Isolate</code> 销毁。</p>
 <p>在程序结束之前， 所有的<code>Isolate</code>都销毁了之后， 应该执行下面的语句销毁v8引擎。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v8<span style="color:#f92672">::</span>V8<span style="color:#f92672">::</span>Dispose();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v8<span style="color:#f92672">::</span>V8<span style="color:#f92672">::</span>Dispose();
 v8<span style="color:#f92672">::</span>V8<span style="color:#f92672">::</span>ShutdownPlatform();
 </code></pre></div><p>另外，Isolate 类的构造函数和析构函数都是删除了的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// v8.h
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// v8.h
 </span><span style="color:#75715e"></span>
 Isolate() <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
 <span style="color:#f92672">~</span>Isolate() <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
@@ -232,7 +232,7 @@ Isolate<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">oper
 <p>现在就简单的介绍一下如何实现这部分内容。</p>
 <p>使用这个类型即可<code>v8::Persistent</code> 即可。</p>
 <p>下面给一个示例。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> v8;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> v8;
 
 <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MyStruct</span> {
   v8<span style="color:#f92672">::</span>Persistent<span style="color:#f92672">&lt;</span>v8<span style="color:#f92672">::</span>Function, v8<span style="color:#f92672">::</span>CopyablePersistentTraits<span style="color:#f92672">&lt;</span>v8<span style="color:#f92672">::</span>Function<span style="color:#f92672">&gt;&gt;</span> callback;
@@ -259,7 +259,7 @@ Isolate<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">oper
 <p>比如， 读者在脚本里面声明了一个函数<code>abc</code>， 那么这个<code>abc</code>会保存到Context，在执行别的脚本的时候就可以调用这个<code>abc</code>函数， 同时别的脚本则不能再声明一个叫<code>abc</code>的函数。 当然，此脚本也无法再次执行。</p>
 <p>为了可以多次运行同一脚本，可以使用函数<code>v8::ScriptCompiler::CompileFunctionInContext()</code>， 这样把源码全部编译到一个函数里面。</p>
 <h3 id="scope">Scope</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v8<span style="color:#f92672">::</span>HandleScope handle_scope(isolate);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v8<span style="color:#f92672">::</span>HandleScope handle_scope(isolate);
 </code></pre></div><p>这个是作用域， 建议在合适的位置上都使用一下上面的语句。</p>
 <p>这条语句会生成一个新的作用域给 isolate， 当离开<code>handle_scope</code>的cpp作用域的时候， 这个v8的作用域会被自动释放掉。 (<em>析构函数</em>)</p>
 <h3 id="其他">其他</h3>

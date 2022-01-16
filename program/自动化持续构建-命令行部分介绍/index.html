@@ -180,7 +180,7 @@
 <h3 id="编译打包-以及打压缩包">编译，打包 以及打压缩包。</h3>
 <p>使用命令 <code>mvn clean &amp;&amp; mvn install</code> 基本上就可以完成编译打包的命令。  <em>maven相关的配置文件这里就不描述了。</em></p>
 <p>使用cpp的话， 如果使用cmake的话， 就使用下面的命令。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
 cmake ..
 make
 </code></pre></div><p>在执行了编译命令之后， 在shell 里面可以使用<code>$?</code> 变量获取上一个命令的结束状态码。 状态码基本上是<code>0</code>表示执行成功，其他是失败，状态码可以用于做失败处理。  <em>在fish里面使用<code>$status</code>这个变量，fish这个shell 很多地方和其他的shell都不一样。。😂</em></p>
@@ -209,7 +209,7 @@ make
 <p>在Windows下， 杀掉进程可以使用使用命令<code>Taskkill /PID [pid] /F</code> 或者<code>Taskkill /IM [exeName] /F</code></p>
 <p>这里的一个可选思路是这样的，在程序启动的时候把当前的pid写入到一个文本文件里面。 在需要杀死旧进程的时候读取文本文件获得pid，然后执行taskkill命令。</p>
 <p>下面是一个示例     <em>笔者并没有实际测试过正确性。</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">set /p pid<span style="color:#f92672">=</span>&lt;pid.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">set /p pid<span style="color:#f92672">=</span>&lt;pid.txt
 Taskkill /PID %pid% /F
 </code></pre></div><p>接下来就是复制文件， 使用命令 <code>copy /f</code> 即可， 如果文件过大也可以考虑使用<code>xcopy</code>命令。</p>
 <p>启动的话，就很简单了， 使用命令 <code>java -jar [jarFile]</code> 即可。  在开发阶段可以加启动参数， 也可以不加把， 笔者觉得。</p>
@@ -230,7 +230,7 @@ Taskkill /PID %pid% /F
 <li>ssh   ssh链接或者执行ssh命令的工具。</li>
 </ul>
 <p>下面给一段示例。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 使用环境变量的方式给予 sshpass 相关的密码</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 使用环境变量的方式给予 sshpass 相关的密码</span>
 export SSHPASS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span>
 <span style="color:#75715e"># ssh 命令的一些参数</span>
 SSH_FLAGS<span style="color:#f92672">=(</span>-q -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -p <span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
@@ -262,7 +262,7 @@ sshpass -e rsync -e <span style="color:#e6db74">&#34;ssh -o StrictHostKeyCheckin
 <p>Windows下使用这个工具：  <a href="https://www.putty.org/">https://www.putty.org/</a></p>
 <p>思路和Linux下没有变化，主要是具体实现细节上的差异。</p>
 <p><code>plink</code> 是一个<code>putty</code>包里面的工具，下面看一段脚本示例。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># 本脚本是纯手写， 没有经过测试</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># 本脚本是纯手写， 没有经过测试</span>
 
 plink -batch -ssh <span style="color:#66d9ef">%</span>ssh_host% -l <span style="color:#66d9ef">%</span>ssh_user% -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% echo hello, world
 
@@ -278,7 +278,7 @@ pscp -q -batch -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="c
 <p>在执行文件的时候， 可以将最后的<code>echo hello, world</code> 替换成<code>bash [filepath]</code>  这里的<code>filepath</code>是目标服务器上的路径。</p>
 <h4 id="jenkins相关的内容">Jenkins相关的内容</h4>
 <p>如果使用jenkins 调用我们自己的启动脚本的话，可能会发现我们的程序被干掉了， 这时可以考虑在脚本里面添加这两行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export BUILD_ID<span style="color:#f92672">=</span>dontKillMe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export BUILD_ID<span style="color:#f92672">=</span>dontKillMe
 export JENKINS_NODE_COOKIE<span style="color:#f92672">=</span>dontKillMe
 </code></pre></div><h2 id="结尾">结尾</h2>
 <p>下面是一些吐槽部分。</p>

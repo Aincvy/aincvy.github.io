@@ -184,7 +184,7 @@
 <h2 id="复杂类型的抽象">复杂类型的抽象</h2>
 <p>基本上可以理解为JAVA里的类， lua里的表。</p>
 <p>下面请看一个JAVA的代码片段。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Data</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Data</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
   <span style="color:#75715e">// 唯一编号
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>
@@ -203,7 +203,7 @@
 </code></pre></div><p>上面描述一个叫 <code>Student</code>的类， 即一个复杂类型。这个类由字段，方法，注解组成，其中大部分字段使用的基本类型， 还有部分字段使用的是复杂类型（<em>字符串</em>）。</p>
 <p>这个类是一个具体的复杂类型， 为了使脚本语言引擎可以支持这个复杂类型， 我们需要实现一套机制。 这套机制可以表述一个复杂类型。</p>
 <p>下面是一段示例代码（<em>伪代码</em> ）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">字段类 {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">字段类 {
 	访问限制符 ;
 	字段类型 ;
 	字段名 ;
@@ -239,7 +239,7 @@
 <p>c/c++ 的内存布局里面没有多余的信息，并且可以进行强制类型转换。</p>
 </li>
 <li>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 下面代码的灵感来自于 lua源代码的阅读， 笔者并未真实实践
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 下面代码的灵感来自于 lua源代码的阅读， 笔者并未真实实践
 </span><span style="color:#75715e">// 这里只是给读者一些思路
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NumberType</span> {

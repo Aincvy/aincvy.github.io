@@ -172,7 +172,7 @@
 <li>重定向输出到了文件，但是却没有看到文件。</li>
 </ul>
 <p>笔者得有问题得时候，定时任务大概是这样得：</p>
-<pre><code class="language-cron" data-lang="cron"># move film on 10AM at every saturday
+<pre tabindex="0"><code class="language-cron" data-lang="cron"># move film on 10AM at every saturday
 0 10 * * 6  /Users/alias/Projects/self-use-scripts/trello/shMoveFilm.sh &gt;/Users/alias/temp/log/moveFilm.log 2&gt;&amp;1
 
 # move blog
@@ -181,7 +181,7 @@
 # clean blog
 0 2 * * 3  /Users/alias/Projects/self-use-scripts/trello/shRun.sh clean blog &gt;&gt;/Users/alias/temp/log/clean.log 2&gt;&amp;1
 </code></pre><p>修改之后，能成功运行得脚本 大概是这样得：</p>
-<pre><code class="language-cron" data-lang="cron">SHELL=/usr/bin/sh
+<pre tabindex="0"><code class="language-cron" data-lang="cron">SHELL=/usr/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # move film on 10AM at every saturday

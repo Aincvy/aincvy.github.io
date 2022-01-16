@@ -172,7 +172,7 @@
 <p>仔细考虑了一下之后，笔者决定出两道很基本面试题来过滤一下面试者，笔者认为如果能完成这两道题，则说明基本逻辑的编写应该没有问题，那样就可以干活了。</p>
 <h2 id="面试题内容">面试题内容</h2>
 <p>一、 有下面代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// file: Student.java
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// file: Student.java
 </span><span style="color:#75715e">// 学生信息类
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">@Data</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
@@ -201,7 +201,7 @@
 </span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>二、 SQL语句问题</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 年级表
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 年级表
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>grade<span style="color:#f92672">`</span> (
 	id INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> ,
     <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年级的名字&#39;</span>,
@@ -249,7 +249,7 @@
 <p>笔者大概试了10个人左右，并没有发现一个满足全部需求的人， 基本上都是缺了一些内容。</p>
 <p>而且还有部分来面试的人 做不出来这题。（<em>讲真，我感觉到很惊讶😐</em>）</p>
 <p>🥳 下面是示例的解题代码。  （<em>纯手写， 并没有经过 IDE 测试</em>）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">var result <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getGrade</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 3<span style="color:#f92672">)</span>      <span style="color:#75715e">// 过滤年级
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">var result <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getGrade</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 3<span style="color:#f92672">)</span>      <span style="color:#75715e">// 过滤年级
 </span><span style="color:#75715e"></span>  <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;=</span> 8 <span style="color:#f92672">&amp;&amp;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&lt;=</span> 10<span style="color:#f92672">)</span>    <span style="color:#75715e">// 过滤年龄
 </span><span style="color:#75715e"></span>  <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
 
@@ -266,7 +266,7 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 <li>两表联合查询的能力</li>
 </ul>
 <p>下面给出一个示例的解题 sql 语句。（<em>同样纯手写， 并没有经过 IDE 测试</em>）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#66d9ef">SELECT</span> <span style="color:#a6e22e">COUNT</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">FROM</span> student s,grade g
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#66d9ef">SELECT</span> <span style="color:#a6e22e">COUNT</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">FROM</span> student s,grade g
 <span style="color:#66d9ef">WHERE</span> s.grade <span style="color:#f92672">=</span> g.id <span style="color:#66d9ef">AND</span> g.type <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </code></pre></div><h2 id="后续">后续</h2>
 <p>这里说一个小插曲。</p>

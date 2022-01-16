@@ -176,7 +176,7 @@
 <h3 id="stringformat">String.format()</h3>
 <p>这是一个 较为常用的 格式化方法， 类似 C语言的 <code>sprintf()</code> 函数。</p>
 <p>先给出几个示例 。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// in jdk10+ ，低于jdk10的时候， var 换成 String 即可
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// in jdk10+ ，低于jdk10的时候， var 换成 String 即可
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 1<span style="color:#f92672">,</span> b <span style="color:#f92672">=</span> 2 <span style="color:#f92672">;</span>
 var str1 <span style="color:#f92672">=</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;%d + %d = %d&#34;</span><span style="color:#f92672">,</span> a <span style="color:#f92672">,</span> b <span style="color:#f92672">,</span> <span style="color:#f92672">(</span>a <span style="color:#f92672">+</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>  <span style="color:#75715e">// 1 + 2 = 3
 </span><span style="color:#75715e"></span>
@@ -264,7 +264,7 @@ var str6 <span style="color:#f92672">=</span> String<span style="color:#f92672">
 <p><strong>其他说明</strong></p>
 <p><code>%.2f</code> 是一种略微高级的用法， 用于保留两位小数 。</p>
 <p>看看下面的这段代码。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Format</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Format</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;%f, %1$+020.10f %n&#34;</span><span style="color:#f92672">,</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">PI</span><span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span>
@@ -283,7 +283,7 @@ var str6 <span style="color:#f92672">=</span> String<span style="color:#f92672">
 </ul>
 <p><strong>日期</strong></p>
 <p>格式化日期 ， 先看几个示例。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Date date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date<span style="color:#f92672">();</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Date date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date<span style="color:#f92672">();</span>
 System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;%tT%n&#34;</span><span style="color:#f92672">,</span> date<span style="color:#f92672">);</span>     <span style="color:#75715e">// 13:51:15
 </span><span style="color:#75715e"></span>
 System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hours %tH: minutes %tM: seconds %tS%n&#34;</span><span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> date<span style="color:#f92672">);</span>
@@ -339,7 +339,7 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 <p>使用方法约等于 <code>String.format()</code>  。</p>
 <h3 id="messageformatter">MessageFormatter()</h3>
 <p>我时候的时候非常简单， 像下面这种方式使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">MessageFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello,{0}&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;jack&#34;</span><span style="color:#f92672">);</span>   <span style="color:#75715e">// hello,jack
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">MessageFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello,{0}&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;jack&#34;</span><span style="color:#f92672">);</span>   <span style="color:#75715e">// hello,jack
 </span></code></pre></div><p><code>MessageFormat.format()</code>方法里面的第一个参数和<code>String.format</code>()的第一个参数的格式并不一样。</p>
 <p>似乎在简单使用的话， 只需要使用 <code>{Index}</code> 这个占位符就好了。</p>
 <p>这里有一篇详细介绍此内容的文章 <a href="https://vence.github.io/2016/04/29/javamethod-messageformat/">https://vence.github.io/2016/04/29/javamethod-messageformat/</a></p>

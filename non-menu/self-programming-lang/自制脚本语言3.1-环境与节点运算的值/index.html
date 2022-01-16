@@ -181,7 +181,7 @@
 <h2 id="详细说明">详细说明</h2>
 <p>我们先来讨论一下 最简单的赋值行为。</p>
 <p>先看一下下面的代码。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本段代码的内容都是在一个脚本文件内部的。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本段代码的内容都是在一个脚本文件内部的。
 
 a = 1;
 b = &#34;hello&#34;;
@@ -203,14 +203,14 @@ d = a + 1;
 <li>关于 <code>new Test()</code> 和 <code>d = a + 1;</code> 的语句 在后续文章会有更加详细的说明。</li>
 </ul>
 <p>当所有语句执行结束之后，我们应该会得到一个如下的一个Map。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a:   1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a:   1
 b:   hello
 c:   一个指向 Test对象的引用 
 
 d:   2
 </code></pre></div><p>此时，我们追加执行一条语句 <code>a = a + 1;</code>  之后， a的值会被更新成2 。</p>
 <p>现在新的Map 应该是如下这个样子的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a:   2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a:   2
 b:   hello
 c:   一个指向 Test对象的引用 
 
