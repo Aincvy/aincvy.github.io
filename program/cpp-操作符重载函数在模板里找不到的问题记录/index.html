@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Cpp 操作符重载函数在模板里找不到的问题记录 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Cpp 操作符重载函数在模板里找不到的问题记录 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cpp 操作符重载函数在模板里找不到的问题记录"/>
+<meta name="twitter:description" content="主要内容 笔者此前在使用 dbg-macro 库的时候碰到了一个奇怪的问题， 就是操作符的重载函数无法被找到。 准确的说是被模板的 SFINAE 原则忽略了。 大致的情况是这样的： 有"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cpp 操作符重载函数在模板里找不到的问题记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  577 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2022-01-29T12:10:00\u002b08:00",
+  "dateModified": "2022-01-29T12:10:00\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Cpp 操作符重载函数在模板里找不到的问题记录</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2022-01-29 >29 January 2022</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                2 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="主要内容">主要内容</h2>
+<p>笔者此前在使用 <a href="https://github.com/sharkdp/dbg-macro">dbg-macro</a> 库的时候碰到了一个奇怪的问题， 就是操作符的重载函数无法被找到。</p>
+<p>准确的说是被模板的 SFINAE 原则忽略了。</p>
+<p>大致的情况是这样的：</p>
+<ul>
+<li>
+<p>有一个结构体叫做<code>ImVec2</code>，它处于全局命名空间里面。  <em>来自库<a href="https://github.com/ocornut/imgui">imgui</a></em></p>
+</li>
+<li>
+<p>操作符的重载函数放在一个叫做<code>sight</code>的命名空间里面。</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">namespace</span> sight {
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
+    ImVec2 v;
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> v;   <span style="color:#75715e">// ok
+</span><span style="color:#75715e"></span>    dbg(v);           <span style="color:#75715e">// fail
+</span><span style="color:#75715e"></span>  }
+}
+</code></pre></div></li>
+<li>
+<p>大致代码如上面所述。</p>
+</li>
+<li>
+<p><strong>解决办法</strong>是把 操作符重载函数和类型放入同一个命名空间， 比如把操作符的重载函数移到全局命名空间里面。</p>
+</li>
+<li>
+<p>在类型和操作符重载函数在不同的命名空间的时候， ADL 规则是无法生效的。  这里的问题是，似乎模板函数在生成的时候没有搜寻当前的命名空间， 但是正常函数调用的时候却会搜寻。</p>
+</li>
+<li>
+<p>可能是一个编译器 bug: <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83035">https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83035</a>.  不过笔者使用的是 clang， 也是存在这个问题的。</p>
+</li>
+</ul>
+<h3 id="dbgv-的解释">dbg(v) 的解释</h3>
+<p><code>dbg-macro</code>是一个用于方便输出调试信息的库， 特性大致如下</p>
+<blockquote>
+<ul>
+<li>Easy to read, colorized output (colors auto-disable when the output is not an interactive terminal)</li>
+<li>Prints file name, line number, function name and the original expression</li>
+<li>Adds type information for the printed-out value</li>
+<li>Specialized pretty-printers for containers, pointers, string literals, enums, <code>std::optional</code>, etc.</li>
+<li>Can be used inside expressions (passing through the original value)</li>
+<li>The <code>dbg.h</code> header issues a compiler warning when included (so you don&rsquo;t forget to remove it).</li>
+<li>Compatible and tested with C++11, C++14 and C++17.</li>
+</ul>
+</blockquote>
+<p><code>dbg</code>是一个宏， 最终拓展开的时候，会调用下面的函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">namespace</span> detail {
+<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">using</span> ostream_operator_t <span style="color:#f92672">=</span>
+    <span style="color:#66d9ef">decltype</span>(std<span style="color:#f92672">::</span>declval<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;&gt;</span>() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>declval<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>());
+
+<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">has_ostream_operator</span> <span style="color:#f92672">:</span> is_detected<span style="color:#f92672">&lt;</span>ostream_operator_t, T<span style="color:#f92672">&gt;</span> {};
+}
+<span style="color:#75715e">// Specializations of &#34;pretty_print&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span> stream, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> value, std<span style="color:#f92672">::</span>true_type) {
+  stream <span style="color:#f92672">&lt;&lt;</span> value;
+}
+
+<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span>, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span>, std<span style="color:#f92672">::</span>false_type) {
+  <span style="color:#66d9ef">static_assert</span>(detail<span style="color:#f92672">::</span>has_ostream_operator<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>value,
+                <span style="color:#e6db74">&#34;Type does not support the &lt;&lt; ostream operator&#34;</span>);
+}
+
+<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">typename</span> std<span style="color:#f92672">::</span>enable_if<span style="color:#f92672">&lt;!</span>detail<span style="color:#f92672">::</span>is_container<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>value <span style="color:#f92672">&amp;&amp;</span>
+                                   <span style="color:#f92672">!</span>std<span style="color:#f92672">::</span>is_enum<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;::</span>value,
+                               <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;::</span>type
+pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span> stream, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> value) {
+  pretty_print(stream, value,
+               <span style="color:#66d9ef">typename</span> detail<span style="color:#f92672">::</span>has_ostream_operator<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>type{});
+  <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>完成代码可以在这里浏览： <a href="https://github.com/sharkdp/dbg-macro/blob/master/dbg.h">https://github.com/sharkdp/dbg-macro/blob/master/dbg.h</a></p>
+<h2 id="拓展阅读">拓展阅读</h2>
+<ul>
+<li>Issue in dbg:  <a href="https://github.com/sharkdp/dbg-macro/issues/118"><code>Type does not support the &lt;&lt; ostream operator</code> on custom type</a></li>
+<li><a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83035">https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83035</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>577</span>
+            </p>
+
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E6%2593%258D%25E4%25BD%259C%25E7%25AC%25A6%25E9%2587%258D%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%25E5%259C%25A8%25E6%25A8%25A1%25E6%259D%25BF%25E9%2587%258C%25E6%2589%25BE%25E4%25B8%258D%25E5%2588%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=Cpp%20%e6%93%8d%e4%bd%9c%e7%ac%a6%e9%87%8d%e8%bd%bd%e5%87%bd%e6%95%b0%e5%9c%a8%e6%a8%a1%e6%9d%bf%e9%87%8c%e6%89%be%e4%b8%8d%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E6%2593%258D%25E4%25BD%259C%25E7%25AC%25A6%25E9%2587%258D%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%25E5%259C%25A8%25E6%25A8%25A1%25E6%259D%25BF%25E9%2587%258C%25E6%2589%25BE%25E4%25B8%258D%25E5%2588%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E6%2593%258D%25E4%25BD%259C%25E7%25AC%25A6%25E9%2587%258D%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%25E5%259C%25A8%25E6%25A8%25A1%25E6%259D%25BF%25E9%2587%258C%25E6%2589%25BE%25E4%25B8%258D%25E5%2588%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Cpp%20%e6%93%8d%e4%bd%9c%e7%ac%a6%e9%87%8d%e8%bd%bd%e5%87%bd%e6%95%b0%e5%9c%a8%e6%a8%a1%e6%9d%bf%e9%87%8c%e6%89%be%e4%b8%8d%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E6%2593%258D%25E4%25BD%259C%25E7%25AC%25A6%25E9%2587%258D%25E8%25BD%25BD%25E5%2587%25BD%25E6%2595%25B0%25E5%259C%25A8%25E6%25A8%25A1%25E6%259D%25BF%25E9%2587%258C%25E6%2589%25BE%25E4%25B8%258D%25E5%2588%25B0%25E7%259A%2584%25E9%2597%25AE%25E9%25A2%2598%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Cpp%20%e6%93%8d%e4%bd%9c%e7%ac%a6%e9%87%8d%e8%bd%bd%e5%87%bd%e6%95%b0%e5%9c%a8%e6%a8%a1%e6%9d%bf%e9%87%8c%e6%89%be%e4%b8%8d%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="prev" rel="prev" title="Libuv 异步通知的实现"><i class="iconfont icon-dajiantou"></i>&nbsp;Libuv 异步通知的实现</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2022</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-198975995-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+     </div>
+  </body>
+</html>
