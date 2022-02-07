@@ -55,7 +55,7 @@
   },
   "genre": "program",
   
-  "wordcount":  3375 ,
+  "wordcount":  4547 ,
   "url": "https:\/\/fantasyplayer.link\/program\/c\u002b\u002b-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0\/",
   "datePublished": "2021-11-03T16:35:43\u002b08:00",
   "dateModified": "2021-11-03T16:35:43\u002b08:00",
@@ -147,7 +147,7 @@
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                7 min
+                10 min
         </div>
     </header>
     <div class="post-content">
@@ -317,8 +317,10 @@
   f(std<span style="color:#f92672">::</span>forward<span style="color:#f92672">&lt;</span>Args<span style="color:#f92672">&gt;</span>(args) ...);  
 }
 <span style="color:#75715e">// 这里的 两个&amp;&amp; 表示 forwarding reference,而不是右值引用
+</span><span style="color:#75715e">// ... 是 fold 表达式， 用于展开参数列表
 </span><span style="color:#75715e"></span>
-</code></pre></div><h3 id="让函数返回多个值">让函数返回多个值</h3>
+</code></pre></div><p>模板的 SFINAE规则可能找不到一个不同命名空间的函数，具体可看： [cpp 操作符重载函数在模板里找不到的问题记录](./cpp 操作符重载函数在模板里找不到的问题记录)</p>
+<h3 id="让函数返回多个值">让函数返回多个值</h3>
 <p>可以使用下列类型：</p>
 <ul>
 <li><code>std::tuple&lt;A,B,C,D,E&gt;</code></li>
@@ -641,8 +643,7 @@
 <li>指针最多可以到数组最后一个元素的地址 +1个元素 的位置。</li>
 <li>有效的指针进行相减的时候会得到元素个数</li>
 </ul>
-<h3 id="std-命名空间">std 命名空间</h3>
-<p>std 命名空间里面存在着一些工具函数。</p>
+<h3 id="std-里的一些工具函数">std 里的一些工具函数</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
   <span style="color:#66d9ef">int</span> a[<span style="color:#ae81ff">10</span>];
   std<span style="color:#f92672">::</span>size(a);    <span style="color:#75715e">// 10
@@ -657,9 +658,189 @@
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// 使用函数查找元素
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">auto</span> iter2 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>find_if(std<span style="color:#f92672">::</span>begin(a), std<span style="color:#f92672">::</span>end(b), [](<span style="color:#66d9ef">int</span> i) { <span style="color:#66d9ef">return</span> i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>; }); 
   
+  std<span style="color:#f92672">::</span>vector v;
+  v.push_back(<span style="color:#ae81ff">1</span>);
+  v.push_back(<span style="color:#ae81ff">2</span>);
+  std<span style="color:#f92672">::</span>swap(v[<span style="color:#ae81ff">0</span>], v[<span style="color:#ae81ff">1</span>]);    <span style="color:#75715e">// 交换元素 OR 调整元素顺序
+</span><span style="color:#75715e"></span>  
   
 }
-</code></pre></div><h2 id="总结">总结</h2>
+</code></pre></div><h3 id="位操作">位操作</h3>
+<ul>
+<li>1bit 就是1位， 值只有0或者1</li>
+<li>一个 char 有8位</li>
+<li>一个 int 通常上是32位 <em>并非绝对，取决于平台。</em></li>
+<li>位操作基本上就是改变第 N 位的值。</li>
+</ul>
+<p>操作符列表</p>
+<ul>
+<li>
+<p><code>|</code> 按位或操作， 两个操作数的同一个位 有一个为1 则该位的值为1.</p>
+<ul>
+<li>0 0 0 1 0 0 1 0</li>
+<li>1 0 0 1 1 0 0 0 |</li>
+<li>1 0 0 1 1 0 1 0   <em>结果</em></li>
+</ul>
+</li>
+<li>
+<p><code>^</code> 按位异或， 两个操作数的同一个位的值相同时，该位的值为0 不同时为1.</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>;
+
+<span style="color:#75715e">// 使用按位异或的方式交换数值
+</span><span style="color:#75715e"></span>a <span style="color:#f92672">^=</span> b;
+b <span style="color:#f92672">^=</span> a;
+a <span style="color:#f92672">^=</span> b;
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>&amp;</code> 按位与，两个操作数的同一个位的值都为1的时候，值为1，否则为0.</p>
+</li>
+<li>
+<p><code>&lt;&lt;</code> 左移，  将操作数的每一个位的值都左移 N 位， 多的部分会被省略</p>
+<ul>
+<li>N 不能为负数， 也不能大于类型所占的位数。</li>
+</ul>
+</li>
+<li>
+<p><code>&gt;&gt;</code> 右移，  将操作数的每一个位的值都右移 N 位， 多的部分会被省略</p>
+</li>
+</ul>
+<p><code>std::bitset</code></p>
+<ul>
+<li>
+<p>这个是一个工具类？  用于快捷操作位的。</p>
+</li>
+<li>
+<p><code>bitset::set()  </code> 设置所有位的值为1</p>
+</li>
+<li>
+<p><code>bitset::flip(N)</code>    反转第 N 位的值</p>
+</li>
+<li>
+<p><code>bitset::test(N)</code> 检查第 N 位的值是否为1</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#f92672">::</span>bitset<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span><span style="color:#f92672">&gt;</span> x;
+x.set(); <span style="color:#75715e">// Sets all bits to &#39;1&#39;
+</span></code></pre></div></li>
+</ul>
+<h3 id="操作符重载">操作符重载</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 结构外重载
+</span><span style="color:#75715e"></span>T <span style="color:#66d9ef">operator</span><span style="color:#f92672">+</span>(T lhs, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> rhs) {
+  lhs <span style="color:#f92672">+=</span> rhs;
+  <span style="color:#66d9ef">return</span> lhs; 
+}
+T<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">+=</span>(T<span style="color:#f92672">&amp;</span> lhs, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> rhs) {
+  <span style="color:#75715e">//Perform addition
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> lhs; 
+}
+
+<span style="color:#75715e">// 结构内重载
+</span><span style="color:#75715e"></span>T <span style="color:#66d9ef">operator</span><span style="color:#f92672">+</span>(<span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> rhs)
+{
+    <span style="color:#f92672">*</span><span style="color:#66d9ef">this</span> <span style="color:#f92672">+=</span> rhs;
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">this</span>;
+}
+T<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">+=</span>(<span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> rhs) {
+    <span style="color:#75715e">//Perform addition
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">this</span>;
+}
+</code></pre></div><p>部分操作符既可以在结构内重载， 也可以在结构外重载。 但是部分操作符只能 在结构内重载。 <em>类和结构一样的。</em></p>
+<p>更多内容可以阅读原书， 或者查阅：<a href="https://en.cppreference.com/w/cpp/language/operators">https://en.cppreference.com/w/cpp/language/operators</a></p>
+<p>可以重载的操作符大致有下面这些</p>
+<ul>
+<li>算数操作符 <code>+,-,*,/,%,...</code></li>
+<li>逻辑判断操作符 <code>&gt;,&lt;,==,...</code></li>
+<li>位操作运算符 <code>&amp;,|,^,&lt;&lt;,&gt;&gt;,...</code></li>
+<li>函数调用的操作符 <code>()</code></li>
+<li>方括号的这个操作符 <code>[]</code></li>
+<li>指针相关的操作符 <code>-&gt;, -&gt;*</code></li>
+<li>类型转换的操作符</li>
+<li><em>new 和 delete 操作符也能重载？</em></li>
+</ul>
+<h3 id="文件操作">文件操作</h3>
+<ul>
+<li><code>std::ofstream, std::ifstream, std::fstream</code>  使用写模式，读模式，读写模式打开文件</li>
+<li>上面的类型可以使用操作符 <code>&gt;&gt;</code> 读取内容， <code>&lt;&lt;</code> 写入内容</li>
+<li><code>imbue()</code>  函数可以用于修改 Locale</li>
+<li>c++17 新增了一个叫做<code>std::filesystem</code> 的命名空间 <em>好像是来自 boost?</em></li>
+<li><code>std::filesystem::exists(path)</code>  检测文件是否存在</li>
+<li><code>std::filesystem::copy_file(path1, path2)</code>  复制文件</li>
+<li><code>std::filesystem::directory_iterator</code>  目录迭代器</li>
+<li><em>更多 API 请自行查阅文档</em></li>
+</ul>
+<p>部分示例代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#f92672">::</span>ofstream output(<span style="color:#e6db74">&#34;foo.txt&#34;</span>);
+output <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;text!&#34;</span>;
+output.flush();     <span style="color:#75715e">// 刷新流
+</span><span style="color:#75715e"></span>output.close();     <span style="color:#75715e">// 关闭流，  这一步应该会自动刷新一遍，  如果没有手动调用这个函数的话，析构函数应该会调用这个
+</span><span style="color:#75715e"></span>
+std<span style="color:#f92672">::</span>ifstream file(<span style="color:#e6db74">&#34;file3.txt&#34;</span>); 
+std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>string<span style="color:#f92672">&gt;</span> v;
+std<span style="color:#f92672">::</span>string s;
+<span style="color:#66d9ef">while</span>(file <span style="color:#f92672">&gt;&gt;</span> s) <span style="color:#75715e">// 一直读取文件内容
+</span><span style="color:#75715e"></span>{
+	v.push_back(s); 
+}
+
+<span style="color:#75715e">// 遍历目录
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> directory_iterator <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>filesystem<span style="color:#f92672">::</span>directory_iterator;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> it <span style="color:#f92672">=</span> directory_iterator {<span style="color:#e6db74">&#34;./plugins&#34;</span>}; it <span style="color:#f92672">!=</span> directory_iterator {}; <span style="color:#f92672">++</span>it) {
+	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> it<span style="color:#f92672">-&gt;</span>path().string() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+}
+</code></pre></div><h3 id="cmake">cmake</h3>
+<p>cmake 项目的编译比较简单， 执行诸如下面的命令就可以了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+cmake ..
+make
+</code></pre></div><p>如果想应用 cmake 到自己的项目里面的话， 则需要编写<code>CMakeLists.txt</code></p>
+<p>大概使用下面的代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.10</span>)     <span style="color:#75715e"># 设置最低可运行的版本
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 设置一些编译属性
+</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">17</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD_REQUIRED</span> <span style="color:#e6db74">True</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">&#34;Debug&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILECOMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 添加一个新的 target 叫做 sight, 类型是可执行程序
+</span><span style="color:#75715e"></span>add_executable(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">program.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 给 sight 这个 target 添加一些源码文件
+</span><span style="color:#75715e"></span>target_sources(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span>
+        <span style="color:#e6db74">sight_ui.cpp</span>
+        <span style="color:#e6db74">sight_ui_node_editor.cpp</span>
+        <span style="color:#e6db74">sight_ui_project.cpp</span>
+        <span style="color:#e6db74">sight_nodes.cpp</span>
+        <span style="color:#e6db74">sight_js.cpp</span>
+        <span style="color:#e6db74">sight_js_parser.cpp</span>
+        <span style="color:#e6db74">sight_project.cpp</span>
+        <span style="color:#e6db74">sight.cpp</span>
+        <span style="color:#e6db74">sight_plugin.cpp</span>
+        <span style="color:#e6db74">sight_widgets.cpp</span>
+        <span style="color:#e6db74">sight_keybindings.cpp</span>
+        <span style="color:#e6db74">sight_external_widgets.cpp</span>
+        <span style="color:#e6db74">sight_network.cpp</span>
+        <span style="color:#e6db74">sight_undo.cpp</span>
+        <span style="color:#75715e"># dependencies/imgui/imgui_demo.cpp           # for debug
+</span><span style="color:#75715e"></span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 给 sight 这个 target 添加一些 Include 目录 
+</span><span style="color:#75715e"></span>target_include_directories(
+        <span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span>
+        <span style="color:#f92672">${</span>PROJECT_SOURCE_DIR<span style="color:#f92672">}</span>
+)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># yaml-cpp
+</span><span style="color:#75715e"></span>find_package(<span style="color:#e6db74">yaml-cpp</span> <span style="color:#e6db74">REQUIRED</span>)      <span style="color:#75715e">##  查找 yaml-cpp 这个包
+</span><span style="color:#75715e"></span>target_include_directories(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">YAML_CPP_INCLUDE_DIR</span>)   <span style="color:#75715e"># 添加 Include 目录
+</span><span style="color:#75715e"></span>target_link_libraries(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>YAML_CPP_LIBRARIES<span style="color:#f92672">}</span>)       <span style="color:#75715e"># 链接 yaml 的动态库
+</span><span style="color:#75715e"></span>MESSAGE(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Found yaml-cpp at: ${YAML_CPP_INCLUDE_DIR}&#34;</span>)     <span style="color:#75715e"># 输出日志信息
+</span></code></pre></div><h2 id="总结">总结</h2>
 <p>笔者写出来的内容解释的不够详细， 所以读者如果感兴趣的话， 可以自行下载文档查阅。 <em>pdf 格式，无需注册账户，直接下载。</em></p>
 
     </div>
@@ -674,7 +855,7 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>3375</span>
+                   <span>4547</span>
             </p>
 
             <p class="copyright-item">
@@ -767,7 +948,38 @@
     </div>
 </article>
           </div>
-		   </main>
+          <div class="post-toc">
+              
+<aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#详细内容">详细内容</a>
+      <ul>
+        <li><a href="#class-struct-关键字">class, struct 关键字</a></li>
+        <li><a href="#模板的理解">模板的理解</a></li>
+        <li><a href="#让函数返回多个值">让函数返回多个值</a></li>
+        <li><a href="#lambda-表达式">lambda 表达式</a></li>
+        <li><a href="#friend-mutable-关键字">friend, mutable 关键字</a></li>
+        <li><a href="#多态性">多态性</a></li>
+        <li><a href="#raii">RAII</a></li>
+        <li><a href="#左值和右值">左值和右值</a></li>
+        <li><a href="#循环-auto-等">循环, auto 等</a></li>
+        <li><a href="#指针的运算和比较">指针的运算和比较</a></li>
+        <li><a href="#std-里的一些工具函数">std 里的一些工具函数</a></li>
+        <li><a href="#位操作">位操作</a></li>
+        <li><a href="#操作符重载">操作符重载</a></li>
+        <li><a href="#文件操作">文件操作</a></li>
+        <li><a href="#cmake">cmake</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+</aside>
+
+
+          </div>
+		 </main>
       <footer class="footer">
     <div class="copyright">
         &copy;
