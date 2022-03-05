@@ -5,8 +5,17 @@
     <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Feb 2022 16:16:39 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Mar 2022 17:23:10 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://fantasyplayer.link/posts/</link>
+      <pubDate>Sat, 05 Mar 2022 17:23:10 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/posts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Caprices</title>
@@ -74,24 +83,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://fantasyplayer.link/posts/</link>
-      <pubDate>Sat, 08 Aug 2020 16:02:30 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/posts/</guid>
-      <description>&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;关于程序和编程相关的文章： &lt;a href=&#34;../program&#34;&gt;Program&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;关于一些胡思乱想的文章： &lt;a href=&#34;../caprice&#34;&gt;Caprice&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;关于软件使用/linux的文章： &lt;a href=&#34;../periphery&#34;&gt;Periphery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;   &lt;/p&gt;
-&lt;p&gt;  &lt;/p&gt;
-&lt;h3 id=&#34;-----记得微笑&#34;&gt;😂 😂 😂 ​  记得微笑。&lt;/h3&gt;
 </description>
     </item>
     
