@@ -2,9 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://fantasyplayer.link/caprice/</loc>
+      <loc>https://fantasyplayer.link/non-menu/story-mirror/5.-%E8%9F%91%E8%9E%82%E6%98%AF%E7%83%A7%E4%B8%8D%E6%AD%BB%E7%9A%84/</loc>
       
-      <lastmod>2022-03-12T12:34:31+08:00</lastmod>
+      <lastmod>2022-03-26T14:08:09+08:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -17,6 +17,34 @@
   
     <url>
       <loc>https://fantasyplayer.link/</loc>
+      
+      <lastmod>2022-03-26T14:08:09+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://fantasyplayer.link/non-menu/</loc>
+      
+      <lastmod>2022-03-26T14:08:09+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://fantasyplayer.link/caprice/</loc>
       
       <lastmod>2022-03-12T12:34:31+08:00</lastmod>
       
@@ -215,20 +243,6 @@
       <loc>https://fantasyplayer.link/program/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</loc>
       
       <lastmod>2021-12-11T16:51:47+08:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://fantasyplayer.link/non-menu/</loc>
-      
-      <lastmod>2021-12-05T10:59:02+08:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
