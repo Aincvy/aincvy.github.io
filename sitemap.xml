@@ -2,9 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://fantasyplayer.link/non-menu/story-mirror/11.-%E6%89%BE%E4%B8%8A%E9%97%A8%E6%9D%A5%E4%BA%86/</loc>
+      <loc>https://fantasyplayer.link/non-menu/story-mirror/13.-%E7%81%AB%E7%84%B0%E4%B8%8E%E5%AF%92%E5%86%B0/</loc>
       
-      <lastmod>2022-05-06T15:30:57+08:00</lastmod>
+      <lastmod>2022-05-08T15:18:55+08:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -18,7 +18,7 @@
     <url>
       <loc>https://fantasyplayer.link/</loc>
       
-      <lastmod>2022-05-06T15:30:57+08:00</lastmod>
+      <lastmod>2022-05-08T15:18:55+08:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -31,6 +31,34 @@
   
     <url>
       <loc>https://fantasyplayer.link/non-menu/</loc>
+      
+      <lastmod>2022-05-08T15:18:55+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://fantasyplayer.link/non-menu/story-mirror/12.-%E7%81%AB%E7%84%B0%E4%B8%8E%E6%B0%B4%E6%B5%81/</loc>
+      
+      <lastmod>2022-05-07T17:19:34+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://fantasyplayer.link/non-menu/story-mirror/11.-%E6%89%BE%E4%B8%8A%E9%97%A8%E6%9D%A5%E4%BA%86/</loc>
       
       <lastmod>2022-05-06T15:30:57+08:00</lastmod>
       
