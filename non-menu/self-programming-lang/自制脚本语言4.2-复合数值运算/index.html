@@ -177,18 +177,18 @@
 <h2 id="详细内容">详细内容</h2>
 <p>上一节我们讨论了两元运算， 现在我们讨论一下存在更多元素得运算表达式。</p>
 <p>下面来看一段代码。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a = 1;
-b = 2;
-c = 3;
-
-d = a + b + c;
-e = a - b - c;
-f = a * b + c;
-g = a + b * c;
-
-h = a + b + c + a + c;
-i = a + b * c + a ;
-</code></pre></div><h3 id="基本逻辑">基本逻辑</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>a = 1;
+</span></span><span style="display:flex;"><span>b = 2;
+</span></span><span style="display:flex;"><span>c = 3;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>d = a + b + c;
+</span></span><span style="display:flex;"><span>e = a - b - c;
+</span></span><span style="display:flex;"><span>f = a * b + c;
+</span></span><span style="display:flex;"><span>g = a + b * c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>h = a + b + c + a + c;
+</span></span><span style="display:flex;"><span>i = a + b * c + a ;
+</span></span></code></pre></div><h3 id="基本逻辑">基本逻辑</h3>
 <p>上面得例子在运算得时候至少存在3个元素，这在实现上并不需要修改上节所实现得逻辑，而是需要在生成抽象语法树(<em>AST</em>)得地方下功夫。</p>
 <p>先来看一下表达式 <code>d = a + b + c;</code> 得计算过程。</p>
 <ol>
@@ -213,25 +213,25 @@ i = a + b * c + a ;
 <p>字节码就是指令序列，当前小节仅是提供一个思路。</p>
 <p>根据优先级 按序生成即可。</p>
 <p>下面给一段示例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本部分采用基于栈得指令来说明
-
-// a + b + c
-push a            // 将变量a得值压栈
-push b            // 将变量b得值压栈
-add               // 取出栈顶两个元素进行相加， 结果放回栈顶
-push c            // 将变量c得值压栈
-add               // 同上
-                  // 此时栈顶就一个元素了，该元素是运算结果
-									
-// a + b * c 
-                  // 此处使用新的栈
-push b            // 将变量b得值压栈
-push c            // 将变量c得值压栈
-mul               // 取出栈顶两个元素进行相乘， 结果放回栈顶
-push a            // 将变量a得值压栈
-add               // 取出栈顶两个元素进行相加， 结果放回栈顶
-                  // 此时栈顶就一个元素了，该元素是运算结果
-</code></pre></div><p>读者可能无法理解这部分内容，没关系，后面会懂得。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>// 本部分采用基于栈得指令来说明
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// a + b + c
+</span></span><span style="display:flex;"><span>push a            // 将变量a得值压栈
+</span></span><span style="display:flex;"><span>push b            // 将变量b得值压栈
+</span></span><span style="display:flex;"><span>add               // 取出栈顶两个元素进行相加， 结果放回栈顶
+</span></span><span style="display:flex;"><span>push c            // 将变量c得值压栈
+</span></span><span style="display:flex;"><span>add               // 同上
+</span></span><span style="display:flex;"><span>                  // 此时栈顶就一个元素了，该元素是运算结果
+</span></span><span style="display:flex;"><span>									
+</span></span><span style="display:flex;"><span>// a + b * c 
+</span></span><span style="display:flex;"><span>                  // 此处使用新的栈
+</span></span><span style="display:flex;"><span>push b            // 将变量b得值压栈
+</span></span><span style="display:flex;"><span>push c            // 将变量c得值压栈
+</span></span><span style="display:flex;"><span>mul               // 取出栈顶两个元素进行相乘， 结果放回栈顶
+</span></span><span style="display:flex;"><span>push a            // 将变量a得值压栈
+</span></span><span style="display:flex;"><span>add               // 取出栈顶两个元素进行相加， 结果放回栈顶
+</span></span><span style="display:flex;"><span>                  // 此时栈顶就一个元素了，该元素是运算结果
+</span></span></code></pre></div><p>读者可能无法理解这部分内容，没关系，后面会懂得。</p>
 
     </div>
 

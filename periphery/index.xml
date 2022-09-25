@@ -6,7 +6,16 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Feb 2022 11:10:48 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 17:03:10 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在manjaro中使用urbackup</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</link>
+      <pubDate>Sun, 25 Sep 2022 17:03:10 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</guid>
+      <description>本文介绍的是安装客户端。 笔者最近从黑苹果切换到了 manjaro-KDE ，所以使用的是linux的桌面版。 笔者urback的server是使用 openmediav</description>
+    </item>
+    
     <item>
       <title>Mac 下的 Ssh Key 无法与 Gogs 匹配的问题记录</title>
       <link>https://fantasyplayer.link/periphery/mac-%E4%B8%8B%E7%9A%84-ssh-key-%E6%97%A0%E6%B3%95%E4%B8%8E-gogs-%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>

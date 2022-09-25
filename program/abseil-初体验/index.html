@@ -55,7 +55,7 @@
   },
   "genre": "program",
   
-  "wordcount":  760 ,
+  "wordcount":  759 ,
   "url": "https:\/\/fantasyplayer.link\/program\/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C\/",
   "datePublished": "2021-09-14T09:26:04\u002b08:00",
   "dateModified": "2021-09-14T09:26:04\u002b08:00",
@@ -188,21 +188,21 @@
 <p>笔者刚开始是把 <code>abseil</code>当做一个子项目 放在自己的项目里面的， 并使用cmake添加它们。</p>
 <p>这样使用的时候， 笔者发现了一个问题，那就是会增加很多个cmake的 target， 编译起来的输出令笔者感觉到不适，而且编译速度应该是有所降低。  所以笔者就改用了 <code>Homebrew</code>进行安装。</p>
 <p>使用<code>brew install abseil</code>命令进行安装，之后在自己的cmake项目文件里面这样添加即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># abseil
-</span><span style="color:#75715e"></span>find_package(<span style="color:#e6db74">absl</span> <span style="color:#e6db74">REQUIRED</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>target_link_libraries(
-        <span style="color:#e6db74">sight-util</span> <span style="color:#e6db74">PUBLIC</span>
-        <span style="color:#e6db74">absl::base</span>
-        <span style="color:#e6db74">absl::strings</span>
-        <span style="color:#e6db74">absl::hash</span>
-        <span style="color:#e6db74">absl::flat_hash_map</span>
-        <span style="color:#e6db74">absl::flat_hash_set</span>
-        <span style="color:#e6db74">absl::btree</span>
-)<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>使用brew安装之后， 可能还是有个问题，那就是可能会出现链接或者编译错误， 如果出现了这个错误， 把自己的项目也改成c++17版本就可以了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># specify the C++ standard
-</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">17</span>)<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>或者， 可以考虑把 abseil的版本切换成自己使用的cpp版本。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># abseil
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>find_package(<span style="color:#e6db74">absl</span> <span style="color:#e6db74">REQUIRED</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_link_libraries(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">sight-util</span> <span style="color:#e6db74">PUBLIC</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">absl::base</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">absl::strings</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">absl::hash</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">absl::flat_hash_map</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">absl::flat_hash_set</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">absl::btree</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>使用brew安装之后， 可能还是有个问题，那就是可能会出现链接或者编译错误， 如果出现了这个错误， 把自己的项目也改成c++17版本就可以了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># specify the C++ standard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">17</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>或者， 可以考虑把 abseil的版本切换成自己使用的cpp版本。</p>
 <p>这个方法笔者没有切身实际的去操作过， 所以仅仅提供一些思路。</p>
 <ul>
 <li>找到本地Homebrew的 <code>abseil.rb</code> 文件， 修改 17为11</li>
@@ -213,123 +213,123 @@
 <p>在使用的时候， 笔者发现 abseil的cmake target 很乱， 基本上没有太多规则。 如果没有指示的话， 可能很难找到正确的target name。</p>
 <p>不过好在， 笔者后来发现了这个文件<code>CMake/AbseilDll.cmake</code> 这个文件里面记录了所有的target， 如果需要什么，只需要在这个文件里面搜索一下即可。</p>
 <p>这里附上 当前的所有target.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">set(<span style="color:#e6db74">ABSL_INTERNAL_DLL_TARGETS</span>
-  <span style="color:#e6db74">&#34;stacktrace&#34;</span>
-  <span style="color:#e6db74">&#34;symbolize&#34;</span>
-  <span style="color:#e6db74">&#34;examine_stack&#34;</span>
-  <span style="color:#e6db74">&#34;failure_signal_handler&#34;</span>
-  <span style="color:#e6db74">&#34;debugging_internal&#34;</span>
-  <span style="color:#e6db74">&#34;demangle_internal&#34;</span>
-  <span style="color:#e6db74">&#34;leak_check&#34;</span>
-  <span style="color:#e6db74">&#34;leak_check_disable&#34;</span>
-  <span style="color:#e6db74">&#34;stack_consumption&#34;</span>
-  <span style="color:#e6db74">&#34;debugging&#34;</span>
-  <span style="color:#e6db74">&#34;hash&#34;</span>
-  <span style="color:#e6db74">&#34;spy_hash_state&#34;</span>
-  <span style="color:#e6db74">&#34;city&#34;</span>
-  <span style="color:#e6db74">&#34;memory&#34;</span>
-  <span style="color:#e6db74">&#34;strings&#34;</span>
-  <span style="color:#e6db74">&#34;strings_internal&#34;</span>
-  <span style="color:#e6db74">&#34;cord&#34;</span>
-  <span style="color:#e6db74">&#34;str_format&#34;</span>
-  <span style="color:#e6db74">&#34;str_format_internal&#34;</span>
-  <span style="color:#e6db74">&#34;pow10_helper&#34;</span>
-  <span style="color:#e6db74">&#34;int128&#34;</span>
-  <span style="color:#e6db74">&#34;numeric&#34;</span>
-  <span style="color:#e6db74">&#34;utility&#34;</span>
-  <span style="color:#e6db74">&#34;any&#34;</span>
-  <span style="color:#e6db74">&#34;bad_any_cast&#34;</span>
-  <span style="color:#e6db74">&#34;bad_any_cast_impl&#34;</span>
-  <span style="color:#e6db74">&#34;span&#34;</span>
-  <span style="color:#e6db74">&#34;optional&#34;</span>
-  <span style="color:#e6db74">&#34;bad_optional_access&#34;</span>
-  <span style="color:#e6db74">&#34;bad_variant_access&#34;</span>
-  <span style="color:#e6db74">&#34;variant&#34;</span>
-  <span style="color:#e6db74">&#34;compare&#34;</span>
-  <span style="color:#e6db74">&#34;algorithm&#34;</span>
-  <span style="color:#e6db74">&#34;algorithm_container&#34;</span>
-  <span style="color:#e6db74">&#34;graphcycles_internal&#34;</span>
-  <span style="color:#e6db74">&#34;kernel_timeout_internal&#34;</span>
-  <span style="color:#e6db74">&#34;synchronization&#34;</span>
-  <span style="color:#e6db74">&#34;thread_pool&#34;</span>
-  <span style="color:#e6db74">&#34;bind_front&#34;</span>
-  <span style="color:#e6db74">&#34;function_ref&#34;</span>
-  <span style="color:#e6db74">&#34;atomic_hook&#34;</span>
-  <span style="color:#e6db74">&#34;log_severity&#34;</span>
-  <span style="color:#e6db74">&#34;raw_logging_internal&#34;</span>
-  <span style="color:#e6db74">&#34;spinlock_wait&#34;</span>
-  <span style="color:#e6db74">&#34;config&#34;</span>
-  <span style="color:#e6db74">&#34;dynamic_annotations&#34;</span>
-  <span style="color:#e6db74">&#34;core_headers&#34;</span>
-  <span style="color:#e6db74">&#34;malloc_internal&#34;</span>
-  <span style="color:#e6db74">&#34;base_internal&#34;</span>
-  <span style="color:#e6db74">&#34;base&#34;</span>
-  <span style="color:#e6db74">&#34;throw_delegate&#34;</span>
-  <span style="color:#e6db74">&#34;pretty_function&#34;</span>
-  <span style="color:#e6db74">&#34;endian&#34;</span>
-  <span style="color:#e6db74">&#34;bits&#34;</span>
-  <span style="color:#e6db74">&#34;exponential_biased&#34;</span>
-  <span style="color:#e6db74">&#34;periodic_sampler&#34;</span>
-  <span style="color:#e6db74">&#34;scoped_set_env&#34;</span>
-  <span style="color:#e6db74">&#34;type_traits&#34;</span>
-  <span style="color:#e6db74">&#34;meta&#34;</span>
-  <span style="color:#e6db74">&#34;random_random&#34;</span>
-  <span style="color:#e6db74">&#34;random_bit_gen_ref&#34;</span>
-  <span style="color:#e6db74">&#34;random_distributions&#34;</span>
-  <span style="color:#e6db74">&#34;random_seed_gen_exception&#34;</span>
-  <span style="color:#e6db74">&#34;random_seed_sequences&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_traits&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_distribution_caller&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_distributions&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_fast_uniform_bits&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_seed_material&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_pool_urbg&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_explicit_seed_seq&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_sequence_urbg&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_salted_seed_seq&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_iostream_state_saver&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_generate_real&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_wide_multiply&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_fastmath&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_nonsecure_base&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_pcg_engine&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_randen_engine&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_platform&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_randen&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_randen_slow&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_randen_hwaes&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_randen_hwaes_impl&#34;</span>
-  <span style="color:#e6db74">&#34;random_internal_uniform_helper&#34;</span>
-  <span style="color:#e6db74">&#34;status&#34;</span>
-  <span style="color:#e6db74">&#34;time&#34;</span>
-  <span style="color:#e6db74">&#34;civil_time&#34;</span>
-  <span style="color:#e6db74">&#34;time_zone&#34;</span>
-  <span style="color:#e6db74">&#34;container&#34;</span>
-  <span style="color:#e6db74">&#34;btree&#34;</span>
-  <span style="color:#e6db74">&#34;compressed_tuple&#34;</span>
-  <span style="color:#e6db74">&#34;fixed_array&#34;</span>
-  <span style="color:#e6db74">&#34;inlined_vector_internal&#34;</span>
-  <span style="color:#e6db74">&#34;inlined_vector&#34;</span>
-  <span style="color:#e6db74">&#34;counting_allocator&#34;</span>
-  <span style="color:#e6db74">&#34;flat_hash_map&#34;</span>
-  <span style="color:#e6db74">&#34;flat_hash_set&#34;</span>
-  <span style="color:#e6db74">&#34;node_hash_map&#34;</span>
-  <span style="color:#e6db74">&#34;node_hash_set&#34;</span>
-  <span style="color:#e6db74">&#34;container_memory&#34;</span>
-  <span style="color:#e6db74">&#34;hash_function_defaults&#34;</span>
-  <span style="color:#e6db74">&#34;hash_policy_traits&#34;</span>
-  <span style="color:#e6db74">&#34;hashtablez_sampler&#34;</span>
-  <span style="color:#e6db74">&#34;hashtable_debug&#34;</span>
-  <span style="color:#e6db74">&#34;hashtable_debug_hooks&#34;</span>
-  <span style="color:#e6db74">&#34;have_sse&#34;</span>
-  <span style="color:#e6db74">&#34;node_hash_policy&#34;</span>
-  <span style="color:#e6db74">&#34;raw_hash_map&#34;</span>
-  <span style="color:#e6db74">&#34;container_common&#34;</span>
-  <span style="color:#e6db74">&#34;raw_hash_set&#34;</span>
-  <span style="color:#e6db74">&#34;layout&#34;</span>
-  <span style="color:#e6db74">&#34;tracked&#34;</span>
-)<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p><em>在使用的时候别忘记添加<code>absl::</code>前缀。</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">ABSL_INTERNAL_DLL_TARGETS</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;stacktrace&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;symbolize&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;examine_stack&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;failure_signal_handler&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;debugging_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;demangle_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;leak_check&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;leak_check_disable&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;stack_consumption&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;debugging&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;hash&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;spy_hash_state&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;city&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;memory&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;strings_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;cord&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;str_format&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;str_format_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;pow10_helper&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;int128&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;numeric&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;utility&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;any&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bad_any_cast&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bad_any_cast_impl&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;span&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;optional&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bad_optional_access&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bad_variant_access&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;variant&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;compare&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;algorithm&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;algorithm_container&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;graphcycles_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;kernel_timeout_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;synchronization&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;thread_pool&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bind_front&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;function_ref&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;atomic_hook&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;log_severity&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;raw_logging_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;spinlock_wait&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;config&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;dynamic_annotations&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;core_headers&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;malloc_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;base_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;base&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;throw_delegate&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;pretty_function&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;endian&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bits&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;exponential_biased&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;periodic_sampler&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;scoped_set_env&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;type_traits&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;meta&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_random&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_bit_gen_ref&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_distributions&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_seed_gen_exception&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_seed_sequences&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_traits&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_distribution_caller&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_distributions&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_fast_uniform_bits&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_seed_material&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_pool_urbg&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_explicit_seed_seq&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_sequence_urbg&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_salted_seed_seq&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_iostream_state_saver&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_generate_real&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_wide_multiply&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_fastmath&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_nonsecure_base&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_pcg_engine&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_randen_engine&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_platform&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_randen&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_randen_slow&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_randen_hwaes&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_randen_hwaes_impl&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;random_internal_uniform_helper&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;status&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;civil_time&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;time_zone&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;container&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;btree&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;compressed_tuple&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;fixed_array&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;inlined_vector_internal&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;inlined_vector&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;counting_allocator&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;flat_hash_map&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;flat_hash_set&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;node_hash_map&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;node_hash_set&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;container_memory&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;hash_function_defaults&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;hash_policy_traits&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;hashtablez_sampler&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;hashtable_debug&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;hashtable_debug_hooks&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;have_sse&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;node_hash_policy&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;raw_hash_map&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;container_common&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;raw_hash_set&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;layout&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;tracked&#34;</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p><em>在使用的时候别忘记添加<code>absl::</code>前缀。</em></p>
 
     </div>
 
@@ -343,7 +343,7 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>760</span>
+                   <span>759</span>
             </p>
 
             <p class="copyright-item">

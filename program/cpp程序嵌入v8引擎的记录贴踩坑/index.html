@@ -55,7 +55,7 @@
   },
   "genre": "program",
   
-  "wordcount":  1704 ,
+  "wordcount":  1695 ,
   "url": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91\/",
   "datePublished": "2021-07-23T18:51:51\u002b08:00",
   "dateModified": "2021-07-23T18:51:51\u002b08:00",
@@ -179,24 +179,24 @@
 <h3 id="cmake">cmake</h3>
 <p>如果使用cmake 的话， 可能还需要这个 <code>https://github.com/metacall/core/blob/develop/cmake/FindV8.cmake</code></p>
 <p>可以使用类似如下的代码使用这个<code>FindV8.cmake</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># 先使用 wget 或者其他工具把该文件下载到本地， 并保存到项目目录下的cmake 子目录。 
-</span><span style="color:#75715e"># add directory 
-</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_MODULE_PATH</span> <span style="color:#e6db74">APPEND</span> <span style="color:#e6db74">&#34;${CMAKE_SOURCE_DIR}/cmake/&#34;</span> )<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># sight 是笔者正在做的一个工具。 
-</span><span style="color:#75715e"></span>add_executable(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">program.cpp</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># V8
-</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">V8_DIR</span> <span style="color:#e6db74">&#34;/usr/local/opt/v8/libexec/&#34;</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>find_package(<span style="color:#e6db74">V8</span> <span style="color:#e6db74">REQUIRED</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>target_include_directories(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>V8_INCLUDE_DIR<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 如果没有这个定义 在程序运行的时候 好像会报错 
-</span><span style="color:#75715e"></span>target_compile_definitions(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">V8_COMPRESS_POINTERS</span> <span style="color:#e6db74">V8_31BIT_SMIS_ON_64BIT_ARCH</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 链接库
-</span><span style="color:#75715e"></span>target_link_libraries(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>V8_LIBRARIES<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>关于<code>V8_COMPRESS_POINTERS</code>宏定义的拓展阅读部分： <a href="https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689">https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># 先使用 wget 或者其他工具把该文件下载到本地， 并保存到项目目录下的cmake 子目录。 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># add directory 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_MODULE_PATH</span> <span style="color:#e6db74">APPEND</span> <span style="color:#e6db74">&#34;${CMAKE_SOURCE_DIR}/cmake/&#34;</span> )<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># sight 是笔者正在做的一个工具。 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>add_executable(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">program.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># V8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">V8_DIR</span> <span style="color:#e6db74">&#34;/usr/local/opt/v8/libexec/&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>find_package(<span style="color:#e6db74">V8</span> <span style="color:#e6db74">REQUIRED</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_include_directories(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>V8_INCLUDE_DIR<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 如果没有这个定义 在程序运行的时候 好像会报错 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>target_compile_definitions(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">V8_COMPRESS_POINTERS</span> <span style="color:#e6db74">V8_31BIT_SMIS_ON_64BIT_ARCH</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 链接库
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>target_link_libraries(<span style="color:#e6db74">sight</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>V8_LIBRARIES<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>关于<code>V8_COMPRESS_POINTERS</code>宏定义的拓展阅读部分： <a href="https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689">https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689</a></p>
 <h3 id="常规方式">常规方式</h3>
 <p>如果不使用cmake的话， 可以手动添加目录。</p>
 <p>下面介绍一下相关的目录内容。</p>
@@ -230,57 +230,57 @@
 <li>调整编译参数</li>
 <li>编译</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 1. </span>
-cd somewhere
-git clone <span style="color:#e6db74">&#39;https://chromium.googlesource.com/chromium/tools/depot_tools.git&#39;</span>
-
-<span style="color:#75715e"># 添加环境变量 </span>
-<span style="color:#75715e"># add path , you may need add to ~/.bashrc or ~/.zshrc or config.fish </span>
-export PATH<span style="color:#f92672">=</span>somewhere/depot_tools:$PATH
-
-<span style="color:#75715e"># 更新 depot_tools</span>
-cd somewhere/depot_tools
-gclient
-
-<span style="color:#75715e"># 2.</span>
-cd somewhere
-fetch v8
-cd v8
-
-<span style="color:#75715e"># 3. </span>
-
-<span style="color:#75715e"># 自动参数编译  |  不推荐使用自动的方式， 因为编译出来的是静态库。  当然，静态库可能也行吧。。 </span>
-gm x64.release
-<span style="color:#75715e"># 如果想附带测试就执行下面这个 | 两个命令执行1个即可。 </span>
-gm x64.release.check
-<span style="color:#75715e"># 以上任意一个命令都会附带编译过程。 </span>
-
-<span style="color:#75715e"># 手动调整参数   | 和上面自动参数编译 二选一执行即可。 </span>
-<span style="color:#75715e"># 下面这个命令会打开一个 vi/vim 编辑器， 让你手动填写参数</span>
-gn args out/x64.release
-
-<span style="color:#75715e"># 读者可以使用下面的命令附加参数  | 此命令和上面那个使用1个即可。 </span>
-gn gen out/x64.release --args<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;is_debug=false target_cpu=&#34;x64&#34; v8_target_cpu=&#34;arm64&#34;&#39;</span>
-
-<span style="color:#75715e"># 可以使用这个命令查看所有可用的参数  </span>
-gn args out/x64.release --list
-
-<span style="color:#75715e"># 因为参数会很多， 所以建议读者把输出重定向到文件， 然后阅读文件  </span>
-gn args out/x64.release --list &gt; args.txt 
-
-<span style="color:#75715e"># 注意   参数 `is_component_build = true`  会编译出动态库， 如果需要动态库就加上这条配置。 </span>
-<span style="color:#75715e"># 然后根据args.txt 文件里面的内容 选取想要的参数， 添加到 out/x64.release/args.gn 里面即可。 </span>
-
-<span style="color:#75715e"># 4. </span>
-
-<span style="color:#75715e"># 生成配置</span>
-gn gen out/x64.release
-
-<span style="color:#75715e"># 编译 所有目标   | 如果想编译特定的目标， 就在后面追加参数即可。 </span>
-ninja -C out/x64.release
-
-<span style="color:#75715e"># 等待一段时间， 应该就可以编译成功了。 </span>
-</code></pre></div><p>默认情况下， v8 应该会使用自带的<code>clang</code>编译器进行编译， 在笔者的环境下是 <code>clang 13.0</code> 。  该执行程序位于<code>somewhere/v8/third_party/llvm-build/Release+Asserts/bin/</code> 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 1. </span>
+</span></span><span style="display:flex;"><span>cd somewhere
+</span></span><span style="display:flex;"><span>git clone <span style="color:#e6db74">&#39;https://chromium.googlesource.com/chromium/tools/depot_tools.git&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加环境变量 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add path , you may need add to ~/.bashrc or ~/.zshrc or config.fish </span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>somewhere/depot_tools:$PATH
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新 depot_tools</span>
+</span></span><span style="display:flex;"><span>cd somewhere/depot_tools
+</span></span><span style="display:flex;"><span>gclient
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.</span>
+</span></span><span style="display:flex;"><span>cd somewhere
+</span></span><span style="display:flex;"><span>fetch v8
+</span></span><span style="display:flex;"><span>cd v8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自动参数编译  |  不推荐使用自动的方式， 因为编译出来的是静态库。  当然，静态库可能也行吧。。 </span>
+</span></span><span style="display:flex;"><span>gm x64.release
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果想附带测试就执行下面这个 | 两个命令执行1个即可。 </span>
+</span></span><span style="display:flex;"><span>gm x64.release.check
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 以上任意一个命令都会附带编译过程。 </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 手动调整参数   | 和上面自动参数编译 二选一执行即可。 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下面这个命令会打开一个 vi/vim 编辑器， 让你手动填写参数</span>
+</span></span><span style="display:flex;"><span>gn args out/x64.release
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 读者可以使用下面的命令附加参数  | 此命令和上面那个使用1个即可。 </span>
+</span></span><span style="display:flex;"><span>gn gen out/x64.release --args<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;is_debug=false target_cpu=&#34;x64&#34; v8_target_cpu=&#34;arm64&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 可以使用这个命令查看所有可用的参数  </span>
+</span></span><span style="display:flex;"><span>gn args out/x64.release --list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 因为参数会很多， 所以建议读者把输出重定向到文件， 然后阅读文件  </span>
+</span></span><span style="display:flex;"><span>gn args out/x64.release --list &gt; args.txt 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 注意   参数 `is_component_build = true`  会编译出动态库， 如果需要动态库就加上这条配置。 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 然后根据args.txt 文件里面的内容 选取想要的参数， 添加到 out/x64.release/args.gn 里面即可。 </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 生成配置</span>
+</span></span><span style="display:flex;"><span>gn gen out/x64.release
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编译 所有目标   | 如果想编译特定的目标， 就在后面追加参数即可。 </span>
+</span></span><span style="display:flex;"><span>ninja -C out/x64.release
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 等待一段时间， 应该就可以编译成功了。 </span>
+</span></span></code></pre></div><p>默认情况下， v8 应该会使用自带的<code>clang</code>编译器进行编译， 在笔者的环境下是 <code>clang 13.0</code> 。  该执行程序位于<code>somewhere/v8/third_party/llvm-build/Release+Asserts/bin/</code> 。</p>
 <p>这个和笔者的系统默认编译器不是同一个， 笔者的默认编译器是<code>clang 12.0</code> 。</p>
 <p>在上述的环境下编译<code>hello-world.cc</code>这个示例文件， 可能会出现 <code>std::unique_ptr&lt;v8::Platform&gt; platform = v8::platform::NewDefaultPlatform();</code> 这行语句报错的情况。</p>
 <p>笔者就卡死在处理<code>NewDefaultPlatform()</code>语句的情况下了。。</p>
@@ -323,7 +323,7 @@ ninja -C out/x64.release
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>1704</span>
+                   <span>1695</span>
             </p>
 
             <p class="copyright-item">

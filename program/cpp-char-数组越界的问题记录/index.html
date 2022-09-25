@@ -171,26 +171,26 @@
           
 
           <p>看下面的代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">uiChangeGraph</span>(std<span style="color:#f92672">::</span>string_view path) {
-  <span style="color:#66d9ef">char</span> tmp[FILENAME_BUF_SIZE]{ <span style="color:#ae81ff">0</span> };
-  <span style="color:#66d9ef">auto</span> t <span style="color:#f92672">=</span> currentProject()<span style="color:#f92672">-&gt;</span>openGraph(path, tmp);
-}
-
-SightNodeGraph<span style="color:#f92672">*</span> Project<span style="color:#f92672">::</span>openGraph(std<span style="color:#f92672">::</span>string_view path, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> pathWithoutExtOut) {
-  std<span style="color:#f92672">::</span>string targetPath{path};
-  std<span style="color:#f92672">::</span>filesystem<span style="color:#f92672">::</span>path temp(targetPath);
-  <span style="color:#66d9ef">if</span> (temp.has_extension()) {
-    std<span style="color:#f92672">::</span>string ext <span style="color:#f92672">=</span> temp.extension().generic_string();
-    <span style="color:#66d9ef">if</span> (ext <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;.json&#34;</span> <span style="color:#f92672">||</span> ext <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;.yaml&#34;</span>) {
-      targetPath <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>string(targetPath, <span style="color:#ae81ff">0</span>, targetPath.rfind(<span style="color:#e6db74">&#39;.&#39;</span>));
-    }
-  }
-  <span style="color:#66d9ef">if</span> (pathWithoutExtOut) {
-    sprintf(pathWithoutExtOut, <span style="color:#e6db74">&#34;%s&#34;</span>, targetPath.c_str());
-  }
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">currentGraph</span>();
-}
-</code></pre></div><p>这段代码在函数<code>uiChangeGraph</code>结束的时候可能会出现内存错误， 原因是因为 tmp的内存不足，越界了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">uiChangeGraph</span>(std<span style="color:#f92672">::</span>string_view path) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> tmp[FILENAME_BUF_SIZE]{ <span style="color:#ae81ff">0</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">auto</span> t <span style="color:#f92672">=</span> currentProject()<span style="color:#f92672">-&gt;</span>openGraph(path, tmp);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SightNodeGraph<span style="color:#f92672">*</span> Project<span style="color:#f92672">::</span>openGraph(std<span style="color:#f92672">::</span>string_view path, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> pathWithoutExtOut) {
+</span></span><span style="display:flex;"><span>  std<span style="color:#f92672">::</span>string targetPath{path};
+</span></span><span style="display:flex;"><span>  std<span style="color:#f92672">::</span>filesystem<span style="color:#f92672">::</span>path temp(targetPath);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (temp.has_extension()) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string ext <span style="color:#f92672">=</span> temp.extension().generic_string();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (ext <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;.json&#34;</span> <span style="color:#f92672">||</span> ext <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;.yaml&#34;</span>) {
+</span></span><span style="display:flex;"><span>      targetPath <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>string(targetPath, <span style="color:#ae81ff">0</span>, targetPath.rfind(<span style="color:#e6db74">&#39;.&#39;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (pathWithoutExtOut) {
+</span></span><span style="display:flex;"><span>    sprintf(pathWithoutExtOut, <span style="color:#e6db74">&#34;%s&#34;</span>, targetPath.c_str());
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">currentGraph</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这段代码在函数<code>uiChangeGraph</code>结束的时候可能会出现内存错误， 原因是因为 tmp的内存不足，越界了。</p>
 <p>增大 tmp 的大小， 或者做长度检测就可以解决问题了。</p>
 <p>或者给<code>openGraph</code>函数添加一个长度参数， 然后使用 <code>snprintf()</code>函数。</p>
 

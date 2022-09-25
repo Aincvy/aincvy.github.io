@@ -175,20 +175,20 @@
 <h2 id="详细内容">详细内容</h2>
 <p>数值运算应该编程里必不可少的一部分， 所以一个脚本语言引擎应该需要实现数值运算的功能。</p>
 <p>下面来看一段代码。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">a = 1;
-b = 2;
-
-c = a + b;
-d = a - b;
-e = a / d;
-f = a * b; 
-g = a % d;
-
-h = a ^ b;
-i = a | b;
-j = a &amp; b;
-k = ~ a ;
-</code></pre></div><p>大概需要实现的运算类型就是  加减乘除，取模以及位运算。 读者可以根据自己的需求只实现部分的运算符号， 或者实现更多的符号。  （<em>自定义新的符号</em>）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>a = 1;
+</span></span><span style="display:flex;"><span>b = 2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c = a + b;
+</span></span><span style="display:flex;"><span>d = a - b;
+</span></span><span style="display:flex;"><span>e = a / d;
+</span></span><span style="display:flex;"><span>f = a * b; 
+</span></span><span style="display:flex;"><span>g = a % d;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>h = a ^ b;
+</span></span><span style="display:flex;"><span>i = a | b;
+</span></span><span style="display:flex;"><span>j = a &amp; b;
+</span></span><span style="display:flex;"><span>k = ~ a ;
+</span></span></code></pre></div><p>大概需要实现的运算类型就是  加减乘除，取模以及位运算。 读者可以根据自己的需求只实现部分的运算符号， 或者实现更多的符号。  （<em>自定义新的符号</em>）</p>
 <h3 id="基本逻辑">基本逻辑</h3>
 <p>这里只讨论单个运算符， 不讨论多个运算符的情况。 比如 <code>d = a + b + c</code> 这种暂时不讨论。</p>
 <p>基本逻辑其实很简单。</p>
@@ -213,37 +213,37 @@ k = ~ a ;
 </li>
 </ol>
 <p>下面看一段示例代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// java 代码， 代码并没有经过测试，只是解释思路使用
-</span><span style="color:#75715e">// c = a + b; 
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
- 
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">(){</span>
-    <span style="color:#75715e">// key: 变量名，  value: 变量值
-</span><span style="color:#75715e"></span>    Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
-    <span style="color:#75715e">// 第一个操作数
-</span><span style="color:#75715e"></span>    String first <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">;</span>
-    <span style="color:#75715e">// 第二个操作数
-</span><span style="color:#75715e"></span>    String second <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">;</span>
-    
-    String result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span><span style="color:#f92672">;</span>
-    
-    <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>    Object a <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>first<span style="color:#f92672">);</span>
-    Object b <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>second<span style="color:#f92672">);</span>
-    
-    <span style="color:#75715e">// null check 和 类型check 这里就省略了。 
-</span><span style="color:#75715e"></span>    
-    <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Number 是一个自定义类型， 因为篇幅问题，对声明进行了省略。
-</span><span style="color:#75715e"></span>    Number c <span style="color:#f92672">=</span> Number<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span> <span style="color:#f92672">((</span>Number<span style="color:#f92672">)</span> a<span style="color:#f92672">),</span> <span style="color:#f92672">((</span>Number<span style="color:#f92672">)</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
-    
-    <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>    map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span> result<span style="color:#f92672">,</span> c <span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-  
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="基于栈的实现逻辑">基于栈的实现逻辑</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// java 代码， 代码并没有经过测试，只是解释思路使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// c = a + b; 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: 变量名，  value: 变量值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 第一个操作数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    String first <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 第二个操作数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    String second <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    String result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Object a <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>first<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    Object b <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>second<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// null check 和 类型check 这里就省略了。 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Number 是一个自定义类型， 因为篇幅问题，对声明进行了省略。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Number c <span style="color:#f92672">=</span> Number<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span> <span style="color:#f92672">((</span>Number<span style="color:#f92672">)</span> a<span style="color:#f92672">),</span> <span style="color:#f92672">((</span>Number<span style="color:#f92672">)</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span> result<span style="color:#f92672">,</span> c <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="基于栈的实现逻辑">基于栈的实现逻辑</h3>
 <p><em>本部分笔者并没有实现过，只是基于自己的知识和理解来写的内容。</em></p>
 <p>下面同样尝试解析一下 <code>c = a + b</code> 的实现过程。</p>
 <ol>
@@ -260,69 +260,68 @@ k = ~ a ;
 </ol>
 <p>这里使用局部变量表和栈进行配合使用， 而不使用Map。</p>
 <p>下面看示例代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 同样使用 Java做示例， 代码只是演示说明使用
-</span><span style="color:#75715e">// c = a + b ;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
- 
-  <span style="color:#75715e">// 局部变量表
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Object<span style="color:#f92672">[]</span> localVarTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object <span style="color:#f92672">[</span>30<span style="color:#f92672">];</span>
-  
-  <span style="color:#75715e">// 栈
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Stack<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;();</span>
-  
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * 根据变量名获取变量对应的 局部变量表的索引
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIndex</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">){</span>
-    <span style="color:#75715e">// todo 
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * 执行加号指令
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(){</span>
-    <span style="color:#75715e">// check size 和别的check 暂时都直接省略了
-</span><span style="color:#75715e"></span>    
-    Number a <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
-    Number b <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
-    
-    <span style="color:#75715e">// 运算， 并将结果入栈
-</span><span style="color:#75715e"></span>    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span> Number<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span>b<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
-    
-  <span style="color:#f92672">}</span>
-  
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
-   
-    <span style="color:#75715e">// 第一个操作数
-</span><span style="color:#75715e"></span>    String first <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">;</span>
-    <span style="color:#75715e">// 第二个操作数
-</span><span style="color:#75715e"></span>    String second <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">;</span>
-    
-    String result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span><span style="color:#f92672">;</span>
-    
-    <span style="color:#75715e">// 1, 2
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 因为要节省篇幅， 所以大部分的 error check 就不做了
-</span><span style="color:#75715e"></span>    Object a <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>first<span style="color:#f92672">)];</span>
-    Object b <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>second<span style="color:#f92672">)];</span>
-    
-    <span style="color:#75715e">// 入栈
-</span><span style="color:#75715e"></span>    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>a<span style="color:#f92672">);</span>
-    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>b<span style="color:#f92672">);</span>
-    
-    <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>    add<span style="color:#f92672">();</span>
-    
-    <span style="color:#75715e">// 4
-</span><span style="color:#75715e"></span>    Object c <span style="color:#f92672">=</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
-    localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>result<span style="color:#f92672">)]</span> <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span>
-    
-  <span style="color:#f92672">}</span>
-  
-<span style="color:#f92672">}</span>
-
-</code></pre></div><h3 id="基于-寄存器的实现逻辑">基于 寄存器的实现逻辑</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 同样使用 Java做示例， 代码只是演示说明使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// c = a + b ;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 局部变量表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Object<span style="color:#f92672">[]</span> localVarTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object <span style="color:#f92672">[</span>30<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Stack<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * 根据变量名获取变量对应的 局部变量表的索引
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIndex</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// todo 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * 执行加号指令
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// check size 和别的check 暂时都直接省略了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    Number a <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    Number b <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 运算， 并将结果入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span> Number<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span>b<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 第一个操作数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    String first <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 第二个操作数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    String second <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    String result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1, 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 因为要节省篇幅， 所以大部分的 error check 就不做了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Object a <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>first<span style="color:#f92672">)];</span>
+</span></span><span style="display:flex;"><span>    Object b <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>second<span style="color:#f92672">)];</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>a<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>b<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    add<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Object c <span style="color:#f92672">=</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>result<span style="color:#f92672">)]</span> <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="基于-寄存器的实现逻辑">基于 寄存器的实现逻辑</h3>
 <p><em>本部分笔者并没有实现过，只是基于自己的知识和理解来写的内容。</em></p>
 <p>这里假设存在3个寄存器：  a, b, c  。  每一个寄存器都可以放任意类型的值。</p>
 <ol>
@@ -333,64 +332,63 @@ k = ~ a ;
 <li>清空所有寄存器</li>
 </ol>
 <p>下面看示例代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// c = a + b ;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
- 
-  <span style="color:#75715e">// 局部变量表
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Object<span style="color:#f92672">[]</span> localVarTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object <span style="color:#f92672">[</span>30<span style="color:#f92672">];</span>
-  
-  <span style="color:#75715e">// 寄存器
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Object a <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> Object b <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> Object c <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-  
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * 根据变量名获取变量对应的 局部变量表的索引
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIndex</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">){</span>
-    <span style="color:#75715e">// todo 
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * 清理寄存器 
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clearReg</span><span style="color:#f92672">(){</span>
-  	a <span style="color:#f92672">=</span> b <span style="color:#f92672">=</span> c <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * 执行加法运算， 运算逻辑总是将 寄存器 a,b 相加，并把值放入寄存器 c
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(){</span>
-    <span style="color:#75715e">// 将会省略 check 
-</span><span style="color:#75715e"></span>    
-    c <span style="color:#f92672">=</span> Number<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> a<span style="color:#f92672">,</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> b <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * 这里的变量名， 改用传参的形式
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(</span>String first<span style="color:#f92672">,</span>String second<span style="color:#f92672">,</span> String result <span style="color:#f92672">){</span>
-   
-    <span style="color:#75715e">// 1, 2
-</span><span style="color:#75715e"></span>    a <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>first<span style="color:#f92672">)];</span>
-    b <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>second<span style="color:#f92672">)];</span>
-    
-    <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>    add<span style="color:#f92672">();</span>
-    
-    <span style="color:#75715e">// 4
-</span><span style="color:#75715e"></span>    localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>result<span style="color:#f92672">)]</span> <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span>
-    
-    <span style="color:#75715e">// 5 
-</span><span style="color:#75715e"></span>    clearReg<span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-  
-<span style="color:#f92672">}</span>
-
-</code></pre></div><h2 id="其他">其他</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// c = a + b ;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 局部变量表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Object<span style="color:#f92672">[]</span> localVarTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object <span style="color:#f92672">[</span>30<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 寄存器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> Object a <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Object b <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Object c <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * 根据变量名获取变量对应的 局部变量表的索引
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIndex</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// todo 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * 清理寄存器 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clearReg</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>  	a <span style="color:#f92672">=</span> b <span style="color:#f92672">=</span> c <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * 执行加法运算， 运算逻辑总是将 寄存器 a,b 相加，并把值放入寄存器 c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 将会省略 check 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> Number<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> a<span style="color:#f92672">,</span> <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> b <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * 这里的变量名， 改用传参的形式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(</span>String first<span style="color:#f92672">,</span>String second<span style="color:#f92672">,</span> String result <span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1, 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    a <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>first<span style="color:#f92672">)];</span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>second<span style="color:#f92672">)];</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    add<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    localVarTable<span style="color:#f92672">[</span>getIndex<span style="color:#f92672">(</span>result<span style="color:#f92672">)]</span> <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 5 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    clearReg<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="其他">其他</h2>
 <p>本篇介绍了几种实现机制， 读者可以根据自己的需求，能力进行选择。</p>
 <p>关于复合运算(<em>d = a + b + c</em>)， 将会在下节进行介绍。</p>
 

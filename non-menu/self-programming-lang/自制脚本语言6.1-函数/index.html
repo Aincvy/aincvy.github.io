@@ -173,23 +173,23 @@
           <p>本篇来尝试描述一下函数如何实现。</p>
 <h2 id="基本内容">基本内容</h2>
 <h3 id="langx-代码示例">langX 代码示例</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">// 函数声明 
-funa =&gt; {
-	a = 1 ;
-	funb();
-
-	// 内置函数调用
-	println(&#34;funa&#34; + a);
-}
-
-funb =&gt; (x){
-  println(&#34;funb: &#34; + a);
-  a = 101 ;
-}
-
-// call function
-funa();
-</code></pre></div><p>如上所述， langX 使用 <code>函数名称 =&gt; (参数列表) {函数体}</code> 的风格来声明一个函数， 读者也可以完全设计出自己想要的语法结构。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// 函数声明 
+</span></span><span style="display:flex;"><span>funa =&gt; {
+</span></span><span style="display:flex;"><span>	a = 1 ;
+</span></span><span style="display:flex;"><span>	funb();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	// 内置函数调用
+</span></span><span style="display:flex;"><span>	println(&#34;funa&#34; + a);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>funb =&gt; (x){
+</span></span><span style="display:flex;"><span>  println(&#34;funb: &#34; + a);
+</span></span><span style="display:flex;"><span>  a = 101 ;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// call function
+</span></span><span style="display:flex;"><span>funa();
+</span></span></code></pre></div><p>如上所述， langX 使用 <code>函数名称 =&gt; (参数列表) {函数体}</code> 的风格来声明一个函数， 读者也可以完全设计出自己想要的语法结构。</p>
 <h3 id="主要思路">主要思路</h3>
 <p>函数的主要目的基本上是复用，隔离变量等。</p>
 <p>为了能实现复用的目的，需要保存函数内部的字节码，以及每次在调用函数的时候需要生成新的变量环境。</p>

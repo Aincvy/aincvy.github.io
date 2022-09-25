@@ -10,9 +10,9 @@
   
   
   
-  <link rel="prev" href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5/" />
-  <link rel="next" href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" />
-  <link rel="canonical" href="https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" />
+  <link rel="prev" href="https://fantasyplayer.link/periphery/mac-%E4%B8%8B%E7%9A%84-ssh-key-%E6%97%A0%E6%B3%95%E4%B8%8E-gogs-%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,10 +24,10 @@
   <title>
        
        
-           Cpp 踩坑记录 | Fanstasy Player / 幻想系玩家
+           在manjaro中使用urbackup | Fanstasy Player / 幻想系玩家
        
   </title>
-  <meta name="title" content="Cpp 踩坑记录 | Fanstasy Player / 幻想系玩家">
+  <meta name="title" content="在manjaro中使用urbackup | Fanstasy Player / 幻想系玩家">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,17 +35,17 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Cpp 踩坑记录"/>
-<meta name="twitter:description" content="#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。 更多解释可见： https://stackoverflow.com/a/1946730/11226492 一个可能的场景是这样的： 有一个"/>
+<meta name="twitter:title" content="在manjaro中使用urbackup"/>
+<meta name="twitter:description" content="本文介绍的是安装客户端。 笔者最近从黑苹果切换到了 manjaro-KDE ，所以使用的是linux的桌面版。 笔者urback的server是使用 openmediav"/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Cpp 踩坑记录",
+  "headline": "在manjaro中使用urbackup",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/fantasyplayer.link\/program\/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95\/"
+    "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup\/"
   },
   "image": {
     "@type": "ImageObject",
@@ -53,12 +53,12 @@
     "width":  800 ,
     "height":  600 
   },
-  "genre": "program",
+  "genre": "periphery",
   
-  "wordcount":  350 ,
-  "url": "https:\/\/fantasyplayer.link\/program\/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95\/",
-  "datePublished": "2021-05-01T15:25:44\u002b08:00",
-  "dateModified": "2021-05-01T15:25:44\u002b08:00",
+  "wordcount":  658 ,
+  "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup\/",
+  "datePublished": "2022-09-25T17:03:10\u002b08:00",
+  "dateModified": "2022-09-25T17:03:10\u002b08:00",
   
   "publisher": {
     "@type": "Organization",
@@ -142,16 +142,16 @@
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">Cpp 踩坑记录</h1>
+        <h1 class="post-title">在manjaro中使用urbackup</h1>
         <div class="post-meta">
             Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
                 <span class="post-time">
-                    on <time datetime=2021-05-01 >1 May 2021</time>
+                    on <time datetime=2022-09-25 >25 September 2022</time>
                 </span>
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                1 min
+                2 min
         </div>
     </header>
     <div class="post-content">
@@ -170,23 +170,25 @@
           
           
 
-          <h3 id="param-once-的缺点-相同文件内容的不同位置会视为两个文件">#param once 的缺点： 相同文件内容的不同位置会视为两个文件</h3>
-<p>当出现这个状况的时候， 可能会引发重定义的错误。</p>
-<p>更多解释可见：  <a href="https://stackoverflow.com/a/1946730/11226492">https://stackoverflow.com/a/1946730/11226492</a></p>
-<p>一个可能的场景是这样的： 有一个项目A， 有一个项目B， 项目B依赖项目的A的头文件，且两个项目都由同一个人开发。</p>
-<p>现在项目B是在项目A内部的， 且项目B使用的是相对路径引用的项目A的头文件。</p>
-<p>大致的文件夹结构如下所示。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>A
-</span></span><span style="display:flex;"><span>+ source
-</span></span><span style="display:flex;"><span>+ include
-</span></span><span style="display:flex;"><span>+ modProject
-</span></span><span style="display:flex;"><span>+ + B
-</span></span><span style="display:flex;"><span>+ + + include
-</span></span><span style="display:flex;"><span>+ + + source
-</span></span><span style="display:flex;"><span>+ README.md
-</span></span></code></pre></div><p>目前的情况是： 在B的源代码里面使用诸如 <code>../../include/abc.h</code> 的形式引用A的头文件。</p>
-<p>开发这些项目的开发者发觉这样写不太美观，而且不方便拓展。所以决定将项目A的头文件安装到<code>/usr/local/include/A</code> 目录下 。</p>
-<p>这时，就需要把项目B里面的所有引用位置都纠正了，否则就可能出现重定义的情况。 （<em>这里只讨论使用 #param once 的情况，使用宏定义的方式应该不会出现这样的情况。</em> ）</p>
+          <p>本文介绍的是安装客户端。</p>
+<p>笔者最近从黑苹果切换到了 manjaro-KDE ，所以使用的是linux的桌面版。 笔者urback的server是使用 openmediavault带的插件进行安装的。</p>
+<p>urbackup官方给的 客户端安装 方式是这个 <a href="https://www.urbackup.org/download.html#client_arch">UrBackup - Download UrBackup for Windows, GNU/Linux or FreeBSD</a></p>
+<p>因为笔者的server版本比较老旧， 所以客户端的版本也需要老旧一点。 否则可能无法正常工作。</p>
+<p>笔者的server是 1.4.11版本的， 所以笔者找了一个 1.4.11版本的客户端。 地址是： <a href="https://aur.archlinux.org/packages/urbackup-client">AUR (en) - urbackup-client</a></p>
+<p>在安装使用之后， 笔者的客户端总是会自动崩溃。 在使用命令<code>urbackupclientbackend -v debug</code> 之后， 笔者发现是在加密的部分出错了。</p>
+<p>在一番折腾之后， 笔者发现自己编译urbackup的客户端可以解决问题。</p>
+<p>先从官网下载源码。</p>
+<p><code>https://hndl.urbackup.org/Client/2.5.20/urbackup-client-2.5.20.tar.gz</code> 这个地址可以下载2.5.20版本的源码， 把所有的2.5.20 替换成1.4.11 就可以下载1.4.11版本的源码。</p>
+<p>下载了源码之后， 进行解压。</p>
+<p>使用命令<code>/configure --prefix='/usr' --sbindir='/usr/local/sbin/' --localstatedir='/var' --sysconfdir='/etc' --enable-headless --enable-embedded-cryptopp</code> 进行配置。</p>
+<p>之后使用  <code>make</code>命令进行编译， 可以使用 <code>make -j 4</code> 加速编译。</p>
+<p>成功编译之后可以使用 <code>sudo make install</code> 命令进行安装。</p>
+<p>在应用程序安装好了之后可以使用命令 <code>sudo cp urbackupclientbackend-debian.service /usr/lib/systemd/system/urbackupclientbackend.service</code> 安装service 文件。</p>
+<p>安装service文件之后， 可以使用命令 <code>sudo systemctl daemon-reload</code> 重载系统的service 。</p>
+<p>之后可以使用命令 <code>sudo systemctl enable urbackupclientbackend</code> 使urbackup开机启动。</p>
+<p>urbackup的默认配置文件在 <code>/etc/default/urbackupclient</code> 修改文件的RESTORE选项为server-confirms 即可在server 的web界面进行文件的恢复操作。</p>
+<p><code>RESTORE=&quot;server-confirms&quot;</code></p>
+<p>成功安装之后， 需要使用命令 <code>sudo urbackupclientctl add-backupdir [path]</code>  来添加需要备份的目录</p>
 
     </div>
 
@@ -200,7 +202,7 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>350</span>
+                   <span>658</span>
             </p>
 
             <p class="copyright-item">
@@ -209,13 +211,13 @@
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E8%25B8%25A9%25E5%259D%2591%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=Cpp%20%e8%b8%a9%e5%9d%91%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8manjaro%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8urbackup%2f&amp;text=%e5%9c%a8manjaro%e4%b8%ad%e4%bd%bf%e7%94%a8urbackup&amp;via=Aincvy" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
       
       
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E8%25B8%25A9%25E5%259D%2591%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8manjaro%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8urbackup%2f" target="_blank" title="Share on Facebook">
           <i class="iconfont icon-facebook"></i>
         </a>
         
@@ -223,7 +225,7 @@
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E8%25B8%25A9%25E5%259D%2591%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Cpp%20%e8%b8%a9%e5%9d%91%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8manjaro%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8urbackup%2f&amp;title=%e5%9c%a8manjaro%e4%b8%ad%e4%bd%bf%e7%94%a8urbackup" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
@@ -239,7 +241,7 @@
           
 
           
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2fcpp-%25E8%25B8%25A9%25E5%259D%2591%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Cpp%20%e8%b8%a9%e5%9d%91%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2f%25E5%259C%25A8manjaro%25E4%25B8%25AD%25E4%25BD%25BF%25E7%2594%25A8urbackup%2f&amp;title=%e5%9c%a8manjaro%e4%b8%ad%e4%bd%bf%e7%94%a8urbackup" target="_blank" title="Share on Douban ">
             <i class="iconfont icon-douban"></i>
           </a>
           
@@ -268,10 +270,8 @@
 
     <div class="post-nav">
         
-        <a href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5/" class="prev" rel="prev" title="Cpp程序在调试模式下正常，在常规模式就崩溃得情况"><i class="iconfont icon-dajiantou"></i>&nbsp;Cpp程序在调试模式下正常，在常规模式就崩溃得情况</a>
+        <a href="https://fantasyplayer.link/periphery/mac-%E4%B8%8B%E7%9A%84-ssh-key-%E6%97%A0%E6%B3%95%E4%B8%8E-gogs-%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="Mac 下的 Ssh Key 无法与 Gogs 匹配的问题记录"><i class="iconfont icon-dajiantou"></i>&nbsp;Mac 下的 Ssh Key 无法与 Gogs 匹配的问题记录</a>
          
-        
-        <a href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" class="next" rel="next" title="Cpp程序嵌入v8引擎的(踩坑)记录贴">Cpp程序嵌入v8引擎的(踩坑)记录贴&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 

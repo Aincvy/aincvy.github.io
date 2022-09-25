@@ -173,17 +173,17 @@
           <p>由于笔者使用的是黑苹果，所以能正常使用的话，尽量不升级比较好。 如果想升级的话， 还需要更新<code>OpenCore</code>的版本， 可能还会碰到各种乱七八糟的问题。 同时，笔者感觉Big Sur 并不是太好，所以完全没有升级的打算。</p>
 <p>但是，意外总是会有的。 前些天， 笔者因为手误，点到了现在安装升级的选项。。 虽然及时的点击了取消， 但还是触发了一些悲剧操作。  本帖就是来记录一下这件事情的。</p>
 <p>事后， 笔者想禁止掉系统的升级提示弹窗， 但是发现好像不行了。 自从 10.15.7 的版本之后， 系统升级的通知好像就无法禁止了。   网上一般提供的是这个命令 <code>sudo softwareupdate --ignore &quot;macOS Catalina&quot;</code> ，笔者再使用的时候会提示 下面的内容。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">Ignored updates:
-(
-)
-
-Software Update can only ignore updates that are eligible for installation.
-If the label provided to ignore is not in the above list, it is not eligible
-to be ignored.
-
-Ignoring software updates is deprecated.
-The ability to ignore individual updates will be removed in a future release of macOS.
-</code></pre></div><p>大意是说现在不能忽略系统升级通知 ， 这个特性可能会在未来的版本中移出。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>Ignored updates:
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Software Update can only ignore updates that are eligible for installation.
+</span></span><span style="display:flex;"><span>If the label provided to ignore is not in the above list, it is not eligible
+</span></span><span style="display:flex;"><span>to be ignored.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ignoring software updates is deprecated.
+</span></span><span style="display:flex;"><span>The ability to ignore individual updates will be removed in a future release of macOS.
+</span></span></code></pre></div><p>大意是说现在不能忽略系统升级通知 ， 这个特性可能会在未来的版本中移出。</p>
 <h3 id="time-machine-作为问题的导火索">Time machine 作为问题的导火索</h3>
 <p>现在回到正题， 笔者说一说前几天都发生了什么。</p>
 <p>在不小心点了升级之后， 每次重启的时候，再系统选择界面都能看到一个叫<code>MacOS Installer</code>的选项， 应该是安装新系统使用的， 并且每次在这个地方的时候，这个选项是默认的。 必须手动更改到<code>Windows</code>或者<code>Macintosh HD</code> ，否则就会安装新系统。</p>

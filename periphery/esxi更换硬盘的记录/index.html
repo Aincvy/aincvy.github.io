@@ -283,10 +283,10 @@
 <p>拷贝完成后， 我满心欢喜得用12T 硬盘代替了2T 得硬盘， 打开服务器。</p>
 <p>🐦🐦🐦🐦🐦 🐦🐦</p>
 <p>不行， 提示错误：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">bank5 not a vmware boot bank 
-bank6 not a vmware boot bank 
-no hypervisor found
-</code></pre></div><p>我搜了下，搜了下，差不多都是说重装就好了， ESXi 不会覆盖之前得 VMFS ，然后重装了。 然后现在约等于好了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bank5 not a vmware boot bank 
+</span></span><span style="display:flex;"><span>bank6 not a vmware boot bank 
+</span></span><span style="display:flex;"><span>no hypervisor found
+</span></span></code></pre></div><p>我搜了下，搜了下，差不多都是说重装就好了， ESXi 不会覆盖之前得 VMFS ，然后重装了。 然后现在约等于好了。</p>
 <h2 id="faq">FAQ</h2>
 <h3 id="q-更换了硬盘之后无法启动虚拟机">Q： 更换了硬盘之后无法启动虚拟机</h3>
 <p>A： 先检查一下你的虚拟机有无快照， 经过我的经验来看，有快照的虚拟机都无法成功启动，而没快照的则都可以。</p>

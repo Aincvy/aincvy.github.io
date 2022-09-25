@@ -182,14 +182,14 @@
 <p>操作符的重载函数放在一个叫做<code>sight</code>的命名空间里面。</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">namespace</span> sight {
-  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
-    ImVec2 v;
-    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> v;   <span style="color:#75715e">// ok
-</span><span style="color:#75715e"></span>    dbg(v);           <span style="color:#75715e">// fail
-</span><span style="color:#75715e"></span>  }
-}
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> sight {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
+</span></span><span style="display:flex;"><span>    ImVec2 v;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> v;   <span style="color:#75715e">// ok
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    dbg(v);           <span style="color:#75715e">// fail
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 <li>
 <p>大致代码如上面所述。</p>
 </li>
@@ -217,37 +217,37 @@
 </ul>
 </blockquote>
 <p><code>dbg</code>是一个宏， 最终拓展开的时候，会调用下面的函数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">namespace</span> detail {
-<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">using</span> ostream_operator_t <span style="color:#f92672">=</span>
-    <span style="color:#66d9ef">decltype</span>(std<span style="color:#f92672">::</span>declval<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;&gt;</span>() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>declval<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>());
-
-<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">has_ostream_operator</span> <span style="color:#f92672">:</span> is_detected<span style="color:#f92672">&lt;</span>ostream_operator_t, T<span style="color:#f92672">&gt;</span> {};
-}
-<span style="color:#75715e">// Specializations of &#34;pretty_print&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span> stream, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> value, std<span style="color:#f92672">::</span>true_type) {
-  stream <span style="color:#f92672">&lt;&lt;</span> value;
-}
-
-<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span>, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span>, std<span style="color:#f92672">::</span>false_type) {
-  <span style="color:#66d9ef">static_assert</span>(detail<span style="color:#f92672">::</span>has_ostream_operator<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>value,
-                <span style="color:#e6db74">&#34;Type does not support the &lt;&lt; ostream operator&#34;</span>);
-}
-
-<span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">typename</span> std<span style="color:#f92672">::</span>enable_if<span style="color:#f92672">&lt;!</span>detail<span style="color:#f92672">::</span>is_container<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>value <span style="color:#f92672">&amp;&amp;</span>
-                                   <span style="color:#f92672">!</span>std<span style="color:#f92672">::</span>is_enum<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;::</span>value,
-                               <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;::</span>type
-pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span> stream, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> value) {
-  pretty_print(stream, value,
-               <span style="color:#66d9ef">typename</span> detail<span style="color:#f92672">::</span>has_ostream_operator<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>type{});
-  <span style="color:#66d9ef">return</span> true;
-}
-</code></pre></div><p>完成代码可以在这里浏览： <a href="https://github.com/sharkdp/dbg-macro/blob/master/dbg.h">https://github.com/sharkdp/dbg-macro/blob/master/dbg.h</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> detail {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> ostream_operator_t <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">decltype</span>(std<span style="color:#f92672">::</span>declval<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;&gt;</span>() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>declval<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">has_ostream_operator</span> <span style="color:#f92672">:</span> is_detected<span style="color:#f92672">&lt;</span>ostream_operator_t, T<span style="color:#f92672">&gt;</span> {};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Specializations of &#34;pretty_print&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span> stream, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> value, std<span style="color:#f92672">::</span>true_type) {
+</span></span><span style="display:flex;"><span>  stream <span style="color:#f92672">&lt;&lt;</span> value;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span>, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span>, std<span style="color:#f92672">::</span>false_type) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static_assert</span>(detail<span style="color:#f92672">::</span>has_ostream_operator<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>value,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Type does not support the &lt;&lt; ostream operator&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">typename</span> std<span style="color:#f92672">::</span>enable_if<span style="color:#f92672">&lt;!</span>detail<span style="color:#f92672">::</span>is_container<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>value <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>                                   <span style="color:#f92672">!</span>std<span style="color:#f92672">::</span>is_enum<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;::</span>value,
+</span></span><span style="display:flex;"><span>                               <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;::</span>type
+</span></span><span style="display:flex;"><span>pretty_print(std<span style="color:#f92672">::</span>ostream<span style="color:#f92672">&amp;</span> stream, <span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;</span> value) {
+</span></span><span style="display:flex;"><span>  pretty_print(stream, value,
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">typename</span> detail<span style="color:#f92672">::</span>has_ostream_operator<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> T<span style="color:#f92672">&amp;&gt;::</span>type{});
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>完成代码可以在这里浏览： <a href="https://github.com/sharkdp/dbg-macro/blob/master/dbg.h">https://github.com/sharkdp/dbg-macro/blob/master/dbg.h</a></p>
 <h2 id="拓展阅读">拓展阅读</h2>
 <ul>
 <li>Issue in dbg:  <a href="https://github.com/sharkdp/dbg-macro/issues/118"><code>Type does not support the &lt;&lt; ostream operator</code> on custom type</a></li>

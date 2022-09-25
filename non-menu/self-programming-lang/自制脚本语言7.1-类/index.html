@@ -176,31 +176,31 @@
 <p><em>本篇所讨论的仅仅是基本的实现方式， 关于如何优化内存的内容，暂时不讨论。</em></p>
 <h2 id="基本内容">基本内容</h2>
 <h3 id="langx-代码示例">langX 代码示例</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">// 声明一个类
-Student {
-  name;
-  age = 10 ;
-
-  Student =&gt; (name,age){
-    this.name = name;
-    this.age = age;
-    printInfo(&#34;in ctor.&#34;);
-  }
-
-  a =&gt; { print(&#34;hello,a!\n&#34;);}
-
-  printInfo =&gt; (a3){ print(&#34;name: &#34; + name + &#34;\n&#34;);  print(&#34;age: &#34; + age + &#34;\n&#34; ); print(&#34;a3: &#34; + a3 + &#34;\n&#34;);}
-
-}
-
-// 声明一个对象
-s2 = new Student(&#34;hideDragon&#34;,20);
-b = s2.age;
-c = s2.name;
-print(&#34;b: &#34; + b + &#34;\n&#34;);
-print(&#34;c: &#34; + c + &#34;\n&#34;);
-print(&#34;s2.age: &#34; + s2.age + &#34;\n&#34;);
-</code></pre></div><p>在 langX 里， 笔者使用<code>类名 { 字段列表 和 函数列表 }</code> 的形式来声明一个类。  读者可以设计自己喜欢的语法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// 声明一个类
+</span></span><span style="display:flex;"><span>Student {
+</span></span><span style="display:flex;"><span>  name;
+</span></span><span style="display:flex;"><span>  age = 10 ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Student =&gt; (name,age){
+</span></span><span style="display:flex;"><span>    this.name = name;
+</span></span><span style="display:flex;"><span>    this.age = age;
+</span></span><span style="display:flex;"><span>    printInfo(&#34;in ctor.&#34;);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  a =&gt; { print(&#34;hello,a!\n&#34;);}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  printInfo =&gt; (a3){ print(&#34;name: &#34; + name + &#34;\n&#34;);  print(&#34;age: &#34; + age + &#34;\n&#34; ); print(&#34;a3: &#34; + a3 + &#34;\n&#34;);}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 声明一个对象
+</span></span><span style="display:flex;"><span>s2 = new Student(&#34;hideDragon&#34;,20);
+</span></span><span style="display:flex;"><span>b = s2.age;
+</span></span><span style="display:flex;"><span>c = s2.name;
+</span></span><span style="display:flex;"><span>print(&#34;b: &#34; + b + &#34;\n&#34;);
+</span></span><span style="display:flex;"><span>print(&#34;c: &#34; + c + &#34;\n&#34;);
+</span></span><span style="display:flex;"><span>print(&#34;s2.age: &#34; + s2.age + &#34;\n&#34;);
+</span></span></code></pre></div><p>在 langX 里， 笔者使用<code>类名 { 字段列表 和 函数列表 }</code> 的形式来声明一个类。  读者可以设计自己喜欢的语法。</p>
 <p><em>这里说一点题外话， 笔者省略 class 或其他关键字的想法是为了节省没必要的关键字。 但是现在仔细想想，虽然确实省下了关键字， 但是却增加模糊性，使代码不太好辨别。不论是阅读还是解析上。</em></p>
 <h3 id="主要思路">主要思路</h3>
 <p>将类的 字段列表， 函数列表都保存下来即可。</p>

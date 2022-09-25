@@ -176,52 +176,52 @@
 <p>仔细考虑了一下之后，笔者决定出两道很基本面试题来过滤一下面试者，笔者认为如果能完成这两道题，则说明基本逻辑的编写应该没有问题，那样就可以干活了。</p>
 <h2 id="面试题内容">面试题内容</h2>
 <p>一、 有下面代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// file: Student.java
-</span><span style="color:#75715e">// 学生信息类
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Data</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
-    <span style="color:#75715e">// 学号
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> no<span style="color:#f92672">;</span>
-    <span style="color:#75715e">// 姓名
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-    <span style="color:#75715e">// 年龄
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
-    <span style="color:#75715e">// 年级 1-16
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> grade<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#75715e">// file: StudentFilter.java
-</span><span style="color:#75715e">// 学生信息筛选的方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentFilter</span><span style="color:#f92672">{</span>
-    
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
-        var list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;();</span>
-        list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span>1<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;学生1&#34;</span><span style="color:#f92672">,</span> 7<span style="color:#f92672">,</span> 2<span style="color:#f92672">));</span>
-        <span style="color:#75715e">// 此处省略添加 学生信息 N 个
-</span><span style="color:#75715e"></span>        
-        <span style="color:#75715e">// 问题： 请输出8~10岁（都包含） 在上三年级的学生数量，以及信息
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// PS： 将grade = 3 视作三年级即可
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 在下面空白处作答 即可。
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>二、 SQL语句问题</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 年级表
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>grade<span style="color:#f92672">`</span> (
-	id INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> ,
-    <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年级的名字&#39;</span>,
-    <span style="color:#f92672">`</span><span style="color:#66d9ef">type</span><span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;1小学，2初中，3....&#39;</span>
-);
-
-<span style="color:#75715e">-- 学生表
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> (
-	<span style="color:#f92672">`</span><span style="color:#66d9ef">no</span><span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;学号&#39;</span>,
-    <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;学生姓名&#39;</span>,
-    <span style="color:#f92672">`</span>age<span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年龄&#39;</span>,
-    <span style="color:#f92672">`</span>grade<span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年级表id&#39;</span>
-);
-
-<span style="color:#75715e">-- 问题: 请查询出小学生的数量 （写SQL语句即可）
-</span></code></pre></div><h2 id="面试题解答">面试题解答</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// file: Student.java
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 学生信息类
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">@Data</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 学号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> no<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 姓名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 年龄
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 年级 1-16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> grade<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// file: StudentFilter.java
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 学生信息筛选的方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentFilter</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>        var list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Student<span style="color:#f92672">&gt;();</span>
+</span></span><span style="display:flex;"><span>        list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Student<span style="color:#f92672">(</span>1<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;学生1&#34;</span><span style="color:#f92672">,</span> 7<span style="color:#f92672">,</span> 2<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 此处省略添加 学生信息 N 个
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 问题： 请输出8~10岁（都包含） 在上三年级的学生数量，以及信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// PS： 将grade = 3 视作三年级即可
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 在下面空白处作答 即可。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>二、 SQL语句问题</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- 年级表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>grade<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>	id INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> ,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年级的名字&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span><span style="color:#66d9ef">type</span><span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;1小学，2初中，3....&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 学生表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">`</span><span style="color:#66d9ef">no</span><span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;学号&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;学生姓名&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>age<span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年龄&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>grade<span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;年级表id&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 问题: 请查询出小学生的数量 （写SQL语句即可）
+</span></span></span></code></pre></div><h2 id="面试题解答">面试题解答</h2>
 <h3 id="第一题">第一题</h3>
 <p>第一题是很简单的内容，基本上有些经验的人都能完成。 但是笔者发现很多自称两年，三年经验的人并不能完成这份笔试。。</p>
 <p>本题主要考察下面几个点：</p>
@@ -253,15 +253,14 @@
 <p>笔者大概试了10个人左右，并没有发现一个满足全部需求的人， 基本上都是缺了一些内容。</p>
 <p>而且还有部分来面试的人 做不出来这题。（<em>讲真，我感觉到很惊讶😐</em>）</p>
 <p>🥳 下面是示例的解题代码。  （<em>纯手写， 并没有经过 IDE 测试</em>）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">var result <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getGrade</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 3<span style="color:#f92672">)</span>      <span style="color:#75715e">// 过滤年级
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;=</span> 8 <span style="color:#f92672">&amp;&amp;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&lt;=</span> 10<span style="color:#f92672">)</span>    <span style="color:#75715e">// 过滤年龄
-</span><span style="color:#75715e"></span>  <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
-
-<span style="color:#75715e">// 输出数量以及信息
-</span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">());</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span>
-
-</code></pre></div><p>这里在额外多说几句， 写注释也是一个非常重要的内容。如果你的方法名是自解释的，则可以考虑不写。 但是其他情况，尤其是逻辑比较长且复杂的时候， 一定要写上注释。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>var result <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getGrade</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 3<span style="color:#f92672">)</span>      <span style="color:#75715e">// 过滤年级
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;=</span> 8 <span style="color:#f92672">&amp;&amp;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&lt;=</span> 10<span style="color:#f92672">)</span>    <span style="color:#75715e">// 过滤年龄
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 输出数量以及信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>这里在额外多说几句， 写注释也是一个非常重要的内容。如果你的方法名是自解释的，则可以考虑不写。 但是其他情况，尤其是逻辑比较长且复杂的时候， 一定要写上注释。</p>
 <h3 id="第二题">第二题</h3>
 <p>两表联合查询的 sql，也是非常简单的。  <em>本题参考了上家公司的面试题。</em></p>
 <p>本题主要考察下面几个点：</p>
@@ -270,9 +269,9 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 <li>两表联合查询的能力</li>
 </ul>
 <p>下面给出一个示例的解题 sql 语句。（<em>同样纯手写， 并没有经过 IDE 测试</em>）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#66d9ef">SELECT</span> <span style="color:#a6e22e">COUNT</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">FROM</span> student s,grade g
-<span style="color:#66d9ef">WHERE</span> s.grade <span style="color:#f92672">=</span> g.id <span style="color:#66d9ef">AND</span> g.type <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><h2 id="后续">后续</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#a6e22e">COUNT</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">FROM</span> student s,grade g
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> s.grade <span style="color:#f92672">=</span> g.id <span style="color:#66d9ef">AND</span> g.type <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="后续">后续</h2>
 <p>这里说一个小插曲。</p>
 <p>有一个人和我约了面试之后，在面试当日和我说他不来了。 不来嘛就算了，但是呢，大约20天左右之后吧，那个人突然来到我们公司要求进行面试。 这人来之前并没有和我取得任何联系， 同事和我说有面试的时候，我是极其惊讶的，因为我记得我并没有约任何一个人哇！因为笔者脾气还算 OK，所以还是打印简历让他进行面试了， 结果嘛，不用说，当然是 PASS 掉了。</p>
 <p>我有问过他为什么又要过来面试了， 他回答说：“我后来又看了一下你们公司职位描述，感觉你们公司挺好的，所以就来试试。”</p>

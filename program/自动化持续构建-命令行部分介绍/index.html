@@ -184,10 +184,10 @@
 <h3 id="编译打包-以及打压缩包">编译，打包 以及打压缩包。</h3>
 <p>使用命令 <code>mvn clean &amp;&amp; mvn install</code> 基本上就可以完成编译打包的命令。  <em>maven相关的配置文件这里就不描述了。</em></p>
 <p>使用cpp的话， 如果使用cmake的话， 就使用下面的命令。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
-cmake ..
-make
-</code></pre></div><p>在执行了编译命令之后， 在shell 里面可以使用<code>$?</code> 变量获取上一个命令的结束状态码。 状态码基本上是<code>0</code>表示执行成功，其他是失败，状态码可以用于做失败处理。  <em>在fish里面使用<code>$status</code>这个变量，fish这个shell 很多地方和其他的shell都不一样。。😂</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+</span></span><span style="display:flex;"><span>cmake ..
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>在执行了编译命令之后， 在shell 里面可以使用<code>$?</code> 变量获取上一个命令的结束状态码。 状态码基本上是<code>0</code>表示执行成功，其他是失败，状态码可以用于做失败处理。  <em>在fish里面使用<code>$status</code>这个变量，fish这个shell 很多地方和其他的shell都不一样。。😂</em></p>
 <p>打压缩包的话， 可以考虑下面的命令。</p>
 <ul>
 <li><code>zip -q -r server.zip /path/to/server</code></li>
@@ -213,9 +213,9 @@ make
 <p>在Windows下， 杀掉进程可以使用使用命令<code>Taskkill /PID [pid] /F</code> 或者<code>Taskkill /IM [exeName] /F</code></p>
 <p>这里的一个可选思路是这样的，在程序启动的时候把当前的pid写入到一个文本文件里面。 在需要杀死旧进程的时候读取文本文件获得pid，然后执行taskkill命令。</p>
 <p>下面是一个示例     <em>笔者并没有实际测试过正确性。</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">set /p pid<span style="color:#f92672">=</span>&lt;pid.txt
-Taskkill /PID %pid% /F
-</code></pre></div><p>接下来就是复制文件， 使用命令 <code>copy /f</code> 即可， 如果文件过大也可以考虑使用<code>xcopy</code>命令。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>set /p pid<span style="color:#f92672">=</span>&lt;pid.txt
+</span></span><span style="display:flex;"><span>Taskkill /PID %pid% /F
+</span></span></code></pre></div><p>接下来就是复制文件， 使用命令 <code>copy /f</code> 即可， 如果文件过大也可以考虑使用<code>xcopy</code>命令。</p>
 <p>启动的话，就很简单了， 使用命令 <code>java -jar [jarFile]</code> 即可。  在开发阶段可以加启动参数， 也可以不加把， 笔者觉得。</p>
 <p><strong>Linux</strong></p>
 <p>在Linux下，杀掉进程可以使用使用命令<code>kill -9 [pid]</code></p>
@@ -234,20 +234,20 @@ Taskkill /PID %pid% /F
 <li>ssh   ssh链接或者执行ssh命令的工具。</li>
 </ul>
 <p>下面给一段示例。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 使用环境变量的方式给予 sshpass 相关的密码</span>
-export SSHPASS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span>
-<span style="color:#75715e"># ssh 命令的一些参数</span>
-SSH_FLAGS<span style="color:#f92672">=(</span>-q -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -p <span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
-<span style="color:#75715e"># 在目标服务器上创建文件夹</span>
-<span style="color:#66d9ef">$(</span>sshpass -e ssh <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SSH_FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;mkdir -p </span><span style="color:#e6db74">${</span>real_remote_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-
-<span style="color:#75715e"># 杀掉目标服务器上的进程</span>
-sshpass -e ssh <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SSH_FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;bash </span><span style="color:#e6db74">${</span>remote_target_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">/control_scripts/killservers.sh&#34;</span>
-
-<span style="color:#75715e"># 传送文件</span>
-FLAGS<span style="color:#f92672">=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.jar&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">)</span>
-sshpass -e rsync -e <span style="color:#e6db74">&#34;ssh -o StrictHostKeyChecking=no -p </span><span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> -avz  <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>real_remote_folder<span style="color:#e6db74">}</span>
-</code></pre></div><p>下面对上述脚本的变量做一些解释。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 使用环境变量的方式给予 sshpass 相关的密码</span>
+</span></span><span style="display:flex;"><span>export SSHPASS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssh 命令的一些参数</span>
+</span></span><span style="display:flex;"><span>SSH_FLAGS<span style="color:#f92672">=(</span>-q -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -p <span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在目标服务器上创建文件夹</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">$(</span>sshpass -e ssh <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SSH_FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;mkdir -p </span><span style="color:#e6db74">${</span>real_remote_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 杀掉目标服务器上的进程</span>
+</span></span><span style="display:flex;"><span>sshpass -e ssh <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SSH_FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;bash </span><span style="color:#e6db74">${</span>remote_target_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">/control_scripts/killservers.sh&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 传送文件</span>
+</span></span><span style="display:flex;"><span>FLAGS<span style="color:#f92672">=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.jar&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>sshpass -e rsync -e <span style="color:#e6db74">&#34;ssh -o StrictHostKeyChecking=no -p </span><span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> -avz  <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>real_remote_folder<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>下面对上述脚本的变量做一些解释。</p>
 <ul>
 <li>s_port    目标服务器的ssh链接端口</li>
 <li>s_addr   连接目标服务器使用的地址</li>
@@ -266,12 +266,12 @@ sshpass -e rsync -e <span style="color:#e6db74">&#34;ssh -o StrictHostKeyCheckin
 <p>Windows下使用这个工具：  <a href="https://www.putty.org/">https://www.putty.org/</a></p>
 <p>思路和Linux下没有变化，主要是具体实现细节上的差异。</p>
 <p><code>plink</code> 是一个<code>putty</code>包里面的工具，下面看一段脚本示例。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># 本脚本是纯手写， 没有经过测试</span>
-
-plink -batch -ssh <span style="color:#66d9ef">%</span>ssh_host% -l <span style="color:#66d9ef">%</span>ssh_user% -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% echo hello, world
-
-pscp -q -batch -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% c:\local\folder <span style="color:#66d9ef">%</span>ssh_user%@<span style="color:#66d9ef">%</span>ssh_host%<span style="color:#960050;background-color:#1e0010">:</span>/path/to/folder/
-</code></pre></div><p>下面对上述脚本的变量做一些解释。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 本脚本是纯手写， 没有经过测试</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plink -batch -ssh <span style="color:#66d9ef">%</span>ssh_host% -l <span style="color:#66d9ef">%</span>ssh_user% -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% echo hello, world
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pscp -q -batch -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% c:\local\folder <span style="color:#66d9ef">%</span>ssh_user%@<span style="color:#66d9ef">%</span>ssh_host%<span style="color:#960050;background-color:#1e0010">:</span>/path/to/folder/
+</span></span></code></pre></div><p>下面对上述脚本的变量做一些解释。</p>
 <ul>
 <li>ssh_port    目标服务器的ssh链接端口</li>
 <li>ssh_host   连接目标服务器使用的地址</li>
@@ -282,9 +282,9 @@ pscp -q -batch -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="c
 <p>在执行文件的时候， 可以将最后的<code>echo hello, world</code> 替换成<code>bash [filepath]</code>  这里的<code>filepath</code>是目标服务器上的路径。</p>
 <h4 id="jenkins相关的内容">Jenkins相关的内容</h4>
 <p>如果使用jenkins 调用我们自己的启动脚本的话，可能会发现我们的程序被干掉了， 这时可以考虑在脚本里面添加这两行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export BUILD_ID<span style="color:#f92672">=</span>dontKillMe
-export JENKINS_NODE_COOKIE<span style="color:#f92672">=</span>dontKillMe
-</code></pre></div><h2 id="结尾">结尾</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export BUILD_ID<span style="color:#f92672">=</span>dontKillMe
+</span></span><span style="display:flex;"><span>export JENKINS_NODE_COOKIE<span style="color:#f92672">=</span>dontKillMe
+</span></span></code></pre></div><h2 id="结尾">结尾</h2>
 <p>下面是一些吐槽部分。</p>
 <p>笔者感觉上前端更需要持续集成， 至少需要大于后端。  在笔者经历过的游戏公司中，前端每次打包都至少要折腾到半夜12点， 甚至凌晨2点至更晚。    <em>似乎现在行业上的人都接受了这个现状，也不求改变。 😂</em></p>
 <p>很多问题都是在打包当天发现，然后要求处理的， 这让笔者觉得很不可思议。</p>

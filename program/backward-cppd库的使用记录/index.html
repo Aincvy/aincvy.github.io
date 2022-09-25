@@ -187,13 +187,13 @@
 <p>安装的时候， include 会提示有问题， 笔者是采取手动复制的情况。  即手动复制文件夹到 <code>/usr/local/include/libwarf</code> 里。
 <code>build/config.h</code> 不知道有没有用，一起复制过去了。</p>
 <h3 id="输出一个宏定义的值">输出一个宏定义的值</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#define XSTR(x) STR(x)
-</span><span style="color:#75715e">#define STR(x) #x
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE_SYMBOL: &#34; XSTR(BACKWARD_HAS_BACKTRACE_SYMBOL)
-</span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_UNWIND: &#34; XSTR(BACKWARD_HAS_UNWIND)
-</span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE: &#34; XSTR(BACKWARD_HAS_BACKTRACE)
-</span></code></pre></div><p>可见上述代码， 定义了<code>XSTR, STR</code> 两个宏之后， 使用 <code>XSTR(name)</code> 的形式即可以打印一个宏的值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define XSTR(x) STR(x)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define STR(x) #x
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE_SYMBOL: &#34; XSTR(BACKWARD_HAS_BACKTRACE_SYMBOL)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_UNWIND: &#34; XSTR(BACKWARD_HAS_UNWIND)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE: &#34; XSTR(BACKWARD_HAS_BACKTRACE)
+</span></span></span></code></pre></div><p>可见上述代码， 定义了<code>XSTR, STR</code> 两个宏之后， 使用 <code>XSTR(name)</code> 的形式即可以打印一个宏的值。</p>
 
     </div>
 

@@ -195,72 +195,71 @@
 <p>只要能够组织基本的AST， 那么复杂的其实也不难。 基本上来说， 复杂的AST只是一个量变和正常量变带来的些许复杂度。</p>
 <h2 id="代码示例">代码示例</h2>
 <p>下面给出一些langX的代码示例， 辅助读者理解这部分内容。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Node</span>
-{
-  NodeType type;
-  <span style="color:#75715e">// 在执行结束之后是否进行 free 操作
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> freeOnExecuted;
-  <span style="color:#75715e">// 当前节点的值 .  如果当前结点是一个常量数字， 则free 的时候会施放这个值得内存
-</span><span style="color:#75715e"></span>  Object <span style="color:#f92672">*</span>value;
-  <span style="color:#75715e">// 万能指针 ， 主要用于放置参数什么的
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>ptr_u;
-  <span style="color:#75715e">// 节点状态
-</span><span style="color:#75715e"></span>  NodeState state;
-  <span style="color:#75715e">// 当前节点所在的文件信息
-</span><span style="color:#75715e"></span>  NodeFileInfo fileinfo;
-  <span style="color:#75715e">// 后置值 ， 如果当前节点为一个 变量节点， 当前属性则为有用
-</span><span style="color:#75715e"></span>  Object <span style="color:#f92672">*</span>postposition;
-
-  Variable <span style="color:#f92672">*</span>var_obj;
-  Constant <span style="color:#f92672">*</span>con_obj;
-  Operator <span style="color:#f92672">*</span>opr_obj;
-  ArrayInfo <span style="color:#f92672">*</span>arr_obj;
-};
-
-<span style="color:#75715e">// 节点的文件信息
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NodeFileInfo</span>
-{
-  <span style="color:#75715e">// 文件名
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// const char * filename;
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 修改成 std::string 试试，上面的那个类型要处理一下
-</span><span style="color:#75715e"></span>  std<span style="color:#f92672">::</span>string filename;
-  <span style="color:#75715e">// 行号
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> lineno;
-};
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Constant</span>
-{
-  <span style="color:#66d9ef">int</span> iValue;
-  <span style="color:#66d9ef">double</span> dValue;
-  <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> sValue;
-  <span style="color:#66d9ef">char</span> cValue;
-
-  <span style="color:#75715e">// 当前常量是否是一个 bool 类型得元素
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> flagBool <span style="color:#f92672">=</span> false;
-};
-
-<span style="color:#75715e">// 数组声明时使用
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">XArrayNode</span>
-{
-  <span style="color:#75715e">// 数组名字
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> name;
-  <span style="color:#75715e">// 数组长度
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> length;
-  <span style="color:#75715e">// 变量长度索引 . 如果变量索引节点存在， 则使用这个， 否则使用 length 
-</span><span style="color:#75715e"></span>  Node <span style="color:#f92672">*</span> lengthNode;
-};
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Operator</span>
-{
-  <span style="color:#75715e">// 子节点列表  | 实现树的主要部分内容
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Node</span><span style="color:#f92672">**</span> op;
-  <span style="color:#66d9ef">int</span> op_count;
-  <span style="color:#75715e">// 操作符是什么
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> opr;
-
-};
-
-</code></pre></div><p><em>本部分内容的代码在 <code>Object.h</code>文件里面。</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  NodeType type;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 在执行结束之后是否进行 free 操作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> freeOnExecuted;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 当前节点的值 .  如果当前结点是一个常量数字， 则free 的时候会施放这个值得内存
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Object <span style="color:#f92672">*</span>value;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 万能指针 ， 主要用于放置参数什么的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>ptr_u;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 节点状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  NodeState state;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 当前节点所在的文件信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  NodeFileInfo fileinfo;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 后置值 ， 如果当前节点为一个 变量节点， 当前属性则为有用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Object <span style="color:#f92672">*</span>postposition;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Variable <span style="color:#f92672">*</span>var_obj;
+</span></span><span style="display:flex;"><span>  Constant <span style="color:#f92672">*</span>con_obj;
+</span></span><span style="display:flex;"><span>  Operator <span style="color:#f92672">*</span>opr_obj;
+</span></span><span style="display:flex;"><span>  ArrayInfo <span style="color:#f92672">*</span>arr_obj;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 节点的文件信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NodeFileInfo</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 文件名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// const char * filename;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 修改成 std::string 试试，上面的那个类型要处理一下
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  std<span style="color:#f92672">::</span>string filename;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 行号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> lineno;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Constant</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> iValue;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">double</span> dValue;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> sValue;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> cValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 当前常量是否是一个 bool 类型得元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> flagBool <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 数组声明时使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">XArrayNode</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 数组名字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> name;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 数组长度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> length;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 变量长度索引 . 如果变量索引节点存在， 则使用这个， 否则使用 length 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Node <span style="color:#f92672">*</span> lengthNode;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Operator</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 子节点列表  | 实现树的主要部分内容
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Node</span><span style="color:#f92672">**</span> op;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> op_count;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 操作符是什么
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> opr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><em>本部分内容的代码在 <code>Object.h</code>文件里面。</em></p>
 <p>如果读者阅读了langX的 代码， 会发现还有一个类似的结构， 叫做<code>NodeLink</code>。  这个不用深入探究，这个是因为笔者当时的知识水平有限， 误入了歧路而产生的东西。</p>
 <h3 id="接上一篇的一些内容">接上一篇的一些内容</h3>
 <p>由上面的代码示例可以看出， 每一个节点都有一个<code>Object *value;</code>的属性。 这个属性用于存放该节点的运算结果。</p>

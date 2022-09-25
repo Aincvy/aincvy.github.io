@@ -174,29 +174,29 @@
 <p>笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。</p>
 <p>拼接的参数会自动使用一个引号括起来， <code>rsync</code> 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。</p>
 <p>我刚开始好像是使用一个单一的变量来尝试控制参数。（<em>大约1，2个月以前的东西​，记得不是很清楚😂</em>)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 本部分代码没有经过测试， 只是给个示例来说明一下。</span>
-include_arg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--include=&#34;*.jar&#34;&#39;</span>
-
-<span style="color:#75715e"># 如果本地存在 config.json 文件， 就发送过去</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> test -e <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">/config.json&#34;</span> <span style="color:#f92672">]]</span> 
-<span style="color:#66d9ef">then</span>
-	include_arg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$include_arg --include=&#34;*config.json&#34;&#39;</span>
-<span style="color:#66d9ef">fi</span>
-sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span>$include_arg<span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ root@xx:/root
-</code></pre></div><p>上述代码中， 最后一段里面的 <code>&quot;$include_arg&quot;</code> 变量，经过我的测试，基本都会被解释成<code>&quot;--include=*.jar --include=*config.json&quot;</code> 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 本部分代码没有经过测试， 只是给个示例来说明一下。</span>
+</span></span><span style="display:flex;"><span>include_arg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--include=&#34;*.jar&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果本地存在 config.json 文件， 就发送过去</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> test -e <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">/config.json&#34;</span> <span style="color:#f92672">]]</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>	include_arg<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$include_arg --include=&#34;*config.json&#34;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span>$include_arg<span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ root@xx:/root
+</span></span></code></pre></div><p>上述代码中， 最后一段里面的 <code>&quot;$include_arg&quot;</code> 变量，经过我的测试，基本都会被解释成<code>&quot;--include=*.jar --include=*config.json&quot;</code> 。</p>
 <p>这个参数肯定是有问题的，<code>rsync</code>识别不出来。</p>
 <p>经过在<code>stackOverflow</code> 上的搜索，发现使用数组可以处理掉这个问题。</p>
 <p>代码修改成如下所示的情况， 就可以正常使用了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 本部分代码没有经过测试， 只是给个示例来说明一下。</span>
-include_arg<span style="color:#f92672">=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.jar&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e"># 如果本地存在 config.json 文件， 就发送过去</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> test -e <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">/config.json&#34;</span> <span style="color:#f92672">]]</span> 
-<span style="color:#66d9ef">then</span>
-	include_arg<span style="color:#f92672">+=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*config.json&#34;</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">fi</span>
-sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>include_arg[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ root@xx:/root
-</code></pre></div><p>修改成这样之后， <code>${include_arg[@]}</code> 会展开成3个独立的参数传给<code>rsync</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 本部分代码没有经过测试， 只是给个示例来说明一下。</span>
+</span></span><span style="display:flex;"><span>include_arg<span style="color:#f92672">=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.jar&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果本地存在 config.json 文件， 就发送过去</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> test -e <span style="color:#e6db74">&#34;</span>$folder<span style="color:#e6db74">/config.json&#34;</span> <span style="color:#f92672">]]</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>	include_arg<span style="color:#f92672">+=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*config.json&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>sshpass -e rsync -avz <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>include_arg[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ root@xx:/root
+</span></span></code></pre></div><p>修改成这样之后， <code>${include_arg[@]}</code> 会展开成3个独立的参数传给<code>rsync</code>。</p>
 
     </div>
 

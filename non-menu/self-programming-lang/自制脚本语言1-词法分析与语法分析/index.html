@@ -236,85 +236,84 @@
 <li>其他代码</li>
 </ul>
 <p>下面的示例代码节选自 a.l 文件。 （<em>语法高亮可能存在问题</em>）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 用户定义内容
-
-%{
-#include &#34;y.tab.h&#34;
-
-// 当前行
-int now_line = 1 ;
-// 当前列
-int column = 0;
-
-void comment(void);
-void count(void);
-
-%}
-
-%%
-
-// 词法内容 
-&#34;/*&#34;			{ comment(); }
-&#34;//&#34;[^\n]*      { /* consume //-comment */  }
-
-&#34;auto&#34; {count(); return KEY_AUTO;}
-&#34;if&#34; {count(); return KEY_IF;}
-&#34;else&#34; {count(); return KEY_ELSE;}
-&#34;while&#34; {count(); return KEY_WHILE;}
-
-
-\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
-[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
-
-0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
-(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
-
-&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
-&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
-&#34;{&#34; {count(); return &#39;{&#39;; }
-&#34;}&#34; {count(); return &#39;}&#39;; }
-
-[\n]   {count(); now_line++; }
-
-%%
-
-// 其他代码内容
-
-void comment(void)
-{
-	char c, prev = 0;
-
-	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
-	{
-		if (c == &#39;\n&#39;) {
-			now_line++ ;
-			column = 0;
-		}
-		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
-			return;
-		prev = c;
-	}
-	//error(&#34;unterminated comment&#34;);
-}
-
-void count(void)
-{
-	int i;
-
-	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
-		if (yytext[i] == &#39;\n&#39;){
-			column = 0;
-		} else if (yytext[i] == &#39;\t&#39;)
-			column += 8 - (column % 8);
-		else {
-			column++;
-		}
-	}
-
-	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
-}
-
-</code></pre></div><p>其中 词法规则部分是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>// 用户定义内容
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%{
+</span></span><span style="display:flex;"><span>#include &#34;y.tab.h&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 当前行
+</span></span><span style="display:flex;"><span>int now_line = 1 ;
+</span></span><span style="display:flex;"><span>// 当前列
+</span></span><span style="display:flex;"><span>int column = 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>void comment(void);
+</span></span><span style="display:flex;"><span>void count(void);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 词法内容 
+</span></span><span style="display:flex;"><span>&#34;/*&#34;			{ comment(); }
+</span></span><span style="display:flex;"><span>&#34;//&#34;[^\n]*      { /* consume //-comment */  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#34;auto&#34; {count(); return KEY_AUTO;}
+</span></span><span style="display:flex;"><span>&#34;if&#34; {count(); return KEY_IF;}
+</span></span><span style="display:flex;"><span>&#34;else&#34; {count(); return KEY_ELSE;}
+</span></span><span style="display:flex;"><span>&#34;while&#34; {count(); return KEY_WHILE;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
+</span></span><span style="display:flex;"><span>[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
+</span></span><span style="display:flex;"><span>(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
+</span></span><span style="display:flex;"><span>&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
+</span></span><span style="display:flex;"><span>&#34;{&#34; {count(); return &#39;{&#39;; }
+</span></span><span style="display:flex;"><span>&#34;}&#34; {count(); return &#39;}&#39;; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[\n]   {count(); now_line++; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 其他代码内容
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>void comment(void)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	char c, prev = 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		if (c == &#39;\n&#39;) {
+</span></span><span style="display:flex;"><span>			now_line++ ;
+</span></span><span style="display:flex;"><span>			column = 0;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
+</span></span><span style="display:flex;"><span>			return;
+</span></span><span style="display:flex;"><span>		prev = c;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	//error(&#34;unterminated comment&#34;);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>void count(void)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	int i;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
+</span></span><span style="display:flex;"><span>		if (yytext[i] == &#39;\n&#39;){
+</span></span><span style="display:flex;"><span>			column = 0;
+</span></span><span style="display:flex;"><span>		} else if (yytext[i] == &#39;\t&#39;)
+</span></span><span style="display:flex;"><span>			column += 8 - (column % 8);
+</span></span><span style="display:flex;"><span>		else {
+</span></span><span style="display:flex;"><span>			column++;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>其中 词法规则部分是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
 <p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入c/cpp代码。  而 其他代码内容则不需要符号，直接编写c/cpp代码即可。</p>
 <p>读者可以先看看 langX的这部分代码是如何编写的， 然后再使用搜索引擎搜索一下lex相关的文章就明白了。</p>
 <p>编写文件之后， 可以直接使用命令 <code>lex a.l</code> 来生成<code>lex.yy.c</code> 文件。 （<code>lex [filename]</code>）</p>
@@ -337,60 +336,59 @@ void count(void)
 <p>第二部分就是纯粹的语法规则了。</p>
 <p>第三部分可以写一些c代码。在langX中，笔者在这段就只写了一个<code>main </code>方法。</p>
 <p>下面看一段<strong>语法规则</strong>的代码。 （<em>即 第二部分</em>）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">// 本部分内容只是一些示例，并不能直接使用
-program
-    : statement_list
-    ;
-
-statement_list
-    : statement_list statement      { execAndFreeNode($2); }
-    |
-    ;
-
-statement
-    : _extra_nothing     { $$ = $1; }
-    | out_declare_stmt    { $$ = $1; }
-    | con_ctl_stmt   { $$ = $1; }
-    | simple_stmt    { $$ = $1; }
-    | try_stmt       { $$ = $1; }
-    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
-    ;
-
-_extra_nothing
-    : &#39;;&#39;         { $$ = NULL; }
-    ;
-
-out_declare_stmt
-    : func_declare_stmt          { $$ = $1; }
-    | class_declare_stmt         { $$ = $1; }
-    | namespace_declare_stmt     { $$ = $1; }
-    | namespace_ref_stmt        { $$ = $1; }
-    ;
- 
-// 命名空间的声明语句
-namespace_declare_stmt
-    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
-    ;
-
-// 引用命名空间
-namespace_ref_stmt
-    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
-    ;
-
-namespace_name_stmt
-    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
-    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
-    ;
- 
-int_expr
-    : TINTEGER { $$ = intNode($1); }
-    ;
-
-double_expr
-    : TDOUBLE { $$ = number($1); }
-    ;
-
-</code></pre></div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>// 本部分内容只是一些示例，并不能直接使用
+</span></span><span style="display:flex;"><span>program
+</span></span><span style="display:flex;"><span>    : statement_list
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>statement_list
+</span></span><span style="display:flex;"><span>    : statement_list statement      { execAndFreeNode($2); }
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>statement
+</span></span><span style="display:flex;"><span>    : _extra_nothing     { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | out_declare_stmt    { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | con_ctl_stmt   { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | simple_stmt    { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | try_stmt       { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>_extra_nothing
+</span></span><span style="display:flex;"><span>    : &#39;;&#39;         { $$ = NULL; }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>out_declare_stmt
+</span></span><span style="display:flex;"><span>    : func_declare_stmt          { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | class_declare_stmt         { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | namespace_declare_stmt     { $$ = $1; }
+</span></span><span style="display:flex;"><span>    | namespace_ref_stmt        { $$ = $1; }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>// 命名空间的声明语句
+</span></span><span style="display:flex;"><span>namespace_declare_stmt
+</span></span><span style="display:flex;"><span>    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 引用命名空间
+</span></span><span style="display:flex;"><span>namespace_ref_stmt
+</span></span><span style="display:flex;"><span>    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>namespace_name_stmt
+</span></span><span style="display:flex;"><span>    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
+</span></span><span style="display:flex;"><span>    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>int_expr
+</span></span><span style="display:flex;"><span>    : TINTEGER { $$ = intNode($1); }
+</span></span><span style="display:flex;"><span>    ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>double_expr
+</span></span><span style="display:flex;"><span>    : TDOUBLE { $$ = number($1); }
+</span></span><span style="display:flex;"><span>    ;
+</span></span></code></pre></div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
 <ul>
 <li>
 <p>语法规则基本上是 <code>规则名称：子规则1 { 碰到这个子规则执行的语句} | 子规则2 {碰到这个规则执行的语句} ;</code></p>

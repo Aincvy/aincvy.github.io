@@ -174,25 +174,25 @@
 <p>经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。</p>
 <p>这可能是一个非常基础得错误。。 但是笔者一般写Java得时候 是不需要考虑这个问题得。。😂😂 😂</p>
 <p>大致情况是这样得。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 物品类， 占位使用
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thing</span> {
-  
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  <span style="color:#66d9ef">void</span> take(Thing<span style="color:#f92672">*</span> thing){
-  	<span style="color:#66d9ef">if</span>( m_onHand <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span> ){
-      <span style="color:#75715e">// do something ..
-</span><span style="color:#75715e"></span>    }
-    
-    <span style="color:#75715e">// do something ..
-</span><span style="color:#75715e"></span>  }
-<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  <span style="color:#75715e">// 手里正在拿得东西
-</span><span style="color:#75715e"></span>  Thing<span style="color:#f92672">*</span> m_onHand;
-}
-</code></pre></div><p>在调试模式下， 上述代码得属性部分 <code>m_onHand</code> 是一个<code>nullptr</code>，这会产生预期的行为。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// 物品类， 占位使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thing</span> {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> take(Thing<span style="color:#f92672">*</span> thing){
+</span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">if</span>( m_onHand <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span> ){
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// do something ..
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something ..
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 手里正在拿得东西
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Thing<span style="color:#f92672">*</span> m_onHand;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在调试模式下， 上述代码得属性部分 <code>m_onHand</code> 是一个<code>nullptr</code>，这会产生预期的行为。</p>
 <p>而非调试模式下，似乎就不是一个<code>nullptr</code> ， 则会产生不可预期得内存错误。 😢😢😢</p>
 <p>笔者使用得解决办法就是在声明得时候这么写： <code>Thing* m_onHand = nullptr;</code></p>
 <p>除此之外， 笔者还搜索到了一种可能性。</p>
