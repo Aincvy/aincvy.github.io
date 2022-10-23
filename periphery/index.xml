@@ -6,7 +6,16 @@
     <description>Recent content in Peripheries on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Sep 2022 17:03:10 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Oct 2022 11:33:37 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro使用了一段时间的体验</title>
+      <link>https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Sun, 23 Oct 2022 11:33:37 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+      <description>图片预警！（文件尺寸较大） 安装 笔者使用的是manjaro-KDE ， 是从官方网站下载的包。 安装过程很简单， 基本上就是下一步下一步，如果自己不懂</description>
+    </item>
+    
     <item>
       <title>在manjaro中使用urbackup</title>
       <link>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</link>
