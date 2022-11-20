@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://fantasyplayer.link/program/cpp-char-%E6%95%B0%E7%BB%84%E8%B6%8A%E7%95%8C%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" />
+  
+  <link rel="canonical" href="https://fantasyplayer.link/program/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Arch 编译安装 Mongo Cxx Driver 的记录 | Fanstasy Player / 幻想系玩家
+       
+  </title>
+  <meta name="title" content="Arch 编译安装 Mongo Cxx Driver 的记录 | Fanstasy Player / 幻想系玩家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arch 编译安装 Mongo Cxx Driver 的记录"/>
+<meta name="twitter:description" content="基本内容 先从 github 上下载库的源码。 切换分支到 releases/v3.7 切换到自己需要的分支即可 命令参考： git clone https://github.com/mongodb/mongo-cxx-driver.git cd mongo-cxx-driver git checkout releases/v3.7 使用命令 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DCMAKE_INSTALL_PREFIX=/opt/mongo -DCMAKE_INSTALL_RPATH=/opt/mongo .. 进行配置 这个命令将会把 mongo-cxx-driver 安装"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Arch 编译安装 Mongo Cxx Driver 的记录",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/fantasyplayer.link\/program\/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/fantasyplayer.link\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "program",
+  
+  "wordcount":  163 ,
+  "url": "https:\/\/fantasyplayer.link\/program\/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95\/",
+  "datePublished": "2022-11-20T16:55:55\u002b08:00",
+  "dateModified": "2022-11-20T16:55:55\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "hideDragon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/fantasyplayer.link\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "hideDragon"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/posts/" title="">Posts</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/program/" title="">Program</a>
+                
+                <a class="menu-item" href="/caprice/" title="">Caprice</a>
+                
+                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+                
+                <a class="menu-item" href="/series/" title="">Series</a>
+                
+                <a class="menu-item" href="/posts/" title="">Posts</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Arch 编译安装 Mongo Cxx Driver 的记录</h1>
+        <div class="post-meta">
+            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2022-11-20 >20 November 2022</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="基本内容">基本内容</h2>
+<p>先从 github 上下载库的源码。
+切换分支到 <code>releases/v3.7</code>  <em>切换到自己需要的分支即可</em>
+命令参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/mongodb/mongo-cxx-driver.git
+</span></span><span style="display:flex;"><span>cd mongo-cxx-driver
+</span></span><span style="display:flex;"><span>git checkout releases/v3.7
+</span></span></code></pre></div><p>使用命令 <code>cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DCMAKE_INSTALL_PREFIX=/opt/mongo -DCMAKE_INSTALL_RPATH=/opt/mongo ..</code>  进行配置
+这个命令将会把 mongo-cxx-driver 安装到 <code>/opt/mongo</code> 目录里面。
+成功配置后使用 <code>make</code> 命令进行编译
+编译成功之后使用 <code>sudo make install</code> 进行安装。
+命令参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmake -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_CXX_STANDARD<span style="color:#f92672">=</span><span style="color:#ae81ff">17</span> -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>/opt/mongo -DCMAKE_INSTALL_RPATH<span style="color:#f92672">=</span>/opt/mongo ..
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>sudo make install
+</span></span></code></pre></div><p>随后，需要手动把 mongo-cxx-driver 的编译结果添加到 cmake 里。
+<code>CMakeLists.txt</code> 文件内容参考</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>SET(<span style="color:#e6db74">CMAKE_PREFIX_PATH</span> <span style="color:#e6db74">&#34;/opt/mongo/lib/cmake/&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SET(<span style="color:#e6db74">EXTRA_LIBS</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">mongo::bsoncxx_shared</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">mongo::mongocxx_shared</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_link_libraries(<span style="color:#e6db74">target</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#f92672">${</span>EXTRA_LIBS<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="参考链接">参考链接</h2>
+<ul>
+<li><a href="https://mongocxx.org/mongocxx-v3/installation/linux/">https://mongocxx.org/mongocxx-v3/installation/linux/</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>hideDragon </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>163</span>
+            </p>
+
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2farch-%25E7%25BC%2596%25E8%25AF%2591%25E5%25AE%2589%25E8%25A3%2585-mongo-cxx-driver-%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;text=Arch%20%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85%20Mongo%20Cxx%20Driver%20%e7%9a%84%e8%ae%b0%e5%bd%95&amp;via=Aincvy" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2farch-%25E7%25BC%2596%25E8%25AF%2591%25E5%25AE%2589%25E8%25A3%2585-mongo-cxx-driver-%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2farch-%25E7%25BC%2596%25E8%25AF%2591%25E5%25AE%2589%25E8%25A3%2585-mongo-cxx-driver-%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Arch%20%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85%20Mongo%20Cxx%20Driver%20%e7%9a%84%e8%ae%b0%e5%bd%95" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2farch-%25E7%25BC%2596%25E8%25AF%2591%25E5%25AE%2589%25E8%25A3%2585-mongo-cxx-driver-%25E7%259A%2584%25E8%25AE%25B0%25E5%25BD%2595%2f&amp;title=Arch%20%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85%20Mongo%20Cxx%20Driver%20%e7%9a%84%e8%ae%b0%e5%bd%95" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://fantasyplayer.link/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fantasyplayer.link/program/cpp-char-%E6%95%B0%E7%BB%84%E8%B6%8A%E7%95%8C%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="Cpp Char 数组越界的问题记录"><i class="iconfont icon-dajiantou"></i>&nbsp;Cpp Char 数组越界的问题记录</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="Aincvy/aincvy.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+          <div class="post-toc">
+              
+
+          </div>
+		 </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2022</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-198975995-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+     </div>
+  </body>
+</html>

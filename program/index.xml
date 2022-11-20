@@ -6,7 +6,16 @@
     <description>Recent content in Programs on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Apr 2022 14:28:43 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 16:55:55 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch 编译安装 Mongo Cxx Driver 的记录</title>
+      <link>https://fantasyplayer.link/program/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 20 Nov 2022 16:55:55 +0800</pubDate>
+      
+      <guid>https://fantasyplayer.link/program/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <description>基本内容 先从 github 上下载库的源码。 切换分支到 releases/v3.7 切换到自己需要的分支即可 命令参考： git clone https://github.com/mongodb/mongo-cxx-driver.git cd mongo-cxx-driver git checkout releases/v3.7 使用命令 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DCMAKE_INSTALL_PREFIX=/opt/mongo -DCMAKE_INSTALL_RPATH=/opt/mongo .. 进行配置 这个命令将会把 mongo-cxx-driver 安装</description>
+    </item>
+    
     <item>
       <title>Cpp Char 数组越界的问题记录</title>
       <link>https://fantasyplayer.link/program/cpp-char-%E6%95%B0%E7%BB%84%E8%B6%8A%E7%95%8C%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
