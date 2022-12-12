@@ -1,176 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  
-  
-  
-  
-  
-  <link rel="prev" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" />
-  <link rel="next" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/" />
-  <link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" />
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           自制脚本语言[1] 词法分析与语法分析 | Fanstasy Player / 幻想系玩家
-       
-  </title>
-  <meta name="title" content="自制脚本语言[1] 词法分析与语法分析 | Fanstasy Player / 幻想系玩家">
     
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>自制脚本语言[1] 词法分析与语法分析 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="hideDragon">
+<meta name="author-link" content="">
+<meta name="description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[1] 词法分析与语法分析">
+<meta itemprop="description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较"><meta itemprop="datePublished" content="2021-01-18T20:18:27+08:00" />
+<meta itemprop="dateModified" content="2021-01-18T20:18:27+08:00" />
+<meta itemprop="wordCount" content="3549"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[1] 词法分析与语法分析" />
+<meta property="og:description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="non-menu" />
+<meta property="article:published_time" content="2021-01-18T20:18:27+08:00" />
+<meta property="article:modified_time" content="2021-01-18T20:18:27+08:00" />
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
-  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="自制脚本语言[1] 词法分析与语法分析"/>
 <meta name="twitter:description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较"/>
-
-  <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "headline": "自制脚本语言[1] 词法分析与语法分析",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/"
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https:\/\/fantasyplayer.link\/cover.png",
-    "width":  800 ,
-    "height":  600 
-  },
-  "genre": "non-menu",
-  
-  "wordcount":  3420 ,
-  "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/",
-  "datePublished": "2021-01-18T20:18:27\u002b08:00",
-  "dateModified": "2021-01-18T20:18:27\u002b08:00",
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "hideDragon",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/fantasyplayer.link\/logo.png",
-      "width":  127 ,
-      "height":  40 
-    }
-  },
-  "author": {
-    "@type": "Person",
-    "name": "hideDragon"
-  },
-  "description": ""
-}
-</script>
-</head>
-
-  
-
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
-    <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
-        </div>
-        <div class="menu navbar-right">
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" /><link rel="next" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/" /><link rel="stylesheet" href="/css/style.min.ca726a737cc5210727bee3fea1109052a9ee5fcf8d969ff0089593072ca2244e.css" integrity="sha256-ynJqc3zFIQcnvuP&#43;oRCQUqnuX8&#43;Nlp/wCJWTByyiJE4="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "自制脚本语言[1] 词法分析与语法分析",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/"
+    },"genre": "non-menu","wordcount":  3549 ,
+    "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/","datePublished": "2021-01-18T20:18:27+08:00","dateModified": "2021-01-18T20:18:27+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "hideDragon"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/"
+    data-srcset="/, / 1.5x, / 2x"
+    data-sizes="auto"
+    alt="Fanstasy Player / 幻想系玩家"
+    title="Fanstasy Player / 幻想系玩家"/><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
                 
                 
-                <a class="menu-item" href="/program/" title="">Program</a>
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
                 
-                <a class="menu-item" href="/caprice/" title="">Caprice</a>
                 
-                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
                 
-                <a class="menu-item" href="/series/" title="">Series</a>
                 
-                <a class="menu-item" href="/posts/" title="">Posts</a>
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
                 
-                <a class="menu-item" href="/about" title="">About</a>
                 
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
-        </div>
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/"
+    data-srcset="/, / 1.5x, / 2x"
+    data-sizes="auto"
+    alt="/"
+    title="/"/><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/program/" title="">Program</a>
-                
-                <a class="menu-item" href="/caprice/" title="">Caprice</a>
-                
-                <a class="menu-item" href="/periphery/" title="">Periphery</a>
-                
-                <a class="menu-item" href="/series/" title="">Series</a>
-                
-                <a class="menu-item" href="/posts/" title="">Posts</a>
-                
-                <a class="menu-item" href="/about" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-
-    	 <main class="main">
-          <div class="container">
-      		
-<article class="post-warp">
-    <header class="post-header">
-        <h1 class="post-title">自制脚本语言[1] 词法分析与语法分析</h1>
-        <div class="post-meta">
-            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
-                <span class="post-time">
-                    on <time datetime=2021-01-18 >18 January 2021</time>
-                </span>
-                in
-                
-                <i class="iconfont icon-timer"></i>
-                7 min
-        </div>
-    </header>
-    <div class="post-content">
-        
-
-        
-
-        
-        
-     
-          
-          
-          
-
-          
-          
-          
-
-          <p>本篇来描述如何做语法分析和词法分析。</p>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">自制脚本语言[1] 词法分析与语法分析</h1></div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>本篇来描述如何做语法分析和词法分析。</p>
 <p>有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。</p>
 <ul>
 <li>手写的优势
@@ -208,9 +238,9 @@
 <p>因为使用第三方工具比较简单， 所以笔者采用第三方工具的方式来实现langX的词法解析与语法解析。</p>
 <p>下面介绍一下笔者知道的几种工具。</p>
 <ul>
-<li>词法分析器： flex(lex)  <a href="http://dinosaur.compilertools.net/lex/index.html">doc</a> 。</li>
-<li>语法分析器： yacc(bison)  <a href="https://www.gnu.org/software/bison/manual/html_node/index.html">doc</a> 。</li>
-<li>语法分析+词法分析： tree-sitter  <a href="https://tree-sitter.github.io/tree-sitter/">doc</a>  。</li>
+<li>词法分析器： flex(lex)  <a href="http://dinosaur.compilertools.net/lex/index.html"target="_blank" rel="external nofollow noopener noreferrer">doc</a> 。</li>
+<li>语法分析器： yacc(bison)  <a href="https://www.gnu.org/software/bison/manual/html_node/index.html"target="_blank" rel="external nofollow noopener noreferrer">doc</a> 。</li>
+<li>语法分析+词法分析： tree-sitter  <a href="https://tree-sitter.github.io/tree-sitter/"target="_blank" rel="external nofollow noopener noreferrer">doc</a>  。</li>
 </ul>
 <p>笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， lex+yacc是一起配合使用的。</p>
 <p>Tree-sitter 则是一个单独使用的工具，  下面笔者就来更详细的介绍一下这几个工具。</p>
@@ -218,13 +248,13 @@
 <p>这里先说一下tree-sitter 这个工具。  这个工具使用js 来编写语法文件， 可以配合atom的插件来实现语法高亮。</p>
 <p>Atom 是一个代码编辑器， 和VS Code 类似。 Atom的功能没有大型IDE那么强大， 但是也勉强够用了。</p>
 <p>Atom提供插件机制， 读者可以自行为读者的脚本语言编写一个语法高亮插件。 而Atom的语法高亮插件就是基于tree-sitter 提供的API的。</p>
-<p><a href="https://github.com/Aincvy/langX-atom">langX的Atom插件源码</a>  , <a href="https://github.com/Aincvy/langX-tree-sitter">langX的tree-sitter源码</a></p>
+<p><a href="https://github.com/Aincvy/langX-atom"target="_blank" rel="external nofollow noopener noreferrer">langX的Atom插件源码</a>  , <a href="https://github.com/Aincvy/langX-tree-sitter"target="_blank" rel="external nofollow noopener noreferrer">langX的tree-sitter源码</a></p>
 <p>tree-sitter是基于 Node.js 来运行的， 在编写语法的时候 只需要编辑一个叫做<code>grammer.js</code>的文件。</p>
 <p>tree-sitter 可以使用一些函数来简化语法文件的编写， 比如 <code>optional()</code>,<code>repeat()</code>,<code>seq()</code>, <code>choice()</code> 等。 而yacc则不能使用函数， 只能写规则。</p>
 <p>tree-sitter可以生成在程序里面使用的语法分析文件(<em>*.h,*</em>.c)， 但是笔者并没有使用相关的内容。</p>
-<p>更多详细的内容可以阅读官方文档： <a href="https://tree-sitter.github.io/tree-sitter/">https://tree-sitter.github.io/tree-sitter/</a></p>
+<p>更多详细的内容可以阅读官方文档： <a href="https://tree-sitter.github.io/tree-sitter/"target="_blank" rel="external nofollow noopener noreferrer">https://tree-sitter.github.io/tree-sitter/</a></p>
 <h3 id="lex--yacc">lex + yacc</h3>
-<p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件(<em>lex</em>)， a.y是语法分析文件(<em>yacc</em>)。</p>
+<p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件(<em>lex</em>)， a.y是语法分析文件(<em>yacc</em>)。</p>
 <p>这两文件可能乍一看 内容很长， 但是其实并不复杂，都是按照一定的规则进行编写的。</p>
 <h4 id="词法分析工具lex">词法分析工具lex</h4>
 <p>flex 在mac平台上可以使用 <code>brew install flex</code> 进行安装。</p>
@@ -236,84 +266,167 @@
 <li>其他代码</li>
 </ul>
 <p>下面的示例代码节选自 a.l 文件。 （<em>语法高亮可能存在问题</em>）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>// 用户定义内容
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>%{
-</span></span><span style="display:flex;"><span>#include &#34;y.tab.h&#34;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>// 当前行
-</span></span><span style="display:flex;"><span>int now_line = 1 ;
-</span></span><span style="display:flex;"><span>// 当前列
-</span></span><span style="display:flex;"><span>int column = 0;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>void comment(void);
-</span></span><span style="display:flex;"><span>void count(void);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>%}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>%%
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>// 词法内容 
-</span></span><span style="display:flex;"><span>&#34;/*&#34;			{ comment(); }
-</span></span><span style="display:flex;"><span>&#34;//&#34;[^\n]*      { /* consume //-comment */  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&#34;auto&#34; {count(); return KEY_AUTO;}
-</span></span><span style="display:flex;"><span>&#34;if&#34; {count(); return KEY_IF;}
-</span></span><span style="display:flex;"><span>&#34;else&#34; {count(); return KEY_ELSE;}
-</span></span><span style="display:flex;"><span>&#34;while&#34; {count(); return KEY_WHILE;}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
-</span></span><span style="display:flex;"><span>[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
-</span></span><span style="display:flex;"><span>(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
-</span></span><span style="display:flex;"><span>&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
-</span></span><span style="display:flex;"><span>&#34;{&#34; {count(); return &#39;{&#39;; }
-</span></span><span style="display:flex;"><span>&#34;}&#34; {count(); return &#39;}&#39;; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[\n]   {count(); now_line++; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>%%
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>// 其他代码内容
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>void comment(void)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	char c, prev = 0;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
-</span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>		if (c == &#39;\n&#39;) {
-</span></span><span style="display:flex;"><span>			now_line++ ;
-</span></span><span style="display:flex;"><span>			column = 0;
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
-</span></span><span style="display:flex;"><span>			return;
-</span></span><span style="display:flex;"><span>		prev = c;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	//error(&#34;unterminated comment&#34;);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>void count(void)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	int i;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
-</span></span><span style="display:flex;"><span>		if (yytext[i] == &#39;\n&#39;){
-</span></span><span style="display:flex;"><span>			column = 0;
-</span></span><span style="display:flex;"><span>		} else if (yytext[i] == &#39;\t&#39;)
-</span></span><span style="display:flex;"><span>			column += 8 - (column % 8);
-</span></span><span style="display:flex;"><span>		else {
-</span></span><span style="display:flex;"><span>			column++;
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>其中 词法规则部分是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// 用户定义内容
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%{
+</span></span><span class="line"><span class="cl">#include &#34;y.tab.h&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 当前行
+</span></span><span class="line"><span class="cl">int now_line = 1 ;
+</span></span><span class="line"><span class="cl">// 当前列
+</span></span><span class="line"><span class="cl">int column = 0;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">void comment(void);
+</span></span><span class="line"><span class="cl">void count(void);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 词法内容 
+</span></span><span class="line"><span class="cl">&#34;/*&#34;			{ comment(); }
+</span></span><span class="line"><span class="cl">&#34;//&#34;[^\n]*      { /* consume //-comment */  }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&#34;auto&#34; {count(); return KEY_AUTO;}
+</span></span><span class="line"><span class="cl">&#34;if&#34; {count(); return KEY_IF;}
+</span></span><span class="line"><span class="cl">&#34;else&#34; {count(); return KEY_ELSE;}
+</span></span><span class="line"><span class="cl">&#34;while&#34; {count(); return KEY_WHILE;}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
+</span></span><span class="line"><span class="cl">[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
+</span></span><span class="line"><span class="cl">(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
+</span></span><span class="line"><span class="cl">&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
+</span></span><span class="line"><span class="cl">&#34;{&#34; {count(); return &#39;{&#39;; }
+</span></span><span class="line"><span class="cl">&#34;}&#34; {count(); return &#39;}&#39;; }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[\n]   {count(); now_line++; }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 其他代码内容
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">void comment(void)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">	char c, prev = 0;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
+</span></span><span class="line"><span class="cl">	{
+</span></span><span class="line"><span class="cl">		if (c == &#39;\n&#39;) {
+</span></span><span class="line"><span class="cl">			now_line++ ;
+</span></span><span class="line"><span class="cl">			column = 0;
+</span></span><span class="line"><span class="cl">		}
+</span></span><span class="line"><span class="cl">		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
+</span></span><span class="line"><span class="cl">			return;
+</span></span><span class="line"><span class="cl">		prev = c;
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">	//error(&#34;unterminated comment&#34;);
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">void count(void)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">	int i;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
+</span></span><span class="line"><span class="cl">		if (yytext[i] == &#39;\n&#39;){
+</span></span><span class="line"><span class="cl">			column = 0;
+</span></span><span class="line"><span class="cl">		} else if (yytext[i] == &#39;\t&#39;)
+</span></span><span class="line"><span class="cl">			column += 8 - (column % 8);
+</span></span><span class="line"><span class="cl">		else {
+</span></span><span class="line"><span class="cl">			column++;
+</span></span><span class="line"><span class="cl">		}
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中 词法规则部分是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
 <p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入c/cpp代码。  而 其他代码内容则不需要符号，直接编写c/cpp代码即可。</p>
 <p>读者可以先看看 langX的这部分代码是如何编写的， 然后再使用搜索引擎搜索一下lex相关的文章就明白了。</p>
 <p>编写文件之后， 可以直接使用命令 <code>lex a.l</code> 来生成<code>lex.yy.c</code> 文件。 （<code>lex [filename]</code>）</p>
@@ -336,59 +449,117 @@
 <p>第二部分就是纯粹的语法规则了。</p>
 <p>第三部分可以写一些c代码。在langX中，笔者在这段就只写了一个<code>main </code>方法。</p>
 <p>下面看一段<strong>语法规则</strong>的代码。 （<em>即 第二部分</em>）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>// 本部分内容只是一些示例，并不能直接使用
-</span></span><span style="display:flex;"><span>program
-</span></span><span style="display:flex;"><span>    : statement_list
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>statement_list
-</span></span><span style="display:flex;"><span>    : statement_list statement      { execAndFreeNode($2); }
-</span></span><span style="display:flex;"><span>    |
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>statement
-</span></span><span style="display:flex;"><span>    : _extra_nothing     { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | out_declare_stmt    { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | con_ctl_stmt   { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | simple_stmt    { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | try_stmt       { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>_extra_nothing
-</span></span><span style="display:flex;"><span>    : &#39;;&#39;         { $$ = NULL; }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>out_declare_stmt
-</span></span><span style="display:flex;"><span>    : func_declare_stmt          { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | class_declare_stmt         { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | namespace_declare_stmt     { $$ = $1; }
-</span></span><span style="display:flex;"><span>    | namespace_ref_stmt        { $$ = $1; }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>// 命名空间的声明语句
-</span></span><span style="display:flex;"><span>namespace_declare_stmt
-</span></span><span style="display:flex;"><span>    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>// 引用命名空间
-</span></span><span style="display:flex;"><span>namespace_ref_stmt
-</span></span><span style="display:flex;"><span>    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>namespace_name_stmt
-</span></span><span style="display:flex;"><span>    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
-</span></span><span style="display:flex;"><span>    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>int_expr
-</span></span><span style="display:flex;"><span>    : TINTEGER { $$ = intNode($1); }
-</span></span><span style="display:flex;"><span>    ;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>double_expr
-</span></span><span style="display:flex;"><span>    : TDOUBLE { $$ = number($1); }
-</span></span><span style="display:flex;"><span>    ;
-</span></span></code></pre></div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// 本部分内容只是一些示例，并不能直接使用
+</span></span><span class="line"><span class="cl">program
+</span></span><span class="line"><span class="cl">    : statement_list
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">statement_list
+</span></span><span class="line"><span class="cl">    : statement_list statement      { execAndFreeNode($2); }
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">statement
+</span></span><span class="line"><span class="cl">    : _extra_nothing     { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | out_declare_stmt    { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | con_ctl_stmt   { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | simple_stmt    { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | try_stmt       { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">_extra_nothing
+</span></span><span class="line"><span class="cl">    : &#39;;&#39;         { $$ = NULL; }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">out_declare_stmt
+</span></span><span class="line"><span class="cl">    : func_declare_stmt          { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | class_declare_stmt         { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | namespace_declare_stmt     { $$ = $1; }
+</span></span><span class="line"><span class="cl">    | namespace_ref_stmt        { $$ = $1; }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">// 命名空间的声明语句
+</span></span><span class="line"><span class="cl">namespace_declare_stmt
+</span></span><span class="line"><span class="cl">    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 引用命名空间
+</span></span><span class="line"><span class="cl">namespace_ref_stmt
+</span></span><span class="line"><span class="cl">    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">namespace_name_stmt
+</span></span><span class="line"><span class="cl">    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
+</span></span><span class="line"><span class="cl">    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">int_expr
+</span></span><span class="line"><span class="cl">    : TINTEGER { $$ = intNode($1); }
+</span></span><span class="line"><span class="cl">    ;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">double_expr
+</span></span><span class="line"><span class="cl">    : TDOUBLE { $$ = number($1); }
+</span></span><span class="line"><span class="cl">    ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
 <ul>
 <li>
 <p>语法规则基本上是 <code>规则名称：子规则1 { 碰到这个子规则执行的语句} | 子规则2 {碰到这个规则执行的语句} ;</code></p>
@@ -406,7 +577,7 @@
 <p><code>number($1);  intNode($1);</code>  这些是笔者自定义的函数， 用于生成一个<code>XNode*</code> 。 上述代码中的<code>double_expr/int_expr...</code> 等等基本上都是使用 <code>%type&lt;node&gt;</code> 进行声明的，所以都是一个<code>XNode*</code> 类型。</p>
 </li>
 <li>
-<p>上述内容选自 文件：  <a href="https://github.com/Aincvy/langX/blob/dev/extern/a.y">https://github.com/Aincvy/langX/blob/dev/extern/a.y</a>    配合该文件一起看这篇博文可能更容易理解一些。</p>
+<p>上述内容选自 文件：  <a href="https://github.com/Aincvy/langX/blob/dev/extern/a.y"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Aincvy/langX/blob/dev/extern/a.y</a>    配合该文件一起看这篇博文可能更容易理解一些。</p>
 </li>
 <li>
 <p>这里还有一些需要注意的地方是，仔细看<code>statement_list</code> 规则， 它可以是<code>statement_list statement</code> 或者一个空。</p>
@@ -438,10 +609,10 @@
 <h3 id="拓展阅读">拓展阅读</h3>
 <p>本文的内容有点偏于介绍性，而非入门型， 所以建议笔者同时阅读下面的文章以深入了解lex&amp;&amp;yacc。</p>
 <ul>
-<li><a href="https://segmentfault.com/a/1190000000396608">https://segmentfault.com/a/1190000000396608</a></li>
-<li><a href="https://www.jianshu.com/p/728e4011a61e">https://www.jianshu.com/p/728e4011a61e</a></li>
+<li><a href="https://segmentfault.com/a/1190000000396608"target="_blank" rel="external nofollow noopener noreferrer">https://segmentfault.com/a/1190000000396608</a></li>
+<li><a href="https://www.jianshu.com/p/728e4011a61e"target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/728e4011a61e</a></li>
 </ul>
-<p>第三方词法分析器列表： <a href="https://en.wikipedia.org/wiki/Comparison_of_parser_generators">https://en.wikipedia.org/wiki/Comparison_of_parser_generators</a></p>
+<p>第三方词法分析器列表： <a href="https://en.wikipedia.org/wiki/Comparison_of_parser_generators"target="_blank" rel="external nofollow noopener noreferrer">https://en.wikipedia.org/wiki/Comparison_of_parser_generators</a></p>
 <p><em>随便截取几个放到下方</em></p>
 <ul>
 <li>C# Flex, C# Lex</li>
@@ -456,180 +627,16 @@
 <li>Canopy</li>
 <li>IronMeta</li>
 </ul>
-
-    </div>
-
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>hideDragon </span>
-                </p>
-            
-           
-            <p class="copyright-item">
-                    <span>Words:</span>
-                   <span>3420</span>
-            </p>
-
-            <p class="copyright-item">
-                
-                <span>Share:</span>
-                <span>
-
-      
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25801-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;text=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b1%5d%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90&amp;via=Aincvy" target="_blank" title="Share on Twitter">
-          <i class="iconfont icon-twitter"></i>
-        </a>
-        
-      
-      
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25801-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f" target="_blank" title="Share on Facebook">
-          <i class="iconfont icon-facebook"></i>
-        </a>
-        
-      
-      
-      
-      
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25801-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b1%5d%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on LinkedIn">
-          <i class="iconfont icon-linkedin"></i>
-        </a>
-        
-      
-      
-        
-      
-        
-      
-
-          
-
-          
-
-          
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fnon-menu%2fself-programming-lang%2f%25E8%2587%25AA%25E5%2588%25B6%25E8%2584%259A%25E6%259C%25AC%25E8%25AF%25AD%25E8%25A8%25801-%25E8%25AF%258D%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%25E4%25B8%258E%25E8%25AF%25AD%25E6%25B3%2595%25E5%2588%2586%25E6%259E%2590%2f&amp;title=%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80%5b1%5d%20%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e4%b8%8e%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90" target="_blank" title="Share on Douban ">
-            <i class="iconfont icon-douban"></i>
-          </a>
-          
-
-          
-
-</span>
-                
-            </p>
-
-             
-            <p class="copyright-item">
-                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-            </p>
-            
-    </div>
-
-  
-    <div class="post-tags">
-        
-        <section>
-                <a href="javascript:window.history.back();">Back</a></span> · 
-                <span><a href="https://fantasyplayer.link/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-        
-        <a href="https://fantasyplayer.link/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" class="prev" rel="prev" title="自制脚本语言 - 开篇"><i class="iconfont icon-dajiantou"></i>&nbsp;自制脚本语言 - 开篇</a>
-         
-        
-        <a href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="next" rel="next" title="自制脚本语言[2] 类型相关内容的介绍">自制脚本语言[2] 类型相关内容的介绍&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
-        
-    </div>
-
-    <div class="post-comment">
-          
-          
-    <script src="https://utteranc.es/client.js"
-            repo="Aincvy/aincvy.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
-
- 
-
-          
-    </div>
-</article>
-          </div>
-          <div class="post-toc">
-              
-<aside>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#第三方工具">第三方工具</a>
-      <ul>
-        <li><a href="#tree-sitter">Tree-sitter</a></li>
-        <li><a href="#lex--yacc">lex + yacc</a></li>
-        <li><a href="#其他">其他</a></li>
-        <li><a href="#拓展阅读">拓展阅读</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</aside>
-
-
-          </div>
-		 </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2022</span>
-        
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
-         
-
-		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
-    
-  
-
-
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-198975995-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-     </div>
-  </body>
+</div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script></body>
 </html>

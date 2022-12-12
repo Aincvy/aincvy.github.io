@@ -1,97 +1,58 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</title>
+    <title>Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/</link>
-    <description>Recent content in Fanstasy Player / 幻想系玩家 on Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 06 Dec 2022 14:25:39 +0800</lastBuildDate>
-    <atom:link href="https://fantasyplayer.link/" rel="self" type="application/rss+xml" />
-    
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (hideDragon)</managingEditor>
+      <webMaster>aincvy@gmail.com (hideDragon)</webMaster><lastBuildDate>Mon, 12 Dec 2022 15:01:37 &#43;0800</lastBuildDate>
+      <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Posts</title>
-      <link>https://fantasyplayer.link/posts/</link>
-      <pubDate>Tue, 06 Dec 2022 14:25:39 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programs</title>
-      <link>https://fantasyplayer.link/program/</link>
-      <pubDate>Sun, 20 Nov 2022 16:55:55 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Peripheries</title>
-      <link>https://fantasyplayer.link/periphery/</link>
-      <pubDate>Sun, 23 Oct 2022 11:33:37 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/periphery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Non-menus</title>
-      <link>https://fantasyplayer.link/non-menu/</link>
-      <pubDate>Thu, 02 Jun 2022 16:29:18 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/non-menu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Caprices</title>
-      <link>https://fantasyplayer.link/caprice/</link>
-      <pubDate>Sat, 12 Mar 2022 12:34:31 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/caprice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Series</title>
-      <link>https://fantasyplayer.link/series/</link>
-      <pubDate>Tue, 08 Jun 2021 10:51:05 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/series/</guid>
-      <description>&lt;p&gt;一些连续的文章将被放在这里。&lt;/p&gt;
-&lt;h2 id=&#34;编程类&#34;&gt;编程类&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;如何自制脚本语言
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/&#34;&gt;开篇&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../non-menu/self-programming-lang&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://fantasyplayer.link/about/</link>
-      <pubDate>Sat, 08 Aug 2020 15:58:55 +0800</pubDate>
-      
-      <guid>https://fantasyplayer.link/about/</guid>
-      <description>&lt;p&gt;思想，既是支撑，亦是牢笼。&lt;/p&gt;
-&lt;h2 id=&#34;简略&#34;&gt;简略&lt;/h2&gt;
-&lt;p&gt;有事请给我发邮件， 一般都会看得 &amp;gt;  &lt;a href=&#34;mailto:aincvy@gmail.com&#34;&gt;aincvy@gmail.com&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;计划&#34;&gt;计划&lt;/h2&gt;
-&lt;h3 id=&#34;系列&#34;&gt;系列&lt;/h3&gt;
-&lt;p&gt;应该会写完 &lt;code&gt;自制脚本语言&lt;/code&gt; 这个系列。&lt;/p&gt;
-&lt;p&gt;别得系列暂时还没有规划&lt;/p&gt;
-&lt;h3 id=&#34;常规内容&#34;&gt;常规内容&lt;/h3&gt;
-&lt;p&gt;一般随缘， 如果有碰到程序中得问题， 也会记录下来。  如果没有得话， 那么随想和周边内容则会较多。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;我们明知道人都会死亡， 死亡是生命的终点🏁，但是在平常的生活中却都不会注意这点，只有临近时，才会严重注意到这个问题。&lt;/p&gt;
-&lt;p&gt;那么， 我们在做一件事情的时候， 为什么总是会特别注意终点，而不是过程呢？&lt;/p&gt;
-</description>
-    </item>
-    
-  </channel>
+  <title>短线交易秘诀 - 书摘</title>
+  <link>https://fantasyplayer.link/2022/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E7%A7%98%E8%AF%80-%E4%B9%A6%E6%91%98/</link>
+  <pubDate>Tue, 06 Dec 2022 14:25:39 &#43;0800</pubDate>
+  <author>hideDragon</author>
+  <guid>https://fantasyplayer.link/2022/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E7%A7%98%E8%AF%80-%E4%B9%A6%E6%91%98/</guid>
+  <description><![CDATA[笔者评论 笔者感觉这本书可读可不读， 有价值的内容并不是特别多， 尤其是对于寻找交易方式的人来说。 书中的主要内容 不要被恐惧和贪婪过度影响 一定要设置]]></description>
+</item>
+<item>
+  <title>期货市场技术分析   书摘</title>
+  <link>https://fantasyplayer.link/2022/%E6%9C%9F%E8%B4%A7%E5%B8%82%E5%9C%BA%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90-%E4%B9%A6%E6%91%98/</link>
+  <pubDate>Sun, 27 Nov 2022 12:12:51 &#43;0800</pubDate>
+  <author>hideDragon</author>
+  <guid>https://fantasyplayer.link/2022/%E6%9C%9F%E8%B4%A7%E5%B8%82%E5%9C%BA%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90-%E4%B9%A6%E6%91%98/</guid>
+  <description><![CDATA[笔者评论 本书介绍了一些技术分析的手段， 并提供了一些技术分析之所以有效的原因。 主要涉及的内容大概是 图表形态： 头肩顶， 头肩底， 旗型， 三角旗型， 对]]></description>
+</item>
+<item>
+  <title>穷查理宝典   书摘</title>
+  <link>https://fantasyplayer.link/2022/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8-%E4%B9%A6%E6%91%98/</link>
+  <pubDate>Sun, 20 Nov 2022 16:41:30 &#43;0800</pubDate>
+  <author>hideDragon</author>
+  <guid>https://fantasyplayer.link/2022/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8-%E4%B9%A6%E6%91%98/</guid>
+  <description><![CDATA[笔者评论 本书大多讲述了一些关于生活的指导性方针， 解决问题的几个思路。 对于如何选股，以及如何赚钱并没有太多描述。 摘要： 把手头的事情做好，把拥有]]></description>
+</item>
+<item>
+  <title>如何阅读一本书   书摘</title>
+  <link>https://fantasyplayer.link/2022/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6-%E4%B9%A6%E6%91%98/</link>
+  <pubDate>Sun, 06 Nov 2022 10:08:45 &#43;0800</pubDate>
+  <author>hideDragon</author>
+  <guid>https://fantasyplayer.link/2022/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6-%E4%B9%A6%E6%91%98/</guid>
+  <description><![CDATA[检视阅读 / 略读 方法1 读书名， 以及序 读目录 读附录 读书皮 （ 外包装的新皮） 挑几个和主题息息相关的篇章来看 打开书， 东翻翻，西翻翻， 念个一两段，有时候]]></description>
+</item>
+<item>
+  <title>读书笔记 - 日本蜡烛图技术</title>
+  <link>https://fantasyplayer.link/2022/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%97%A5%E6%9C%AC%E8%9C%A1%E7%83%9B%E5%9B%BE%E6%8A%80%E6%9C%AF/</link>
+  <pubDate>Sat, 05 Mar 2022 17:23:10 &#43;0800</pubDate>
+  <author>hideDragon</author>
+  <guid>https://fantasyplayer.link/2022/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%97%A5%E6%9C%AC%E8%9C%A1%E7%83%9B%E5%9B%BE%E6%8A%80%E6%9C%AF/</guid>
+  <description><![CDATA[译者序 部分 知行合一： 认真学习， 积极参与， 深刻总结。 即用而学， 学而用。 太极图的六个阶段： 顺时针 1，2，3，4，5，6 。 阳， 阴的顺序。 其中，1-]]></description>
+</item>
+<item>
+  <title>目录介绍</title>
+  <link>https://fantasyplayer.link/2020/%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/</link>
+  <pubDate>Sat, 08 Aug 2020 16:02:30 &#43;0800</pubDate>
+  <author>hideDragon</author>
+  <guid>https://fantasyplayer.link/2020/%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/</guid>
+  <description><![CDATA[目录 关于程序和编程相关的文章： Program 关于一些胡思乱想的文章： Caprice 关于软件使用/linux的文章： Periphery 😂 😂 😂 ​ 记得微笑。]]></description>
+</item>
+</channel>
 </rss>

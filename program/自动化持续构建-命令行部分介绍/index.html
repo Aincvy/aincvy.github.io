@@ -1,176 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  
-  
-  
-  
-  
-  <link rel="prev" href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" />
-  <link rel="next" href="https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/" />
-  <link rel="canonical" href="https://fantasyplayer.link/program/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D/" />
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           自动化持续构建 命令行部分介绍 | Fanstasy Player / 幻想系玩家
-       
-  </title>
-  <meta name="title" content="自动化持续构建 命令行部分介绍 | Fanstasy Player / 幻想系玩家">
     
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>自动化持续构建 命令行部分介绍 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="hideDragon">
+<meta name="author-link" content="">
+<meta name="description" content="在开发项目的时候可能会使用到持续集成工具， 比如 jenkins 之类的， 在使用的时候， 可能会需要写一些shell脚本来辅助完成工作， 本文就介绍一下相关的sh" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自动化持续构建 命令行部分介绍">
+<meta itemprop="description" content="在开发项目的时候可能会使用到持续集成工具， 比如 jenkins 之类的， 在使用的时候， 可能会需要写一些shell脚本来辅助完成工作， 本文就介绍一下相关的sh"><meta itemprop="datePublished" content="2021-08-07T14:43:20+08:00" />
+<meta itemprop="dateModified" content="2021-08-07T14:43:20+08:00" />
+<meta itemprop="wordCount" content="2322"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="自动化持续构建 命令行部分介绍" />
+<meta property="og:description" content="在开发项目的时候可能会使用到持续集成工具， 比如 jenkins 之类的， 在使用的时候， 可能会需要写一些shell脚本来辅助完成工作， 本文就介绍一下相关的sh" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/program/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
+<meta property="article:published_time" content="2021-08-07T14:43:20+08:00" />
+<meta property="article:modified_time" content="2021-08-07T14:43:20+08:00" />
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
-  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="自动化持续构建 命令行部分介绍"/>
 <meta name="twitter:description" content="在开发项目的时候可能会使用到持续集成工具， 比如 jenkins 之类的， 在使用的时候， 可能会需要写一些shell脚本来辅助完成工作， 本文就介绍一下相关的sh"/>
-
-  <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "headline": "自动化持续构建 命令行部分介绍",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D\/"
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https:\/\/fantasyplayer.link\/cover.png",
-    "width":  800 ,
-    "height":  600 
-  },
-  "genre": "program",
-  
-  "wordcount":  2297 ,
-  "url": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D\/",
-  "datePublished": "2021-08-07T14:43:20\u002b08:00",
-  "dateModified": "2021-08-07T14:43:20\u002b08:00",
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "hideDragon",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/fantasyplayer.link\/logo.png",
-      "width":  127 ,
-      "height":  40 
-    }
-  },
-  "author": {
-    "@type": "Person",
-    "name": "hideDragon"
-  },
-  "description": ""
-}
-</script>
-</head>
-
-  
-
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
-    <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
-        </div>
-        <div class="menu navbar-right">
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D/" /><link rel="prev" href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" /><link rel="next" href="https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/" /><link rel="stylesheet" href="/css/style.min.ca726a737cc5210727bee3fea1109052a9ee5fcf8d969ff0089593072ca2244e.css" integrity="sha256-ynJqc3zFIQcnvuP&#43;oRCQUqnuX8&#43;Nlp/wCJWTByyiJE4="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "自动化持续构建 命令行部分介绍",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D\/"
+    },"genre": "program","wordcount":  2322 ,
+    "url": "https:\/\/fantasyplayer.link\/program\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D\/","datePublished": "2021-08-07T14:43:20+08:00","dateModified": "2021-08-07T14:43:20+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "hideDragon"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/"
+    data-srcset="/, / 1.5x, / 2x"
+    data-sizes="auto"
+    alt="Fanstasy Player / 幻想系玩家"
+    title="Fanstasy Player / 幻想系玩家"/><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
                 
                 
-                <a class="menu-item" href="/program/" title="">Program</a>
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
                 
-                <a class="menu-item" href="/caprice/" title="">Caprice</a>
                 
-                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
                 
-                <a class="menu-item" href="/series/" title="">Series</a>
                 
-                <a class="menu-item" href="/posts/" title="">Posts</a>
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
                 
-                <a class="menu-item" href="/about" title="">About</a>
                 
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
-        </div>
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/"
+    data-srcset="/, / 1.5x, / 2x"
+    data-sizes="auto"
+    alt="/"
+    title="/"/><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/program/" title="">Program</a>
-                
-                <a class="menu-item" href="/caprice/" title="">Caprice</a>
-                
-                <a class="menu-item" href="/periphery/" title="">Periphery</a>
-                
-                <a class="menu-item" href="/series/" title="">Series</a>
-                
-                <a class="menu-item" href="/posts/" title="">Posts</a>
-                
-                <a class="menu-item" href="/about" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-
-    	 <main class="main">
-          <div class="container">
-      		
-<article class="post-warp">
-    <header class="post-header">
-        <h1 class="post-title">自动化持续构建 命令行部分介绍</h1>
-        <div class="post-meta">
-            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
-                <span class="post-time">
-                    on <time datetime=2021-08-07 >7 August 2021</time>
-                </span>
-                in
-                
-                <i class="iconfont icon-timer"></i>
-                5 min
-        </div>
-    </header>
-    <div class="post-content">
-        
-
-        
-
-        
-        
-     
-          
-          
-          
-
-          
-          
-          
-
-          <p>在开发项目的时候可能会使用到持续集成工具， 比如 <a href="https://www.jenkins.io/">jenkins</a> 之类的， 在使用的时候， 可能会需要写一些shell脚本来辅助完成工作， 本文就介绍一下相关的shell脚本部分。</p>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">自动化持续构建 命令行部分介绍</h1></div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>在开发项目的时候可能会使用到持续集成工具， 比如 <a href="https://www.jenkins.io/"target="_blank" rel="external nofollow noopener noreferrer">jenkins</a> 之类的， 在使用的时候， 可能会需要写一些shell脚本来辅助完成工作， 本文就介绍一下相关的shell脚本部分。</p>
 <p>由于笔者是一个后端程序， 所以就只介绍后端程序的情况了。</p>
 <h2 id="详细内容">详细内容</h2>
 <p>笔者基本上是使用的JAVA语言， 大多是采用<code>maven</code>做包管理器，其他语言大多应该是类似的。</p>
@@ -184,10 +214,19 @@
 <h3 id="编译打包-以及打压缩包">编译，打包 以及打压缩包。</h3>
 <p>使用命令 <code>mvn clean &amp;&amp; mvn install</code> 基本上就可以完成编译打包的命令。  <em>maven相关的配置文件这里就不描述了。</em></p>
 <p>使用cpp的话， 如果使用cmake的话， 就使用下面的命令。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
-</span></span><span style="display:flex;"><span>cmake ..
-</span></span><span style="display:flex;"><span>make
-</span></span></code></pre></div><p>在执行了编译命令之后， 在shell 里面可以使用<code>$?</code> 变量获取上一个命令的结束状态码。 状态码基本上是<code>0</code>表示执行成功，其他是失败，状态码可以用于做失败处理。  <em>在fish里面使用<code>$status</code>这个变量，fish这个shell 很多地方和其他的shell都不一样。。😂</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+</span></span><span class="line"><span class="cl">cmake ..
+</span></span><span class="line"><span class="cl">make
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在执行了编译命令之后， 在shell 里面可以使用<code>$?</code> 变量获取上一个命令的结束状态码。 状态码基本上是<code>0</code>表示执行成功，其他是失败，状态码可以用于做失败处理。  <em>在fish里面使用<code>$status</code>这个变量，fish这个shell 很多地方和其他的shell都不一样。。😂</em></p>
 <p>打压缩包的话， 可以考虑下面的命令。</p>
 <ul>
 <li><code>zip -q -r server.zip /path/to/server</code></li>
@@ -213,9 +252,17 @@
 <p>在Windows下， 杀掉进程可以使用使用命令<code>Taskkill /PID [pid] /F</code> 或者<code>Taskkill /IM [exeName] /F</code></p>
 <p>这里的一个可选思路是这样的，在程序启动的时候把当前的pid写入到一个文本文件里面。 在需要杀死旧进程的时候读取文本文件获得pid，然后执行taskkill命令。</p>
 <p>下面是一个示例     <em>笔者并没有实际测试过正确性。</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>set /p pid<span style="color:#f92672">=</span>&lt;pid.txt
-</span></span><span style="display:flex;"><span>Taskkill /PID %pid% /F
-</span></span></code></pre></div><p>接下来就是复制文件， 使用命令 <code>copy /f</code> 即可， 如果文件过大也可以考虑使用<code>xcopy</code>命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">set</span> /p <span class="nv">pid</span><span class="o">=</span>&lt;pid.txt
+</span></span><span class="line"><span class="cl">Taskkill /PID %pid% /F
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来就是复制文件， 使用命令 <code>copy /f</code> 即可， 如果文件过大也可以考虑使用<code>xcopy</code>命令。</p>
 <p>启动的话，就很简单了， 使用命令 <code>java -jar [jarFile]</code> 即可。  在开发阶段可以加启动参数， 也可以不加把， 笔者觉得。</p>
 <p><strong>Linux</strong></p>
 <p>在Linux下，杀掉进程可以使用使用命令<code>kill -9 [pid]</code></p>
@@ -234,20 +281,39 @@
 <li>ssh   ssh链接或者执行ssh命令的工具。</li>
 </ul>
 <p>下面给一段示例。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 使用环境变量的方式给予 sshpass 相关的密码</span>
-</span></span><span style="display:flex;"><span>export SSHPASS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssh 命令的一些参数</span>
-</span></span><span style="display:flex;"><span>SSH_FLAGS<span style="color:#f92672">=(</span>-q -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -p <span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在目标服务器上创建文件夹</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">$(</span>sshpass -e ssh <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SSH_FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;mkdir -p </span><span style="color:#e6db74">${</span>real_remote_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 杀掉目标服务器上的进程</span>
-</span></span><span style="display:flex;"><span>sshpass -e ssh <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SSH_FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span> <span style="color:#e6db74">&#34;bash </span><span style="color:#e6db74">${</span>remote_target_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">/control_scripts/killservers.sh&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 传送文件</span>
-</span></span><span style="display:flex;"><span>FLAGS<span style="color:#f92672">=(</span>--include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.jar&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>sshpass -e rsync -e <span style="color:#e6db74">&#34;ssh -o StrictHostKeyChecking=no -p </span><span style="color:#e6db74">${</span>s_port<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> -avz  <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>FLAGS[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*&#34;</span> ./ <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span>@<span style="color:#e6db74">${</span>s_addr<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>real_remote_folder<span style="color:#e6db74">}</span>
-</span></span></code></pre></div><p>下面对上述脚本的变量做一些解释。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用环境变量的方式给予 sshpass 相关的密码</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SSHPASS</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$pass</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ssh 命令的一些参数</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SSH_FLAGS</span><span class="o">=(</span>-q -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no -p <span class="si">${</span><span class="nv">s_port</span><span class="si">}</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在目标服务器上创建文件夹</span>
+</span></span><span class="line"><span class="cl"><span class="k">$(</span>sshpass -e ssh <span class="s2">&#34;</span><span class="si">${</span><span class="nv">SSH_FLAGS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="si">${</span><span class="nv">user</span><span class="si">}</span>@<span class="si">${</span><span class="nv">s_addr</span><span class="si">}</span> <span class="s2">&#34;mkdir -p </span><span class="si">${</span><span class="nv">real_remote_folder</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 杀掉目标服务器上的进程</span>
+</span></span><span class="line"><span class="cl">sshpass -e ssh <span class="s2">&#34;</span><span class="si">${</span><span class="nv">SSH_FLAGS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="si">${</span><span class="nv">user</span><span class="si">}</span>@<span class="si">${</span><span class="nv">s_addr</span><span class="si">}</span> <span class="s2">&#34;bash </span><span class="si">${</span><span class="nv">remote_target_folder</span><span class="si">}</span><span class="s2">/control_scripts/killservers.sh&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 传送文件</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FLAGS</span><span class="o">=(</span>--include<span class="o">=</span><span class="s2">&#34;*.jar&#34;</span> --include<span class="o">=</span><span class="s2">&#34;lib&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">sshpass -e rsync -e <span class="s2">&#34;ssh -o StrictHostKeyChecking=no -p </span><span class="si">${</span><span class="nv">s_port</span><span class="si">}</span><span class="s2">&#34;</span> -avz  <span class="s2">&#34;</span><span class="si">${</span><span class="nv">FLAGS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> --exclude<span class="o">=</span><span class="s2">&#34;*&#34;</span> ./ <span class="si">${</span><span class="nv">user</span><span class="si">}</span>@<span class="si">${</span><span class="nv">s_addr</span><span class="si">}</span>:<span class="si">${</span><span class="nv">real_remote_folder</span><span class="si">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面对上述脚本的变量做一些解释。</p>
 <ul>
 <li>s_port    目标服务器的ssh链接端口</li>
 <li>s_addr   连接目标服务器使用的地址</li>
@@ -263,15 +329,26 @@
 <li>启动目标服务器上的进程。</li>
 </ol>
 <p><strong>Windows</strong></p>
-<p>Windows下使用这个工具：  <a href="https://www.putty.org/">https://www.putty.org/</a></p>
+<p>Windows下使用这个工具：  <a href="https://www.putty.org/"target="_blank" rel="external nofollow noopener noreferrer">https://www.putty.org/</a></p>
 <p>思路和Linux下没有变化，主要是具体实现细节上的差异。</p>
 <p><code>plink</code> 是一个<code>putty</code>包里面的工具，下面看一段脚本示例。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 本脚本是纯手写， 没有经过测试</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>plink -batch -ssh <span style="color:#66d9ef">%</span>ssh_host% -l <span style="color:#66d9ef">%</span>ssh_user% -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% echo hello, world
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>pscp -q -batch -pw <span style="color:#66d9ef">%</span>ssh_pw% -P <span style="color:#66d9ef">%</span>ssh_port% c:\local\folder <span style="color:#66d9ef">%</span>ssh_user%@<span style="color:#66d9ef">%</span>ssh_host%<span style="color:#960050;background-color:#1e0010">:</span>/path/to/folder/
-</span></span></code></pre></div><p>下面对上述脚本的变量做一些解释。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 本脚本是纯手写， 没有经过测试</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plink</span> <span class="n">-batch</span> <span class="n">-ssh</span> <span class="k">%</span><span class="n">ssh_host</span><span class="p">%</span> <span class="n">-l</span> <span class="k">%</span><span class="n">ssh_user</span><span class="p">%</span> <span class="n">-pw</span> <span class="k">%</span><span class="n">ssh_pw</span><span class="p">%</span> <span class="n">-P</span> <span class="k">%</span><span class="n">ssh_port</span><span class="p">%</span> <span class="nb">echo </span><span class="n">hello</span><span class="p">,</span> <span class="n">world</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pscp</span> <span class="n">-q</span> <span class="n">-batch</span> <span class="n">-pw</span> <span class="k">%</span><span class="n">ssh_pw</span><span class="p">%</span> <span class="n">-P</span> <span class="k">%</span><span class="n">ssh_port</span><span class="p">%</span> <span class="n">c:</span><span class="p">\</span><span class="n">local</span><span class="p">\</span><span class="n">folder</span> <span class="k">%</span><span class="n">ssh_user</span><span class="p">%@</span><span class="k">%</span><span class="n">ssh_host</span><span class="p">%</span><span class="err">:</span><span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">folder</span><span class="p">/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面对上述脚本的变量做一些解释。</p>
 <ul>
 <li>ssh_port    目标服务器的ssh链接端口</li>
 <li>ssh_host   连接目标服务器使用的地址</li>
@@ -282,9 +359,17 @@
 <p>在执行文件的时候， 可以将最后的<code>echo hello, world</code> 替换成<code>bash [filepath]</code>  这里的<code>filepath</code>是目标服务器上的路径。</p>
 <h4 id="jenkins相关的内容">Jenkins相关的内容</h4>
 <p>如果使用jenkins 调用我们自己的启动脚本的话，可能会发现我们的程序被干掉了， 这时可以考虑在脚本里面添加这两行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export BUILD_ID<span style="color:#f92672">=</span>dontKillMe
-</span></span><span style="display:flex;"><span>export JENKINS_NODE_COOKIE<span style="color:#f92672">=</span>dontKillMe
-</span></span></code></pre></div><h2 id="结尾">结尾</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">BUILD_ID</span><span class="o">=</span>dontKillMe
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JENKINS_NODE_COOKIE</span><span class="o">=</span>dontKillMe
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="结尾">结尾</h2>
 <p>下面是一些吐槽部分。</p>
 <p>笔者感觉上前端更需要持续集成， 至少需要大于后端。  在笔者经历过的游戏公司中，前端每次打包都至少要折腾到半夜12点， 甚至凌晨2点至更晚。    <em>似乎现在行业上的人都接受了这个现状，也不求改变。 😂</em></p>
 <p>很多问题都是在打包当天发现，然后要求处理的， 这让笔者觉得很不可思议。</p>
@@ -293,170 +378,21 @@
 <p>上面是笔者推荐使用自动化构建的理由， 但是笔者没有实际操作过前端的自动化构建， 所以并不是很清楚有没有实施难度。</p>
 <p><em>等待后面笔者有机会尝试了之后</em>， 会更新这篇博文。</p>
 <h3 id="拓展阅读">拓展阅读</h3>
-<p><a href="http://c.biancheng.net/cpp/view/2739.html">http://c.biancheng.net/cpp/view/2739.html</a></p>
-<p><a href="https://www.runoob.com/linux/linux-comm-zip.html">https://www.runoob.com/linux/linux-comm-zip.html</a></p>
-<p><a href="https://www.runoob.com/linux/linux-comm-unzip.html">https://www.runoob.com/linux/linux-comm-unzip.html</a></p>
-<p><a href="https://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter5.html">https://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter5.html</a></p>
-<p><a href="https://the.earth.li/~sgtatham/putty/0.70/htmldoc/Chapter7.html#plink">https://the.earth.li/~sgtatham/putty/0.70/htmldoc/Chapter7.html#plink</a></p>
-
-    </div>
-
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>hideDragon </span>
-                </p>
-            
-           
-            <p class="copyright-item">
-                    <span>Words:</span>
-                   <span>2297</span>
-            </p>
-
-            <p class="copyright-item">
-                
-                <span>Share:</span>
-                <span>
-
-      
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E6%258C%2581%25E7%25BB%25AD%25E6%259E%2584%25E5%25BB%25BA-%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E9%2583%25A8%25E5%2588%2586%25E4%25BB%258B%25E7%25BB%258D%2f&amp;text=%e8%87%aa%e5%8a%a8%e5%8c%96%e6%8c%81%e7%bb%ad%e6%9e%84%e5%bb%ba%20%e5%91%bd%e4%bb%a4%e8%a1%8c%e9%83%a8%e5%88%86%e4%bb%8b%e7%bb%8d&amp;via=Aincvy" target="_blank" title="Share on Twitter">
-          <i class="iconfont icon-twitter"></i>
-        </a>
-        
-      
-      
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E6%258C%2581%25E7%25BB%25AD%25E6%259E%2584%25E5%25BB%25BA-%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E9%2583%25A8%25E5%2588%2586%25E4%25BB%258B%25E7%25BB%258D%2f" target="_blank" title="Share on Facebook">
-          <i class="iconfont icon-facebook"></i>
-        </a>
-        
-      
-      
-      
-      
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E6%258C%2581%25E7%25BB%25AD%25E6%259E%2584%25E5%25BB%25BA-%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E9%2583%25A8%25E5%2588%2586%25E4%25BB%258B%25E7%25BB%258D%2f&amp;title=%e8%87%aa%e5%8a%a8%e5%8c%96%e6%8c%81%e7%bb%ad%e6%9e%84%e5%bb%ba%20%e5%91%bd%e4%bb%a4%e8%a1%8c%e9%83%a8%e5%88%86%e4%bb%8b%e7%bb%8d" target="_blank" title="Share on LinkedIn">
-          <i class="iconfont icon-linkedin"></i>
-        </a>
-        
-      
-      
-        
-      
-        
-      
-
-          
-
-          
-
-          
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fprogram%2f%25E8%2587%25AA%25E5%258A%25A8%25E5%258C%2596%25E6%258C%2581%25E7%25BB%25AD%25E6%259E%2584%25E5%25BB%25BA-%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E9%2583%25A8%25E5%2588%2586%25E4%25BB%258B%25E7%25BB%258D%2f&amp;title=%e8%87%aa%e5%8a%a8%e5%8c%96%e6%8c%81%e7%bb%ad%e6%9e%84%e5%bb%ba%20%e5%91%bd%e4%bb%a4%e8%a1%8c%e9%83%a8%e5%88%86%e4%bb%8b%e7%bb%8d" target="_blank" title="Share on Douban ">
-            <i class="iconfont icon-douban"></i>
-          </a>
-          
-
-          
-
-</span>
-                
-            </p>
-
-             
-            <p class="copyright-item">
-                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-            </p>
-            
-    </div>
-
-  
-    <div class="post-tags">
-        
-        <section>
-                <a href="javascript:window.history.back();">Back</a></span> · 
-                <span><a href="https://fantasyplayer.link/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-        
-        <a href="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" class="prev" rel="prev" title="Cpp程序嵌入v8引擎的(踩坑)记录贴"><i class="iconfont icon-dajiantou"></i>&nbsp;Cpp程序嵌入v8引擎的(踩坑)记录贴</a>
-         
-        
-        <a href="https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/" class="next" rel="next" title="Abseil 初体验">Abseil 初体验&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
-        
-    </div>
-
-    <div class="post-comment">
-          
-          
-    <script src="https://utteranc.es/client.js"
-            repo="Aincvy/aincvy.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
-
- 
-
-          
-    </div>
-</article>
-          </div>
-          <div class="post-toc">
-              
-
-          </div>
-		 </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2022</span>
-        
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
-         
-
-		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
-    
-  
-
-
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-198975995-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-     </div>
-  </body>
+<p><a href="http://c.biancheng.net/cpp/view/2739.html"target="_blank" rel="external nofollow noopener noreferrer">http://c.biancheng.net/cpp/view/2739.html</a></p>
+<p><a href="https://www.runoob.com/linux/linux-comm-zip.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.runoob.com/linux/linux-comm-zip.html</a></p>
+<p><a href="https://www.runoob.com/linux/linux-comm-unzip.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.runoob.com/linux/linux-comm-unzip.html</a></p>
+<p><a href="https://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter5.html"target="_blank" rel="external nofollow noopener noreferrer">https://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter5.html</a></p>
+<p><a href="https://the.earth.li/~sgtatham/putty/0.70/htmldoc/Chapter7.html#plink"target="_blank" rel="external nofollow noopener noreferrer">https://the.earth.li/~sgtatham/putty/0.70/htmldoc/Chapter7.html#plink</a></p>
+</div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script></body>
 </html>

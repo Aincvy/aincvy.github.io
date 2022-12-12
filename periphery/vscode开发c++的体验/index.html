@@ -1,183 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  
-  
-  
-  
-  
-  <link rel="prev" href="https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" />
-  <link rel="next" href="https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" />
-  <link rel="canonical" href="https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/" />
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           Vscode开发c&#43;&#43; 介绍 | Fanstasy Player / 幻想系玩家
-       
-  </title>
-  <meta name="title" content="Vscode开发c&#43;&#43; 介绍 | Fanstasy Player / 幻想系玩家">
     
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Vscode开发c&#43;&#43; 介绍 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="hideDragon">
+<meta name="author-link" content="">
+<meta name="description" content="笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。 笔者是使用Mac版本的 vs code，不过应该都差不多把" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Vscode开发c&#43;&#43; 介绍">
+<meta itemprop="description" content="笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。 笔者是使用Mac版本的 vs code，不过应该都差不多把"><meta itemprop="datePublished" content="2021-09-25T17:33:35+08:00" />
+<meta itemprop="dateModified" content="2021-09-25T17:33:35+08:00" />
+<meta itemprop="wordCount" content="2619"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Vscode开发c&#43;&#43; 介绍" />
+<meta property="og:description" content="笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。 笔者是使用Mac版本的 vs code，不过应该都差不多把" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="periphery" />
+<meta property="article:published_time" content="2021-09-25T17:33:35+08:00" />
+<meta property="article:modified_time" content="2021-09-25T17:33:35+08:00" />
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
-  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vscode开发c&#43;&#43; 介绍"/>
 <meta name="twitter:description" content="笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。 笔者是使用Mac版本的 vs code，不过应该都差不多把"/>
-
-  <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Vscode开发c\u002b\u002b 介绍",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https:\/\/fantasyplayer.link\/periphery\/vscode%E5%BC%80%E5%8F%91c\u002b\u002b%E7%9A%84%E4%BD%93%E9%AA%8C\/"
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https:\/\/fantasyplayer.link\/cover.png",
-    "width":  800 ,
-    "height":  600 
-  },
-  "genre": "periphery",
-  
-  "wordcount":  2575 ,
-  "url": "https:\/\/fantasyplayer.link\/periphery\/vscode%E5%BC%80%E5%8F%91c\u002b\u002b%E7%9A%84%E4%BD%93%E9%AA%8C\/",
-  "datePublished": "2021-09-25T17:33:35\u002b08:00",
-  "dateModified": "2021-09-25T17:33:35\u002b08:00",
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "hideDragon",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/fantasyplayer.link\/logo.png",
-      "width":  127 ,
-      "height":  40 
-    }
-  },
-  "author": {
-    "@type": "Person",
-    "name": "hideDragon"
-  },
-  "description": ""
-}
-</script>
-</head>
-
-  
-
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
-    <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a>
-        </div>
-        <div class="menu navbar-right">
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/" /><link rel="prev" href="https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" /><link rel="next" href="https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" /><link rel="stylesheet" href="/css/style.min.ca726a737cc5210727bee3fea1109052a9ee5fcf8d969ff0089593072ca2244e.css" integrity="sha256-ynJqc3zFIQcnvuP&#43;oRCQUqnuX8&#43;Nlp/wCJWTByyiJE4="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Vscode开发c++ 介绍",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/periphery\/vscode%E5%BC%80%E5%8F%91c\u002b\u002b%E7%9A%84%E4%BD%93%E9%AA%8C\/"
+    },"genre": "periphery","wordcount":  2619 ,
+    "url": "https:\/\/fantasyplayer.link\/periphery\/vscode%E5%BC%80%E5%8F%91c\u002b\u002b%E7%9A%84%E4%BD%93%E9%AA%8C\/","datePublished": "2021-09-25T17:33:35+08:00","dateModified": "2021-09-25T17:33:35+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "hideDragon"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/"
+    data-srcset="/, / 1.5x, / 2x"
+    data-sizes="auto"
+    alt="Fanstasy Player / 幻想系玩家"
+    title="Fanstasy Player / 幻想系玩家"/><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
                 
                 
-                <a class="menu-item" href="/program/" title="">Program</a>
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
                 
-                <a class="menu-item" href="/caprice/" title="">Caprice</a>
                 
-                <a class="menu-item" href="/periphery/" title="">Periphery</a>
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
                 
-                <a class="menu-item" href="/series/" title="">Series</a>
                 
-                <a class="menu-item" href="/posts/" title="">Posts</a>
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
                 
-                <a class="menu-item" href="/about" title="">About</a>
                 
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
-        </div>
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="/"
+    data-srcset="/, / 1.5x, / 2x"
+    data-sizes="auto"
+    alt="/"
+    title="/"/><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://fantasyplayer.link/">Fanstasy Player / 幻想系玩家</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/program/" title="">Program</a>
-                
-                <a class="menu-item" href="/caprice/" title="">Caprice</a>
-                
-                <a class="menu-item" href="/periphery/" title="">Periphery</a>
-                
-                <a class="menu-item" href="/series/" title="">Series</a>
-                
-                <a class="menu-item" href="/posts/" title="">Posts</a>
-                
-                <a class="menu-item" href="/about" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-
-    	 <main class="main">
-          <div class="container">
-      		
-<article class="post-warp">
-    <header class="post-header">
-        <h1 class="post-title">Vscode开发c&#43;&#43; 介绍</h1>
-        <div class="post-meta">
-            Written by <a href="https://fantasyplayer.link/" rel="author">hideDragon</a> with ♥ 
-                <span class="post-time">
-                    on <time datetime=2021-09-25 >25 September 2021</time>
-                </span>
-                in
-                
-                <i class="iconfont icon-timer"></i>
-                6 min
-        </div>
-    </header>
-    <div class="post-content">
-        
-
-        
-
-        
-        
-     
-          
-          
-          
-
-          
-          
-          
-
-          <p>笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。</p>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Vscode开发c&#43;&#43; 介绍</h1></div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。</p>
 <p>笔者是使用Mac版本的 vs code，不过应该都差不多把。</p>
 <h2 id="拓展">拓展</h2>
 <p>vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。</p>
 <ul>
 <li>llvm-vs-code-extensions.vscode-clangd
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd">https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd</a></li>
 <li>llvm 出的插件， 基于 <code>clangd</code> ，使用LSP通信。</li>
 <li>这个插件的自动补全感觉比微软出的c/c++插件好一些。</li>
 <li>自动完成</li>
@@ -190,59 +220,59 @@
 </li>
 <li>ms-vscode.cpptools-extension-pack
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack</a></li>
 <li>这个是一个插件包， 包含了几个插件。 如果觉得这个插件包的内容太臃肿了， 可以考虑不装。</li>
 </ul>
 </li>
 <li>ms-vscode.cpptools
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools</a></li>
 <li>微软官方的 cpp插件， 这个和 clangd 一起安装的时候要禁用这个插件的 IntelliSense 功能。</li>
 <li>这个插件好像提供 debug 功能 。 （笔者没有使用过， 笔者基本上是使用lldb命令）</li>
 </ul>
 </li>
 <li>twxs.cmake
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">https://marketplace.visualstudio.com/items?itemName=twxs.cmake</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=twxs.cmake</a></li>
 <li>cmake 语法支持</li>
 </ul>
 </li>
 <li>ms-vscode.cmake-tools
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools</a></li>
 <li>编译， 清理 cmake 工程</li>
 <li>用于提供cmake的数据给别的拓展？</li>
 </ul>
 </li>
 <li>deerawan.vscode-dash
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-dash">https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-dash</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-dash"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-dash</a></li>
 <li>dash 相关的插件， 如果读者不使用dash, 可以不安装。</li>
 <li>使用快捷键可以直接转到dash里面搜索接口</li>
 </ul>
 </li>
 <li>streetsidesoftware.code-spell-checker
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker</a></li>
 <li>拼写检查工具</li>
 </ul>
 </li>
 <li>xyz.local-history
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=xyz.local-history">https://marketplace.visualstudio.com/items?itemName=xyz.local-history</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=xyz.local-history"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=xyz.local-history</a></li>
 <li>本地文件历史，  会产生一个叫<code>.history</code>目录， 里面存放了很多临时文件。 记得添加目录到<code>.gitignore</code>文件里面</li>
 <li>可以安装， 也可以不安装把，笔者觉得。</li>
 </ul>
 </li>
 <li>pkief.material-icon-theme
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme</a></li>
 <li>文件，文件夹 的icon</li>
 </ul>
 </li>
 <li>tdennis4496.cmantic
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=tdennis4496.cmantic">https://marketplace.visualstudio.com/items?itemName=tdennis4496.cmantic</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=tdennis4496.cmantic"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=tdennis4496.cmantic</a></li>
 <li>根据声明生成定义</li>
 <li>生成 getter/ setter</li>
 <li>修改函数签名</li>
@@ -252,7 +282,7 @@
 </li>
 <li>eamodio.gitlens
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens</a></li>
 <li>这是一个GIT拓展，如果读者和别人一起工作，则可以考虑安装。</li>
 <li>这个拓展可以显示一个函数，类，命名空间的作者，和修改人，修改时间等</li>
 <li>类似 VS里面的那个函数上面的虚字。</li>
@@ -260,7 +290,7 @@
 </li>
 <li>wayou.vscode-todo-highlight
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight">https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight</a></li>
 <li>可以高亮 todo 等字符的拓展。  （字符可以自定义）</li>
 <li>并且可以全文件搜索并显示成一个列表。</li>
 <li>注意： 这个拓展也会搜索<code>xyz.local-history</code>产生的临时文件。记得把<code>.history</code>文件夹添加到这个拓展的<code>Exclude</code>配置项里。</li>
@@ -268,7 +298,7 @@
 </li>
 <li>jeff-hykin.better-cpp-syntax
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax"target="_blank" rel="external nofollow noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax</a></li>
 <li>好像是个主题拓展， 想装就装把。</li>
 </ul>
 </li>
@@ -277,36 +307,72 @@
 <h3 id="clangd">clangd</h3>
 <p>即<code>llvm-vs-code-extensions.vscode-clangd</code>拓展。</p>
 <p>这个插件需要 Cmake 生成一个额外的文件指示编译命令。 可以在<code>CMakeLists.txt</code>文件添加下面这行生成。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILECOMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>如果提示插件找不到 <code>clangd</code>，可以让插件自动下载一个。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_EXPORT_COMPILECOMMANDS</span> <span class="s">ON</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果提示插件找不到 <code>clangd</code>，可以让插件自动下载一个。</p>
 <p>参数可以使用类似下面的内容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;clangd.arguments&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-background-index&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--compile-commands-dir=./build&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-clang-tidy&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-log=verbose&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-pretty&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-suggest-missing-includes&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-header-insertion=iwyu&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-completion-style=detailed&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--query-driver=/usr/bin/clang++&#34;</span>
-</span></span><span style="display:flex;"><span>    ]
-</span></span></code></pre></div><p>其中<code>--compile-commands-dir=./build</code> 指定了 cmake 的 build文件夹， <code>--query-driver=/usr/bin/clang++</code> 指定了一个额外的 clang++ 用于查询 include目录。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;clangd.arguments&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-background-index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;--compile-commands-dir=./build&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-clang-tidy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-log=verbose&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-pretty&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-suggest-missing-includes&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-header-insertion=iwyu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-completion-style=detailed&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;--query-driver=/usr/bin/clang++&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中<code>--compile-commands-dir=./build</code> 指定了 cmake 的 build文件夹， <code>--query-driver=/usr/bin/clang++</code> 指定了一个额外的 clang++ 用于查询 include目录。</p>
 <p>笔者刚开始使用这个插件的时候， c++的库文件找不到， 提示 <code>'string' file not found/ 'filesystem' file not found</code>等的这类， 但是笔者的项目是可以编译的， 添加了这个<code>query-driver</code>选项之后就好了。</p>
 <p>在项目的根目录下， 创建下面文件可以指定一些额外的配置项。</p>
 <ul>
-<li><code>.clangd</code>   clangd的额外选项。   <a href="https://clangd.llvm.org/config">https://clangd.llvm.org/config</a></li>
-<li><code>.clang-format</code>  用于指定代码格式化的规则。 <a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html">https://clang.llvm.org/docs/ClangFormatStyleOptions.html</a></li>
+<li><code>.clangd</code>   clangd的额外选项。   <a href="https://clangd.llvm.org/config"target="_blank" rel="external nofollow noopener noreferrer">https://clangd.llvm.org/config</a></li>
+<li><code>.clang-format</code>  用于指定代码格式化的规则。 <a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html"target="_blank" rel="external nofollow noopener noreferrer">https://clang.llvm.org/docs/ClangFormatStyleOptions.html</a></li>
 </ul>
 <p>每个人对格式的感觉不一样， 建议手动从头撸一份配置。</p>
 <p>这里有一点 笔者要说一下。  <code>clang-format</code>不能处理这种情况。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (f1.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Regular) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> ((f1.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">==</span> ProjectFileType<span style="color:#f92672">::</span>Directory) 
-</span></span><span style="display:flex;"><span>           <span style="color:#f92672">||</span> (f1.fileType <span style="color:#f92672">!=</span> ProjectFileType<span style="color:#f92672">::</span>Directory <span style="color:#f92672">&amp;&amp;</span> f2.fileType <span style="color:#f92672">!=</span> ProjectFileType<span style="color:#f92672">::</span>Directory)) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> f1.filename <span style="color:#f92672">&lt;</span> f2.filename;    
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>第二个<code>else if</code>的条件，  因为条件代码太多， 所以笔者拆成了两行，但是在格式化之后会自动合并到一行，且笔者并没有找到办法处理这个。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">f1</span><span class="p">.</span><span class="n">fileType</span> <span class="o">==</span> <span class="n">ProjectFileType</span><span class="o">::</span><span class="n">Directory</span> <span class="o">&amp;&amp;</span> <span class="n">f2</span><span class="p">.</span><span class="n">fileType</span> <span class="o">==</span> <span class="n">ProjectFileType</span><span class="o">::</span><span class="n">Regular</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">((</span><span class="n">f1</span><span class="p">.</span><span class="n">fileType</span> <span class="o">==</span> <span class="n">ProjectFileType</span><span class="o">::</span><span class="n">Directory</span> <span class="o">&amp;&amp;</span> <span class="n">f2</span><span class="p">.</span><span class="n">fileType</span> <span class="o">==</span> <span class="n">ProjectFileType</span><span class="o">::</span><span class="n">Directory</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">           <span class="o">||</span> <span class="p">(</span><span class="n">f1</span><span class="p">.</span><span class="n">fileType</span> <span class="o">!=</span> <span class="n">ProjectFileType</span><span class="o">::</span><span class="n">Directory</span> <span class="o">&amp;&amp;</span> <span class="n">f2</span><span class="p">.</span><span class="n">fileType</span> <span class="o">!=</span> <span class="n">ProjectFileType</span><span class="o">::</span><span class="n">Directory</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">f1</span><span class="p">.</span><span class="n">filename</span> <span class="o">&lt;</span> <span class="n">f2</span><span class="p">.</span><span class="n">filename</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第二个<code>else if</code>的条件，  因为条件代码太多， 所以笔者拆成了两行，但是在格式化之后会自动合并到一行，且笔者并没有找到办法处理这个。</p>
 <p>当 <code>clangd</code>出现缓存问题的时候，可以考虑下面的方式。</p>
 <ul>
 <li><code>cmd/ctrl+shift+p</code> 输入 clangd, 选择 restart language server</li>
@@ -315,39 +381,77 @@
 </ul>
 <h3 id="vs-code">vs-code</h3>
 <p>vs-code 本身也有一些可以调整的选项。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// 自动保存   5s保存一次
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;files.autoSave&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;afterDelay&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;files.autoSaveDelay&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">5000</span><span style="color:#960050;background-color:#1e0010">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 粘贴之后自动对齐格式
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;editor.formatOnPaste&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span><span style="color:#960050;background-color:#1e0010">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 使用 代码段等提示的时候 也会产生代码补全
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;editor.suggest.snippetsPreventQuickSuggestions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">,</span>
-</span></span></code></pre></div><h2 id="编译和运行">编译和运行</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="c1">// 自动保存   5s保存一次
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s2">&#34;files.autoSave&#34;</span><span class="err">:</span> <span class="s2">&#34;afterDelay&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;files.autoSaveDelay&#34;</span><span class="err">:</span> <span class="mi">5000</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 粘贴之后自动对齐格式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s2">&#34;editor.formatOnPaste&#34;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 使用 代码段等提示的时候 也会产生代码补全
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s2">&#34;editor.suggest.snippetsPreventQuickSuggestions&#34;</span><span class="err">:</span> <span class="kc">false</span><span class="err">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译和运行">编译和运行</h2>
 <h3 id="添加配置">添加配置</h3>
 <p><strong>如果使用了 Cmake 插件， 这一步可以不做。</strong></p>
 <p>左侧工具栏里有一个 编译和运行的按钮，点一下就能看到调试界面了。</p>
 <p>点击上方的下拉框之后，选择“添加配置” 或者点击右侧的齿轮按钮应该都能到<code>launch.json</code>文件的编辑界面，只不过点击“添加配置”的时候， 会自动添加一个示例的配置项。</p>
 <p>笔者是 Mac 系统下， 使用 lldb 进行调试的，下面给出一下笔者的配置内容，给读者一个参考。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;(lldb) 启动&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;cppdbg&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;program&#34;</span>: <span style="color:#e6db74">&#34;${command:cmake.launchTargetPath}&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;args&#34;</span>: [],
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;stopAtEntry&#34;</span>: <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cwd&#34;</span>: <span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;environment&#34;</span>: [
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// add the directory where our target was built to the PATHs
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">// it gets resolved by CMake Tools:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;PATH&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;${env:PATH}:${command:cmake.getLaunchTargetDirectory}&#34;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>  ],
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;externalConsole&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;MIMode&#34;</span>: <span style="color:#e6db74">&#34;lldb&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>笔者使用了 <code>cmake</code>插件提供的值， 而没有具体指定。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;(lldb) 启动&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;cppdbg&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;request&#34;</span><span class="p">:</span> <span class="s2">&#34;launch&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;program&#34;</span><span class="p">:</span> <span class="s2">&#34;${command:cmake.launchTargetPath}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;stopAtEntry&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;environment&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// add the directory where our target was built to the PATHs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="c1">// it gets resolved by CMake Tools:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;PATH&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;${env:PATH}:${command:cmake.getLaunchTargetDirectory}&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;externalConsole&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;MIMode&#34;</span><span class="p">:</span> <span class="s2">&#34;lldb&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>笔者使用了 <code>cmake</code>插件提供的值， 而没有具体指定。</p>
 <h3 id="启动和调试">启动和调试</h3>
 <p><del>添加了正确的配置项之后， 程序应该就可以在 VS Code 中调试了。</del></p>
 <p>使用 cmake 插件的时候，可以使用下面的方式启动程序。</p>
@@ -367,8 +471,8 @@
 <p>成功启动调试之后， 会有一个小小的工具栏在VS Code 窗口的中间正上方的位置，可以重启，结束调试，步进，按行执行等。</p>
 <h3 id="拓展阅读">拓展阅读</h3>
 <ul>
-<li><a href="https://github.com/microsoft/vscode-cmake-tools/blob/develop/docs/debug-launch.md#debug-using-a-launchjson-file">https://github.com/microsoft/vscode-cmake-tools/blob/develop/docs/debug-launch.md#debug-using-a-launchjson-file</a></li>
-<li><a href="https://code.visualstudio.com/docs/editor/debugging">https://code.visualstudio.com/docs/editor/debugging</a></li>
+<li><a href="https://github.com/microsoft/vscode-cmake-tools/blob/develop/docs/debug-launch.md#debug-using-a-launchjson-file"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/microsoft/vscode-cmake-tools/blob/develop/docs/debug-launch.md#debug-using-a-launchjson-file</a></li>
+<li><a href="https://code.visualstudio.com/docs/editor/debugging"target="_blank" rel="external nofollow noopener noreferrer">https://code.visualstudio.com/docs/editor/debugging</a></li>
 </ul>
 <h2 id="总结">总结</h2>
 <p>有了上面的这些插件之后， 就可以正常工作了。</p>
@@ -390,165 +494,16 @@
 </ul>
 <p><del>笔者目前是使用命令行手动make 和run的，所以编译运行相关的功能还没有测试过，不知道是否好用。</del></p>
 <p>总体来说，还是比较满意的。   <em>有部分插件，笔者还没来得及也没有细究。</em></p>
-
-    </div>
-
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>hideDragon </span>
-                </p>
-            
-           
-            <p class="copyright-item">
-                    <span>Words:</span>
-                   <span>2575</span>
-            </p>
-
-            <p class="copyright-item">
-                
-                <span>Share:</span>
-                <span>
-
-      
-        <a href="//twitter.com/share?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fvscode%25E5%25BC%2580%25E5%258F%2591c%2b%2b%25E7%259A%2584%25E4%25BD%2593%25E9%25AA%258C%2f&amp;text=Vscode%e5%bc%80%e5%8f%91c%2b%2b%20%e4%bb%8b%e7%bb%8d&amp;via=Aincvy" target="_blank" title="Share on Twitter">
-          <i class="iconfont icon-twitter"></i>
-        </a>
-        
-      
-      
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fvscode%25E5%25BC%2580%25E5%258F%2591c%2b%2b%25E7%259A%2584%25E4%25BD%2593%25E9%25AA%258C%2f" target="_blank" title="Share on Facebook">
-          <i class="iconfont icon-facebook"></i>
-        </a>
-        
-      
-      
-      
-      
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fvscode%25E5%25BC%2580%25E5%258F%2591c%2b%2b%25E7%259A%2584%25E4%25BD%2593%25E9%25AA%258C%2f&amp;title=Vscode%e5%bc%80%e5%8f%91c%2b%2b%20%e4%bb%8b%e7%bb%8d" target="_blank" title="Share on LinkedIn">
-          <i class="iconfont icon-linkedin"></i>
-        </a>
-        
-      
-      
-        
-      
-        
-      
-
-          
-
-          
-
-          
-        <a href="//www.douban.com/recommend/?url=https%3a%2f%2ffantasyplayer.link%2fperiphery%2fvscode%25E5%25BC%2580%25E5%258F%2591c%2b%2b%25E7%259A%2584%25E4%25BD%2593%25E9%25AA%258C%2f&amp;title=Vscode%e5%bc%80%e5%8f%91c%2b%2b%20%e4%bb%8b%e7%bb%8d" target="_blank" title="Share on Douban ">
-            <i class="iconfont icon-douban"></i>
-          </a>
-          
-
-          
-
-</span>
-                
-            </p>
-
-             
-            <p class="copyright-item">
-                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-            </p>
-            
-    </div>
-
-  
-    <div class="post-tags">
-        
-        <section>
-                <a href="javascript:window.history.back();">Back</a></span> · 
-                <span><a href="https://fantasyplayer.link/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-        
-        <a href="https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="Google Analyis 不能在keepIt主题中使用的问题"><i class="iconfont icon-dajiantou"></i>&nbsp;Google Analyis 不能在keepIt主题中使用的问题</a>
-         
-        
-        <a href="https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="Win10装不上蓝牙驱动的问题记录">Win10装不上蓝牙驱动的问题记录&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
-        
-    </div>
-
-    <div class="post-comment">
-          
-          
-    <script src="https://utteranc.es/client.js"
-            repo="Aincvy/aincvy.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
-
- 
-
-          
-    </div>
-</article>
-          </div>
-          <div class="post-toc">
-              
-
-          </div>
-		 </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2020 - 2022</span>
-        
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://fantasyplayer.link/">hideDragon</a> | </span>
-         
-
-		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
-    
-  
-
-
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-198975995-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-     </div>
-  </body>
+</div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script></body>
 </html>
