@@ -132,7 +132,7 @@
       <pubDate>Mon, 07 Dec 2020 18:48:17 +0800</pubDate>
       <author>aincvy@gmail.com (hideDragon)</author>
       <guid>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</guid>
-      <description>命名规范 # 1. 属性/成员 命名 静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子 1 2 3 4 5 6 7 8 9 /** * 消</description>
+      <description>命名规范 # 1. 属性/成员 命名 静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子 1 2 3 4 5 6 7 8 9 10 /** *</description>
     </item>
     
     <item>

@@ -10,7 +10,7 @@
 <meta name="description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[1] 词法分析与语法分析">
 <meta itemprop="description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较"><meta itemprop="datePublished" content="2021-01-18T20:18:27+08:00" />
 <meta itemprop="dateModified" content="2021-01-18T20:18:27+08:00" />
-<meta itemprop="wordCount" content="3549"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="3551"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[1] 词法分析与语法分析" />
 <meta property="og:description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/"
-    },"genre": "non-menu","wordcount":  3549 ,
+    },"genre": "non-menu","wordcount":  3551 ,
     "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/","datePublished": "2021-01-18T20:18:27+08:00","dateModified": "2021-01-18T20:18:27+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -345,86 +345,88 @@
 </span><span class="lnt">75
 </span><span class="lnt">76
 </span><span class="lnt">77
+</span><span class="lnt">78
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// 用户定义内容
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">%{
-</span></span><span class="line"><span class="cl">#include &#34;y.tab.h&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">// 当前行
-</span></span><span class="line"><span class="cl">int now_line = 1 ;
-</span></span><span class="line"><span class="cl">// 当前列
-</span></span><span class="line"><span class="cl">int column = 0;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">void comment(void);
-</span></span><span class="line"><span class="cl">void count(void);
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">%}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">%%
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">// 词法内容 
-</span></span><span class="line"><span class="cl">&#34;/*&#34;			{ comment(); }
-</span></span><span class="line"><span class="cl">&#34;//&#34;[^\n]*      { /* consume //-comment */  }
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">&#34;auto&#34; {count(); return KEY_AUTO;}
-</span></span><span class="line"><span class="cl">&#34;if&#34; {count(); return KEY_IF;}
-</span></span><span class="line"><span class="cl">&#34;else&#34; {count(); return KEY_ELSE;}
-</span></span><span class="line"><span class="cl">&#34;while&#34; {count(); return KEY_WHILE;}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
-</span></span><span class="line"><span class="cl">[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
-</span></span><span class="line"><span class="cl">(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
-</span></span><span class="line"><span class="cl">&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
-</span></span><span class="line"><span class="cl">&#34;{&#34; {count(); return &#39;{&#39;; }
-</span></span><span class="line"><span class="cl">&#34;}&#34; {count(); return &#39;}&#39;; }
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">[\n]   {count(); now_line++; }
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">%%
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">// 其他代码内容
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">void comment(void)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">	char c, prev = 0;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
-</span></span><span class="line"><span class="cl">	{
-</span></span><span class="line"><span class="cl">		if (c == &#39;\n&#39;) {
-</span></span><span class="line"><span class="cl">			now_line++ ;
-</span></span><span class="line"><span class="cl">			column = 0;
-</span></span><span class="line"><span class="cl">		}
-</span></span><span class="line"><span class="cl">		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
-</span></span><span class="line"><span class="cl">			return;
-</span></span><span class="line"><span class="cl">		prev = c;
-</span></span><span class="line"><span class="cl">	}
-</span></span><span class="line"><span class="cl">	//error(&#34;unterminated comment&#34;);
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">void count(void)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">	int i;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
-</span></span><span class="line"><span class="cl">		if (yytext[i] == &#39;\n&#39;){
-</span></span><span class="line"><span class="cl">			column = 0;
-</span></span><span class="line"><span class="cl">		} else if (yytext[i] == &#39;\t&#39;)
-</span></span><span class="line"><span class="cl">			column += 8 - (column % 8);
-</span></span><span class="line"><span class="cl">		else {
-</span></span><span class="line"><span class="cl">			column++;
-</span></span><span class="line"><span class="cl">		}
-</span></span><span class="line"><span class="cl">	}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">// 用户定义内容
+
+%{
+#include &#34;y.tab.h&#34;
+
+// 当前行
+int now_line = 1 ;
+// 当前列
+int column = 0;
+
+void comment(void);
+void count(void);
+
+%}
+
+%%
+
+// 词法内容 
+&#34;/*&#34;			{ comment(); }
+&#34;//&#34;[^\n]*      { /* consume //-comment */  }
+
+&#34;auto&#34; {count(); return KEY_AUTO;}
+&#34;if&#34; {count(); return KEY_IF;}
+&#34;else&#34; {count(); return KEY_ELSE;}
+&#34;while&#34; {count(); return KEY_WHILE;}
+
+
+\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
+[$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
+
+0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
+(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
+
+&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
+&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
+&#34;{&#34; {count(); return &#39;{&#39;; }
+&#34;}&#34; {count(); return &#39;}&#39;; }
+
+[\n]   {count(); now_line++; }
+
+%%
+
+// 其他代码内容
+
+void comment(void)
+{
+	char c, prev = 0;
+
+	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
+	{
+		if (c == &#39;\n&#39;) {
+			now_line++ ;
+			column = 0;
+		}
+		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
+			return;
+		prev = c;
+	}
+	//error(&#34;unterminated comment&#34;);
+}
+
+void count(void)
+{
+	int i;
+
+	for (i = 0; yytext[i] != &#39;\0&#39;; i++) {
+		if (yytext[i] == &#39;\n&#39;){
+			column = 0;
+		} else if (yytext[i] == &#39;\t&#39;)
+			column += 8 - (column % 8);
+		else {
+			column++;
+		}
+	}
+
+	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
+}
+
+</code></pre></td></tr></table>
 </div>
 </div><p>其中 词法规则部分是匹配token 的关键地方。 token是语法分析的基本单位， 使用lex 识别的token会传递给yacc， 然后由yacc筛选和确定语法规则。</p>
 <p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入c/cpp代码。  而 其他代码内容则不需要符号，直接编写c/cpp代码即可。</p>
@@ -503,61 +505,63 @@
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
+</span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">// 本部分内容只是一些示例，并不能直接使用
-</span></span><span class="line"><span class="cl">program
-</span></span><span class="line"><span class="cl">    : statement_list
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">statement_list
-</span></span><span class="line"><span class="cl">    : statement_list statement      { execAndFreeNode($2); }
-</span></span><span class="line"><span class="cl">    |
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">statement
-</span></span><span class="line"><span class="cl">    : _extra_nothing     { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | out_declare_stmt    { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | con_ctl_stmt   { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | simple_stmt    { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | try_stmt       { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">_extra_nothing
-</span></span><span class="line"><span class="cl">    : &#39;;&#39;         { $$ = NULL; }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">out_declare_stmt
-</span></span><span class="line"><span class="cl">    : func_declare_stmt          { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | class_declare_stmt         { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | namespace_declare_stmt     { $$ = $1; }
-</span></span><span class="line"><span class="cl">    | namespace_ref_stmt        { $$ = $1; }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl"> 
-</span></span><span class="line"><span class="cl">// 命名空间的声明语句
-</span></span><span class="line"><span class="cl">namespace_declare_stmt
-</span></span><span class="line"><span class="cl">    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">// 引用命名空间
-</span></span><span class="line"><span class="cl">namespace_ref_stmt
-</span></span><span class="line"><span class="cl">    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">namespace_name_stmt
-</span></span><span class="line"><span class="cl">    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
-</span></span><span class="line"><span class="cl">    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl"> 
-</span></span><span class="line"><span class="cl">int_expr
-</span></span><span class="line"><span class="cl">    : TINTEGER { $$ = intNode($1); }
-</span></span><span class="line"><span class="cl">    ;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">double_expr
-</span></span><span class="line"><span class="cl">    : TDOUBLE { $$ = number($1); }
-</span></span><span class="line"><span class="cl">    ;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">// 本部分内容只是一些示例，并不能直接使用
+program
+    : statement_list
+    ;
+
+statement_list
+    : statement_list statement      { execAndFreeNode($2); }
+    |
+    ;
+
+statement
+    : _extra_nothing     { $$ = $1; }
+    | out_declare_stmt    { $$ = $1; }
+    | con_ctl_stmt   { $$ = $1; }
+    | simple_stmt    { $$ = $1; }
+    | try_stmt       { $$ = $1; }
+    | TOKEN_END_OF_FILE { lexEOFWork();  $$ = nullptr; }
+    ;
+
+_extra_nothing
+    : &#39;;&#39;         { $$ = NULL; }
+    ;
+
+out_declare_stmt
+    : func_declare_stmt          { $$ = $1; }
+    | class_declare_stmt         { $$ = $1; }
+    | namespace_declare_stmt     { $$ = $1; }
+    | namespace_ref_stmt        { $$ = $1; }
+    ;
+ 
+// 命名空间的声明语句
+namespace_declare_stmt
+    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
+    ;
+
+// 引用命名空间
+namespace_ref_stmt
+    : KEY_REF namespace_name_stmt       { $$ = opr(KEY_REF, 1, $2); }
+    ;
+
+namespace_name_stmt
+    : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
+    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
+    ;
+ 
+int_expr
+    : TINTEGER { $$ = intNode($1); }
+    ;
+
+double_expr
+    : TDOUBLE { $$ = number($1); }
+    ;
+
+</code></pre></td></tr></table>
 </div>
 </div><p>使用 分行是为了看起来更清晰方便， 下面是一些更详细的说明</p>
 <ul>
@@ -630,7 +634,7 @@
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">
               <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
@@ -640,5 +644,8 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj+ONq/I3Xl8Y4cNI2Xw=" defer></script><script src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe+fTKorzHq40yfBQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
 </html>

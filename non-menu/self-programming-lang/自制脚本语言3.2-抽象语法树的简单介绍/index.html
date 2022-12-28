@@ -10,7 +10,7 @@
 <meta name="description" content="基本内容 在进行了正确的语法分析之后，会生成抽象语法树。 一般情况下是一段代码生成一个抽象语法树。 （常见的情况是一个文件或者一块代码。） 本篇来简" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[3.2]抽象语法树的简单介绍">
 <meta itemprop="description" content="基本内容 在进行了正确的语法分析之后，会生成抽象语法树。 一般情况下是一段代码生成一个抽象语法树。 （常见的情况是一个文件或者一块代码。） 本篇来简"><meta itemprop="datePublished" content="2021-02-07T16:00:56+08:00" />
 <meta itemprop="dateModified" content="2021-02-07T16:00:56+08:00" />
-<meta itemprop="wordCount" content="1118"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="1119"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[3.2]抽象语法树的简单介绍" />
 <meta property="og:description" content="基本内容 在进行了正确的语法分析之后，会生成抽象语法树。 一般情况下是一段代码生成一个抽象语法树。 （常见的情况是一个文件或者一块代码。） 本篇来简" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.2-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D\/"
-    },"genre": "non-menu","wordcount":  1118 ,
+    },"genre": "non-menu","wordcount":  1119 ,
     "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.2-%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D\/","datePublished": "2021-02-07T16:00:56+08:00","dateModified": "2021-02-07T16:00:56+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -303,73 +303,75 @@
 </span><span class="lnt">62
 </span><span class="lnt">63
 </span><span class="lnt">64
+</span><span class="lnt">65
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Node</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="n">NodeType</span> <span class="n">type</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 在执行结束之后是否进行 free 操作
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">bool</span> <span class="n">freeOnExecuted</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 当前节点的值 .  如果当前结点是一个常量数字， 则free 的时候会施放这个值得内存
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Object</span> <span class="o">*</span><span class="n">value</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 万能指针 ， 主要用于放置参数什么的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">ptr_u</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 节点状态
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">NodeState</span> <span class="n">state</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 当前节点所在的文件信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">NodeFileInfo</span> <span class="n">fileinfo</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 后置值 ， 如果当前节点为一个 变量节点， 当前属性则为有用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Object</span> <span class="o">*</span><span class="n">postposition</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">Variable</span> <span class="o">*</span><span class="n">var_obj</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">Constant</span> <span class="o">*</span><span class="n">con_obj</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">Operator</span> <span class="o">*</span><span class="n">opr_obj</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="n">ArrayInfo</span> <span class="o">*</span><span class="n">arr_obj</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 节点的文件信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">NodeFileInfo</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 文件名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// const char * filename;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 修改成 std::string 试试，上面的那个类型要处理一下
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">filename</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 行号
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">lineno</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Constant</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">iValue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kt">double</span> <span class="n">dValue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kt">char</span><span class="o">*</span> <span class="n">sValue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">cValue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c1">// 当前常量是否是一个 bool 类型得元素
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">bool</span> <span class="n">flagBool</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 数组声明时使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">XArrayNode</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 数组名字
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 数组长度
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 变量长度索引 . 如果变量索引节点存在， 则使用这个， 否则使用 length 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Node</span> <span class="o">*</span> <span class="n">lengthNode</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Operator</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 子节点列表  | 实现树的主要部分内容
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">struct</span> <span class="nc">Node</span><span class="o">**</span> <span class="n">op</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">op_count</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 操作符是什么
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">opr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">Node</span>
+<span class="p">{</span>
+  <span class="n">NodeType</span> <span class="n">type</span><span class="p">;</span>
+  <span class="c1">// 在执行结束之后是否进行 free 操作
+</span><span class="c1"></span>  <span class="kt">bool</span> <span class="n">freeOnExecuted</span><span class="p">;</span>
+  <span class="c1">// 当前节点的值 .  如果当前结点是一个常量数字， 则free 的时候会施放这个值得内存
+</span><span class="c1"></span>  <span class="n">Object</span> <span class="o">*</span><span class="n">value</span><span class="p">;</span>
+  <span class="c1">// 万能指针 ， 主要用于放置参数什么的
+</span><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">ptr_u</span><span class="p">;</span>
+  <span class="c1">// 节点状态
+</span><span class="c1"></span>  <span class="n">NodeState</span> <span class="n">state</span><span class="p">;</span>
+  <span class="c1">// 当前节点所在的文件信息
+</span><span class="c1"></span>  <span class="n">NodeFileInfo</span> <span class="n">fileinfo</span><span class="p">;</span>
+  <span class="c1">// 后置值 ， 如果当前节点为一个 变量节点， 当前属性则为有用
+</span><span class="c1"></span>  <span class="n">Object</span> <span class="o">*</span><span class="n">postposition</span><span class="p">;</span>
+
+  <span class="n">Variable</span> <span class="o">*</span><span class="n">var_obj</span><span class="p">;</span>
+  <span class="n">Constant</span> <span class="o">*</span><span class="n">con_obj</span><span class="p">;</span>
+  <span class="n">Operator</span> <span class="o">*</span><span class="n">opr_obj</span><span class="p">;</span>
+  <span class="n">ArrayInfo</span> <span class="o">*</span><span class="n">arr_obj</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 节点的文件信息
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">NodeFileInfo</span>
+<span class="p">{</span>
+  <span class="c1">// 文件名
+</span><span class="c1"></span>  <span class="c1">// const char * filename;
+</span><span class="c1"></span>  <span class="c1">// 修改成 std::string 试试，上面的那个类型要处理一下
+</span><span class="c1"></span>  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">filename</span><span class="p">;</span>
+  <span class="c1">// 行号
+</span><span class="c1"></span>  <span class="kt">int</span> <span class="n">lineno</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">Constant</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">iValue</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">dValue</span><span class="p">;</span>
+  <span class="kt">char</span><span class="o">*</span> <span class="n">sValue</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">cValue</span><span class="p">;</span>
+
+  <span class="c1">// 当前常量是否是一个 bool 类型得元素
+</span><span class="c1"></span>  <span class="kt">bool</span> <span class="n">flagBool</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 数组声明时使用
+</span><span class="c1"></span><span class="k">struct</span> <span class="nc">XArrayNode</span>
+<span class="p">{</span>
+  <span class="c1">// 数组名字
+</span><span class="c1"></span>  <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span><span class="p">;</span>
+  <span class="c1">// 数组长度
+</span><span class="c1"></span>  <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
+  <span class="c1">// 变量长度索引 . 如果变量索引节点存在， 则使用这个， 否则使用 length 
+</span><span class="c1"></span>  <span class="n">Node</span> <span class="o">*</span> <span class="n">lengthNode</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">Operator</span>
+<span class="p">{</span>
+  <span class="c1">// 子节点列表  | 实现树的主要部分内容
+</span><span class="c1"></span>  <span class="k">struct</span> <span class="nc">Node</span><span class="o">**</span> <span class="n">op</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">op_count</span><span class="p">;</span>
+  <span class="c1">// 操作符是什么
+</span><span class="c1"></span>  <span class="kt">int</span> <span class="n">opr</span><span class="p">;</span>
+
+<span class="p">};</span>
+
+</code></pre></td></tr></table>
 </div>
 </div><p><em>本部分内容的代码在 <code>Object.h</code>文件里面。</em></p>
 <p>如果读者阅读了langX的 代码， 会发现还有一个类似的结构， 叫做<code>NodeLink</code>。  这个不用深入探究，这个是因为笔者当时的知识水平有限， 误入了歧路而产生的东西。</p>
@@ -379,7 +381,7 @@
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">
               <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
@@ -389,5 +391,8 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj+ONq/I3Xl8Y4cNI2Xw=" defer></script><script src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe+fTKorzHq40yfBQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
 </html>

@@ -10,7 +10,7 @@
 <meta name="description" content="Akka Grpc 的简单入门 简介 Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。 一些快速的链接。 官方文档： https://doc.akka.io/docs/akka-grpc/current/index.html Github地址： https://github.com/akka/akka-grpc 详细内容" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Akka Grpc的简单入门">
 <meta itemprop="description" content="Akka Grpc 的简单入门 简介 Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。 一些快速的链接。 官方文档： https://doc.akka.io/docs/akka-grpc/current/index.html Github地址： https://github.com/akka/akka-grpc 详细内容"><meta itemprop="datePublished" content="2020-05-11T21:49:36+08:00" />
 <meta itemprop="dateModified" content="2020-05-11T21:49:36+08:00" />
-<meta itemprop="wordCount" content="1945"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="1938"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Akka Grpc的简单入门" />
 <meta property="og:description" content="Akka Grpc 的简单入门 简介 Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。 一些快速的链接。 官方文档： https://doc.akka.io/docs/akka-grpc/current/index.html Github地址： https://github.com/akka/akka-grpc 详细内容" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8\/"
-    },"genre": "program","wordcount":  1945 ,
+    },"genre": "program","wordcount":  1938 ,
     "url": "https:\/\/fantasyplayer.link\/program\/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8\/","datePublished": "2020-05-11T21:49:36+08:00","dateModified": "2020-05-11T21:49:36+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -256,51 +256,53 @@
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
+</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-protobuf" data-lang="protobuf"><span class="line"><span class="cl"><span class="k">option</span> <span class="n">java_multiple_files</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">option</span> <span class="n">java_package</span> <span class="o">=</span> <span class="s">&#34;example.myapp.helloworld.grpc&#34;</span><span class="p">;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">option</span> <span class="n">java_outer_classname</span> <span class="o">=</span> <span class="s">&#34;HelloWorldProto&#34;</span><span class="p">;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="kn">package</span> <span class="nn">helloworld</span><span class="p">;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c1">// The request message containing the user&#39;s name.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="kt">string</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">}</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c1">// The response message containing the greetings
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">message</span> <span class="nc">HelloReply</span> <span class="p">{</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">}</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c1">////////////////////////////////////// The greeting service definition.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">service</span> <span class="n">GreeterService</span> <span class="p">{</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="c1">//////////////////////
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Sends a greeting //
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">////////*****/////////
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//      HELLO       //
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">////////*****/////////
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="c1">// Comment spanning
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// on several lines
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">rpc</span> <span class="n">ItKeepsTalking</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="cm">/*
-</span></span></span><span class="line"><span class="cl"><span class="cm">     * C style comments
-</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="k">rpc</span> <span class="n">ItKeepsReplying</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="cm">/* C style comments
-</span></span></span><span class="line"><span class="cl"><span class="cm">     * on several lines
-</span></span></span><span class="line"><span class="cl"><span class="cm">     * with non-empty heading/trailing line */</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="k">rpc</span> <span class="n">StreamHellos</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">}</span><span class="err">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-protobuf" data-lang="protobuf"><span class="k">option</span> <span class="n">java_multiple_files</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="k">option</span> <span class="n">java_package</span> <span class="o">=</span> <span class="s">&#34;example.myapp.helloworld.grpc&#34;</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="k">option</span> <span class="n">java_outer_classname</span> <span class="o">=</span> <span class="s">&#34;HelloWorldProto&#34;</span><span class="p">;</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kn">package</span> <span class="nn">helloworld</span><span class="p">;</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c1">// The request message containing the user&#39;s name.
+</span><span class="c1"></span><span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>    <span class="kt">string</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c1">// The response message containing the greetings
+</span><span class="c1"></span><span class="kd">message</span> <span class="nc">HelloReply</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>    <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c1">////////////////////////////////////// The greeting service definition.
+</span><span class="c1"></span><span class="kd">service</span> <span class="n">GreeterService</span> <span class="p">{</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span>    <span class="c1">//////////////////////
+</span><span class="c1"></span>    <span class="c1">// Sends a greeting //
+</span><span class="c1"></span>    <span class="c1">////////*****/////////
+</span><span class="c1"></span>    <span class="c1">//      HELLO       //
+</span><span class="c1"></span>    <span class="c1">////////*****/////////
+</span><span class="c1"></span>    <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span>    <span class="c1">// Comment spanning
+</span><span class="c1"></span>    <span class="c1">// on several lines
+</span><span class="c1"></span>    <span class="k">rpc</span> <span class="n">ItKeepsTalking</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span>    <span class="cm">/*
+</span><span class="cm">     * C style comments
+</span><span class="cm">     */</span><span class="err">
+</span><span class="err"></span>    <span class="k">rpc</span> <span class="n">ItKeepsReplying</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span>    <span class="cm">/* C style comments
+</span><span class="cm">     * on several lines
+</span><span class="cm">     * with non-empty heading/trailing line */</span><span class="err">
+</span><span class="err"></span>    <span class="k">rpc</span> <span class="n">StreamHellos</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span><span class="err">
+</span><span class="err"></span>    <span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>简单的说明</strong></p>
 <p><code>message</code> 定义数据交互格式 。</p>
@@ -357,49 +359,49 @@
 </span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;project&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;name&gt;</span>Project name<span class="nt">&lt;/name&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>my-grpc-app<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;akka.grpc.version&gt;</span>1.0.0-M1<span class="nt">&lt;/akka.grpc.version&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;grpc.version&gt;</span>1.29.0<span class="nt">&lt;/grpc.version&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;project.encoding&gt;</span>UTF-8<span class="nt">&lt;/project.encoding&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/properties&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;groupId&gt;</span>com.lightbend.akka.grpc<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;artifactId&gt;</span>akka-grpc-runtime_2.12<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;version&gt;</span>${akka.grpc.version}<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dependencies&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;build&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;plugin&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>com.lightbend.akka.grpc<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>akka-grpc-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>${akka.grpc.version}<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;configuration&gt;</span>
-</span></span><span class="line"><span class="cl">        	<span class="nt">&lt;generatorSettings&gt;</span>
-</span></span><span class="line"><span class="cl">          	<span class="nt">&lt;serverPowerApis&gt;</span>true<span class="nt">&lt;/serverPowerApis&gt;</span>
-</span></span><span class="line"><span class="cl">        	<span class="nt">&lt;/generatorSettings&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/configuration&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;executions&gt;</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&lt;execution&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;goals&gt;</span>
-</span></span><span class="line"><span class="cl">              <span class="nt">&lt;goal&gt;</span>generate<span class="nt">&lt;/goal&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/goals&gt;</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&lt;/execution&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/executions&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/plugin&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/plugins&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/build&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;project&gt;</span>
+  <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+  <span class="nt">&lt;name&gt;</span>Project name<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>my-grpc-app<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;properties&gt;</span>
+    <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+    <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+    <span class="nt">&lt;akka.grpc.version&gt;</span>1.0.0-M1<span class="nt">&lt;/akka.grpc.version&gt;</span>
+    <span class="nt">&lt;grpc.version&gt;</span>1.29.0<span class="nt">&lt;/grpc.version&gt;</span>
+    <span class="nt">&lt;project.encoding&gt;</span>UTF-8<span class="nt">&lt;/project.encoding&gt;</span>
+  <span class="nt">&lt;/properties&gt;</span>
+  <span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+      <span class="nt">&lt;groupId&gt;</span>com.lightbend.akka.grpc<span class="nt">&lt;/groupId&gt;</span>
+      <span class="nt">&lt;artifactId&gt;</span>akka-grpc-runtime_2.12<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;version&gt;</span>${akka.grpc.version}<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+  <span class="nt">&lt;/dependencies&gt;</span>
+  <span class="nt">&lt;build&gt;</span>
+    <span class="nt">&lt;plugins&gt;</span>
+      <span class="nt">&lt;plugin&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.lightbend.akka.grpc<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>akka-grpc-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>${akka.grpc.version}<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;configuration&gt;</span>
+        	<span class="nt">&lt;generatorSettings&gt;</span>
+          	<span class="nt">&lt;serverPowerApis&gt;</span>true<span class="nt">&lt;/serverPowerApis&gt;</span>
+        	<span class="nt">&lt;/generatorSettings&gt;</span>
+        <span class="nt">&lt;/configuration&gt;</span>
+        <span class="nt">&lt;executions&gt;</span>
+          <span class="nt">&lt;execution&gt;</span>
+            <span class="nt">&lt;goals&gt;</span>
+              <span class="nt">&lt;goal&gt;</span>generate<span class="nt">&lt;/goal&gt;</span>
+            <span class="nt">&lt;/goals&gt;</span>
+          <span class="nt">&lt;/execution&gt;</span>
+        <span class="nt">&lt;/executions&gt;</span>
+      <span class="nt">&lt;/plugin&gt;</span>
+    <span class="nt">&lt;/plugins&gt;</span>
+  <span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>这里添加一个叫<code>akka-grpc-maven-plugin</code>  的 Maven插件。 这个插件的<code>generate</code> 行为可以生成出java 代码。</p>
 <p>单独执行生成的话， 可以试试运行下面的命令生成代码。</p>
@@ -467,64 +469,64 @@
 </span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">example.myapp.helloworld</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.concurrent.CompletableFuture</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.concurrent.CompletionStage</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.NotUsed</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.Materializer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.javadsl.Sink</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.javadsl.Source</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">example.myapp.helloworld.grpc.*</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreeterServiceImpl</span> <span class="kd">implements</span> <span class="n">GreeterService</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Materializer</span> <span class="n">mat</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="nf">GreeterServiceImpl</span><span class="o">(</span><span class="n">Materializer</span> <span class="n">mat</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">   <span class="k">this</span><span class="o">.</span><span class="na">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="nf">sayHello</span><span class="o">(</span><span class="n">HelloRequest</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="n">HelloReply</span> <span class="n">reply</span> <span class="o">=</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">CompletableFuture</span><span class="o">.</span><span class="na">completedFuture</span><span class="o">(</span><span class="n">reply</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="nf">itKeepsTalking</span><span class="o">(</span><span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to in stream...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">in</span><span class="o">.</span><span class="na">runWith</span><span class="o">(</span><span class="n">Sink</span><span class="o">.</span><span class="na">seq</span><span class="o">(),</span> <span class="n">mat</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">thenApply</span><span class="o">(</span><span class="n">elements</span> <span class="o">-&gt;</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">elementsStr</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">elem</span> <span class="o">-&gt;</span> <span class="n">elem</span><span class="o">.</span><span class="na">getName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">()).</span><span class="na">toString</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">elementsStr</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">      <span class="o">});</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="nf">itKeepsReplying</span><span class="o">(</span><span class="n">HelloRequest</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; with stream of chars&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">characters</span> <span class="o">=</span> <span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">chars</span><span class="o">().</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">c</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Source</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">characters</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">character</span> <span class="o">-&gt;</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">character</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">      <span class="o">});</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="nf">streamHellos</span><span class="o">(</span><span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to stream...&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">in</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">request</span> <span class="o">-&gt;</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="na">getName</span><span class="o">()).</span><span class="na">build</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">   
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">example.myapp.helloworld</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.CompletableFuture</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.CompletionStage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">akka.NotUsed</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.Materializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.javadsl.Sink</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.javadsl.Source</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">example.myapp.helloworld.grpc.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreeterServiceImpl</span> <span class="kd">implements</span> <span class="n">GreeterService</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Materializer</span> <span class="n">mat</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">GreeterServiceImpl</span><span class="o">(</span><span class="n">Materializer</span> <span class="n">mat</span><span class="o">)</span> <span class="o">{</span>
+   <span class="k">this</span><span class="o">.</span><span class="na">mat</span> <span class="o">=</span> <span class="n">mat</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="nf">sayHello</span><span class="o">(</span><span class="n">HelloRequest</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span class="n">HelloReply</span> <span class="n">reply</span> <span class="o">=</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">CompletableFuture</span><span class="o">.</span><span class="na">completedFuture</span><span class="o">(</span><span class="n">reply</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="nf">itKeepsTalking</span><span class="o">(</span><span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to in stream...&#34;</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">in</span><span class="o">.</span><span class="na">runWith</span><span class="o">(</span><span class="n">Sink</span><span class="o">.</span><span class="na">seq</span><span class="o">(),</span> <span class="n">mat</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">thenApply</span><span class="o">(</span><span class="n">elements</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">elementsStr</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">elem</span> <span class="o">-&gt;</span> <span class="n">elem</span><span class="o">.</span><span class="na">getName</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">()).</span><span class="na">toString</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">elementsStr</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+      <span class="o">});</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="nf">itKeepsReplying</span><span class="o">(</span><span class="n">HelloRequest</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; with stream of chars&#34;</span><span class="o">);</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">characters</span> <span class="o">=</span> <span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">getName</span><span class="o">())</span>
+        <span class="o">.</span><span class="na">chars</span><span class="o">().</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">c</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+    <span class="k">return</span> <span class="n">Source</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">characters</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">character</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">character</span><span class="o">)).</span><span class="na">build</span><span class="o">();</span>
+      <span class="o">});</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="nf">streamHellos</span><span class="o">(</span><span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sayHello to stream...&#34;</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">in</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">request</span> <span class="o">-&gt;</span> <span class="n">HelloReply</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="na">getName</span><span class="o">()).</span><span class="na">build</span><span class="o">());</span>
+  <span class="o">}</span>
+   
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>实现<code>GreeterService </code> 接口， 完成自己的需求即可。</p>
 <h5 id="启动类">启动类</h5>
@@ -573,48 +575,48 @@
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">example.myapp.helloworld</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.actor.ActorSystem</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.http.javadsl.*</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.ActorMaterializer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.Materializer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.typesafe.config.Config</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.typesafe.config.ConfigFactory</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">example.myapp.helloworld.grpc.*</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.concurrent.CompletionStage</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">GreeterServer</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// important to enable HTTP/2 in ActorSystem&#39;s config
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Config</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">ConfigFactory</span><span class="o">.</span><span class="na">parseString</span><span class="o">(</span><span class="s">&#34;akka.http.server.preview.enable-http2 = on&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">withFallback</span><span class="o">(</span><span class="n">ConfigFactory</span><span class="o">.</span><span class="na">defaultApplication</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Akka ActorSystem Boot
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ActorSystem</span> <span class="n">sys</span> <span class="o">=</span> <span class="n">ActorSystem</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">&#34;HelloWorld&#34;</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">run</span><span class="o">(</span><span class="n">sys</span><span class="o">).</span><span class="na">thenAccept</span><span class="o">(</span><span class="n">binding</span> <span class="o">-&gt;</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;gRPC server bound to: &#34;</span> <span class="o">+</span> <span class="n">binding</span><span class="o">.</span><span class="na">localAddress</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="o">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// ActorSystem threads will keep the app alive until `system.terminate()` is called
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">static</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">ServerBinding</span><span class="o">&gt;</span> <span class="nf">run</span><span class="o">(</span><span class="n">ActorSystem</span> <span class="n">sys</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Materializer</span> <span class="n">mat</span> <span class="o">=</span> <span class="n">ActorMaterializer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">sys</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Instantiate implementation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">GreeterService</span> <span class="n">impl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GreeterServiceImpl</span><span class="o">(</span><span class="n">mat</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Http</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">sys</span><span class="o">).</span><span class="na">bindAndHandleAsync</span><span class="o">(</span>
-</span></span><span class="line"><span class="cl">      <span class="n">GreeterServiceHandlerFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">impl</span><span class="o">,</span> <span class="n">sys</span><span class="o">),</span>
-</span></span><span class="line"><span class="cl">      <span class="n">ConnectHttp</span><span class="o">.</span><span class="na">toHost</span><span class="o">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="o">,</span> <span class="n">8080</span><span class="o">),</span>
-</span></span><span class="line"><span class="cl">      <span class="n">mat</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">example.myapp.helloworld</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">akka.actor.ActorSystem</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.http.javadsl.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.ActorMaterializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.Materializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.typesafe.config.Config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.typesafe.config.ConfigFactory</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">example.myapp.helloworld.grpc.*</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.concurrent.CompletionStage</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">GreeterServer</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="c1">// important to enable HTTP/2 in ActorSystem&#39;s config
+</span><span class="c1"></span>    <span class="n">Config</span> <span class="n">conf</span> <span class="o">=</span> <span class="n">ConfigFactory</span><span class="o">.</span><span class="na">parseString</span><span class="o">(</span><span class="s">&#34;akka.http.server.preview.enable-http2 = on&#34;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">withFallback</span><span class="o">(</span><span class="n">ConfigFactory</span><span class="o">.</span><span class="na">defaultApplication</span><span class="o">());</span>
+
+    <span class="c1">// Akka ActorSystem Boot
+</span><span class="c1"></span>    <span class="n">ActorSystem</span> <span class="n">sys</span> <span class="o">=</span> <span class="n">ActorSystem</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">&#34;HelloWorld&#34;</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
+
+    <span class="n">run</span><span class="o">(</span><span class="n">sys</span><span class="o">).</span><span class="na">thenAccept</span><span class="o">(</span><span class="n">binding</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;gRPC server bound to: &#34;</span> <span class="o">+</span> <span class="n">binding</span><span class="o">.</span><span class="na">localAddress</span><span class="o">());</span>
+    <span class="o">});</span>
+
+    <span class="c1">// ActorSystem threads will keep the app alive until `system.terminate()` is called
+</span><span class="c1"></span>  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">ServerBinding</span><span class="o">&gt;</span> <span class="nf">run</span><span class="o">(</span><span class="n">ActorSystem</span> <span class="n">sys</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">Materializer</span> <span class="n">mat</span> <span class="o">=</span> <span class="n">ActorMaterializer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">sys</span><span class="o">);</span>
+
+    <span class="c1">// Instantiate implementation
+</span><span class="c1"></span>    <span class="n">GreeterService</span> <span class="n">impl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GreeterServiceImpl</span><span class="o">(</span><span class="n">mat</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">Http</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">sys</span><span class="o">).</span><span class="na">bindAndHandleAsync</span><span class="o">(</span>
+      <span class="n">GreeterServiceHandlerFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">impl</span><span class="o">,</span> <span class="n">sys</span><span class="o">),</span>
+      <span class="n">ConnectHttp</span><span class="o">.</span><span class="na">toHost</span><span class="o">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="o">,</span> <span class="n">8080</span><span class="o">),</span>
+      <span class="n">mat</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>需要在配置文件里面指定下面的参数</p>
 <p><code>akka.http.server.preview.enable-http2 = on</code></p>
@@ -724,108 +726,108 @@
 </span><span class="lnt">101
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">example.myapp.helloworld</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.concurrent.CompletionStage</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">io.grpc.StatusRuntimeException</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.Done</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.NotUsed</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.actor.ActorSystem</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.ActorMaterializer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.Materializer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.stream.javadsl.Source</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">akka.grpc.GrpcClientSettings</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">example.myapp.helloworld.grpc.*</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">GreeterClient</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">serverHost</span> <span class="o">=</span> <span class="s">&#34;127.0.0.1&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">serverPort</span> <span class="o">=</span> <span class="n">8080</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">ActorSystem</span> <span class="n">system</span> <span class="o">=</span> <span class="n">ActorSystem</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">&#34;HelloWorldClient&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Materializer</span> <span class="n">materializer</span> <span class="o">=</span> <span class="n">ActorMaterializer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">system</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Configure the client by code:
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">GrpcClientSettings</span> <span class="n">settings</span> <span class="o">=</span> <span class="n">GrpcClientSettings</span><span class="o">.</span><span class="na">connectToServiceAt</span><span class="o">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="o">,</span> <span class="n">8080</span><span class="o">,</span> <span class="n">system</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Or via application.conf:
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// GrpcClientSettings settings = GrpcClientSettings.fromConfig(GreeterService.name, system);
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">GreeterServiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">client</span> <span class="o">=</span> <span class="n">GreeterServiceClient</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">settings</span><span class="o">,</span> <span class="n">materializer</span><span class="o">,</span> <span class="n">system</span><span class="o">.</span><span class="na">dispatcher</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      <span class="n">singleRequestReply</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">      <span class="n">streamingRequest</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">      <span class="n">streamingReply</span><span class="o">(</span><span class="n">client</span><span class="o">,</span> <span class="n">materializer</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">      <span class="n">streamingRequestReply</span><span class="o">(</span><span class="n">client</span><span class="o">,</span> <span class="n">materializer</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">StatusRuntimeException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Status: &#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getStatus</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span>  <span class="o">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="o">(</span><span class="n">client</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">client</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">      <span class="n">system</span><span class="o">.</span><span class="na">terminate</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">singleRequestReply</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">HelloRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="n">reply</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">sayHello</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got single reply: &#34;</span> <span class="o">+</span> <span class="n">reply</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">streamingRequest</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">List</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">&gt;</span> <span class="n">requests</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="s">&#34;Peter&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">name</span> <span class="o">-&gt;</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="n">name</span><span class="o">).</span><span class="na">build</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="n">reply</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">itKeepsTalking</span><span class="o">(</span><span class="n">Source</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">requests</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got single reply for streaming requests: &#34;</span> <span class="o">+</span>
-</span></span><span class="line"><span class="cl">        <span class="n">reply</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">streamingReply</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">,</span> <span class="n">Materializer</span> <span class="n">mat</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">HelloRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">responseStream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">itKeepsReplying</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">Done</span><span class="o">&gt;</span> <span class="n">done</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">      <span class="n">responseStream</span><span class="o">.</span><span class="na">runForeach</span><span class="o">(</span><span class="n">reply</span> <span class="o">-&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got streaming reply: &#34;</span> <span class="o">+</span> <span class="n">reply</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()),</span> <span class="n">mat</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">done</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">60</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">streamingRequestReply</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">,</span> <span class="n">Materializer</span> <span class="n">mat</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Duration</span> <span class="n">interval</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">ofSeconds</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">requestStream</span> <span class="o">=</span> <span class="n">Source</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">tick</span><span class="o">(</span><span class="n">interval</span><span class="o">,</span> <span class="n">interval</span><span class="o">,</span> <span class="s">&#34;tick&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">zipWithIndex</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">pair</span> <span class="o">-&gt;</span> <span class="n">pair</span><span class="o">.</span><span class="na">second</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Alice-&#34;</span> <span class="o">+</span> <span class="n">i</span><span class="o">).</span><span class="na">build</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">take</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="na">mapMaterializedValue</span><span class="o">(</span><span class="n">m</span> <span class="o">-&gt;</span> <span class="n">NotUsed</span><span class="o">.</span><span class="na">getInstance</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">responseStream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">streamHellos</span><span class="o">(</span><span class="n">requestStream</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">Done</span><span class="o">&gt;</span> <span class="n">done</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">      <span class="n">responseStream</span><span class="o">.</span><span class="na">runForeach</span><span class="o">(</span><span class="n">reply</span> <span class="o">-&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got streaming reply: &#34;</span> <span class="o">+</span> <span class="n">reply</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()),</span> <span class="n">mat</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">done</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">60</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">example.myapp.helloworld</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.CompletionStage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">io.grpc.StatusRuntimeException</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">akka.Done</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.NotUsed</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.actor.ActorSystem</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.ActorMaterializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.Materializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.stream.javadsl.Source</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">akka.grpc.GrpcClientSettings</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">example.myapp.helloworld.grpc.*</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">GreeterClient</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+
+    <span class="n">String</span> <span class="n">serverHost</span> <span class="o">=</span> <span class="s">&#34;127.0.0.1&#34;</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">serverPort</span> <span class="o">=</span> <span class="n">8080</span><span class="o">;</span>
+
+    <span class="n">ActorSystem</span> <span class="n">system</span> <span class="o">=</span> <span class="n">ActorSystem</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">&#34;HelloWorldClient&#34;</span><span class="o">);</span>
+    <span class="n">Materializer</span> <span class="n">materializer</span> <span class="o">=</span> <span class="n">ActorMaterializer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">system</span><span class="o">);</span>
+
+    <span class="c1">// Configure the client by code:
+</span><span class="c1"></span>    <span class="n">GrpcClientSettings</span> <span class="n">settings</span> <span class="o">=</span> <span class="n">GrpcClientSettings</span><span class="o">.</span><span class="na">connectToServiceAt</span><span class="o">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="o">,</span> <span class="n">8080</span><span class="o">,</span> <span class="n">system</span><span class="o">);</span>
+
+    <span class="c1">// Or via application.conf:
+</span><span class="c1"></span>    <span class="c1">// GrpcClientSettings settings = GrpcClientSettings.fromConfig(GreeterService.name, system);
+</span><span class="c1"></span>
+    <span class="n">GreeterServiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">client</span> <span class="o">=</span> <span class="n">GreeterServiceClient</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">settings</span><span class="o">,</span> <span class="n">materializer</span><span class="o">,</span> <span class="n">system</span><span class="o">.</span><span class="na">dispatcher</span><span class="o">());</span>
+
+      <span class="n">singleRequestReply</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+      <span class="n">streamingRequest</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+      <span class="n">streamingReply</span><span class="o">(</span><span class="n">client</span><span class="o">,</span> <span class="n">materializer</span><span class="o">);</span>
+      <span class="n">streamingRequestReply</span><span class="o">(</span><span class="n">client</span><span class="o">,</span> <span class="n">materializer</span><span class="o">);</span>
+
+
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">StatusRuntimeException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Status: &#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getStatus</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span>  <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">client</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">client</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+      <span class="n">system</span><span class="o">.</span><span class="na">terminate</span><span class="o">();</span>
+    <span class="o">}</span>
+
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">singleRequestReply</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">HelloRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="n">reply</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">sayHello</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got single reply: &#34;</span> <span class="o">+</span> <span class="n">reply</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">));</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">streamingRequest</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">&gt;</span> <span class="n">requests</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="s">&#34;Peter&#34;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">name</span> <span class="o">-&gt;</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="n">name</span><span class="o">).</span><span class="na">build</span><span class="o">())</span>
+        <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;</span> <span class="n">reply</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">itKeepsTalking</span><span class="o">(</span><span class="n">Source</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">requests</span><span class="o">));</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got single reply for streaming requests: &#34;</span> <span class="o">+</span>
+        <span class="n">reply</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">));</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">streamingReply</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">,</span> <span class="n">Materializer</span> <span class="n">mat</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">HelloRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+    <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">responseStream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">itKeepsReplying</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">Done</span><span class="o">&gt;</span> <span class="n">done</span> <span class="o">=</span>
+      <span class="n">responseStream</span><span class="o">.</span><span class="na">runForeach</span><span class="o">(</span><span class="n">reply</span> <span class="o">-&gt;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got streaming reply: &#34;</span> <span class="o">+</span> <span class="n">reply</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()),</span> <span class="n">mat</span><span class="o">);</span>
+
+    <span class="n">done</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">60</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">streamingRequestReply</span><span class="o">(</span><span class="n">GreeterService</span> <span class="n">client</span><span class="o">,</span> <span class="n">Materializer</span> <span class="n">mat</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">Duration</span> <span class="n">interval</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">ofSeconds</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+    <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloRequest</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">requestStream</span> <span class="o">=</span> <span class="n">Source</span>
+      <span class="o">.</span><span class="na">tick</span><span class="o">(</span><span class="n">interval</span><span class="o">,</span> <span class="n">interval</span><span class="o">,</span> <span class="s">&#34;tick&#34;</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">zipWithIndex</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">pair</span> <span class="o">-&gt;</span> <span class="n">pair</span><span class="o">.</span><span class="na">second</span><span class="o">())</span>
+      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">HelloRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Alice-&#34;</span> <span class="o">+</span> <span class="n">i</span><span class="o">).</span><span class="na">build</span><span class="o">())</span>
+      <span class="o">.</span><span class="na">take</span><span class="o">(</span><span class="n">10</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">mapMaterializedValue</span><span class="o">(</span><span class="n">m</span> <span class="o">-&gt;</span> <span class="n">NotUsed</span><span class="o">.</span><span class="na">getInstance</span><span class="o">());</span>
+
+    <span class="n">Source</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">,</span> <span class="n">NotUsed</span><span class="o">&gt;</span> <span class="n">responseStream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">streamHellos</span><span class="o">(</span><span class="n">requestStream</span><span class="o">);</span>
+    <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">Done</span><span class="o">&gt;</span> <span class="n">done</span> <span class="o">=</span>
+      <span class="n">responseStream</span><span class="o">.</span><span class="na">runForeach</span><span class="o">(</span><span class="n">reply</span> <span class="o">-&gt;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;got streaming reply: &#34;</span> <span class="o">+</span> <span class="n">reply</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()),</span> <span class="n">mat</span><span class="o">);</span>
+
+    <span class="n">done</span><span class="o">.</span><span class="na">toCompletableFuture</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">60</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>主要是构造一个<code>GreeterServiceClient</code> 对象， 用于进行 <code>rpc</code> 调用即可。</p>
 <p>基本上使用 就是上面的内容。 官方文档还提供一种添加 <code>Metadata</code> 参数的方法。 有兴趣的可以看看官方文档，作者回复<code>issue</code> 的频率很高， 有问题可以去问问。</p>
@@ -844,11 +846,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Publisher</span> <span class="n">publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubmissionPublisher</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;();</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// publisher.offer(xx)  即可发送消息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">JavaFlowSupport</span><span class="o">.</span><span class="na">Source</span><span class="o">.</span><span class="na">fromPublisher</span><span class="o">(</span><span class="n">publisher</span><span class="o">);</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Publisher</span> <span class="n">publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubmissionPublisher</span><span class="o">&lt;</span><span class="n">HelloReply</span><span class="o">&gt;();</span>
+<span class="c1">// publisher.offer(xx)  即可发送消息
+</span><span class="c1"></span>
+<span class="k">return</span> <span class="n">JavaFlowSupport</span><span class="o">.</span><span class="na">Source</span><span class="o">.</span><span class="na">fromPublisher</span><span class="o">(</span><span class="n">publisher</span><span class="o">);</span>
+</code></pre></td></tr></table>
 </div>
 </div><p><code>Source.fromPublisher()</code> 方法需要使用<code>akka-stream</code> 库，有兴趣的朋友可以试着研究下。</p>
 <h3 id="faq">FAQ</h3>
@@ -861,7 +863,7 @@
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">
               <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
@@ -871,5 +873,8 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj+ONq/I3Xl8Y4cNI2Xw=" defer></script><script src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe+fTKorzHq40yfBQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
 </html>
