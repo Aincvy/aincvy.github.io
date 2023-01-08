@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (hideDragon)</managingEditor>
     <webMaster>aincvy@gmail.com (hideDragon)</webMaster>
-    <lastBuildDate>Mon, 12 Dec 2022 15:01:37 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Jan 2023 22:18:51 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity 相关的两个小问题记录</title>
+      <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 08 Jan 2023 22:18:51 +0800</pubDate>
+      <author>aincvy@gmail.com (hideDragon)</author>
+      <guid>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <description>主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而</description>
+    </item>
+    
     <item>
       <title>Java中HashMap和synchronized的更多认识</title>
       <link>https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/</link>
