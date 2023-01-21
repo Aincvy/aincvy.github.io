@@ -5,7 +5,7 @@
 提示错误是：  `vscode The .NET Core SDK cannot be located: A valid dotnet installation could not be found`
 
 vs code 里面已经设置了正确的 dotnetPath  和 sdkPath ， 但是还是提示这个。
-使用 cmd.exe 里面输入 dotnet --version 是看得到输出信息的。
+使用 cmd.exe 里面输入 `dotnet --version` 是看得到输出信息的。
 
 参考的设置内容是： 
 ```json
