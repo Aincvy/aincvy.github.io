@@ -10,7 +10,7 @@
     <webMaster>aincvy@gmail.com (hideDragon)</webMaster>
     <lastBuildDate>Sun, 08 Jan 2023 22:18:51 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Unity 相关的两个小问题记录</title>
+      <title>Unity 相关的几个小问题记录</title>
       <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 08 Jan 2023 22:18:51 +0800</pubDate>
       <author>aincvy@gmail.com (hideDragon)</author>
@@ -141,7 +141,7 @@
       <pubDate>Mon, 07 Dec 2020 18:48:17 +0800</pubDate>
       <author>aincvy@gmail.com (hideDragon)</author>
       <guid>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</guid>
-      <description>命名规范 # 1. 属性/成员 命名 静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子 1 2 3 4 5 6 7 8 9 10 /** *</description>
+      <description>命名规范 # 1. 属性/成员 命名 静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子 1 2 3 4 5 6 7 8 9 /** * 消</description>
     </item>
     
     <item>

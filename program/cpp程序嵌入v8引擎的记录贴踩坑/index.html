@@ -10,7 +10,7 @@
 <meta name="description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Cpp程序嵌入v8引擎的(踩坑)记录贴">
 <meta itemprop="description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统"><meta itemprop="datePublished" content="2021-07-23T18:51:51+08:00" />
 <meta itemprop="dateModified" content="2021-07-23T18:51:51+08:00" />
-<meta itemprop="wordCount" content="1756"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="1762"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Cpp程序嵌入v8引擎的(踩坑)记录贴" />
 <meta property="og:description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91\/"
-    },"genre": "program","wordcount":  1756 ,
+    },"genre": "program","wordcount":  1762 ,
     "url": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91\/","datePublished": "2021-07-23T18:51:51+08:00","dateModified": "2021-07-23T18:51:51+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -230,24 +230,24 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="c"># 先使用 wget 或者其他工具把该文件下载到本地， 并保存到项目目录下的cmake 子目录。 
-</span><span class="c"># add directory 
-</span><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_MODULE_PATH</span> <span class="s">APPEND</span> <span class="s2">&#34;${CMAKE_SOURCE_DIR}/cmake/&#34;</span> <span class="p">)</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># sight 是笔者正在做的一个工具。 
-</span><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">sight</span> <span class="s">program.cpp</span><span class="p">)</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># V8
-</span><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">V8_DIR</span> <span class="s2">&#34;/usr/local/opt/v8/libexec/&#34;</span><span class="p">)</span><span class="err">
-</span><span class="err"></span><span class="nb">find_package</span><span class="p">(</span><span class="s">V8</span> <span class="s">REQUIRED</span><span class="p">)</span><span class="err">
-</span><span class="err"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">sight</span> <span class="s">PRIVATE</span> <span class="o">${</span><span class="nv">V8_INCLUDE_DIR</span><span class="o">}</span><span class="p">)</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 如果没有这个定义 在程序运行的时候 好像会报错 
-</span><span class="c"></span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="s">sight</span> <span class="s">PRIVATE</span> <span class="s">V8_COMPRESS_POINTERS</span> <span class="s">V8_31BIT_SMIS_ON_64BIT_ARCH</span><span class="p">)</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 链接库
-</span><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">sight</span> <span class="s">PRIVATE</span> <span class="o">${</span><span class="nv">V8_LIBRARIES</span><span class="o">}</span><span class="p">)</span><span class="err">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="c"># 先使用 wget 或者其他工具把该文件下载到本地， 并保存到项目目录下的cmake 子目录。 
+</span></span></span><span class="line"><span class="cl"><span class="c"># add directory 
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_MODULE_PATH</span> <span class="s">APPEND</span> <span class="s2">&#34;${CMAKE_SOURCE_DIR}/cmake/&#34;</span> <span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># sight 是笔者正在做的一个工具。 
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">sight</span> <span class="s">program.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># V8
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">V8_DIR</span> <span class="s2">&#34;/usr/local/opt/v8/libexec/&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">find_package</span><span class="p">(</span><span class="s">V8</span> <span class="s">REQUIRED</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">sight</span> <span class="s">PRIVATE</span> <span class="o">${</span><span class="nv">V8_INCLUDE_DIR</span><span class="o">}</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 如果没有这个定义 在程序运行的时候 好像会报错 
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="s">sight</span> <span class="s">PRIVATE</span> <span class="s">V8_COMPRESS_POINTERS</span> <span class="s">V8_31BIT_SMIS_ON_64BIT_ARCH</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 链接库
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">sight</span> <span class="s">PRIVATE</span> <span class="o">${</span><span class="nv">V8_LIBRARIES</span><span class="o">}</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>关于<code>V8_COMPRESS_POINTERS</code>宏定义的拓展阅读部分： <a href="https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689"target="_blank" rel="external nofollow noopener noreferrer">https://stackoverflow.com/questions/62921373/embedder-side-pointer-compression-is-disabled/62921689#62921689</a></p>
 <h3 id="常规方式">常规方式</h3>
@@ -337,57 +337,57 @@
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 1. </span>
-<span class="nb">cd</span> somewhere
-git clone <span class="s1">&#39;https://chromium.googlesource.com/chromium/tools/depot_tools.git&#39;</span>
-
-<span class="c1"># 添加环境变量 </span>
-<span class="c1"># add path , you may need add to ~/.bashrc or ~/.zshrc or config.fish </span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>somewhere/depot_tools:<span class="nv">$PATH</span>
-
-<span class="c1"># 更新 depot_tools</span>
-<span class="nb">cd</span> somewhere/depot_tools
-gclient
-
-<span class="c1"># 2.</span>
-<span class="nb">cd</span> somewhere
-fetch v8
-<span class="nb">cd</span> v8
-
-<span class="c1"># 3. </span>
-
-<span class="c1"># 自动参数编译  |  不推荐使用自动的方式， 因为编译出来的是静态库。  当然，静态库可能也行吧。。 </span>
-gm x64.release
-<span class="c1"># 如果想附带测试就执行下面这个 | 两个命令执行1个即可。 </span>
-gm x64.release.check
-<span class="c1"># 以上任意一个命令都会附带编译过程。 </span>
-
-<span class="c1"># 手动调整参数   | 和上面自动参数编译 二选一执行即可。 </span>
-<span class="c1"># 下面这个命令会打开一个 vi/vim 编辑器， 让你手动填写参数</span>
-gn args out/x64.release
-
-<span class="c1"># 读者可以使用下面的命令附加参数  | 此命令和上面那个使用1个即可。 </span>
-gn gen out/x64.release --args<span class="o">=</span><span class="s1">&#39;is_debug=false target_cpu=&#34;x64&#34; v8_target_cpu=&#34;arm64&#34;&#39;</span>
-
-<span class="c1"># 可以使用这个命令查看所有可用的参数  </span>
-gn args out/x64.release --list
-
-<span class="c1"># 因为参数会很多， 所以建议读者把输出重定向到文件， 然后阅读文件  </span>
-gn args out/x64.release --list &gt; args.txt 
-
-<span class="c1"># 注意   参数 `is_component_build = true`  会编译出动态库， 如果需要动态库就加上这条配置。 </span>
-<span class="c1"># 然后根据args.txt 文件里面的内容 选取想要的参数， 添加到 out/x64.release/args.gn 里面即可。 </span>
-
-<span class="c1"># 4. </span>
-
-<span class="c1"># 生成配置</span>
-gn gen out/x64.release
-
-<span class="c1"># 编译 所有目标   | 如果想编译特定的目标， 就在后面追加参数即可。 </span>
-ninja -C out/x64.release
-
-<span class="c1"># 等待一段时间， 应该就可以编译成功了。 </span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 1. </span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> somewhere
+</span></span><span class="line"><span class="cl">git clone <span class="s1">&#39;https://chromium.googlesource.com/chromium/tools/depot_tools.git&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加环境变量 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># add path , you may need add to ~/.bashrc or ~/.zshrc or config.fish </span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>somewhere/depot_tools:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新 depot_tools</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> somewhere/depot_tools
+</span></span><span class="line"><span class="cl">gclient
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> somewhere
+</span></span><span class="line"><span class="cl">fetch v8
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> v8
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 自动参数编译  |  不推荐使用自动的方式， 因为编译出来的是静态库。  当然，静态库可能也行吧。。 </span>
+</span></span><span class="line"><span class="cl">gm x64.release
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果想附带测试就执行下面这个 | 两个命令执行1个即可。 </span>
+</span></span><span class="line"><span class="cl">gm x64.release.check
+</span></span><span class="line"><span class="cl"><span class="c1"># 以上任意一个命令都会附带编译过程。 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 手动调整参数   | 和上面自动参数编译 二选一执行即可。 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下面这个命令会打开一个 vi/vim 编辑器， 让你手动填写参数</span>
+</span></span><span class="line"><span class="cl">gn args out/x64.release
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 读者可以使用下面的命令附加参数  | 此命令和上面那个使用1个即可。 </span>
+</span></span><span class="line"><span class="cl">gn gen out/x64.release --args<span class="o">=</span><span class="s1">&#39;is_debug=false target_cpu=&#34;x64&#34; v8_target_cpu=&#34;arm64&#34;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 可以使用这个命令查看所有可用的参数  </span>
+</span></span><span class="line"><span class="cl">gn args out/x64.release --list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 因为参数会很多， 所以建议读者把输出重定向到文件， 然后阅读文件  </span>
+</span></span><span class="line"><span class="cl">gn args out/x64.release --list &gt; args.txt 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意   参数 `is_component_build = true`  会编译出动态库， 如果需要动态库就加上这条配置。 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 然后根据args.txt 文件里面的内容 选取想要的参数， 添加到 out/x64.release/args.gn 里面即可。 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成配置</span>
+</span></span><span class="line"><span class="cl">gn gen out/x64.release
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编译 所有目标   | 如果想编译特定的目标， 就在后面追加参数即可。 </span>
+</span></span><span class="line"><span class="cl">ninja -C out/x64.release
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 等待一段时间， 应该就可以编译成功了。 </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>默认情况下， v8 应该会使用自带的<code>clang</code>编译器进行编译， 在笔者的环境下是 <code>clang 13.0</code> 。  该执行程序位于<code>somewhere/v8/third_party/llvm-build/Release+Asserts/bin/</code> 。</p>
 <p>这个和笔者的系统默认编译器不是同一个， 笔者的默认编译器是<code>clang 12.0</code> 。</p>
@@ -422,7 +422,7 @@ ninja -C out/x64.release
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">
               <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
@@ -432,7 +432,7 @@ ninja -C out/x64.release
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj+ONq/I3Xl8Y4cNI2Xw=" defer></script><script src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe+fTKorzHq40yfBQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-P74XPSRPG3');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>

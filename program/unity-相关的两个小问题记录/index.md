@@ -1,11 +1,7 @@
-# Unity 相关的两个小问题记录
-
-
+# Unity 相关的几个小问题记录
 
 
 ## 主要内容
-
-
 
 ### 动画播放结束会模型会卡住一段时间的问题
 
@@ -34,6 +30,55 @@ e.enabled = false;
 上面两种方式一种会产生报错， 一种会产生警告， 使用最后那种方式修改就好了。 
 
 修改其他属性的时候， 也可以使用类似的方式， 比如 `item.main` 等。
+
+
+### transform.position 获取的位置和看到的位置不一样的问题记录。
+
+主要是 y 轴不一样，  x,z 轴实际和看到的是一样的。
+
+因为 怪物身上同时具有 rigidbody 和 NavMeshAgent 两个组件。
+
+NavMeshAgent 会把怪物强制到地形上面， 而 rigidbody 添加重力的时候会让怪物不断下沉。
+
+将 NavMeshAgent 禁用掉， 就可以看到怪物实际的位置了。  
+
+主要触发原因可能是 怪物的初始 y 轴的值 略微低于地面。 当这种情况下，把怪物的 y轴 调到地形上面就可以了。  
+或者更好的处理 两者的关系。   
+使用 NavMeshAgent 的时候就设置 Rigidbody.isKinematic = true.  
+使用 Rigidbody 的时候就设置，  NavMeshAgent.enable = false.  
+ 
+### 更改 Asset store 的下载目录
+
+*windows 操作系统下的方法， 其实各个系统都可以使用软链接来做。*
+
+windows 下的默认目录是： `c:/Users/[用户名]/AppData/Roaming/Unity`  
+先将这个目录移动到别的位置， 比如：  `D:\RoamingUnity`  
+随后执行下面的命令 建立一个软链接就可以了。   
+```shell
+cd c:/Users/[用户名]/AppData/Roaming
+mklink /d Unity D:\RoamingUnity
+```
+
+### layer 和 layer mask 的一点内容
+layer 和 layer mask 是两个东西， gameobject.layer  使用的是layer， 发射射线使用的是 layer mask。
+
+基本上来说， layer 是一个整形数字 具体值好像是 0 ～ 31 。   
+而 layer mask 是移位 移出来的。 `layer mask = 1 << layer`   
+layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表示多个layer *该位为1,即表示包含。*  
+
+可以使用的 api 有： 
+```csharp
+var layer = LayerMask.NameToLayer("Entity");
+var layerMask = LayerMask.GetMask("Entity"); 
+
+Debug.Log(layer);
+Debug.Log(layerMask);
+```
+
+
+参考阅读：  https://docs.unity3d.com/Manual/layers-and-layermasks.html
+
+
 
 ---
 

@@ -10,7 +10,7 @@
 <meta name="description" content="本篇来描述一下数值运算相关的内容。 本篇描述的只是最简单的实现方式， 并没有提供什么优化技巧。 详细内容 数值运算应该编程里必不可少的一部分， 所以一" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[4.1] 数值运算">
 <meta itemprop="description" content="本篇来描述一下数值运算相关的内容。 本篇描述的只是最简单的实现方式， 并没有提供什么优化技巧。 详细内容 数值运算应该编程里必不可少的一部分， 所以一"><meta itemprop="datePublished" content="2021-03-07T10:07:09+08:00" />
 <meta itemprop="dateModified" content="2021-03-07T10:07:09+08:00" />
-<meta itemprop="wordCount" content="1559"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="1557"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[4.1] 数值运算" />
 <meta property="og:description" content="本篇来描述一下数值运算相关的内容。 本篇描述的只是最简单的实现方式， 并没有提供什么优化技巧。 详细内容 数值运算应该编程里必不可少的一部分， 所以一" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.1-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97\/"
-    },"genre": "non-menu","wordcount":  1559 ,
+    },"genre": "non-menu","wordcount":  1557 ,
     "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.1-%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97\/","datePublished": "2021-03-07T10:07:09+08:00","dateModified": "2021-03-07T10:07:09+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -222,20 +222,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain">a = 1;
-b = 2;
-
-c = a + b;
-d = a - b;
-e = a / d;
-f = a * b; 
-g = a % d;
-
-h = a ^ b;
-i = a | b;
-j = a &amp; b;
-k = ~ a ;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">a = 1;
+</span></span><span class="line"><span class="cl">b = 2;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">c = a + b;
+</span></span><span class="line"><span class="cl">d = a - b;
+</span></span><span class="line"><span class="cl">e = a / d;
+</span></span><span class="line"><span class="cl">f = a * b; 
+</span></span><span class="line"><span class="cl">g = a % d;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">h = a ^ b;
+</span></span><span class="line"><span class="cl">i = a | b;
+</span></span><span class="line"><span class="cl">j = a &amp; b;
+</span></span><span class="line"><span class="cl">k = ~ a ;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>大概需要实现的运算类型就是  加减乘除，取模以及位运算。 读者可以根据自己的需求只实现部分的运算符号， 或者实现更多的符号。  （<em>自定义新的符号</em>）</p>
 <h3 id="基本逻辑">基本逻辑</h3>
@@ -296,37 +296,37 @@ k = ~ a ;
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// java 代码， 代码并没有经过测试，只是解释思路使用
-</span><span class="c1">// c = a + b; 
-</span><span class="c1"></span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
- 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span> <span class="o">(){</span>
-    <span class="c1">// key: 变量名，  value: 变量值
-</span><span class="c1"></span>    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-    <span class="c1">// 第一个操作数
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">first</span> <span class="o">=</span> <span class="s">&#34;a&#34;</span><span class="o">;</span>
-    <span class="c1">// 第二个操作数
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">second</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="o">;</span>
-    
-    <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
-    
-    <span class="c1">// 1
-</span><span class="c1"></span>    <span class="n">Object</span> <span class="n">a</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">first</span><span class="o">);</span>
-    <span class="n">Object</span> <span class="n">b</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">second</span><span class="o">);</span>
-    
-    <span class="c1">// null check 和 类型check 这里就省略了。 
-</span><span class="c1"></span>    
-    <span class="c1">// 2
-</span><span class="c1"></span>    <span class="c1">// Number 是一个自定义类型， 因为篇幅问题，对声明进行了省略。
-</span><span class="c1"></span>    <span class="n">Number</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Number</span><span class="o">.</span><span class="na">add</span><span class="o">(</span> <span class="o">((</span><span class="n">Number</span><span class="o">)</span> <span class="n">a</span><span class="o">),</span> <span class="o">((</span><span class="n">Number</span><span class="o">)</span> <span class="n">b</span><span class="o">)</span> <span class="o">);</span>
-    
-    <span class="c1">// 3
-</span><span class="c1"></span>    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span> <span class="n">result</span><span class="o">,</span> <span class="n">c</span> <span class="o">);</span>
-  <span class="o">}</span>
-  
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// java 代码， 代码并没有经过测试，只是解释思路使用
+</span></span></span><span class="line"><span class="cl"><span class="c1">// c = a + b; 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span> <span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// key: 变量名，  value: 变量值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 第一个操作数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">first</span> <span class="o">=</span> <span class="s">&#34;a&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 第二个操作数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">second</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Object</span> <span class="n">a</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">first</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Object</span> <span class="n">b</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">second</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// null check 和 类型check 这里就省略了。 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Number 是一个自定义类型， 因为篇幅问题，对声明进行了省略。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Number</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Number</span><span class="o">.</span><span class="na">add</span><span class="o">(</span> <span class="o">((</span><span class="n">Number</span><span class="o">)</span> <span class="n">a</span><span class="o">),</span> <span class="o">((</span><span class="n">Number</span><span class="o">)</span> <span class="n">b</span><span class="o">)</span> <span class="o">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span> <span class="n">result</span><span class="o">,</span> <span class="n">c</span> <span class="o">);</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="基于栈的实现逻辑">基于栈的实现逻辑</h3>
 <p><em>本部分笔者并没有实现过，只是基于自己的知识和理解来写的内容。</em></p>
@@ -408,72 +408,70 @@ k = ~ a ;
 </span><span class="lnt">59
 </span><span class="lnt">60
 </span><span class="lnt">61
-</span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 同样使用 Java做示例， 代码只是演示说明使用
-</span><span class="c1">// c = a + b ;
-</span><span class="c1"></span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
- 
-  <span class="c1">// 局部变量表
-</span><span class="c1"></span>  <span class="kd">private</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">localVarTable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span> <span class="o">[</span><span class="n">30</span><span class="o">];</span>
-  
-  <span class="c1">// 栈
-</span><span class="c1"></span>  <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
-  
-  <span class="cm">/**
-</span><span class="cm">   * 根据变量名获取变量对应的 局部变量表的索引
-</span><span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndex</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
-    <span class="c1">// todo 
-</span><span class="c1"></span>    <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
-  <span class="o">}</span>
-  
-  <span class="cm">/**
-</span><span class="cm">   * 执行加号指令
-</span><span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(){</span>
-    <span class="c1">// check size 和别的check 暂时都直接省略了
-</span><span class="c1"></span>    
-    <span class="n">Number</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-    <span class="n">Number</span> <span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-    
-    <span class="c1">// 运算， 并将结果入栈
-</span><span class="c1"></span>    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span> <span class="n">Number</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span> <span class="o">);</span>
-    
-  <span class="o">}</span>
-  
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(){</span>
-   
-    <span class="c1">// 第一个操作数
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">first</span> <span class="o">=</span> <span class="s">&#34;a&#34;</span><span class="o">;</span>
-    <span class="c1">// 第二个操作数
-</span><span class="c1"></span>    <span class="n">String</span> <span class="n">second</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="o">;</span>
-    
-    <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
-    
-    <span class="c1">// 1, 2
-</span><span class="c1"></span>    <span class="c1">// 因为要节省篇幅， 所以大部分的 error check 就不做了
-</span><span class="c1"></span>    <span class="n">Object</span> <span class="n">a</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">first</span><span class="o">)];</span>
-    <span class="n">Object</span> <span class="n">b</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">second</span><span class="o">)];</span>
-    
-    <span class="c1">// 入栈
-</span><span class="c1"></span>    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
-    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
-    
-    <span class="c1">// 3
-</span><span class="c1"></span>    <span class="n">add</span><span class="o">();</span>
-    
-    <span class="c1">// 4
-</span><span class="c1"></span>    <span class="n">Object</span> <span class="n">c</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-    <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">result</span><span class="o">)]</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-    
-  <span class="o">}</span>
-  
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 同样使用 Java做示例， 代码只是演示说明使用
+</span></span></span><span class="line"><span class="cl"><span class="c1">// c = a + b ;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  <span class="c1">// 局部变量表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">private</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">localVarTable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span> <span class="o">[</span><span class="n">30</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// 栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 根据变量名获取变量对应的 局部变量表的索引
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndex</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// todo 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 执行加号指令
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// check size 和别的check 暂时都直接省略了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="n">Number</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Number</span> <span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 运算， 并将结果入栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span> <span class="n">Number</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span> <span class="o">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="c1">// 第一个操作数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">first</span> <span class="o">=</span> <span class="s">&#34;a&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 第二个操作数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">String</span> <span class="n">second</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1, 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 因为要节省篇幅， 所以大部分的 error check 就不做了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Object</span> <span class="n">a</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">first</span><span class="o">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Object</span> <span class="n">b</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">second</span><span class="o">)];</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 入栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">add</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Object</span> <span class="n">c</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">result</span><span class="o">)]</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="基于-寄存器的实现逻辑">基于 寄存器的实现逻辑</h3>
 <p><em>本部分笔者并没有实现过，只是基于自己的知识和理解来写的内容。</em></p>
@@ -544,67 +542,65 @@ k = ~ a ;
 </span><span class="lnt">54
 </span><span class="lnt">55
 </span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// c = a + b ;
-</span><span class="c1"></span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
- 
-  <span class="c1">// 局部变量表
-</span><span class="c1"></span>  <span class="kd">private</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">localVarTable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span> <span class="o">[</span><span class="n">30</span><span class="o">];</span>
-  
-  <span class="c1">// 寄存器
-</span><span class="c1"></span>  <span class="kd">private</span> <span class="n">Object</span> <span class="n">a</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="n">Object</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="n">Object</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-  
-  <span class="cm">/**
-</span><span class="cm">   * 根据变量名获取变量对应的 局部变量表的索引
-</span><span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndex</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
-    <span class="c1">// todo 
-</span><span class="c1"></span>    <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
-  <span class="o">}</span>
-  
-  <span class="cm">/**
-</span><span class="cm">   * 清理寄存器 
-</span><span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clearReg</span><span class="o">(){</span>
-  	<span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-  <span class="o">}</span>
-  
-  <span class="cm">/**
-</span><span class="cm">   * 执行加法运算， 运算逻辑总是将 寄存器 a,b 相加，并把值放入寄存器 c
-</span><span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(){</span>
-    <span class="c1">// 将会省略 check 
-</span><span class="c1"></span>    
-    <span class="n">c</span> <span class="o">=</span> <span class="n">Number</span><span class="o">.</span><span class="na">add</span><span class="o">(</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">a</span><span class="o">,</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">b</span> <span class="o">)</span> <span class="o">;</span>
-  <span class="o">}</span>
-  
-  <span class="cm">/**
-</span><span class="cm">   * 这里的变量名， 改用传参的形式
-</span><span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="n">String</span> <span class="n">first</span><span class="o">,</span><span class="n">String</span> <span class="n">second</span><span class="o">,</span> <span class="n">String</span> <span class="n">result</span> <span class="o">){</span>
-   
-    <span class="c1">// 1, 2
-</span><span class="c1"></span>    <span class="n">a</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">first</span><span class="o">)];</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">second</span><span class="o">)];</span>
-    
-    <span class="c1">// 3
-</span><span class="c1"></span>    <span class="n">add</span><span class="o">();</span>
-    
-    <span class="c1">// 4
-</span><span class="c1"></span>    <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">result</span><span class="o">)]</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-    
-    <span class="c1">// 5 
-</span><span class="c1"></span>    <span class="n">clearReg</span><span class="o">();</span>
-  <span class="o">}</span>
-  
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// c = a + b ;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  <span class="c1">// 局部变量表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">private</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">localVarTable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span> <span class="o">[</span><span class="n">30</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// 寄存器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">private</span> <span class="n">Object</span> <span class="n">a</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="n">Object</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="n">Object</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 根据变量名获取变量对应的 局部变量表的索引
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIndex</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// todo 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 清理寄存器 
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clearReg</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">  	<span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 执行加法运算， 运算逻辑总是将 寄存器 a,b 相加，并把值放入寄存器 c
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 将会省略 check 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">Number</span><span class="o">.</span><span class="na">add</span><span class="o">(</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">a</span><span class="o">,</span> <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">b</span> <span class="o">)</span> <span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * 这里的变量名， 改用传参的形式
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="n">String</span> <span class="n">first</span><span class="o">,</span><span class="n">String</span> <span class="n">second</span><span class="o">,</span> <span class="n">String</span> <span class="n">result</span> <span class="o">){</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1, 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">a</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">first</span><span class="o">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">second</span><span class="o">)];</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">add</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">localVarTable</span><span class="o">[</span><span class="n">getIndex</span><span class="o">(</span><span class="n">result</span><span class="o">)]</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 5 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">clearReg</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="其他">其他</h2>
 <p>本篇介绍了几种实现机制， 读者可以根据自己的需求，能力进行选择。</p>
@@ -612,7 +608,7 @@ k = ~ a ;
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">
               <a href="/">hideDragon</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
@@ -622,7 +618,7 @@ k = ~ a ;
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj+ONq/I3Xl8Y4cNI2Xw=" defer></script><script src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe+fTKorzHq40yfBQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.0958e55ce95b5d416df305ff357ae8438076d0b4efac33ef837865b6be424377.js" integrity="sha256-CVjlXOlbXUFt8wX/NXroQ4B20LTvrDPvg3hltr5CQ3c=" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-P74XPSRPG3');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
