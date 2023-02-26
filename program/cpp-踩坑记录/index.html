@@ -10,7 +10,7 @@
 <meta name="description" content="#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。 更多解释可见： https://stackoverflow.com/a/1946730/11226492 一个可能的场景是这样的： 有一个" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Cpp 踩坑记录">
 <meta itemprop="description" content="#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。 更多解释可见： https://stackoverflow.com/a/1946730/11226492 一个可能的场景是这样的： 有一个"><meta itemprop="datePublished" content="2021-05-01T15:25:44+08:00" />
 <meta itemprop="dateModified" content="2021-05-01T15:25:44+08:00" />
-<meta itemprop="wordCount" content="358"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="497"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Cpp 踩坑记录" />
 <meta property="og:description" content="#param once 的缺点： 相同文件内容的不同位置会视为两个文件 当出现这个状况的时候， 可能会引发重定义的错误。 更多解释可见： https://stackoverflow.com/a/1946730/11226492 一个可能的场景是这样的： 有一个" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95\/"
-    },"genre": "program","wordcount":  358 ,
+    },"genre": "program","wordcount":  497 ,
     "url": "https:\/\/fantasyplayer.link\/program\/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95\/","datePublished": "2021-05-01T15:25:44+08:00","dateModified": "2021-05-01T15:25:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -231,6 +231,27 @@
 </div><p>目前的情况是： 在B的源代码里面使用诸如 <code>../../include/abc.h</code> 的形式引用A的头文件。</p>
 <p>开发这些项目的开发者发觉这样写不太美观，而且不方便拓展。所以决定将项目A的头文件安装到<code>/usr/local/include/A</code> 目录下 。</p>
 <p>这时，就需要把项目B里面的所有引用位置都纠正了，否则就可能出现重定义的情况。 （<em>这里只讨论使用 #param once 的情况，使用宏定义的方式应该不会出现这样的情况。</em> ）</p>
+<h3 id="关于异常的一些内容">关于异常的一些内容</h3>
+<p>在 cpp 里面 函数声明的时候 尽量不要指定抛出的异常类型。</p>
+<p>注意：  不指定异常类型的话， 是可以抛出任何类型的异常的！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">Func</span><span class="p">();</span>            <span class="c1">// 可以抛出任意类型的异常
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Gunc</span><span class="p">()</span> <span class="k">throw</span><span class="p">();</span>    <span class="c1">// 什么也不能抛出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">Hunc</span><span class="p">()</span> <span class="k">throw</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">);</span> <span class="c1">// 只能抛出 A 或者 B
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>除此之外， 在定义函数指针的时候， 这个声明也会带来一些问题。</p>
+<p>阅读链接：  <a href="http://www.gotw.ca/publications/mill22.htm"target="_blank" rel="external nofollow noopener noreferrer">http://www.gotw.ca/publications/mill22.htm</a></p>
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">

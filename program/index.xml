@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (hideDragon)</managingEditor>
     <webMaster>aincvy@gmail.com (hideDragon)</webMaster>
-    <lastBuildDate>Sun, 08 Jan 2023 22:18:51 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 15:11:25 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cpp中字符串的长度和输出的字符串长度不一致的问题的记录</title>
+      <link>https://fantasyplayer.link/program/cpp%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6%E5%92%8C%E8%BE%93%E5%87%BA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 26 Feb 2023 15:11:25 +0800</pubDate>
+      <author>aincvy@gmail.com (hideDragon)</author>
+      <guid>https://fantasyplayer.link/program/cpp%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6%E5%92%8C%E8%BE%93%E5%87%BA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <description>主要内容 现象 先来看一段日志 1 2 3 4 5 6 7 [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource = &amp;#34;varName = 23.5 + -69.5;&amp;#34; (std::string) [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource.length() = 80 (unsigned long) [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource.size() = 80 (unsigned long) [..t/sight/sight_js.cpp:997 (parseGraph)] finalSource.data() = varName (char*) [..t/sight/sight_js.cpp:998 (parseGraph)] finalSource.c_str() = &amp;#34;varName&amp;#34; (const char*) varName varName = 23.5 + -69.5; 前面三行可以看</description>
+    </item>
+    
     <item>
       <title>Unity 相关的几个小问题记录</title>
       <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>

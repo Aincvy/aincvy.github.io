@@ -79,6 +79,50 @@ Debug.Log(layerMask);
 参考阅读：  https://docs.unity3d.com/Manual/layers-and-layermasks.html
 
 
+### 动画过渡相关的一点内容
+
+动画过渡的 settings 里面的 exit time 是比例(normalized time)， 不是秒
+
+duration 可以设置是 秒还是 比例。
+
+### NavMesh和 NavMeshAgent 相关的一点内容
+`NavMesh.GetAreaFromName` 返回的结果是 0 ~ 31
+
+要设置给agent的时候使用 `navMeshAgent.areaMask = 1 << NavMesh.GetAreaFromName("Walkable");`    
+
+默认情况下，agent type 只有 Humanoid 可用。 如果设置了其他类型 就会无法寻路。 
+想要使用其他的agent type可以参考下面的链接 
+- https://answers.unity.com/questions/1358023/nav-mesh-agent-type.html
+- https://github.com/Unity-Technologies/NavMeshComponents
+
+似乎以`Mask`结尾的东西都是移位之后的数值。 
+
+*笔者在自己测试的时候发现，修改NavMeshAgent的 radius,height 属性之后 似乎没有什么作用。具体原因笔者没有深究。*
+
+### Unity Message 
+unity 的消息函数， 如： 
+- OnCollisionEnter
+- Awake
+- Start
+- Update
+
+都是使用反射的方式调用的。  如果在设计类结构的时候使用了继承机制， 那么就要小心这些消息函数的访问修饰符。
+
+如果在代码里都是使用的`private` 修饰符的话， 比如像下面的代码。
+```csharp
+private void OnCollisionEnter(Collision other) {
+        // 检测是否是碰到了玩家
+        Log("OnCollisionEnter");
+}
+```
+如果子类也实现了这个函数的话， 那么基类的函数就不会得到调用。  可能会产生一些不太好寻找的BUG。 
+并且， 在VS Code 里面的话， 也不会得到一丝提示。 
+
+如果去掉访问修饰符， 或者使用 `protected` `public` 的话， 在 VS Code 里面就可以看到一个警告。
+
+拓展阅读：  https://forum.unity.com/threads/monobehaviour-inheritance-and-awake-start-onenable-etc.303834/#post-1985265
+
+
 
 ---
 

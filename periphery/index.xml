@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (hideDragon)</managingEditor>
     <webMaster>aincvy@gmail.com (hideDragon)</webMaster>
-    <lastBuildDate>Sat, 21 Jan 2023 20:33:18 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 15:57:12 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity Asset Store 一些插件的介绍</title>
+      <link>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Sun, 26 Feb 2023 15:57:12 +0800</pubDate>
+      <author>aincvy@gmail.com (hideDragon)</author>
+      <guid>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</guid>
+      <description>插件这东西并不是越多越好， 还是符合自己的需求最好。 🈚 免费 🈶 要钱 📖 开源 主要内容 代码工具类 日志插件： 🈚📖 Unity File Debug 简介： 这个插件可以记录 console log 到文件里</description>
+    </item>
+    
     <item>
       <title>Vscode .Net Sdk 找不到的问题 记录</title>
       <link>https://fantasyplayer.link/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/</link>

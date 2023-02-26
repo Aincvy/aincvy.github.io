@@ -86,7 +86,7 @@ pretty_print(std::ostream& stream, const T& value) {
 
 ## 拓展阅读
 
-- Issue in dbg:  [`Type does not support the << ostream operator` on custom type](https://github.com/sharkdp/dbg-macro/issues/118)
+- Issue in dbg:  [Type does not support the << ostream operator on custom type](https://github.com/sharkdp/dbg-macro/issues/118)
 - https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83035
 
 
