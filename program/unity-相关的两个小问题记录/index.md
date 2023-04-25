@@ -118,9 +118,21 @@ private void OnCollisionEnter(Collision other) {
 如果子类也实现了这个函数的话， 那么基类的函数就不会得到调用。  可能会产生一些不太好寻找的BUG。 
 并且， 在VS Code 里面的话， 也不会得到一丝提示。 
 
-如果去掉访问修饰符， 或者使用 `protected` `public` 的话， 在 VS Code 里面就可以看到一个警告。
+~~如果去掉访问修饰符， 或者使用 `protected` `public` 的话， 在 VS Code 里面就可以看到一个警告。~~  
+如果使用修饰符 `protected` 或者 `public` 的话， 在 VS Code 里面就可以看到一个警告。
 
 拓展阅读：  https://forum.unity.com/threads/monobehaviour-inheritance-and-awake-start-onenable-etc.303834/#post-1985265
+
+### 动画预览
+
+打开Animator 窗口之后， 点击一个Transition 之后， 可以在右下角看到一个preview 界面， 这个是预览动画。
+
+预览界面的底部中间有一行字，这行字的前半部分是 0:00  ， 这个是表示的是帧数还是时间， 笔者还没有搞清楚。  
+但是笔者知道， 前面一个0 是秒数， 后面一个则是 0 ~ 59 之间的数值。 即 0:58, 0:59, 1:00   这样的。
+
+如果需要手动填写动画时间的时候， 需要注意一个差别， 1秒 等于 1000 毫秒，  即 预览里看到的是 0:30 的时候， 时间上应该填写 0.5s  
+不过， 笔者发现 手动填写动画时间 并不靠谱，更应该考虑动画事件， 这样在时间上更精确一些。   
+只是动画事件的回调，在 transition的过程中也会调用， 这是一个问题。  
 
 
 
