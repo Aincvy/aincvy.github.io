@@ -1,7 +1,7 @@
 # Java中HashMap和synchronized的更多认识
 
 
-## 详细内容
+## 主要内容
 
 ### HashMap.keySet()
 这个方法返回一个内部类 `HashMap.KeySet`的实例， 多次调用这个方法将获取同一个对象。

@@ -33,7 +33,7 @@
       <pubDate>Mon, 12 Dec 2022 15:01:37 +0800</pubDate>
       <author>aincvy@gmail.com (hideDragon)</author>
       <guid>https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/</guid>
-      <description>详细内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa</description>
+      <description>主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa</description>
     </item>
     
     <item>
