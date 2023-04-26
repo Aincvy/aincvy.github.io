@@ -134,6 +134,35 @@ private void OnCollisionEnter(Collision other) {
 不过， 笔者发现 手动填写动画时间 并不靠谱，更应该考虑动画事件， 这样在时间上更精确一些。   
 只是动画事件的回调，在 transition的过程中也会调用， 这是一个问题。  
 
+### 地形与树木
+
+首先说说树木的碰撞体吧。   
+给树木的prefab 添加碰撞体之后， 需要在地形的 TerrainCollider 组件上 勾选 EnableTreeColliders 属性， 这样树木的碰撞体就生效了。  
+默认情况下， EnableTreeColliders 属性是开启的。  所以只需要给树木的prefab 添加碰撞体就可以了。   
+如果把树木当成普通的prefab 使用， 那么就不需要这个。
+
+现在来说一下 树木的 layer。  
+使用上面的方式添加碰撞体之后， 树木的碰撞体和layer 将会与地形混合在一起。  即当你与树木的碰撞体碰撞之后， 你获取到的GameObject 是TerrainCollider 所挂载的GameObject。  
+GameObject name, collider, GameObject layer, 都是地形碰撞体的。   
+在地形编辑器里面有一个属性叫做 `PreserveTreePrototypeLayers`   ，勾选它， 似乎就可以获取到 树木的layer 。   
+但是 笔者在测试后发现， 这个属性没用。  似乎有些版本有效， 有些没用。  笔者目前测试的版本是 Unity 2019.4.21f1   
+有一些其他版本的用户也说了这个问题
+- https://forum.unity.com/threads/cannot-get-layer-id-of-terrain-tree-prefab-bug.986496/
+- https://forum.unity.com/threads/preservetreeprototypelayers-broken.1406575/
+- https://forum.unity.com/threads/trigger-sound-on-terrain-tree-collider.1050500/
+
+上面的链接中 有一个人提出了一个曲线救国的方法， 使用碰撞位置和地形高度进行比较， 笔者没有尝试， 感觉使用起来比较麻烦，而且不知道会不会有性能问题。 
+
+然后是树木和风  
+添加一个 WindZone 可以给树木施加风的效果。   
+但是， 并不是所有的树木都是可以的， 需要使用地形工具的Paint Tree 画出来的树木才可以。 并且在Edit Tree 中需要把 Bend Factor 属性的值修改成大于0的值。  
+如果Edit Tree 中没有这个属性， 则说明该树木不支持 Wind 的效果。   
+如果你是购买了一个树木资源包， 那么， 那个资源包可能会包含一个 Wind_prefab 之类的东西。 具体情况可以去询问资源包的作者。   
+
+吐槽一下
+- 经过简单的测试， 笔者感觉 wind 的效果并不怎么样- - 
+- WindZone 如果设置成 Directional ， 那么将影响整个场景， 想设置一个范围都不行- - 
+  
 
 
 ---

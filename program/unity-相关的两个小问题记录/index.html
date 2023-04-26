@@ -10,7 +10,7 @@
 <meta name="description" content="主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Unity 相关的几个小问题记录">
 <meta itemprop="description" content="主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而"><meta itemprop="datePublished" content="2023-01-08T22:18:51+08:00" />
 <meta itemprop="dateModified" content="2023-01-08T22:18:51+08:00" />
-<meta itemprop="wordCount" content="1629"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="2293"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Unity 相关的几个小问题记录" />
 <meta property="og:description" content="主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/"
-    },"genre": "program","wordcount":  1629 ,
+    },"genre": "program","wordcount":  2293 ,
     "url": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2023-01-08T22:18:51+08:00","dateModified": "2023-01-08T22:18:51+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -325,6 +325,33 @@ layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表�
 <p>如果需要手动填写动画时间的时候， 需要注意一个差别， 1秒 等于 1000 毫秒，  即 预览里看到的是 0:30 的时候， 时间上应该填写 0.5s<br>
 不过， 笔者发现 手动填写动画时间 并不靠谱，更应该考虑动画事件， 这样在时间上更精确一些。<br>
 只是动画事件的回调，在 transition的过程中也会调用， 这是一个问题。</p>
+<h3 id="地形与树木">地形与树木</h3>
+<p>首先说说树木的碰撞体吧。<br>
+给树木的prefab 添加碰撞体之后， 需要在地形的 TerrainCollider 组件上 勾选 EnableTreeColliders 属性， 这样树木的碰撞体就生效了。<br>
+默认情况下， EnableTreeColliders 属性是开启的。  所以只需要给树木的prefab 添加碰撞体就可以了。<br>
+如果把树木当成普通的prefab 使用， 那么就不需要这个。</p>
+<p>现在来说一下 树木的 layer。<br>
+使用上面的方式添加碰撞体之后， 树木的碰撞体和layer 将会与地形混合在一起。  即当你与树木的碰撞体碰撞之后， 你获取到的GameObject 是TerrainCollider 所挂载的GameObject。<br>
+GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
+在地形编辑器里面有一个属性叫做 <code>PreserveTreePrototypeLayers</code>   ，勾选它， 似乎就可以获取到 树木的layer 。<br>
+但是 笔者在测试后发现， 这个属性没用。  似乎有些版本有效， 有些没用。  笔者目前测试的版本是 Unity 2019.4.21f1<br>
+有一些其他版本的用户也说了这个问题</p>
+<ul>
+<li><a href="https://forum.unity.com/threads/cannot-get-layer-id-of-terrain-tree-prefab-bug.986496/"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/cannot-get-layer-id-of-terrain-tree-prefab-bug.986496/</a></li>
+<li><a href="https://forum.unity.com/threads/preservetreeprototypelayers-broken.1406575/"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/preservetreeprototypelayers-broken.1406575/</a></li>
+<li><a href="https://forum.unity.com/threads/trigger-sound-on-terrain-tree-collider.1050500/"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/trigger-sound-on-terrain-tree-collider.1050500/</a></li>
+</ul>
+<p>上面的链接中 有一个人提出了一个曲线救国的方法， 使用碰撞位置和地形高度进行比较， 笔者没有尝试， 感觉使用起来比较麻烦，而且不知道会不会有性能问题。</p>
+<p>然后是树木和风<br>
+添加一个 WindZone 可以给树木施加风的效果。<br>
+但是， 并不是所有的树木都是可以的， 需要使用地形工具的Paint Tree 画出来的树木才可以。 并且在Edit Tree 中需要把 Bend Factor 属性的值修改成大于0的值。<br>
+如果Edit Tree 中没有这个属性， 则说明该树木不支持 Wind 的效果。<br>
+如果你是购买了一个树木资源包， 那么， 那个资源包可能会包含一个 Wind_prefab 之类的东西。 具体情况可以去询问资源包的作者。</p>
+<p>吐槽一下</p>
+<ul>
+<li>经过简单的测试， 笔者感觉 wind 的效果并不怎么样- -</li>
+<li>WindZone 如果设置成 Directional ， 那么将影响整个场景， 想设置一个范围都不行- -</li>
+</ul>
 </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
