@@ -163,6 +163,49 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。
 - 经过简单的测试， 笔者感觉 wind 的效果并不怎么样- - 
 - WindZone 如果设置成 Directional ， 那么将影响整个场景， 想设置一个范围都不行- - 
   
+### trigger collider 的回调函数
+
+```csharp
+protected virtual void OnTriggerEnter(Collider other) {
+
+}
+
+protected virtual void OnTriggerExit(Collider other) {
+
+}
+```
+
+当一个碰撞体 触发了 `OnTriggerEnter` 回调的时候， 你不能预期它的 `OnTriggerExit` 回调一定会执行。  
+如果当前的 GameObject 被禁用了的话， OnTriggerExit 就永远不会被调用了。 
+
+这里有一个脚本提供了可靠性的调用保证： https://forum.unity.com/threads/fix-ontriggerexit-will-now-be-called-for-disabled-gameobjects-colliders.657205/
+> // OnTriggerExit is not called if the triggering object is destroyed, set inactive, or if the collider is disabled. This script fixes that
+
+
+但是笔者并没有使用这个脚本， 而是选择了 `OnTriggerStay` 函数。
+
+
+### UNITY 回调函数的执行顺序 
+
+官方文档地址：  https://docs.unity3d.com/Manual/ExecutionOrder.html
+ 
+![unity callback execute order](https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg)
+
+`Awake` 和 `OnEnable` 最先执行， 之后是 `Reset`  ， 但是`Reset` 只在编辑器里面会调用， 在添加组件的时候。 
+
+然后是 `Start` 函数， 然后是 物理部分。   
+物理部分 一帧可能会调用多次， 当 fixed time step 小于帧的 update time  的时候。  
+物理部分 先是 `FixedUpdate` ，最后是  `OnTriggerXXX` 和 `OnCollisionXXX`。  
+`OnTriggerXXX` 要先于 `OnCollisionXXX` 调用。
+
+`Update` 要在物理和 输入事件部分之后调用, 之后是 Coroutine 相关的部分。   
+`LateUpdate` 在 `GameLogic` 的最后一部分执行，但是之后还有渲染和其他一些内容。
+
+`OnDisable` 和 `OnDestroy` 是在最后的最后执行的。
+
+
+
+
 
 
 ---
