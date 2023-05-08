@@ -21,7 +21,7 @@
 
 有一只小号的人鱼和玩家一起参加测验， 在必要的时候， 她可以施放技能帮助玩家。 
 
-[点击购买](https://store.steampowered.com/app/2391490/_/)
+[点击购买](https://store.steampowered.com/app/2391490/_/)  
 
 ### 截图以及其他
 
@@ -31,11 +31,11 @@
 ![隔空取物](https://cdn.cloudflare.steamstatic.com/steam/apps/2391490/ss_14be70e0b6002b70e7566f52e92c6170ce08834a.1920x1080.jpg?t=1683256220)
 
 B站宣传片： 
-{{< bilibili BV1jM4y1y7EJ >}}
+{{< bilibili BV14M4y1b7qQ >}}
 
 
-B站流程视频：
-待添加
+B站流程视频：[点击观看](https://www.bilibili.com/list/27285915?sid=3268591&spm_id_from=333.999.0.0&desc=1&oid=910761401&bvid=BV1GM4y1b7Qh)
+
 
 
 ### 背后的故事
@@ -50,6 +50,8 @@ B站流程视频：
 
 美术资源， 包括模型， 贴图， 动画，粒子特效都是从 unity asset store 上购买的。   
 其中部分资源 经过了笔者的手动修改。
+
+[详细的技术细节]({{< ref "../periphery/作为术士，我要应付月中测验 - 技术细节" >}})
 
 ### 未来规划
 
