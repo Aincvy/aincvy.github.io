@@ -25,7 +25,7 @@
 
 ### 截图以及其他
 
-![蜘蛛](https://cdn.cloudflare.steamstatic.com/steam/apps/2391490/ss_2ce75a0bc5bcde76eca43d3ce47b7355cf6de1f6.1920x1080.jpg?t=1683256220)
+![蜘蛛](https://cdn.akamai.steamstatic.com/steam/apps/2391490/ss_5e8ee6ea7e4ec898355de510224bc60cfe4f1ed8.1920x1080.jpg?t=1683630386)
 ![匕首](https://cdn.cloudflare.steamstatic.com/steam/apps/2391490/ss_e97bbbd2c4e76428eefd15d5ea2fa8099469727d.1920x1080.jpg?t=1683256220)
 ![远程反击快速技能](https://cdn.cloudflare.steamstatic.com/steam/apps/2391490/ss_ee505ddcec90e3d20f8850223d4cc5a2aeabfaf9.1920x1080.jpg?t=1683256220)
 ![隔空取物](https://cdn.cloudflare.steamstatic.com/steam/apps/2391490/ss_14be70e0b6002b70e7566f52e92c6170ce08834a.1920x1080.jpg?t=1683256220)
@@ -55,7 +55,7 @@ B站流程视频：[点击观看](https://www.bilibili.com/list/27285915?sid=326
 
 ### 未来规划
 
-除了常规BUG修复， 还打算做一个新的DLC 。 
+除了常规BUG修复， ~~还打算做一个新的DLC 。~~ 
 
 ## 更新
 
