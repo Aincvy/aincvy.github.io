@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (hideDragon)</managingEditor>
     <webMaster>aincvy@gmail.com (hideDragon)</webMaster>
-    <lastBuildDate>Fri, 19 May 2023 10:21:59 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jun 2023 20:58:39 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vagrant   虚拟机模板工具</title>
+      <link>https://fantasyplayer.link/periphery/vagrant-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Thu, 15 Jun 2023 20:58:39 +0800</pubDate>
+      <author>aincvy@gmail.com (hideDragon)</author>
+      <guid>https://fantasyplayer.link/periphery/vagrant-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</guid>
+      <description>简介 如果需要频繁的创建和销毁虚拟机，这个工具还是有作用的，否则还是手动执行比较方便。 Vagrant 需要一个虚拟机工具来创建虚拟机， 比如 VirtualBox, VMware Fusion, 或者 Hyper-V. 预期的</description>
+    </item>
+    
     <item>
       <title>Unity Asset Store被标记成disable的资源</title>
       <link>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</link>
