@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (hideDragon)</managingEditor>
     <webMaster>aincvy@gmail.com (hideDragon)</webMaster>
-    <lastBuildDate>Sun, 26 Feb 2023 15:11:25 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jun 2023 10:22:57 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java   Stream 中的 Map与flatMap 函数</title>
+      <link>https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 23 Jun 2023 10:22:57 +0800</pubDate>
+      <author>aincvy@gmail.com (hideDragon)</author>
+      <guid>https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/</guid>
+      <description>map 函数的作用是映射， 或者说转换， 把对象A 转换到对象B， 可以切换类型。 flatMap 函数的作用是先执行 map操作， 然后平铺。 示例 下面看示例1. 1 2 3 4 5 6</description>
+    </item>
+    
     <item>
       <title>Cpp中字符串的长度和输出的字符串长度不一致的问题的记录</title>
       <link>https://fantasyplayer.link/program/cpp%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6%E5%92%8C%E8%BE%93%E5%87%BA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
