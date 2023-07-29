@@ -240,6 +240,6 @@ vs-code 本身也有一些可以调整的选项。
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c++%E7%9A%84%E4%BD%93%E9%AA%8C/  
 

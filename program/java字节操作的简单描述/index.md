@@ -96,6 +96,6 @@ i ^= 1 << n;     		   // 切换第 n 位的值 （1变0， 0变1）
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/java%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C%E7%9A%84%E7%AE%80%E5%8D%95%E6%8F%8F%E8%BF%B0/  
 

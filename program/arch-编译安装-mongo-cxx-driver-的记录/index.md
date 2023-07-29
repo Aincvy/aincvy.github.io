@@ -43,6 +43,6 @@ target_link_libraries(target PRIVATE ${EXTRA_LIBS})
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95/  
 

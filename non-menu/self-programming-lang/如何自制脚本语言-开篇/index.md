@@ -114,6 +114,6 @@ https://github.com/lua/lua
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/  
 

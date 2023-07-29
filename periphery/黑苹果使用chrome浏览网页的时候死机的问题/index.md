@@ -31,6 +31,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%BD%BF%E7%94%A8chrome%E6%B5%8F%E8%A7%88%E7%BD%91%E9%A1%B5%E7%9A%84%E6%97%B6%E5%80%99%E6%AD%BB%E6%9C%BA%E7%9A%84%E9%97%AE%E9%A2%98/  
 

@@ -430,6 +430,6 @@ return JavaFlowSupport.Source.fromPublisher(publisher);
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/  
 

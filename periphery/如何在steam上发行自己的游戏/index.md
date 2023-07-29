@@ -147,6 +147,6 @@ steam work 的设置页面 每个标签看过去， 带*的都写上就差不多
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E5%9C%A8steam%E4%B8%8A%E5%8F%91%E8%A1%8C%E8%87%AA%E5%B7%B1%E7%9A%84%E6%B8%B8%E6%88%8F/  
 

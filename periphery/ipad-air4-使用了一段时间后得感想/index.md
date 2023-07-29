@@ -101,6 +101,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/ipad-air4-%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%90%8E%E5%BE%97%E6%84%9F%E6%83%B3/  
 

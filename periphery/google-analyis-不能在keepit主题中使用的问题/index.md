@@ -29,6 +29,6 @@ https://stackoverflow.com/questions/64993368/my-google-analytics-setup-for-hugo-
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/  
 

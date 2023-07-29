@@ -93,6 +93,6 @@ I： 虚幻资源商城发邮件联系我了， 因为一个资源包是盗窃�
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/  
 

@@ -170,6 +170,6 @@ https://zhuanlan.zhihu.com/p/25404844
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/  
 

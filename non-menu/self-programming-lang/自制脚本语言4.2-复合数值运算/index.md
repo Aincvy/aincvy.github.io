@@ -94,6 +94,6 @@ add               // 取出栈顶两个元素进行相加， 结果放回栈顶
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%804.2-%E5%A4%8D%E5%90%88%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97/  
 

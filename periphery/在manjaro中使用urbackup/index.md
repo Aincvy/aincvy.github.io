@@ -42,6 +42,6 @@ urbackup的默认配置文件在 `/etc/default/urbackupclient` 修改文件的RE
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/  
 

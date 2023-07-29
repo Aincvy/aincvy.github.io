@@ -52,6 +52,6 @@ private:
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%9C%A8%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%AD%A3%E5%B8%B8%E5%9C%A8%E5%B8%B8%E8%A7%84%E6%A8%A1%E5%BC%8F%E5%B0%B1%E5%B4%A9%E6%BA%83%E5%BE%97%E6%83%85%E5%86%B5/  
 

@@ -212,6 +212,6 @@ https://the.earth.li/~sgtatham/putty/0.70/htmldoc/Chapter7.html#plink
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA-%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E5%88%86%E4%BB%8B%E7%BB%8D/  
 

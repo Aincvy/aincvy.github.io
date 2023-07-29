@@ -56,6 +56,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/caprice/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AC%94%E8%80%85%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E5%86%99%E7%9A%84%E4%B8%8D%E5%A4%9A/  
 

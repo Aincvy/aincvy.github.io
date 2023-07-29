@@ -26,6 +26,6 @@ https://github.com/git-lfs/git-lfs/issues/3026#issuecomment-696697599
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/gitlab-%E5%85%B3%E9%97%AD-lfs-%E7%9A%84%E8%AE%B0%E5%BD%95/  
 

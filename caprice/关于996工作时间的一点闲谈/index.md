@@ -176,6 +176,6 @@ As we all know, **产出 = 工作效率 * 工作时长**
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/  
 

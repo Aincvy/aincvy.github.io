@@ -88,6 +88,6 @@ AMD的GPU， 笔者尝试的 Rx580, 5700XT 都是免驱的，装好系统，插�
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/  
 

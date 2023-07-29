@@ -444,6 +444,6 @@ Teledyne公司回购股票的做法体现出公司对自身未来充满信心，
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/2022/%E5%BD%BC%E5%BE%97%E6%9E%97%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84-%E4%B9%A6%E6%91%98/  
 

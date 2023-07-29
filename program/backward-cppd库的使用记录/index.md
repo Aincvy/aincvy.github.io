@@ -46,6 +46,6 @@ libdwarf 在mac平台上编译有问题， 添加 `target_link_libraries(${targe
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/backward-cppd%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/  
 

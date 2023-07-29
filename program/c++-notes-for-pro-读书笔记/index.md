@@ -735,6 +735,6 @@ MESSAGE(STATUS "Found yaml-cpp at: ${YAML_CPP_INCLUDE_DIR}")     # 输出日志�
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/c++-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/  
 

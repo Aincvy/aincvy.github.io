@@ -37,6 +37,6 @@ SightNodeGraph* Project::openGraph(std::string_view path, char* pathWithoutExtOu
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/cpp-char-%E6%95%B0%E7%BB%84%E8%B6%8A%E7%95%8C%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/  
 

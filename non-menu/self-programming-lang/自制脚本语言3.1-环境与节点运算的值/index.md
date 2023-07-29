@@ -100,6 +100,6 @@ langX中的相关实现都在 `Enviroment.h` 和`Enviroment.cpp` 两个文件中
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%803.1-%E7%8E%AF%E5%A2%83%E4%B8%8E%E8%8A%82%E7%82%B9%E8%BF%90%E7%AE%97%E7%9A%84%E5%80%BC/  
 

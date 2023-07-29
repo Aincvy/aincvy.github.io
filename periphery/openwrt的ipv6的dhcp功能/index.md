@@ -22,6 +22,6 @@ ipv4的dhcp服务由pfSense提供，pfSense会把openwrt的地址作为网关和
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/  
 

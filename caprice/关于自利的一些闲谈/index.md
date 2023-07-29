@@ -55,6 +55,6 @@ B因为手头不足，所以开口向A借了300块钱。  A以自己没钱拒绝
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%88%A9%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%B2%E8%B0%88/  
 

@@ -124,6 +124,6 @@ System.out.println("num3: " + num3);        // num3: 0.00999999
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/  
 

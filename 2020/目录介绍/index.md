@@ -19,6 +19,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/2020/%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/  
 

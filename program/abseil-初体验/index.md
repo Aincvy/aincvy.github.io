@@ -199,6 +199,6 @@ set(ABSL_INTERNAL_DLL_TARGETS
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/  
 

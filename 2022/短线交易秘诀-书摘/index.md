@@ -399,6 +399,6 @@ Jack 每天至少跟我们说一遍：“千万不要接正在往下落的匕首
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/2022/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E7%A7%98%E8%AF%80-%E4%B9%A6%E6%91%98/  
 

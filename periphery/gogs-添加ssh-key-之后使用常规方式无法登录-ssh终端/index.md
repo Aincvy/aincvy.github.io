@@ -52,6 +52,6 @@ https://unix.stackexchange.com/a/15141
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/  
 

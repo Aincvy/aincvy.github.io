@@ -108,6 +108,6 @@ The ability to ignore individual updates will be removed in a future release of 
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%83%85%E5%86%B5%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/  
 

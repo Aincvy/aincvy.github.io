@@ -201,6 +201,6 @@ NPCEntity  表示一个 Npc单位
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C-%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/  
 

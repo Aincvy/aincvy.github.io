@@ -202,6 +202,6 @@ public class NaughtyComponent : MonoBehaviour
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/  
 

@@ -152,6 +152,6 @@ WHERE s.grade = g.id AND g.type = 1
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/%E5%85%AC%E5%8F%B8%E9%9D%A2%E8%AF%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/  
 

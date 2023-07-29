@@ -70,6 +70,6 @@ Emmmm...
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/caprice/newpost/  
 

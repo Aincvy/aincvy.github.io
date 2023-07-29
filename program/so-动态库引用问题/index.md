@@ -8,6 +8,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/  
 

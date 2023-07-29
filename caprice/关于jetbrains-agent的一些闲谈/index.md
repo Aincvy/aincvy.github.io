@@ -37,6 +37,6 @@ https://justcode.ikeepstudying.com/2020/10/2020-10-28-%e4%ba%b2%e6%b5%8b%e6%9c%8
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8Ejetbrains-agent%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%B2%E8%B0%88/  
 

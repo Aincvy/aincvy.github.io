@@ -28,6 +28,6 @@ https://stackoverflow.com/questions/17561826/how-to-clean-project-cache-in-intel
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/  
 

@@ -110,6 +110,6 @@ steam 的曝光量，只有发行的第一天给的多， 假如购买量不足�
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/steam%E4%B8%8A%E6%9E%B6%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/  
 

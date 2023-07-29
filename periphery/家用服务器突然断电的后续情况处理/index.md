@@ -73,6 +73,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/  
 

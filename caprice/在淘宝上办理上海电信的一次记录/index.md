@@ -187,6 +187,6 @@ OK， 好吧， 我拍了，谁叫我想贪便宜呢。
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/caprice/%E5%9C%A8%E6%B7%98%E5%AE%9D%E4%B8%8A%E5%8A%9E%E7%90%86%E4%B8%8A%E6%B5%B7%E7%94%B5%E4%BF%A1%E7%9A%84%E4%B8%80%E6%AC%A1%E8%AE%B0%E5%BD%95/  
 

@@ -100,6 +100,6 @@ vscode 和 chrome 在系统 更新的时候并不会自动更新， 所以需要
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/  
 

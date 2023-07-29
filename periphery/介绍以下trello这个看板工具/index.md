@@ -201,6 +201,6 @@ Trello 提供了一套API 用于操作看板，列表，卡片等内容。
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/%E4%BB%8B%E7%BB%8D%E4%BB%A5%E4%B8%8Btrello%E8%BF%99%E4%B8%AA%E7%9C%8B%E6%9D%BF%E5%B7%A5%E5%85%B7/  
 

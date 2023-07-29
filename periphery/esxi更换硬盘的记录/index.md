@@ -136,6 +136,6 @@ A： 先检查一下你的虚拟机有无快照， 经过我的经验来看，�
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/  
 

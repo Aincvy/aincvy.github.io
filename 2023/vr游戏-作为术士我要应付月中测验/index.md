@@ -66,6 +66,6 @@ B站流程视频：[点击观看](https://www.bilibili.com/list/27285915?sid=326
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/  
 

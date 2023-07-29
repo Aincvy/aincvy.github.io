@@ -51,6 +51,6 @@ Host debian.mylab
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/mac-%E4%B8%8B%E7%9A%84-ssh-key-%E6%97%A0%E6%B3%95%E4%B8%8E-gogs-%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/  
 

@@ -135,6 +135,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/kindle%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/  
 

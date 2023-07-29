@@ -13,6 +13,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/git-%E5%88%86%E6%94%AF%E6%8F%8F%E8%BF%B0/  
 

@@ -56,6 +56,6 @@ int Hunc() throw(A,B); // 只能抛出 A 或者 B
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/cpp-%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/  
 

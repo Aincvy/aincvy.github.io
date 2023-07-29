@@ -44,6 +44,6 @@ gitlab的版本号格式是： `(Major).(Minor).(Patch)`
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/  
 

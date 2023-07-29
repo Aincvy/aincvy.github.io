@@ -55,6 +55,6 @@ steam 有一个家用流式传输的功能， 可以远程玩一些游戏。 并
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/  
 

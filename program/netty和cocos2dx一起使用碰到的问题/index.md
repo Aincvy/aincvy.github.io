@@ -69,6 +69,6 @@ netty  长度解码器相关资料：  http://www.cnblogs.com/zhuawang/p/4047993
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/  
 

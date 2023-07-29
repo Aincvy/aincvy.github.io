@@ -28,6 +28,6 @@ vs code 里面已经设置了正确的 dotnetPath  和 sdkPath ， 但是还是�
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/  
 

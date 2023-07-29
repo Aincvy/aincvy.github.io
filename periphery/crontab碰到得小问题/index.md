@@ -63,6 +63,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/crontab%E7%A2%B0%E5%88%B0%E5%BE%97%E5%B0%8F%E9%97%AE%E9%A2%98/  
 

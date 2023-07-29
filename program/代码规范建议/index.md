@@ -170,6 +170,6 @@
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/  
 

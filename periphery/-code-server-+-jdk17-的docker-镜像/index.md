@@ -96,6 +96,6 @@ services:
 
 ---
 
-> 作者: hideDragon  
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/periphery/-code-server-+-jdk17-%E7%9A%84docker-%E9%95%9C%E5%83%8F/  
 
