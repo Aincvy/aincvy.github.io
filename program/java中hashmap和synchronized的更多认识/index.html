@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Java中HashMap和synchronized的更多认识">
 <meta itemprop="description" content="主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa"><meta itemprop="datePublished" content="2022-12-12T15:01:37+08:00" />
-<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="dateModified" content="2023-07-30T12:06:55+08:00" />
 <meta itemprop="wordCount" content="1546"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Java中HashMap和synchronized的更多认识" />
 <meta property="og:description" content="主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
 <meta property="article:published_time" content="2022-12-12T15:01:37+08:00" />
-<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
+<meta property="article:modified_time" content="2023-07-30T12:06:55+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
@@ -35,7 +35,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86\/"
     },"genre": "posts","wordcount":  1546 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86\/","datePublished": "2022-12-12T15:01:37+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/program\/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86\/","datePublished": "2022-12-12T15:01:37+08:00","dateModified": "2023-07-30T12:06:55+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -192,7 +192,7 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div>
-      <div class="post-meta-line"><span title="发布于 2022-12-12 15:01:37"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-12">2022-12-12</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1546 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2022-12-12 15:01:37"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-12">2022-12-12</time></span>&nbsp;<span title="更新于 2023-07-30 12:06:55"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1546 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -714,7 +714,7 @@ public boolean tryLock(long timeout, TimeUnit unit)
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+        <span title="更新于 2023-07-30 12:06:55">更新于 2023-07-30&nbsp;</span>
       </div><div class="post-info-license">
           <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
