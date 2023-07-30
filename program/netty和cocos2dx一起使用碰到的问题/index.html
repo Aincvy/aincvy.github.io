@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="简述一下环境： java netty 的服务端， cocos2dx 的客户端 昨天测试的时候 发生了一个奇怪的现象。 服务端在本地跑的时候， 都是正常的。 放到阿里云的服务器上面去的时候。" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Netty和cocos2dx一起使用碰到的问题">
 <meta itemprop="description" content="简述一下环境： java netty 的服务端， cocos2dx 的客户端 昨天测试的时候 发生了一个奇怪的现象。 服务端在本地跑的时候， 都是正常的。 放到阿里云的服务器上面去的时候。"><meta itemprop="datePublished" content="2016-04-17T21:36:18+08:00" />
-<meta itemprop="dateModified" content="2016-04-17T21:36:18+08:00" />
+<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
 <meta itemprop="wordCount" content="1436"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Netty和cocos2dx一起使用碰到的问题" />
 <meta property="og:description" content="简述一下环境： java netty 的服务端， cocos2dx 的客户端 昨天测试的时候 发生了一个奇怪的现象。 服务端在本地跑的时候， 都是正常的。 放到阿里云的服务器上面去的时候。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
 <meta property="article:published_time" content="2016-04-17T21:36:18+08:00" />
-<meta property="article:modified_time" content="2016-04-17T21:36:18+08:00" />
+<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
@@ -34,8 +34,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98\/"
-    },"genre": "program","wordcount":  1436 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98\/","datePublished": "2016-04-17T21:36:18+08:00","dateModified": "2016-04-17T21:36:18+08:00","publisher": {
+    },"genre": "posts","wordcount":  1436 ,
+    "url": "https:\/\/fantasyplayer.link\/program\/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98\/","datePublished": "2016-04-17T21:36:18+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -181,13 +181,18 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/program/" title="Programs">Programs</a></li><li class="breadcrumb-item active" aria-current="page">Netty和cocos2dx一起使用碰到的问题</li>
     </ol>
-  </nav><main class="container"><article class="page single special">
-    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Netty和cocos2dx一起使用碰到的问题</h1></div><div
-      class="content"
-      id="content"
-      
-      
-    ><p>简述一下环境：　java netty 的服务端， cocos2dx 的客户端</p>
+  </nav><main class="container"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Netty和cocos2dx一起使用碰到的问题</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div>
+      <div class="post-meta-line"><span title="发布于 2016-04-17 21:36:18"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2016-04-17">2016-04-17</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1436 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>简述一下环境：　java netty 的服务端， cocos2dx 的客户端</p>
 <p>昨天测试的时候 发生了一个奇怪的现象。  服务端在本地跑的时候，  都是正常的。 放到阿里云的服务器上面去的时候。 在客户端与服务端进行第一次连接的时候一切OK，然后第二次连接的时候 就出现了问题。。。 问题具体发生的原因我现在也还没弄明白。。。</p>
 <p>然后，我就查阅了一下  有关 windows select IO 异步模型的资料。 虽然这病没有帮助我解决问题， 但总归是有了些启发。</p>
 <p>然后我想，我加一下发送的数据包的长度进去吧。 于是乎，我在 netty 上面加了一个 解码器， 标注了发来的数据包会标准它的长度。  然后客户端在发送的时候会先发一个 表示长度的数据。 一般是采用 4个字节长度的大小。</p>
@@ -267,7 +272,41 @@
 <p>所以那种方式的直接使用是不正确的。  不要急着去解决问题。 可以先看看别人写的文章，到底是因为什么， 这么做的作用是什么， 原理是什么。 了解了之后就相当于提高了自己的内功，而不只是一个纸老虎 了。</p>
 <p>要相信 磨刀不误砍柴工。  工欲善其事必先利其器。</p>
 <p>netty  长度解码器相关资料：  <a href="http://www.cnblogs.com/zhuawang/p/4047993.html"target="_blank" rel="external nofollow noopener noreferrer">http://www.cnblogs.com/zhuawang/p/4047993.html</a></p>
-</div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+      </div><div class="post-info-license">
+          <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/program/netty%E5%92%8Ccocos2dx%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="Netty和cocos2dx一起使用碰到的问题"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav">
+      <a href="/program/java-%E8%AE%A1%E7%AE%97-%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E8%BF%91%E4%BC%BC%E9%95%BF%E5%BA%A6-%E7%82%AE%E5%BC%B9%E7%9A%84%E8%BF%91%E4%BC%BC%E9%A3%9E%E8%A1%8C%E6%97%B6%E9%97%B4/" class="post-nav-item" rel="next" title="Java 计算 抛物线的近似长度 炮弹的近似飞行时间">Java 计算 抛物线的近似长度 炮弹的近似飞行时间<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>

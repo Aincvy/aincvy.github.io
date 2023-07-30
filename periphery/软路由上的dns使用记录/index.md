@@ -160,6 +160,7 @@
 
 nslookup 命令 OK， 但是 ping 不通是怎么回事？[https://plantegg.github.io/2019/01/09/%E5%B0%B1%E6%98%AF%E8%A6%81%E4%BD%A0%E6%87%82ping--nslookup-OK-but-ping-fail/](https://plantegg.github.io/2019/01/09/就是要你懂ping--nslookup-OK-but-ping-fail/)
 
+
 ---
 
 > 作者: Aincvy  

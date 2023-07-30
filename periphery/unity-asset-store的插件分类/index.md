@@ -200,6 +200,7 @@ public class NaughtyComponent : MonoBehaviour
 - 音效已经bgm管理  https://assetstore.unity.com/packages/tools/audio/fmod-for-unity-161631
 - 免费shader  https://assetstore.unity.com/packages/vfx/shaders/ultimate-10-shaders-168611
 
+
 ---
 
 > 作者: Aincvy  

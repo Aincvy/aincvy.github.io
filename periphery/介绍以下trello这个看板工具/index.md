@@ -199,6 +199,7 @@ Trello 提供了一套API 用于操作看板，列表，卡片等内容。
 
 ![Card Detail](/img/periphery/trello/card_detail-fs8.png)
 
+
 ---
 
 > 作者: Aincvy  

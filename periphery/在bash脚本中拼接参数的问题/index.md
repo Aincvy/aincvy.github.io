@@ -43,6 +43,7 @@ sshpass -e rsync -avz "${include_arg[@]}" --exclude="*" ./ root@xx:/root
 
 修改成这样之后， `${include_arg[@]}` 会展开成3个独立的参数传给`rsync`。 
 
+
 ---
 
 > 作者: Aincvy  

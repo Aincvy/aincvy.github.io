@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Java中HashMap和synchronized的更多认识">
 <meta itemprop="description" content="主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa"><meta itemprop="datePublished" content="2022-12-12T15:01:37+08:00" />
-<meta itemprop="dateModified" content="2022-12-12T15:01:37+08:00" />
-<meta itemprop="wordCount" content="2841"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="wordCount" content="1546"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Java中HashMap和synchronized的更多认识" />
 <meta property="og:description" content="主要内容 HashMap.keySet() 这个方法返回一个内部类 HashMap.KeySet的实例， 多次调用这个方法将获取同一个对象。 调用这个对象的 remove 方法 将删除HashMa" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
 <meta property="article:published_time" content="2022-12-12T15:01:37+08:00" />
-<meta property="article:modified_time" content="2022-12-12T15:01:37+08:00" />
+<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
@@ -34,8 +34,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86\/"
-    },"genre": "program","wordcount":  2841 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86\/","datePublished": "2022-12-12T15:01:37+08:00","dateModified": "2022-12-12T15:01:37+08:00","publisher": {
+    },"genre": "posts","wordcount":  1546 ,
+    "url": "https:\/\/fantasyplayer.link\/program\/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86\/","datePublished": "2022-12-12T15:01:37+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -181,13 +181,34 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/program/" title="Programs">Programs</a></li><li class="breadcrumb-item active" aria-current="page">Java中HashMap和synchronized的更多认识</li>
     </ol>
-  </nav><main class="container"><article class="page single special">
-    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">Java中HashMap和synchronized的更多认识</h1></div><div
-      class="content"
-      id="content"
-      
-      
-    ><h2 id="主要内容">主要内容</h2>
+  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Java中HashMap和synchronized的更多认识</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div>
+      <div class="post-meta-line"><span title="发布于 2022-12-12 15:01:37"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-12">2022-12-12</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1546 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#主要内容">主要内容</a>
+      <ul>
+        <li><a href="#hashmapkeyset">HashMap.keySet()</a></li>
+        <li><a href="#synchronized">synchronized</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="主要内容">主要内容</h2>
 <h3 id="hashmapkeyset">HashMap.keySet()</h3>
 <p>这个方法返回一个内部类 <code>HashMap.KeySet</code>的实例， 多次调用这个方法将获取同一个对象。</p>
 <ul>
@@ -575,200 +596,155 @@
 <li>remove</li>
 </ul>
 <h3 id="synchronized">synchronized</h3>
-<p>据笔者所知 synchronized 是一个java的关键字， 用于加锁， 相比于<code>ReentrantLock</code>， synchronized 更加轻便， 没有选项， 但是存在一些优化措施 。
-比如所谓的锁升级机制就是指的 synchronized， ReentrantLock 则没有这种机制。<br>
-所谓的锁升级机制是说 一个对象的 对象头(cpp部分) 有一个叫做 mark word 的东西， 那个字段有2个位是表示锁的状态的的。
-它有四种状态 ，  00 01 10 11   分别对应什么笔者记不清楚了。 但是大概是 无锁， 偏向锁， 轻量锁， 重量级锁。<br>
-锁只能升级， 不能降级。</p>
-<p>当一个对象没有被任何线程锁住的时候，它是无锁的。 此时一个线程A 请求给这个对象加锁， 那么线程A会假设没有别的线程和它争抢， 它将对象头修改成 偏向锁，然后进入下一步操作。 但是此时，并没有真正的锁产生。 这么做当然是为了效率， 听说加锁是一个消耗比较重的操作。
-后来， 线程B 也想给这个对象加锁，那么，线程B会看到这个对象处于 偏向锁的状态，随后它修改对象头成轻量级锁， 并且进行一段时间的自旋。自旋就是空转， 这时线程B是没有进入休眠的， 线程B 假设线程A很快就会释放这个对象的锁。
-假如线程A真的很快的释放了锁， 那么线程B就会拿到锁， 并且进入下一步操作。 此时还是没有真正的 锁产生， 效率是比较高的。 但是假如线程A并没有很快的释放锁， 那么自旋到一定的次数或者时间， 线程B会把锁升级成重量级锁， 并且进入休眠， 此时就产生了一个真正的锁。</p>
-<p><em>对象头对于各个线程的同步机制在cpp层面是如何实现的， 笔者并不清楚。。 因为java的线程和cpp的线程听说是一对一的</em>
-<em>笔者 看来的原文是说java的 线程和操作系统的线程是一对一的。</em></p>
-<p><code>wait</code> 方法会释放掉 synchronized 持有的锁。
-<em>以下代码节选自 java.util.TimerThread</em></p>
-<div class="highlight" id="id-5"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
-</span></span></span><span class="line"><span class="cl"><span class="cm"> * The main timer loop.  (See class comment.)
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">mainLoop</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">TimerTask</span> <span class="n">task</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="kt">boolean</span> <span class="n">taskFired</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">synchronized</span><span class="o">(</span><span class="n">queue</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                <span class="c1">// Wait for queue to become non-empty
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">while</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">newTasksMayBeScheduled</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">queue</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">break</span><span class="o">;</span> <span class="c1">// Queue is empty and will forever remain; die
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">                <span class="c1">// Queue nonempty; look at first evt and do the right thing
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="kt">long</span> <span class="n">currentTime</span><span class="o">,</span> <span class="n">executionTime</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                <span class="n">task</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">getMin</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="kd">synchronized</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">lock</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">TimerTask</span><span class="o">.</span><span class="na">CANCELLED</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">queue</span><span class="o">.</span><span class="na">removeMin</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                        <span class="k">continue</span><span class="o">;</span>  <span class="c1">// No action required, poll queue again
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">currentTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">executionTime</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">nextExecutionTime</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="n">taskFired</span> <span class="o">=</span> <span class="o">(</span><span class="n">executionTime</span><span class="o">&lt;=</span><span class="n">currentTime</span><span class="o">))</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">period</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Non-repeating, remove
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="n">queue</span><span class="o">.</span><span class="na">removeMin</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                            <span class="n">task</span><span class="o">.</span><span class="na">state</span> <span class="o">=</span> <span class="n">TimerTask</span><span class="o">.</span><span class="na">EXECUTED</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// Repeating task, reschedule
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="n">queue</span><span class="o">.</span><span class="na">rescheduleMin</span><span class="o">(</span>
-</span></span><span class="line"><span class="cl">                                <span class="n">task</span><span class="o">.</span><span class="na">period</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">?</span> <span class="n">currentTime</span>   <span class="o">-</span> <span class="n">task</span><span class="o">.</span><span class="na">period</span>
-</span></span><span class="line"><span class="cl">                                            <span class="o">:</span> <span class="n">executionTime</span> <span class="o">+</span> <span class="n">task</span><span class="o">.</span><span class="na">period</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">                        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(!</span><span class="n">taskFired</span><span class="o">)</span> <span class="c1">// Task hasn&#39;t yet fired; wait
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">queue</span><span class="o">.</span><span class="na">wait</span><span class="o">(</span><span class="n">executionTime</span> <span class="o">-</span> <span class="n">currentTime</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="o">}</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">taskFired</span><span class="o">)</span>  <span class="c1">// Task fired; run it, holding no locks
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">task</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
+<p>TODO 待补充</p>
+<!-- 
+据笔者所知 synchronized 是一个java的关键字， 用于加锁， 相比于`ReentrantLock`， synchronized 更加轻便， 没有选项， 但是存在一些优化措施 。   
+比如所谓的锁升级机制就是指的 synchronized， ReentrantLock 则没有这种机制。   
+- 锁升级机制是说 一个对象的 对象头(cpp部分) 有一个叫做 mark word 的东西， 那个字段有2个位是表示锁的状态的的。    
+- 它有四种状态 无锁， 偏向锁， 轻量锁， 重量级锁。     
+- 锁只能升级， 不能降级。 
+
+当一个对象没有被任何线程锁住的时候，它是无锁的。 此时一个线程A 请求给这个对象加锁， 那么线程A会假设没有别的线程和它争抢， 它将对象头修改成 偏向锁，然后进入下一步操作。 但是此时，并没有真正的锁产生。 这么做当然是为了效率， 听说加锁是一个消耗比较重的操作。 
+后来， 线程B 也想给这个对象加锁，那么，线程B会看到这个对象处于 偏向锁的状态，随后它修改对象头成轻量级锁， 并且进行一段时间的自旋。自旋就是空转， 这时线程B是没有进入休眠的， 线程B 假设线程A很快就会释放这个对象的锁。 
+假如线程A真的很快的释放了锁， 那么线程B就会拿到锁， 并且进入下一步操作。 此时还是没有真正的 锁产生， 效率是比较高的。 但是假如线程A并没有很快的释放锁， 那么自旋到一定的次数或者时间， 线程B会把锁升级成重量级锁， 并且进入休眠， 此时就产生了一个真正的锁。
+
+*对象头对于各个线程的同步机制在cpp层面是如何实现的， 笔者并不清楚。。 因为java的线程和cpp的线程听说是一对一的*   
+
+`wait` 方法会释放掉 synchronized 持有的锁。
+*以下代码节选自 java.util.TimerThread*
+```java
+/**
+ * The main timer loop.  (See class comment.)
+ */
+private void mainLoop() {
+    while (true) {
+        try {
+            TimerTask task;
+            boolean taskFired;
+            synchronized(queue) {
+                // Wait for queue to become non-empty
+                while (queue.isEmpty() && newTasksMayBeScheduled)
+                    queue.wait();
+                if (queue.isEmpty())
+                    break; // Queue is empty and will forever remain; die
+
+                // Queue nonempty; look at first evt and do the right thing
+                long currentTime, executionTime;
+                task = queue.getMin();
+                synchronized(task.lock) {
+                    if (task.state == TimerTask.CANCELLED) {
+                        queue.removeMin();
+                        continue;  // No action required, poll queue again
+                    }
+                    currentTime = System.currentTimeMillis();
+                    executionTime = task.nextExecutionTime;
+                    if (taskFired = (executionTime<=currentTime)) {
+                        if (task.period == 0) { // Non-repeating, remove
+                            queue.removeMin();
+                            task.state = TimerTask.EXECUTED;
+                        } else { // Repeating task, reschedule
+                            queue.rescheduleMin(
+                                task.period<0 ? currentTime   - task.period
+                                            : executionTime + task.period);
+                        }
+                    }
+                }
+                if (!taskFired) // Task hasn't yet fired; wait
+                    queue.wait(executionTime - currentTime);
+            }
+            if (taskFired)  // Task fired; run it, holding no locks
+                task.run();
+        } catch(InterruptedException e) {
+        }
+    }
+}
+```
+通过这段代码 我们可以看到， 他是在 while 内部进行 synchronized的， 假如 `queue.wait();` 这行代码没有释放锁的话 ， 那么其他线程就永远拿不到`queue`的锁了。
+而 再看看 `Timer` 类的实现内容。
+```java
+private void sched(TimerTask task, long time, long period) {
+    if (time < 0)
+        throw new IllegalArgumentException("Illegal execution time.");
+
+    // Constrain value of period sufficiently to prevent numeric
+    // overflow while still being effectively infinitely large.
+    if (Math.abs(period) > (Long.MAX_VALUE >> 1))
+        period >>= 1;
+
+    synchronized(queue) {
+        if (!thread.newTasksMayBeScheduled)
+            throw new IllegalStateException("Timer already cancelled.");
+
+        synchronized(task.lock) {
+            if (task.state != TimerTask.VIRGIN)
+                throw new IllegalStateException(
+                    "Task already scheduled or cancelled");
+            task.nextExecutionTime = time;
+            task.period = period;
+            task.state = TimerTask.SCHEDULED;
+        }
+
+        queue.add(task);
+        if (queue.getMin() == task)
+            queue.notify();
+    }
+}
+```
+这里的代码说 在添加任务 之前， 它需要先执行  `synchronized(queue)` 语句。
+这个方法肯定和 `TimerThread` 是在不同的线程执行的。 
+假如 `wait` 方法不释放锁的话， 这里就会死锁了， 实际上并没有死锁发生， 所以可以说明 `wait` 会释放锁。 
+*这种反推是不是不太合理啊。。。*
+
+
+ReentrantLock 有两个 `tryLock`方法，用于尝试加锁， 给予一定的等待时间。
+```java
+public boolean tryLock(long timeout, TimeUnit unit)
+        throws InterruptedException {
+    return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+}
+```
+还有下面的一些方法
+- isLocked    是否被任一线程持有？
+- isHeldByCurrentThread   是否被当前线程持有？
+- isFair     是否公平？ 
+
+可重入式锁是指 同一个 线程可以对同一个锁进行多次加锁操作。 但是每次加锁都需要对应一次解锁操作。 
+
+--></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+      </div><div class="post-info-license">
+          <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/program/java%E4%B8%ADhashmap%E5%92%8Csynchronized%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%AE%A4%E8%AF%86/" data-title="Java中HashMap和synchronized的更多认识"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/program/arch-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-mongo-cxx-driver-%E7%9A%84%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="prev" title="Arch 编译安装 Mongo Cxx Driver 的记录"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Arch 编译安装 Mongo Cxx Driver 的记录</a>
+      <a href="/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="next" title="Unity 相关的几个小问题记录">Unity 相关的几个小问题记录<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-</div><p>通过这段代码 我们可以看到， 他是在 while 内部进行 synchronized的， 假如 <code>queue.wait();</code> 这行代码没有释放锁的话 ， 那么其他线程就永远拿不到<code>queue</code>的锁了。
-而 再看看 <code>Timer</code> 类的实现内容。</p>
-<div class="highlight" id="id-6"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">sched</span><span class="o">(</span><span class="n">TimerTask</span> <span class="n">task</span><span class="o">,</span> <span class="kt">long</span> <span class="n">time</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">time</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&#34;Illegal execution time.&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Constrain value of period sufficiently to prevent numeric
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// overflow while still being effectively infinitely large.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">period</span><span class="o">)</span> <span class="o">&gt;</span> <span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="o">))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">period</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">synchronized</span><span class="o">(</span><span class="n">queue</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">thread</span><span class="o">.</span><span class="na">newTasksMayBeScheduled</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="o">(</span><span class="s">&#34;Timer already cancelled.&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">synchronized</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">lock</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">state</span> <span class="o">!=</span> <span class="n">TimerTask</span><span class="o">.</span><span class="na">VIRGIN</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="o">(</span>
-</span></span><span class="line"><span class="cl">                    <span class="s">&#34;Task already scheduled or cancelled&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">task</span><span class="o">.</span><span class="na">nextExecutionTime</span> <span class="o">=</span> <span class="n">time</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">task</span><span class="o">.</span><span class="na">period</span> <span class="o">=</span> <span class="n">period</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">task</span><span class="o">.</span><span class="na">state</span> <span class="o">=</span> <span class="n">TimerTask</span><span class="o">.</span><span class="na">SCHEDULED</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">task</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">getMin</span><span class="o">()</span> <span class="o">==</span> <span class="n">task</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">queue</span><span class="o">.</span><span class="na">notify</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里的代码说 在添加任务 之前， 它需要先执行  <code>synchronized(queue)</code> 语句。
-这个方法肯定和 <code>TimerThread</code> 是在不同的线程执行的。
-假如 <code>wait</code> 方法不释放锁的话， 这里就会死锁了， 实际上并没有死锁发生， 所以可以说明 <code>wait</code> 会释放锁。
-<em>这种反推是不是不太合理啊。。。</em></p>
-<p>ReentrantLock 有两个 <code>tryLock</code>方法，用于尝试加锁， 给予一定的等待时间。</p>
-<div class="highlight" id="id-7"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">tryLock</span><span class="o">(</span><span class="kt">long</span> <span class="n">timeout</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sync</span><span class="o">.</span><span class="na">tryAcquireNanos</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">unit</span><span class="o">.</span><span class="na">toNanos</span><span class="o">(</span><span class="n">timeout</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>还有下面的一些方法</p>
-<ul>
-<li>isLocked    是否被任一线程持有？</li>
-<li>isHeldByCurrentThread   是否被当前线程持有？</li>
-<li>isFair     是否公平？</li>
-</ul>
-<p>可重入式锁是指 同一个 线程可以 不断的对同一个锁进行加锁。 但是每次加锁都需要对应一次解锁操作。</p>
-</div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
