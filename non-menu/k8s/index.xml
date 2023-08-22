@@ -10,6 +10,24 @@
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
     <lastBuildDate>Sat, 29 Jul 2023 18:44:02 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/non-menu/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>5. Config Map 的相关信息</title>
+      <link>https://fantasyplayer.link/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Mon, 21 Aug 2023 16:39:51 +0800</pubDate>
+      <author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</guid>
+      <description>主要内容 基本使用 创建 config map 方法1：从文件夹中创建一个 config map: kubectl create configmap game-config --from-file=./config 方法2： 从文件中创建一个 config map, 和上面一样，使用 --from-file 参数 方法3：使用 yaml 配置文件创建</description>
+    </item>
+    
+    <item>
+      <title>4. 持久卷的相关信息</title>
+      <link>https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Mon, 21 Aug 2023 16:39:22 +0800</pubDate>
+      <author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</guid>
+      <description>持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径 local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的pod 下面看</description>
+    </item>
+    
+    <item>
       <title>3. 应用的更新以及容器扩缩以及命名空间</title>
       <link>https://fantasyplayer.link/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Sat, 29 Jul 2023 12:13:25 +0800</pubDate>
