@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Fri, 23 Jun 2023 10:22:57 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Sep 2023 21:30:31 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java ReentrantLock 源码简单解析</title>
+      <link>https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Tue, 12 Sep 2023 21:30:31 +0800</pubDate>
+      <author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/</guid>
+      <description>源码简单解析。 源码来自 openjdk 17.0.7 2023-04-18 主要内容 内部类以及构造方法 内部类 Sync extends AbstractQueuedSynchronizer FairSync NonfairSync 构造方法 1 2 3 4 5 6 7 8 9 10 11 /** * Creates an instance of {@code ReentrantLock} with the * given fairness policy. * * @param fair {@code true}</description>
+    </item>
+    
     <item>
       <title>Java   Stream 中的 Map与flatMap 函数</title>
       <link>https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/</link>

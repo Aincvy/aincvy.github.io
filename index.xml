@@ -4,9 +4,41 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 21 Aug 2023 16:39:51 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Tue, 12 Sep 2023 21:30:31 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Java ReentrantLock 源码简单解析</title>
+  <link>https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/</link>
+  <pubDate>Tue, 12 Sep 2023 21:30:31 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/</guid>
+  <description><![CDATA[源码简单解析。 源码来自 openjdk 17.0.7 2023-04-18 主要内容 内部类以及构造方法 内部类 Sync extends AbstractQueuedSynchronizer FairSync NonfairSync 构造方法 1 2 3 4 5 6 7 8 9 10 11 /** * Creates an instance of {@code ReentrantLock} with the * given fairness policy. * * @param fair {@code true}]]></description>
+</item>
+<item>
+  <title>穷爸爸，富爸爸   读后感</title>
+  <link>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+  <pubDate>Tue, 12 Sep 2023 19:08:24 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+  <description><![CDATA[豆瓣图书： https://book.douban.com/subject/1033778/ 第一章的故事很有意思， 比较吸引人， 可惜就一章 要学会不为钱工作 资产： 可以给自己带来金钱的东西， 负债： 需要自己不断支出的东西 房子， 车]]></description>
+</item>
+<item>
+  <title>Codegen,codegen2,replit等代码补全模型的尝试</title>
+  <link>https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
+  <pubDate>Tue, 12 Sep 2023 18:35:43 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
+  <description><![CDATA[本次尝试的模型有下面几个 codegen/codegen2 - fauxpilot codegen2.5 codellama-13b-instructq4_k_mgguf codellama-7b-instructq6_kgguf polycoder stabilityai/stablecode-instruct-alpha-3b codet5p-2b teknium_Replit-v2-CodeInstruct-3B replit/replit-code-v1-3b 模型大多使用 python 代码加载， 然后调用的， 部分使用的是 textgen web ui 加载的。 codegen 和 codegen2 是使用 fauxpilot 进行加载的。 本次尝]]></description>
+</item>
+<item>
+  <title>Llama Gpt 项目的简单介绍以及切换CUDA的方法</title>
+  <link>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+  <pubDate>Mon, 21 Aug 2023 15:29:52 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+  <description><![CDATA[llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your]]></description>
+</item>
+<item>
   <title>K8s的简要教程系列</title>
   <link>https://fantasyplayer.link/periphery/k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/</link>
   <pubDate>Sat, 29 Jul 2023 22:23:40 &#43;0800</pubDate>
@@ -53,38 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/periphery/-code-server-&#43;-jdk17-%E7%9A%84docker-%E9%95%9C%E5%83%8F/</guid>
   <description><![CDATA[基本内容 Dockerfile 示例： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 FROM codercom/code-server:latest # from https://adoptium.net/zh-CN/temurin/releases/ # version 17.0.7_7 ADD OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz /opt/ # from https://maven.apache.org/download.cgi # version 3.9.2 ADD apache-maven-3.9.2-bin.tar.gz /opt/ ENV JAVA_HOME /opt/jdk-17.0.7+7 ENV MAVEN_HOME /opt/apache-maven-3.9.2 ENV PATH=&#34;${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin&#34; EXPOSE 8080/tcp USER 1000 ENV USER=coder WORKDIR /home/coder ENTRYPOINT [&#34;/usr/bin/entrypoint.sh&#34;, &#34;--bind-addr&#34;, &#34;0.0.0.0:8080&#34;, &#34;.&#34;]]]></description>
-</item>
-<item>
-  <title>Java   Stream 中的 Map与flatMap 函数</title>
-  <link>https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/</link>
-  <pubDate>Fri, 23 Jun 2023 10:22:57 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/</guid>
-  <description><![CDATA[map 函数的作用是映射， 或者说转换， 把对象A 转换到对象B， 可以切换类型。 flatMap 函数的作用是先执行 map操作， 然后平铺。 示例 下面看示例1. 1 2 3 4 5 6]]></description>
-</item>
-<item>
-  <title>Vagrant   虚拟机模板工具</title>
-  <link>https://fantasyplayer.link/periphery/vagrant-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Thu, 15 Jun 2023 20:58:39 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/vagrant-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[简介 如果需要频繁的创建和销毁虚拟机，这个工具还是有作用的，否则还是手动执行比较方便。 Vagrant 需要一个虚拟机工具来创建虚拟机， 比如 VirtualBox, VMware Fusion, 或者 Hyper-V. 预期的]]></description>
-</item>
-<item>
-  <title>Unity Asset Store被标记成disable的资源</title>
-  <link>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</link>
-  <pubDate>Fri, 19 May 2023 10:21:59 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</guid>
-  <description><![CDATA[使用这部分资源可能会造成法律问题。 详情见帖子： https://forum.unity.com/threads/unable-to-download-Disabled-assets.1202350/ 主要内容 笔者这里就简略的翻译一下上面帖子的内容。 U： 资源商店的资源被标记成了 Disabled ，这正常吗？ A]]></description>
-</item>
-<item>
-  <title>Steam上架后的一些感想</title>
-  <link>https://fantasyplayer.link/periphery/steam%E4%B8%8A%E6%9E%B6%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/</link>
-  <pubDate>Mon, 08 May 2023 17:39:53 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/steam%E4%B8%8A%E6%9E%B6%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/</guid>
-  <description><![CDATA[第一感觉，真难啊， 尤其是一个人搞。 感觉还不如上班呢。。 主要内容 还是说点有用的东西吧。 商店 steam 的曝光量，只有发行的第一天给的多， 假如购买量不足的]]></description>
 </item>
 </channel>
 </rss>

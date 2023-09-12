@@ -123,6 +123,7 @@ int main() {
    1. llama-2-7b-chat.bin - https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGML/resolve/main/nous-hermes-llama-2-7b.ggmlv3.q4_0.bin
    2. llama-2-13b-chat.bin - https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML/resolve/main/nous-hermes-llama2-13b.ggmlv3.q4_0.bin
    3. 我觉得 7b 或者 13b 的就足够了
+      1. 经过尝试， 7b q4 版本 质量较差， 建议使用13B版本。
    4. 下载好的模型放到宿主机的某个文件夹， 比如： `/home/debian/docker/llama-models`
    5. 我使用的是 `llama-2-13b-chat.bin` 这个模型
 4. 查阅文档：  https://github.com/abetlen/llama-cpp-python/tree/main/docker#cuda_simple
@@ -225,7 +226,10 @@ exec python3 -m llama_cpp.server --n_ctx $n_ctx --n_threads $n_threads --n_gpu_l
 
 ## 其他
 
-尝试了一下  https://github.com/oobabooga/text-generation-webui ， 同样安装有点麻烦， 但是这个排版很好。 *使用的同一个模型*
+尝试了一下  https://github.com/oobabooga/text-generation-webui ， 同样安装有点麻烦， 但是这个排版很好。 *使用的同一个模型*  
+*2023年9月12日 今日尝试， 无法加载这个模型了。*
+
+
 
 ---
 
