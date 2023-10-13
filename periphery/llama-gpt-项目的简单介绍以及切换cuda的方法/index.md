@@ -84,7 +84,7 @@ int main() {
 ![llama-gpt2](/img/periphery/llama-gpt2.png)
 
 
-可以生成 unity的脚本, 这里还可以看到是存在上下文语境的。  ~~但是我看了一下日志， 感觉就是把聊天记录都发了一遍过去。。~~
+可以生成 unity的脚本, 这里还可以看到是存在上下文语境的。  *但是我看了一下日志， 感觉就是把聊天记录都发了一遍过去。。 好像openai 也是这么处理的*
 
 ![llama-gpt3](/img/periphery/llama-gpt3.png)
 
@@ -220,6 +220,7 @@ exec python3 -m llama_cpp.server --n_ctx $n_ctx --n_threads $n_threads --n_gpu_l
 - 速度确实提升了不少， ~~但是没有到达立即响应的地步。~~  很多问题可以在几秒内开始回答。
 - 聊天记录越多， 越容易 崩溃， 暂时没看到崩溃原因，只看到了 exit code 0
   - 可能和docker 容器关闭再启动也有点关系把。
+  - 应该是 到达了 max_token  或者显存爆了
 - 模型的路径好像只能用 `/models/llama-2-13b-chat.bin` ，或者只能是`/models/` 目录， 否则 UI 程序会出现问题。
 
 

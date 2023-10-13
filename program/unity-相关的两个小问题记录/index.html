@@ -10,7 +10,7 @@
 <meta name="description" content="主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Unity 相关的几个小问题记录">
 <meta itemprop="description" content="主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而"><meta itemprop="datePublished" content="2023-01-08T22:18:51+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
-<meta itemprop="wordCount" content="2735"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="3219"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Unity 相关的几个小问题记录" />
 <meta property="og:description" content="主要内容 动画播放结束会模型会卡住一段时间的问题 动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/"
-    },"genre": "posts","wordcount":  2735 ,
+    },"genre": "posts","wordcount":  3219 ,
     "url": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2023-01-08T22:18:51+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -192,7 +192,7 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-01-08 22:18:51"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-08">2023-01-08</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2735 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 6 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2023-01-08 22:18:51"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-08">2023-01-08</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3219 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -214,6 +214,9 @@
         <li><a href="#地形与树木">地形与树木</a></li>
         <li><a href="#trigger-collider-的回调函数">trigger collider 的回调函数</a></li>
         <li><a href="#unity-回调函数的执行顺序">UNITY 回调函数的执行顺序</a></li>
+        <li><a href="#dotween--插件">DOTween  插件</a></li>
+        <li><a href="#光照探针组-无法编辑探针位置">光照探针组 无法编辑探针位置</a></li>
+        <li><a href="#网格剔除">网格剔除</a></li>
       </ul>
     </li>
   </ul>
@@ -410,6 +413,19 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 <p><code>Update</code> 要在物理和 输入事件部分之后调用, 之后是 Coroutine 相关的部分。<br>
 <code>LateUpdate</code> 在 <code>GameLogic</code> 的最后一部分执行，但是之后还有渲染和其他一些内容。</p>
 <p><code>OnDisable</code> 和 <code>OnDestroy</code> 是在最后的最后执行的。</p>
+<h3 id="dotween--插件">DOTween  插件</h3>
+<p>这个插件是闭源的， 所以出现了问题之后 无法调试，是一个黑盒子。 可以在asset store 上寻找一些免费的代替品， 这些免费代替品会给你源代码。
+此外，这个插件实现的内容其实并不是特别多，如果需要自己实现的话， Ease 可能麻烦点，其他的应该还好。</p>
+<p>如果你一定要用的话， 出了问题可以尝试联系作者， 他可能会回复你。</p>
+<p><em>说是这么说， 但是如果你在上班的时候出现了问题，你发了邮件给作者，作者基本上不可能立即回复你的，而且可能还会有时差。而这个时候你也不可能等他把，不然工作进度慢了，还是需要加班。</em></p>
+<h3 id="光照探针组-无法编辑探针位置">光照探针组 无法编辑探针位置</h3>
+<p>尝试重置编辑器布局成默认布局。</p>
+<p>参考阅读： <a href="https://forum.unity.com/threads/cant-select-light-probes.716924/#post-5309718"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/cant-select-light-probes.716924/#post-5309718</a></p>
+<h3 id="网格剔除">网格剔除</h3>
+<p>笔者下意识的以为摄像机看不到的网格都会自动被剔除， 不会渲染， 也不会接受灯光效果。</p>
+<p>这几天发现这个想法错了。 只要物体在摄像机的角度内， 就会渲染， 也会接受光照效果， 所以如果地图比较大的话， 就需要一个物体管理的脚本 以优化性能。</p>
+<p>比如 A 是一个很大的物体，B是一个很小的物体， A 挡住了B之后， 笔者原本以为B就不会被渲染了。 <em>渲染指渲染方面的计算， set pass calls, draw calls 等</em></p>
+<p>但是实际上， 只要B出现在摄像机的角度里面， B 的渲染还是会进行计算， 只是不会显示出来。</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
