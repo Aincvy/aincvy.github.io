@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 12 Sep 2023 21:30:31 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Nov 2023 11:07:14 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在windows Cpp 开发中嵌入v8等库</title>
+      <link>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</link>
+      <pubDate>Mon, 13 Nov 2023 11:07:14 +0800</pubDate>
+      <author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</guid>
+      <description>主要内容 下载dll 编译v8是一件很麻烦的事情，所以如果有预编译的dll就好了， 这么想着之后， 笔者就开始搜索了起来， 并且真的找到了一个可用的预</description>
+    </item>
+    
     <item>
       <title>Java ReentrantLock 源码简单解析</title>
       <link>https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/</link>

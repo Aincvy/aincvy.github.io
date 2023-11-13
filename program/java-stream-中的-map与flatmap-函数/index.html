@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Java   Stream 中的 Map与flatMap 函数 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="map 函数的作用是映射， 或者说转换， 把对象A 转换到对象B， 可以切换类型。 flatMap 函数的作用是先执行 map操作， 然后平铺。 示例 下面看示例1. 1 2 3 4 5 6" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Java   Stream 中的 Map与flatMap 函数">
+<meta name="description" content="map 函数的作用是映射， 或者说转换， 把对象A 转换到对象B， 可以切换类型。 flatMap 函数的作用是先执行 map操作， 然后平铺。 示例 下面看示例1. 1 2 3 4 5 6" /><meta name="keywords" content='java' /><meta itemprop="name" content="Java   Stream 中的 Map与flatMap 函数">
 <meta itemprop="description" content="map 函数的作用是映射， 或者说转换， 把对象A 转换到对象B， 可以切换类型。 flatMap 函数的作用是先执行 map操作， 然后平铺。 示例 下面看示例1. 1 2 3 4 5 6"><meta itemprop="datePublished" content="2023-06-23T10:22:57+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
 <meta itemprop="wordCount" content="822"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Java   Stream 中的 Map与flatMap 函数" />
+<meta itemprop="keywords" content="java," /><meta property="og:title" content="Java   Stream 中的 Map与flatMap 函数" />
 <meta property="og:description" content="map 函数的作用是映射， 或者说转换， 把对象A 转换到对象B， 可以切换类型。 flatMap 函数的作用是先执行 map操作， 然后平铺。 示例 下面看示例1. 1 2 3 4 5 6" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0\/"
-    },"genre": "posts","wordcount":  822 ,
+    },"genre": "posts","keywords": "java","wordcount":  822 ,
     "url": "https:\/\/fantasyplayer.link\/program\/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0\/","datePublished": "2023-06-23T10:22:57+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -439,8 +439,8 @@ flatMap 函数的作用是先执行 map操作， 然后平铺。</p>
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" data-title="Java   Stream 中的 Map与flatMap 函数" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" data-title="Java   Stream 中的 Map与flatMap 函数" data-via="Aincvy" data-hashtags="java"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" data-hashtag="java"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" data-title="Java   Stream 中的 Map与flatMap 函数" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" data-title="Java   Stream 中的 Map与flatMap 函数"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" data-title="Java   Stream 中的 Map与flatMap 函数"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -453,7 +453,7 @@ flatMap 函数的作用是先执行 map操作， 然后平铺。</p>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/java/' class="post-tag">java</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

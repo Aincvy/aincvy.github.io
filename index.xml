@@ -4,9 +4,41 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 13 Oct 2023 18:08:47 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>在windows Cpp 开发中嵌入v8等库</title>
+  <link>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</link>
+  <pubDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</guid>
+  <description><![CDATA[主要内容 下载dll 编译v8是一件很麻烦的事情，所以如果有预编译的dll就好了， 这么想着之后， 笔者就开始搜索了起来， 并且真的找到了一个可用的预]]></description>
+</item>
+<item>
+  <title>在debian11 中 安装xrdp</title>
+  <link>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</link>
+  <pubDate>Mon, 13 Nov 2023 10:46:11 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
+  <description><![CDATA[正文 笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star]]></description>
+</item>
+<item>
+  <title>文石tab8c   彩色墨水屏使用的体验</title>
+  <link>https://fantasyplayer.link/2023/%E6%96%87%E7%9F%B3tab8c-%E5%BD%A9%E8%89%B2%E5%A2%A8%E6%B0%B4%E5%B1%8F%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+  <pubDate>Sun, 12 Nov 2023 21:40:47 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2023/%E6%96%87%E7%9F%B3tab8c-%E5%BD%A9%E8%89%B2%E5%A2%A8%E6%B0%B4%E5%B1%8F%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+  <description><![CDATA[文字介绍和感想 笔者是今天早上收到的这个彩色墨水屏平板 文石 tab8c 。 这是一个7.8寸的小平板， 下面给出一些相关信息： 发售日期： 2023年9月20日 C]]></description>
+</item>
+<item>
+  <title>认识商业   书摘</title>
+  <link>https://fantasyplayer.link/2023/%E8%AE%A4%E8%AF%86%E5%95%86%E4%B8%9A-%E4%B9%A6%E6%91%98/</link>
+  <pubDate>Sun, 12 Nov 2023 21:35:33 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2023/%E8%AE%A4%E8%AF%86%E5%95%86%E4%B8%9A-%E4%B9%A6%E6%91%98/</guid>
+  <description><![CDATA[内容 人脉和知识一样重要。 “你知道什么并不重要，认识谁才是问题核心” 面试前需要准备一些东西。 面试演练， 可以和朋友，父母进行一番演练 需要建立人脉]]></description>
+</item>
+<item>
   <title>Debian 从官网下载，然后安装N卡驱动</title>
   <link>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
   <pubDate>Fri, 13 Oct 2023 18:08:47 &#43;0800</pubDate>
@@ -53,38 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
   <description><![CDATA[豆瓣图书： https://book.douban.com/subject/1033778/ 第一章的故事很有意思， 比较吸引人， 可惜就一章 要学会不为钱工作 资产： 可以给自己带来金钱的东西， 负债： 需要自己不断支出的东西 房子， 车]]></description>
-</item>
-<item>
-  <title>Codegen,codegen2,replit等代码补全模型的尝试</title>
-  <link>https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
-  <pubDate>Tue, 12 Sep 2023 18:35:43 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
-  <description><![CDATA[本次尝试的模型有下面几个 codegen/codegen2 - fauxpilot codegen2.5 codellama-13b-instructq4_k_mgguf codellama-7b-instructq6_kgguf polycoder stabilityai/stablecode-instruct-alpha-3b codet5p-2b teknium_Replit-v2-CodeInstruct-3B replit/replit-code-v1-3b 模型大多使用 python 代码加载， 然后调用的， 部分使用的是 textgen web ui 加载的。 codegen 和 codegen2 是使用 fauxpilot 进行加载的。 本次尝]]></description>
-</item>
-<item>
-  <title>Llama Gpt 项目的简单介绍以及切换CUDA的方法</title>
-  <link>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</link>
-  <pubDate>Mon, 21 Aug 2023 15:29:52 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-  <description><![CDATA[llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your]]></description>
-</item>
-<item>
-  <title>K8s的简要教程系列</title>
-  <link>https://fantasyplayer.link/periphery/k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/</link>
-  <pubDate>Sat, 29 Jul 2023 22:23:40 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/</guid>
-  <description><![CDATA[k8s 的简要教程 开篇 目录]]></description>
-</item>
-<item>
-  <title>3. 应用的更新以及容器扩缩以及命名空间</title>
-  <link>https://fantasyplayer.link/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/</link>
-  <pubDate>Sat, 29 Jul 2023 12:13:25 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/</guid>
-  <description><![CDATA[现在，让我们回到k8s的使用上来。 主要内容 命名空间 1 2 3 4 5 $ kubectl create namespace nginx-test # 创建 命名空间 $ kubectl get ns # 获取所有命名空间 $ kubectl config set-context --current --namespace=nginx-test # 切换命名空间 $ kubectl]]></description>
 </item>
 </channel>
 </rss>

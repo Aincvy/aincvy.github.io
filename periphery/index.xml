@@ -8,7 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Fri, 13 Oct 2023 18:08:47 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Nov 2023 10:46:11 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在debian11 中 安装xrdp</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</link>
+      <pubDate>Mon, 13 Nov 2023 10:46:11 +0800</pubDate>
+      <author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
+      <description>正文 笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &amp;gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star</description>
+    </item>
+    
     <item>
       <title>Debian 从官网下载，然后安装N卡驱动</title>
       <link>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>

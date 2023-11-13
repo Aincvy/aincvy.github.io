@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Libuv 异步通知的实现 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="主要内容 主要思路 问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。 本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Libuv 异步通知的实现">
+<meta name="description" content="主要内容 主要思路 问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。 本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。" /><meta name="keywords" content='cpp' /><meta itemprop="name" content="Libuv 异步通知的实现">
 <meta itemprop="description" content="主要内容 主要思路 问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。 本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。"><meta itemprop="datePublished" content="2021-12-25T11:47:09+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
 <meta itemprop="wordCount" content="651"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Libuv 异步通知的实现" />
+<meta itemprop="keywords" content="cpp," /><meta property="og:title" content="Libuv 异步通知的实现" />
 <meta property="og:description" content="主要内容 主要思路 问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。 本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0\/"
-    },"genre": "posts","wordcount":  651 ,
+    },"genre": "posts","keywords": "cpp","wordcount":  651 ,
     "url": "https:\/\/fantasyplayer.link\/program\/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0\/","datePublished": "2021-12-25T11:47:09+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -367,8 +367,8 @@
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" data-title="Libuv 异步通知的实现" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" data-title="Libuv 异步通知的实现" data-via="Aincvy" data-hashtags="cpp"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" data-hashtag="cpp"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" data-title="Libuv 异步通知的实现" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" data-title="Libuv 异步通知的实现"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/" data-title="Libuv 异步通知的实现"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -381,7 +381,7 @@
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/cpp/' class="post-tag">cpp</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

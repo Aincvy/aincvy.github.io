@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Java ReentrantLock 源码简单解析 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="源码简单解析。 源码来自 openjdk 17.0.7 2023-04-18 主要内容 内部类以及构造方法 内部类 Sync extends AbstractQueuedSynchronizer FairSync NonfairSync 构造方法 1 2 3 4 5 6 7 8 9 10 11 /** * Creates an instance of {@code ReentrantLock} with the * given fairness policy. * * @param fair {@code true}" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Java ReentrantLock 源码简单解析">
+<meta name="description" content="源码简单解析。 源码来自 openjdk 17.0.7 2023-04-18 主要内容 内部类以及构造方法 内部类 Sync extends AbstractQueuedSynchronizer FairSync NonfairSync 构造方法 1 2 3 4 5 6 7 8 9 10 11 /** * Creates an instance of {@code ReentrantLock} with the * given fairness policy. * * @param fair {@code true}" /><meta name="keywords" content='java' /><meta itemprop="name" content="Java ReentrantLock 源码简单解析">
 <meta itemprop="description" content="源码简单解析。 源码来自 openjdk 17.0.7 2023-04-18 主要内容 内部类以及构造方法 内部类 Sync extends AbstractQueuedSynchronizer FairSync NonfairSync 构造方法 1 2 3 4 5 6 7 8 9 10 11 /** * Creates an instance of {@code ReentrantLock} with the * given fairness policy. * * @param fair {@code true}"><meta itemprop="datePublished" content="2023-09-12T21:30:31+08:00" />
 <meta itemprop="dateModified" content="2023-09-12T22:03:34+08:00" />
 <meta itemprop="wordCount" content="2633"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Java ReentrantLock 源码简单解析" />
+<meta itemprop="keywords" content="java," /><meta property="og:title" content="Java ReentrantLock 源码简单解析" />
 <meta property="og:description" content="源码简单解析。 源码来自 openjdk 17.0.7 2023-04-18 主要内容 内部类以及构造方法 内部类 Sync extends AbstractQueuedSynchronizer FairSync NonfairSync 构造方法 1 2 3 4 5 6 7 8 9 10 11 /** * Creates an instance of {@code ReentrantLock} with the * given fairness policy. * * @param fair {@code true}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
@@ -25,7 +25,7 @@
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" /><link rel="prev" href="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" /><link rel="stylesheet" href="/css/style.min.29568ef09d5311a3c0f1f3acaad398cdcf484d09bc243d4f17611357380e451d.css" integrity="sha256-KVaO8J1TEaPA8fOsqtOYzc9ITQm8JD1PF2ETVzgORR0="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" /><link rel="prev" href="https://fantasyplayer.link/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" /><link rel="next" href="https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/" /><link rel="stylesheet" href="/css/style.min.29568ef09d5311a3c0f1f3acaad398cdcf484d09bc243d4f17611357380e451d.css" integrity="sha256-KVaO8J1TEaPA8fOsqtOYzc9ITQm8JD1PF2ETVzgORR0="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90\/"
-    },"genre": "posts","wordcount":  2633 ,
+    },"genre": "posts","keywords": "java","wordcount":  2633 ,
     "url": "https:\/\/fantasyplayer.link\/program\/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90\/","datePublished": "2023-09-12T21:30:31+08:00","dateModified": "2023-09-12T22:03:34+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -812,8 +812,8 @@
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" data-title="Java ReentrantLock 源码简单解析" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" data-title="Java ReentrantLock 源码简单解析" data-via="Aincvy" data-hashtags="java"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" data-hashtag="java"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" data-title="Java ReentrantLock 源码简单解析" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" data-title="Java ReentrantLock 源码简单解析"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/java-reentrantlock-%E6%BA%90%E7%A0%81%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90/" data-title="Java ReentrantLock 源码简单解析"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -826,13 +826,14 @@
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/java/' class="post-tag">java</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" class="post-nav-item" rel="prev" title="Java   Stream 中的 Map与flatMap 函数"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Java   Stream 中的 Map与flatMap 函数</a></div>
+  <div class="post-nav"><a href="/program/java-stream-%E4%B8%AD%E7%9A%84-map%E4%B8%8Eflatmap-%E5%87%BD%E6%95%B0/" class="post-nav-item" rel="prev" title="Java   Stream 中的 Map与flatMap 函数"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Java   Stream 中的 Map与flatMap 函数</a>
+      <a href="/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/" class="post-nav-item" rel="next" title="在windows Cpp 开发中嵌入v8等库">在windows Cpp 开发中嵌入v8等库<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.

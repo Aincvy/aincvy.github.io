@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>黑苹果 - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</link>
+    <description>黑苹果 - 标签 - Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 05 Apr 2021 21:30:41 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/" rel="self" type="application/rss+xml" /><item>
+  <title>黑苹果因为多个意外情况挂了的事情的记录贴</title>
+  <link>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%83%85%E5%86%B5%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</link>
+  <pubDate>Mon, 05 Apr 2021 21:30:41 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%9B%A0%E4%B8%BA%E5%A4%9A%E4%B8%AA%E6%84%8F%E5%A4%96%E6%83%85%E5%86%B5%E6%8C%82%E4%BA%86%E7%9A%84%E4%BA%8B%E6%83%85%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4/</guid>
+  <description><![CDATA[由于笔者使用的是黑苹果，所以能正常使用的话，尽量不升级比较好。 如果想升级的话， 还需要更新OpenCore的版本， 可能还会碰到各种乱七八糟的问]]></description>
+</item>
+<item>
+  <title>黑苹果使用chrome浏览网页的时候死机的问题</title>
+  <link>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%BD%BF%E7%94%A8chrome%E6%B5%8F%E8%A7%88%E7%BD%91%E9%A1%B5%E7%9A%84%E6%97%B6%E5%80%99%E6%AD%BB%E6%9C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+  <pubDate>Mon, 02 Nov 2020 20:07:43 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E4%BD%BF%E7%94%A8chrome%E6%B5%8F%E8%A7%88%E7%BD%91%E9%A1%B5%E7%9A%84%E6%97%B6%E5%80%99%E6%AD%BB%E6%9C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+  <description><![CDATA[公司安装的黑苹果系统， 在浏览部分网站的时候死机， 鼠标和键盘都没反应，只能强制重启。 我的解决方案是： 关闭Chrome 的硬件加速。 相关链接在此：]]></description>
+</item>
+<item>
+  <title>黑苹果的几次安装记录</title>
+  <link>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Mon, 19 Oct 2020 21:35:39 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%9A%84%E5%87%A0%E6%AC%A1%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[从我的安装经验来看， 黑苹果的安装非常简单，只是有点耗时而已。 教程地址： https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html 下面是使用教程的几个前提： 你有一定的英文阅读水平。 你具有耐心， 可以使]]></description>
+</item>
+</channel>
+</rss>

@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Cpp程序嵌入v8引擎的(踩坑)记录贴 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Cpp程序嵌入v8引擎的(踩坑)记录贴">
+<meta name="description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统" /><meta name="keywords" content='cpp' /><meta itemprop="name" content="Cpp程序嵌入v8引擎的(踩坑)记录贴">
 <meta itemprop="description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统"><meta itemprop="datePublished" content="2021-07-23T18:51:51+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
 <meta itemprop="wordCount" content="1762"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Cpp程序嵌入v8引擎的(踩坑)记录贴" />
+<meta itemprop="keywords" content="cpp," /><meta property="og:title" content="Cpp程序嵌入v8引擎的(踩坑)记录贴" />
 <meta property="og:description" content="笔者最近打算做一个工具， 考虑使用v8引擎做js语言的解析和执行。 在嵌入的过程中踩了一些小坑， 本文用来记录一下。 长话短说 笔者使用的是Mac 系统" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91\/"
-    },"genre": "posts","wordcount":  1762 ,
+    },"genre": "posts","keywords": "cpp","wordcount":  1762 ,
     "url": "https:\/\/fantasyplayer.link\/program\/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91\/","datePublished": "2021-07-23T18:51:51+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -443,8 +443,8 @@
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" data-title="Cpp程序嵌入v8引擎的(踩坑)记录贴" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" data-title="Cpp程序嵌入v8引擎的(踩坑)记录贴" data-via="Aincvy" data-hashtags="cpp"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" data-hashtag="cpp"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" data-title="Cpp程序嵌入v8引擎的(踩坑)记录贴" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" data-title="Cpp程序嵌入v8引擎的(踩坑)记录贴"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/cpp%E7%A8%8B%E5%BA%8F%E5%B5%8C%E5%85%A5v8%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%B0%E5%BD%95%E8%B4%B4%E8%B8%A9%E5%9D%91/" data-title="Cpp程序嵌入v8引擎的(踩坑)记录贴"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -457,7 +457,7 @@
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/cpp/' class="post-tag">cpp</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

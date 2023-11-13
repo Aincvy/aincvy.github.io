@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Cpp 操作符重载函数在模板里找不到的问题记录 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="主要内容 笔者此前在使用 dbg-macro 库的时候碰到了一个奇怪的问题， 就是操作符的重载函数无法被找到。 准确的说是被模板的 SFINAE 原则忽略了。 大致的情况是这样的： 有" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Cpp 操作符重载函数在模板里找不到的问题记录">
+<meta name="description" content="主要内容 笔者此前在使用 dbg-macro 库的时候碰到了一个奇怪的问题， 就是操作符的重载函数无法被找到。 准确的说是被模板的 SFINAE 原则忽略了。 大致的情况是这样的： 有" /><meta name="keywords" content='cpp' /><meta itemprop="name" content="Cpp 操作符重载函数在模板里找不到的问题记录">
 <meta itemprop="description" content="主要内容 笔者此前在使用 dbg-macro 库的时候碰到了一个奇怪的问题， 就是操作符的重载函数无法被找到。 准确的说是被模板的 SFINAE 原则忽略了。 大致的情况是这样的： 有"><meta itemprop="datePublished" content="2022-01-29T12:10:00+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
 <meta itemprop="wordCount" content="614"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Cpp 操作符重载函数在模板里找不到的问题记录" />
+<meta itemprop="keywords" content="cpp," /><meta property="og:title" content="Cpp 操作符重载函数在模板里找不到的问题记录" />
 <meta property="og:description" content="主要内容 笔者此前在使用 dbg-macro 库的时候碰到了一个奇怪的问题， 就是操作符的重载函数无法被找到。 准确的说是被模板的 SFINAE 原则忽略了。 大致的情况是这样的： 有" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/"
-    },"genre": "posts","wordcount":  614 ,
+    },"genre": "posts","keywords": "cpp","wordcount":  614 ,
     "url": "https:\/\/fantasyplayer.link\/program\/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2022-01-29T12:10:00+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -349,8 +349,8 @@
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" data-title="Cpp 操作符重载函数在模板里找不到的问题记录" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" data-title="Cpp 操作符重载函数在模板里找不到的问题记录" data-via="Aincvy" data-hashtags="cpp"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" data-hashtag="cpp"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" data-title="Cpp 操作符重载函数在模板里找不到的问题记录" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" data-title="Cpp 操作符重载函数在模板里找不到的问题记录"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/cpp-%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%9C%A8%E6%A8%A1%E6%9D%BF%E9%87%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" data-title="Cpp 操作符重载函数在模板里找不到的问题记录"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -363,7 +363,7 @@
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/cpp/' class="post-tag">cpp</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
