@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 15 Dec 2023 18:23:13 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 18 Dec 2023 13:09:06 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>精力管理   书摘</title>
+  <link>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</link>
+  <pubDate>Mon, 18 Dec 2023 13:09:06 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</guid>
+  <description><![CDATA[精力 而非时间， 是高效表现的基础。 原则1 全情投入需要下面的四个要素 体能 情感 思维 意志 原则2 因为使用过度和使用不足都会削弱精力， 必须不时更新精力以]]></description>
+</item>
+<item>
   <title>旧服务器换新碰到的问题记录</title>
   <link>https://fantasyplayer.link/periphery/%E6%97%A7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8D%A2%E6%96%B0%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
   <pubDate>Fri, 15 Dec 2023 18:23:13 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/periphery/ubuntu-22.04-%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98/</guid>
   <description><![CDATA[主要内容 扩充磁盘 需求： 宿主机是debian， 现在需要修改ubuntu 虚拟机的磁盘大小。 宿主机是什么其实无所谓。 流程： 关闭虚拟机 修改磁盘大小，]]></description>
-</item>
-<item>
-  <title>如何下载github上的单个文件夹</title>
-  <link>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDgithub%E4%B8%8A%E7%9A%84%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
-  <pubDate>Fri, 13 Oct 2023 17:34:37 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDgithub%E4%B8%8A%E7%9A%84%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
-  <description><![CDATA[使用第三方工具 https://download-directory.github.io/ http://kinolien.github.io/gitzip https://minhaskamal.github.io/DownGit 或者使用SVN 导航到想要下载的文件夹， 比如 https://github.com/Aincvy/sight/tree/main/plugins/sight-base 将 tree/master 或者 tree/main 替换成 trunk 执行命令 svn checkout https://github.com/Aincvy/sight/trunk/plugins/sight-base 这样就可以了， 注意，这种方法只能下载gith]]></description>
 </item>
 </channel>
 </rss>
