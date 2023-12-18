@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="如果一个动态库 a.so 依赖了另外一个动态库 b.so . 那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比" /><meta name="keywords" content='cpp' /><meta itemprop="name" content="So 动态库引用问题">
 <meta itemprop="description" content="如果一个动态库 a.so 依赖了另外一个动态库 b.so . 那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比"><meta itemprop="datePublished" content="2016-12-06T21:20:43+08:00" />
-<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="dateModified" content="2023-11-13T13:25:45+08:00" />
 <meta itemprop="wordCount" content="129"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
 <meta itemprop="keywords" content="cpp," /><meta property="og:title" content="So 动态库引用问题" />
 <meta property="og:description" content="如果一个动态库 a.so 依赖了另外一个动态库 b.so . 那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
 <meta property="article:published_time" content="2016-12-06T21:20:43+08:00" />
-<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
+<meta property="article:modified_time" content="2023-11-13T13:25:45+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
@@ -35,7 +35,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98\/"
     },"genre": "posts","keywords": "cpp","wordcount":  129 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98\/","datePublished": "2016-12-06T21:20:43+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/program\/so-%E5%8A%A8%E6%80%81%E5%BA%93%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98\/","datePublished": "2016-12-06T21:20:43+08:00","dateModified": "2023-11-13T13:25:45+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -191,14 +191,14 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div>
-      <div class="post-meta-line"><span title="发布于 2016-12-06 21:20:43"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2016-12-06">2016-12-06</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 129 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title="发布于 2016-12-06 21:20:43"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2016-12-06">2016-12-06</time></span>&nbsp;<span title="更新于 2023-11-13 13:25:45"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-13">2023-11-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 129 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
     </div><div class="content" id="content"><p>如果一个动态库 a.so 依赖了另外一个动态库 b.so .</p>
 <p>那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比如 明明代码写的是调用 b.so 内的函数 add ，在执行的时候却调用了 sub函数。 当碰到这种情况的时候， 重新编译一下a.so 库就好了。</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+        <span title="更新于 2023-11-13 13:25:45">更新于 2023-11-13&nbsp;</span>
       </div><div class="post-info-license">
           <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
