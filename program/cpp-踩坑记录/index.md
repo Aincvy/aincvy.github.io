@@ -17,13 +17,13 @@
 
 ```plain
 A
-+ source
-+ include
-+ modProject
-+ + B
-+ + + include
-+ + + source
-+ README.md
+&#43; source
+&#43; include
+&#43; modProject
+&#43; &#43; B
+&#43; &#43; &#43; include
+&#43; &#43; &#43; source
+&#43; README.md
 ```
 
 目前的情况是： 在B的源代码里面使用诸如 `../../include/abc.h` 的形式引用A的头文件。

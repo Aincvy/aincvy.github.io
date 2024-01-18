@@ -45,17 +45,17 @@ $ kubectl set image deployment/nginx-deployment nginx=nginx:1.17.1
 $ kubectl rollout history deploy/nginx-deployment
 deployment.apps/nginx-deployment 
 REVISION  CHANGE-CAUSE
-1         <none>
-4         <none>
-5         <none>
-6         <none>
-$ kubectl annotate deployments.apps/nginx-deployment kubernetes.io/change-cause="version to 1.17.1"  --overwrite=true
+1         &lt;none&gt;
+4         &lt;none&gt;
+5         &lt;none&gt;
+6         &lt;none&gt;
+$ kubectl annotate deployments.apps/nginx-deployment kubernetes.io/change-cause=&#34;version to 1.17.1&#34;  --overwrite=true
 $ kubectl rollout history deploy/nginx-deployment 
 deployment.apps/nginx-deployment 
 REVISION  CHANGE-CAUSE
-1         <none>
-4         <none>
-5         <none>
+1         &lt;none&gt;
+4         &lt;none&gt;
+5         &lt;none&gt;
 6         version to 1.17.1
 ```
 
@@ -64,12 +64,12 @@ REVISION  CHANGE-CAUSE
 ```shell
 $ kubectl rollout undo deployment/nginx-deployment
 deployment.apps/nginx-deployment rolled back
-$ kubectl annotate deployments.apps/nginx-deployment kubernetes.io/change-cause="rollback to 1.16.1"  --overwrite=true
+$ kubectl annotate deployments.apps/nginx-deployment kubernetes.io/change-cause=&#34;rollback to 1.16.1&#34;  --overwrite=true
 $ kubectl rollout history deploy/nginx-deployment 
 deployment.apps/nginx-deployment 
 REVISION  CHANGE-CAUSE
-1         <none>
-4         <none>
+1         &lt;none&gt;
+4         &lt;none&gt;
 6         version to 1.17.1
 7         rollback to 1.16.1
 $ kubectl rollout undo deployment/nginx-deployment --to-revision=4

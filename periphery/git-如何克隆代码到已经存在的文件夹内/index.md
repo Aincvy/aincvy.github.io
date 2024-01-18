@@ -4,7 +4,7 @@
 这里不能再使用clone 方法了。
 
 1. 打开 git bash(windows 下)
-2. 利用 cd 命令 切换到 要克隆到的目录的位置 比如： `mkdir projectA && cd projectA`
+2. 利用 cd 命令 切换到 要克隆到的目录的位置 比如： `mkdir projectA &amp;&amp; cd projectA`
 3. 输入命令： `git init` 在当前目录下初始化一个仓库
 4. 输入命令： `git pull [url]` 从目标仓库中拉取文件到本地
 5. 输入命令： `git remote add origin [url]` 添加一个远程分支

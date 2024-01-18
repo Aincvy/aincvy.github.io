@@ -19,9 +19,9 @@
 
 这里插播一个关于cmake添加nuget包的方式： 
 ```cmake
-# cmake version >= 3.15
+# cmake version &gt;= 3.15
 set_property(TARGET MyApplication
-    PROPERTY VS_PACKAGE_REFERENCES "v8-v143-x64_11.9.169.4"
+    PROPERTY VS_PACKAGE_REFERENCES &#34;v8-v143-x64_11.9.169.4&#34;
 )
 ```
 

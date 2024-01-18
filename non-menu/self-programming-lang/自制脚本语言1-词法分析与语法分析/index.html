@@ -10,22 +10,24 @@
 <meta name="description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[1] 词法分析与语法分析">
 <meta itemprop="description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较"><meta itemprop="datePublished" content="2021-01-18T20:18:27+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
-<meta itemprop="wordCount" content="3549"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="3582"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[1] 词法分析与语法分析" />
 <meta property="og:description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="non-menu" />
+<meta property="og:url" content="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="non-menu" />
 <meta property="article:published_time" content="2021-01-18T20:18:27+08:00" />
 <meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
-<meta name="twitter:title" content="自制脚本语言[1] 词法分析与语法分析"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="自制脚本语言[1] 词法分析与语法分析"/>
 <meta name="twitter:description" content="本篇来描述如何做语法分析和词法分析。 有两种方式可以做词法分析和语法分析， 一是自己纯手写， 二是使用第三方工具。 手写的优势 灵活性比较高 可以提供较"/>
+<meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" /><link rel="next" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/" /><link rel="stylesheet" href="/css/style.min.29568ef09d5311a3c0f1f3acaad398cdcf484d09bc243d4f17611357380e451d.css" integrity="sha256-KVaO8J1TEaPA8fOsqtOYzc9ITQm8JD1PF2ETVzgORR0="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" /><link rel="next" href="https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -34,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/"
-    },"genre": "posts","wordcount":  3549 ,
+    },"genre": "posts","wordcount":  3582 ,
     "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90\/","datePublished": "2021-01-18T20:18:27+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -46,7 +48,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
-      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" srcset="/images/3.jpeg, /images/3.jpeg 1.5x, /images/3.jpeg 2x" sizes="auto" data-title="Fanstasy Player / 幻想系玩家" data-alt="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -104,7 +106,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" srcset="/images/3.jpeg, /images/3.jpeg 1.5x, /images/3.jpeg 2x" sizes="auto" data-title="/images/3.jpeg" data-alt="/images/3.jpeg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -179,20 +181,15 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/non-menu/" title="Non-menus">Non-menus</a></li><li class="breadcrumb-item"><a href="/non-menu/self-programming-lang/" title="如何自制脚本语言">如何自制脚本语言</a></li><li class="breadcrumb-item active" aria-current="page">自制脚本语言[1] 词法分析与语法分析</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/non-menu/" title="Non-Menus">Non-Menus</a></li><li class="breadcrumb-item"><a href="/non-menu/self-programming-lang/" title="如何自制脚本语言">如何自制脚本语言</a></li><li class="breadcrumb-item active" aria-current="page">自制脚本语言[1] 词法分析与语法分析</li>
     </ol>
-  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside>
-
-  <aside class="aside-custom">
-    </aside>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>自制脚本语言[1] 词法分析与语法分析</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div>
-      <div class="post-meta-line"><span title="发布于 2021-01-18 20:18:27"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2021-01-18">2021-01-18</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3549 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2021-01-18 20:18:27"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2021-01-18">2021-01-18</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span title="3582 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -249,8 +246,8 @@
 <li>lua  是使用的手写方式。</li>
 <li>早期的mysql 应该是使用的第三方工具。  （<em>因为它给的提示特别烂。。</em>）</li>
 </ul>
-<h2 id="第三方工具">第三方工具</h2>
-<p>因为使用第三方工具比较简单， 所以笔者采用第三方工具的方式来实现langX的词法解析与语法解析。</p>
+<h2 id="第三方工具" class="heading-element">
+  <a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e5%b7%a5%e5%85%b7" class="heading-mark"></a>第三方工具</h2><p>因为使用第三方工具比较简单， 所以笔者采用第三方工具的方式来实现langX的词法解析与语法解析。</p>
 <p>下面介绍一下笔者知道的几种工具。</p>
 <ul>
 <li>词法分析器： flex(lex)  <a href="http://dinosaur.compilertools.net/lex/index.html"target="_blank" rel="external nofollow noopener noreferrer">doc</a> 。</li>
@@ -259,8 +256,8 @@
 </ul>
 <p>笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， lex+yacc是一起配合使用的。</p>
 <p>Tree-sitter 则是一个单独使用的工具，  下面笔者就来更详细的介绍一下这几个工具。</p>
-<h3 id="tree-sitter">Tree-sitter</h3>
-<p>这里先说一下tree-sitter 这个工具。  这个工具使用js 来编写语法文件， 可以配合atom的插件来实现语法高亮。</p>
+<h3 id="tree-sitter" class="heading-element">
+  <a href="#tree-sitter" class="heading-mark"></a>Tree-sitter</h3><p>这里先说一下tree-sitter 这个工具。  这个工具使用js 来编写语法文件， 可以配合atom的插件来实现语法高亮。</p>
 <p>Atom 是一个代码编辑器， 和VS Code 类似。 Atom的功能没有大型IDE那么强大， 但是也勉强够用了。</p>
 <p>Atom提供插件机制， 读者可以自行为读者的脚本语言编写一个语法高亮插件。 而Atom的语法高亮插件就是基于tree-sitter 提供的API的。</p>
 <p><a href="https://github.com/Aincvy/langX-atom"target="_blank" rel="external nofollow noopener noreferrer">langX的Atom插件源码</a>  , <a href="https://github.com/Aincvy/langX-tree-sitter"target="_blank" rel="external nofollow noopener noreferrer">langX的tree-sitter源码</a></p>
@@ -268,11 +265,11 @@
 <p>tree-sitter 可以使用一些函数来简化语法文件的编写， 比如 <code>optional()</code>,<code>repeat()</code>,<code>seq()</code>, <code>choice()</code> 等。 而yacc则不能使用函数， 只能写规则。</p>
 <p>tree-sitter可以生成在程序里面使用的语法分析文件(<em>*.h,*</em>.c)， 但是笔者并没有使用相关的内容。</p>
 <p>更多详细的内容可以阅读官方文档： <a href="https://tree-sitter.github.io/tree-sitter/"target="_blank" rel="external nofollow noopener noreferrer">https://tree-sitter.github.io/tree-sitter/</a></p>
-<h3 id="lex--yacc">lex + yacc</h3>
-<p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件(<em>lex</em>)， a.y是语法分析文件(<em>yacc</em>)。</p>
+<h3 id="lex--yacc" class="heading-element">
+  <a href="#lex--yacc" class="heading-mark"></a>lex + yacc</h3><p>在 <a href="https://github.com/Aincvy/langX/tree/dev/extern"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Aincvy/langX/tree/dev/extern</a>  这个目录里面的 a.l 是词法分析文件(<em>lex</em>)， a.y是语法分析文件(<em>yacc</em>)。</p>
 <p>这两文件可能乍一看 内容很长， 但是其实并不复杂，都是按照一定的规则进行编写的。</p>
-<h4 id="词法分析工具lex">词法分析工具lex</h4>
-<p>flex 在mac平台上可以使用 <code>brew install flex</code> 进行安装。</p>
+<h4 id="词法分析工具lex" class="heading-element">
+  <a href="#%e8%af%8d%e6%b3%95%e5%88%86%e6%9e%90%e5%b7%a5%e5%85%b7lex" class="heading-mark"></a>词法分析工具lex</h4><p>flex 在mac平台上可以使用 <code>brew install flex</code> 进行安装。</p>
 <p>在 debian/ubuntu 上可以考虑使用 <code>sudo apt install flex</code> 来进行安装。</p>
 <p>lex的语法是使用 <code>%%</code> 符号进行分割, 整个文件将会被两个<code>%%</code> 分割成三块。</p>
 <ul>
@@ -444,8 +441,8 @@
 <p>在 用户定义内容的地方可以使用 <code>%{</code> 和 <code>%}</code> 来插入c/cpp代码。  而 其他代码内容则不需要符号，直接编写c/cpp代码即可。</p>
 <p>读者可以先看看 langX的这部分代码是如何编写的， 然后再使用搜索引擎搜索一下lex相关的文章就明白了。</p>
 <p>编写文件之后， 可以直接使用命令 <code>lex a.l</code> 来生成<code>lex.yy.c</code> 文件。 （<code>lex [filename]</code>）</p>
-<h4 id="语法分析工具-yacc">语法分析工具 yacc</h4>
-<p>yacc 在mac平台上使用命令<code>brew install bison</code> 来进行安装。</p>
+<h4 id="语法分析工具-yacc" class="heading-element">
+  <a href="#%e8%af%ad%e6%b3%95%e5%88%86%e6%9e%90%e5%b7%a5%e5%85%b7-yacc" class="heading-mark"></a>语法分析工具 yacc</h4><p>yacc 在mac平台上使用命令<code>brew install bison</code> 来进行安装。</p>
 <p>在debian/ubuntu平台上，可以使用<code>sudo apt install bison</code>  来进行安装。</p>
 <p>默认情况下， yacc使用LR(1) 的方式进行语法分析， 但是可以使用<code>%glr-parser</code> 标记使其使用glr的方式进行语法分析。</p>
 <p>Yacc 同样使用符号<code>%%</code> 进行三段式分割，使用 <code>%{</code> 和<code>%}</code> 来插入c代码。</p>
@@ -615,12 +612,12 @@
 </li>
 </ul>
 <p>当语法文件编写结束之后可以使用命令<code>yacc -dv a.y</code>  来生成<code>y.tab.h</code>,<code>y.tab.c</code> 这两个文件和一些分析冲突使用的调试文件。</p>
-<h3 id="其他">其他</h3>
-<p>Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以当时就选择了lex+yacc, 笔者目前只是使用tree-sitter来做语法高亮。</p>
+<h3 id="其他" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96" class="heading-mark"></a>其他</h3><p>Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以当时就选择了lex+yacc, 笔者目前只是使用tree-sitter来做语法高亮。</p>
 <p>在使用lex+yacc 的时候， 建议刚开始从一些小的文件开始， 慢慢熟悉结构了之后 自然就会把文件写的较为复杂了。  当复杂到一定程度之后 可能会碰到很多冲突(<em>shift/reduce,reduce/reduce</em>)的警告，此时就需要考虑对语法文件进行重构， 笔者建议使用思维导图进行整理思路。 <em>注： 部分警告不是一定要解决的，但是建议能解决的都解决掉。</em></p>
-<p>语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的，即你目前可以选择lex+yacc,后面不爽了可以换成纯手写的。 （<em>替换会产生成本就是了😂</em>）</p>
-<h3 id="拓展阅读">拓展阅读</h3>
-<p>本文的内容有点偏于介绍性，而非入门型， 所以建议笔者同时阅读下面的文章以深入了解lex&amp;&amp;yacc。</p>
+<p>语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的，即你目前可以选择lex+yacc,后面不爽了可以换成纯手写的。 （<em>替换会产生成本就是了&#x1f602;</em>）</p>
+<h3 id="拓展阅读" class="heading-element">
+  <a href="#%e6%8b%93%e5%b1%95%e9%98%85%e8%af%bb" class="heading-mark"></a>拓展阅读</h3><p>本文的内容有点偏于介绍性，而非入门型， 所以建议笔者同时阅读下面的文章以深入了解lex&amp;&amp;yacc。</p>
 <ul>
 <li><a href="https://segmentfault.com/a/1190000000396608"target="_blank" rel="external nofollow noopener noreferrer">https://segmentfault.com/a/1190000000396608</a></li>
 <li><a href="https://www.jianshu.com/p/728e4011a61e"target="_blank" rel="external nofollow noopener noreferrer">https://www.jianshu.com/p/728e4011a61e</a></li>
@@ -646,12 +643,11 @@
       <div class="post-info-mod">
         <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
       </div><div class="post-info-license">
-          <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
-        </div></div>
-    <div class="post-info-line">
-      <div class="post-info-md"></div>
-      <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" data-title="自制脚本语言[1] 词法分析与语法分析" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" data-title="自制脚本语言[1] 词法分析与语法分析" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" data-title="自制脚本语言[1] 词法分析与语法分析" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" data-title="自制脚本语言[1] 词法分析与语法分析"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
@@ -660,9 +656,8 @@
   <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" data-title="自制脚本语言[1] 词法分析与语法分析" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%801-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" data-title="自制脚本语言[1] 词法分析与语法分析"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
-      </div>
-    </div>
-  </div>
+        </div>
+      </div></div>
 
   <div class="post-info-more">
     <section class="post-tags"></section>
@@ -672,22 +667,26 @@
   </div>
 
   <div class="post-nav"><a href="/non-menu/self-programming-lang/%E5%A6%82%E4%BD%95%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80-%E5%BC%80%E7%AF%87/" class="post-nav-item" rel="prev" title="自制脚本语言 - 开篇"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>自制脚本语言 - 开篇</a>
-      <a href="/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%802-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="post-nav-item" rel="next" title="自制脚本语言[2] 类型相关内容的介绍">自制脚本语言[2] 类型相关内容的介绍<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+      <a href="/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/" class="post-nav-item" rel="next" title="Openwrt的ipv6的dhcp功能">Openwrt的ipv6的dhcp功能<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
-      </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1&#43;h&#43;M018fqWyvVU/Ml8q48Oub&#43;g="><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lightgallery/lightgallery.min.a109d6550e0f5c7f5ad89c835407ceb18ed48d1e50d6d9b6c37234d5ee7ebaa8.js" integrity="sha256-oQnWVQ4PXH9a2JyDVAfOsY7UjR5Q1tm2w3I01e5+uqg=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.baa7d26c390a254160ee3ae0f09a9a16c77d1a5b4b6853c5e4487de764fee24b.js" integrity="sha256-uqfSbDkKJUFg7jrg8JqaFsd9GltLaFPF5Eh952T+4ks=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.056f82747a5949da14472c62a803167ecbdc3f847fc44755e5b33ec7f1319f02.js" integrity="sha256-BW+CdHpZSdoURyxiqAMWfsvcP4R/xEdV5bM+x/ExnwI=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.81e852a4cdb212df979c31f41dac766c33e3614f93188bc062ae547de10130d3.js" integrity="sha256-gehSpM2yEt+XnDH0Hax2bDPjYU+TGIvAYq5UfeEBMNM=" defer></script><script>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-P74XPSRPG3');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>

@@ -9,7 +9,7 @@
 
 ### Isolate
 
-> 一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间是完全隔离的, 它们不能够有任何共享的资源。如果不显式创建 Isolate, 会自动创建一个默认的 Isolate。
+&gt; 一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间是完全隔离的, 它们不能够有任何共享的资源。如果不显式创建 Isolate, 会自动创建一个默认的 Isolate。
 
 下面给出一些相关代码。
 
@@ -17,7 +17,7 @@
 // Initialize V8.
 v8::V8::InitializeICUDefaultLocation(execPath);
 v8::V8::InitializeExternalStartupData(execPath);
-std::unique_ptr<v8::Platform> platform = v8::platform::NewDefaultPlatform();
+std::unique_ptr&lt;v8::Platform&gt; platform = v8::platform::NewDefaultPlatform();
 v8::V8::InitializePlatform(platform.get());
 v8::V8::Initialize();
 // Create a new Isolate and make it the current one.
@@ -25,7 +25,7 @@ v8::Isolate::CreateParams createParams;
 createParams.array_buffer_allocator =
   v8::ArrayBuffer::Allocator::NewDefaultAllocator();
 auto isolate = v8::Isolate::New(createParams);
-auto isolate_scope = std::make_unique<v8::Isolate::Scope>(isolate);
+auto isolate_scope = std::make_unique&lt;v8::Isolate::Scope&gt;(isolate);
 g_V8Runtime = new V8Runtime{
   std::move(platform),
   isolate,
@@ -34,19 +34,19 @@ g_V8Runtime = new V8Runtime{
 };
 
 // 销毁
-dbg("destroy js engine..");
-g_V8Runtime->isolateScope.reset();
-if (g_V8Runtime->isolate) {
-  g_V8Runtime->isolate->Dispose();
-  g_V8Runtime->isolate = nullptr;
+dbg(&#34;destroy js engine..&#34;);
+g_V8Runtime-&gt;isolateScope.reset();
+if (g_V8Runtime-&gt;isolate) {
+  g_V8Runtime-&gt;isolate-&gt;Dispose();
+  g_V8Runtime-&gt;isolate = nullptr;
 }
 
 v8::V8::Dispose();
 v8::V8::ShutdownPlatform();
 
-if (g_V8Runtime->arrayBufferAllocator) {
-  delete g_V8Runtime->arrayBufferAllocator;
-  g_V8Runtime->arrayBufferAllocator = nullptr;
+if (g_V8Runtime-&gt;arrayBufferAllocator) {
+  delete g_V8Runtime-&gt;arrayBufferAllocator;
+  g_V8Runtime-&gt;arrayBufferAllocator = nullptr;
 }
 
 ```
@@ -73,8 +73,8 @@ v8::V8::ShutdownPlatform();
 
 Isolate() = delete;
 ~Isolate() = delete;
-Isolate(const Isolate&) = delete;
-Isolate& operator=(const Isolate&) = delete;
+Isolate(const Isolate&amp;) = delete;
+Isolate&amp; operator=(const Isolate&amp;) = delete;
 // Deleting operator new and delete here is allowed as ctor and dtor is also
 // deleted.
 void* operator new(size_t size) = delete;
@@ -99,21 +99,21 @@ void operator delete[](void*, size_t) = delete;
 using namespace v8;
 
 struct MyStruct {
-  v8::Persistent<v8::Function, v8::CopyablePersistentTraits<v8::Function>> callback;
+  v8::Persistent&lt;v8::Function, v8::CopyablePersistentTraits&lt;v8::Function&gt;&gt; callback;
 }
 
-void regCallback (const FunctionCallbackInfo<Value> &args){
+void regCallback (const FunctionCallbackInfo&lt;Value&gt; &amp;args){
   auto isolate = args.GetIsolate();
-  Local<Function> f = args[0].As<Function>();
+  Local&lt;Function&gt; f = args[0].As&lt;Function&gt;();
   MyStruct s;
-  s.callback = Persistent<Function, CopyablePersistentTraits<Function>>(isolate,f);
+  s.callback = Persistent&lt;Function, CopyablePersistentTraits&lt;Function&gt;&gt;(isolate,f);
 }
 
-void useCallback(MyStruct const& s, Isolate* isolate){
+void useCallback(MyStruct const&amp; s, Isolate* isolate){
   auto function = s.callback.Get(isolate);
-  auto context = isolate->GetCurrentContext();
+  auto context = isolate-&gt;GetCurrentContext();
   
-  // function->Call(xxx)  
+  // function-&gt;Call(xxx)  
 }
 ```
 

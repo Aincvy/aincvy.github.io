@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Non-menus on Fanstasy Player / 幻想系玩家</title>
+    <title>Non-Menus on Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/non-menu/</link>
-    <description>Recent content in Non-menus on Fanstasy Player / 幻想系玩家</description>
+    <description>Recent content in Non-Menus on Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Mon, 21 Aug 2023 16:39:51 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/non-menu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 16:39:51 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/non-menu/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

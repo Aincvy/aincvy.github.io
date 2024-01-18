@@ -21,7 +21,7 @@ urbackup官方给的 客户端安装 方式是这个 [UrBackup - Download UrBack
 
 下载了源码之后， 进行解压。
 
-使用命令`/configure --prefix='/usr' --sbindir='/usr/local/sbin/' --localstatedir='/var' --sysconfdir='/etc' --enable-headless --enable-embedded-cryptopp` 进行配置。
+使用命令`/configure --prefix=&#39;/usr&#39; --sbindir=&#39;/usr/local/sbin/&#39; --localstatedir=&#39;/var&#39; --sysconfdir=&#39;/etc&#39; --enable-headless --enable-embedded-cryptopp` 进行配置。
 
 之后使用  `make`命令进行编译， 可以使用 `make -j 4` 加速编译。
 
@@ -35,7 +35,7 @@ urbackup官方给的 客户端安装 方式是这个 [UrBackup - Download UrBack
 
 urbackup的默认配置文件在 `/etc/default/urbackupclient` 修改文件的RESTORE选项为server-confirms 即可在server 的web界面进行文件的恢复操作。 
 
-`RESTORE="server-confirms"`
+`RESTORE=&#34;server-confirms&#34;`
 
 成功安装之后， 需要使用命令 `sudo urbackupclientctl add-backupdir [path]`  来添加需要备份的目录
 

@@ -19,9 +19,9 @@
 
 ```c#
 // item.emission.enabled = false;
-// Cannot modify the return value of 'ParticleSystem.emission' because it is not a variable [Assembly-CSharp]
+// Cannot modify the return value of &#39;ParticleSystem.emission&#39; because it is not a variable [Assembly-CSharp]
 // item.enableEmission = false;
-// 'ParticleSystem.enableEmission' is obsolete: 'enableEmission property is deprecated. Use emission.enabled instead.' [Assembly-CSharp]
+// &#39;ParticleSystem.enableEmission&#39; is obsolete: &#39;enableEmission property is deprecated. Use emission.enabled instead.&#39; [Assembly-CSharp]
 // item:  ParticleSystem
 var e = item.emission;
 e.enabled = false;
@@ -63,13 +63,13 @@ mklink /d Unity D:\RoamingUnity
 layer 和 layer mask 是两个东西， gameobject.layer  使用的是layer， 发射射线使用的是 layer mask。
 
 基本上来说， layer 是一个整形数字 具体值好像是 0 ～ 31 。   
-而 layer mask 是移位 移出来的。 `layer mask = 1 << layer`   
+而 layer mask 是移位 移出来的。 `layer mask = 1 &lt;&lt; layer`   
 layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表示多个layer *该位为1,即表示包含。*  
 
 可以使用的 api 有： 
 ```csharp
-var layer = LayerMask.NameToLayer("Entity");
-var layerMask = LayerMask.GetMask("Entity"); 
+var layer = LayerMask.NameToLayer(&#34;Entity&#34;);
+var layerMask = LayerMask.GetMask(&#34;Entity&#34;); 
 
 Debug.Log(layer);
 Debug.Log(layerMask);
@@ -88,7 +88,7 @@ duration 可以设置是 秒还是 比例。
 ### NavMesh和 NavMeshAgent 相关的一点内容
 `NavMesh.GetAreaFromName` 返回的结果是 0 ~ 31
 
-要设置给agent的时候使用 `navMeshAgent.areaMask = 1 << NavMesh.GetAreaFromName("Walkable");`    
+要设置给agent的时候使用 `navMeshAgent.areaMask = 1 &lt;&lt; NavMesh.GetAreaFromName(&#34;Walkable&#34;);`    
 
 默认情况下，agent type 只有 Humanoid 可用。 如果设置了其他类型 就会无法寻路。 
 想要使用其他的agent type可以参考下面的链接 
@@ -112,7 +112,7 @@ unity 的消息函数， 如：
 ```csharp
 private void OnCollisionEnter(Collision other) {
         // 检测是否是碰到了玩家
-        Log("OnCollisionEnter");
+        Log(&#34;OnCollisionEnter&#34;);
 }
 ```
 如果子类也实现了这个函数的话， 那么基类的函数就不会得到调用。  可能会产生一些不太好寻找的BUG。 
@@ -182,7 +182,7 @@ protected virtual void OnTriggerExit(Collider other) {
 如果当前的 GameObject 被禁用了的话， OnTriggerExit 就永远不会被调用了。 
 
 这里有一个脚本提供了可靠性的调用保证： https://forum.unity.com/threads/fix-ontriggerexit-will-now-be-called-for-disabled-gameobjects-colliders.657205/
-> // OnTriggerExit is not called if the triggering object is destroyed, set inactive, or if the collider is disabled. This script fixes that
+&gt; // OnTriggerExit is not called if the triggering object is destroyed, set inactive, or if the collider is disabled. This script fixes that
 
 
 但是笔者并没有使用这个脚本， 而是选择了 `OnTriggerStay` 函数。

@@ -73,7 +73,7 @@
        4. 我利用备份配置的方法在新系统上进行一次备份，导出。 然后把文件下载到本地。
        5. 将原来的配置文件解压， 并把全部文件上传到 ESXi 里面的 `/tmp/abc` 文件夹（文件夹需要自己创建， 使用`sftp`上传)
        6. 将现有配置文件的`Manifest`文件拷贝到第5步上传的文件夹里面， 覆盖掉原有的文件
-       7. 使用 `cd /tmp/abc && tar -czvf configBundle.tgz *` 类似的命令完成打包 （abc 为你的文件夹名字）
+       7. 使用 `cd /tmp/abc &amp;&amp; tar -czvf configBundle.tgz *` 类似的命令完成打包 （abc 为你的文件夹名字）
        8. 使用 `mv configBundle.tgz ../` 的命令把文件移动到 `/tmp` 目录
        9. 然后使用命令 `vim-cmd -d info /hostsvc/firmware/restore_config 1 /tmp/configBundle.tgz` 强制还原配置
        10. 之后应该会重启一下， 然后绝大部分配置都回来了。

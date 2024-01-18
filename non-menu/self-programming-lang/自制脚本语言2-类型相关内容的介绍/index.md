@@ -74,7 +74,7 @@ public class Student {
 }
 ```
 
-*因为笔者的脚本语言引擎使用的 c++实现， 所以在名称后面加上了一个“类”。以表述该伪代码描述的是一个c++类*
+*因为笔者的脚本语言引擎使用的 c&#43;&#43;实现， 所以在名称后面加上了一个“类”。以表述该伪代码描述的是一个c&#43;&#43;类*
 
 使用上面的伪代码可以表述 `Student`类， 基本上也就可以表示任何的复杂类型。这样，脚本语言引擎就可以支持复杂类型了。 
 
@@ -103,7 +103,7 @@ public class Student {
 
 - 使用一些内存技巧。 
 
-  - c/c++ 的内存布局里面没有多余的信息，并且可以进行强制类型转换。 
+  - c/c&#43;&#43; 的内存布局里面没有多余的信息，并且可以进行强制类型转换。 
 
   - ```cpp
     // 下面代码的灵感来自于 lua源代码的阅读， 笔者并未真实实践
@@ -124,16 +124,16 @@ public class Student {
       char *value;
     }
     
-    #define isNull(x)  ((struct NullType*)x)->type == 1 
-    #define isNumber(x)  ((struct NullType*)x)->type == 2
-    #define isString(x)  ((struct NullType*)x)->type == 3
+    #define isNull(x)  ((struct NullType*)x)-&gt;type == 1 
+    #define isNumber(x)  ((struct NullType*)x)-&gt;type == 2
+    #define isString(x)  ((struct NullType*)x)-&gt;type == 3
     
     void *ptr = ... ;   // ... 获取值的代码进行了省略
     
     if(isNull(ptr) ){
     	// null
     } else if (isNumber(ptr)){
-    	auto value = ((struct NumberType*)ptr)->value;
+    	auto value = ((struct NumberType*)ptr)-&gt;value;
       // ...
     } else if (isString(ptr)) {
       auto stringPtr = (struct StringType*) ptr;

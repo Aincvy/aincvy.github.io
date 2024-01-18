@@ -11,17 +11,17 @@
 
 ```bash
 # 本部分代码没有经过测试， 只是给个示例来说明一下。
-include_arg='--include="*.jar"'
+include_arg=&#39;--include=&#34;*.jar&#34;&#39;
 
 # 如果本地存在 config.json 文件， 就发送过去
-if [[ test -e "$folder/config.json" ]] 
+if [[ test -e &#34;$folder/config.json&#34; ]] 
 then
-	include_arg='$include_arg --include="*config.json"'
+	include_arg=&#39;$include_arg --include=&#34;*config.json&#34;&#39;
 fi
-sshpass -e rsync -avz "$include_arg" --exclude="*" ./ root@xx:/root
+sshpass -e rsync -avz &#34;$include_arg&#34; --exclude=&#34;*&#34; ./ root@xx:/root
 ```
 
-上述代码中， 最后一段里面的 `"$include_arg"` 变量，经过我的测试，基本都会被解释成`"--include=*.jar --include=*config.json"` 。
+上述代码中， 最后一段里面的 `&#34;$include_arg&#34;` 变量，经过我的测试，基本都会被解释成`&#34;--include=*.jar --include=*config.json&#34;` 。
 
 这个参数肯定是有问题的，`rsync`识别不出来。
 
@@ -31,14 +31,14 @@ sshpass -e rsync -avz "$include_arg" --exclude="*" ./ root@xx:/root
 
 ```bash
 # 本部分代码没有经过测试， 只是给个示例来说明一下。
-include_arg=(--include="*.jar" --include="lib")
+include_arg=(--include=&#34;*.jar&#34; --include=&#34;lib&#34;)
 
 # 如果本地存在 config.json 文件， 就发送过去
-if [[ test -e "$folder/config.json" ]] 
+if [[ test -e &#34;$folder/config.json&#34; ]] 
 then
-	include_arg+=(--include="*config.json")
+	include_arg&#43;=(--include=&#34;*config.json&#34;)
 fi
-sshpass -e rsync -avz "${include_arg[@]}" --exclude="*" ./ root@xx:/root
+sshpass -e rsync -avz &#34;${include_arg[@]}&#34; --exclude=&#34;*&#34; ./ root@xx:/root
 ```
 
 修改成这样之后， `${include_arg[@]}` 会展开成3个独立的参数传给`rsync`。 

@@ -5,7 +5,7 @@
 
 在本地客户端 关闭 lfs 之后，  推送到远端提示 这个
 
-remote: GitLab: LFS objects are missing. Ensure LFS is properly set up or try a manual "git lfs push --all".
+remote: GitLab: LFS objects are missing. Ensure LFS is properly set up or try a manual &#34;git lfs push --all&#34;.
 
 解决办法就是 使用 gitlab 的网页管理端， 找到 项目， 用户设置， 通用， 可见性，项目功能，权限， Git 大文件存储   ，把这个取消 掉就可以了。
 
@@ -13,7 +13,7 @@ remote: GitLab: LFS objects are missing. Ensure LFS is properly set up or try a 
 ###  为什么要在客户端上关闭 lfs
 起因是 使用 lfs 推送的时候 ， 提示  413 错误。   
 
-笔者谷歌之后，别人说修改 `nginx['client_max_body_size']` 可以修复错误。 值可以修改成一个较大的值 ，或者修改为 0。 
+笔者谷歌之后，别人说修改 `nginx[&#39;client_max_body_size&#39;]` 可以修复错误。 值可以修改成一个较大的值 ，或者修改为 0。 
 
 但是笔者尝试之后 并没有解决问题。 
 

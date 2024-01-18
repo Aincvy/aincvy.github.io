@@ -1,4 +1,4 @@
-# Vscode开发c++ 介绍
+# Vscode开发c&#43;&#43; 介绍
 
 
 笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。
@@ -14,7 +14,7 @@ vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。
 - llvm-vs-code-extensions.vscode-clangd
   - https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd
   - llvm 出的插件， 基于 `clangd` ，使用LSP通信。
-  - 这个插件的自动补全感觉比微软出的c/c++插件好一些。
+  - 这个插件的自动补全感觉比微软出的c/c&#43;&#43;插件好一些。
   - 自动完成
   - 编译错误和警告
   - 跳转到定义/声明
@@ -89,22 +89,22 @@ set(CMAKE_EXPORT_COMPILECOMMANDS ON)
 参数可以使用类似下面的内容
 
 ```json
-"clangd.arguments": [
-        "-background-index",
-        "--compile-commands-dir=./build",
-        "-clang-tidy",
-        "-log=verbose",
-        "-pretty",
-        "-suggest-missing-includes",
-        "-header-insertion=iwyu",
-        "-completion-style=detailed",
-        "--query-driver=/usr/bin/clang++"
+&#34;clangd.arguments&#34;: [
+        &#34;-background-index&#34;,
+        &#34;--compile-commands-dir=./build&#34;,
+        &#34;-clang-tidy&#34;,
+        &#34;-log=verbose&#34;,
+        &#34;-pretty&#34;,
+        &#34;-suggest-missing-includes&#34;,
+        &#34;-header-insertion=iwyu&#34;,
+        &#34;-completion-style=detailed&#34;,
+        &#34;--query-driver=/usr/bin/clang&#43;&#43;&#34;
     ]
 ```
 
-其中`--compile-commands-dir=./build` 指定了 cmake 的 build文件夹， `--query-driver=/usr/bin/clang++` 指定了一个额外的 clang++ 用于查询 include目录。
+其中`--compile-commands-dir=./build` 指定了 cmake 的 build文件夹， `--query-driver=/usr/bin/clang&#43;&#43;` 指定了一个额外的 clang&#43;&#43; 用于查询 include目录。
 
-笔者刚开始使用这个插件的时候， c++的库文件找不到， 提示 `'string' file not found/ 'filesystem' file not found`等的这类， 但是笔者的项目是可以编译的， 添加了这个`query-driver`选项之后就好了。
+笔者刚开始使用这个插件的时候， c&#43;&#43;的库文件找不到， 提示 `&#39;string&#39; file not found/ &#39;filesystem&#39; file not found`等的这类， 但是笔者的项目是可以编译的， 添加了这个`query-driver`选项之后就好了。
 
 在项目的根目录下， 创建下面文件可以指定一些额外的配置项。
 
@@ -116,11 +116,11 @@ set(CMAKE_EXPORT_COMPILECOMMANDS ON)
 这里有一点 笔者要说一下。  `clang-format`不能处理这种情况。
 
 ```cpp
-if (f1.fileType == ProjectFileType::Directory && f2.fileType == ProjectFileType::Regular) {
+if (f1.fileType == ProjectFileType::Directory &amp;&amp; f2.fileType == ProjectFileType::Regular) {
   return true;
-} else if ((f1.fileType == ProjectFileType::Directory && f2.fileType == ProjectFileType::Directory) 
-           || (f1.fileType != ProjectFileType::Directory && f2.fileType != ProjectFileType::Directory)) {
-  return f1.filename < f2.filename;    
+} else if ((f1.fileType == ProjectFileType::Directory &amp;&amp; f2.fileType == ProjectFileType::Directory) 
+           || (f1.fileType != ProjectFileType::Directory &amp;&amp; f2.fileType != ProjectFileType::Directory)) {
+  return f1.filename &lt; f2.filename;    
 }
 ```
 
@@ -128,8 +128,8 @@ if (f1.fileType == ProjectFileType::Directory && f2.fileType == ProjectFileType:
 
 当 `clangd`出现缓存问题的时候，可以考虑下面的方式。
 
-- `cmd/ctrl+shift+p` 输入 clangd, 选择 restart language server
-- `cmd/ctrl+shift+p` 输入 reload window
+- `cmd/ctrl&#43;shift&#43;p` 输入 clangd, 选择 restart language server
+- `cmd/ctrl&#43;shift&#43;p` 输入 reload window
 - 重启 vs code.
 
 ### vs-code
@@ -138,12 +138,12 @@ vs-code 本身也有一些可以调整的选项。
 
 ```json
 // 自动保存   5s保存一次
-"files.autoSave": "afterDelay",
-"files.autoSaveDelay": 5000,
+&#34;files.autoSave&#34;: &#34;afterDelay&#34;,
+&#34;files.autoSaveDelay&#34;: 5000,
 // 粘贴之后自动对齐格式
-"editor.formatOnPaste": true,
+&#34;editor.formatOnPaste&#34;: true,
 // 使用 代码段等提示的时候 也会产生代码补全
-"editor.suggest.snippetsPreventQuickSuggestions": false,
+&#34;editor.suggest.snippetsPreventQuickSuggestions&#34;: false,
 ```
 
 
@@ -162,23 +162,23 @@ vs-code 本身也有一些可以调整的选项。
 
 ```json
 {
-  "name": "(lldb) 启动",
-  "type": "cppdbg",
-  "request": "launch",
-  "program": "${command:cmake.launchTargetPath}",
-  "args": [],
-  "stopAtEntry": false,
-  "cwd": "${workspaceFolder}",
-  "environment": [
+  &#34;name&#34;: &#34;(lldb) 启动&#34;,
+  &#34;type&#34;: &#34;cppdbg&#34;,
+  &#34;request&#34;: &#34;launch&#34;,
+  &#34;program&#34;: &#34;${command:cmake.launchTargetPath}&#34;,
+  &#34;args&#34;: [],
+  &#34;stopAtEntry&#34;: false,
+  &#34;cwd&#34;: &#34;${workspaceFolder}&#34;,
+  &#34;environment&#34;: [
     {
       // add the directory where our target was built to the PATHs
       // it gets resolved by CMake Tools:
-      "name": "PATH",
-      "value": "${env:PATH}:${command:cmake.getLaunchTargetDirectory}"
+      &#34;name&#34;: &#34;PATH&#34;,
+      &#34;value&#34;: &#34;${env:PATH}:${command:cmake.getLaunchTargetDirectory}&#34;
     },
   ],
-  "externalConsole": true,
-  "MIMode": "lldb"
+  &#34;externalConsole&#34;: true,
+  &#34;MIMode&#34;: &#34;lldb&#34;
 }
 ```
 
@@ -190,8 +190,8 @@ vs-code 本身也有一些可以调整的选项。
 
 使用 cmake 插件的时候，可以使用下面的方式启动程序。
 
-- 使用 `Ctrl+F5` 或者点击底部状态栏的小虫子🐞按钮 打开程序进行调试。
-- 使用`Shift+F5` 或者点击底部状态栏的播放按钮 ▶正常运行程序。
+- 使用 `Ctrl&#43;F5` 或者点击底部状态栏的小虫子🐞按钮 打开程序进行调试。
+- 使用`Shift&#43;F5` 或者点击底部状态栏的播放按钮 ▶正常运行程序。
 
 如果没有使用 cmake 插件的话， 就需要按照上一部分添加配置项。
 
@@ -205,7 +205,7 @@ vs-code 本身也有一些可以调整的选项。
 
 将鼠标放到对应代码上， 也可以看到当前的值。
 
-这个`DEBUG CONSOLE`有一个问题， 那就是打印出来的文字并不好看。  每一行基本都是使用`@"内容"`的形式。 其中内容字符串里面的转义字符并不会被转义，而是直接打印出来。
+这个`DEBUG CONSOLE`有一个问题， 那就是打印出来的文字并不好看。  每一行基本都是使用`@&#34;内容&#34;`的形式。 其中内容字符串里面的转义字符并不会被转义，而是直接打印出来。
 
 成功启动调试之后， 会有一个小小的工具栏在VS Code 窗口的中间正上方的位置，可以重启，结束调试，步进，按行执行等。
 
@@ -241,5 +241,5 @@ vs-code 本身也有一些可以调整的选项。
 ---
 
 > 作者: Aincvy  
-> URL: https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c++%E7%9A%84%E4%BD%93%E9%AA%8C/  
+> URL: https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/  
 

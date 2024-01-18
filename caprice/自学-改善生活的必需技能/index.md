@@ -9,7 +9,7 @@
 
 下面引用百度百科的一句话    -  [百度百科](https://baike.baidu.com/item/%E8%87%AA%E5%AD%A6/5704648?fr=aladdin)
 
-> 自学，有多种含义，可以是指人吸收接纳事物的[能力](https://baike.baidu.com/item/能力/33045)。也指一种[状态](https://baike.baidu.com/item/状态/33204)，即在没有接受指导和教育的情况下[掌握](https://baike.baidu.com/item/掌握/27512)某种技能。
+&gt; 自学，有多种含义，可以是指人吸收接纳事物的[能力](https://baike.baidu.com/item/能力/33045)。也指一种[状态](https://baike.baidu.com/item/状态/33204)，即在没有接受指导和教育的情况下[掌握](https://baike.baidu.com/item/掌握/27512)某种技能。
 
 自学往往意味着， 你可以不借助别人的实时指导来学习某一个技能。
 
@@ -116,7 +116,7 @@
 
 
 
-> 知识改变命运。
+&gt; 知识改变命运。
 
 
 

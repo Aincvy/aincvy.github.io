@@ -48,7 +48,7 @@ seti a 0
 
 # while
 start_of_loop: 
-# ++a <= 10
+# &#43;&#43;a &lt;= 10
 # add = 将 某个变量的值添加N
 # lte = less than equals ( 小于等于， 此指令会将一个bool 类型的结果压栈)
 add a 1 

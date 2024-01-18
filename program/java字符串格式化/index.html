@@ -7,25 +7,27 @@
     <meta name="robots" content="noodp" />
     <title>java字符串格式化 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="简介 本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format() 这是一个 较为常用的 格式化方法， 类似 C语言的 sprintf() 函数。" /><meta name="keywords" content='java' /><meta itemprop="name" content="java字符串格式化">
-<meta itemprop="description" content="简介 本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format() 这是一个 较为常用的 格式化方法， 类似 C语言的 sprintf() 函数。"><meta itemprop="datePublished" content="2020-05-11T21:50:38+08:00" />
+<meta name="description" content="简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format()这是一个 较为常用的 格式" /><meta name="keywords" content='java' /><meta itemprop="name" content="java字符串格式化">
+<meta itemprop="description" content="简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format()这是一个 较为常用的 格式"><meta itemprop="datePublished" content="2020-05-11T21:50:38+08:00" />
 <meta itemprop="dateModified" content="2023-11-13T13:25:45+08:00" />
-<meta itemprop="wordCount" content="998"><meta itemprop="image" content="https://fantasyplayer.link/logo.png"/>
+<meta itemprop="wordCount" content="1106"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="java," /><meta property="og:title" content="java字符串格式化" />
-<meta property="og:description" content="简介 本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format() 这是一个 较为常用的 格式化方法， 类似 C语言的 sprintf() 函数。" />
+<meta property="og:description" content="简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format()这是一个 较为常用的 格式" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png"/><meta property="article:section" content="program" />
+<meta property="og:url" content="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="program" />
 <meta property="article:published_time" content="2020-05-11T21:50:38+08:00" />
 <meta property="article:modified_time" content="2023-11-13T13:25:45+08:00" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://fantasyplayer.link/logo.png"/>
 
-<meta name="twitter:title" content="java字符串格式化"/>
-<meta name="twitter:description" content="简介 本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format() 这是一个 较为常用的 格式化方法， 类似 C语言的 sprintf() 函数。"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="java字符串格式化"/>
+<meta name="twitter:description" content="简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format()这是一个 较为常用的 格式"/>
+<meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" /><link rel="prev" href="https://fantasyplayer.link/program/%E5%88%A9%E7%94%A8%E5%81%9A%E9%A5%AD%E7%9A%84%E6%B5%81%E7%A8%8B%E6%9D%A5%E8%A7%A3%E9%87%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BA%94%E7%94%A8/" /><link rel="next" href="https://fantasyplayer.link/program/java8localdatetime%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" /><link rel="stylesheet" href="/css/style.min.29568ef09d5311a3c0f1f3acaad398cdcf484d09bc243d4f17611357380e451d.css" integrity="sha256-KVaO8J1TEaPA8fOsqtOYzc9ITQm8JD1PF2ETVzgORR0="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.01b035efb5dfa529c512f82962ed633328222da6f33c224244806d4798c67349.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" /><link rel="prev" href="https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" /><link rel="next" href="https://fantasyplayer.link/program/java8localdatetime%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -34,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96\/"
-    },"genre": "posts","keywords": "java","wordcount":  998 ,
+    },"genre": "posts","keywords": "java","wordcount":  1106 ,
     "url": "https:\/\/fantasyplayer.link\/program\/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96\/","datePublished": "2020-05-11T21:50:38+08:00","dateModified": "2023-11-13T13:25:45+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -46,7 +48,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
-      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" srcset="/images/3.jpeg, /images/3.jpeg 1.5x, /images/3.jpeg 2x" sizes="auto" data-title="Fanstasy Player / 幻想系玩家" data-alt="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -104,7 +106,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" srcset="/images/3.jpeg, /images/3.jpeg 1.5x, /images/3.jpeg 2x" sizes="auto" data-title="/images/3.jpeg" data-alt="/images/3.jpeg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -181,18 +183,13 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/program/" title="Programs">Programs</a></li><li class="breadcrumb-item active" aria-current="page">java字符串格式化</li>
     </ol>
-  </nav><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside>
-
-  <aside class="aside-custom">
-    </aside>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>java字符串格式化</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div>
-      <div class="post-meta-line"><span title="发布于 2020-05-11 21:50:38"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2020-05-11">2020-05-11</time></span>&nbsp;<span title="更新于 2023-11-13 13:25:45"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-13">2023-11-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 998 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-05-11 21:50:38"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-05-11">2020-05-11</time></span>&nbsp;<span title="更新于 2023-11-13 13:25:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-13">2023-11-13</time></span>&nbsp;<span title="1106 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -210,15 +207,15 @@
     <li><a href="#参考链接">参考链接</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h2 id="简介">简介</h2>
-<p>本文主要会介绍下面几种格式化的方式。</p>
+      </div><div class="content" id="content"><h2 id="简介" class="heading-element">
+  <a href="#%e7%ae%80%e4%bb%8b" class="heading-mark"></a>简介</h2><p>本文主要会介绍下面几种格式化的方式。</p>
 <ul>
 <li><code>String.format()</code></li>
 <li><code>System.out.printf()</code>      严格来说， 这并不是一种字符串格式化的方法。</li>
 <li><code>MessageFormatter.format()</code></li>
 </ul>
-<h3 id="stringformat">String.format()</h3>
-<p>这是一个 较为常用的 格式化方法， 类似 C语言的 <code>sprintf()</code> 函数。</p>
+<h3 id="stringformat" class="heading-element">
+  <a href="#stringformat" class="heading-mark"></a>String.format()</h3><p>这是一个 较为常用的 格式化方法， 类似 C语言的 <code>sprintf()</code> 函数。</p>
 <p>先给出几个示例 。</p>
 <div class="highlight" id="id-1"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -245,28 +242,27 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// in jdk10+ ，低于jdk10的时候， var 换成 String 即可
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">str1</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%d + %d = %d&#34;</span><span class="o">,</span> <span class="n">a</span> <span class="o">,</span> <span class="n">b</span> <span class="o">,</span> <span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span> <span class="o">);</span>  <span class="c1">// 1 + 2 = 3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">1.5678f</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">str2</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;f = %f&#34;</span><span class="o">,</span> <span class="n">f</span><span class="o">);</span>          <span class="c1">// f = 1.5678
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">var</span> <span class="n">str3</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;f = %.2f&#34;</span> <span class="o">,</span> <span class="n">f</span><span class="o">);</span>       <span class="c1">// f = 1.56
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">tmp1</span> <span class="o">=</span> <span class="s">&#34;jack&#34;</span> <span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">str4</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;hello,%s&#34;</span><span class="o">,</span>  <span class="n">tmp1</span><span class="o">);</span>     <span class="c1">// hello,jack
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerInfo</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">str5</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;a player: %s&#34;</span> <span class="o">,</span> <span class="n">p</span><span class="o">)</span> <span class="o">;</span>   <span class="c1">// a player: xxxxx
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 此处 p 的内容取决于 以下几个情况
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 当 p = null 的时候， 输出 null
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 当 p != null 的时候，  PlayerInfo 实现了 toString() 方法， 则输出 toString() 方法的返回值
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 			 否则输出 PlayerInfo@xxxx  这种字符串 。 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">str6</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;a: %d\tb: %d\t%%.2f= %.2f%n&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// a: 1    b: 2    %.2f= 1.56
-</span></span></span><span class="line"><span class="cl"><span class="c1">// \t 表示制表符， 一般是 4个或者8个空格。 %% 表示 一个%  %n 表示换行(\n 或者\r\n  取决于系统)
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// in jdk10+ ，低于jdk10的时候， var 换成 String 即可</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;%d + %d = %d&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="c1">// 1 + 2 = 3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">.</span><span class="na">5678f</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;f = %f&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w">          </span><span class="c1">// f = 1.5678</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">str3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;f = %.2f&#34;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w">       </span><span class="c1">// f = 1.56</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">tmp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;jack&#34;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">str4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;hello,%s&#34;</span><span class="p">,</span><span class="w">  </span><span class="n">tmp1</span><span class="p">);</span><span class="w">     </span><span class="c1">// hello,jack</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PlayerInfo</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">str5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;a player: %s&#34;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">   </span><span class="c1">// a player: xxxxx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 此处 p 的内容取决于 以下几个情况</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 当 p = null 的时候， 输出 null</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 当 p != null 的时候，  PlayerInfo 实现了 toString() 方法， 则输出 toString() 方法的返回值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 			 否则输出 PlayerInfo@xxxx  这种字符串 。 </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">var</span><span class="w"> </span><span class="n">str6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;a: %d\tb: %d\t%%.2f= %.2f%n&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// a: 1    b: 2    %.2f= 1.56</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="err">\</span><span class="n">t</span><span class="w"> </span><span class="n">表示制表符</span><span class="err">，</span><span class="w"> </span><span class="n">一般是</span><span class="w"> </span><span class="n">4个或者8个空格</span><span class="err">。</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="n">表示</span><span class="w"> </span><span class="n">一个</span><span class="o">%</span><span class="w">  </span><span class="o">%</span><span class="n">n</span><span class="w"> </span><span class="nf">表示换行</span><span class="p">(</span><span class="err">\</span><span class="n">n</span><span class="w"> </span><span class="n">或者</span><span class="err">\</span><span class="n">r</span><span class="err">\</span><span class="n">n</span><span class="w">  </span><span class="n">取决于系统</span><span class="p">)</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>看了上面的代码， 应该对这个方法有了一定的了解了， 下面来详细说明以下。</p>
 <p><code>%</code>开头的 叫<code>占位符</code> , <code>\</code>开头的叫做<code>转义字符</code> 。</p>
@@ -347,15 +343,14 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Format</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%f, %1$+020.10f %n&#34;</span><span class="o">,</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// output
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 3.141593, +00000003.1415926536
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Format</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;%f, %1$+020.10f %n&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// output</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="n">3</span><span class="p">.</span><span class="na">141593</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="n">00000003</span><span class="p">.</span><span class="na">1415926536</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>%1$+020.10f</code> 这一长段的含义是 。</p>
 <ul>
@@ -380,15 +375,14 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;%tT%n&#34;</span><span class="o">,</span> <span class="n">date</span><span class="o">);</span>     <span class="c1">// 13:51:15
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;hours %tH: minutes %tM: seconds %tS%n&#34;</span><span class="o">,</span> <span class="n">date</span><span class="o">,</span> <span class="n">date</span><span class="o">,</span> <span class="n">date</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// hours 13: minutes 51: seconds 15
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;%1$tH:%1$tM:%1$tS %1$tp %1$tL %1$tN %1$tz %n&#34;</span><span class="o">,</span> <span class="n">date</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 13:51:15 pm 061 061000000 +0400
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Date</span><span class="w"> </span><span class="n">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&#34;%tT%n&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="p">);</span><span class="w">     </span><span class="c1">// 13:51:15</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&#34;hours %tH: minutes %tM: seconds %tS%n&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// hours 13: minutes 51: seconds 15</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&#34;%1$tH:%1$tM:%1$tS %1$tp %1$tL %1$tN %1$tz %n&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="n">13</span><span class="p">:</span><span class="n">51</span><span class="p">:</span><span class="n">15</span><span class="w"> </span><span class="n">pm</span><span class="w"> </span><span class="n">061</span><span class="w"> </span><span class="n">061000000</span><span class="w"> </span><span class="o">+</span><span class="n">0400</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>详细说明下 <code>%t</code> 后面跟的内容</p>
 <table>
@@ -433,24 +427,23 @@
 </tr>
 </tbody>
 </table>
-<h3 id="systemoutprintf">System.out.printf()</h3>
-<p>本方法是格式化字符串，然后输出到控制台。</p>
+<h3 id="systemoutprintf" class="heading-element">
+  <a href="#systemoutprintf" class="heading-mark"></a>System.out.printf()</h3><p>本方法是格式化字符串，然后输出到控制台。</p>
 <p>使用方法约等于 <code>String.format()</code>  。</p>
-<h3 id="messageformatter">MessageFormatter()</h3>
-<p>我时候的时候非常简单， 像下面这种方式使用</p>
+<h3 id="messageformatter" class="heading-element">
+  <a href="#messageformatter" class="heading-mark"></a>MessageFormatter()</h3><p>我时候的时候非常简单， 像下面这种方式使用</p>
 <div class="highlight" id="id-4"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;hello,{0}&#34;</span><span class="o">,</span> <span class="s">&#34;jack&#34;</span><span class="o">);</span>   <span class="c1">// hello,jack
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">MessageFormat</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;hello,{0}&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;jack&#34;</span><span class="p">);</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="n">hello</span><span class="p">,</span><span class="n">jack</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>MessageFormat.format()</code>方法里面的第一个参数和<code>String.format</code>()的第一个参数的格式并不一样。</p>
 <p>似乎在简单使用的话， 只需要使用 <code>{Index}</code> 这个占位符就好了。</p>
 <p>这里有一篇详细介绍此内容的文章 <a href="https://vence.github.io/2016/04/29/javamethod-messageformat/"target="_blank" rel="external nofollow noopener noreferrer">https://vence.github.io/2016/04/29/javamethod-messageformat/</a></p>
-<h2 id="参考链接">参考链接</h2>
-<p><a href="https://vence.github.io/2016/04/29/javamethod-messageformat/"target="_blank" rel="external nofollow noopener noreferrer">https://vence.github.io/2016/04/29/javamethod-messageformat/</a></p>
+<h2 id="参考链接" class="heading-element">
+  <a href="#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" class="heading-mark"></a>参考链接</h2><p><a href="https://vence.github.io/2016/04/29/javamethod-messageformat/"target="_blank" rel="external nofollow noopener noreferrer">https://vence.github.io/2016/04/29/javamethod-messageformat/</a></p>
 <p><a href="https://docs.oracle.com/javase/tutorial/essential/io/formatting.html"target="_blank" rel="external nofollow noopener noreferrer">https://docs.oracle.com/javase/tutorial/essential/io/formatting.html</a></p>
 <p><a href="https://www.runoob.com/w3cnote/java-printf-formate-demo.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.runoob.com/w3cnote/java-printf-formate-demo.html</a>  菜鸟教程，中文内容</p>
 <p><a href="https://www.baeldung.com/java-printstream-printf"target="_blank" rel="external nofollow noopener noreferrer">https://www.baeldung.com/java-printstream-printf</a></p>
@@ -460,12 +453,11 @@
       <div class="post-info-mod">
         <span title="更新于 2023-11-13 13:25:45">更新于 2023-11-13&nbsp;</span>
       </div><div class="post-info-license">
-          <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
-        </div></div>
-    <div class="post-info-line">
-      <div class="post-info-md"></div>
-      <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-title="java字符串格式化" data-via="Aincvy" data-hashtags="java"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-title="java字符串格式化" data-via="Aincvy" data-hashtags="java"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-hashtag="java"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-title="java字符串格式化" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-title="java字符串格式化"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
@@ -474,34 +466,37 @@
   <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-title="java字符串格式化" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" data-title="java字符串格式化"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
-      </div>
-    </div>
-  </div>
+        </div>
+      </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/java/' class="post-tag">java</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/java/" class="post-tag" title="标签 - java">java</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/program/%E5%88%A9%E7%94%A8%E5%81%9A%E9%A5%AD%E7%9A%84%E6%B5%81%E7%A8%8B%E6%9D%A5%E8%A7%A3%E9%87%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BA%94%E7%94%A8/" class="post-nav-item" rel="prev" title="利用做饭的流程来解释多线程的应用"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>利用做饭的流程来解释多线程的应用</a>
+  <div class="post-nav"><a href="/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="post-nav-item" rel="prev" title="PUBG崩溃的解决办法"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>PUBG崩溃的解决办法</a>
       <a href="/program/java8localdatetime%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" class="post-nav-item" rel="next" title="Java8LocalDateTime以及相关内容">Java8LocalDateTime以及相关内容<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
-      </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1&#43;h&#43;M018fqWyvVU/Ml8q48Oub&#43;g="><link rel="stylesheet" href="/lib/katex/katex.min.a1609a6c27cf7783a2db5c2a65ecc14b3fda9eda38558709a9cf6c33d2334139.css" integrity="sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts+bkvDSwmmJ1Xw88SLXpxmqKQ=" defer></script><script src="/lib/lightgallery/lightgallery.min.a109d6550e0f5c7f5ad89c835407ceb18ed48d1e50d6d9b6c37234d5ee7ebaa8.js" integrity="sha256-oQnWVQ4PXH9a2JyDVAfOsY7UjR5Q1tm2w3I01e5+uqg=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.baa7d26c390a254160ee3ae0f09a9a16c77d1a5b4b6853c5e4487de764fee24b.js" integrity="sha256-uqfSbDkKJUFg7jrg8JqaFsd9GltLaFPF5Eh952T+4ks=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.056f82747a5949da14472c62a803167ecbdc3f847fc44755e5b33ec7f1319f02.js" integrity="sha256-BW+CdHpZSdoURyxiqAMWfsvcP4R/xEdV5bM+x/ExnwI=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.13870312562afc8fad155a133018c3f2a4ef1cb2e6765b73f40151ab664ff8d6.js" integrity="sha256-E4cDElYq/I+tFVoTMBjD8qTvHLLmdltz9AFRq2ZP+NY=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script src="/js/theme.min.81e852a4cdb212df979c31f41dac766c33e3614f93188bc062ae547de10130d3.js" integrity="sha256-gehSpM2yEt+XnDH0Hax2bDPjYU+TGIvAYq5UfeEBMNM=" defer></script><script>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-P74XPSRPG3');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>

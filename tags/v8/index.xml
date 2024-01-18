@@ -2,7 +2,7 @@
   <channel>
     <title>v8 - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/v8/</link>
-    <description>v8 - 标签 - Fanstasy Player / 幻想系玩家</description>
+    <description>v8 - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
       <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/v8/" rel="self" type="application/rss+xml" /><item>
   <title>在windows Cpp 开发中嵌入v8等库</title>
@@ -10,7 +10,7 @@
   <pubDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</guid>
-  <description><![CDATA[主要内容 下载dll 编译v8是一件很麻烦的事情，所以如果有预编译的dll就好了， 这么想着之后， 笔者就开始搜索了起来， 并且真的找到了一个可用的预]]></description>
+  <description><![CDATA[主要内容 下载dll编译v8是一件很麻烦的事情，所以如果有预编译的dll就好了， 这么想着之后， 笔者就开始搜索了起来， 并且真的找到了一个可用的预]]></description>
 </item>
 <item>
   <title>谷歌v8引擎的尝试</title>

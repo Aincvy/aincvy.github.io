@@ -7,15 +7,15 @@
 
 先来看一段日志 
 ```cpp
-[..t/sight/sight_js.cpp:996 (parseGraph)] finalSource = "varName = 23.5 + -69.5;" (std::string)
+[..t/sight/sight_js.cpp:996 (parseGraph)] finalSource = &#34;varName = 23.5 &#43; -69.5;&#34; (std::string)
 [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource.length() = 80 (unsigned long)
 [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource.size() = 80 (unsigned long)
 [..t/sight/sight_js.cpp:997 (parseGraph)] finalSource.data() = varName (char*)
-[..t/sight/sight_js.cpp:998 (parseGraph)] finalSource.c_str() = "varName" (const char*)
+[..t/sight/sight_js.cpp:998 (parseGraph)] finalSource.c_str() = &#34;varName&#34; (const char*)
 varName
-varName = 23.5 + -69.5;
+varName = 23.5 &#43; -69.5;
 ```
-前面三行可以看到字符串 `finalSource` 的长度是80， 但是内容只打印出 `varName = 23.5 + -69.5;` 这些是23个字符，与输出的长度并不一致。 
+前面三行可以看到字符串 `finalSource` 的长度是80， 但是内容只打印出 `varName = 23.5 &#43; -69.5;` 这些是23个字符，与输出的长度并不一致。 
 
 经过调试之后， 我发现是因为字符串里面存在大量的0, 这些0在打印的时候 什么也不会输出。
 
@@ -23,7 +23,7 @@ varName = 23.5 + -69.5;
 [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource.length() = 80 (unsigned long)
 [..t/sight/sight_js.cpp:996 (parseGraph)] finalSource.size() = 80 (unsigned long)
 [..t/sight/sight_js.cpp:997 (parseGraph)] finalSource.data() = varName (char*)
-[..t/sight/sight_js.cpp:998 (parseGraph)] finalSource.c_str() = "varName" (const char*)
+[..t/sight/sight_js.cpp:998 (parseGraph)] finalSource.c_str() = &#34;varName&#34; (const char*)
 varName
 11897114789710910100000000000000000000000000000000000000000000000000000000032613250514653324332455457465359
 ```
@@ -34,9 +34,9 @@ varName
 
 打印使用的代码如下： 
 ```cpp
-printf("%s\n", finalSource.c_str());
-for (const auto &item : finalSource) {
-    printf("%d",item);
+printf(&#34;%s\n&#34;, finalSource.c_str());
+for (const auto &amp;item : finalSource) {
+    printf(&#34;%d&#34;,item);
 }
 ```
 
@@ -47,11 +47,11 @@ for (const auto &item : finalSource) {
 
 v8pp 的函数是这样的： 
 ```cpp
-template<size_t N>
-v8::Local<v8::String> to_v8(v8::Isolate* isolate,
-	char const (&str)[N], size_t len = N - 1)
+template&lt;size_t N&gt;
+v8::Local&lt;v8::String&gt; to_v8(v8::Isolate* isolate,
+	char const (&amp;str)[N], size_t len = N - 1)
 {
-	return convert<string_view>::to_v8(isolate, string_view(str, len));
+	return convert&lt;string_view&gt;::to_v8(isolate, string_view(str, len));
 }
 ```
 作者使用了模板函数获取字符串数组的长度， 然后把所有内容都注入进去了。 
@@ -59,7 +59,7 @@ v8::Local<v8::String> to_v8(v8::Isolate* isolate,
 解决方法如下： 
 ```cpp
 char tmp[1024] = {0};
-sprintf(tmp, "abcd");
+sprintf(tmp, &#34;abcd&#34;);
 
 v8pp::to_v8(isolate, tmp);       // 这有问题
 v8pp::to_v8(isolate, (const char*) tmp);    // 这样就可以了。 
@@ -72,7 +72,7 @@ v8pp::to_v8(isolate, (const char*) tmp);    // 这样就可以了。
 
 ### 其他 
 
-编译时的字符串拼接 `test("hello," "world!" )`
+编译时的字符串拼接 `test(&#34;hello,&#34; &#34;world!&#34; )`
 
 
 ---

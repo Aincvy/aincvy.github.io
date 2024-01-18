@@ -5,7 +5,7 @@
 
 项目地址： https://github.com/bombela/backward-cpp
 
-这个库是一个用于在程序崩溃的时候打印堆栈信息和代码信息的 c++库。
+这个库是一个用于在程序崩溃的时候打印堆栈信息和代码信息的 c&#43;&#43;库。
 
 笔者是在 mac 系统上尝试使用的，该库的尝试结果如下：
 
@@ -23,7 +23,7 @@
 
 笔者寻找的到的库在 mac 上编译有一点点问题，处理一下就好了。 **注意，即使编译好了这个库，也无法打印文件名和行号**
 
-libdwarf 在mac平台上编译有问题， 添加 `target_link_libraries(${target} PUBLIC ${LIBELF_LIBRARIES} "z")`   "z" 库的链接即可。 *添加到 Cmake 的配置文件里面。*
+libdwarf 在mac平台上编译有问题， 添加 `target_link_libraries(${target} PUBLIC ${LIBELF_LIBRARIES} &#34;z&#34;)`   &#34;z&#34; 库的链接即可。 *添加到 Cmake 的配置文件里面。*
 
 安装的时候， include 会提示有问题， 笔者是采取手动复制的情况。  即手动复制文件夹到 `/usr/local/include/libwarf` 里。
 `build/config.h` 不知道有没有用，一起复制过去了。 
@@ -32,13 +32,13 @@ libdwarf 在mac平台上编译有问题， 添加 `target_link_libraries(${targe
 
 ### 输出一个宏定义的值
 
-```c++
+```c&#43;&#43;
 #define XSTR(x) STR(x)
 #define STR(x) #x
 
-#pragma message "The value of BACKWARD_HAS_BACKTRACE_SYMBOL: " XSTR(BACKWARD_HAS_BACKTRACE_SYMBOL)
-#pragma message "The value of BACKWARD_HAS_UNWIND: " XSTR(BACKWARD_HAS_UNWIND)
-#pragma message "The value of BACKWARD_HAS_BACKTRACE: " XSTR(BACKWARD_HAS_BACKTRACE)
+#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE_SYMBOL: &#34; XSTR(BACKWARD_HAS_BACKTRACE_SYMBOL)
+#pragma message &#34;The value of BACKWARD_HAS_UNWIND: &#34; XSTR(BACKWARD_HAS_UNWIND)
+#pragma message &#34;The value of BACKWARD_HAS_BACKTRACE: &#34; XSTR(BACKWARD_HAS_BACKTRACE)
 ```
 
 可见上述代码， 定义了`XSTR, STR` 两个宏之后， 使用 `XSTR(name)` 的形式即可以打印一个宏的值。

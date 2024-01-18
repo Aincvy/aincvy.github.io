@@ -117,7 +117,7 @@ WAN 口，其实可以先忽略， 或者设置成 从 DHCP 获取地址。
 
 我一般会先 使用命令`ping 192.168.200.1` 看看网络通不通。
 
-可以 ping 的到的话，就说明 Luck， 可以使用 web 界面管理了。  :+1:  :+1: :+1:
+可以 ping 的到的话，就说明 Luck， 可以使用 web 界面管理了。  :&#43;1:  :&#43;1: :&#43;1:
 
 不能访问的读者， 很可能是连错 网口了。 
 
@@ -168,27 +168,27 @@ Linux: `ifconfig`
   - 值为 down 表示链接失败
 - 大概信息如下，就是说明链接成功了。 (`*.*.*.*` 是隐藏信息)
 
-> Status up  
-> PPPoE up   
-> Uptime 1d 20:23:57  
-> IPv4 Address *.*.*.*  
-> Subnet mask IPv4 255.255.255.255  
-> Gateway IPv4 *.*..   
-> IPv6 Link Local fe80::20c:29ff:fef8:3670%em0  
-> Gateway IPv6 fe80::ce1a:faff:feed:920  
-> DNS servers  
-> 116.228.111.118  
-> 180.168.255.18  
-> MTU 1480  
-> In/out packets  
-> 52170750/29521762 (63.12 GiB/3.75 GiB)  
->
-> In/out packets (pass)  
-> 52170750/29521762 (63.12 GiB/3.75 GiB)  
-> In/out packets (block)  
-> 23698174/3 (406.33 MiB/189 B)  
-> In/out errors 0/0  
-> Collisions 0   
+&gt; Status up  
+&gt; PPPoE up   
+&gt; Uptime 1d 20:23:57  
+&gt; IPv4 Address *.*.*.*  
+&gt; Subnet mask IPv4 255.255.255.255  
+&gt; Gateway IPv4 *.*..   
+&gt; IPv6 Link Local fe80::20c:29ff:fef8:3670%em0  
+&gt; Gateway IPv6 fe80::ce1a:faff:feed:920  
+&gt; DNS servers  
+&gt; 116.228.111.118  
+&gt; 180.168.255.18  
+&gt; MTU 1480  
+&gt; In/out packets  
+&gt; 52170750/29521762 (63.12 GiB/3.75 GiB)  
+&gt;
+&gt; In/out packets (pass)  
+&gt; 52170750/29521762 (63.12 GiB/3.75 GiB)  
+&gt; In/out packets (block)  
+&gt; 23698174/3 (406.33 MiB/189 B)  
+&gt; In/out errors 0/0  
+&gt; Collisions 0   
 
 #### 上网
 
@@ -223,7 +223,7 @@ Linux: `ifconfig`
 
 先启用内网可以访问映射的端口，不然只有外网能访问的话就很不方便。
 
-点击`System/Advanced/Firewall & NAT`
+点击`System/Advanced/Firewall &amp; NAT`
 
 向下滑动， 找到`Network Address Translation` 标题。
 

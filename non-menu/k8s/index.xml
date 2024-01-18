@@ -8,60 +8,49 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sat, 29 Jul 2023 18:44:02 +0800</lastBuildDate><atom:link href="https://fantasyplayer.link/non-menu/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 18:44:02 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/non-menu/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5. Config Map 的相关信息</title>
       <link>https://fantasyplayer.link/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</link>
-      <pubDate>Mon, 21 Aug 2023 16:39:51 +0800</pubDate>
-      <author>aincvy@gmail.com (Aincvy)</author>
+      <pubDate>Mon, 21 Aug 2023 16:39:51 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</guid>
-      <description>主要内容 基本使用 创建 config map 方法1：从文件夹中创建一个 config map: kubectl create configmap game-config --from-file=./config 方法2： 从文件中创建一个 config map, 和上面一样，使用 --from-file 参数 方法3：使用 yaml 配置文件创建</description>
+      <description>主要内容 基本使用创建 config map 方法1：从文件夹中创建一个 config map: kubectl create configmap game-config --from-file=./config 方法2： 从文件中创建一个 config map, 和上面一样，使用 --from-file 参数 方法3：使用 yaml 配置文件创建</description>
     </item>
-    
     <item>
       <title>4. 持久卷的相关信息</title>
       <link>https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</link>
-      <pubDate>Mon, 21 Aug 2023 16:39:22 +0800</pubDate>
-      <author>aincvy@gmail.com (Aincvy)</author>
+      <pubDate>Mon, 21 Aug 2023 16:39:22 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</guid>
-      <description>持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径 local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的pod 下面看</description>
+      <description>持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的po</description>
     </item>
-    
     <item>
       <title>3. 应用的更新以及容器扩缩以及命名空间</title>
       <link>https://fantasyplayer.link/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/</link>
-      <pubDate>Sat, 29 Jul 2023 12:13:25 +0800</pubDate>
-      <author>aincvy@gmail.com (Aincvy)</author>
+      <pubDate>Sat, 29 Jul 2023 12:13:25 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/</guid>
       <description>现在，让我们回到k8s的使用上来。 主要内容 命名空间 1 2 3 4 5 $ kubectl create namespace nginx-test # 创建 命名空间 $ kubectl get ns # 获取所有命名空间 $ kubectl config set-context --current --namespace=nginx-test # 切换命名空间 $ kubectl</description>
     </item>
-    
     <item>
       <title>2. K8s的安装</title>
       <link>https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/</link>
-      <pubDate>Sat, 29 Jul 2023 10:42:26 +0800</pubDate>
-      <author>aincvy@gmail.com (Aincvy)</author>
+      <pubDate>Sat, 29 Jul 2023 10:42:26 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
       <description>可以考虑下面几种方式进行安装 minikube 主要目的应该是学习或者开发测试。 不应该应用于生产环境 安装简单 kubeadm 可用于生产环境 安装配置比较麻烦。 kuboard-spray 开源项目： https://github.com/eip-work/kuboard-spray 大</description>
     </item>
-    
     <item>
       <title>1. K8s的基本使用</title>
       <link>https://fantasyplayer.link/non-menu/k8s/1.-k8s%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 29 Jul 2023 10:40:10 +0800</pubDate>
-      <author>aincvy@gmail.com (Aincvy)</author>
+      <pubDate>Sat, 29 Jul 2023 10:40:10 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/non-menu/k8s/1.-k8s%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
       <description>建议读者先随意浏览一下本文， 等待安装完k8s之后，再仔细阅读本文。或者使用在线的k8s playground 查看k8s的安装教程 k8s的工作流程大致如下 将应用打</description>
     </item>
-    
     <item>
       <title>0. K8s的简要教程 - 开篇</title>
       <link>https://fantasyplayer.link/non-menu/k8s/0.-k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B-%E5%BC%80%E7%AF%87/</link>
-      <pubDate>Sat, 29 Jul 2023 10:36:36 +0800</pubDate>
-      <author>aincvy@gmail.com (Aincvy)</author>
+      <pubDate>Sat, 29 Jul 2023 10:36:36 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/non-menu/k8s/0.-k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B-%E5%BC%80%E7%AF%87/</guid>
       <description>使用k8s， 我们大致可以获得下面的好处。 自动化部署 动态扩缩 灾难恢复 回滚版本 管理方便 负载均衡 有好处， 自然有缺点。 下面是一些缺点。 国内安装比较困</description>
     </item>
-    
   </channel>
 </rss>

@@ -27,7 +27,7 @@ Vagrant 需要一个虚拟机工具来创建虚拟机， 比如 VirtualBox, VMwa
 这里使用 `New` 的选项所提示的命令。
 ```shell
 cd ~
-mkdir debian-bullseye && cd debian-bullseye
+mkdir debian-bullseye &amp;&amp; cd debian-bullseye
 vagrant init debian/bullseye64
 # 修改 VagrantFile  以进行定制化
 # ...
@@ -45,18 +45,18 @@ vagrant ssh
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# All Vagrant configuration is done below. The &#34;2&#34; in Vagrant.configure
 # configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
-Vagrant.configure("2") do |config|
+# backwards compatibility). Please don&#39;t change it unless you know what
+# you&#39;re doing.
+Vagrant.configure(&#34;2&#34;) do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "debian/bullseye64"
+  config.vm.box = &#34;debian/bullseye64&#34;
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -65,47 +65,47 @@ Vagrant.configure("2") do |config|
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # accessing &#34;localhost:8080&#34; will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network &#34;forwarded_port&#34;, guest: 80, host: 8080
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  # config.vm.network &#34;forwarded_port&#34;, guest: 80, host: 8080, host_ip: &#34;127.0.0.1&#34;
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  # config.vm.network "public_network"
+  # config.vm.network &#34;public_network&#34;
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  # config.vm.synced_folder &#34;../data&#34;, &#34;/vagrant_data&#34;
 
   # Disable the default share of the current code directory. Doing this
   # provides improved isolation between the vagrant box and your host
-  # by making sure your Vagrantfile isn't accessable to the vagrant box.
+  # by making sure your Vagrantfile isn&#39;t accessable to the vagrant box.
   # If you use this you may want to enable additional shared subfolders as
   # shown above.
-  # config.vm.synced_folder ".", "/vagrant", disabled: true
+  # config.vm.synced_folder &#34;.&#34;, &#34;/vagrant&#34;, disabled: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  # config.vm.provider &#34;virtualbox&#34; do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
+  #   vb.memory = &#34;1024&#34;
   # end
   #
   # View the documentation for the provider you are using for more
@@ -114,14 +114,14 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
+  # config.vm.provision &#34;shell&#34;, inline: &lt;&lt;-SHELL
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
 end
 ```
 
-可以看到， 除了注释， 就只有一句 `config.vm.box = "debian/bullseye64"`  这个 `debian/bullseye64` 就是基础镜像， 可以是远端的， 也可以是本地的。 
+可以看到， 除了注释， 就只有一句 `config.vm.box = &#34;debian/bullseye64&#34;`  这个 `debian/bullseye64` 就是基础镜像， 可以是远端的， 也可以是本地的。 
 
 简单来说， 就是克隆了一个虚拟机， 然后修改了几个配置项。   
 后面的使用基本上也是自己做box, 然后利用box 快速创建虚拟机。  *box就是指vagrant的镜像*
@@ -140,16 +140,16 @@ end
 
 ```ruby
 # 端口转发，  guest： 客户机，  host: 宿主机
-# config.vm.network "forwarded_port", guest: 80, host: 8080
+# config.vm.network &#34;forwarded_port&#34;, guest: 80, host: 8080
 
 # 端口转发， 宿主的端口绑定到localhost
-# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+# config.vm.network &#34;forwarded_port&#34;, guest: 80, host: 8080, host_ip: &#34;127.0.0.1&#34;
 
 # host-only 网络模式， 需要先在 vbox 里面创建一个 host-only的 net， 然后才能使用。
-# config.vm.network "private_network", ip: "192.168.33.10"
+# config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;
 
 # 桥接模式
-# config.vm.network "public_network"
+# config.vm.network &#34;public_network&#34;
 ```
 
 如果已经创建了虚拟机， 则无法通过这种方式添加新的端口转发， 可以使用 virtualbox 的管理界面或者命令行添加。  
@@ -158,22 +158,22 @@ end
 命令解释： `ssh -L [本地ip:]本地端口:目标地址:目标端口 [USER@]SSH_SERVER`  
 本地指发起 ssh 会话的机器。 
 
-{{< admonition "note" >}}
+{{&lt; admonition &#34;note&#34; &gt;}}
 如果设置为 host-only 模式， 但是 ip 没有生效， 可能需要在**宿主机**安装一下 `net-tools` 工具。 
 可见：  https://github.com/hashicorp/vagrant/issues/8686
-{{< /admonition>}}
+{{&lt; /admonition&gt;}}
 
 ### virtual box 虚拟机设置 
 ```ruby
-config.vm.provider "virtualbox" do |vb|
+config.vm.provider &#34;virtualbox&#34; do |vb|
     # 开启机器的时候是否显示 GUI 界面？
     vb.gui = true
 
     # 虚拟机的名字
-    vb.name = "cpp-dev"
+    vb.name = &#34;cpp-dev&#34;
 
     # 内存大小 MB
-    vb.memory = "1024"
+    vb.memory = &#34;1024&#34;
     # 虚拟机cpu 核心（线程）数量 
     vb.cpus= 4
 end
@@ -183,7 +183,7 @@ end
 
 ### 磁盘部分
 ```ruby
-config.disksize.size = '50GB'
+config.disksize.size = &#39;50GB&#39;
 ```
 需要用到一个虚拟机插件 
 ```shell
@@ -200,13 +200,13 @@ sudo resize2fs /dev/sda1
 ```ruby
 # 在出现 ssh 密钥错误的时候可以尝试使用
 # config.ssh.insert_key = false
-config.ssh.username = 'root'
-config.ssh.password = 'admin123'
+config.ssh.username = &#39;root&#39;
+config.ssh.password = &#39;admin123&#39;
 ```
 
-{{< admonition "warning" >}}
+{{&lt; admonition &#34;warning&#34; &gt;}}
 ！注意， 如果不是自定义的镜像，用户名不要设置成 `root` ! 因为 sshd 默认的配置不允许root 登录， 也不允许密码登录。 
-{{< /admonition>}}
+{{&lt; /admonition&gt;}}
 
 因为普通用户可以无密码`sudo` 所以也没必要非得直接创建 root 用户。  
 如果读者说 诶，我就是想要 💓, 那么你可以参考这个地址： https://stackoverflow.com/questions/25758737/vagrant-login-as-root-by-default
@@ -223,23 +223,23 @@ box 呢， 就是虚拟机模板， 我们可以利用现有虚拟机来创建�
 下面的命令示意如何创建一个自定义box。 
 ```shell
 $ vboxmanage list vms
-"<inaccessible>" {d17e3814-8a95-4d83-a7fc-13e6e3cdb10c}
-"ubuntu-22-lts-copy" {d4c01226-bdac-40c4-bb8a-19d711d9596c}
-"omv" {0536c357-c116-4763-b57c-495c5e9afbfa}
-"k8s-minikube" {74006850-c9d4-4fe2-9341-ae6409eb26bd}
-"cpp-dev" {6e432b59-f15a-404f-9f69-bb7acfa4e84d}
+&#34;&lt;inaccessible&gt;&#34; {d17e3814-8a95-4d83-a7fc-13e6e3cdb10c}
+&#34;ubuntu-22-lts-copy&#34; {d4c01226-bdac-40c4-bb8a-19d711d9596c}
+&#34;omv&#34; {0536c357-c116-4763-b57c-495c5e9afbfa}
+&#34;k8s-minikube&#34; {74006850-c9d4-4fe2-9341-ae6409eb26bd}
+&#34;cpp-dev&#34; {6e432b59-f15a-404f-9f69-bb7acfa4e84d}
 
-$ vagrant package --base "cpp-dev"
+$ vagrant package --base &#34;cpp-dev&#34;
 ...
 ...
-==> cpp-dev: Compressing package to: /mnt/ssd1/default/cpp-dev/package.box
+==&gt; cpp-dev: Compressing package to: /mnt/ssd1/default/cpp-dev/package.box
 
 $ mkdir -p ~/vagrant-box/cpp-dev
 $ mv package.box ~/vagrant-box/cpp-dev
-$ vagrant box add --name="cpp-dev" ~/vagrant-box/cpp-dev/package.box
+$ vagrant box add --name=&#34;cpp-dev&#34; ~/vagrant-box/cpp-dev/package.box
 ...
 ...
-==> box: Successfully added box 'cpp-dev' (v0) for 'virtualbox'!
+==&gt; box: Successfully added box &#39;cpp-dev&#39; (v0) for &#39;virtualbox&#39;!
 
 $ vagrant box list
 cpp-dev             (virtualbox, 0)
@@ -249,8 +249,8 @@ debian/bullseye64   (virtualbox, 11.20230602.1)
 
 至此， 我们就添加了一个自定义的box。 那么如何使用呢？ 
 很简单， 只需要这样就可以了。   
-`config.vm.box = "debian/bullseye64"  =>   config.vm.box = "cpp-dev"`  
-把值修改成  `vagrant box add --name="cpp-dev"` 中， --name 定义的值就可以了。 
+`config.vm.box = &#34;debian/bullseye64&#34;  =&gt;   config.vm.box = &#34;cpp-dev&#34;`  
+把值修改成  `vagrant box add --name=&#34;cpp-dev&#34;` 中， --name 定义的值就可以了。 
 
 当从 vagrant cloud 上新下载一个镜像之后， 你可能需要手动的安装 virtualbox guest additions 。  
 安装完成之后， 就可以制作第一个自己的box 了。  

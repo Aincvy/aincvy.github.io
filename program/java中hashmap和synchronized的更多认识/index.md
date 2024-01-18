@@ -10,8 +10,8 @@
 
 可见源码： 
 ```java
-public Set<K> keySet() {
-    Set<K> ks = keySet;
+public Set&lt;K&gt; keySet() {
+    Set&lt;K&gt; ks = keySet;
     if (ks == null) {
         ks = new KeySet();
         keySet = ks;
@@ -19,24 +19,24 @@ public Set<K> keySet() {
     return ks;
 }
 
-final class KeySet extends AbstractSet<K> {
+final class KeySet extends AbstractSet&lt;K&gt; {
     public final int size()                 { return size; }
     public final void clear()               { HashMap.this.clear(); }
-    public final Iterator<K> iterator()     { return new KeyIterator(); }
+    public final Iterator&lt;K&gt; iterator()     { return new KeyIterator(); }
     public final boolean contains(Object o) { return containsKey(o); }
     public final boolean remove(Object key) {
         return removeNode(hash(key), key, null, false, true) != null;
     }
-    public final Spliterator<K> spliterator() {
-        return new KeySpliterator<>(HashMap.this, 0, -1, 0, 0);
+    public final Spliterator&lt;K&gt; spliterator() {
+        return new KeySpliterator&lt;&gt;(HashMap.this, 0, -1, 0, 0);
     }
-    public final void forEach(Consumer<? super K> action) {
-        Node<K,V>[] tab;
+    public final void forEach(Consumer&lt;? super K&gt; action) {
+        Node&lt;K,V&gt;[] tab;
         if (action == null)
             throw new NullPointerException();
-        if (size > 0 && (tab = table) != null) {
+        if (size &gt; 0 &amp;&amp; (tab = table) != null) {
             int mc = modCount;
-            for (Node<K,V> e : tab) {
+            for (Node&lt;K,V&gt; e : tab) {
                 for (; e != null; e = e.next)
                     action.accept(e.key);
             }
@@ -49,17 +49,17 @@ final class KeySet extends AbstractSet<K> {
 
 这个方法的返回值一般用于遍历 keys, 如果对这个Set做一些操作，但是并不想修改HashMap的数据的话， 可以这么做： 
 ```java
-Map<String, Long> map = new HashMap<>();
-Set<String> keys = new HashSet<>(map.keySet());
+Map&lt;String, Long&gt; map = new HashMap&lt;&gt;();
+Set&lt;String&gt; keys = new HashSet&lt;&gt;(map.keySet());
 // 这么做之后， 修改 `keys` 里面的元素就不会影响到 `map` 了
 // 但是如果修改keys的元素的值， 那么就会影响到 map里面的key, 这个自然不必多说。
 // 在本例里面 元素的类型是 String, 我们都知道String是不可变的， 所以无法修改它的内部属性
 // 这里在额外说一些内容 
-// 如果 Map<K,V> 中的 K是一个 自定义的复合类型， 在放入map中之后就尽量不要修改它的值
+// 如果 Map&lt;K,V&gt; 中的 K是一个 自定义的复合类型， 在放入map中之后就尽量不要修改它的值
 // 详情看下面的代码
 ```
 
-如果 `Map<K,V>` 中的 K是一个 自定义的复合类型， 那么就尽量不要修改它的值， 因为如果你修改了， 则可能会发生一些预期之外的行为。 其实最好的还是不使用复合类型作为KEY， 仅仅使用简单类型和String，或者使用一些 不可变的对象 。
+如果 `Map&lt;K,V&gt;` 中的 K是一个 自定义的复合类型， 那么就尽量不要修改它的值， 因为如果你修改了， 则可能会发生一些预期之外的行为。 其实最好的还是不使用复合类型作为KEY， 仅仅使用简单类型和String，或者使用一些 不可变的对象 。
 下面是笔者测试使用的代码。 
 
 ```java
@@ -87,7 +87,7 @@ public class HashMapTest {
 
     public static void main(String[] args) {
         
-        Map<Point, Integer> map = new HashMap<>(8);
+        Map&lt;Point, Integer&gt; map = new HashMap&lt;&gt;(8);
         Point point1 = new Point(1,1);
         map.put(point1, 1);
         System.out.println(map.get(new Point(1, 1)));    // 1
@@ -105,21 +105,21 @@ public class HashMapTest {
 
         Point point3 = new Point(3, 3);
         map.put(point3, 3);
-        for (Entry<Point, Integer> entry : map.entrySet()) {
+        for (Entry&lt;Point, Integer&gt; entry : map.entrySet()) {
             System.out.println(entry);  
             // HashMapTest.Point(x=2, y=2)=1
             // HashMapTest.Point(x=3, y=3)=3
         }
         for (Point point : map.keySet()) {
-            System.out.println(point.toString() + "=" + map.get(point));  
+            System.out.println(point.toString() &#43; &#34;=&#34; &#43; map.get(point));  
             // HashMapTest.Point(x=2, y=2)=null
             // HashMapTest.Point(x=3, y=3)=3
         }   
 
         System.out.println(map.get(point1));    // null
-        for (int i = 0; i < 160; i++) {
+        for (int i = 0; i &lt; 160; i&#43;&#43;) {
             Point point = new Point(i,i*2);
-            map.put(point, i+1);
+            map.put(point, i&#43;1);
         }
         System.out.println(map.size());         // 162
         System.out.println(map.get(point1));    // null
@@ -168,13 +168,13 @@ public class HashMapTest {
 原因可能和 `HashMap.Node` 类的实现有关系。 
 可以看下面的代码 *节选自 java.util.HashMap*
 ```java
-static class Node<K,V> implements Map.Entry<K,V> {
+static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
         final int hash;
         final K key;
         V value;
-        Node<K,V> next;
+        Node&lt;K,V&gt; next;
 
-        Node(int hash, K key, V value, Node<K,V> next) {
+        Node(int hash, K key, V value, Node&lt;K,V&gt; next) {
             this.hash = hash;
             this.key = key;
             this.value = value;
@@ -183,7 +183,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
 
         public final K getKey()        { return key; }
         public final V getValue()      { return value; }
-        public final String toString() { return key + "=" + value; }
+        public final String toString() { return key &#43; &#34;=&#34; &#43; value; }
 
         public final int hashCode() {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
@@ -199,8 +199,8 @@ static class Node<K,V> implements Map.Entry<K,V> {
             if (o == this)
                 return true;
             if (o instanceof Map.Entry) {
-                Map.Entry<?,?> e = (Map.Entry<?,?>)o;
-                if (Objects.equals(key, e.getKey()) &&
+                Map.Entry&lt;?,?&gt; e = (Map.Entry&lt;?,?&gt;)o;
+                if (Objects.equals(key, e.getKey()) &amp;&amp;
                     Objects.equals(value, e.getValue()))
                     return true;
             }
@@ -219,7 +219,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
 TODO 待补充
 
 
-<!-- 
+&lt;!-- 
 据笔者所知 synchronized 是一个java的关键字， 用于加锁， 相比于`ReentrantLock`， synchronized 更加轻便， 没有选项， 但是存在一些优化措施 。   
 比如所谓的锁升级机制就是指的 synchronized， ReentrantLock 则没有这种机制。   
 - 锁升级机制是说 一个对象的 对象头(cpp部分) 有一个叫做 mark word 的东西， 那个字段有2个位是表示锁的状态的的。    
@@ -245,7 +245,7 @@ private void mainLoop() {
             boolean taskFired;
             synchronized(queue) {
                 // Wait for queue to become non-empty
-                while (queue.isEmpty() && newTasksMayBeScheduled)
+                while (queue.isEmpty() &amp;&amp; newTasksMayBeScheduled)
                     queue.wait();
                 if (queue.isEmpty())
                     break; // Queue is empty and will forever remain; die
@@ -260,18 +260,18 @@ private void mainLoop() {
                     }
                     currentTime = System.currentTimeMillis();
                     executionTime = task.nextExecutionTime;
-                    if (taskFired = (executionTime<=currentTime)) {
+                    if (taskFired = (executionTime&lt;=currentTime)) {
                         if (task.period == 0) { // Non-repeating, remove
                             queue.removeMin();
                             task.state = TimerTask.EXECUTED;
                         } else { // Repeating task, reschedule
                             queue.rescheduleMin(
-                                task.period<0 ? currentTime   - task.period
-                                            : executionTime + task.period);
+                                task.period&lt;0 ? currentTime   - task.period
+                                            : executionTime &#43; task.period);
                         }
                     }
                 }
-                if (!taskFired) // Task hasn't yet fired; wait
+                if (!taskFired) // Task hasn&#39;t yet fired; wait
                     queue.wait(executionTime - currentTime);
             }
             if (taskFired)  // Task fired; run it, holding no locks
@@ -285,22 +285,22 @@ private void mainLoop() {
 而 再看看 `Timer` 类的实现内容。
 ```java
 private void sched(TimerTask task, long time, long period) {
-    if (time < 0)
-        throw new IllegalArgumentException("Illegal execution time.");
+    if (time &lt; 0)
+        throw new IllegalArgumentException(&#34;Illegal execution time.&#34;);
 
     // Constrain value of period sufficiently to prevent numeric
     // overflow while still being effectively infinitely large.
-    if (Math.abs(period) > (Long.MAX_VALUE >> 1))
-        period >>= 1;
+    if (Math.abs(period) &gt; (Long.MAX_VALUE &gt;&gt; 1))
+        period &gt;&gt;= 1;
 
     synchronized(queue) {
         if (!thread.newTasksMayBeScheduled)
-            throw new IllegalStateException("Timer already cancelled.");
+            throw new IllegalStateException(&#34;Timer already cancelled.&#34;);
 
         synchronized(task.lock) {
             if (task.state != TimerTask.VIRGIN)
                 throw new IllegalStateException(
-                    "Task already scheduled or cancelled");
+                    &#34;Task already scheduled or cancelled&#34;);
             task.nextExecutionTime = time;
             task.period = period;
             task.state = TimerTask.SCHEDULED;
@@ -332,7 +332,7 @@ public boolean tryLock(long timeout, TimeUnit unit)
 
 可重入式锁是指 同一个 线程可以对同一个锁进行多次加锁操作。 但是每次加锁都需要对应一次解锁操作。 
 
--->
+--&gt;
 
 ---
 

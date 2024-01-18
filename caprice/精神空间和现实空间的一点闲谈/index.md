@@ -36,7 +36,7 @@
 
 
 
-> **内心独白（Internal monologue）** ，也称为**自我对话（Self-talk）**或**内在语言（Inner speech）** ，是一个人的内在的声音，在有[意识](https://zh.wikipedia.org/wiki/意识)时提供思想上的口头[独白](https://zh.wikipedia.org/wiki/獨角戲)。 [[1\]](https://zh.wikipedia.org/wiki/內心獨白#cite_note-PT2-1)通常与一个人的[自我](https://zh.wikipedia.org/wiki/自我概念)联系在一起。在规划、解决问题、[自我反思](https://zh.wikipedia.org/wiki/内省)、[自我形象](https://zh.wikipedia.org/wiki/自我意像)、[批判性思维](https://zh.wikipedia.org/wiki/批判性思维)、[情感](https://zh.wikipedia.org/wiki/情绪)、[[2\]](https://zh.wikipedia.org/wiki/內心獨白#cite_note-2)和[默读](https://zh.wikipedia.org/wiki/默讀)（在脑海中阅读）时尤为重要。此外，它与许多[精神障碍](https://zh.wikipedia.org/wiki/精神疾患)有关，例如[抑郁症](https://zh.wikipedia.org/wiki/抑鬱)。而像是[认知行为疗法](https://zh.wikipedia.org/wiki/认知行为疗法)等治疗方法 ，会策略地调节认知行为以减轻症状。**内心独白**可能反映出意识和潜意识中的信念。
+&gt; **内心独白（Internal monologue）** ，也称为**自我对话（Self-talk）**或**内在语言（Inner speech）** ，是一个人的内在的声音，在有[意识](https://zh.wikipedia.org/wiki/意识)时提供思想上的口头[独白](https://zh.wikipedia.org/wiki/獨角戲)。 [[1\]](https://zh.wikipedia.org/wiki/內心獨白#cite_note-PT2-1)通常与一个人的[自我](https://zh.wikipedia.org/wiki/自我概念)联系在一起。在规划、解决问题、[自我反思](https://zh.wikipedia.org/wiki/内省)、[自我形象](https://zh.wikipedia.org/wiki/自我意像)、[批判性思维](https://zh.wikipedia.org/wiki/批判性思维)、[情感](https://zh.wikipedia.org/wiki/情绪)、[[2\]](https://zh.wikipedia.org/wiki/內心獨白#cite_note-2)和[默读](https://zh.wikipedia.org/wiki/默讀)（在脑海中阅读）时尤为重要。此外，它与许多[精神障碍](https://zh.wikipedia.org/wiki/精神疾患)有关，例如[抑郁症](https://zh.wikipedia.org/wiki/抑鬱)。而像是[认知行为疗法](https://zh.wikipedia.org/wiki/认知行为疗法)等治疗方法 ，会策略地调节认知行为以减轻症状。**内心独白**可能反映出意识和潜意识中的信念。
 
 *引用自维基百科。*
 
@@ -48,7 +48,7 @@
 
 这里可能涉及到一个伪的多思考性， 即把快速切换当做可以同时注意几件事情。笔者认为，在几件事情上快速切换 并不能算同时在注意那几件事情。 
 
-另外， `注意`和`做`是不一样的， 我们可以同时🏃🏻+🎵， 但是却基本上不能同时注意在听的是什么以及脚上的感觉是什么。
+另外， `注意`和`做`是不一样的， 我们可以同时🏃🏻&#43;🎵， 但是却基本上不能同时注意在听的是什么以及脚上的感觉是什么。
 
 ### 意识指令与身体动作
 
@@ -56,7 +56,7 @@
 
 更为确切的假设应该是： 意识只是发出重要的指导性指令， 真正的身体控制是由潜意识完成的。 
 
-即： 意识： 发出指令  --->  潜意识： 解释指令，并操作神经  ---> 具体器官， 得到神经指令，操作肌肉。
+即： 意识： 发出指令  ---&gt;  潜意识： 解释指令，并操作神经  ---&gt; 具体器官， 得到神经指令，操作肌肉。
 
 意识指令是在精神世界里面产生的， 而身体动作是在现实空间里面产生的。 
 
@@ -64,7 +64,7 @@
 
 我们的感受，即视觉，听觉，触觉等， 应该是发生在现实空间， 而在精神空间处理。
 
-即： 身体器官： 神经产生信号 ---> 潜意识： 过滤，翻译信号 ---> 意识： 得到来自潜意识的信号
+即： 身体器官： 神经产生信号 ---&gt; 潜意识： 过滤，翻译信号 ---&gt; 意识： 得到来自潜意识的信号
 
 
 

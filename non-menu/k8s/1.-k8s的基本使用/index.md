@@ -24,14 +24,14 @@ k8s的工作流程大致如下
 
 打包好的项目需要推送到一个 docker Registry中， 以供k8s拉取。 
 
-如果想要发布到 docker hub 中的话， 可以参考 [发布镜像到-docker-hub](../../../periphery/-code-server-+-jdk17-的docker-镜像/#发布镜像到-docker-hub)
+如果想要发布到 docker hub 中的话， 可以参考 [发布镜像到-docker-hub](../../../periphery/-code-server-&#43;-jdk17-的docker-镜像/#发布镜像到-docker-hub)
 
 不过公司项目的话， 应该还是要搭建一个私有的 Registry。
 
 **关于私有的 Registry**  
 *待补充*
 
-<!-- https://tonybai.com/2016/11/16/how-to-pull-images-from-private-registry-on-kubernetes-cluster/  -->
+&lt;!-- https://tonybai.com/2016/11/16/how-to-pull-images-from-private-registry-on-kubernetes-cluster/  --&gt;
 
 ### 部署应用
 
@@ -152,9 +152,9 @@ spec:
 ```shell
 $ kubectl get svc
 NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-kubernetes           ClusterIP   10.233.0.1       <none>        443/TCP          27d
-netchecker-service   NodePort    10.233.239.105   <none>        8081:31081/TCP   27d
-nginx-service        NodePort    10.233.168.254   <none>        80:30018/TCP     27d
+kubernetes           ClusterIP   10.233.0.1       &lt;none&gt;        443/TCP          27d
+netchecker-service   NodePort    10.233.239.105   &lt;none&gt;        8081:31081/TCP   27d
+nginx-service        NodePort    10.233.168.254   &lt;none&gt;        80:30018/TCP     27d
 ```
 
 EXTERNAL-IP 只有 LoadBalancer 类型才会有， 这个一般是由云服务商提供。 
@@ -174,7 +174,7 @@ expose 在有些时候更快捷一些， 内容可以参见：  http://docs.kube
 pod（po），service（svc），replication controller（rc），deployment（deploy），replica set（rs）
 
 比如：  
-- `kubectl get services`   =>  `kubectl get svc`
+- `kubectl get services`   =&gt;  `kubectl get svc`
 
 
 ### 其他

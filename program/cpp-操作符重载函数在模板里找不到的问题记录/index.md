@@ -17,7 +17,7 @@
   namespace sight {
     void test(){
       ImVec2 v;
-      std::cout << v;   // ok
+      std::cout &lt;&lt; v;   // ok
       dbg(v);           // fail
     }
   }
@@ -37,45 +37,45 @@
 
 `dbg-macro`是一个用于方便输出调试信息的库， 特性大致如下
 
-> - Easy to read, colorized output (colors auto-disable when the output is not an interactive terminal)
-> - Prints file name, line number, function name and the original expression
-> - Adds type information for the printed-out value
-> - Specialized pretty-printers for containers, pointers, string literals, enums, `std::optional`, etc.
-> - Can be used inside expressions (passing through the original value)
-> - The `dbg.h` header issues a compiler warning when included (so you don't forget to remove it).
-> - Compatible and tested with C++11, C++14 and C++17.
+&gt; - Easy to read, colorized output (colors auto-disable when the output is not an interactive terminal)
+&gt; - Prints file name, line number, function name and the original expression
+&gt; - Adds type information for the printed-out value
+&gt; - Specialized pretty-printers for containers, pointers, string literals, enums, `std::optional`, etc.
+&gt; - Can be used inside expressions (passing through the original value)
+&gt; - The `dbg.h` header issues a compiler warning when included (so you don&#39;t forget to remove it).
+&gt; - Compatible and tested with C&#43;&#43;11, C&#43;&#43;14 and C&#43;&#43;17.
 
 `dbg`是一个宏， 最终拓展开的时候，会调用下面的函数。
 
 ```cpp
 namespace detail {
-template <typename T>
+template &lt;typename T&gt;
 using ostream_operator_t =
-    decltype(std::declval<std::ostream&>() << std::declval<T>());
+    decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;T&gt;());
 
-template <typename T>
-struct has_ostream_operator : is_detected<ostream_operator_t, T> {};
+template &lt;typename T&gt;
+struct has_ostream_operator : is_detected&lt;ostream_operator_t, T&gt; {};
 }
-// Specializations of "pretty_print"
+// Specializations of &#34;pretty_print&#34;
 
-template <typename T>
-inline void pretty_print(std::ostream& stream, const T& value, std::true_type) {
-  stream << value;
-}
-
-template <typename T>
-inline void pretty_print(std::ostream&, const T&, std::false_type) {
-  static_assert(detail::has_ostream_operator<const T&>::value,
-                "Type does not support the << ostream operator");
+template &lt;typename T&gt;
+inline void pretty_print(std::ostream&amp; stream, const T&amp; value, std::true_type) {
+  stream &lt;&lt; value;
 }
 
-template <typename T>
-inline typename std::enable_if<!detail::is_container<const T&>::value &&
-                                   !std::is_enum<T>::value,
-                               bool>::type
-pretty_print(std::ostream& stream, const T& value) {
+template &lt;typename T&gt;
+inline void pretty_print(std::ostream&amp;, const T&amp;, std::false_type) {
+  static_assert(detail::has_ostream_operator&lt;const T&amp;&gt;::value,
+                &#34;Type does not support the &lt;&lt; ostream operator&#34;);
+}
+
+template &lt;typename T&gt;
+inline typename std::enable_if&lt;!detail::is_container&lt;const T&amp;&gt;::value &amp;&amp;
+                                   !std::is_enum&lt;T&gt;::value,
+                               bool&gt;::type
+pretty_print(std::ostream&amp; stream, const T&amp; value) {
   pretty_print(stream, value,
-               typename detail::has_ostream_operator<const T&>::type{});
+               typename detail::has_ostream_operator&lt;const T&amp;&gt;::type{});
   return true;
 }
 ```
@@ -86,7 +86,7 @@ pretty_print(std::ostream& stream, const T& value) {
 
 ## 拓展阅读
 
-- Issue in dbg:  [Type does not support the << ostream operator on custom type](https://github.com/sharkdp/dbg-macro/issues/118)
+- Issue in dbg:  [Type does not support the &lt;&lt; ostream operator on custom type](https://github.com/sharkdp/dbg-macro/issues/118)
 - https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83035
 
 

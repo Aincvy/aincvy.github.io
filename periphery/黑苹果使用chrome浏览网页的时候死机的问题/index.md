@@ -7,7 +7,7 @@
 
 我的解决方案是：  **关闭Chrome 的硬件加速。**
 
-相关链接在此： https://support.google.com/chrome/thread/16089385?hl=en&msgid=16383919
+相关链接在此： https://support.google.com/chrome/thread/16089385?hl=en&amp;msgid=16383919
 
 
 

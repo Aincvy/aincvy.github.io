@@ -17,7 +17,7 @@
 
 点击导航栏的`Services / DNS Resolver / General Settings` 即可打开常规设置的面板。
 
-向下拉取， 找到  `Host Overrides` 的字样， 点击下面的 `+ Add` 按钮。 
+向下拉取， 找到  `Host Overrides` 的字样， 点击下面的 `&#43; Add` 按钮。 
 
 比如我现在想添加 `owncloud.home.link		192.168.200.33` 这样的一条记录。
 
@@ -115,7 +115,7 @@
 
 一个 Zone 差不多对应一个 Domain ,就是一个域名。 
 
-比如我的域名是 `owncloud.home.link && blog.home.link` ，我建立的 ZONE 就是`home.link` `owncloud && blog` 则是在 zone 里面填写的。
+比如我的域名是 `owncloud.home.link &amp;&amp; blog.home.link` ，我建立的 ZONE 就是`home.link` `owncloud &amp;&amp; blog` 则是在 zone 里面填写的。
 
 - Domain Zone Configuration
   - Disable This Zone:	unchecked ( 不勾选 )
@@ -147,7 +147,7 @@
 - Daemon Settings
   - Enable BIND: checked  (勾选)
   - IP Version: IPv4
-  - Listen on: LAN && loopback  ( 按住 CTRL 可以选俩）
+  - Listen on: LAN &amp;&amp; loopback  ( 按住 CTRL 可以选俩）
 
 
 点击 Save 即可。

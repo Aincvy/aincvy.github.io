@@ -10,24 +10,24 @@
 ### langX 代码示例
 
 ```text
-onEvent => (flag, callback) {
+onEvent =&gt; (flag, callback) {
 	// xxx
 }
 
-callEvent => (flag, data){
+callEvent =&gt; (flag, data){
 	local cb = findCallback(flag);
 	if( cb ){
 		cb(data);
 	}
 }
 
-registerListeners => {
+registerListeners =&gt; {
 	// 这里的第二个参数就是一个匿名函数。
-	onEvent(1, data => {
-		println("[DEBUG] event 1 = " + data.toString());
+	onEvent(1, data =&gt; {
+		println(&#34;[DEBUG] event 1 = &#34; &#43; data.toString());
 	});
-	onEvent(2, data => {
-		println("[DEBUG] event 2 = " + data.toString());
+	onEvent(2, data =&gt; {
+		println(&#34;[DEBUG] event 2 = &#34; &#43; data.toString());
 	});
 }
 ```
@@ -58,7 +58,7 @@ function callWrapper(cb = Function()) {
 }
 
 function test() {
-  let foo = 'bar';
+  let foo = &#39;bar&#39;;
   callWrapper(function() {
     console.log(foo); // bar
     foo = 1;

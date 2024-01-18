@@ -26,12 +26,12 @@
 
 ```protobuf
 option java_multiple_files = true;
-option java_package = "example.myapp.helloworld.grpc";
-option java_outer_classname = "HelloWorldProto";
+option java_package = &#34;example.myapp.helloworld.grpc&#34;;
+option java_outer_classname = &#34;HelloWorldProto&#34;;
 
 package helloworld;
 
-// The request message containing the user's name.
+// The request message containing the user&#39;s name.
 message HelloRequest {
     string name = 1;
 }
@@ -95,48 +95,48 @@ service GreeterService {
 项目的 `pom.xml` 大致内容如下。 
 
 ```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <name>Project name</name>
-  <groupId>com.example</groupId>
-  <artifactId>my-grpc-app</artifactId>
-  <version>0.1-SNAPSHOT</version>
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <akka.grpc.version>1.0.0-M1</akka.grpc.version>
-    <grpc.version>1.29.0</grpc.version>
-    <project.encoding>UTF-8</project.encoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.lightbend.akka.grpc</groupId>
-      <artifactId>akka-grpc-runtime_2.12</artifactId>
-      <version>${akka.grpc.version}</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.lightbend.akka.grpc</groupId>
-        <artifactId>akka-grpc-maven-plugin</artifactId>
-        <version>${akka.grpc.version}</version>
-        <configuration>
-        	<generatorSettings>
-          	<serverPowerApis>true</serverPowerApis>
-        	</generatorSettings>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</project>
+&lt;project&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;name&gt;Project name&lt;/name&gt;
+  &lt;groupId&gt;com.example&lt;/groupId&gt;
+  &lt;artifactId&gt;my-grpc-app&lt;/artifactId&gt;
+  &lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
+  &lt;properties&gt;
+    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+    &lt;akka.grpc.version&gt;1.0.0-M1&lt;/akka.grpc.version&gt;
+    &lt;grpc.version&gt;1.29.0&lt;/grpc.version&gt;
+    &lt;project.encoding&gt;UTF-8&lt;/project.encoding&gt;
+  &lt;/properties&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.lightbend.akka.grpc&lt;/groupId&gt;
+      &lt;artifactId&gt;akka-grpc-runtime_2.12&lt;/artifactId&gt;
+      &lt;version&gt;${akka.grpc.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;com.lightbend.akka.grpc&lt;/groupId&gt;
+        &lt;artifactId&gt;akka-grpc-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;${akka.grpc.version}&lt;/version&gt;
+        &lt;configuration&gt;
+        	&lt;generatorSettings&gt;
+          	&lt;serverPowerApis&gt;true&lt;/serverPowerApis&gt;
+        	&lt;/generatorSettings&gt;
+        &lt;/configuration&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;generate&lt;/goal&gt;
+            &lt;/goals&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
 ```
 
 这里添加一个叫`akka-grpc-maven-plugin`  的 Maven插件。 这个插件的`generate` 行为可以生成出java 代码。
@@ -172,38 +172,38 @@ public class GreeterServiceImpl implements GreeterService {
   }
 
   @Override
-  public CompletionStage<HelloReply> sayHello(HelloRequest in) {
-    System.out.println("sayHello to " + in.getName());
-    HelloReply reply = HelloReply.newBuilder().setMessage("Hello, " + in.getName()).build();
+  public CompletionStage&lt;HelloReply&gt; sayHello(HelloRequest in) {
+    System.out.println(&#34;sayHello to &#34; &#43; in.getName());
+    HelloReply reply = HelloReply.newBuilder().setMessage(&#34;Hello, &#34; &#43; in.getName()).build();
     return CompletableFuture.completedFuture(reply);
   }
 
   @Override
-  public CompletionStage<HelloReply> itKeepsTalking(Source<HelloRequest, NotUsed> in) {
-    System.out.println("sayHello to in stream...");
+  public CompletionStage&lt;HelloReply&gt; itKeepsTalking(Source&lt;HelloRequest, NotUsed&gt; in) {
+    System.out.println(&#34;sayHello to in stream...&#34;);
     return in.runWith(Sink.seq(), mat)
-      .thenApply(elements -> {
-        String elementsStr = elements.stream().map(elem -> elem.getName())
+      .thenApply(elements -&gt; {
+        String elementsStr = elements.stream().map(elem -&gt; elem.getName())
             .collect(Collectors.toList()).toString();
-        return HelloReply.newBuilder().setMessage("Hello, " + elementsStr).build();
+        return HelloReply.newBuilder().setMessage(&#34;Hello, &#34; &#43; elementsStr).build();
       });
   }
 
   @Override
-  public Source<HelloReply, NotUsed> itKeepsReplying(HelloRequest in) {
-    System.out.println("sayHello to " + in.getName() + " with stream of chars");
-    List<Character> characters = ("Hello, " + in.getName())
-        .chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+  public Source&lt;HelloReply, NotUsed&gt; itKeepsReplying(HelloRequest in) {
+    System.out.println(&#34;sayHello to &#34; &#43; in.getName() &#43; &#34; with stream of chars&#34;);
+    List&lt;Character&gt; characters = (&#34;Hello, &#34; &#43; in.getName())
+        .chars().mapToObj(c -&gt; (char) c).collect(Collectors.toList());
     return Source.from(characters)
-      .map(character -> {
+      .map(character -&gt; {
         return HelloReply.newBuilder().setMessage(String.valueOf(character)).build();
       });
   }
 
   @Override
-  public Source<HelloReply, NotUsed> streamHellos(Source<HelloRequest, NotUsed> in) {
-    System.out.println("sayHello to stream...");
-    return in.map(request -> HelloReply.newBuilder().setMessage("Hello, " + request.getName()).build());
+  public Source&lt;HelloReply, NotUsed&gt; streamHellos(Source&lt;HelloRequest, NotUsed&gt; in) {
+    System.out.println(&#34;sayHello to stream...&#34;);
+    return in.map(request -&gt; HelloReply.newBuilder().setMessage(&#34;Hello, &#34; &#43; request.getName()).build());
   }
    
 }
@@ -231,21 +231,21 @@ import java.util.concurrent.CompletionStage;
 
 class GreeterServer {
   public static void main(String[] args) throws Exception {
-    // important to enable HTTP/2 in ActorSystem's config
-    Config conf = ConfigFactory.parseString("akka.http.server.preview.enable-http2 = on")
+    // important to enable HTTP/2 in ActorSystem&#39;s config
+    Config conf = ConfigFactory.parseString(&#34;akka.http.server.preview.enable-http2 = on&#34;)
             .withFallback(ConfigFactory.defaultApplication());
 
     // Akka ActorSystem Boot
-    ActorSystem sys = ActorSystem.create("HelloWorld", conf);
+    ActorSystem sys = ActorSystem.create(&#34;HelloWorld&#34;, conf);
 
-    run(sys).thenAccept(binding -> {
-      System.out.println("gRPC server bound to: " + binding.localAddress());
+    run(sys).thenAccept(binding -&gt; {
+      System.out.println(&#34;gRPC server bound to: &#34; &#43; binding.localAddress());
     });
 
     // ActorSystem threads will keep the app alive until `system.terminate()` is called
   }
 
-  public static CompletionStage<ServerBinding> run(ActorSystem sys) throws Exception {
+  public static CompletionStage&lt;ServerBinding&gt; run(ActorSystem sys) throws Exception {
     Materializer mat = ActorMaterializer.create(sys);
 
     // Instantiate implementation
@@ -253,7 +253,7 @@ class GreeterServer {
 
     return Http.get(sys).bindAndHandleAsync(
       GreeterServiceHandlerFactory.create(impl, sys),
-      ConnectHttp.toHost("127.0.0.1", 8080),
+      ConnectHttp.toHost(&#34;127.0.0.1&#34;, 8080),
       mat);
   }
 }
@@ -292,14 +292,14 @@ import example.myapp.helloworld.grpc.*;
 class GreeterClient {
   public static void main(String[] args) throws Exception {
 
-    String serverHost = "127.0.0.1";
+    String serverHost = &#34;127.0.0.1&#34;;
     int serverPort = 8080;
 
-    ActorSystem system = ActorSystem.create("HelloWorldClient");
+    ActorSystem system = ActorSystem.create(&#34;HelloWorldClient&#34;);
     Materializer materializer = ActorMaterializer.create(system);
 
     // Configure the client by code:
-    GrpcClientSettings settings = GrpcClientSettings.connectToServiceAt("127.0.0.1", 8080, system);
+    GrpcClientSettings settings = GrpcClientSettings.connectToServiceAt(&#34;127.0.0.1&#34;, 8080, system);
 
     // Or via application.conf:
     // GrpcClientSettings settings = GrpcClientSettings.fromConfig(GreeterService.name, system);
@@ -315,7 +315,7 @@ class GreeterClient {
 
 
     } catch (StatusRuntimeException e) {
-      System.out.println("Status: " + e.getStatus());
+      System.out.println(&#34;Status: &#34; &#43; e.getStatus());
     } catch (Exception e)  {
       System.out.println(e);
     } finally {
@@ -326,44 +326,44 @@ class GreeterClient {
   }
 
   private static void singleRequestReply(GreeterService client) throws Exception {
-    HelloRequest request = HelloRequest.newBuilder().setName("Alice").build();
-    CompletionStage<HelloReply> reply = client.sayHello(request);
-    System.out.println("got single reply: " + reply.toCompletableFuture().get(5, TimeUnit.SECONDS));
+    HelloRequest request = HelloRequest.newBuilder().setName(&#34;Alice&#34;).build();
+    CompletionStage&lt;HelloReply&gt; reply = client.sayHello(request);
+    System.out.println(&#34;got single reply: &#34; &#43; reply.toCompletableFuture().get(5, TimeUnit.SECONDS));
   }
 
   private static void streamingRequest(GreeterService client) throws Exception {
-    List<HelloRequest> requests = Arrays.asList("Alice", "Bob", "Peter")
-        .stream().map(name -> HelloRequest.newBuilder().setName(name).build())
+    List&lt;HelloRequest&gt; requests = Arrays.asList(&#34;Alice&#34;, &#34;Bob&#34;, &#34;Peter&#34;)
+        .stream().map(name -&gt; HelloRequest.newBuilder().setName(name).build())
         .collect(Collectors.toList());
-    CompletionStage<HelloReply> reply = client.itKeepsTalking(Source.from(requests));
-    System.out.println("got single reply for streaming requests: " +
+    CompletionStage&lt;HelloReply&gt; reply = client.itKeepsTalking(Source.from(requests));
+    System.out.println(&#34;got single reply for streaming requests: &#34; &#43;
         reply.toCompletableFuture().get(5, TimeUnit.SECONDS));
   }
 
   private static void streamingReply(GreeterService client, Materializer mat) throws Exception {
-    HelloRequest request = HelloRequest.newBuilder().setName("Alice").build();
-    Source<HelloReply, NotUsed> responseStream = client.itKeepsReplying(request);
-    CompletionStage<Done> done =
-      responseStream.runForeach(reply ->
-        System.out.println("got streaming reply: " + reply.getMessage()), mat);
+    HelloRequest request = HelloRequest.newBuilder().setName(&#34;Alice&#34;).build();
+    Source&lt;HelloReply, NotUsed&gt; responseStream = client.itKeepsReplying(request);
+    CompletionStage&lt;Done&gt; done =
+      responseStream.runForeach(reply -&gt;
+        System.out.println(&#34;got streaming reply: &#34; &#43; reply.getMessage()), mat);
 
     done.toCompletableFuture().get(60, TimeUnit.SECONDS);
   }
 
   private static void streamingRequestReply(GreeterService client, Materializer mat) throws Exception {
     Duration interval = Duration.ofSeconds(1);
-    Source<HelloRequest, NotUsed> requestStream = Source
-      .tick(interval, interval, "tick")
+    Source&lt;HelloRequest, NotUsed&gt; requestStream = Source
+      .tick(interval, interval, &#34;tick&#34;)
       .zipWithIndex()
-      .map(pair -> pair.second())
-      .map(i -> HelloRequest.newBuilder().setName("Alice-" + i).build())
+      .map(pair -&gt; pair.second())
+      .map(i -&gt; HelloRequest.newBuilder().setName(&#34;Alice-&#34; &#43; i).build())
       .take(10)
-      .mapMaterializedValue(m -> NotUsed.getInstance());
+      .mapMaterializedValue(m -&gt; NotUsed.getInstance());
 
-    Source<HelloReply, NotUsed> responseStream = client.streamHellos(requestStream);
-    CompletionStage<Done> done =
-      responseStream.runForeach(reply ->
-        System.out.println("got streaming reply: " + reply.getMessage()), mat);
+    Source&lt;HelloReply, NotUsed&gt; responseStream = client.streamHellos(requestStream);
+    CompletionStage&lt;Done&gt; done =
+      responseStream.runForeach(reply -&gt;
+        System.out.println(&#34;got streaming reply: &#34; &#43; reply.getMessage()), mat);
 
     done.toCompletableFuture().get(60, TimeUnit.SECONDS);
   }
@@ -390,7 +390,7 @@ class GreeterClient {
 给一段代码 应该就可以明白怎么使用了。 
 
 ```java
-Publisher publisher = new SubmissionPublisher<HelloReply>();
+Publisher publisher = new SubmissionPublisher&lt;HelloReply&gt;();
 // publisher.offer(xx)  即可发送消息
 
 return JavaFlowSupport.Source.fromPublisher(publisher);

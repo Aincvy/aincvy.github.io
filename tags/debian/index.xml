@@ -2,7 +2,7 @@
   <channel>
     <title>debian - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/debian/</link>
-    <description>debian - 标签 - Fanstasy Player / 幻想系玩家</description>
+    <description>debian - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
       <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 13 Nov 2023 10:46:11 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/debian/" rel="self" type="application/rss+xml" /><item>
   <title>在debian11 中 安装xrdp</title>
@@ -10,7 +10,7 @@
   <pubDate>Mon, 13 Nov 2023 10:46:11 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
-  <description><![CDATA[正文 笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star]]></description>
+  <description><![CDATA[正文笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star]]></description>
 </item>
 <item>
   <title>Debian 从官网下载，然后安装N卡驱动</title>

@@ -10,7 +10,7 @@
 ```shell
 sudo apt install xrdp
 sudo adduser xrdp ssl-cert
-echo xfce4-session >~/.xsession
+echo xfce4-session &gt;~/.xsession
 sudo apt install dbus-x11
 sudo service xrdp restart
 ```
@@ -18,10 +18,10 @@ sudo service xrdp restart
 然后修改配置文件 `/etc/xrdp/startwm.sh`， 只需要在合适的位置添加两行就可以了， 看代码块里面的注释。
 
 ```shell
-        test -z "${LC_PAPER+x}" || export LC_PAPER
-        test -z "${LC_TELEPHONE+x}" || export LC_TELEPHONE
-        test -z "${LC_TIME+x}" || export LC_TIME
-        test -z "${LOCPATH+x}" || export LOCPATH
+        test -z &#34;${LC_PAPER&#43;x}&#34; || export LC_PAPER
+        test -z &#34;${LC_TELEPHONE&#43;x}&#34; || export LC_TELEPHONE
+        test -z &#34;${LC_TIME&#43;x}&#34; || export LC_TIME
+        test -z &#34;${LOCPATH&#43;x}&#34; || export LOCPATH
 fi
 
 # 添加下面两行内容
@@ -32,7 +32,7 @@ if test -r /etc/profile; then
         . /etc/profile
 fi
 
-test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+test -x /etc/X11/Xsession &amp;&amp; exec /etc/X11/Xsession
 exec /bin/sh /etc/X11/Xsession
 ```
 
@@ -45,8 +45,8 @@ exec /bin/sh /etc/X11/Xsession
 
 ## 拓展阅读
 ‌
-- [https://www.cnblogs.com/dwj192/p/15685314.html](https://www.cnblogs.com/dwj192/p/15685314.html "smartCard-inline")
-- [https://learn.microsoft.com/zh-cn/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli#install-and-configure-a-remote-desktop-server](https://learn.microsoft.com/zh-cn/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli#install-and-configure-a-remote-desktop-server "smartCard-inline")
+- [https://www.cnblogs.com/dwj192/p/15685314.html](https://www.cnblogs.com/dwj192/p/15685314.html &#34;smartCard-inline&#34;)
+- [https://learn.microsoft.com/zh-cn/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli#install-and-configure-a-remote-desktop-server](https://learn.microsoft.com/zh-cn/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli#install-and-configure-a-remote-desktop-server &#34;smartCard-inline&#34;)
 
 
 

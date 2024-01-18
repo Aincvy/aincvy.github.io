@@ -1,7 +1,7 @@
 # Cpp程序在调试模式下正常，在常规模式就崩溃得情况
 
 
-笔者前几天在使用cpp(*c++*)写代码得时候， 发现一个很蛋疼得问题， 在使用`lldb`进行调试得时候，程序完全正常，没有错误。 而退出调试模式， 使用命令行运行程序得时候， 则会触发内存错误。
+笔者前几天在使用cpp(*c&#43;&#43;*)写代码得时候， 发现一个很蛋疼得问题， 在使用`lldb`进行调试得时候，程序完全正常，没有错误。 而退出调试模式， 使用命令行运行程序得时候， 则会触发内存错误。
 
 经过一番查找之后发现， 笔者发现有些类得属性没有进行初始化。 。。
 
@@ -44,7 +44,7 @@ private:
 
 下面是原文引用： 
 
-> In 100% of the cases I've seen or heard of, where a C or C++ program runs fine in the debugger but fails when run outside, the cause has been writing past the end of a function local array. (The debugger puts more on the stack, so you're less likely to overwrite something important.)
+&gt; In 100% of the cases I&#39;ve seen or heard of, where a C or C&#43;&#43; program runs fine in the debugger but fails when run outside, the cause has been writing past the end of a function local array. (The debugger puts more on the stack, so you&#39;re less likely to overwrite something important.)
 
 
 
