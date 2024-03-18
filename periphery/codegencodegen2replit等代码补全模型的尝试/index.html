@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Codegen,codegen2,replit等代码补全模型的尝试 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+<meta name="author-link" content="">
+<meta name="description" content="本次尝试的模型有下面几个 codegen/codegen2 - fauxpilot codegen2.5 codellama-13b-instructq4_k_mgguf codellama-7b-instructq6_kgguf polycoder stabilityai/stablecode-instruct-alpha-3b codet5p-2b teknium_Replit-v2-CodeInstruct-3B replit/replit-code-v1-3b 模型大多使用 python 代码加载， 然后调用的， 部分使用的是 textgen web ui 加载的。 codegen 和 codegen2 是使用 fauxpilot 进行加载的。 本次尝" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Codegen,codegen2,replit等代码补全模型的尝试">
+<meta itemprop="description" content="本次尝试的模型有下面几个 codegen/codegen2 - fauxpilot codegen2.5 codellama-13b-instructq4_k_mgguf codellama-7b-instructq6_kgguf polycoder stabilityai/stablecode-instruct-alpha-3b codet5p-2b teknium_Replit-v2-CodeInstruct-3B replit/replit-code-v1-3b 模型大多使用 python 代码加载， 然后调用的， 部分使用的是 textgen web ui 加载的。 codegen 和 codegen2 是使用 fauxpilot 进行加载的。 本次尝"><meta itemprop="datePublished" content="2023-09-12T18:35:43+08:00" />
+<meta itemprop="dateModified" content="2024-03-18T11:48:36+08:00" />
+<meta itemprop="wordCount" content="1607"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Codegen,codegen2,replit等代码补全模型的尝试" />
+<meta property="og:description" content="本次尝试的模型有下面几个 codegen/codegen2 - fauxpilot codegen2.5 codellama-13b-instructq4_k_mgguf codellama-7b-instructq6_kgguf polycoder stabilityai/stablecode-instruct-alpha-3b codet5p-2b teknium_Replit-v2-CodeInstruct-3B replit/replit-code-v1-3b 模型大多使用 python 代码加载， 然后调用的， 部分使用的是 textgen web ui 加载的。 codegen 和 codegen2 是使用 fauxpilot 进行加载的。 本次尝" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
+<meta property="article:published_time" content="2023-09-12T18:35:43+08:00" />
+<meta property="article:modified_time" content="2024-03-18T11:48:36+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="Codegen,codegen2,replit等代码补全模型的尝试"/>
+<meta name="twitter:description" content="本次尝试的模型有下面几个 codegen/codegen2 - fauxpilot codegen2.5 codellama-13b-instructq4_k_mgguf codellama-7b-instructq6_kgguf polycoder stabilityai/stablecode-instruct-alpha-3b codet5p-2b teknium_Replit-v2-CodeInstruct-3B replit/replit-code-v1-3b 模型大多使用 python 代码加载， 然后调用的， 部分使用的是 textgen web ui 加载的。 codegen 和 codegen2 是使用 fauxpilot 进行加载的。 本次尝"/>
+<meta name="twitter:site" content="@Aincvy"/>
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" /><link rel="prev" href="https://fantasyplayer.link/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" /><link rel="next" href="https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Codegen,codegen2,replit等代码补全模型的尝试",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/periphery\/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95\/"
+    },"genre": "posts","wordcount":  1607 ,
+    "url": "https:\/\/fantasyplayer.link\/periphery\/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95\/","datePublished": "2023-09-12T18:35:43+08:00","dateModified": "2024-03-18T11:48:36+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Aincvy"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
+                
+                
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
+                
+                
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
+                
+                
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
+                
+                
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/periphery/" title="Peripheries">Peripheries</a></li><li class="breadcrumb-item active" aria-current="page">Codegen,codegen2,replit等代码补全模型的尝试</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Codegen,codegen2,replit等代码补全模型的尝试</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2023-09-12 18:35:43"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-09-12">2023-09-12</time></span>&nbsp;<span title="更新于 2024-03-18 11:48:36"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-18">2024-03-18</time></span>&nbsp;<span title="1607 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#主要内容">主要内容</a>
+      <ul>
+        <li><a href="#codellama-13b-instructq4_k_mgguf">codellama-13b-instruct.Q4_K_M.gguf</a></li>
+        <li><a href="#codellama-7b-instructq6_kgguf">codellama-7b-instruct.Q6_K.gguf</a></li>
+        <li><a href="#polycoder">polyCoder</a></li>
+        <li><a href="#codegen-25">codegen 2.5</a></li>
+        <li><a href="#codegen-2">codegen 2</a></li>
+        <li><a href="#stabilityaistablecode-instruct-alpha-3b">stabilityai/stablecode-instruct-alpha-3b</a></li>
+        <li><a href="#codet5p-2b">codet5p-2b</a></li>
+        <li><a href="#teknium_replit-v2-codeinstruct-3b">teknium_Replit-v2-CodeInstruct-3B</a></li>
+        <li><a href="#replitreplit-code-v1-3b">replit/replit-code-v1-3b</a></li>
+      </ul>
+    </li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>本次尝试的模型有下面几个</p>
+<ul>
+<li>codegen/codegen2  - fauxpilot</li>
+<li>codegen2.5</li>
+<li>codellama-13b-instructq4_k_mgguf</li>
+<li>codellama-7b-instructq6_kgguf</li>
+<li>polycoder</li>
+<li>stabilityai/stablecode-instruct-alpha-3b</li>
+<li>codet5p-2b</li>
+<li>teknium_Replit-v2-CodeInstruct-3B</li>
+<li>replit/replit-code-v1-3b</li>
+</ul>
+<p>模型大多使用 python 代码加载， 然后调用的， 部分使用的是 <a href="https://github.com/oobabooga/text-generation-webui"target="_blank" rel="external nofollow noopener noreferrer">textgen web ui</a> 加载的。 <br>
+codegen 和 codegen2 是使用 fauxpilot 进行加载的。</p>
+<p>本次尝试的主题是补全的质量与速度， 主要目的是在vs code 里面实现代码的行间补全。</p>
+<h2 id="主要内容" class="heading-element">
+  <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><h3 id="codellama-13b-instructq4_k_mgguf" class="heading-element">
+  <a href="#codellama-13b-instructq4_k_mgguf" class="heading-mark"></a>codellama-13b-instruct.Q4_K_M.gguf</h3><ul>
+<li>速度慢</li>
+<li>质量差</li>
+<li>单行补全
+<ul>
+<li>效果差</li>
+<li>不给填充 结尾的 ；</li>
+<li>经常容易没有内容， 所以我都没用单行补全了。</li>
+</ul>
+</li>
+<li>这个模型的主要目的应该不是行间补全， 而是指令式生成</li>
+</ul>
+<h3 id="codellama-7b-instructq6_kgguf" class="heading-element">
+  <a href="#codellama-7b-instructq6_kgguf" class="heading-mark"></a>codellama-7b-instruct.Q6_K.gguf</h3><ul>
+<li>比13B 快， 质量并没有好太多。。</li>
+</ul>
+<h3 id="polycoder" class="heading-element">
+  <a href="#polycoder" class="heading-mark"></a>polyCoder</h3><p><img loading="lazy" src="/img/periphery/codegen_models/image-9.png" alt="polyCoder" srcset="/img/periphery/codegen_models/image-9.png?size=small, /img/periphery/codegen_models/image-9.png?size=medium 1.5x, /img/periphery/codegen_models/image-9.png?size=large 2x" sizes="auto" data-title="polyCoder" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>使用 transformers 的方式加载， 可以看到效果很差。</p>
+<h3 id="codegen-25" class="heading-element">
+  <a href="#codegen-25" class="heading-mark"></a>codegen 2.5</h3><p>下载了几个模型尝试， 效果都不好。</p>
+<ul>
+<li>sigmareaver/codegen25-7b-multi-4bit-128g-gptq
+<ul>
+<li>无法加载</li>
+</ul>
+</li>
+<li>TheBloke/Codegen25-7B-mono-GPTQ
+<ul>
+<li>生成的效果不理想</li>
+<li><del>而且 mono 表示针对 python 进行训练， 生成出现的都是python 代码。</del></li>
+<li>其他语言 也能用， 就是解释太多了。。</li>
+<li>可以适当的补全代码，  限制 token 数量。</li>
+<li>质量不太行。。。</li>
+</ul>
+</li>
+<li>Salesforce/codegen25-7b-multi
+<ul>
+<li>目前来看的效果比较理想， 但是速度很慢。。</li>
+<li>向量化也许可以提升速度， 但是应该会降低质量</li>
+<li>实验内容
+<ul>
+<li>python, java, csharp 版本的 冒泡排序</li>
+<li>imgui example   NO 不行
+<ul>
+<li>但是 llama2 可以。。</li>
+<li>可能是因为这个 不支持 指令模式， 只能填充后续内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="codegen-2" class="heading-element">
+  <a href="#codegen-2" class="heading-mark"></a>codegen 2</h3><ul>
+<li>响应速度快， 但是不支持 instruction
+<ul>
+<li>在 webui 里面几乎是无用的。
+<ul>
+<li>聊天无用</li>
+<li>instruct 无用</li>
+<li>vscode 里面也用不了， 速度太慢</li>
+</ul>
+</li>
+<li>在 fauxpoilot 里运行， 速度还行</li>
+</ul>
+</li>
+<li>webui 里面的模型内容
+<ul>
+<li>michaelfeil_codegen2-3_7B-gptj    无法加载</li>
+<li>TabbyML_Codegen2-4B
+<ul>
+<li>速度非常慢</li>
+<li>质量也就那样， 不怎么好。。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>转换codegen2的模型成 fauxpoilot 可以运行的格式</strong></p>
+<ol>
+<li>下载模型： <a href="https://huggingface.co/michaelfeil/codegen2-3_7B-gptj/resolve/main/pytorch_model.bin"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/michaelfeil/codegen2-3_7B-gptj/resolve/main/pytorch_model.bin</a></li>
+<li>执行bash 命令</li>
+</ol>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> converter/
+</span></span><span class="line"><span class="cl">conda activate textgen
+</span></span><span class="line"><span class="cl"><span class="nv">MODEL</span><span class="o">=</span><span class="s2">&#34;codegen2-3_7B&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">NUM_GPUS</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">python3 huggingface_gptj_convert.py -in_file ~/ai/text-generation-webui/models/michaelfeil_codegen2-3_7B-gptj -saved_dir ../models/<span class="si">${</span><span class="nv">MODEL</span><span class="si">}</span>-<span class="si">${</span><span class="nv">NUM_GPUS</span><span class="si">}</span>gpu/fastertransformer/1 -infer_gpu_num <span class="si">${</span><span class="nv">NUM_GPUS</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">cp models/codegen2-3_7B-1gpu/fastertransformer/config.pbtxt ../models/codegen2-3_7B-1gpu/fastertransformer/</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>一些解释
+<ul>
+<li>textgen： 一个能运行 <a href="https://github.com/oobabooga/text-generation-webui/"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/oobabooga/text-generation-webui/</a>  的 python 环境即可。</li>
+<li>修改 config.pbtxt 内的 <code>is_half</code> 的值为1</li>
+</ul>
+</li>
+<li>回到 fauxpilot 的主目录， 执行命令 <code>sudo ./launch.sh</code>  即可。</li>
+</ul>
+<p>其他</p>
+<ul>
+<li>共用一个 conda  环境可能不好，但是这样可以节省时间和磁盘空间。。</li>
+</ul>
+<h3 id="stabilityaistablecode-instruct-alpha-3b" class="heading-element">
+  <a href="#stabilityaistablecode-instruct-alpha-3b" class="heading-mark"></a>stabilityai/stablecode-instruct-alpha-3b</h3><ul>
+<li>速度快
+<ul>
+<li>vs code 里面 响应速度有时候 挺慢的。。</li>
+</ul>
+</li>
+<li>不能聊天， 但是可以用指令</li>
+<li>unity 支持  很差</li>
+</ul>
+<p><img loading="lazy" src="/img/periphery/codegen_models/image-2.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-2.png?size=small, /img/periphery/codegen_models/image-2.png?size=medium 1.5x, /img/periphery/codegen_models/image-2.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+上图中的响应， 需要十几秒才能做出来。</p>
+<p><img loading="lazy" src="/img/periphery/codegen_models/image-1.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-1.png?size=small, /img/periphery/codegen_models/image-1.png?size=medium 1.5x, /img/periphery/codegen_models/image-1.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+chat 不行， 但是 instruct 可以。</p>
+<h3 id="codet5p-2b" class="heading-element">
+  <a href="#codet5p-2b" class="heading-mark"></a>codet5p-2b</h3><p>使用 model card 上的说明进行尝试。。
+使用如下代码</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForSeq2SeqLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">checkpoint</span> <span class="o">=</span> <span class="s2">&#34;codet5p-2b&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">device</span> <span class="o">=</span> <span class="s2">&#34;cuda&#34;</span> <span class="c1"># for GPU usage or &#34;cpu&#34; for CPU usage</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSeq2SeqLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="s2">&#34;def print_hello_world():&#34;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&#34;pt&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">encoding</span><span class="p">[</span><span class="s1">&#39;decoder_input_ids&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">encoding</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 来点新内容尝试</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="s2">&#34;### Instruction:</span><span class="se">\n\n</span><span class="s2">write a bubble sort method in csharp, the argument is `int[]`</span><span class="se">\n\n</span><span class="s2">### Response:&#34;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&#34;pt&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="s2">&#34;using System.Collections;</span><span class="se">\n</span><span class="s2">using System.Collections.Generic;</span><span class="se">\n</span><span class="s2">using UnityEngine;</span><span class="se">\n</span><span class="s2">using NaughtyAttributes;</span><span class="se">\n</span><span class="s2">using UnityQuery;</span><span class="se">\n\n</span><span class="s2">public class CapturedEnergyBallTest : KXMonoBehaviour</span><span class="se">\n</span><span class="s2">{</span><span class="se">\n</span><span class="s2">    public float destroyTime = 10f;</span><span class="se">\n\n</span><span class="s2">    public Transform startPosTarget;</span><span class="se">\n\n</span><span class="s2">    // Start is called before the first frame update</span><span class="se">\n</span><span class="s2">    void Start()</span><span class="se">\n</span><span class="s2">    {</span><span class="se">\n\n</span><span class="s2">    }</span><span class="se">\n\n</span><span class="s2">    // Update is called once per frame</span><span class="se">\n</span><span class="s2">    void Update()</span><span class="se">\n</span><span class="s2">    {</span><span class="se">\n</span><span class="s2">        </span><span class="se">\n</span><span class="s2">    }</span><span class="se">\n\n</span><span class="s2">    [Button]</span><span class="se">\n</span><span class="s2">    public void MakeOne(){</span><span class="se">\n</span><span class="s2">        var effectPrefab = BattleController.Instance.EffectPrefabMgr.capturedEnergyBallEffect;</span><span class="se">\n</span><span class="s2">        var effect = EffectPrefabMgr.InsCommonEffect(effectPrefab);</span><span class="se">\n</span><span class="s2">        effect.transform.position = startPosTarget.position;</span><span class="se">\n\n</span><span class="s2">        var capturedEnergyBall = effect.GetComponent&lt;CapturedEnergyBall&gt;();</span><span class="se">\n</span><span class="s2">        capturedEnergyBall.handTarget = this.CachedTransform;</span><span class="se">\n\n</span><span class="s2">        // destroy effect in 12s&#34;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&#34;pt&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="/img/periphery/codegen_models/image-3.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-3.png?size=small, /img/periphery/codegen_models/image-3.png?size=medium 1.5x, /img/periphery/codegen_models/image-3.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="/img/periphery/codegen_models/image-4.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-4.png?size=small, /img/periphery/codegen_models/image-4.png?size=medium 1.5x, /img/periphery/codegen_models/image-4.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="teknium_replit-v2-codeinstruct-3b" class="heading-element">
+  <a href="#teknium_replit-v2-codeinstruct-3b" class="heading-mark"></a>teknium_Replit-v2-CodeInstruct-3B</h3><div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">checkpoint</span> <span class="o">=</span> <span class="s2">&#34;teknium_Replit-v2-CodeInstruct-3B&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">checkpoint</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="s2">&#34;### Instruction:</span><span class="se">\n\n</span><span class="s2">write a bubble sort method in csharp, the argument is `int[]`</span><span class="se">\n\n</span><span class="s2">### Response:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&#34;pt&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tokens</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="o">**</span><span class="n">inputs</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">  <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">  <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">  <span class="n">top_p</span><span class="o">=</span><span class="mf">0.9</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>unity 不好用。</li>
+<li>此外， 每段代码结束的时候， 总是附加一些内容。。</li>
+</ul>
+<p><img loading="lazy" src="/img/periphery/codegen_models/image-5.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-5.png?size=small, /img/periphery/codegen_models/image-5.png?size=medium 1.5x, /img/periphery/codegen_models/image-5.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="replitreplit-code-v1-3b" class="heading-element">
+  <a href="#replitreplit-code-v1-3b" class="heading-mark"></a>replit/replit-code-v1-3b</h3><div class="highlight" id="id-5"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># version 1</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoConfig</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">checkpoint</span> <span class="o">=</span> <span class="s2">&#34;replit_replit-code-v1-3b&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">config</span> <span class="o">=</span> <span class="n">AutoConfig</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">checkpoint</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">config</span><span class="o">.</span><span class="n">attn_config</span><span class="p">[</span><span class="s1">&#39;attn_impl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;triton&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># forward pass</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># load tokenizer</span>
+</span></span><span class="line"><span class="cl"><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># single input encoding + generation</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;def hello():</span><span class="se">\n</span><span class="s1">  print(&#34;hello world&#34;)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># decoding, clean_up_tokenization_spaces=False to ensure syntactical correctness</span>
+</span></span><span class="line"><span class="cl"><span class="n">generated_code</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">clean_up_tokenization_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">generated_code</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight" id="id-6"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># version 2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">checkpoint</span> <span class="o">=</span> <span class="s2">&#34;replit_replit-code-v1-3b&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;### Instruction:</span><span class="se">\n\n</span><span class="s1">write a bubble sort method in csharp, the argument is `int[]`</span><span class="se">\n\n</span><span class="s1">### Response:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;def fibonacci(n): &#39;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;using System.Collections;</span><span class="se">\n</span><span class="s1">using System.Collections.Generic;</span><span class="se">\n</span><span class="s1">using UnityEngine;</span><span class="se">\n</span><span class="s1">using NaughtyAttributes;</span><span class="se">\n</span><span class="s1">using UnityQuery;</span><span class="se">\n\n</span><span class="s1">public class CapturedEnergyBallTest : KXMonoBehaviour</span><span class="se">\n</span><span class="s1">{</span><span class="se">\n</span><span class="s1">    public float destroyTime = 10f;</span><span class="se">\n\n</span><span class="s1">    public Transform startPosTarget;</span><span class="se">\n\n</span><span class="s1">    // Start is called before the first frame update</span><span class="se">\n</span><span class="s1">    void Start()</span><span class="se">\n</span><span class="s1">    {</span><span class="se">\n\n</span><span class="s1">    }</span><span class="se">\n\n</span><span class="s1">    // Update is called once per frame</span><span class="se">\n</span><span class="s1">    void Update()</span><span class="se">\n</span><span class="s1">    {</span><span class="se">\n</span><span class="s1">        </span><span class="se">\n</span><span class="s1">    }</span><span class="se">\n\n</span><span class="s1">    [Button]</span><span class="se">\n</span><span class="s1">    public void MakeOne(){</span><span class="se">\n</span><span class="s1">        var effectPrefab = BattleController.Instance.EffectPrefabMgr.capturedEnergyBallEffect;</span><span class="se">\n</span><span class="s1">        var effect = EffectPrefabMgr.InsCommonEffect(effectPrefab);</span><span class="se">\n</span><span class="s1">        effect.transform.position = startPosTarget.position;</span><span class="se">\n\n</span><span class="s1">        var capturedEnergyBall = effect.GetComponent&lt;CapturedEnergyBall&gt;();</span><span class="se">\n</span><span class="s1">        capturedEnergyBall.handTarget = this.CachedTransform;</span><span class="se">\n\n</span><span class="s1">        // destroy effect in 12s&#39;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top_p</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">num_return_sequences</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">eos_token_id</span><span class="o">=</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">eos_token_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># decoding, clean_up_tokenization_spaces=False to ensure syntactical correctness</span>
+</span></span><span class="line"><span class="cl"><span class="n">generated_code</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">clean_up_tokenization_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">generated_code</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>unity 的后续代码补全还行</li>
+<li>但是这个不支持 instruction</li>
+<li><del>优先考虑  teknium_Replit-v2-CodeInstruct-3B ， 虽然这个生成出来的东西总是多很多， 但是这个支持 instrcution 去写一些内容。</del></li>
+</ul>
+<p><img loading="lazy" src="/img/periphery/codegen_models/image-8.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-8.png?size=small, /img/periphery/codegen_models/image-8.png?size=medium 1.5x, /img/periphery/codegen_models/image-8.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+<img loading="lazy" src="/img/periphery/codegen_models/image-6.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-6.png?size=small, /img/periphery/codegen_models/image-6.png?size=medium 1.5x, /img/periphery/codegen_models/image-6.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+<img loading="lazy" src="/img/periphery/codegen_models/image-7.png" alt="Alt text" srcset="/img/periphery/codegen_models/image-7.png?size=small, /img/periphery/codegen_models/image-7.png?size=medium 1.5x, /img/periphery/codegen_models/image-7.png?size=large 2x" sizes="auto" data-title="Alt text" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="结论" class="heading-element">
+  <a href="#%e7%bb%93%e8%ae%ba" class="heading-mark"></a>结论</h2><p>下面时间内容都基于笔者的丐版3060 12G。</p>
+<p>fauxpilot 的速度最快，  行间补全的话， 速度是一个很重要的内容。</p>
+<ul>
+<li>快的话200 ~ 300 毫秒可以生成一个回答</li>
+<li>慢的话， 大约1200 毫秒左右。</li>
+<li>提交的内容越多， 速度越慢。</li>
+</ul>
+<p>codellama</p>
+<ul>
+<li>笔者写了一个测试脚本进行测试。  连续发送6次请求</li>
+<li>6次中的第一次的时间大多都是 2600ms</li>
+<li>6次中的后续几次基本都是 1500ms</li>
+<li>但是这6次的请求的内容都是一致的。  可能对性能会有一些影响。</li>
+<li>重复了几轮， 大概都是相同的结果。</li>
+<li>虽然行间补全速度太慢， 但是生成大块代码的话， 还好。</li>
+<li>不过， 大块代码的问题是 可能会给出错误的答案。</li>
+</ul>
+<p>笔者想找一个既能支持行间补全， 又能聊天的模型， 但是没有找到。<br>
+现在的方案是  fauxpilot + openai API 来实现的。。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-03-18 11:48:36">更新于 2024-03-18&nbsp;</span>
+      </div><div class="post-info-license">
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/periphery/codegencodegen2replit%E7%AD%89%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B0%9D%E8%AF%95/" data-title="Codegen,codegen2,replit等代码补全模型的尝试"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" class="post-nav-item" rel="prev" title="5. Config Map 的相关信息"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>5. Config Map 的相关信息</a>
+      <a href="/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/" class="post-nav-item" rel="next" title="穷爸爸，富爸爸   读后感">穷爸爸，富爸爸   读后感<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>家里的网络图示 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+<meta name="author-link" content="">
+<meta name="description" content="图示 其他说明我家里就一台二手服务器,所有的虚拟机都在这台服务器里。 pfSense 的作用 pppoe 拨号上网 DHCP 服务 推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSe" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="家里的网络图示">
+<meta itemprop="description" content="图示 其他说明我家里就一台二手服务器,所有的虚拟机都在这台服务器里。 pfSense 的作用 pppoe 拨号上网 DHCP 服务 推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSe"><meta itemprop="datePublished" content="2020-08-29T12:55:39+08:00" />
+<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="wordCount" content="846"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="家里的网络图示" />
+<meta property="og:description" content="图示 其他说明我家里就一台二手服务器,所有的虚拟机都在这台服务器里。 pfSense 的作用 pppoe 拨号上网 DHCP 服务 推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSe" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
+<meta property="article:published_time" content="2020-08-29T12:55:39+08:00" />
+<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="家里的网络图示"/>
+<meta name="twitter:description" content="图示 其他说明我家里就一台二手服务器,所有的虚拟机都在这台服务器里。 pfSense 的作用 pppoe 拨号上网 DHCP 服务 推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSe"/>
+<meta name="twitter:site" content="@Aincvy"/>
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" /><link rel="prev" href="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" /><link rel="next" href="https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "家里的网络图示",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA\/"
+    },"genre": "posts","wordcount":  846 ,
+    "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA\/","datePublished": "2020-08-29T12:55:39+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Aincvy"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
+                
+                
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
+                
+                
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
+                
+                
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
+                
+                
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/periphery/" title="Peripheries">Peripheries</a></li><li class="breadcrumb-item active" aria-current="page">家里的网络图示</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>家里的网络图示</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-08-29 12:55:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-08-29">2020-08-29</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span title="846 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#图示">图示</a></li>
+    <li><a href="#其他说明">其他说明</a>
+      <ul>
+        <li><a href="#pfsense-的作用">pfSense 的作用</a></li>
+        <li><a href="#openwrt-的作用">openwrt 的作用</a></li>
+        <li><a href="#debian-work-的作用">debian-work 的作用</a></li>
+        <li><a href="#openmediavalut-的作用">openmediavalut 的作用</a></li>
+        <li><a href="#win10下载机--win7-游戏机">win10下载机 &amp;&amp; win7 游戏机</a></li>
+        <li><a href="#dns-的链路">DNS 的链路</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考阅读">参考阅读</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2023-07-30，文中内容可能已过时。</div>
+      </div>
+    </div><h2 id="图示" class="heading-element">
+  <a href="#%e5%9b%be%e7%a4%ba" class="heading-mark"></a>图示</h2><p><img loading="lazy" src="/img/periphery/home_network.png" alt="Home Network" srcset="/img/periphery/home_network.png?size=small, /img/periphery/home_network.png?size=medium 1.5x, /img/periphery/home_network.png?size=large 2x" sizes="auto" data-title="Home Network" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="其他说明" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96%e8%af%b4%e6%98%8e" class="heading-mark"></a>其他说明</h2><p><strong>我家里就一台二手服务器,所有的虚拟机都在这台服务器里。</strong></p>
+<h3 id="pfsense-的作用" class="heading-element">
+  <a href="#pfsense-%e7%9a%84%e4%bd%9c%e7%94%a8" class="heading-mark"></a>pfSense 的作用</h3><ol>
+<li>pppoe 拨号上网</li>
+<li>DHCP 服务
+<ol>
+<li>推送的网关为 <code>192.168.200.2</code> 即 <code>openwrt</code>的地址， 而非<code>pfSense</code>自身的地址。</li>
+<li>推送的 dns 服务器为<code>192.168.200.33</code> 即<code>debian-work</code>的地址，而非<code>pfSense</code>的地址。</li>
+</ol>
+</li>
+<li>squid 透明缓存静态资源 |  估计图片，视频比较多把。。  但是我目前只能缓存 http 的。httpds 的则会被跳过。</li>
+<li>DNS 服务器
+<ol>
+<li>主要是自己家里用的域名解析</li>
+<li>然后再请求外部的 DNS 服务器</li>
+</ol>
+</li>
+</ol>
+<h3 id="openwrt-的作用" class="heading-element">
+  <a href="#openwrt-%e7%9a%84%e4%bd%9c%e7%94%a8" class="heading-mark"></a>openwrt 的作用</h3><ol>
+<li>旁路由</li>
+<li>科学上网</li>
+</ol>
+<h3 id="debian-work-的作用" class="heading-element">
+  <a href="#debian-work-%e7%9a%84%e4%bd%9c%e7%94%a8" class="heading-mark"></a>debian-work 的作用</h3><ol>
+<li>主要使用 <code>docker</code> 放一些服务 (<code>mysql/redis/xxx...</code>)</li>
+<li><code>nextcloud</code> 类似<code>owncloud</code> 。 用于外网可访问的私人存储服务，我主要存储些流程图，思维导图，代码 之类的。</li>
+<li><code>pi-hole</code> 是一个按照域名阻止广告的服务，  但是好像没啥用。 这个还能做域名黑名单，防止其他人浏览，  但是我一个人住， 这个对我来说也没啥用。</li>
+<li><code>git 服务</code>， <code>gogs</code>是我在外网使用的服务， 里面主要存储一些小的代码库。 <code>gitlab</code>则是我在家里的使用的服务， 一般用于存储<code>unity</code>的项目， 里面的资源文件比较多。</li>
+</ol>
+<h3 id="openmediavalut-的作用" class="heading-element">
+  <a href="#openmediavalut-%e7%9a%84%e4%bd%9c%e7%94%a8" class="heading-mark"></a>openmediavalut 的作用</h3><ol>
+<li>充当 NAS 。  家里的主要存储服务</li>
+<li>主要存储游戏，电影，系统镜像，软件镜像等的内容</li>
+<li>开启 苹果的文件协议，支持 TimeMachine 进行备份。</li>
+<li>开启 SMB 协议， 支持这个协议的电脑，手机 都可以访问里面的文件。 （小米投影仪也支持）</li>
+<li>PLEX ，安装了之后可以在外网看家里的电影， 但是清晰度似乎不是很好。</li>
+</ol>
+<h3 id="win10下载机--win7-游戏机" class="heading-element">
+  <a href="#win10%e4%b8%8b%e8%bd%bd%e6%9c%ba--win7-%e6%b8%b8%e6%88%8f%e6%9c%ba" class="heading-mark"></a>win10下载机 &amp;&amp; win7 游戏机</h3><ol>
+<li>没啥好说的， 下载就是 百度云，迅雷等。</li>
+<li>显卡直通之后就可以使用 虚拟机玩游戏了， 我目前用模拟器玩玩手游稍多一点。我使用 <code>anydesk</code> 远程， 但是感觉效果不是很理想。</li>
+</ol>
+<h3 id="dns-的链路" class="heading-element">
+  <a href="#dns-%e7%9a%84%e9%93%be%e8%b7%af" class="heading-mark"></a>DNS 的链路</h3><ol>
+<li>使用<code>DHCP</code> 获取地址的设备，默认 DNS 服务器都是 <code>debian-work</code></li>
+<li><code>debian-work</code>里的服务是<code>pi-hole</code> 在提供， <code>pi-hole</code>的上游 DNS 服务器为<code>openwrt</code></li>
+<li><code>openwrt</code>则是有两个 dns 服务，一个是<code>dnsmasq</code>,另外一个是<code>clash</code> 。 <code>dnsmasq</code> 的请求被设置成转发给<code>clash</code>  。</li>
+<li><code>clash</code>的上游服务器有 N 个， 其中有一个是<code>pfSense</code> ，这样的话， 就可以提供本地域名的解析了。</li>
+</ol>
+<h2 id="参考阅读" class="heading-element">
+  <a href="#%e5%8f%82%e8%80%83%e9%98%85%e8%af%bb" class="heading-mark"></a>参考阅读</h2><p><a href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">软路由上的DNS使用记录</a></p>
+<p><a href="https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/">esxi显卡直通的操作</a></p>
+<p><a href="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/">软路由的使用</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+      </div><div class="post-info-license">
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/" data-title="家里的网络图示"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-nav-item" rel="prev" title="关于在docker中的gitlab,添加ssh key后无法推送的问题"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>关于在docker中的gitlab,添加ssh key后无法推送的问题</a>
+      <a href="/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-nav-item" rel="next" title="Mysql 时区的问题">Mysql 时区的问题<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
+</html>

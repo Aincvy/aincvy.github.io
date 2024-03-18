@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2. K8s的安装 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+<meta name="author-link" content="">
+<meta name="description" content="可以考虑下面几种方式进行安装 minikube 主要目的应该是学习或者开发测试。 不应该应用于生产环境 安装简单 kubeadm 可用于生产环境 安装配置比较麻烦。 kuboard-spray 开源项目： https://github.com/eip-work/kuboard-spray 大" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="2. K8s的安装">
+<meta itemprop="description" content="可以考虑下面几种方式进行安装 minikube 主要目的应该是学习或者开发测试。 不应该应用于生产环境 安装简单 kubeadm 可用于生产环境 安装配置比较麻烦。 kuboard-spray 开源项目： https://github.com/eip-work/kuboard-spray 大"><meta itemprop="datePublished" content="2023-07-29T10:42:26+08:00" />
+<meta itemprop="dateModified" content="2024-03-18T11:48:36+08:00" />
+<meta itemprop="wordCount" content="2342"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="2. K8s的安装" />
+<meta property="og:description" content="可以考虑下面几种方式进行安装 minikube 主要目的应该是学习或者开发测试。 不应该应用于生产环境 安装简单 kubeadm 可用于生产环境 安装配置比较麻烦。 kuboard-spray 开源项目： https://github.com/eip-work/kuboard-spray 大" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="non-menu" />
+<meta property="article:published_time" content="2023-07-29T10:42:26+08:00" />
+<meta property="article:modified_time" content="2024-03-18T11:48:36+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="2. K8s的安装"/>
+<meta name="twitter:description" content="可以考虑下面几种方式进行安装 minikube 主要目的应该是学习或者开发测试。 不应该应用于生产环境 安装简单 kubeadm 可用于生产环境 安装配置比较麻烦。 kuboard-spray 开源项目： https://github.com/eip-work/kuboard-spray 大"/>
+<meta name="twitter:site" content="@Aincvy"/>
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" /><link rel="prev" href="https://fantasyplayer.link/non-menu/k8s/1.-k8s%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" /><link rel="next" href="https://fantasyplayer.link/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2. K8s的安装",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/non-menu\/k8s\/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85\/"
+    },"genre": "posts","wordcount":  2342 ,
+    "url": "https:\/\/fantasyplayer.link\/non-menu\/k8s\/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85\/","datePublished": "2023-07-29T10:42:26+08:00","dateModified": "2024-03-18T11:48:36+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Aincvy"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
+                
+                
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
+                
+                
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
+                
+                
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
+                
+                
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/non-menu/" title="Non-Menus">Non-Menus</a></li><li class="breadcrumb-item"><a href="/non-menu/k8s/" title="k8s的简要教程">k8s的简要教程</a></li><li class="breadcrumb-item active" aria-current="page">2. K8s的安装</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2. K8s的安装</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2023-07-29 10:42:26"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-29">2023-07-29</time></span>&nbsp;<span title="更新于 2024-03-18 11:48:36"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-18">2024-03-18</time></span>&nbsp;<span title="2342 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#主要内容">主要内容</a>
+      <ul>
+        <li><a href="#minikube">minikube</a>
+          <ul>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#其他">其他</a></li>
+          </ul>
+        </li>
+        <li><a href="#kubeadm">kubeadm</a>
+          <ul>
+            <li><a href="#其他问题记录">其他问题记录</a></li>
+          </ul>
+        </li>
+        <li><a href="#kuboard-spray">kuboard-spray</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他-1">其他</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>可以考虑下面几种方式进行安装</p>
+<ul>
+<li>minikube
+<ul>
+<li>主要目的应该是学习或者开发测试。</li>
+<li>不应该应用于生产环境</li>
+<li>安装简单</li>
+</ul>
+</li>
+<li>kubeadm
+<ul>
+<li>可用于生产环境</li>
+<li>安装配置比较麻烦。</li>
+</ul>
+</li>
+<li>kuboard-spray
+<ul>
+<li>开源项目： <a href="https://github.com/eip-work/kuboard-spray"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/eip-work/kuboard-spray</a></li>
+<li>大部分安装操作都是自动化的， 不过支持的操作系统列表有限。</li>
+<li>底层是基于kubeadm，  允许部署到多节点中</li>
+</ul>
+</li>
+</ul>
+<h2 id="主要内容" class="heading-element">
+  <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><h3 id="minikube" class="heading-element">
+  <a href="#minikube" class="heading-mark"></a>minikube</h3><p>官方文档参考：  <a href="https://minikube.sigs.k8s.io/docs/start/"target="_blank" rel="external nofollow noopener noreferrer">https://minikube.sigs.k8s.io/docs/start/</a></p>
+<h4 id="安装" class="heading-element">
+  <a href="#%e5%ae%89%e8%a3%85" class="heading-mark"></a>安装</h4><p>下面是简要内容：</p>
+<ul>
+<li>依赖
+<ul>
+<li>Docker, 或者虚拟机环境</li>
+</ul>
+</li>
+<li>安装，  采用下载二进制的方式
+<ul>
+<li><code>curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64</code></li>
+<li><code>sudo install minikube-linux-amd64 /usr/local/bin/minikube</code></li>
+</ul>
+</li>
+<li>启动
+<ul>
+<li><code>minikube start</code></li>
+</ul>
+</li>
+<li>手动下载 kubectl  或者使用 <code>minikube kubectl -- </code>  来让minikube进行下载。</li>
+<li>此时集群应该已经可用， 正常发布应用即可。</li>
+<li>使用结束可以使用 <code>minikube stop</code> 关闭集群。</li>
+</ul>
+<h4 id="其他" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96" class="heading-mark"></a>其他</h4><p>minikube 推送镜像的时候好像会简单一些，详情可见： <a href="https://minikube.sigs.k8s.io/docs/handbook/pushing/"target="_blank" rel="external nofollow noopener noreferrer">https://minikube.sigs.k8s.io/docs/handbook/pushing/</a></p>
+<ul>
+<li>进入docker-env之后， 使用docker build 命令可以直接把镜像推送到集群里面。</li>
+<li>使用<code>minikube addons enable registry</code> 可以开启一个 registry， 然后推送。
+<ul>
+<li>使用 <code>$(minikube ip):5000</code> 作为 registry 的url 前置部分。</li>
+</ul>
+</li>
+<li>以及其他等等</li>
+</ul>
+<div class="details admonition info open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>信息<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>有关 Service 的 Type 部分。<br>
+<del>Minikube 不支持 LoadBalancer 的Service 类型，如果指定了此类型， 会自动转成 NodePort</del><br>
+现在好像支持了， 官方文档原话： <code>To access a LoadBalancer deployment, use the “minikube tunnel” command</code></p>
+<p>当使用 NodePort类型的时候， 使用命令 <code>minikube ip</code> 可以获取到 minikube的 IP地址。</p>
+</div>
+    </div>
+  </div>
+<p>Driver</p>
+<blockquote>
+<p>minikube relies on docker-machine drivers to manage machines</p>
+</blockquote>
+<p>简单来说， minikube 依赖于一个 docker-machine driver 去管理机器。  拓展阅读： <a href="https://minikube.sigs.k8s.io/docs/contrib/drivers/"target="_blank" rel="external nofollow noopener noreferrer">https://minikube.sigs.k8s.io/docs/contrib/drivers/</a></p>
+<p>在使用 <code>minikube start</code> 启动集群的时候， 可以指定一个driver, 例如： <code>minikube start --driver=docker</code></p>
+<ul>
+<li>driver列表： <a href="https://minikube.sigs.k8s.io/docs/drivers/"target="_blank" rel="external nofollow noopener noreferrer">https://minikube.sigs.k8s.io/docs/drivers/</a></li>
+<li>docker 不是默认的driver, 默认的driver 应该是 virtualbox</li>
+<li>使用命令 <code>minikube config set driver docker</code> 可以设置docker成默认的driver</li>
+</ul>
+<p>在一些需求之下， 需要minikube 和kubectl 两个命令混用。</p>
+<p>官方文档有明说，简化k8s的生产环境部署的体验并不是minikube的一个目标， 地址为： <a href="https://minikube.sigs.k8s.io/docs/contrib/principles/#non-goals"target="_blank" rel="external nofollow noopener noreferrer">https://minikube.sigs.k8s.io/docs/contrib/principles/#non-goals</a></p>
+<h3 id="kubeadm" class="heading-element">
+  <a href="#kubeadm" class="heading-mark"></a>kubeadm</h3><p>这是一个生产环境方案。</p>
+<ul>
+<li>笔者在国内机器上尝试手动安装kubeadm的时候，体验很差， 各种小问题，网络问题， 最后还是安装失败了。。。</li>
+<li>但是使用 国外的虚拟机，就可以成功安装。  体验的地址是： <a href="https://labs.play-with-k8s.com/"target="_blank" rel="external nofollow noopener noreferrer">https://labs.play-with-k8s.com/</a>
+<ul>
+<li>国内访问有点卡顿</li>
+<li>每个会话有4个小时的使用时间。</li>
+<li>免费</li>
+</ul>
+</li>
+</ul>
+<p>这里笔者将会整理一下碰到的小问题和如何解决。</p>
+<p><em>吐槽：我应该是要学习如何使用，而不是如何安装k8s才对。。。</em></p>
+<p>官方文档： <a href="https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/"target="_blank" rel="external nofollow noopener noreferrer">https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a><br>
+操作步骤大致如下：</p>
+<ul>
+<li>准备3个虚拟机
+<ul>
+<li>1个管理节点</li>
+<li>2个工作节点</li>
+</ul>
+</li>
+<li>在管理节点上进行一些安装
+<ul>
+<li>安装docker
+<ul>
+<li>官方文档：  <a href="https://docs.docker.com/engine/install/"target="_blank" rel="external nofollow noopener noreferrer">https://docs.docker.com/engine/install/</a></li>
+<li>清华大学镜像源： <a href="https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/"target="_blank" rel="external nofollow noopener noreferrer">https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/</a></li>
+</ul>
+</li>
+<li><del>修改配置文件： <code>/etc/containerd/config.toml</code></del>
+<ul>
+<li>去掉<code>disabled_plugins = [&quot;cri&quot;]</code> 中的 <code>&quot;cri&quot;</code></li>
+<li>重启containerd   <code>systemctl restart containerd</code></li>
+<li>如果不这么做的话， 在初始化kubeadm的时候， 可能会提示： <code> CRI v1 runtime API is not implemented for endpoint \&quot;unix:///var/run/containerd/containerd.sock\&quot;</code></li>
+</ul>
+</li>
+<li>containerd的配置文件处理
+<ul>
+<li>参考：  <a href="https://github.com/kubernetes/kubeadm/issues/2851#issuecomment-1535770518"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/kubernetes/kubeadm/issues/2851#issuecomment-1535770518</a></li>
+<li>解释： 即使在kubeadm init命令中使用了国内的镜像， 但是这个 sandbox_image 还是需要额外处理。</li>
+</ul>
+</li>
+<li>安装 kubeadm kubectl kubelet
+<ul>
+<li>官方文档： <a href="https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/"target="_blank" rel="external nofollow noopener noreferrer">https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a></li>
+<li>清华大学源：  <a href="https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/"target="_blank" rel="external nofollow noopener noreferrer">https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/</a></li>
+<li>具体安装命令如下，下面的代码已经使用了清华大学的源：</li>
+</ul>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span><span class="line"><span class="cl"><span class="c1"># 可以连接的话， 就不需要 下面两行</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>YOUR_PROXY_
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>YOUR_PROXY_
+</span></span><span class="line"><span class="cl">curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span> sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt-get install -y kubelet kubeadm kubectl
+</span></span><span class="line"><span class="cl">apt-mark hold kubelet kubeadm kubectl
+</span></span><span class="line"><span class="cl"><span class="c1"># 不解除代理的话， 容易出各种问题</span>
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> http_proxy
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> https_proxy</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>kubeadm init
+<ul>
+<li>这个很容易挂。。</li>
+<li><code>kubeadm init -v=5 --kubernetes-version=v1.27.3 --apiserver-advertise-address=192.168.56.10 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16</code></li>
+<li><code>--kubernetes-version=v1.27.3</code>  指定版本的， 可以去掉</li>
+<li><code>192.168.56.10</code>  这个地址要对work节点可见</li>
+<li><code>--pod-network-cidr=10.244.0.0/16</code>   指定pod网络的IP地址范围</li>
+<li>当安装成功的时候， 会提示一个 kubeadm join 的命令。 如果没有看到这个命令， 基本上是失败了。</li>
+<li>安装成功之后，如果是root用户， 则执行命令 <code>export KUBECONFIG=/etc/kubernetes/admin.conf</code>。 否则根据提示复制配置文件</li>
+<li>安装失败的话， 使用<code>journalctl -xeu kubelet</code> 查看日志，寻找蛛丝马迹。</li>
+</ul>
+</li>
+<li>kubeadm init  失败后的重来
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ systemctl stop kubelet.service
+</span></span><span class="line"><span class="cl">$ kubeadm reset
+</span></span><span class="line"><span class="cl">y <span class="c1">#手动输入y 然后按下回车</span>
+</span></span><span class="line"><span class="cl">$ <span class="c1"># 重置成功， 可以再次 kubeadm init</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>安装成功之后， 需要应用网络插件
+<ul>
+<li>这里安装一下 flannel, 命令为： <code>kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml</code></li>
+<li>项目地址为：  <a href="https://github.com/flannel-io/flannel"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/flannel-io/flannel</a></li>
+<li>k8s 网络插件列表： <a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy"target="_blank" rel="external nofollow noopener noreferrer">https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工作节点的安装
+<ul>
+<li>安装docker</li>
+<li>containerd的配置文件处理</li>
+<li>使用 kubeadm init 提示的 kubeadm join 命令加入集群。</li>
+</ul>
+</li>
+<li>最后确认
+<ul>
+<li>在管理节点上执行命令 <code>kubectl get nodes</code>  查看是否是3个节点。</li>
+</ul>
+</li>
+</ul>
+<h4 id="其他问题记录" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98%e8%ae%b0%e5%bd%95" class="heading-mark"></a>其他问题记录</h4><p>使用清华大学镜像提示的命令之后在执行 apt update 之后， 提示：“W: GPG error: <a href="https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt"target="_blank" rel="external nofollow noopener noreferrer">https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt</a> kubernetes-xenial InRelease: The following signatures couldn&rsquo;t be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05 ”<br>
+解决办法：  删除key,  删除list 使用谷歌提示的方式来操作。</p>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ rm -f /usr/share/keyrings/kubernetes-archive-keyring.gpg
+</span></span><span class="line"><span class="cl">$ rm -f /etc/apt/sources.list.d/kubernetes.list
+</span></span><span class="line"><span class="cl">$ apt update
+</span></span><span class="line"><span class="cl">$ curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span> sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span class="line"><span class="cl">$ apt update</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意： 只是使用了谷歌给出的方法， 实际上还是使用的 清华大学的源。</p>
+<ul>
+<li>查看 6443 端口有无开启   <code>ss -nltp | grep 6443</code></li>
+<li>查看k8s 的镜像列表    <code> crictl --runtime-endpoint unix:///var/run/containerd/containerd.sock images</code></li>
+<li>手动抓取  registry.k8s.io/pause:3.6    <code>ctr -n k8s.io images pull registry.k8s.io/pause:3.6</code></li>
+<li><code>The connection to the server localhost:8080 was refused</code>
+<ul>
+<li>没有 找到 admin.conf 文件， 如果使用root 的话， 每次ssh 连接之后都需要 执行命令 <code>export KUBECONFIG=/etc/kubernetes/admin.conf</code></li>
+<li>可以考虑 添加到 <code>.bashrc</code> 文件， 以自动执行。</li>
+</ul>
+</li>
+</ul>
+<p>备选的镜像加速地址：  <a href="https://github.com/DaoCloud/public-image-mirror"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/DaoCloud/public-image-mirror</a><br>
+下面是官方给出的命令</p>
+<blockquote>
+<p>kubeadm config images pull &ndash;image-repository k8s-gcr.m.daocloud.io</p>
+</blockquote>
+<p>想要使用的话， 可以使用 <code>k8s-gcr.m.daocloud.io</code> 替换 <code>kubeadm init ....</code> 中的 <code>registry.aliyuncs.com/google_containers</code> 部分。</p>
+<p>除了k8s, 还能加速docker镜像，详情查看项目的说明文档。<br>
+注： 笔者并没有尝试过这个。</p>
+<h3 id="kuboard-spray" class="heading-element">
+  <a href="#kuboard-spray" class="heading-mark"></a>kuboard-spray</h3><p>这个安装和使用非常简单。</p>
+<p>官方的自我介绍</p>
+<blockquote>
+<p>使用图形化的界面离线安装、维护、升级高可用的 K8S 集群<br>
+<a href="https://kuboard-spray.cn"target="_blank" rel="external nofollow noopener noreferrer">https://kuboard-spray.cn</a></p>
+</blockquote>
+<p>安装方法：</p>
+<ul>
+<li>官方文档： <a href="https://kuboard-spray.cn/guide/install-k8s.html#%E5%AE%89%E8%A3%85-kuboard-spray"target="_blank" rel="external nofollow noopener noreferrer">https://kuboard-spray.cn/guide/install-k8s.html#%E5%AE%89%E8%A3%85-kuboard-spray</a></li>
+<li>请参考官方文档安装即可， 都是一些表单，根据提示填写即可。</li>
+<li>其他需要注意的地方
+<ul>
+<li>资源包列表： <a href="https://kuboard-spray.cn/support/"target="_blank" rel="external nofollow noopener noreferrer">https://kuboard-spray.cn/support/</a></li>
+<li>导入一个离线资源包之后， 在支持的操作系统里面选取一个喜欢的，然后使用那个系统建立N个虚拟机。</li>
+<li>在本地建立虚拟机可以考虑使用 Vagrant, 参见文章： <a href="../../periphery/vagrant-%e8%99%9a%e6%8b%9f%e6%9c%ba%e6%a8%a1%e6%9d%bf%e5%b7%a5%e5%85%b7/">vagrant-虚拟机模板工具</a></li>
+<li>如果是使用了云主机的话， 则创建同一个内网的新机器即可。</li>
+</ul>
+</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>几乎算是全·自动化，</li>
+<li>完全解决了国内网络不好的问题</li>
+<li>在管理面板上还提供了shell 界面。  当然这个可能存在一些安全隐患。</li>
+<li>支持备份和恢复 etcd</li>
+</ul>
+<div class="details admonition warning open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">理论上来说，  kuboard-spray  应该是可以用于生产环境的， 但是笔者并没有进行过测试。</div>
+    </div>
+  </div>
+<h2 id="其他-1" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96-1" class="heading-mark"></a>其他</h2><p>按需选择自己合适的安装方式即可。</p>
+<p><em>如果使用的是阿里云，腾讯云等云服务器， 使用kubeadm安装应该不会遇到网络问题。</em></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-03-18 11:48:36">更新于 2024-03-18&nbsp;</span>
+      </div><div class="post-info-license">
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/non-menu/k8s/2.-k8s%E7%9A%84%E5%AE%89%E8%A3%85/" data-title="2. K8s的安装"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/non-menu/k8s/1.-k8s%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-nav-item" rel="prev" title="1. K8s的基本使用"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>1. K8s的基本使用</a>
+      <a href="/non-menu/k8s/3.-%E5%BA%94%E7%94%A8%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%8F%8A%E5%AE%B9%E5%99%A8%E6%89%A9%E7%BC%A9%E4%BB%A5%E5%8F%8A%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="post-nav-item" rel="next" title="3. 应用的更新以及容器扩缩以及命名空间">3. 应用的更新以及容器扩缩以及命名空间<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Llama Gpt 项目的简单介绍以及切换CUDA的方法 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+<meta name="author-link" content="">
+<meta name="description" content="llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Llama Gpt 项目的简单介绍以及切换CUDA的方法">
+<meta itemprop="description" content="llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your"><meta itemprop="datePublished" content="2023-08-21T15:29:52+08:00" />
+<meta itemprop="dateModified" content="2024-03-18T11:48:36+08:00" />
+<meta itemprop="wordCount" content="1693"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Llama Gpt 项目的简单介绍以及切换CUDA的方法" />
+<meta property="og:description" content="llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
+<meta property="article:published_time" content="2023-08-21T15:29:52+08:00" />
+<meta property="article:modified_time" content="2024-03-18T11:48:36+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="Llama Gpt 项目的简单介绍以及切换CUDA的方法"/>
+<meta name="twitter:description" content="llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your"/>
+<meta name="twitter:site" content="@Aincvy"/>
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" /><link rel="prev" href="https://fantasyplayer.link/periphery/k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/" /><link rel="next" href="https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Llama Gpt 项目的简单介绍以及切换CUDA的方法",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/periphery\/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95\/"
+    },"genre": "posts","wordcount":  1693 ,
+    "url": "https:\/\/fantasyplayer.link\/periphery\/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95\/","datePublished": "2023-08-21T15:29:52+08:00","dateModified": "2024-03-18T11:48:36+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Aincvy"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
+                
+                
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
+                
+                
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
+                
+                
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
+                
+                
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/periphery/" title="Peripheries">Peripheries</a></li><li class="breadcrumb-item active" aria-current="page">Llama Gpt 项目的简单介绍以及切换CUDA的方法</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Llama Gpt 项目的简单介绍以及切换CUDA的方法</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2023-08-21 15:29:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-08-21">2023-08-21</time></span>&nbsp;<span title="更新于 2024-03-18 11:48:36"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-18">2024-03-18</time></span>&nbsp;<span title="1693 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#主要内容">主要内容</a>
+      <ul>
+        <li><a href="#体验">体验</a></li>
+        <li><a href="#应用">应用</a></li>
+        <li><a href="#切换部分内容到gpu上运行">切换部分内容到GPU上运行</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他">其他</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。</p>
+<p>官方 github 地址： <a href="https://github.com/getumbrel/llama-gpt.git"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/getumbrel/llama-gpt.git</a></p>
+<p>官方简介：</p>
+<blockquote>
+<p>A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your device.</p>
+</blockquote>
+<h2 id="主要内容" class="heading-element">
+  <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><h3 id="体验" class="heading-element">
+  <a href="#%e4%bd%93%e9%aa%8c" class="heading-mark"></a>体验</h3><p>这是笔者第一次体验gpt类的工具， 之前并没有尝试过chatGPT， 感觉这个llama-gpt 勉强可用， 不过更多的还是期待它未来的表现。</p>
+<ul>
+<li>仓库的版本是 纯CPU 运算的， 所以速度很慢。 笔者的U 是amd 5600, 一个问题需要几分钟才能开始响应， 到响应结束还需要一段时间。 <em>2023年8月21日</em></li>
+<li>不过可以自己切换到N卡的 CUDA 上进行运算， 有点麻烦， 但是可以切换。</li>
+<li>响应的内容 没有排版，这个很难受，并且笔者目前没有找到办法去解决。   <em>后续更新可见： <a href="https://github.com/getumbrel/llama-gpt/issues/28"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/getumbrel/llama-gpt/issues/28</a></em></li>
+<li>可以用中文提问， 但是默认情况下会回复英文</li>
+<li>会无视一些输入提示词， 比如 想让它省略解释说明部分， 但是没用，它一定会给你解释一下。</li>
+</ul>
+<p>下面看几张图。</p>
+<p><img loading="lazy" src="/img/periphery/llama-gpt1.png" alt="llama-gpt1" srcset="/img/periphery/llama-gpt1.png?size=small, /img/periphery/llama-gpt1.png?size=medium 1.5x, /img/periphery/llama-gpt1.png?size=large 2x" sizes="auto" data-title="llama-gpt1" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>虽然排版很难受， 但是生成出现的东西， 还是可以考虑的。</p>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;imgui.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">CreateContext</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">StyleColor</span><span class="p">(</span> <span class="o">&amp;</span> <span class="n">ImGuiCol_Text</span><span class="p">,</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mf">1.0</span> <span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span> <span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span> <span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span> <span class="n">f</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Begin</span><span class="p">(</span><span class="s">&#34;Form&#34;</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="s">&#34;Name:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">SameLine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">InputText</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">IM_ARRAYSIZE</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="s">&#34;Age:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">SameLine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">InputText</span><span class="p">(</span><span class="s">&#34;age&#34;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">IM_ARRAYSIZE</span><span class="p">(</span><span class="n">age</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="s">&#34;Submit&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="s">&#34;Reset&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">End</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">DestroyContext</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><em>使用 <a href="https://codebeautify.org/cpp-formatter-beautifier"target="_blank" rel="external nofollow noopener noreferrer">https://codebeautify.org/cpp-formatter-beautifier</a> 自动格式化</em></p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;imgui.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">CreateContext</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">StyleColor</span><span class="p">(</span> <span class="o">&amp;</span> <span class="n">ImGuiCol_Text</span><span class="p">,</span> <span class="n">ImVec4</span><span class="p">(</span><span class="mf">1.0</span> <span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span> <span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span> <span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span> <span class="n">f</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Begin</span><span class="p">(</span><span class="s">&#34;Form&#34;</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="s">&#34;Name:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">SameLine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">InputText</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">IM_ARRAYSIZE</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="s">&#34;Age:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">SameLine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">InputInt</span><span class="p">(</span><span class="s">&#34;age&#34;</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="s">&#34;Submit&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Submit button pressed!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="s">&#34;Reset&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">End</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ImGui</span><span class="o">::</span><span class="n">DestroyContext</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>第二版代码比第一版本多了一些内容， 但是仍然没帮我声明 name, age 两个变量 😆</p>
+<p>偶尔的情况下， 会给一个很好的排版。</p>
+<p><img loading="lazy" src="/img/periphery/llama-gpt2.png" alt="llama-gpt2" srcset="/img/periphery/llama-gpt2.png?size=small, /img/periphery/llama-gpt2.png?size=medium 1.5x, /img/periphery/llama-gpt2.png?size=large 2x" sizes="auto" data-title="llama-gpt2" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>可以生成 unity的脚本, 这里还可以看到是存在上下文语境的。  <em>但是我看了一下日志， 感觉就是把聊天记录都发了一遍过去。。 好像openai 也是这么处理的</em></p>
+<p><img loading="lazy" src="/img/periphery/llama-gpt3.png" alt="llama-gpt3" srcset="/img/periphery/llama-gpt3.png?size=small, /img/periphery/llama-gpt3.png?size=medium 1.5x, /img/periphery/llama-gpt3.png?size=large 2x" sizes="auto" data-title="llama-gpt3" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="应用" class="heading-element">
+  <a href="#%e5%ba%94%e7%94%a8" class="heading-mark"></a>应用</h3><ul>
+<li>小段代码生成</li>
+<li>一些常见的算法代码生成
+<ul>
+<li>生成的冒泡排序可以使用， 但是 快速排序却有语法问题， 且没给我解决。。</li>
+</ul>
+</li>
+<li>中文翻译成英文
+<ul>
+<li>但是无法从英文翻译中文</li>
+</ul>
+</li>
+<li>问一些乱七八糟的</li>
+<li>生成  CURD 相关的代码。</li>
+</ul>
+<h3 id="切换部分内容到gpu上运行" class="heading-element">
+  <a href="#%e5%88%87%e6%8d%a2%e9%83%a8%e5%88%86%e5%86%85%e5%ae%b9%e5%88%b0gpu%e4%b8%8a%e8%bf%90%e8%a1%8c" class="heading-mark"></a>切换部分内容到GPU上运行</h3><p>本文描述的方法是使用 N卡的CUDA 进行运算。  更换之后， 大多数问题在几秒内就可以开始回答了。</p>
+<p><em>这只是一个临时的办法， 官方可能会在不久的将来支持 CUDA。 可见 <a href="https://github.com/getumbrel/llama-gpt/issues/6"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/getumbrel/llama-gpt/issues/6</a></em></p>
+<p><em>笔者在 Debian 11 上进行了测试， 成功运行了 13B模型。</em></p>
+<p><em>更多的说明在最后部分</em></p>
+<p><strong>简单版本</strong></p>
+<ul>
+<li>编译 llama-cpp-python 的 cuda 版本 镜像</li>
+<li>手动把模型映射到容器中</li>
+<li>调整并使用 <code>llama-gpt/api/run.sh</code> 文件来启动</li>
+</ul>
+<p><strong>长版本</strong></p>
+<ol>
+<li>安装 并且设置好 docker， 包括 <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html"target="_blank" rel="external nofollow noopener noreferrer">nvidia container-toolkit</a></li>
+<li>git clone <a href="https://github.com/abetlen/llama-cpp-python.git"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/abetlen/llama-cpp-python.git</a></li>
+<li>准备好 模型
+<ol>
+<li>llama-2-7b-chat.bin - <a href="https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGML/resolve/main/nous-hermes-llama-2-7b.ggmlv3.q4_0.bin"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGML/resolve/main/nous-hermes-llama-2-7b.ggmlv3.q4_0.bin</a></li>
+<li>llama-2-13b-chat.bin - <a href="https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML/resolve/main/nous-hermes-llama2-13b.ggmlv3.q4_0.bin"target="_blank" rel="external nofollow noopener noreferrer">https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML/resolve/main/nous-hermes-llama2-13b.ggmlv3.q4_0.bin</a></li>
+<li>我觉得 7b 或者 13b 的就足够了
+<ol>
+<li>经过尝试， 7b q4 版本 质量较差， 建议使用13B版本。</li>
+</ol>
+</li>
+<li>下载好的模型放到宿主机的某个文件夹， 比如： <code>/home/debian/docker/llama-models</code></li>
+<li>我使用的是 <code>llama-2-13b-chat.bin</code> 这个模型</li>
+</ol>
+</li>
+<li>查阅文档：  <a href="https://github.com/abetlen/llama-cpp-python/tree/main/docker#cuda_simple"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/abetlen/llama-cpp-python/tree/main/docker#cuda_simple</a>
+<ol>
+<li>不需要执行最后的 docker run 命令， 使用 <code>docker build -t cuda_simple .</code> 构建好镜像即可</li>
+<li>修改版本的 Dockerfile: <a href="https://github.com/Aincvy/llama-cpp-python/blob/dockerfile-cn-mirrors/docker/cuda_simple/Dockerfile-CN"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/Aincvy/llama-cpp-python/blob/dockerfile-cn-mirrors/docker/cuda_simple/Dockerfile-CN</a>
+<ol>
+<li>使用了 阿里的 apt 源</li>
+<li>使用了 清华大学的 python 源</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>执行命令 <code>sudo docker tag cuda_simple llama-cpp-python-cuda:latest</code></li>
+<li>寻找一个目录作为 docker compose 的目录， 比如： <code>/home/debian/docker-compose/llama-gpt-cuda</code></li>
+<li>新建文件 <code>docker-compose.yaml</code> ,并填充下面的内容</li>
+</ol>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.6&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">llama-gpt-api-13b</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># image: &#39;ghcr.io/getumbrel/llama-gpt-api-llama-2-13b-chat:latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;llama-cpp-python-cuda:latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># build:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c">#   context: ./api</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c">#   dockerfile: 13B.Dockerfile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="kc">on</span>-<span class="l">failure</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MODEL</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;/models/llama-2-13b-chat.bin&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">USE_MLOCK</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;/home/debian/docker/llama-models:/models/&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;./data:/home&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">IPC_LOCK</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SYS_RESOURCE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">reservations</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">devices</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">nvidia</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">capabilities</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">gpu]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">/bin/sh /home/run.sh</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">llama-gpt-ui</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;getumbrel/llama-gpt-ui:latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;llama-gpt-ui&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">3000</span><span class="p">:</span><span class="m">3000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="kc">on</span>-<span class="l">failure</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXX&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;OPENAI_API_HOST=http://llama-gpt-api-13b:8000&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;DEFAULT_MODEL=/models/llama-2-13b-chat.bin&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;WAIT_HOSTS=llama-gpt-api-13b:8000&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;WAIT_TIMEOUT=600&#39;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>创建一个目录： <code>data</code></li>
+<li>创建一个文件： <code>data/run.sh</code> 并填充下面的内容
+<em>从 llama-gpt/api/run.sh 复制，然后调整的</em></li>
+</ol>
+<div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># make build</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Get the number of available threads on the system</span>
+</span></span><span class="line"><span class="cl"><span class="nv">n_threads</span><span class="o">=</span><span class="k">$(</span>grep -c ^processor /proc/cpuinfo<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define context window</span>
+</span></span><span class="line"><span class="cl"><span class="nv">n_ctx</span><span class="o">=</span><span class="m">4096</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Offload everything to CPU</span>
+</span></span><span class="line"><span class="cl"><span class="nv">n_gpu_layers</span><span class="o">=</span><span class="m">37</span>      
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define batch size</span>
+</span></span><span class="line"><span class="cl"><span class="nv">n_batch</span><span class="o">=</span><span class="m">2096</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If total RAM is less than 8GB, set batch size to 1024</span>
+</span></span><span class="line"><span class="cl"><span class="nv">total_ram</span><span class="o">=</span><span class="k">$(</span>cat /proc/meminfo <span class="p">|</span> grep MemTotal <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$total_ram</span> -lt <span class="m">8000000</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">n_batch</span><span class="o">=</span><span class="m">1024</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Initializing server with:&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Batch size: </span><span class="nv">$n_batch</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Number of CPU threads: </span><span class="nv">$n_threads</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Number of GPU layers: </span><span class="nv">$n_gpu_layers</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Context window: </span><span class="nv">$n_ctx</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> python3 -m llama_cpp.server --n_ctx <span class="nv">$n_ctx</span> --n_threads <span class="nv">$n_threads</span> --n_gpu_layers <span class="nv">$n_gpu_layers</span> --n_batch <span class="nv">$n_batch</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="10">
+<li>调整 <code>n_gpu_layers</code>参数， 过大可能会导致 OOM， 我是3060 12G， 37已经非常极限了。</li>
+<li><code>sudo docker compose up</code>  查看能否正常运行， 如果没有什么问题的话， 则使用 <code>sudo docker compose up -d </code> 进入后台运行。</li>
+</ol>
+<p>其他说明</p>
+<ul>
+<li>GPU 的占用好像没有跑满， 大约在 30% 附近。  CPU还是100% 在运行，</li>
+<li>速度确实提升了不少， <del>但是没有到达立即响应的地步。</del>  很多问题可以在几秒内开始回答。</li>
+<li>聊天记录越多， 越容易 崩溃， 暂时没看到崩溃原因，只看到了 exit code 0
+<ul>
+<li>可能和docker 容器关闭再启动也有点关系把。</li>
+<li>应该是 到达了 max_token  或者显存爆了</li>
+</ul>
+</li>
+<li>模型的路径好像只能用 <code>/models/llama-2-13b-chat.bin</code> ，或者只能是<code>/models/</code> 目录， 否则 UI 程序会出现问题。</li>
+</ul>
+<h2 id="其他" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96" class="heading-mark"></a>其他</h2><p>尝试了一下  <a href="https://github.com/oobabooga/text-generation-webui"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/oobabooga/text-generation-webui</a> ， 同样安装有点麻烦， 但是这个排版很好。 <em>使用的同一个模型</em><br>
+<em>2023年9月12日 今日尝试， 无法加载这个模型了。</em></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-03-18 11:48:36">更新于 2024-03-18&nbsp;</span>
+      </div><div class="post-info-license">
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" data-title="Llama Gpt 项目的简单介绍以及切换CUDA的方法"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/periphery/k8s%E7%9A%84%E7%AE%80%E8%A6%81%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/" class="post-nav-item" rel="prev" title="K8s的简要教程系列"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>K8s的简要教程系列</a>
+      <a href="/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" class="post-nav-item" rel="next" title="4. 持久卷的相关信息">4. 持久卷的相关信息<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
+</html>

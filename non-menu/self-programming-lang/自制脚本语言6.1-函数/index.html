@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>自制脚本语言[6.1] 函数 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+<meta name="author-link" content="">
+<meta name="description" content="本篇来尝试描述一下函数如何实现。 基本内容 langX 代码示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 函数声明 funa =&gt; { a = 1 ; funb(); // 内置函数调用 println(&#34;funa&#34; &#43; a); } funb =&gt; (x){ println(&#34;funb: &#34;" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[6.1] 函数">
+<meta itemprop="description" content="本篇来尝试描述一下函数如何实现。 基本内容 langX 代码示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 函数声明 funa =&gt; { a = 1 ; funb(); // 内置函数调用 println(&#34;funa&#34; &#43; a); } funb =&gt; (x){ println(&#34;funb: &#34;"><meta itemprop="datePublished" content="2021-10-02T14:43:13+08:00" />
+<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="wordCount" content="740"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[6.1] 函数" />
+<meta property="og:description" content="本篇来尝试描述一下函数如何实现。 基本内容 langX 代码示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 函数声明 funa =&gt; { a = 1 ; funb(); // 内置函数调用 println(&#34;funa&#34; &#43; a); } funb =&gt; (x){ println(&#34;funb: &#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="non-menu" />
+<meta property="article:published_time" content="2021-10-02T14:43:13+08:00" />
+<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="自制脚本语言[6.1] 函数"/>
+<meta name="twitter:description" content="本篇来尝试描述一下函数如何实现。 基本内容 langX 代码示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 函数声明 funa =&gt; { a = 1 ; funb(); // 内置函数调用 println(&#34;funa&#34; &#43; a); } funb =&gt; (x){ println(&#34;funb: &#34;"/>
+<meta name="twitter:site" content="@Aincvy"/>
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" /><link rel="prev" href="https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/" /><link rel="next" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "自制脚本语言[6.1] 函数",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0\/"
+    },"genre": "posts","wordcount":  740 ,
+    "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0\/","datePublished": "2021-10-02T14:43:13+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Aincvy"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
+                
+                
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
+                
+                
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
+                
+                
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
+                
+                
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/non-menu/" title="Non-Menus">Non-Menus</a></li><li class="breadcrumb-item"><a href="/non-menu/self-programming-lang/" title="如何自制脚本语言">如何自制脚本语言</a></li><li class="breadcrumb-item active" aria-current="page">自制脚本语言[6.1] 函数</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>自制脚本语言[6.1] 函数</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2021-10-02 14:43:13"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2021-10-02">2021-10-02</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span title="740 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本内容">基本内容</a>
+      <ul>
+        <li><a href="#langx-代码示例">langX 代码示例</a></li>
+        <li><a href="#主要思路">主要思路</a></li>
+        <li><a href="#变量环境">变量环境</a></li>
+        <li><a href="#字节码-或者-ast-节点">字节码 或者 AST 节点</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2023-07-30，文中内容可能已过时。</div>
+      </div>
+    </div><p>本篇来尝试描述一下函数如何实现。</p>
+<h2 id="基本内容" class="heading-element">
+  <a href="#%e5%9f%ba%e6%9c%ac%e5%86%85%e5%ae%b9" class="heading-mark"></a>基本内容</h2><h3 id="langx-代码示例" class="heading-element">
+  <a href="#langx-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b" class="heading-mark"></a>langX 代码示例</h3><div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">// 函数声明 
+</span></span><span class="line"><span class="cl">funa =&gt; {
+</span></span><span class="line"><span class="cl">	a = 1 ;
+</span></span><span class="line"><span class="cl">	funb();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	// 内置函数调用
+</span></span><span class="line"><span class="cl">	println(&#34;funa&#34; + a);
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">funb =&gt; (x){
+</span></span><span class="line"><span class="cl">  println(&#34;funb: &#34; + a);
+</span></span><span class="line"><span class="cl">  a = 101 ;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// call function
+</span></span><span class="line"><span class="cl">funa();</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如上所述， langX 使用 <code>函数名称 =&gt; (参数列表) {函数体}</code> 的风格来声明一个函数， 读者也可以完全设计出自己想要的语法结构。</p>
+<h3 id="主要思路" class="heading-element">
+  <a href="#%e4%b8%bb%e8%a6%81%e6%80%9d%e8%b7%af" class="heading-mark"></a>主要思路</h3><p>函数的主要目的基本上是复用，隔离变量等。</p>
+<p>为了能实现复用的目的，需要保存函数内部的字节码，以及每次在调用函数的时候需要生成新的变量环境。</p>
+<h3 id="变量环境" class="heading-element">
+  <a href="#%e5%8f%98%e9%87%8f%e7%8e%af%e5%a2%83" class="heading-mark"></a>变量环境</h3><p>这里先描述一下笔者所说的变量环境是个什么东西。</p>
+<p>笔者曾经在 <a href="../%e8%87%aa%e5%88%b6%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%803.1-%e7%8e%af%e5%a2%83%e4%b8%8e%e8%8a%82%e7%82%b9%e8%bf%90%e7%ae%97%e7%9a%84%e5%80%bc/">3.1章节环境与节点运算的值</a> 简单的介绍过这个东西。</p>
+<p>笔者在langX里面使用是一个叫做环境的词， 即  <code>Enviroment</code>。里面所有的变量都是使用一个<code>std::map</code>保存的，变量名作为key, 变量值作为value。</p>
+<p>在现代编程语言里面，似乎都是使用栈或者数组的方式，他们使用索引作为key, 值为value。</p>
+<p>笔者的langX因为经验不足的问题， 并没有做栈上的值， 都是做堆上的值， 栈上保存的都是指针， 这<strong>并不是</strong>一个好的设计。</p>
+<p>内置的数字类型应该保存原值，而不是使用指针的形式。</p>
+<p>无论是使用map，还是栈，异或局部变量表等等， 在函数代码真正执行前都应该准备一个新的，以隔离函数内外的变量。</p>
+<h3 id="字节码-或者-ast-节点" class="heading-element">
+  <a href="#%e5%ad%97%e8%8a%82%e7%a0%81-%e6%88%96%e8%80%85-ast-%e8%8a%82%e7%82%b9" class="heading-mark"></a>字节码 或者 AST 节点</h3><p>因为函数需要复用， 所以就需要把函数的执行指令保存起来， 而不是执行一遍就丢掉。</p>
+<p><strong>AST节点额外内容</strong></p>
+<p>笔者在写langX的时候，会把临时计算的值保存到 AST节点上， 这样就需要在函数执行前，或者执行结束后清掉所有的值， 否则会产生一些未预期的行为。 <em>就是可能会产生一些很难找到原因的，莫名其妙的bug。</em></p>
+<p>另外，这也是一个不好的设计， 完全不推荐使用。</p>
+<h2 id="总结" class="heading-element">
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark"></a>总结</h2><p>函数上来说， 新的东西不太多， 它更像是一个包装，把之前的东西使用新的方式组合和使用。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+      </div><div class="post-info-license">
+            <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%806.1-%E5%87%BD%E6%95%B0/" data-title="自制脚本语言[6.1] 函数"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/" class="post-nav-item" rel="prev" title="Vscode开发c&#43;&#43; 介绍"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Vscode开发c&#43;&#43; 介绍</a>
+      <a href="/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E9%99%84.1-%E5%AD%97%E8%8A%82%E7%A0%81%E5%88%97%E8%A1%A8/" class="post-nav-item" rel="next" title="自制脚本语言[附.1] 字节码列表">自制脚本语言[附.1] 字节码列表<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
+</html>

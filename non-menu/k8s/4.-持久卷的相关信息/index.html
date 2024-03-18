@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>4. 持久卷的相关信息 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+<meta name="author-link" content="">
+<meta name="description" content="持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的po" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="4. 持久卷的相关信息">
+<meta itemprop="description" content="持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的po"><meta itemprop="datePublished" content="2023-08-21T16:39:22+08:00" />
+<meta itemprop="dateModified" content="2024-03-18T11:48:36+08:00" />
+<meta itemprop="wordCount" content="1252"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="4. 持久卷的相关信息" />
+<meta property="og:description" content="持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的po" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="non-menu" />
+<meta property="article:published_time" content="2023-08-21T16:39:22+08:00" />
+<meta property="article:modified_time" content="2024-03-18T11:48:36+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="4. 持久卷的相关信息"/>
+<meta name="twitter:description" content="持久卷允许多个pod 读取和写入同一个文件夹。 基本介绍 local 本地路径local 持久卷， 官方文档： https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local 使用本地的一个目录来做存储， 允许挂载到不同的po"/>
+<meta name="twitter:site" content="@Aincvy"/>
+<meta name="application-name" content="Fanstasy Player / 幻想系玩家">
+<meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" /><link rel="prev" href="https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/" /><link rel="next" href="https://fantasyplayer.link/non-menu/k8s/5.-config-map-%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "4. 持久卷的相关信息",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/fantasyplayer.link\/non-menu\/k8s\/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF\/"
+    },"genre": "non-menu","wordcount":  1252 ,
+    "url": "https:\/\/fantasyplayer.link\/non-menu\/k8s\/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF\/","datePublished": "2023-08-21T16:39:22+08:00","dateModified": "2024-03-18T11:48:36+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Aincvy"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/program/"
+                
+                
+              >Program</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/periphery/"
+                
+                
+              >Periphery</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/series/"
+                
+                
+              >Series</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/caprice/"
+                
+                
+              >Caprice</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="/images/3.jpeg" data-title="/images/3.jpeg" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/program/"
+                  
+                  
+                >Program</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/periphery/"
+                  
+                  
+                >Periphery</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/series/"
+                  
+                  
+                >Series</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/caprice/"
+                  
+                  
+                >Caprice</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  
+                  
+                >About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/non-menu/" title="Non-Menus">Non-Menus</a></li><li class="breadcrumb-item"><a href="/non-menu/k8s/" title="k8s的简要教程">k8s的简要教程</a></li><li class="breadcrumb-item active" aria-current="page">4. 持久卷的相关信息</li>
+    </ol>
+  </nav><main class="container"><article class="page single special">
+    <div class="header"><h1 class="single-title animate__animated animate__pulse animate__faster">4. 持久卷的相关信息</h1></div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>持久卷允许多个pod 读取和写入同一个文件夹。</p>
+<h2 id="基本介绍" class="heading-element">
+  <a href="#%e5%9f%ba%e6%9c%ac%e4%bb%8b%e7%bb%8d" class="heading-mark"></a>基本介绍</h2><h3 id="local-本地路径" class="heading-element">
+  <a href="#local-%e6%9c%ac%e5%9c%b0%e8%b7%af%e5%be%84" class="heading-mark"></a>local 本地路径</h3><p>local 持久卷， 官方文档： <a href="https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local"target="_blank" rel="external nofollow noopener noreferrer">https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local</a>  <br>
+使用本地的一个目录来做存储， 允许挂载到不同的pod</p>
+<p>下面看一个示例的配置文件</p>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># pv-example.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolume</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example-pv</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;test&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">capacity</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l">2Gi</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">volumeMode</span><span class="p">:</span><span class="w"> </span><span class="l">Filesystem</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">ReadWriteMany</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">persistentVolumeReclaimPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Delete</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l">local-storage</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">local</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/home/vagrant/storage1/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nodeAffinity</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">kubernetes.io/hostname</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">In</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">values</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">minikube</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>kubectl apply -f pv-example.yaml</code> 即可创建一个 local 存储。</li>
+<li><code>kubectl get pv</code>   可以查看</li>
+<li><code>spec.local.path</code>  指示了一个本地文件夹， 需要提前存在。 如果使用的是 minikube的话， 这里指示的是<strong>一个docker 容器里面的路径</strong></li>
+</ul>
+<p>访问模式有：</p>
+<ul>
+<li>ReadWriteOnce
+<ul>
+<li>卷可以被一个节点以读写方式挂载。 ReadWriteOnce 访问模式也允许运行在同一节点上的多个 Pod 访问卷。</li>
+</ul>
+</li>
+<li>ReadOnlyMany
+<ul>
+<li>卷可以被多个节点以只读方式挂载。</li>
+</ul>
+</li>
+<li>ReadWriteMany
+<ul>
+<li>卷可以被多个节点以读写方式挂载。</li>
+</ul>
+</li>
+<li>ReadWriteOncePod
+<ul>
+<li>特性状态： Kubernetes v1.27 [beta]</li>
+<li>卷可以被单个 Pod 以读写方式挂载。 如果你想确保整个集群中只有一个 Pod 可以读取或写入该 PVC， 请使用 ReadWriteOncePod 访问模式。这只支持 CSI 卷以及需要 Kubernetes 1.22 以上版本。</li>
+</ul>
+</li>
+</ul>
+<p>nodeAffinity</p>
+<ul>
+<li><code>kubernetes.io/hostname</code> 的值需要填写一个节点的 hostname，</li>
+<li>使用 <code>kubectl get node</code>  应该是可以获取到全部的节点列表。</li>
+</ul>
+<p><em>使用 <code>kubectl describe pods $POD_NAME</code>   可以查看一个POD 卡在了什么地方。</em></p>
+<h3 id="使用卷申领卷" class="heading-element">
+  <a href="#%e4%bd%bf%e7%94%a8%e5%8d%b7%e7%94%b3%e9%a2%86%e5%8d%b7" class="heading-mark"></a>使用卷/申领卷</h3><p>下面看一个示例的配置文件</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># pvc-example.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolumeClaim</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example-pvc</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">ReadWriteOnce</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">volumeMode</span><span class="p">:</span><span class="w"> </span><span class="l">Filesystem</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">requests</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l">500Mi</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l">local-storage</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;test&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>如果 填写了<code>matchExpressions</code> 那么里面的条件也必须被满足， 才会绑定到对应的卷。</li>
+<li><code>matchLabels</code> 则绑定的 <code>metadata.labels</code>  属性。</li>
+<li><code>requests.storage</code>  表示要申领的卷的大小</li>
+</ul>
+<p><strong>1个PV 只能绑定1个PVC</strong></p>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$  kubectl get pvc -o<span class="o">=</span>wide
+</span></span><span class="line"><span class="cl">NAME           STATUS    VOLUME       CAPACITY   ACCESS MODES   STORAGECLASS    AGE     VOLUMEMODE
+</span></span><span class="line"><span class="cl">example-pvc    Bound     example-pv   2Gi        RWO            local-storage   3m53s   Filesystem
+</span></span><span class="line"><span class="cl">example-pvc2   Pending                                          local-storage   23s     Filesystem</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>example-pvc2 和 example-pvc 的内容一样， 只是换了一个名字。</li>
+<li>example-pvc 的 CAPACITY 自动变成了 2Gi, 而不是申请的 500Mi, 看起来会寻找一个比申请大的持久卷。</li>
+</ul>
+<p><strong>应用PVC 到 deployment 上面去。</strong></p>
+<div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># deploy_nginx.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-deployment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">pv-nginx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">pv-nginx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">pv-nginx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:1.14.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">data1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l">/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">data1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l">example-pvc</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>关键点在 <code>volumes[].persistentVolumeClaim</code> 部分，指定了一个要绑定的名称。</p>
+<p><strong>执行命令的记录</strong></p>
+<div class="highlight" id="id-5"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ kubectl apply -f pv-example.yaml
+</span></span><span class="line"><span class="cl">persistentvolume/example-pv created
+</span></span><span class="line"><span class="cl">$ kubectl get pv
+</span></span><span class="line"><span class="cl">NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS    REASON   AGE
+</span></span><span class="line"><span class="cl">example-pv   2Gi        RWX            Delete           Bound    nginx-test/example-pvc   local-storage            7m7s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ kubectl apply -f pvc-example.yaml
+</span></span><span class="line"><span class="cl">persistentvolumeclaim/example-pvc created
+</span></span><span class="line"><span class="cl">$ kubectl get pvc
+</span></span><span class="line"><span class="cl">NAME          STATUS   VOLUME       CAPACITY   ACCESS MODES   STORAGECLASS    AGE
+</span></span><span class="line"><span class="cl">example-pvc   Bound    example-pv   2Gi        RWX            local-storage   7m11s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ kubectl apply -f deploy_nginx.yaml
+</span></span><span class="line"><span class="cl">deployment.apps/nginx-deployment created
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ kubectl get pods
+</span></span><span class="line"><span class="cl">NAME                              READY   STATUS    RESTARTS      AGE
+</span></span><span class="line"><span class="cl">nginx-deployment-7dd456d7-52zt6   1/1     Running   <span class="m">0</span>             3s
+</span></span><span class="line"><span class="cl">nginx-deployment-7dd456d7-czbvb   1/1     Running   <span class="m">0</span>             3s
+</span></span><span class="line"><span class="cl">nginx-deployment-7dd456d7-pmvdf   1/1     Running   <span class="m">0</span>             3s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="c1"># 修改 /home/vagrant/storage1/data 目录内的文件。</span>
+</span></span><span class="line"><span class="cl">$ kubectl <span class="nb">exec</span> --stdin --tty nginx-deployment-7dd456d7-czbvb -- ls /data
+</span></span><span class="line"><span class="cl">1.txt  2.txt
+</span></span><span class="line"><span class="cl">$ kubectl <span class="nb">exec</span> --stdin --tty nginx-deployment-7dd456d7-czbvb -- ls /data
+</span></span><span class="line"><span class="cl">1.txt  2.txt
+</span></span><span class="line"><span class="cl">$ kubectl <span class="nb">exec</span> --stdin --tty nginx-deployment-7dd456d7-pmvdf -- ls /data
+</span></span><span class="line"><span class="cl">1.txt  2.txt</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="nfs-网络位置" class="heading-element">
+  <a href="#nfs-%e7%bd%91%e7%bb%9c%e4%bd%8d%e7%bd%ae" class="heading-mark"></a>nfs 网络位置</h3><p>参考 镜像： <a href="https://hub.docker.com/r/erichough/nfs-server/"target="_blank" rel="external nofollow noopener noreferrer">https://hub.docker.com/r/erichough/nfs-server/</a></p>
+<p><em>TODO 待补充</em></p>
+<h3 id="了解一下-s3-是否可以挂载" class="heading-element">
+  <a href="#%e4%ba%86%e8%a7%a3%e4%b8%80%e4%b8%8b-s3-%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e6%8c%82%e8%bd%bd" class="heading-mark"></a>了解一下 S3 是否可以挂载？</h3><p><em>TODO 待补充</em></p>
+<h2 id="其他" class="heading-element">
+  <a href="#%e5%85%b6%e4%bb%96" class="heading-mark"></a>其他</h2><ul>
+<li>删除资源的时候， 应该先删除 PVC， 再删除PV。</li>
+<li>如果先尝试删除了PV， 则会提示 PV的资源已经删除， 但是命令会卡主。 当你 ctrl+c 强制结束的时候， 再次查看， PV和PVC 都是还在的。</li>
+<li>当你手动删除PVC的时候， PV 就会自动被删除。</li>
+</ul>
+<p>如果PVC 被挂载到了一个 POD， 在删除的时候就会卡主。
+所以删除顺序是</p>
+<ul>
+<li>Deploymenet/Pod</li>
+<li>PVC</li>
+<li>PV</li>
+</ul>
+<div class="highlight" id="id-6"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl delete -f pv-example.yaml
+</span></span><span class="line"><span class="cl">persistentvolume <span class="s2">&#34;example-pv&#34;</span> deleted
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>
+</span></span><span class="line"><span class="cl">^Cvagrant@bullseye:~/storage1$ kubectl delete -f pvc-example2.yaml
+</span></span><span class="line"><span class="cl">persistentvolumeclaim <span class="s2">&#34;example-pvc2&#34;</span> deleted
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl get pv
+</span></span><span class="line"><span class="cl">NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                    STORAGECLASS    REASON   AGE
+</span></span><span class="line"><span class="cl">example-pv   2Gi        RWO            Delete           Terminating   nginx-test/example-pvc   local-storage            18m
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl get pvc
+</span></span><span class="line"><span class="cl">NAME          STATUS   VOLUME       CAPACITY   ACCESS MODES   STORAGECLASS    AGE
+</span></span><span class="line"><span class="cl">example-pvc   Bound    example-pv   2Gi        RWO            local-storage   15m
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl delete -f pvc-example.yaml
+</span></span><span class="line"><span class="cl">persistentvolumeclaim <span class="s2">&#34;example-pvc&#34;</span> deleted
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl delete -f pv-example.yaml
+</span></span><span class="line"><span class="cl">Error from server <span class="o">(</span>NotFound<span class="o">)</span>: error when deleting <span class="s2">&#34;pv-example.yaml&#34;</span>: persistentvolumes <span class="s2">&#34;example-pv&#34;</span> not found
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl get pvc
+</span></span><span class="line"><span class="cl">No resources found in nginx-test namespace.
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$ kubectl get pv
+</span></span><span class="line"><span class="cl">No resources found
+</span></span><span class="line"><span class="cl">vagrant@bullseye:~/storage1$</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.ecd433bebc95088424562392dc63dd2c3c87b66d671ccae6ef1cf13b4f45d79f.css" integrity="sha256-7NQzvryVCIQkViOS3GPdLDyHtm1nHMrm7xzxO09F158="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50}};</script><script src="/js/theme.min.fabe6a4efbda44bc04c14798876c270d856beac7d25e2be33f773fb26a3fbfd5.js" integrity="sha256-+r5qTvvaRLwEwUeYh2wnDYVr6sfSXivjP3c/smo/v9U=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-P74XPSRPG3');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>
+</html>
