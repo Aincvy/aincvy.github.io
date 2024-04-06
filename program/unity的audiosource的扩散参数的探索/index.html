@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Unity里如何处理一条小河的流水音效 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Unity里如何处理一条小河的流水音效">
+<meta name="description" content="主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求" /><meta name="keywords" content='unity' /><meta itemprop="name" content="Unity里如何处理一条小河的流水音效">
 <meta itemprop="description" content="主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求"><meta itemprop="datePublished" content="2024-01-18T12:03:54+08:00" />
 <meta itemprop="dateModified" content="2024-03-18T11:48:36+08:00" />
 <meta itemprop="wordCount" content="1376"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Unity里如何处理一条小河的流水音效" />
+<meta itemprop="keywords" content="unity," /><meta property="og:title" content="Unity里如何处理一条小河的流水音效" />
 <meta property="og:description" content="主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="program" />
@@ -25,7 +25,7 @@
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" /><link rel="prev" href="https://fantasyplayer.link/program/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" /><link rel="prev" href="https://fantasyplayer.link/program/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" /><link rel="next" href="https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2\/"
-    },"genre": "posts","wordcount":  1376 ,
+    },"genre": "posts","keywords": "unity","wordcount":  1376 ,
     "url": "https:\/\/fantasyplayer.link\/program\/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2\/","datePublished": "2024-01-18T12:03:54+08:00","dateModified": "2024-03-18T11:48:36+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -274,8 +274,8 @@ normal&mdash;&mdash;-mono&mdash;&mdash;-reverse</p>
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" data-title="Unity里如何处理一条小河的流水音效" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" data-title="Unity里如何处理一条小河的流水音效" data-via="Aincvy" data-hashtags="unity"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" data-hashtag="unity"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" data-title="Unity里如何处理一条小河的流水音效" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" data-title="Unity里如何处理一条小河的流水音效"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/" data-title="Unity里如何处理一条小河的流水音效"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -287,13 +287,14 @@ normal&mdash;&mdash;-mono&mdash;&mdash;-reverse</p>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/unity/" class="post-tag" title="标签 - unity">unity</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/program/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="post-nav-item" rel="prev" title="神经网络的一些简单了解"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>神经网络的一些简单了解</a></div>
+  <div class="post-nav"><a href="/program/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="post-nav-item" rel="prev" title="神经网络的一些简单了解"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>神经网络的一些简单了解</a>
+      <a href="/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/" class="post-nav-item" rel="next" title="Simple History   Unity的选择历史工具">Simple History   Unity的选择历史工具<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.

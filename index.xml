@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Thu, 18 Jan 2024 12:03:54 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sat, 06 Apr 2024 11:31:05 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Simple History   Unity的选择历史工具</title>
+  <link>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</link>
+  <pubDate>Sat, 06 Apr 2024 11:31:05 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Unity里如何处理一条小河的流水音效</title>
   <link>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</link>
   <pubDate>Thu, 18 Jan 2024 12:03:54 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</guid>
   <description><![CDATA[主要内容 下载dll编译v8是一件很麻烦的事情，所以如果有预编译的dll就好了， 这么想着之后， 笔者就开始搜索了起来， 并且真的找到了一个可用的预]]></description>
-</item>
-<item>
-  <title>在debian11 中 安装xrdp</title>
-  <link>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</link>
-  <pubDate>Mon, 13 Nov 2023 10:46:11 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
-  <description><![CDATA[正文笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star]]></description>
 </item>
 </channel>
 </rss>
