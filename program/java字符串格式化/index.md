@@ -9,6 +9,7 @@
 - `System.out.printf()`      严格来说， 这并不是一种字符串格式化的方法。
 - `MessageFormatter.format()`
 
+## 主要内容
 
 
 ### String.format()

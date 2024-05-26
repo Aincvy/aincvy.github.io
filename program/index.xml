@@ -8,8 +8,22 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Thu, 18 Jan 2024 12:03:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 May 2024 11:46:41 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在java中使用etcd   Jetcd</title>
+      <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</link>
+      <pubDate>Sun, 26 May 2024 11:46:41 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</guid>
+      <description>主要内容 etcd 的特点 KV 数据库， github 描述为： Distributed reliable key-value store for the most critical data of a distributed system 较为轻量， 和etcd交互的时候就是 操作（查询，设置，删除，监听）一个 字符串的 键</description>
+    </item>
+    <item>
+      <title>在权重随机中使用遮罩位来实现去重</title>
+      <link>https://fantasyplayer.link/program/%E5%9C%A8%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%81%AE%E7%BD%A9%E4%BD%8D%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%87%8D/</link>
+      <pubDate>Sun, 26 May 2024 11:14:45 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/%E5%9C%A8%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%81%AE%E7%BD%A9%E4%BD%8D%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%87%8D/</guid>
+      <description>简介需求： 在权重随机中需要去重处理。 主体思想： 使用遮罩来确定某个元素是否已经被随机出来了。 笔者认为使用遮罩比起使用一个新的列表的好处是会减少</description>
+    </item>
     <item>
       <title>Unity里如何处理一条小河的流水音效</title>
       <link>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</link>
@@ -197,7 +211,7 @@
       <link>https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
       <pubDate>Mon, 11 May 2020 21:50:38 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
-      <description>简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() String.format()这是一个 较为常用的 格式</description>
+      <description>简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() 主要内容 String.format()这是一个 较为常</description>
     </item>
     <item>
       <title>利用做饭的流程来解释多线程的应用</title>
