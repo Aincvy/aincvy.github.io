@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 26 May 2024 11:46:41 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>如何在java中使用ebean</title>
+  <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
+  <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
+  <description><![CDATA[简介笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。 体验下来感觉使用上是比较方便的，但是]]></description>
+</item>
+<item>
   <title>如何在java中使用etcd   Jetcd</title>
   <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</link>
   <pubDate>Sun, 26 May 2024 11:46:41 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</guid>
   <description><![CDATA[精力 而非时间， 是高效表现的基础。 原则1 全情投入需要下面的四个要素 体能 情感 思维 意志 原则2 因为使用过度和使用不足都会削弱精力， 必须不时更新精力以]]></description>
-</item>
-<item>
-  <title>旧服务器换新碰到的问题记录</title>
-  <link>https://fantasyplayer.link/periphery/%E6%97%A7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8D%A2%E6%96%B0%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
-  <pubDate>Fri, 15 Dec 2023 18:23:13 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E6%97%A7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8D%A2%E6%96%B0%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
-  <description><![CDATA[本篇更像是一篇日记，而非博客，当成一个故事来看即可。 背景简介： 旧服务器是洋垃圾， 运行的 esxi 6.5 系统 从笔者买到现在已经跑了5年了， 基本上没出什么问]]></description>
 </item>
 </channel>
 </rss>

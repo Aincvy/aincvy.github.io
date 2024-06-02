@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/java/</link>
     <description>java - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 26 May 2024 11:46:41 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/java/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/java/" rel="self" type="application/rss+xml" /><item>
+  <title>如何在java中使用ebean</title>
+  <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
+  <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
+  <description><![CDATA[简介笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。 体验下来感觉使用上是比较方便的，但是]]></description>
+</item>
+<item>
   <title>如何在java中使用etcd   Jetcd</title>
   <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</link>
   <pubDate>Sun, 26 May 2024 11:46:41 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</guid>
   <description><![CDATA[Akka Grpc 的简单入门 简介Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。 一些快速的链接。 官方文档： https://doc.akka.io/docs/akka-grpc/current/index.html Github地址： https://github.com/akka/akka-grpc 详]]></description>
-</item>
-<item>
-  <title>Java私有类型装箱拆箱</title>
-  <link>https://fantasyplayer.link/program/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</link>
-  <pubDate>Thu, 30 Apr 2020 21:27:47 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</guid>
-  <description><![CDATA[简述在尽可能的情况下， 都应该使用 java的私有类型， 而装箱类型应该少用。 因为 装箱的类型 会占用更多的内存。 内存占用相关的内容 私有类型 装箱类型 内]]></description>
 </item>
 </channel>
 </rss>
