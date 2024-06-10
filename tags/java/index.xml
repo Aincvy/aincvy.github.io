@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/java/</link>
     <description>java - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/java/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/java/" rel="self" type="application/rss+xml" /><item>
+  <title>一种以0,0为原点的AOI九宫格的实现方式</title>
+  <link>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
+  <pubDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
+  <description><![CDATA[简述假如原点（0,0）的位置在一个角落， 比如左下角， 那么全部格子都将会在第一象限，不用考虑负数的形式， 这种做法在使用格子坐标进行遍历的时候应]]></description>
+</item>
+<item>
   <title>如何在java中使用ebean</title>
   <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
   <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
   <description><![CDATA[简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() 主要内容 String.format()这是一个 较为常]]></description>
-</item>
-<item>
-  <title>Akka Grpc的简单入门</title>
-  <link>https://fantasyplayer.link/program/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</link>
-  <pubDate>Mon, 11 May 2020 21:49:36 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/akka-grpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</guid>
-  <description><![CDATA[Akka Grpc 的简单入门 简介Akka Grpc 是一个 rpc 框架。 基于akka-http,google protobuf 构建而成。 一些快速的链接。 官方文档： https://doc.akka.io/docs/akka-grpc/current/index.html Github地址： https://github.com/akka/akka-grpc 详]]></description>
 </item>
 </channel>
 </rss>

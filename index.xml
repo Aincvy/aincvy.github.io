@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>一种以0,0为原点的AOI九宫格的实现方式</title>
+  <link>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
+  <pubDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
+  <description><![CDATA[简述假如原点（0,0）的位置在一个角落， 比如左下角， 那么全部格子都将会在第一象限，不用考虑负数的形式， 这种做法在使用格子坐标进行遍历的时候应]]></description>
+</item>
+<item>
   <title>如何在java中使用ebean</title>
   <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
   <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/periphery/%E8%AF%95%E8%AE%A8%E8%AE%BAchatgpt%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%B8%AE%E5%8A%A9%E6%96%B9%E5%90%91/</guid>
   <description><![CDATA[视频观看： https://www.bilibili.com/video/BV1SG411q7vM 本文简单的说明了几个使用chatgpt的场景， 包含了发送给chatgpt的输入提示词和chatgpt给出的响应内容。 背景介绍笔者]]></description>
-</item>
-<item>
-  <title>精力管理   书摘</title>
-  <link>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</link>
-  <pubDate>Mon, 18 Dec 2023 13:09:06 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</guid>
-  <description><![CDATA[精力 而非时间， 是高效表现的基础。 原则1 全情投入需要下面的四个要素 体能 情感 思维 意志 原则2 因为使用过度和使用不足都会削弱精力， 必须不时更新精力以]]></description>
 </item>
 </channel>
 </rss>
