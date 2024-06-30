@@ -190,7 +190,14 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2016-12-06 21:20:43"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2016-12-06">2016-12-06</time></span>&nbsp;<span title="更新于 2023-11-13 13:25:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-13">2023-11-13</time></span>&nbsp;<span title="129 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>如果一个动态库 a.so 依赖了另外一个动态库 b.so .</p>
+    </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2023-11-13，文中内容可能已过时。</div>
+      </div>
+    </div><p>如果一个动态库 a.so 依赖了另外一个动态库 b.so .</p>
 <p>那么， 当 b.so 的内容变更的时候， 可能就需要重新编译 a.so ，否则的话会产生一些无法预知，而且莫名奇妙的问题。 比如 明明代码写的是调用 b.so 内的函数 add ，在执行的时候却调用了 sub函数。 当碰到这种情况的时候， 重新编译一下a.so 库就好了。</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
