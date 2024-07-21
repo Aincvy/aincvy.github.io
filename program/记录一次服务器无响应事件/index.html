@@ -5,39 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>如何让docker在拉取镜像的时候使用代理 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+    <title>记录一次游戏服务器无响应的事件 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况" /><meta name="keywords" content='debian, docker' /><meta itemprop="name" content="如何让docker在拉取镜像的时候使用代理">
-<meta itemprop="description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况"><meta itemprop="datePublished" content="2024-06-30T12:04:51+08:00" />
-<meta itemprop="dateModified" content="2024-06-30T15:41:02+08:00" />
-<meta itemprop="wordCount" content="567"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="debian,docker," /><meta property="og:title" content="如何让docker在拉取镜像的时候使用代理" />
-<meta property="og:description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况" />
+<meta name="description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应" /><meta name="keywords" content='java' /><meta itemprop="name" content="记录一次游戏服务器无响应的事件">
+<meta itemprop="description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应"><meta itemprop="datePublished" content="2024-07-21T12:23:17+08:00" />
+<meta itemprop="dateModified" content="2024-07-21T12:23:17+08:00" />
+<meta itemprop="wordCount" content="275"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="java," /><meta property="og:title" content="记录一次游戏服务器无响应的事件" />
+<meta property="og:description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
-<meta property="article:published_time" content="2024-06-30T12:04:51+08:00" />
-<meta property="article:modified_time" content="2024-06-30T15:41:02+08:00" />
+<meta property="og:url" content="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="program" />
+<meta property="article:published_time" content="2024-07-21T12:23:17+08:00" />
+<meta property="article:modified_time" content="2024-07-21T12:23:17+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="如何让docker在拉取镜像的时候使用代理"/>
-<meta name="twitter:description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="记录一次游戏服务器无响应的事件"/>
+<meta name="twitter:description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应"/>
 <meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" /><link rel="prev" href="https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" /><link rel="next" href="https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" /><link rel="prev" href="https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/" /><link rel="next" href="https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "如何让docker在拉取镜像的时候使用代理",
+    "headline": "记录一次游戏服务器无响应的事件",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86\/"
-    },"genre": "posts","keywords": "debian, docker","wordcount":  567 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86\/","datePublished": "2024-06-30T12:04:51+08:00","dateModified": "2024-06-30T15:41:02+08:00","publisher": {
+      "@id": "https:\/\/fantasyplayer.link\/program\/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6\/"
+    },"genre": "posts","keywords": "java","wordcount":  275 ,
+    "url": "https:\/\/fantasyplayer.link\/program\/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6\/","datePublished": "2024-07-21T12:23:17+08:00","dateModified": "2024-07-21T12:23:17+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -181,109 +181,66 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/periphery/" title="Peripheries">Peripheries</a></li><li class="breadcrumb-item active" aria-current="page">如何让docker在拉取镜像的时候使用代理</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/program/" title="Programs">Programs</a></li><li class="breadcrumb-item active" aria-current="page">记录一次游戏服务器无响应的事件</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>如何让docker在拉取镜像的时候使用代理</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>记录一次游戏服务器无响应的事件</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-06-30 12:04:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-30">2024-06-30</time></span>&nbsp;<span title="更新于 2024-06-30 15:41:02"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-30">2024-06-30</time></span>&nbsp;<span title="567 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
-    </div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
-        </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#主要内容">主要内容</a></li>
-    <li><a href="#其他">其他</a>
-      <ul>
-        <li><a href="#仍然无法拉取镜像的问题">仍然无法拉取镜像的问题</a></li>
-        <li><a href="#让容器中的程序使用-http-代理">让容器中的程序使用 HTTP 代理</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-      </div><div class="content" id="content"><h2 id="主要内容" class="heading-element">
-  <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><p>在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。</p>
-<p>本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况下， 设置一下 systemctl 的配置文件就可以实现代理的目的了。</p>
-<p>在目录 <code>/usr/lib/systemd/system/docker.service.d</code> 添加一个 <code>任意名称.conf</code> 文件， 比如<code>http.conf</code>， 并添加如下内容：</p>
-<div class="highlight" id="id-1"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Service]
-</span></span><span class="line"><span class="cl">Environment=&#34;HTTP_PROXY=http://hostname_or_ip:port&#34;
-</span></span><span class="line"><span class="cl">Environment=&#34;HTTPS_PROXY=http://hostname_or_ip:port&#34;</span></span></code></pre></td></tr></table>
-</div>
-</div><p>注：</p>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-07-21 12:23:17"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-07-21">2024-07-21</time></span>&nbsp;<span title="275 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>服务器的类型是 游戏服务器， 使用TCP连接来提供服务。</p>
+<p>服务器的现象是：</p>
 <ul>
-<li>将 <code>hostname_or_ip</code> 替换成读者的代理服务器，  将 <code>port</code> 替换成读者的代理服务器端口。</li>
-<li>这个文件可能需要root权限， 所以需要使用 <code>sudo</code> 来添加。</li>
+<li>使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应， 同时没有超时处理。</li>
+<li>查看了一下 jstack：  没有线程被卡住不动。</li>
+<li>查看了一下 堆内存：  老生代占用率99.2%  新生代40%  看起来有点问题， 但是不大。</li>
 </ul>
-<p>后续步骤：</p>
-<div class="highlight" id="id-2"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reload               <span class="c1"># 来使配置文件生效。 </span>
-</span></span><span class="line"><span class="cl">sudo systemctl show --property Environment docker   <span class="c1"># 查看配置文件是否生效了</span>
-</span></span><span class="line"><span class="cl">sudo systemctl restart docker    <span class="c1"># 重启docker 服务</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>在笔者的版本中， docker 是拆分成了 docker 和 containerd,  直接重启 <code>docker</code> 的时候， 不会重启容器， 也许读者的不一样， 需要自己注意一下。</p>
-<p>这样配置之后， docker pull 的时候就会走代理去拉取镜像了。</p>
-<h2 id="其他" class="heading-element">
-  <a href="#%e5%85%b6%e4%bb%96" class="heading-mark"></a>其他</h2><h3 id="仍然无法拉取镜像的问题" class="heading-element">
-  <a href="#%e4%bb%8d%e7%84%b6%e6%97%a0%e6%b3%95%e6%8b%89%e5%8f%96%e9%95%9c%e5%83%8f%e7%9a%84%e9%97%ae%e9%a2%98" class="heading-mark"></a>仍然无法拉取镜像的问题</h3><p>笔者配置了代理之后， 碰到了仍然无法拉取镜像的问题， 一番排查之后， 笔者发现是因为代理工具自身的代理规则没有使docker 相关的域名走代理， 还是直连。  之后笔者将代理工具的模式从规则修改成全局之后 就可以了。</p>
-<h3 id="让容器中的程序使用-http-代理" class="heading-element">
-  <a href="#%e8%ae%a9%e5%ae%b9%e5%99%a8%e4%b8%ad%e7%9a%84%e7%a8%8b%e5%ba%8f%e4%bd%bf%e7%94%a8-http-%e4%bb%a3%e7%90%86" class="heading-mark"></a>让容器中的程序使用 HTTP 代理</h3><p>基本上来说，这个没有什么万能的办法。  如果容器的程序会读取环境变量， 那么就设置一下 <code>HTTP_PROXY</code> 和 <code>HTTPS_PROXY</code> 或者 设置一下<code>ALL_PROXY</code> 的环境变量即可。  可以设置在 <code>docker-compose.yaml</code> 文件里面。</p>
-<p>如果容器的程序不读这个环境变量， 就需要去查看容器的说明， 去寻找设置 proxy 的方法。</p>
+<p>重启之后 服务恢复了正常, 通过对比发现是 <a href="https://javadoc.io/static/org.apache.mina/mina-core/2.0.7/org/apache/mina/filter/executor/OrderedThreadPoolExecutor.html"target="_blank" rel="external nofollow noopener noreferrer">OrderedThreadPoolExecutor</a> 所应对的线程池消失不见了。</p>
+<ul>
+<li>参考源码：  <a href="https://github.com/eclipse-archived/neoscada/blob/master/external/org.apache.mina.core/src/org/apache/mina/filter/executor/OrderedThreadPoolExecutor.java"target="_blank" rel="external nofollow noopener noreferrer">OrderedThreadPoolExecutor.java</a></li>
+<li>这个是mina 调度io event 需要的线程池。</li>
+<li>笔者猜测：当这个线程池消失了， 我们自己的Handler 代码就不会被调用， 所以就无法处理客户端传来的消息。</li>
+<li>至于这个线程池为什么会挂掉， 笔者倒没有查出原因。</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-06-30 15:41:02">更新于 2024-06-30&nbsp;</span>
+        <span title="更新于 2024-07-21 12:23:17">更新于 2024-07-21&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理" data-via="Aincvy" data-hashtags="debian,docker"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-hashtag="debian"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" data-title="如何让docker在拉取镜像的时候使用代理"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-via="Aincvy" data-hashtags="java"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-hashtag="java"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/debian/" class="post-tag" title="标签 - debian">debian</a><a href="/tags/docker/" class="post-tag" title="标签 - docker">docker</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/java/" class="post-tag" title="标签 - java">java</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" class="post-nav-item" rel="prev" title="一种以0,0为原点的AOI九宫格的实现方式"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>一种以0,0为原点的AOI九宫格的实现方式</a>
-      <a href="/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/" class="post-nav-item" rel="next" title="使用docker 搭建searxng服务 - 一个搜索引擎聚合工具">使用docker 搭建searxng服务 - 一个搜索引擎聚合工具<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/" class="post-nav-item" rel="prev" title="使用docker 搭建searxng服务 - 一个搜索引擎聚合工具"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</a>
+      <a href="/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/" class="post-nav-item" rel="next" title="Swi Prolog的源码的略微解读">Swi Prolog的源码的略微解读<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article>
 
-  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">

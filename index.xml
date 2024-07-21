@@ -4,9 +4,25 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Swi Prolog的源码的略微解读</title>
+  <link>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</link>
+  <pubDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</guid>
+  <description><![CDATA[swi prolog 是prolog 语言的一个解释器的实现， 源码可在 https://github.com/SWI-Prolog/swipl-devel 上找到。 一些吐槽和说明： 因为刚开始实现的时候的年代比较久远，所以源码的对齐格式 笔者非常不]]></description>
+</item>
+<item>
+  <title>记录一次游戏服务器无响应的事件</title>
+  <link>https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</link>
+  <pubDate>Sun, 21 Jul 2024 12:23:17 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</guid>
+  <description><![CDATA[服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应]]></description>
+</item>
+<item>
   <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
   <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
   <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
@@ -69,22 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</guid>
   <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Unity里如何处理一条小河的流水音效</title>
-  <link>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</link>
-  <pubDate>Thu, 18 Jan 2024 12:03:54 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</guid>
-  <description><![CDATA[主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求]]></description>
-</item>
-<item>
-  <title>神经网络的一些简单了解</title>
-  <link>https://fantasyplayer.link/program/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/</link>
-  <pubDate>Wed, 17 Jan 2024 16:03:28 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/</guid>
-  <description><![CDATA[本文中的神经网络指得是包含 输入层，隐层，输出层的那种结构。 下面是笔者对神经网络的了解： 每个层都是由N个神经元组成的。 神经元由偏置和链接组成，]]></description>
 </item>
 </channel>
 </rss>

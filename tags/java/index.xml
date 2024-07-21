@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/java/</link>
     <description>java - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/java/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 21 Jul 2024 12:23:17 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/java/" rel="self" type="application/rss+xml" /><item>
+  <title>记录一次游戏服务器无响应的事件</title>
+  <link>https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</link>
+  <pubDate>Sun, 21 Jul 2024 12:23:17 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</guid>
+  <description><![CDATA[服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应]]></description>
+</item>
+<item>
   <title>一种以0,0为原点的AOI九宫格的实现方式</title>
   <link>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
   <pubDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/java8localdatetime%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</guid>
   <description><![CDATA[Java8LocalDateTime以及相关内容在Java8中，jdk包含了新的 时间API:LocalTime,LocalDate,Loca]]></description>
-</item>
-<item>
-  <title>java字符串格式化</title>
-  <link>https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
-  <pubDate>Mon, 11 May 2020 21:50:38 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
-  <description><![CDATA[简介本文主要会介绍下面几种格式化的方式。 String.format() System.out.printf() 严格来说， 这并不是一种字符串格式化的方法。 MessageFormatter.format() 主要内容 String.format()这是一个 较为常]]></description>
 </item>
 </channel>
 </rss>

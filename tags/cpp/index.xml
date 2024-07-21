@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/cpp/</link>
     <description>cpp - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+  <title>Swi Prolog的源码的略微解读</title>
+  <link>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</link>
+  <pubDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</guid>
+  <description><![CDATA[swi prolog 是prolog 语言的一个解释器的实现， 源码可在 https://github.com/SWI-Prolog/swipl-devel 上找到。 一些吐槽和说明： 因为刚开始实现的时候的年代比较久远，所以源码的对齐格式 笔者非常不]]></description>
+</item>
+<item>
   <title>在windows Cpp 开发中嵌入v8等库</title>
   <link>https://fantasyplayer.link/program/%E5%9C%A8windows-cpp-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B5%8C%E5%85%A5v8%E7%AD%89%E5%BA%93/</link>
   <pubDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
   <description><![CDATA[谷歌V8是一个用于执行js脚本的引擎。 详细内容 Isolate 一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间]]></description>
-</item>
-<item>
-  <title>Abseil 初体验</title>
-  <link>https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
-  <pubDate>Tue, 14 Sep 2021 09:26:04 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/abseil-%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-  <description><![CDATA[这是一个谷歌开源的cpp库， 包括了一些容器，字符串工具等。 Quickstart: https://abseil.io/docs/cpp/quickstart-cmake.html Github: https://github.com/abseil/abseil-cpp 这个库大概主要包括下面几个内容。 基础库 base 算法库 algorithm 容器库 container 哈希库 hash 字符串库 strings]]></description>
 </item>
 </channel>
 </rss>
