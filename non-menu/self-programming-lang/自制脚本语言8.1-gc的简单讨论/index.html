@@ -5,39 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>记录一次游戏服务器无响应的事件 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+    <title>自制脚本语言[8.1] GC的简单讨论 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应" /><meta name="keywords" content='java' /><meta itemprop="name" content="记录一次游戏服务器无响应的事件">
-<meta itemprop="description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应"><meta itemprop="datePublished" content="2024-07-21T12:23:17+08:00" />
-<meta itemprop="dateModified" content="2024-07-21T15:42:43+08:00" />
-<meta itemprop="wordCount" content="275"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="java," /><meta property="og:title" content="记录一次游戏服务器无响应的事件" />
-<meta property="og:description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应" />
+<meta name="description" content="本文为想法草稿，并没有真实实践过。 GC 简介GC就是垃圾回收器， 现代脚本语言基本上都是有GC的， 而现代编程语言中除了c/c&#43;&#43; 之外的其他大多数也" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="自制脚本语言[8.1] GC的简单讨论">
+<meta itemprop="description" content="本文为想法草稿，并没有真实实践过。 GC 简介GC就是垃圾回收器， 现代脚本语言基本上都是有GC的， 而现代编程语言中除了c/c&#43;&#43; 之外的其他大多数也"><meta itemprop="datePublished" content="2024-07-28T16:34:17+08:00" />
+<meta itemprop="dateModified" content="2024-07-28T16:34:17+08:00" />
+<meta itemprop="wordCount" content="663"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="自制脚本语言[8.1] GC的简单讨论" />
+<meta property="og:description" content="本文为想法草稿，并没有真实实践过。 GC 简介GC就是垃圾回收器， 现代脚本语言基本上都是有GC的， 而现代编程语言中除了c/c&#43;&#43; 之外的其他大多数也" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="program" />
-<meta property="article:published_time" content="2024-07-21T12:23:17+08:00" />
-<meta property="article:modified_time" content="2024-07-21T15:42:43+08:00" />
+<meta property="og:url" content="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="non-menu" />
+<meta property="article:published_time" content="2024-07-28T16:34:17+08:00" />
+<meta property="article:modified_time" content="2024-07-28T16:34:17+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="记录一次游戏服务器无响应的事件"/>
-<meta name="twitter:description" content="服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="自制脚本语言[8.1] GC的简单讨论"/>
+<meta name="twitter:description" content="本文为想法草稿，并没有真实实践过。 GC 简介GC就是垃圾回收器， 现代脚本语言基本上都是有GC的， 而现代编程语言中除了c/c&#43;&#43; 之外的其他大多数也"/>
 <meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" /><link rel="prev" href="https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/" /><link rel="next" href="https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" /><link rel="prev" href="https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "记录一次游戏服务器无响应的事件",
+    "headline": "自制脚本语言[8.1] GC的简单讨论",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/fantasyplayer.link\/program\/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6\/"
-    },"genre": "posts","keywords": "java","wordcount":  275 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6\/","datePublished": "2024-07-21T12:23:17+08:00","dateModified": "2024-07-21T15:42:43+08:00","publisher": {
+      "@id": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA\/"
+    },"genre": "posts","wordcount":  663 ,
+    "url": "https:\/\/fantasyplayer.link\/non-menu\/self-programming-lang\/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA\/","datePublished": "2024-07-28T16:34:17+08:00","dateModified": "2024-07-28T16:34:17+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -181,66 +181,112 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/program/" title="Programs">Programs</a></li><li class="breadcrumb-item active" aria-current="page">记录一次游戏服务器无响应的事件</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/non-menu/" title="Non-Menus">Non-Menus</a></li><li class="breadcrumb-item"><a href="/non-menu/self-programming-lang/" title="如何自制脚本语言">如何自制脚本语言</a></li><li class="breadcrumb-item active" aria-current="page">自制脚本语言[8.1] GC的简单讨论</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>记录一次游戏服务器无响应的事件</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>自制脚本语言[8.1] GC的简单讨论</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-07-21 12:23:17"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-07-21">2024-07-21</time></span>&nbsp;<span title="更新于 2024-07-21 15:42:43"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-07-21">2024-07-21</time></span>&nbsp;<span title="275 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>服务器的类型是 游戏服务器， 使用TCP连接来提供服务。</p>
-<p>服务器的现象是：</p>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-07-28 16:34:17"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-07-28">2024-07-28</time></span>&nbsp;<span title="663 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#gc-简介">GC 简介</a></li>
+    <li><a href="#实现方案考虑">实现方案考虑</a>
+      <ul>
+        <li><a href="#垃圾内存识别">垃圾内存识别</a></li>
+        <li><a href="#垃圾内存回收">垃圾内存回收</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><em>本文为想法草稿，并没有真实实践过。</em></p>
+<h2 id="gc-简介" class="heading-element">
+  <a href="#gc-%e7%ae%80%e4%bb%8b" class="heading-mark"></a>GC 简介</h2><p>GC就是垃圾回收器， 现代脚本语言基本上都是有GC的， 而现代编程语言中除了c/c++ 之外的其他大多数也都存在GC。</p>
+<p>GC的好处：</p>
 <ul>
-<li>使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应， 同时没有超时处理。</li>
-<li>查看了一下 jstack：  没有线程被卡住不动。</li>
-<li>查看了一下 堆内存：  老生代占用率99.2%  新生代40%  看起来有点问题， 但是不大。</li>
+<li>不需要代码编写者关注和管理内存</li>
+<li>基本上不会出现段错误的情况。</li>
 </ul>
-<p>重启之后 服务恢复了正常, 通过对比发现是 <a href="https://javadoc.io/static/org.apache.mina/mina-core/2.0.7/org/apache/mina/filter/executor/OrderedThreadPoolExecutor.html"target="_blank" rel="external nofollow noopener noreferrer">OrderedThreadPoolExecutor</a> 所应对的线程池消失不见了。</p>
+<p>GC的坏处：</p>
 <ul>
-<li>参考源码：  <a href="https://github.com/eclipse-archived/neoscada/blob/master/external/org.apache.mina.core/src/org/apache/mina/filter/executor/OrderedThreadPoolExecutor.java"target="_blank" rel="external nofollow noopener noreferrer">OrderedThreadPoolExecutor.java</a></li>
-<li>这个是mina 调度io event 需要的线程池。</li>
-<li>笔者猜测：当这个线程池消失了， 我们自己的Handler 代码就不会被调用， 所以就无法处理客户端传来的消息。</li>
-<li>至于这个线程池为什么会挂掉， 笔者倒没有查出原因。</li>
+<li>性能的降低</li>
+<li>内存占用增大</li>
 </ul>
+<h2 id="实现方案考虑" class="heading-element">
+  <a href="#%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%a1%88%e8%80%83%e8%99%91" class="heading-mark"></a>实现方案考虑</h2><p>在实现GC的时候， 基本上可以分成两个部分： 垃圾内存识别， 垃圾内存回收。</p>
+<h3 id="垃圾内存识别" class="heading-element">
+  <a href="#%e5%9e%83%e5%9c%be%e5%86%85%e5%ad%98%e8%af%86%e5%88%ab" class="heading-mark"></a>垃圾内存识别</h3><p>目前常用的方法可能有两种： 引用计数， 可达性分析。</p>
+<p>引用计数的含义是 给每个对象都添加一个引用计数的属性， 当其他对象引用了对象A的时候， A的引用计数就+1。  当引用计数为0的时候就表示对象A是一个垃圾对象， 可以进行回收。</p>
+<p>引用计数的好处是：</p>
+<ul>
+<li>实现简单</li>
+</ul>
+<p>引用计数的坏处是：</p>
+<ul>
+<li>如果垃圾对象中出现了循环引用， 则这一批对象都难以释放。</li>
+</ul>
+<p>可达性分析则是分析一个对象是否被GC Roots 引用了， 如果被引用，则说明是活跃对象， 否则是垃圾对象。 <br>
+GC Roots 可以是下面之一：</p>
+<ul>
+<li>代码区</li>
+<li>局部变量表 （程序栈）</li>
+<li>全局变量表 （包括静态对象）</li>
+<li>以及其他 。。</li>
+</ul>
+<h3 id="垃圾内存回收" class="heading-element">
+  <a href="#%e5%9e%83%e5%9c%be%e5%86%85%e5%ad%98%e5%9b%9e%e6%94%b6" class="heading-mark"></a>垃圾内存回收</h3><p>简单的实现方法就是暂停所有字节码的执行， 专注于 垃圾对象识别， 识别之后就立即回收。</p>
+<p>那么， 在何时暂停呢？  可以考虑添加线程同步点， 步骤如下：</p>
+<ul>
+<li>添加一个全局标记位 标记是否要进行GC。</li>
+<li>如果需要进行GC， 那么在线程同步点的地方， 线程将暂停， 不会执行后面的字节码。</li>
+<li>当所有线程都到达了同步点之后， 就开始GC操作， 等GC结束之后， 恢复字节码的执行。</li>
+</ul>
+<p>线程同步点的添加位置可以是函数开始执行，或者执行结束， 循环开始的时候等。</p>
+<p>更优化的方案可以是 使用异步的方式标记垃圾对象， 这样的话， 就会减少暂停的总时间。</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-07-21 15:42:43">更新于 2024-07-21&nbsp;</span>
+        <span title="更新于 2024-07-28 16:34:17">更新于 2024-07-28&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-via="Aincvy" data-hashtags="java"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-hashtag="java"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/" data-title="记录一次游戏服务器无响应的事件"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/" data-title="自制脚本语言[8.1] GC的简单讨论"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/java/" class="post-tag" title="标签 - java">java</a></section>
+    <section class="post-tags"></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/" class="post-nav-item" rel="prev" title="使用docker 搭建searxng服务 - 一个搜索引擎聚合工具"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</a>
-      <a href="/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/" class="post-nav-item" rel="next" title="Swi Prolog的源码的略微解读">Swi Prolog的源码的略微解读<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/" class="post-nav-item" rel="prev" title="Swi Prolog的源码的略微解读"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Swi Prolog的源码的略微解读</a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
       </noscript></div></article>
 
-  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
