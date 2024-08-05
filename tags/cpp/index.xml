@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/cpp/</link>
     <description>cpp - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+  <title>Msvc,cmake在cpp项目中不编译c文件的问题的处理</title>
+  <link>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</link>
+  <pubDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</guid>
+  <description><![CDATA[先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8]]></description>
+</item>
+<item>
   <title>Swi Prolog的源码的略微解读</title>
   <link>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</link>
   <pubDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
   <description><![CDATA[笔者这几天抽空读完了这本C++ Notes for Professionals book， 所以写一篇读书笔记， 记录下笔者还记得的内容。 https://goalkicker.com/CPlusPlusBook/ 这本书对于从c 转向 cpp 的读者挺有帮助的， 笔者感觉。]]></description>
-</item>
-<item>
-  <title>谷歌v8引擎的尝试</title>
-  <link>https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
-  <pubDate>Sat, 18 Sep 2021 11:45:44 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E8%B0%B7%E6%AD%8Cv8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
-  <description><![CDATA[谷歌V8是一个用于执行js脚本的引擎。 详细内容 Isolate 一个 Isolate 是一个独立的虚拟机。对应一个或多个线程。但同一时刻 只能被一个线程进入。所有的 Isolate 彼此之间]]></description>
 </item>
 </channel>
 </rss>
