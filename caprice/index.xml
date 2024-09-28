@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 16 Jan 2024 20:46:07 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2024 21:46:17 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/caprice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用yubikey实现ssh免密登录</title>
+      <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Sat, 28 Sep 2024 21:46:17 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</guid>
+      <description>简述免密登录ssh 有以下好处： 无需记忆密码 节省时间， 因为输入密码需要时间， 如果密码很长， 不小心输错了一位， 就又需要重头再来 防盗 有一部分盗号木</description>
+    </item>
     <item>
       <title>2024年1月16日失眠问题更新</title>
       <link>https://fantasyplayer.link/caprice/2024%E5%B9%B41%E6%9C%8816%E6%97%A5%E5%A4%B1%E7%9C%A0%E9%97%AE%E9%A2%98%E6%9B%B4%E6%96%B0/</link>

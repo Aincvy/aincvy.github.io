@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sat, 28 Sep 2024 21:46:17 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>使用yubikey实现ssh免密登录</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>
+  <pubDate>Sat, 28 Sep 2024 21:46:17 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</guid>
+  <description><![CDATA[简述免密登录ssh 有以下好处： 无需记忆密码 节省时间， 因为输入密码需要时间， 如果密码很长， 不小心输错了一位， 就又需要重头再来 防盗 有一部分盗号木]]></description>
+</item>
+<item>
   <title>Msvc,cmake在cpp项目中不编译c文件的问题的处理</title>
   <link>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</link>
   <pubDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</guid>
   <description><![CDATA[主要内容 etcd 的特点 KV 数据库， github 描述为： Distributed reliable key-value store for the most critical data of a distributed system 较为轻量， 和etcd交互的时候就是 操作（查询，设置，删除，监听）一个 字符串的 键]]></description>
-</item>
-<item>
-  <title>在权重随机中使用遮罩位来实现去重</title>
-  <link>https://fantasyplayer.link/program/%E5%9C%A8%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%81%AE%E7%BD%A9%E4%BD%8D%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%87%8D/</link>
-  <pubDate>Sun, 26 May 2024 11:14:45 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E5%9C%A8%E6%9D%83%E9%87%8D%E9%9A%8F%E6%9C%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%81%AE%E7%BD%A9%E4%BD%8D%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%87%8D/</guid>
-  <description><![CDATA[简介需求： 在权重随机中需要去重处理。 主体思想： 使用遮罩来确定某个元素是否已经被随机出来了。 笔者认为使用遮罩比起使用一个新的列表的好处是会减少]]></description>
 </item>
 </channel>
 </rss>
