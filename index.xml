@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sat, 28 Sep 2024 21:46:17 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>在Windows上 使用yubikey存储wireguard的私钥</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</link>
+  <pubDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</guid>
+  <description><![CDATA[简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接]]></description>
+</item>
+<item>
   <title>使用yubikey实现ssh免密登录</title>
   <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>
   <pubDate>Sat, 28 Sep 2024 21:46:17 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
   <description><![CDATA[简介笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。 体验下来感觉使用上是比较方便的，但是]]></description>
-</item>
-<item>
-  <title>如何在java中使用etcd   Jetcd</title>
-  <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</link>
-  <pubDate>Sun, 26 May 2024 11:46:41 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8etcd-jetcd/</guid>
-  <description><![CDATA[主要内容 etcd 的特点 KV 数据库， github 描述为： Distributed reliable key-value store for the most critical data of a distributed system 较为轻量， 和etcd交互的时候就是 操作（查询，设置，删除，监听）一个 字符串的 键]]></description>
 </item>
 </channel>
 </rss>

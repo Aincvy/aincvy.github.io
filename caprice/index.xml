@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sat, 28 Sep 2024 21:46:17 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2024 22:25:04 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/caprice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Windows上 使用yubikey存储wireguard的私钥</title>
+      <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</link>
+      <pubDate>Sun, 29 Sep 2024 22:25:04 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</guid>
+      <description>简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接</description>
+    </item>
     <item>
       <title>使用yubikey实现ssh免密登录</title>
       <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>
