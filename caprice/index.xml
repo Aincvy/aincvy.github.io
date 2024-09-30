@@ -8,8 +8,29 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sun, 29 Sep 2024 22:25:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2024 22:13:49 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/caprice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用yubikey对keepass数据库进行解密</title>
+      <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Mon, 30 Sep 2024 22:13:49 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</guid>
+      <description>简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的</description>
+    </item>
+    <item>
+      <title>使用yubikey 签名git提交记录</title>
+      <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 30 Sep 2024 21:50:45 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>思路就是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个开放</description>
+    </item>
+    <item>
+      <title>使用yubikey Otp 验证sudo</title>
+      <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</link>
+      <pubDate>Mon, 30 Sep 2024 21:10:15 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</guid>
+      <description>简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian</description>
+    </item>
     <item>
       <title>在Windows上 使用yubikey存储wireguard的私钥</title>
       <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</link>

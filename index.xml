@@ -4,9 +4,33 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 30 Sep 2024 22:13:49 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>使用yubikey对keepass数据库进行解密</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</link>
+  <pubDate>Mon, 30 Sep 2024 22:13:49 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</guid>
+  <description><![CDATA[简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的]]></description>
+</item>
+<item>
+  <title>使用yubikey 签名git提交记录</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Mon, 30 Sep 2024 21:50:45 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[思路就是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个开放]]></description>
+</item>
+<item>
+  <title>使用yubikey Otp 验证sudo</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</link>
+  <pubDate>Mon, 30 Sep 2024 21:10:15 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</guid>
+  <description><![CDATA[简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian]]></description>
+</item>
+<item>
   <title>在Windows上 使用yubikey存储wireguard的私钥</title>
   <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</link>
   <pubDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</pubDate>
@@ -61,30 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</guid>
   <description><![CDATA[github: https://github.com/searxng/searxng 容器的github地址： https://github.com/searxng/searxng-docker 一些不完全的文档： https://docs.searxng.org/admin/index.html 主要内容 安装使用下面的步骤来安装， 翻译自 searxng-docker 的仓库： 安装docker 从github上把仓库 克]]></description>
-</item>
-<item>
-  <title>如何让docker在拉取镜像的时候使用代理</title>
-  <link>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</link>
-  <pubDate>Sun, 30 Jun 2024 12:04:51 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</guid>
-  <description><![CDATA[主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况]]></description>
-</item>
-<item>
-  <title>一种以0,0为原点的AOI九宫格的实现方式</title>
-  <link>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
-  <pubDate>Mon, 10 Jun 2024 10:14:32 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
-  <description><![CDATA[简述假如原点（0,0）的位置在一个角落， 比如左下角， 那么全部格子都将会在第一象限，不用考虑负数的形式， 这种做法在使用格子坐标进行遍历的时候应]]></description>
-</item>
-<item>
-  <title>如何在java中使用ebean</title>
-  <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
-  <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
-  <description><![CDATA[简介笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。 体验下来感觉使用上是比较方便的，但是]]></description>
 </item>
 </channel>
 </rss>

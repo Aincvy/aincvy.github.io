@@ -5,39 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>在Windows上 使用yubikey存储wireguard的私钥 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+    <title>使用yubikey对keepass数据库进行解密 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="在Windows上 使用yubikey存储wireguard的私钥">
-<meta itemprop="description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接"><meta itemprop="datePublished" content="2024-09-29T22:25:04+08:00" />
-<meta itemprop="dateModified" content="2024-09-29T23:04:20+08:00" />
-<meta itemprop="wordCount" content="637"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="" /><meta property="og:title" content="在Windows上 使用yubikey存储wireguard的私钥" />
-<meta property="og:description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接" />
+<meta name="description" content="简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="使用yubikey对keepass数据库进行解密">
+<meta itemprop="description" content="简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的"><meta itemprop="datePublished" content="2024-09-30T22:13:49+08:00" />
+<meta itemprop="dateModified" content="2024-09-30T22:13:49+08:00" />
+<meta itemprop="wordCount" content="970"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="" /><meta property="og:title" content="使用yubikey对keepass数据库进行解密" />
+<meta property="og:description" content="简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="caprice" />
-<meta property="article:published_time" content="2024-09-29T22:25:04+08:00" />
-<meta property="article:modified_time" content="2024-09-29T23:04:20+08:00" />
+<meta property="og:url" content="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="caprice" />
+<meta property="article:published_time" content="2024-09-30T22:13:49+08:00" />
+<meta property="article:modified_time" content="2024-09-30T22:13:49+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="在Windows上 使用yubikey存储wireguard的私钥"/>
-<meta name="twitter:description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="使用yubikey对keepass数据库进行解密"/>
+<meta name="twitter:description" content="简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的"/>
 <meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" /><link rel="prev" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" /><link rel="next" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" /><link rel="prev" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "在Windows上 使用yubikey存储wireguard的私钥",
+    "headline": "使用yubikey对keepass数据库进行解密",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5\/"
-    },"genre": "posts","wordcount":  637 ,
-    "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5\/","datePublished": "2024-09-29T22:25:04+08:00","dateModified": "2024-09-29T23:04:20+08:00","publisher": {
+      "@id": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86\/"
+    },"genre": "posts","wordcount":  970 ,
+    "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86\/","datePublished": "2024-09-30T22:13:49+08:00","dateModified": "2024-09-30T22:13:49+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -181,15 +181,15 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/caprice/" title="Caprice">Caprice</a></li><li class="breadcrumb-item active" aria-current="page">在Windows上 使用yubikey存储wireguard的私钥</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/caprice/" title="Caprice">Caprice</a></li><li class="breadcrumb-item active" aria-current="page">使用yubikey对keepass数据库进行解密</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>在Windows上 使用yubikey存储wireguard的私钥</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>使用yubikey对keepass数据库进行解密</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-29 22:25:04"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-29">2024-09-29</time></span>&nbsp;<span title="更新于 2024-09-29 23:04:20"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-29">2024-09-29</time></span>&nbsp;<span title="637 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-30 22:13:49"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-30">2024-09-30</time></span>&nbsp;<span title="970 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -198,110 +198,75 @@
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#简述">简述</a></li>
-    <li><a href="#主要内容">主要内容</a></li>
-    <li><a href="#拓展阅读">拓展阅读</a></li>
+    <li><a href="#主要内容">主要内容</a>
+      <ul>
+        <li><a href="#在电脑上修改数据库的加密方式">在电脑上修改数据库的加密方式</a></li>
+        <li><a href="#在安卓手机上使用">在安卓手机上使用</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h2 id="简述" class="heading-element">
-  <a href="#%e7%ae%80%e8%bf%b0" class="heading-mark"></a>简述</h2><p>流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接口上，然后删除私钥文件。</p>
-<p><em>wg设置私钥的时候只能设置一个文件路径，不能直接使用字符串进行设置，笔者没有找到其他方法来设置私钥。虽然这样安全性会低一点，但是总体来说应该还好。</em></p>
-<p>想要实现这个目的涉及到的操作有：</p>
+  <a href="#%e7%ae%80%e8%bf%b0" class="heading-mark"></a>简述</h2><p>使用yubikey 对keepass进行解密的方式有下面几种：</p>
 <ul>
-<li>修改系统注册表</li>
-<li>wireguard windows</li>
-<li>ykman， 这个可以从yubikey的官网上下载</li>
-</ul>
-<h2 id="主要内容" class="heading-element">
-  <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><ul>
-<li>将正确的私钥写入 yubikey
+<li>使用静态密码
 <ul>
-<li>将私钥写入文件 ./tmp.txt  使用ANSI编码</li>
-<li>使用命令 <code>ykman piv objects import 0x5fc106 ./tmp.txt</code>  来写入密钥到yubikey里面</li>
-<li>删除 ./tmp.txt 文件</li>
+<li>可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的静态密码</li>
 </ul>
 </li>
-<li>准备一份可以正常链接到服务器的wireguard配置文件</li>
-<li>准备下方的 bat 文件， 可以命名成 ./set_private_key.bat</li>
-<li>使用命令 <code>wg genkey</code>  生成一个占位私钥</li>
-<li>修改wireguard配置文件 使用占位私钥替换掉正确的私钥， 添加新的选项 <code>PostUp = ./set_private_key.bat</code></li>
-</ul>
-<p>bat文件示例和解释：</p>
-<div class="highlight" id="id-1"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bat" data-lang="bat"><span class="line"><span class="cl"><span class="p">@</span><span class="k">echo</span> off
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">set</span> <span class="s2">&#34;wireguard_exe=C:\Program Files\WireGuard\wg.exe&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="c1">REM 文件名是随机生成的128个字符，这样用于避免文件冲突</span>
-</span></span><span class="line"><span class="cl"><span class="k">set</span> <span class="s2">&#34;private_key_file=</span><span class="nv">%tmp%</span><span class="s2">\HdBNzfQpu035yaa11OLu4VNibm8UeFYZBt9A15oDXwxgAfVKc71D4Bl1Dc1GP1nPYJF9nrGYfF4upWn2FSTfwT8GLCKTslA9gKOdTammvDPPWjxwKEW7xvBrHdKjV0fH.txt&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="c1">REM 删除文件，以防存在</span>
-</span></span><span class="line"><span class="cl"><span class="k">del</span> /q <span class="nv">%private_key_file%</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="c1">REM  写入私钥到临时文件</span>
-</span></span><span class="line"><span class="cl">ykman piv objects export 0x5fc106 <span class="s2">&#34;</span><span class="nv">%private_key_file%</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="c1">REM 设置私钥</span>
-</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">%wireguard_exe%</span><span class="s2">&#34;</span> set _name private-key <span class="s2">&#34;</span><span class="nv">%private_key_file%</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="c1">REM 使用结束，删除文件</span>
-</span></span><span class="line"><span class="cl"><span class="k">del</span> /q <span class="s2">&#34;</span><span class="nv">%private_key_file%</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="k">errorlevel</span> <span class="mi">1</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="k">echo</span> 删除文件失败
-</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>注意， _name 需要替换成自己的wireguard接口名字。</p>
-<p>现在需要修改注册表：</p>
+<li>使用 yubikey的挑战-响应机制</li>
+<li>使用 yubikey的 HOTP 功能
 <ul>
-<li>使用管理员模式打开一个cmd.exe 窗口</li>
-<li>执行命令：  <code>reg add HKLM\Software\WireGuard /v DangerousScriptExecution /t REG_DWORD /d 1 /f</code></li>
-<li>如果不添加的话， PostUp脚本会不允许执行</li>
+<li>如果 HOTP功能设置给了keepass， 那么这个HOTP 就只能给keepass使用， 因为HOTP是基于次数的， 如果客户端和服务器的次数相差过大， 可能两者都需要进行一个重置操作。</li>
 </ul>
-<p>使用这种方式的时候不会要求输入yubikey的PIN， 只要插入yubikey就可以正常连接到服务器。</p>
-<h2 id="拓展阅读" class="heading-element">
-  <a href="#%e6%8b%93%e5%b1%95%e9%98%85%e8%af%bb" class="heading-mark"></a>拓展阅读</h2><ul>
-<li><a href="https://developers.yubico.com/yubico-piv-tool/Actions/read_write_objects.html"target="_blank" rel="external nofollow noopener noreferrer">https://developers.yubico.com/yubico-piv-tool/Actions/read_write_objects.html</a></li>
-<li><a href="https://kmg.group/posts/2021-10-05-store-wireguard-private-key-on-yubikey/"target="_blank" rel="external nofollow noopener noreferrer">https://kmg.group/posts/2021-10-05-store-wireguard-private-key-on-yubikey/</a></li>
+</li>
+</ul>
+<h2 id="主要内容" class="heading-element">
+  <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><p><strong>本文使用的是挑战-响应(Challenge-Response)机制。</strong></p>
+<h3 id="在电脑上修改数据库的加密方式" class="heading-element">
+  <a href="#%e5%9c%a8%e7%94%b5%e8%84%91%e4%b8%8a%e4%bf%ae%e6%94%b9%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%8a%a0%e5%af%86%e6%96%b9%e5%bc%8f" class="heading-mark"></a>在电脑上修改数据库的加密方式</h3><p>建议下载 <a href="https://www.yubico.com/products/yubico-authenticator/"target="_blank" rel="external nofollow noopener noreferrer">https://www.yubico.com/products/yubico-authenticator/</a>  这个工具， 因为笔者发现这个工具除了能显示 TOTP的验证码之外， 也能对yubikey进行设置。  而 yubikey manager 只能对 yubikey进行设置，  无法查看TOTP。 yubikey personalization tool 笔者没有尝试过，但是听说很难操作。</p>
+<p>默认情况下 yubikey的 slot 1是 yubico OTP, 那么我们可以把slot 2配置成 挑战-响应机制。在配置的过程中，需要输入一个密钥， 建议直接生成， 然后将密钥复制出来以作备份。   如果有2个yubikey， 则可以将密钥写入第二个yubikey里面。 如果没有的话，则可以密钥存放在一个安全的地方上。</p>
+<p>在 keepass的选择则有些困难， 原因如下：</p>
+<ul>
+<li>原生的keepass 不支持 挑战-响应模式，需要使用一个第三方插件，而这个第三方插件已经好几年没人维护了。</li>
+<li>keepassXC支持 挑战-响应模式， 但是自身不支持 webdav读取数据库</li>
+</ul>
+<p>在多次斟酌之后， 笔者还是选择了 keepassXC来完成这个操作。</p>
+<ul>
+<li>使用keepassXC打开现存数据库文件， 或者新建一个数据库</li>
+<li><code>数据库 / 数据库安全 / 质询响应</code>  应该是添加质询响应， 如果原本数据库使用了一个额外的文档进行加密， 则质询响应的添加可能在密钥文件区域内。</li>
+<li>添加了质询响应之后， 可以考虑将密码修改成一个不是常见的短密码， 比如4位的</li>
+</ul>
+<p>在添加了挑战响应的验证之后， 每次数据库的打开和保存都需要验证一次。</p>
+<h3 id="在安卓手机上使用" class="heading-element">
+  <a href="#%e5%9c%a8%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e4%b8%8a%e4%bd%bf%e7%94%a8" class="heading-mark"></a>在安卓手机上使用</h3><p>笔者使用的是 keepass2android 这个工具：  <a href="https://github.com/PhilippC/keepass2android"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/PhilippC/keepass2android</a></p>
+<p>在使用 yubikey的挑战-响应模式的时候， 还需要安装一个额外的工具ykDroid：  <a href="https://github.com/pp3345/ykDroid"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/pp3345/ykDroid</a></p>
+<p>在 keepass2android 尝试解锁的时候，先输入密码， 然后点击解锁， 会要求你插入yubikey 或者 NFC 读取一下。</p>
+<p>如果使用静态密码的话， keepass2android 可以用指纹解锁， 无需输入密码， 但是使用挑战响应模式的时候， 就算设置了指纹解锁， 在指纹之后仍然需要yubikey。</p>
+<p>参考阅读：</p>
+<ul>
+<li><a href="https://keepass.info/help/kb/yubikey.html"target="_blank" rel="external nofollow noopener noreferrer">https://keepass.info/help/kb/yubikey.html</a></li>
+<li><a href="https://support.yubico.com/hc/en-us/articles/360013779759-Using-Your-YubiKey-with-KeePass"target="_blank" rel="external nofollow noopener noreferrer">https://support.yubico.com/hc/en-us/articles/360013779759-Using-Your-YubiKey-with-KeePass</a></li>
+<li><a href="https://www.yubico.com/works-with-yubikey/catalog/keepass/"target="_blank" rel="external nofollow noopener noreferrer">https://www.yubico.com/works-with-yubikey/catalog/keepass/</a></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-09-29 23:04:20">更新于 2024-09-29&nbsp;</span>
+        <span title="更新于 2024-09-30 22:13:49">更新于 2024-09-30&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" data-title="在Windows上 使用yubikey存储wireguard的私钥"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" data-title="使用yubikey对keepass数据库进行解密"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -313,8 +278,7 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" class="post-nav-item" rel="prev" title="使用yubikey实现ssh免密登录"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用yubikey实现ssh免密登录</a>
-      <a href="/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" class="post-nav-item" rel="next" title="使用yubikey Otp 验证sudo">使用yubikey Otp 验证sudo<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="prev" title="使用yubikey 签名git提交记录"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用yubikey 签名git提交记录</a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
