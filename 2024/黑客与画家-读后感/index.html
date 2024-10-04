@@ -5,39 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>使用yubikey 签名git提交记录 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
+    <title>黑客与画家   读后感 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="使用yubikey 签名git提交记录">
-<meta itemprop="description" content="实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个"><meta itemprop="datePublished" content="2024-09-30T21:50:45+08:00" />
-<meta itemprop="dateModified" content="2024-10-04T16:15:20+08:00" />
-<meta itemprop="wordCount" content="244"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="" /><meta property="og:title" content="使用yubikey 签名git提交记录" />
-<meta property="og:description" content="实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个" />
+<meta name="description" content="本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。 学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。 学校和监狱是有类似氛" /><meta name="keywords" content='book' /><meta itemprop="name" content="黑客与画家   读后感">
+<meta itemprop="description" content="本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。 学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。 学校和监狱是有类似氛"><meta itemprop="datePublished" content="2024-10-04T16:16:39+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T16:16:39+08:00" />
+<meta itemprop="wordCount" content="667"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="keywords" content="book," /><meta property="og:title" content="黑客与画家   读后感" />
+<meta property="og:description" content="本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。 学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。 学校和监狱是有类似氛" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="caprice" />
-<meta property="article:published_time" content="2024-09-30T21:50:45+08:00" />
-<meta property="article:modified_time" content="2024-10-04T16:15:20+08:00" />
+<meta property="og:url" content="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-04T16:16:39+08:00" />
+<meta property="article:modified_time" content="2024-10-04T16:16:39+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="使用yubikey 签名git提交记录"/>
-<meta name="twitter:description" content="实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个"/>
+<meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="黑客与画家   读后感"/>
+<meta name="twitter:description" content="本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。 学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。 学校和监狱是有类似氛"/>
 <meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" /><link rel="prev" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" /><link rel="next" href="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" /><link rel="prev" href="https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/" /><link rel="stylesheet" href="/css/style.min.bcfcda859404da63a5335a19f2a22cdfe6ba98f231ff15c25fce3d4021d7511b.css" integrity="sha256-vPzahZQE2mOlM1oZ8qIs3+a6mPIx/xXCX849QCHXURs="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "使用yubikey 签名git提交记录",
+    "headline": "黑客与画家   读后感",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95\/"
-    },"genre": "posts","wordcount":  244 ,
-    "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95\/","datePublished": "2024-09-30T21:50:45+08:00","dateModified": "2024-10-04T16:15:20+08:00","publisher": {
+      "@id": "https:\/\/fantasyplayer.link\/2024\/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F\/"
+    },"genre": "posts","keywords": "book","wordcount":  667 ,
+    "url": "https:\/\/fantasyplayer.link\/2024\/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F\/","datePublished": "2024-10-04T16:16:39+08:00","dateModified": "2024-10-04T16:16:39+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -181,62 +181,59 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/caprice/" title="Caprice">Caprice</a></li><li class="breadcrumb-item active" aria-current="page">使用yubikey 签名git提交记录</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">黑客与画家   读后感</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>使用yubikey 签名git提交记录</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>黑客与画家   读后感</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-30 21:50:45"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-30">2024-09-30</time></span>&nbsp;<span title="更新于 2024-10-04 16:15:20"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="244 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。</p>
-<p>先说明一下 GPG(GunPG) 和 OpenPGP 的关联：</p>
-<blockquote>
-<ol>
-<li>OpenPGP 是一个标准: OpenPGP 是一个开放的加密标准,定义了加密、签名、密钥管理等功能的规范。</li>
-<li>GPG 是 OpenPGP 的实现: GPG 是 OpenPGP 标准的一个具体实现,它遵循 OpenPGP 的规范。</li>
-<li>兼容性: 由于 GPG 遵循 OpenPGP 标准,它可以与其他遵循该标准的软件进行互操作。</li>
-</ol>
-</blockquote>
-<p>从网址 <a href="https://gpg4win.org/get-gpg4win.html"target="_blank" rel="external nofollow noopener noreferrer">https://gpg4win.org/get-gpg4win.html</a>  上下载软件， 有钱的话 可以捐赠一下， 没钱可以选择 捐赠0元。</p>
-<p>参考文章 <a href="https://chenhe.me/post/yubikey-starting-gpg"target="_blank" rel="external nofollow noopener noreferrer">https://chenhe.me/post/yubikey-starting-gpg</a>  创建主密钥， 子密钥， 上传公钥到Github等。</p>
-<p><em>笔者不建议给全部历史提交进行签名。</em></p>
-<p>其他参考阅读：</p>
-<ul>
-<li><a href="https://github.com/drduh/YubiKey-Guide?tab=readme-ov-file"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/drduh/YubiKey-Guide?tab=readme-ov-file</a></li>
-</ul>
+      Aincvy</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/book/" class="post-category" title="分类 - book"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> book</a></span></div><div class="post-meta-line"><span title="发布于 2024-10-04 16:16:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="667 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p><em>本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。</em></p>
+<p>学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。</p>
+<p>学校和监狱是有类似氛围的场所， 因为学生自身的能力和技术并不会直接对他们产生正向效用。 如果在社会上，技术高超的人会获取更多的报酬。报酬的多少可以直接影响一个人的各个方面， 而学生却不会感受到这种东西。</p>
+<p>如果你想抨击某人， 那就给他贴上标签把。</p>
+<p>你可以在你的大脑里面进行各种思想， 但是不要说出去。</p>
+<p>如果你想快速致富， 就去创业。   创业是要在1年内完成别人三年的工作。</p>
+<p>金钱是一种媒介，金钱本身并不是一种财富，财富是人们需要的东西。  当你修好了自家坏掉的拖拉机的时候， 你就创造了财富。</p>
+<p>如果你不努力， 你就会取得平均水平的结果， 而创业公司的平均水平就是倒闭关门。</p>
+<p>当客户第一次提出某种意见的时候，不予理会， 只有客户第三次，第四次提出意见的时候，才会给予支持和实现， 因为客户很可能也不知道自己想要什么。</p>
+<p>贫富差距随着社会发展正在越来越大，但是总体来说现代的穷人也是会享受一些社会发展的成果的。  比如古代的皇帝无论如何也无法享受到高铁动车的便利， 更何况冰箱空调等基本家用电器。</p>
+<p>我们选取最困难的方法来实现我们的想法， 因为这样可以在一定程度上提高竞争对手复制我们功能的代价。 如果某些功能我们有， 他们没有， 那么我们就有了优势。</p>
+<p>壁垒是一件很重要的事情。</p>
+<p>不同编程语言的比较是看特性的， 比如语言A支持闭包，递归， 但是语言B不支持，那么语言A就具备了语言B不具有的特性， 就可以实现一些更高级的功能。  <em>笔者注：现代编程语言的特性应该都差不太多了。</em></p>
+<p>好的设计就是简单的设计。</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-10-04 16:15:20">更新于 2024-10-04&nbsp;</span>
+        <span title="更新于 2024-10-04 16:16:39">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" data-title="使用yubikey 签名git提交记录"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感" data-via="Aincvy" data-hashtags="book"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-hashtag="book"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/" data-title="黑客与画家   读后感"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/book/" class="post-tag" title="标签 - book">book</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" class="post-nav-item" rel="prev" title="使用yubikey Otp 验证sudo"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用yubikey Otp 验证sudo</a>
-      <a href="/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/" class="post-nav-item" rel="next" title="使用yubikey对keepass数据库进行解密">使用yubikey对keepass数据库进行解密<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/" class="post-nav-item" rel="prev" title="在linux里面安装homebrew"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>在linux里面安装homebrew</a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.

@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Docker Compose的项目机制">
 <meta itemprop="description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了"><meta itemprop="datePublished" content="2024-10-04T14:00:56+08:00" />
-<meta itemprop="dateModified" content="2024-10-04T14:00:56+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T16:15:20+08:00" />
 <meta itemprop="wordCount" content="334"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Docker Compose的项目机制" />
 <meta property="og:description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
 <meta property="article:published_time" content="2024-10-04T14:00:56+08:00" />
-<meta property="article:modified_time" content="2024-10-04T14:00:56+08:00" />
+<meta property="article:modified_time" content="2024-10-04T16:15:20+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="Docker Compose的项目机制"/>
@@ -37,7 +37,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6\/"
     },"genre": "posts","wordcount":  334 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6\/","datePublished": "2024-10-04T14:00:56+08:00","dateModified": "2024-10-04T14:00:56+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/periphery\/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6\/","datePublished": "2024-10-04T14:00:56+08:00","dateModified": "2024-10-04T16:15:20+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Docker Compose的项目机制</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-10-04 14:00:56"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="334 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-10-04 14:00:56"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="更新于 2024-10-04 16:15:20"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="334 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
     </div><div class="content" id="content"><p>docker compose 存在一个项目机制， 官方文档参考： <a href="https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name"target="_blank" rel="external nofollow noopener noreferrer">https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name</a></p>
 <p>项目名称的遵从下面的顺序来设置：</p>
 <ul>
@@ -205,7 +205,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-10-04 14:00:56">更新于 2024-10-04&nbsp;</span>
+        <span title="更新于 2024-10-04 16:15:20">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

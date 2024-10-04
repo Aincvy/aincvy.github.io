@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 14:20:48 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:16:39 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>黑客与画家   读后感</title>
+  <link>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+  <pubDate>Fri, 04 Oct 2024 16:16:39 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+  <description><![CDATA[本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。 学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。 学校和监狱是有类似氛]]></description>
+</item>
+<item>
   <title>在linux里面安装homebrew</title>
   <link>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</link>
   <pubDate>Fri, 04 Oct 2024 14:20:48 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</guid>
   <description><![CDATA[简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上]]></description>
-</item>
-<item>
-  <title>使用yubikey实现ssh免密登录</title>
-  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>
-  <pubDate>Sat, 28 Sep 2024 21:46:17 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</guid>
-  <description><![CDATA[简述免密登录ssh 有以下好处： 无需记忆密码 节省时间， 因为输入密码需要时间， 如果密码很长， 不小心输错了一位， 就又需要重头再来 防盗 有一部分盗号木]]></description>
 </item>
 </channel>
 </rss>
