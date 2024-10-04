@@ -7,12 +7,12 @@
     <meta name="robots" content="noodp" />
     <title>在Windows上 使用yubikey存储wireguard的私钥 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="在Windows上 使用yubikey存储wireguard的私钥">
-<meta itemprop="description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接"><meta itemprop="datePublished" content="2024-09-29T22:25:04+08:00" />
+<meta name="description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="在Windows上 使用yubikey存储wireguard的私钥">
+<meta itemprop="description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上"><meta itemprop="datePublished" content="2024-09-29T22:25:04+08:00" />
 <meta itemprop="dateModified" content="2024-09-29T23:04:20+08:00" />
-<meta itemprop="wordCount" content="637"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta itemprop="wordCount" content="673"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="" /><meta property="og:title" content="在Windows上 使用yubikey存储wireguard的私钥" />
-<meta property="og:description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接" />
+<meta property="og:description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="caprice" />
 <meta property="article:published_time" content="2024-09-29T22:25:04+08:00" />
@@ -20,7 +20,7 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="在Windows上 使用yubikey存储wireguard的私钥"/>
-<meta name="twitter:description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接"/>
+<meta name="twitter:description" content="简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上"/>
 <meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5\/"
-    },"genre": "posts","wordcount":  637 ,
+    },"genre": "posts","wordcount":  673 ,
     "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5\/","datePublished": "2024-09-29T22:25:04+08:00","dateModified": "2024-09-29T23:04:20+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>在Windows上 使用yubikey存储wireguard的私钥</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-29 22:25:04"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-29">2024-09-29</time></span>&nbsp;<span title="更新于 2024-09-29 23:04:20"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-29">2024-09-29</time></span>&nbsp;<span title="637 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-29 22:25:04"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-29">2024-09-29</time></span>&nbsp;<span title="更新于 2024-09-29 23:04:20"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-29">2024-09-29</time></span>&nbsp;<span title="673 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -203,7 +203,7 @@
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h2 id="简述" class="heading-element">
-  <a href="#%e7%ae%80%e8%bf%b0" class="heading-mark"></a>简述</h2><p>流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接口上，然后删除私钥文件。</p>
+  <a href="#%e7%ae%80%e8%bf%b0" class="heading-mark"></a>简述</h2><p>流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上，然后删除私钥文件。</p>
 <p><em>wg设置私钥的时候只能设置一个文件路径，不能直接使用字符串进行设置，笔者没有找到其他方法来设置私钥。虽然这样安全性会低一点，但是总体来说应该还好。</em></p>
 <p>想要实现这个目的涉及到的操作有：</p>
 <ul>
@@ -215,7 +215,7 @@
   <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><ul>
 <li>将正确的私钥写入 yubikey
 <ul>
-<li>将私钥写入文件 ./tmp.txt  使用ANSI编码</li>
+<li>将私钥写入文件 ./tmp.txt中，需要使用ANSI编码。</li>
 <li>使用命令 <code>ykman piv objects import 0x5fc106 ./tmp.txt</code>  来写入密钥到yubikey里面</li>
 <li>删除 ./tmp.txt 文件</li>
 </ul>
@@ -223,7 +223,7 @@
 <li>准备一份可以正常链接到服务器的wireguard配置文件</li>
 <li>准备下方的 bat 文件， 可以命名成 ./set_private_key.bat</li>
 <li>使用命令 <code>wg genkey</code>  生成一个占位私钥</li>
-<li>修改wireguard配置文件 使用占位私钥替换掉正确的私钥， 添加新的选项 <code>PostUp = ./set_private_key.bat</code></li>
+<li>修改wireguard配置文件 使用占位私钥替换掉正确的私钥， 添加新的选项 <code>PostUp = [set_private_key.bat的绝对路径]</code></li>
 </ul>
 <p>bat文件示例和解释：</p>
 <div class="highlight" id="id-1"><div class="chroma">

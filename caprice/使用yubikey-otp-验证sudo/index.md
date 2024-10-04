@@ -14,6 +14,15 @@
 
 ### 安装 Yubico PAM 模块
 
+由于 yubico pam 模块并没有提供debian 的软件安装包， 所以需要去ubuntu 的仓库里面拉取安装包。
+
+ubuntu 的官方安装指令是 
+```bash
+sudo add-apt-repository ppa:yubico/stable
+sudo apt-get update
+sudo apt-get install libpam-yubico
+```
+
 首先确认一下 Debian系统的版本。 
 
 ```bash
@@ -29,22 +38,13 @@ trixie/sid
 
 Codename 是 Debian 系统的版本， 在本示例中是 trixie 。
 
-由于 yubico pam 模块并没有提供debian 的软件安装包， 所以需要去ubuntu 的仓库里面拉取安装包。
-
-ubuntu 的官方安装指令是 
-```bash
-sudo add-apt-repository ppa:yubico/stable
-sudo apt-get update
-sudo apt-get install libpam-yubico
-```
-
-- 先确定对应的ubuntu版本是什么， 可以参考网址：　https://askubuntu.com/a/445496/1701779
+- 先确定对应的ubuntu版本是什么， 可以参考网址：　[https://askubuntu.com/a/445496/1701779](https://askubuntu.com/a/445496/1701779)
 - 由上面的表格可知， trixie对应的是 ubuntu 24.04 LTS  版本
 - 打开网址  https://launchpad.net/~yubico/&#43;archive/ubuntu/stable
   - 点一下 `Technical details about this PPA`    会将一个隐藏的区域显示出来。
   - 在 `Choose your ubuntu version` 的地方选择 24.04  
   - 导入公钥：　`sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 990BD85D1C4F411ABC0ECE8DFA4EC8F2EE58CE0B`
-    - `Signing key` 下面的部分， 去掉前面的 `4096R/` 和最后的 `(What is this?)` 之后得到的中间部分就是ID
+    - 公钥ID在页面中 `Signing key` 下面的部分， 去掉前面的 `4096R/` 和最后的 `(What is this?)` 之后得到的中间部分就是ID
   - 添加 仓库：  `sudo add-apt-repository -S &#34;deb https://ppa.launchpadcontent.net/yubico/stable/ubuntu noble main&#34;`
     - 如果提示 add-apt-repository command not found， 则使用命令 `apt install add-apt-repository` 来安装
   - 接下面就是简单的 `sudo apt-get update &amp;&amp; sudo apt-get install libpam-yubico` 即可

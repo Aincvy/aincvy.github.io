@@ -7,20 +7,20 @@
     <meta name="robots" content="noodp" />
     <title>使用yubikey Otp 验证sudo - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="使用yubikey Otp 验证sudo">
-<meta itemprop="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian"><meta itemprop="datePublished" content="2024-09-30T21:10:15+08:00" />
-<meta itemprop="dateModified" content="2024-09-30T21:10:15+08:00" />
-<meta itemprop="wordCount" content="648"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
+<meta name="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="使用yubikey Otp 验证sudo">
+<meta itemprop="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d"><meta itemprop="datePublished" content="2024-09-30T21:10:15+08:00" />
+<meta itemprop="dateModified" content="2024-09-30T22:57:13+08:00" />
+<meta itemprop="wordCount" content="656"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="" /><meta property="og:title" content="使用yubikey Otp 验证sudo" />
-<meta property="og:description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian" />
+<meta property="og:description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="caprice" />
 <meta property="article:published_time" content="2024-09-30T21:10:15+08:00" />
-<meta property="article:modified_time" content="2024-09-30T21:10:15+08:00" />
+<meta property="article:modified_time" content="2024-09-30T22:57:13+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="使用yubikey Otp 验证sudo"/>
-<meta name="twitter:description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian"/>
+<meta name="twitter:description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d"/>
 <meta name="twitter:site" content="@Aincvy"/>
 <meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -36,8 +36,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo\/"
-    },"genre": "posts","wordcount":  648 ,
-    "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo\/","datePublished": "2024-09-30T21:10:15+08:00","dateModified": "2024-09-30T21:10:15+08:00","publisher": {
+    },"genre": "posts","wordcount":  656 ,
+    "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo\/","datePublished": "2024-09-30T21:10:15+08:00","dateModified": "2024-09-30T22:57:13+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>使用yubikey Otp 验证sudo</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-30 21:10:15"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-30">2024-09-30</time></span>&nbsp;<span title="648 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-09-30 21:10:15"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-30">2024-09-30</time></span>&nbsp;<span title="更新于 2024-09-30 22:57:13"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-30">2024-09-30</time></span>&nbsp;<span title="656 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -213,8 +213,21 @@
 <h2 id="主要内容" class="heading-element">
   <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark"></a>主要内容</h2><p>笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。</p>
 <h3 id="安装-yubico-pam-模块" class="heading-element">
-  <a href="#%e5%ae%89%e8%a3%85-yubico-pam-%e6%a8%a1%e5%9d%97" class="heading-mark"></a>安装 Yubico PAM 模块</h3><p>首先确认一下 Debian系统的版本。</p>
+  <a href="#%e5%ae%89%e8%a3%85-yubico-pam-%e6%a8%a1%e5%9d%97" class="heading-mark"></a>安装 Yubico PAM 模块</h3><p>由于 yubico pam 模块并没有提供debian 的软件安装包， 所以需要去ubuntu 的仓库里面拉取安装包。</p>
+<p>ubuntu 的官方安装指令是</p>
 <div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository ppa:yubico/stable
+</span></span><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install libpam-yubico</span></span></code></pre></td></tr></table>
+</div>
+</div><p>首先确认一下 Debian系统的版本。</p>
+<div class="highlight" id="id-2"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -236,21 +249,8 @@
 </span></span><span class="line"><span class="cl">trixie/sid</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Codename 是 Debian 系统的版本， 在本示例中是 trixie 。</p>
-<p>由于 yubico pam 模块并没有提供debian 的软件安装包， 所以需要去ubuntu 的仓库里面拉取安装包。</p>
-<p>ubuntu 的官方安装指令是</p>
-<div class="highlight" id="id-2"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository ppa:yubico/stable
-</span></span><span class="line"><span class="cl">sudo apt-get update
-</span></span><span class="line"><span class="cl">sudo apt-get install libpam-yubico</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>先确定对应的ubuntu版本是什么， 可以参考网址：　https://askubuntu.com/a/445496/1701779</li>
+<ul>
+<li>先确定对应的ubuntu版本是什么， 可以参考网址：　<a href="https://askubuntu.com/a/445496/1701779"target="_blank" rel="external nofollow noopener noreferrer">https://askubuntu.com/a/445496/1701779</a></li>
 <li>由上面的表格可知， trixie对应的是 ubuntu 24.04 LTS  版本</li>
 <li>打开网址  <a href="https://launchpad.net/~yubico/&#43;archive/ubuntu/stable"target="_blank" rel="external nofollow noopener noreferrer">https://launchpad.net/~yubico/+archive/ubuntu/stable</a>
 <ul>
@@ -258,7 +258,7 @@
 <li>在 <code>Choose your ubuntu version</code> 的地方选择 24.04</li>
 <li>导入公钥：　<code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 990BD85D1C4F411ABC0ECE8DFA4EC8F2EE58CE0B</code>
 <ul>
-<li><code>Signing key</code> 下面的部分， 去掉前面的 <code>4096R/</code> 和最后的 <code>(What is this?)</code> 之后得到的中间部分就是ID</li>
+<li>公钥ID在页面中 <code>Signing key</code> 下面的部分， 去掉前面的 <code>4096R/</code> 和最后的 <code>(What is this?)</code> 之后得到的中间部分就是ID</li>
 </ul>
 </li>
 <li>添加 仓库：  <code>sudo add-apt-repository -S &quot;deb https://ppa.launchpadcontent.net/yubico/stable/ubuntu noble main&quot;</code>
@@ -309,7 +309,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-09-30 21:10:15">更新于 2024-09-30&nbsp;</span>
+        <span title="更新于 2024-09-30 22:57:13">更新于 2024-09-30&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

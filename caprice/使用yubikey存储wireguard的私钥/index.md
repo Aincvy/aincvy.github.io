@@ -3,7 +3,7 @@
 
 ## 简述
 
-流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接口上，然后删除私钥文件。
+流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上，然后删除私钥文件。
 
 *wg设置私钥的时候只能设置一个文件路径，不能直接使用字符串进行设置，笔者没有找到其他方法来设置私钥。虽然这样安全性会低一点，但是总体来说应该还好。*
 
@@ -15,13 +15,13 @@
 ## 主要内容
 
 - 将正确的私钥写入 yubikey 
-  - 将私钥写入文件 ./tmp.txt  使用ANSI编码
+  - 将私钥写入文件 ./tmp.txt中，需要使用ANSI编码。
   - 使用命令 `ykman piv objects import 0x5fc106 ./tmp.txt`  来写入密钥到yubikey里面
   - 删除 ./tmp.txt 文件
 - 准备一份可以正常链接到服务器的wireguard配置文件
 - 准备下方的 bat 文件， 可以命名成 ./set_private_key.bat
 - 使用命令 `wg genkey`  生成一个占位私钥
-- 修改wireguard配置文件 使用占位私钥替换掉正确的私钥， 添加新的选项 `PostUp = ./set_private_key.bat`
+- 修改wireguard配置文件 使用占位私钥替换掉正确的私钥， 添加新的选项 `PostUp = [set_private_key.bat的绝对路径]`
 
 bat文件示例和解释： 
 

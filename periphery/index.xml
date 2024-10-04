@@ -8,8 +8,22 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sun, 30 Jun 2024 14:37:07 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2024 14:20:48 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在linux里面安装homebrew</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</link>
+      <pubDate>Fri, 04 Oct 2024 14:20:48 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</guid>
+      <description>homebrew 是一个包管理器， 可以用这个工具安装很多软件包，开发库等。 这个工具在macos 上是比较出名的。 注意，在linux上， 应该考虑把 homebrew 安装到目录/</description>
+    </item>
+    <item>
+      <title>Docker Compose的项目机制</title>
+      <link>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Fri, 04 Oct 2024 14:00:56 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</guid>
+      <description>docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了</description>
+    </item>
     <item>
       <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
       <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>

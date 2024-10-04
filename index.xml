@@ -4,15 +4,55 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 30 Sep 2024 22:13:49 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 14:20:48 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>在linux里面安装homebrew</title>
+  <link>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</link>
+  <pubDate>Fri, 04 Oct 2024 14:20:48 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</guid>
+  <description><![CDATA[homebrew 是一个包管理器， 可以用这个工具安装很多软件包，开发库等。 这个工具在macos 上是比较出名的。 注意，在linux上， 应该考虑把 homebrew 安装到目录/]]></description>
+</item>
+<item>
+  <title>Java中子类隐藏父类的静态函数</title>
+  <link>https://fantasyplayer.link/program/java%E4%B8%AD%E5%AD%90%E7%B1%BB%E9%9A%90%E8%97%8F%E7%88%B6%E7%B1%BB%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+  <pubDate>Fri, 04 Oct 2024 14:14:50 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/java%E4%B8%AD%E5%AD%90%E7%B1%BB%E9%9A%90%E8%97%8F%E7%88%B6%E7%B1%BB%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 class HelloWorld { public static void main(String[] args) { System.out.println(&#34;Try programiz.pro&#34;); Basic.printNumber(); Child.printNumber(); } } class Basic { public static int getNumber(){ return 1; } public static void printNumber(){ System.out.println(getNumber()); } } class Child extends Basic { public static int getNumber(){ return 2; } } 上]]></description>
+</item>
+<item>
+  <title>Java中Integer和int的相等判断</title>
+  <link>https://fantasyplayer.link/program/java%E4%B8%ADinteger%E5%92%8Cint%E7%9A%84%E7%9B%B8%E7%AD%89%E5%88%A4%E6%96%AD/</link>
+  <pubDate>Fri, 04 Oct 2024 14:11:45 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/java%E4%B8%ADinteger%E5%92%8Cint%E7%9A%84%E7%9B%B8%E7%AD%89%E5%88%A4%E6%96%AD/</guid>
+  <description><![CDATA[1 2 3 int i == int j : ✔️可以判断是否相等 Integer i == int j: ✔️可以判断是否相等，因为会自动拆箱 Integer i == Integer j: ❌不可以判断是否相等， 需要使用 equals]]></description>
+</item>
+<item>
+  <title>Docker Compose的项目机制</title>
+  <link>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</link>
+  <pubDate>Fri, 04 Oct 2024 14:00:56 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</guid>
+  <description><![CDATA[docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了]]></description>
+</item>
+<item>
+  <title>Yubikey使用一周的体验</title>
+  <link>https://fantasyplayer.link/caprice/yubikey%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+  <pubDate>Fri, 04 Oct 2024 13:48:32 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/yubikey%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+  <description><![CDATA[Yubikey 是一个物理密钥， 形状类似于U盘，接口有 USB-A, USB-C, LIGHTNING 接口的， 同时允许使用NFC无线连接手机。 应用场景有： 使用yubikey-Otp验证sudo 使用]]></description>
+</item>
+<item>
   <title>使用yubikey对keepass数据库进行解密</title>
   <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</link>
   <pubDate>Mon, 30 Sep 2024 22:13:49 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</guid>
-  <description><![CDATA[简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者使用手输几位，再拼上一个不算很长的]]></description>
+  <description><![CDATA[简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者手输几位，再拼上一个不算很长的静态]]></description>
 </item>
 <item>
   <title>使用yubikey 签名git提交记录</title>
@@ -20,7 +60,7 @@
   <pubDate>Mon, 30 Sep 2024 21:50:45 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</guid>
-  <description><![CDATA[思路就是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个开放]]></description>
+  <description><![CDATA[实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个]]></description>
 </item>
 <item>
   <title>使用yubikey Otp 验证sudo</title>
@@ -28,7 +68,7 @@
   <pubDate>Mon, 30 Sep 2024 21:10:15 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</guid>
-  <description><![CDATA[简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块首先确认一下 Debian]]></description>
+  <description><![CDATA[简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d]]></description>
 </item>
 <item>
   <title>在Windows上 使用yubikey存储wireguard的私钥</title>
@@ -36,7 +76,7 @@
   <pubDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</guid>
-  <description><![CDATA[简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里面读读取私钥到文件， 然后设置私钥到wg接]]></description>
+  <description><![CDATA[简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上]]></description>
 </item>
 <item>
   <title>使用yubikey实现ssh免密登录</title>
@@ -45,46 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</guid>
   <description><![CDATA[简述免密登录ssh 有以下好处： 无需记忆密码 节省时间， 因为输入密码需要时间， 如果密码很长， 不小心输错了一位， 就又需要重头再来 防盗 有一部分盗号木]]></description>
-</item>
-<item>
-  <title>Msvc,cmake在cpp项目中不编译c文件的问题的处理</title>
-  <link>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</link>
-  <pubDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</guid>
-  <description><![CDATA[先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8]]></description>
-</item>
-<item>
-  <title>自制脚本语言[8.1] GC的简单讨论</title>
-  <link>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/</link>
-  <pubDate>Sun, 28 Jul 2024 16:34:17 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/non-menu/self-programming-lang/%E8%87%AA%E5%88%B6%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%808.1-gc%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A8%E8%AE%BA/</guid>
-  <description><![CDATA[本文为想法草稿，并没有真实实践过。 GC 简介GC就是垃圾回收器， 现代脚本语言基本上都是有GC的， 而现代编程语言中除了c/c++ 之外的其他大多数也]]></description>
-</item>
-<item>
-  <title>Swi Prolog的源码的略微解读</title>
-  <link>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</link>
-  <pubDate>Sun, 21 Jul 2024 14:22:45 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/swi-prolog%E7%9A%84%E6%BA%90%E7%A0%81%E7%9A%84%E7%95%A5%E5%BE%AE%E8%A7%A3%E8%AF%BB/</guid>
-  <description><![CDATA[swi prolog 是prolog 语言的一个解释器的实现， 源码可在 https://github.com/SWI-Prolog/swipl-devel 上找到。 一些吐槽和说明： 因为刚开始实现的时候的年代比较久远，所以源码的对齐格式 笔者非常不]]></description>
-</item>
-<item>
-  <title>记录一次游戏服务器无响应的事件</title>
-  <link>https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</link>
-  <pubDate>Sun, 21 Jul 2024 12:23:17 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</guid>
-  <description><![CDATA[服务器的类型是 游戏服务器， 使用TCP连接来提供服务。 服务器的现象是： 使用客户端进行发包的时候： socket 能建立链接， 也能发送消息过去， 但是收不到响应]]></description>
-</item>
-<item>
-  <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
-  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[github: https://github.com/searxng/searxng 容器的github地址： https://github.com/searxng/searxng-docker 一些不完全的文档： https://docs.searxng.org/admin/index.html 主要内容 安装使用下面的步骤来安装， 翻译自 searxng-docker 的仓库： 安装docker 从github上把仓库 克]]></description>
 </item>
 </channel>
 </rss>

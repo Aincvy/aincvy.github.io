@@ -8,8 +8,22 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Mon, 05 Aug 2024 21:33:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2024 14:14:50 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java中子类隐藏父类的静态函数</title>
+      <link>https://fantasyplayer.link/program/java%E4%B8%AD%E5%AD%90%E7%B1%BB%E9%9A%90%E8%97%8F%E7%88%B6%E7%B1%BB%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 04 Oct 2024 14:14:50 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/java%E4%B8%AD%E5%AD%90%E7%B1%BB%E9%9A%90%E8%97%8F%E7%88%B6%E7%B1%BB%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 class HelloWorld { public static void main(String[] args) { System.out.println(&amp;#34;Try programiz.pro&amp;#34;); Basic.printNumber(); Child.printNumber(); } } class Basic { public static int getNumber(){ return 1; } public static void printNumber(){ System.out.println(getNumber()); } } class Child extends Basic { public static int getNumber(){ return 2; } } 上</description>
+    </item>
+    <item>
+      <title>Java中Integer和int的相等判断</title>
+      <link>https://fantasyplayer.link/program/java%E4%B8%ADinteger%E5%92%8Cint%E7%9A%84%E7%9B%B8%E7%AD%89%E5%88%A4%E6%96%AD/</link>
+      <pubDate>Fri, 04 Oct 2024 14:11:45 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/java%E4%B8%ADinteger%E5%92%8Cint%E7%9A%84%E7%9B%B8%E7%AD%89%E5%88%A4%E6%96%AD/</guid>
+      <description>1 2 3 int i == int j : ✔️可以判断是否相等 Integer i == int j: ✔️可以判断是否相等，因为会自动拆箱 Integer i == Integer j: ❌不可以判断是否相等， 需要使用 equals</description>
+    </item>
     <item>
       <title>Msvc,cmake在cpp项目中不编译c文件的问题的处理</title>
       <link>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</link>

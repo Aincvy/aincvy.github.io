@@ -1,7 +1,7 @@
 # 使用yubikey 签名git提交记录
 
 
-思路就是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。  
+实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。  
 
 先说明一下 GPG(GunPG) 和 OpenPGP 的关联：  
 &gt; 1. OpenPGP 是一个标准: OpenPGP 是一个开放的加密标准,定义了加密、签名、密钥管理等功能的规范。
@@ -13,7 +13,7 @@
 
 参考文章 https://chenhe.me/post/yubikey-starting-gpg  创建主密钥， 子密钥， 上传公钥到Github等。 
 
-笔者不建议给全部历史提交进行签名。 
+*笔者不建议给全部历史提交进行签名。* 
 
 其他参考阅读： 
 - https://github.com/drduh/YubiKey-Guide?tab=readme-ov-file
