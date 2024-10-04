@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Docker Compose的项目机制 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="Docker Compose的项目机制">
+<meta name="description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了" /><meta name="keywords" content='docker' /><meta itemprop="name" content="Docker Compose的项目机制">
 <meta itemprop="description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了"><meta itemprop="datePublished" content="2024-10-04T14:00:56+08:00" />
 <meta itemprop="dateModified" content="2024-10-04T16:15:20+08:00" />
 <meta itemprop="wordCount" content="334"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Docker Compose的项目机制" />
+<meta itemprop="keywords" content="docker," /><meta property="og:title" content="Docker Compose的项目机制" />
 <meta property="og:description" content="docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6\/"
-    },"genre": "posts","wordcount":  334 ,
+    },"genre": "posts","keywords": "docker","wordcount":  334 ,
     "url": "https:\/\/fantasyplayer.link\/periphery\/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6\/","datePublished": "2024-10-04T14:00:56+08:00","dateModified": "2024-10-04T16:15:20+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -211,8 +211,8 @@
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" data-title="Docker Compose的项目机制" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" data-title="Docker Compose的项目机制" data-via="Aincvy" data-hashtags="docker"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" data-hashtag="docker"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" data-title="Docker Compose的项目机制" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" data-title="Docker Compose的项目机制"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/" data-title="Docker Compose的项目机制"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -224,7 +224,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/docker/" class="post-tag" title="标签 - docker">docker</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

@@ -1,0 +1,80 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>工作 - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/%E5%B7%A5%E4%BD%9C/</link>
+    <description>工作 - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 15 Dec 2023 17:19:18 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E5%B7%A5%E4%BD%9C/" rel="self" type="application/rss+xml" /><item>
+  <title>独自工作如何保持理智</title>
+  <link>https://fantasyplayer.link/caprice/%E7%8B%AC%E8%87%AA%E5%B7%A5%E4%BD%9C%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E7%90%86%E6%99%BA/</link>
+  <pubDate>Fri, 15 Dec 2023 17:19:18 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E7%8B%AC%E8%87%AA%E5%B7%A5%E4%BD%9C%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E7%90%86%E6%99%BA/</guid>
+  <description><![CDATA[本篇博客从 https://www.reddit.com/r/gamedev/comments/13kuuky/how_do_you_stay_sane_and_productive_while_working/ 上翻译和截取。 内容 楼主提问：给一些背景信息，我已经做了大约6年的独立游戏开发者，一直以来都是一场艰苦的战斗。 我意识到我浪费了很多]]></description>
+</item>
+<item>
+  <title>再谈谈面试题</title>
+  <link>https://fantasyplayer.link/caprice/%E5%86%8D%E8%B0%88%E8%B0%88%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+  <pubDate>Sun, 14 Mar 2021 16:44:21 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E5%86%8D%E8%B0%88%E8%B0%88%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+  <description><![CDATA[笔者前些天去面试得时候碰到了一个比较蛋疼得笔试题，所以就再来谈谈面试题这个东西。 面试题得格式让笔者觉得无语得是那家公司得笔试题居然没有对代码]]></description>
+</item>
+<item>
+  <title>浅谈游戏公司的各个职业</title>
+  <link>https://fantasyplayer.link/periphery/%E6%B5%85%E8%B0%88%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E5%90%84%E4%B8%AA%E8%81%8C%E4%B8%9A/</link>
+  <pubDate>Mon, 14 Dec 2020 21:45:55 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E6%B5%85%E8%B0%88%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E5%90%84%E4%B8%AA%E8%81%8C%E4%B8%9A/</guid>
+  <description><![CDATA[就是一些很简单得介绍。 策划 制作人制作人一般情况下是整个项目得负责人，如果是创业公司得话，制作人可能会由老板担当。 主策划策划得头目，基本上负责]]></description>
+</item>
+<item>
+  <title>代码规范建议</title>
+  <link>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</link>
+  <pubDate>Mon, 07 Dec 2020 18:48:17 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</guid>
+  <description><![CDATA[命名规范 # 1. 属性/成员 命名 静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子 1 2 3 4 5 6 7 8 9 /** * 消]]></description>
+</item>
+<item>
+  <title>关于笔者今天面试得事情</title>
+  <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E7%AC%94%E8%80%85%E4%BB%8A%E5%A4%A9%E9%9D%A2%E8%AF%95%E5%BE%97%E4%BA%8B%E6%83%85/</link>
+  <pubDate>Wed, 02 Dec 2020 17:44:51 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E7%AC%94%E8%80%85%E4%BB%8A%E5%A4%A9%E9%9D%A2%E8%AF%95%E5%BE%97%E4%BA%8B%E6%83%85/</guid>
+  <description><![CDATA[因为面试笔者得那个人给了笔者极其不舒服得感觉，所以笔者决定将此次面试记录下来。 公司名之类得就不透露了。 面试笔者得总共两个人， 挨个写一下流程把]]></description>
+</item>
+<item>
+  <title>关于996工作时间的一点闲谈</title>
+  <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/</link>
+  <pubDate>Mon, 30 Nov 2020 20:47:40 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/</guid>
+  <description><![CDATA[因为有不少公司都实行996工作制，笔者想对996的工作时间发表一些浅谈。 众所周知， 996就是朝九晚九，一周六天班。 至于谁先开始的，怎么流行的]]></description>
+</item>
+<item>
+  <title>程序员可能的职业病</title>
+  <link>https://fantasyplayer.link/caprice/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8F%AF%E8%83%BD%E7%9A%84%E8%81%8C%E4%B8%9A%E7%97%85/</link>
+  <pubDate>Mon, 07 Sep 2020 21:33:27 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8F%AF%E8%83%BD%E7%9A%84%E8%81%8C%E4%B8%9A%E7%97%85/</guid>
+  <description><![CDATA[本文是笔者猜测，加上一些个人经历以及观察公司同事。 先说原因。 久坐 不运动 长期在电脑面前 喝水少（可能） 长期吃油腻的。 疾病列表本文描述得症状仅作参]]></description>
+</item>
+<item>
+  <title>关于在创业公司工作的经历随想</title>
+  <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E5%9C%A8%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%BB%8F%E5%8E%86%E9%9A%8F%E6%83%B3/</link>
+  <pubDate>Fri, 31 Jul 2020 23:47:22 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E%E5%9C%A8%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%BB%8F%E5%8E%86%E9%9A%8F%E6%83%B3/</guid>
+  <description><![CDATA[简述就笔者来说，不算在家的一年，工作了将近5年了。曾经在3家创业公司，1家中型公司工作过， 算上现在在的公司，是4家创业公司。 因为自己也尝试过]]></description>
+</item>
+<item>
+  <title>[状态机变种]有关状态栈的一些记录</title>
+  <link>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Tue, 27 Dec 2016 21:11:56 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[写这篇文章的时候，笔者还是一个很菜的菜鸟， 本文可能有误。 我在弄我们公司的项目的时候。 地图 上面的每一个实体，我是当作一个单位来看的。每隔若干毫]]></description>
+</item>
+</channel>
+</rss>

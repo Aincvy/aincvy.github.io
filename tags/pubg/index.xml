@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>PUBG - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/pubg/</link>
+    <description>PUBG - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 11 May 2020 21:50:15 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/pubg/" rel="self" type="application/rss+xml" /><item>
+  <title>PUBG崩溃的解决办法</title>
+  <link>https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+  <pubDate>Mon, 11 May 2020 21:50:15 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+  <description><![CDATA[方法一 使用显卡超频工具降频显卡 笔者是微星 GTX1070 ，所以去微星的官网下载超频工具，然后对频率进行下降限制。 之后就不会掉线了。 方法二 打开机箱侧板 因为这]]></description>
+</item>
+</channel>
+</rss>

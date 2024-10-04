@@ -4,39 +4,7 @@
     <link>https://fantasyplayer.link/tags/debian/</link>
     <description>debian - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/debian/" rel="self" type="application/rss+xml" /><item>
-  <title>使用docker搭建lobe chat - 本地的openai客户端</title>
-  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
-  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</guid>
-  <description><![CDATA[简述项目主页： https://github.com/lobehub/lobe-chat 这是一个使用API 调用多家 LLM服务商的本地聊天客户端。 支持： OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek 支持文件上传，向量化，引用文件内容 网页]]></description>
-</item>
-<item>
-  <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
-  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[github: https://github.com/searxng/searxng 容器的github地址： https://github.com/searxng/searxng-docker 一些不完全的文档： https://docs.searxng.org/admin/index.html 主要内容 安装使用下面的步骤来安装， 翻译自 searxng-docker 的仓库： 安装docker 从github上把仓库 克]]></description>
-</item>
-<item>
-  <title>如何让docker在拉取镜像的时候使用代理</title>
-  <link>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</link>
-  <pubDate>Sun, 30 Jun 2024 12:04:51 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</guid>
-  <description><![CDATA[主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况]]></description>
-</item>
-<item>
-  <title>在debian11 中 安装xrdp</title>
-  <link>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</link>
-  <pubDate>Mon, 13 Nov 2023 10:46:11 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
-  <description><![CDATA[正文笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star]]></description>
-</item>
-<item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 13 Oct 2023 18:08:47 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/debian/" rel="self" type="application/rss+xml" /><item>
   <title>Debian 从官网下载，然后安装N卡驱动</title>
   <link>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
   <pubDate>Fri, 13 Oct 2023 18:08:47 &#43;0800</pubDate>

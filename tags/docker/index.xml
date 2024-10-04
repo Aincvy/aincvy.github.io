@@ -13,6 +13,14 @@
   <description><![CDATA[简述项目主页： https://github.com/lobehub/lobe-chat 这是一个使用API 调用多家 LLM服务商的本地聊天客户端。 支持： OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek 支持文件上传，向量化，引用文件内容 网页]]></description>
 </item>
 <item>
+  <title>Docker Compose的项目机制</title>
+  <link>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</link>
+  <pubDate>Fri, 04 Oct 2024 14:00:56 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</guid>
+  <description><![CDATA[docker compose 存在一个项目机制， 官方文档参考： https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name 项目名称的遵从下面的顺序来设置： 使用 -p 的命令行参数 环境变量： COMPOSE_PROJECT_NAME 配置文件里面的顶层配置项 name: (或者在指定了]]></description>
+</item>
+<item>
   <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
   <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
   <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
@@ -27,6 +35,22 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</guid>
   <description><![CDATA[主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况]]></description>
+</item>
+<item>
+  <title> Code Server &#43; Jdk17 的docker 镜像</title>
+  <link>https://fantasyplayer.link/periphery/-code-server-&#43;-jdk17-%E7%9A%84docker-%E9%95%9C%E5%83%8F/</link>
+  <pubDate>Fri, 23 Jun 2023 15:42:36 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/-code-server-&#43;-jdk17-%E7%9A%84docker-%E9%95%9C%E5%83%8F/</guid>
+  <description><![CDATA[基本内容Dockerfile 示例： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 FROM codercom/code-server:latest # from https://adoptium.net/zh-CN/temurin/releases/ # version 17.0.7_7 ADD OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz /opt/ # from https://maven.apache.org/download.cgi # version 3.9.2 ADD apache-maven-3.9.2-bin.tar.gz /opt/ ENV JAVA_HOME /opt/jdk-17.0.7+7 ENV MAVEN_HOME /opt/apache-maven-3.9.2 ENV PATH=&#34;${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin&#34; EXPOSE 8080/tcp USER 1000]]></description>
+</item>
+<item>
+  <title>关于在docker中的gitlab,添加ssh key后无法推送的问题</title>
+  <link>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+  <pubDate>Mon, 17 Aug 2020 10:52:13 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+  <description><![CDATA[在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多]]></description>
 </item>
 </channel>
 </rss>

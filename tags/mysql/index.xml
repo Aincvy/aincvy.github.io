@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>mysql - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/mysql/</link>
+    <description>mysql - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+  <title>如何在java中使用ebean</title>
+  <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
+  <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
+  <description><![CDATA[简介笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。 体验下来感觉使用上是比较方便的，但是]]></description>
+</item>
+<item>
+  <title>Mysql 时区的问题</title>
+  <link>https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+  <pubDate>Mon, 07 Sep 2020 21:33:07 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+  <description><![CDATA[在链接字符串尾部添加参数 serverTimezone=Asia/Shanghai 即可让 mysql 的链接使用上海的时区。 其他说明我刚开始尝试的是 serverTimezone=GMT+8 但是不知道为啥，没有生效。 目前考虑可能是 +的问题, 使用GM]]></description>
+</item>
+</channel>
+</rss>

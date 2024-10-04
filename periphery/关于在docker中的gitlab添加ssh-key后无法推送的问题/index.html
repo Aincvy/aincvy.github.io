@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>关于在docker中的gitlab,添加ssh key后无法推送的问题 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="关于在docker中的gitlab,添加ssh key后无法推送的问题">
+<meta name="description" content="在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多" /><meta name="keywords" content='docker, gitlab' /><meta itemprop="name" content="关于在docker中的gitlab,添加ssh key后无法推送的问题">
 <meta itemprop="description" content="在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多"><meta itemprop="datePublished" content="2020-08-17T10:52:13+08:00" />
 <meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
 <meta itemprop="wordCount" content="354"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="" /><meta property="og:title" content="关于在docker中的gitlab,添加ssh key后无法推送的问题" />
+<meta itemprop="keywords" content="docker,gitlab," /><meta property="og:title" content="关于在docker中的gitlab,添加ssh key后无法推送的问题" />
 <meta property="og:description" content="在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98\/"
-    },"genre": "posts","wordcount":  354 ,
+    },"genre": "posts","keywords": "docker, gitlab","wordcount":  354 ,
     "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98\/","datePublished": "2020-08-17T10:52:13+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -220,8 +220,8 @@
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="关于在docker中的gitlab,添加ssh key后无法推送的问题" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="关于在docker中的gitlab,添加ssh key后无法推送的问题" data-via="Aincvy" data-hashtags="docker,gitlab"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" data-hashtag="docker"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="关于在docker中的gitlab,添加ssh key后无法推送的问题" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="关于在docker中的gitlab,添加ssh key后无法推送的问题"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/" data-title="关于在docker中的gitlab,添加ssh key后无法推送的问题"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -233,7 +233,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/docker/" class="post-tag" title="标签 - docker">docker</a><a href="/tags/gitlab/" class="post-tag" title="标签 - gitlab">gitlab</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

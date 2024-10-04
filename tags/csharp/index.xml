@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>csharp - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/csharp/</link>
+    <description>csharp - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 08 Jan 2023 22:18:51 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/csharp/" rel="self" type="application/rss+xml" /><item>
+  <title>Unity 相关的几个小问题记录</title>
+  <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Sun, 08 Jan 2023 22:18:51 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[主要内容 动画播放结束会模型会卡住一段时间的问题动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而]]></description>
+</item>
+<item>
+  <title>Rider卡在了开启界面的解决办法</title>
+  <link>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+  <pubDate>Mon, 24 May 2021 13:36:35 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+  <description><![CDATA[在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。 原因可能是因为项目的缓存坏掉了， 所以就无法启动。 解决方案是]]></description>
+</item>
+<item>
+  <title>Protobuf number overflow 的解决方法</title>
+  <link>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+  <pubDate>Wed, 10 May 2017 21:11:12 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+  <description><![CDATA[基本信息: java 服务端 网络框架用的 netty Unity的客户端，用的 tcpClient. 通信协议选择的 protobuf. java端采用的是谷歌提供的解析器， 而客户端则采用的protobu]]></description>
+</item>
+</channel>
+</rss>

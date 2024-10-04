@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>vscode - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/vscode/</link>
+    <description>vscode - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sat, 21 Jan 2023 20:33:18 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/vscode/" rel="self" type="application/rss+xml" /><item>
+  <title>Vscode .Net Sdk 找不到的问题 记录</title>
+  <link>https://fantasyplayer.link/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Sat, 21 Jan 2023 20:33:18 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[是windows 下碰到的问题。 提示错误是： vscode The .NET Core SDK cannot be located: A valid dotnet installation could not be found vs code 里面已经设置了正确的 dotnetPath 和 sdkPath ， 但是还是提示这个。 使用 cmd.exe 里面输入 dotnet]]></description>
+</item>
+<item>
+  <title>Vscode开发c&#43;&#43; 介绍</title>
+  <link>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+  <pubDate>Sat, 25 Sep 2021 17:33:35 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+  <description><![CDATA[笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。 笔者是使用Mac版本的 vs code，不过应该都差不多把]]></description>
+</item>
+</channel>
+</rss>

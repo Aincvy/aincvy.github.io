@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>cmake - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/cmake/</link>
+    <description>cmake - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/cmake/" rel="self" type="application/rss+xml" /><item>
+  <title>Msvc,cmake在cpp项目中不编译c文件的问题的处理</title>
+  <link>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</link>
+  <pubDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/</guid>
+  <description><![CDATA[先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8]]></description>
+</item>
+</channel>
+</rss>

@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Msvc,cmake在cpp项目中不编译c文件的问题的处理 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8" /><meta name="keywords" content='cpp' /><meta itemprop="name" content="Msvc,cmake在cpp项目中不编译c文件的问题的处理">
+<meta name="description" content="先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8" /><meta name="keywords" content='cpp, cmake' /><meta itemprop="name" content="Msvc,cmake在cpp项目中不编译c文件的问题的处理">
 <meta itemprop="description" content="先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8"><meta itemprop="datePublished" content="2024-08-05T21:33:40+08:00" />
 <meta itemprop="dateModified" content="2024-08-05T21:52:07+08:00" />
 <meta itemprop="wordCount" content="382"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="cpp," /><meta property="og:title" content="Msvc,cmake在cpp项目中不编译c文件的问题的处理" />
+<meta itemprop="keywords" content="cpp,cmake," /><meta property="og:title" content="Msvc,cmake在cpp项目中不编译c文件的问题的处理" />
 <meta property="og:description" content="先看一段 CMakeLists.txt 的文件内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 add_executable(bead-server program.cpp) target_sources(bead-server PRIVATE src/network.cpp src/bead.cpp src/db.cpp src/ast.cpp src/log.cpp src/completion.cpp ) target_sources(bead-server PRIVATE dependencies/tree-sitter-cpp/src/parser.c dependencies/tree-sitter-cpp/src/scanner.c ) 使用上面的配置生成 vcxproj 文件的内容将会如下： 1 2 3 4 5 6 7 8" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="program" />
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6\/"
-    },"genre": "posts","keywords": "cpp","wordcount":  382 ,
+    },"genre": "posts","keywords": "cpp, cmake","wordcount":  382 ,
     "url": "https:\/\/fantasyplayer.link\/program\/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6\/","datePublished": "2024-08-05T21:33:40+08:00","dateModified": "2024-08-05T21:52:07+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -346,7 +346,7 @@
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/" data-title="Msvc,cmake在cpp项目中不编译c文件的问题的处理" data-via="Aincvy" data-hashtags="cpp"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/" data-title="Msvc,cmake在cpp项目中不编译c文件的问题的处理" data-via="Aincvy" data-hashtags="cpp,cmake"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/" data-hashtag="cpp"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/" data-title="Msvc,cmake在cpp项目中不编译c文件的问题的处理" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/program/msvccmake%E5%9C%A8cpp%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%B8%8D%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6/" data-title="Msvc,cmake在cpp项目中不编译c文件的问题的处理"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
@@ -359,7 +359,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/cpp/" class="post-tag" title="标签 - cpp">cpp</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/cpp/" class="post-tag" title="标签 - cpp">cpp</a><a href="/tags/cmake/" class="post-tag" title="标签 - cmake">cmake</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

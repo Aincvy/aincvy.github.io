@@ -21,12 +21,28 @@
   <description><![CDATA[主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求]]></description>
 </item>
 <item>
+  <title>Unity Asset Store被标记成disable的资源</title>
+  <link>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</link>
+  <pubDate>Fri, 19 May 2023 10:21:59 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</guid>
+  <description><![CDATA[使用这部分资源可能会造成法律问题。 详情见帖子： https://forum.unity.com/threads/unable-to-download-Disabled-assets.1202350/ 主要内容笔者这里就简略的翻译一下上面帖子的内容。 U： 资源商店的资源被标记成了 Disabled ，这正常吗？ A]]></description>
+</item>
+<item>
   <title>Unity 相关的几个小问题记录</title>
   <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
   <pubDate>Sun, 08 Jan 2023 22:18:51 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
   <description><![CDATA[主要内容 动画播放结束会模型会卡住一段时间的问题动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而]]></description>
+</item>
+<item>
+  <title>Protobuf number overflow 的解决方法</title>
+  <link>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+  <pubDate>Wed, 10 May 2017 21:11:12 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+  <description><![CDATA[基本信息: java 服务端 网络框架用的 netty Unity的客户端，用的 tcpClient. 通信协议选择的 protobuf. java端采用的是谷歌提供的解析器， 而客户端则采用的protobu]]></description>
 </item>
 </channel>
 </rss>

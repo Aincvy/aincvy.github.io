@@ -60,6 +60,7 @@ public static class A {
 
 http://emojihomepage.com/    有个列表， 点击复制表情  
 
+Windows &#43; .  也能打开一个表情列表。
 
 
 Emmmm... 

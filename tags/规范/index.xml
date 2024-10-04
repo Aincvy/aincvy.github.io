@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>规范 - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/%E8%A7%84%E8%8C%83/</link>
+    <description>规范 - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 07 Dec 2020 18:48:17 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E8%A7%84%E8%8C%83/" rel="self" type="application/rss+xml" /><item>
+  <title>代码规范建议</title>
+  <link>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</link>
+  <pubDate>Mon, 07 Dec 2020 18:48:17 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE/</guid>
+  <description><![CDATA[命名规范 # 1. 属性/成员 命名 静态常量属性 即使用 static final 修饰的属性， 属性名全部大写并添加javadoc的注释。 比如下面的例子 1 2 3 4 5 6 7 8 9 /** * 消]]></description>
+</item>
+</channel>
+</rss>

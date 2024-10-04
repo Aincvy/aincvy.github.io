@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>libuv - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/libuv/</link>
+    <description>libuv - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sat, 25 Dec 2021 11:47:09 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/libuv/" rel="self" type="application/rss+xml" /><item>
+  <title>Libuv 异步通知的实现</title>
+  <link>https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+  <pubDate>Sat, 25 Dec 2021 11:47:09 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/program/libuv-%E5%BC%82%E6%AD%A5%E9%80%9A%E7%9F%A5%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+  <description><![CDATA[主要内容 主要思路问题是： 假设有一个线程 A， 有一个线程 B， 现在想让线程 B 给线程 A 发送消息。 本篇来说明一下如何使用 libuv 实现， 以及这样做有哪些不足。]]></description>
+</item>
+</channel>
+</rss>

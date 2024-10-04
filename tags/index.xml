@@ -5,19 +5,27 @@
     <description>Tags - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
       <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/" rel="self" type="application/rss+xml" /><item>
-  <title>debian</title>
-  <link>https://fantasyplayer.link/tags/debian/</link>
-  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/debian/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
   <title>docker</title>
   <link>https://fantasyplayer.link/tags/docker/</link>
   <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/tags/docker/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>linux</title>
+  <link>https://fantasyplayer.link/tags/linux/</link>
+  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/tags/linux/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>self-hosted</title>
+  <link>https://fantasyplayer.link/tags/self-hosted/</link>
+  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/tags/self-hosted/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
@@ -29,6 +37,38 @@
   <description><![CDATA[]]></description>
 </item>
 <item>
+  <title>java</title>
+  <link>https://fantasyplayer.link/tags/java/</link>
+  <pubDate>Fri, 04 Oct 2024 14:14:50 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/tags/java/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>装箱拆箱</title>
+  <link>https://fantasyplayer.link/tags/%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</link>
+  <pubDate>Fri, 04 Oct 2024 14:11:45 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/tags/%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>yubikey</title>
+  <link>https://fantasyplayer.link/tags/yubikey/</link>
+  <pubDate>Fri, 04 Oct 2024 13:48:32 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/tags/yubikey/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>cmake</title>
+  <link>https://fantasyplayer.link/tags/cmake/</link>
+  <pubDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/tags/cmake/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>cpp</title>
   <link>https://fantasyplayer.link/tags/cpp/</link>
   <pubDate>Mon, 05 Aug 2024 21:33:40 &#43;0800</pubDate>
@@ -37,51 +77,11 @@
   <description><![CDATA[]]></description>
 </item>
 <item>
-  <title>java</title>
-  <link>https://fantasyplayer.link/tags/java/</link>
-  <pubDate>Sun, 21 Jul 2024 12:23:17 &#43;0800</pubDate>
+  <title>mysql</title>
+  <link>https://fantasyplayer.link/tags/mysql/</link>
+  <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
   <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/java/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>self-hosted</title>
-  <link>https://fantasyplayer.link/tags/self-hosted/</link>
-  <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/self-hosted/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>unity</title>
-  <link>https://fantasyplayer.link/tags/unity/</link>
-  <pubDate>Sat, 06 Apr 2024 11:31:05 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/unity/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>v8</title>
-  <link>https://fantasyplayer.link/tags/v8/</link>
-  <pubDate>Mon, 13 Nov 2023 11:07:14 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/v8/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>goods</title>
-  <link>https://fantasyplayer.link/tags/goods/</link>
-  <pubDate>Sun, 12 Nov 2023 21:40:47 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/goods/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>git</title>
-  <link>https://fantasyplayer.link/tags/git/</link>
-  <pubDate>Wed, 28 Dec 2022 21:44:42 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/tags/git/</guid>
+  <guid>https://fantasyplayer.link/tags/mysql/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

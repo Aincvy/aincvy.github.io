@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>独立游戏 - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F/</link>
+    <description>独立游戏 - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 08 May 2023 17:39:53 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F/" rel="self" type="application/rss+xml" /><item>
+  <title>Steam上架后的一些感想</title>
+  <link>https://fantasyplayer.link/periphery/steam%E4%B8%8A%E6%9E%B6%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/</link>
+  <pubDate>Mon, 08 May 2023 17:39:53 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/steam%E4%B8%8A%E6%9E%B6%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/</guid>
+  <description><![CDATA[第一感觉，真难啊， 尤其是一个人搞。 感觉还不如上班呢。。 主要内容还是说点有用的东西吧。 商店steam 的曝光量，只有发行的第一天给的多， 假如购买]]></description>
+</item>
+<item>
+  <title>作为术士，我要应付月中测验 - 技术细节</title>
+  <link>https://fantasyplayer.link/periphery/%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C-%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/</link>
+  <pubDate>Mon, 08 May 2023 15:15:44 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C-%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/</guid>
+  <description><![CDATA[游戏类型： 单人， VR， 战斗。 主要内容游戏引擎： Unity 2018, Unity 2019 美术部分： Unity asset store 模型 动画 粒子特效 Unity 插件使用以及目的 MapMagic 地形生成工具， 用于生成地形 还包括树]]></description>
+</item>
+<item>
+  <title>VR游戏| 作为术士，我要应付月中测验</title>
+  <link>https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/</link>
+  <pubDate>Fri, 05 May 2023 12:26:59 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/</guid>
+  <description><![CDATA[这是笔者做的一款独立游戏。 主要内容这个游戏的核心部分是近战反击，远程反击，与适时的技能爆发。 玩家扮演一个年轻的术士， 去完成他的月中测验。 测验]]></description>
+</item>
+</channel>
+</rss>

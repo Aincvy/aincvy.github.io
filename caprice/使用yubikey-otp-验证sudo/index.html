@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>使用yubikey Otp 验证sudo - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d" /><meta name="keywords" content='幻想系玩家, 技术博客' /><meta itemprop="name" content="使用yubikey Otp 验证sudo">
+<meta name="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d" /><meta name="keywords" content='yubikey' /><meta itemprop="name" content="使用yubikey Otp 验证sudo">
 <meta itemprop="description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d"><meta itemprop="datePublished" content="2024-09-30T21:10:15+08:00" />
 <meta itemprop="dateModified" content="2024-10-04T16:15:20+08:00" />
 <meta itemprop="wordCount" content="656"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="" /><meta property="og:title" content="使用yubikey Otp 验证sudo" />
+<meta itemprop="keywords" content="yubikey," /><meta property="og:title" content="使用yubikey Otp 验证sudo" />
 <meta property="og:description" content="简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="caprice" />
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo\/"
-    },"genre": "posts","wordcount":  656 ,
+    },"genre": "posts","keywords": "yubikey","wordcount":  656 ,
     "url": "https:\/\/fantasyplayer.link\/caprice\/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo\/","datePublished": "2024-09-30T21:10:15+08:00","dateModified": "2024-10-04T16:15:20+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -315,8 +315,8 @@
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" data-title="使用yubikey Otp 验证sudo" data-via="Aincvy"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" data-title="使用yubikey Otp 验证sudo" data-via="Aincvy" data-hashtags="yubikey"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" data-hashtag="yubikey"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" data-title="使用yubikey Otp 验证sudo" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" data-title="使用yubikey Otp 验证sudo"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/" data-title="使用yubikey Otp 验证sudo"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
@@ -328,7 +328,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/yubikey/" class="post-tag" title="标签 - yubikey">yubikey</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

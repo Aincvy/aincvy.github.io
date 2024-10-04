@@ -5,8 +5,6 @@
 
 笔者是使用Mac版本的 vs code，不过应该都差不多把。
 
-
-
 ## 拓展
 
 vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。
@@ -18,7 +16,7 @@ vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。
   - 自动完成
   - 编译错误和警告
   - 跳转到定义/声明
-  - 代码格式化 （`clang-format`)
+  - 代码格式化 （`clang-format`）
   - 简单的重构  （提取变量， 重命名什么的）
   - 这个插件附带 `clang-tidy`和`clang-format`， 分别用于代码分析和格式化。 （CLion应该也是基于`clangd`的， 这个插件提供的警告部分还不错。 格式化功能，笔者觉得略逊于 CLion。）
 - ms-vscode.cpptools-extension-pack

@@ -1,0 +1,56 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>yubikey - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/yubikey/</link>
+    <description>yubikey - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 13:48:32 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/yubikey/" rel="self" type="application/rss+xml" /><item>
+  <title>Yubikey使用一周的体验</title>
+  <link>https://fantasyplayer.link/caprice/yubikey%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+  <pubDate>Fri, 04 Oct 2024 13:48:32 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/yubikey%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+  <description><![CDATA[Yubikey 是一个物理密钥， 形状类似于U盘，接口有 USB-A, USB-C, LIGHTNING 接口的， 同时允许使用NFC无线连接手机。 应用场景有： 使用yubikey-Otp验证sudo 使用]]></description>
+</item>
+<item>
+  <title>使用yubikey对keepass数据库进行解密</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</link>
+  <pubDate>Mon, 30 Sep 2024 22:13:49 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/</guid>
+  <description><![CDATA[简述使用yubikey 对keepass进行解密的方式有下面几种： 使用静态密码 可以设置一个长的静态密码， 或者手输几位，再拼上一个不算很长的静态]]></description>
+</item>
+<item>
+  <title>使用yubikey 签名git提交记录</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Mon, 30 Sep 2024 21:50:45 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个]]></description>
+</item>
+<item>
+  <title>使用yubikey Otp 验证sudo</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</link>
+  <pubDate>Mon, 30 Sep 2024 21:10:15 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</guid>
+  <description><![CDATA[简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d]]></description>
+</item>
+<item>
+  <title>在Windows上 使用yubikey存储wireguard的私钥</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</link>
+  <pubDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</guid>
+  <description><![CDATA[简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上]]></description>
+</item>
+<item>
+  <title>使用yubikey实现ssh免密登录</title>
+  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</link>
+  <pubDate>Sat, 28 Sep 2024 21:46:17 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</guid>
+  <description><![CDATA[简述免密登录ssh 有以下好处： 无需记忆密码 节省时间， 因为输入密码需要时间， 如果密码很长， 不小心输错了一位， 就又需要重头再来 防盗 有一部分盗号木]]></description>
+</item>
+</channel>
+</rss>

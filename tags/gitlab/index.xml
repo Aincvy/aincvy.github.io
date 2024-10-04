@@ -1,0 +1,40 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>gitlab - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/gitlab/</link>
+    <description>gitlab - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 13 Oct 2023 17:34:37 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/gitlab/" rel="self" type="application/rss+xml" /><item>
+  <title>如何下载github上的单个文件夹</title>
+  <link>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDgithub%E4%B8%8A%E7%9A%84%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+  <pubDate>Fri, 13 Oct 2023 17:34:37 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDgithub%E4%B8%8A%E7%9A%84%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+  <description><![CDATA[使用第三方工具 https://download-directory.github.io/ http://kinolien.github.io/gitzip https://minhaskamal.github.io/DownGit 或者使用SVN 导航到想要下载的文件夹， 比如 https://github.com/Aincvy/sight/tree/main/plugins/sight-base 将 tree/master 或者 tree/main 替换成 trunk 执行命令 svn checkout https://github.com/Aincvy/sight/trunk/plugins/sight-base 这样就可以了， 注意，这种方法只能下载gith]]></description>
+</item>
+<item>
+  <title>Gitlab  关闭 Lfs 的记录</title>
+  <link>https://fantasyplayer.link/periphery/gitlab-%E5%85%B3%E9%97%AD-lfs-%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Wed, 28 Dec 2022 21:39:50 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/gitlab-%E5%85%B3%E9%97%AD-lfs-%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[基本内容在本地客户端 关闭 lfs 之后， 推送到远端提示 这个 remote: GitLab: LFS objects are missing. Ensure LFS is properly set up or try a manual &ldquo;git lfs push &ndash;all&rdquo;. 解决办法就是 使用 gitlab 的网页管理端， 找到 项目， 用户设置]]></description>
+</item>
+<item>
+  <title>Gitlab升级操作记录</title>
+  <link>https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+  <pubDate>Mon, 10 May 2021 21:55:20 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/gitlab%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+  <description><![CDATA[笔者使用docker的方式安装的gitlab, 升级操作十分的简单。 这里有两篇官方的文档可以阅读一下。 https://docs.gitlab.com/ee/raketasks/backup_restore.html https://docs.gitlab.com/omnibus/docker/README.html https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations 第一个链接的内容是关于备份和恢复的]]></description>
+</item>
+<item>
+  <title>关于在docker中的gitlab,添加ssh key后无法推送的问题</title>
+  <link>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+  <pubDate>Mon, 17 Aug 2020 10:52:13 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8E%E5%9C%A8docker%E4%B8%AD%E7%9A%84gitlab%E6%B7%BB%E5%8A%A0ssh-key%E5%90%8E%E6%97%A0%E6%B3%95%E6%8E%A8%E9%80%81%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+  <description><![CDATA[在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多]]></description>
+</item>
+</channel>
+</rss>

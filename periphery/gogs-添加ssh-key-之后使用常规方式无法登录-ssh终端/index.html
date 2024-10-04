@@ -7,11 +7,11 @@
     <meta name="robots" content="noodp" />
     <title>Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端 - Fanstasy Player / 幻想系玩家</title><meta name="author" content="Aincvy">
 <meta name="author-link" content="">
-<meta name="description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统" /><meta name="keywords" content='git' /><meta itemprop="name" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端">
+<meta name="description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统" /><meta name="keywords" content='git, gogs' /><meta itemprop="name" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端">
 <meta itemprop="description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统"><meta itemprop="datePublished" content="2022-12-28T21:44:42+08:00" />
 <meta itemprop="dateModified" content="2023-11-13T13:25:45+08:00" />
 <meta itemprop="wordCount" content="456"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
-<meta itemprop="keywords" content="git," /><meta property="og:title" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" />
+<meta itemprop="keywords" content="git,gogs," /><meta property="og:title" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" />
 <meta property="og:description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
@@ -36,7 +36,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF\/"
-    },"genre": "posts","keywords": "git","wordcount":  456 ,
+    },"genre": "posts","keywords": "git, gogs","wordcount":  456 ,
     "url": "https:\/\/fantasyplayer.link\/periphery\/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF\/","datePublished": "2022-12-28T21:44:42+08:00","dateModified": "2023-11-13T13:25:45+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -293,7 +293,7 @@
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" data-title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" data-via="Aincvy" data-hashtags="git"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" data-title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" data-via="Aincvy" data-hashtags="git,gogs"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" data-hashtag="git"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" data-title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" data-title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
@@ -306,7 +306,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/git/" class="post-tag" title="标签 - git">git</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/git/" class="post-tag" title="标签 - git">git</a><a href="/tags/gogs/" class="post-tag" title="标签 - gogs">gogs</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>

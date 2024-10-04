@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>hugo - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/hugo/</link>
+    <description>hugo - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 19 Jul 2021 17:11:25 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+  <title>Google Analyis 不能在keepIt主题中使用的问题</title>
+  <link>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+  <pubDate>Mon, 19 Jul 2021 17:11:25 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+  <description><![CDATA[KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。 https://github.com/Fastbyte01/KeepIt 笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。 经过一番搜索之后，]]></description>
+</item>
+</channel>
+</rss>
