@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>self-hosted - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <link>https://fantasyplayer.link/tags/self-hosted/</link>
+    <description>self-hosted - 标签 | Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/self-hosted/" rel="self" type="application/rss+xml" /><item>
+  <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
+  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
+  <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</guid>
+  <description><![CDATA[github: https://github.com/searxng/searxng 容器的github地址： https://github.com/searxng/searxng-docker 一些不完全的文档： https://docs.searxng.org/admin/index.html 主要内容 安装使用下面的步骤来安装， 翻译自 searxng-docker 的仓库： 安装docker 从github上把仓库 克]]></description>
+</item>
+</channel>
+</rss>

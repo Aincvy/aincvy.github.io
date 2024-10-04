@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/docker/</link>
     <description>docker - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/docker/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/docker/" rel="self" type="application/rss+xml" /><item>
+  <title>使用docker搭建lobe chat - 本地的openai客户端</title>
+  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
+  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</guid>
+  <description><![CDATA[简述项目主页： https://github.com/lobehub/lobe-chat 这是一个使用API 调用多家 LLM服务商的本地聊天客户端。 支持： OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek 支持文件上传，向量化，引用文件内容 网页]]></description>
+</item>
+<item>
   <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
   <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
   <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>

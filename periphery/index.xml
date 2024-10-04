@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Fri, 04 Oct 2024 14:20:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2024 16:54:11 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用docker搭建lobe chat - 本地的openai客户端</title>
+      <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 04 Oct 2024 16:54:11 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</guid>
+      <description>简述项目主页： https://github.com/lobehub/lobe-chat 这是一个使用API 调用多家 LLM服务商的本地聊天客户端。 支持： OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek 支持文件上传，向量化，引用文件内容 网页</description>
+    </item>
     <item>
       <title>在linux里面安装homebrew</title>
       <link>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</link>

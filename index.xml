@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:16:39 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>使用docker搭建lobe chat - 本地的openai客户端</title>
+  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
+  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</guid>
+  <description><![CDATA[简述项目主页： https://github.com/lobehub/lobe-chat 这是一个使用API 调用多家 LLM服务商的本地聊天客户端。 支持： OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek 支持文件上传，向量化，引用文件内容 网页]]></description>
+</item>
+<item>
   <title>黑客与画家   读后感</title>
   <link>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
   <pubDate>Fri, 04 Oct 2024 16:16:39 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</guid>
   <description><![CDATA[简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d]]></description>
-</item>
-<item>
-  <title>在Windows上 使用yubikey存储wireguard的私钥</title>
-  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</link>
-  <pubDate>Sun, 29 Sep 2024 22:25:04 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/</guid>
-  <description><![CDATA[简述流程大概是将私钥存储在yubikey里面， 然后wireguard 发起连接的时候从yubikey里读取私钥到文件， 然后设置私钥到wg接口上]]></description>
 </item>
 </channel>
 </rss>
