@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统" /><meta name="keywords" content='git, gogs' /><meta itemprop="name" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端">
 <meta itemprop="description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统"><meta itemprop="datePublished" content="2022-12-28T21:44:42+08:00" />
-<meta itemprop="dateModified" content="2023-11-13T13:25:45+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T20:33:31+08:00" />
 <meta itemprop="wordCount" content="456"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="git,gogs," /><meta property="og:title" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" />
 <meta property="og:description" content="解决办法让ssh客户端强制使用密码登录就可以了。 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com 前置情况描述笔者的 gogs 是直接安装在机器上的， 没有使用 docker 等容器服务。 所以 gogs 会使用系统" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
 <meta property="article:published_time" content="2022-12-28T21:44:42+08:00" />
-<meta property="article:modified_time" content="2023-11-13T13:25:45+08:00" />
+<meta property="article:modified_time" content="2024-10-04T20:33:31+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端"/>
@@ -37,7 +37,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF\/"
     },"genre": "posts","keywords": "git, gogs","wordcount":  456 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF\/","datePublished": "2022-12-28T21:44:42+08:00","dateModified": "2023-11-13T13:25:45+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/periphery\/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF\/","datePublished": "2022-12-28T21:44:42+08:00","dateModified": "2024-10-04T20:33:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2022-12-28 21:44:42"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-28">2022-12-28</time></span>&nbsp;<span title="更新于 2023-11-13 13:25:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-13">2023-11-13</time></span>&nbsp;<span title="456 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2022-12-28 21:44:42"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-28">2022-12-28</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="456 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -215,14 +215,7 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><div class="details admonition note open">
-      <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-      </div>
-      <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2023-11-13，文中内容可能已过时。</div>
-      </div>
-    </div><h5 id="解决办法" class="heading-element">
+      </div><div class="content" id="content"><h5 id="解决办法" class="heading-element">
   <a href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" class="heading-mark"></a>解决办法</h5><p>让ssh客户端强制使用密码登录就可以了。</p>
 <p><code>ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com</code></p>
 <h5 id="前置情况描述" class="heading-element">
@@ -287,7 +280,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-11-13 13:25:45">更新于 2023-11-13&nbsp;</span>
+        <span title="更新于 2024-10-04 20:33:31">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

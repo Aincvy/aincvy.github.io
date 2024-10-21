@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。 笔者刚开始在做这件事的时候碰到了一" /><meta name="keywords" content='linux, shell' /><meta itemprop="name" content="在bash脚本中拼接参数的问题">
 <meta itemprop="description" content="在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。 笔者刚开始在做这件事的时候碰到了一"><meta itemprop="datePublished" content="2020-09-14T20:38:01+08:00" />
-<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T20:33:31+08:00" />
 <meta itemprop="wordCount" content="489"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="linux,shell," /><meta property="og:title" content="在bash脚本中拼接参数的问题" />
 <meta property="og:description" content="在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。 笔者刚开始在做这件事的时候碰到了一" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
 <meta property="article:published_time" content="2020-09-14T20:38:01+08:00" />
-<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
+<meta property="article:modified_time" content="2024-10-04T20:33:31+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="在bash脚本中拼接参数的问题"/>
@@ -37,7 +37,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98\/"
     },"genre": "posts","keywords": "linux, shell","wordcount":  489 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98\/","datePublished": "2020-09-14T20:38:01+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98\/","datePublished": "2020-09-14T20:38:01+08:00","dateModified": "2024-10-04T20:33:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,15 +189,8 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>在bash脚本中拼接参数的问题</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-09-14 20:38:01"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-09-14">2020-09-14</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span title="489 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><div class="details admonition note open">
-      <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-      </div>
-      <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2023-07-30，文中内容可能已过时。</div>
-      </div>
-    </div><p>在脚本里面使用<code>rsync</code> 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。</p>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-09-14 20:38:01"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-09-14">2020-09-14</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="489 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>在脚本里面使用<code>rsync</code> 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。</p>
 <p>笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。</p>
 <p>拼接的参数会自动使用一个引号括起来， <code>rsync</code> 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。</p>
 <p>我刚开始好像是使用一个单一的变量来尝试控制参数。（<em>大约1，2个月以前的东西​，记得不是很清楚&#x1f602;</em>)</p>
@@ -256,7 +249,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+        <span title="更新于 2024-10-04 20:33:31">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

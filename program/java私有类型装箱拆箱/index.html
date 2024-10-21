@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="简述在尽可能的情况下， 都应该使用 java的私有类型， 而装箱类型应该少用。 因为 装箱的类型 会占用更多的内存。 内存占用相关的内容 私有类型 装箱类型 内" /><meta name="keywords" content='java, 装箱拆箱' /><meta itemprop="name" content="Java私有类型装箱拆箱">
 <meta itemprop="description" content="简述在尽可能的情况下， 都应该使用 java的私有类型， 而装箱类型应该少用。 因为 装箱的类型 会占用更多的内存。 内存占用相关的内容 私有类型 装箱类型 内"><meta itemprop="datePublished" content="2020-04-30T21:27:47+08:00" />
-<meta itemprop="dateModified" content="2023-11-13T13:25:45+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T20:33:31+08:00" />
 <meta itemprop="wordCount" content="1106"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="java,装箱拆箱," /><meta property="og:title" content="Java私有类型装箱拆箱" />
 <meta property="og:description" content="简述在尽可能的情况下， 都应该使用 java的私有类型， 而装箱类型应该少用。 因为 装箱的类型 会占用更多的内存。 内存占用相关的内容 私有类型 装箱类型 内" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/program/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="program" />
 <meta property="article:published_time" content="2020-04-30T21:27:47+08:00" />
-<meta property="article:modified_time" content="2023-11-13T13:25:45+08:00" />
+<meta property="article:modified_time" content="2024-10-04T20:33:31+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="Java私有类型装箱拆箱"/>
@@ -37,7 +37,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1\/"
     },"genre": "posts","keywords": "java, 装箱拆箱","wordcount":  1106 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1\/","datePublished": "2020-04-30T21:27:47+08:00","dateModified": "2023-11-13T13:25:45+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/program\/java%E7%A7%81%E6%9C%89%E7%B1%BB%E5%9E%8B%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1\/","datePublished": "2020-04-30T21:27:47+08:00","dateModified": "2024-10-04T20:33:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Java私有类型装箱拆箱</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-04-30 21:27:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-04-30">2020-04-30</time></span>&nbsp;<span title="更新于 2023-11-13 13:25:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-13">2023-11-13</time></span>&nbsp;<span title="1106 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-04-30 21:27:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-04-30">2020-04-30</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="1106 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -213,14 +213,7 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><div class="details admonition note open">
-      <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-      </div>
-      <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2023-11-13，文中内容可能已过时。</div>
-      </div>
-    </div><h3 id="简述" class="heading-element">
+      </div><div class="content" id="content"><h3 id="简述" class="heading-element">
   <a href="#%e7%ae%80%e8%bf%b0" class="heading-mark"></a>简述</h3><p>在尽可能的情况下， 都应该使用 java的<strong>私有类型</strong>， 而装箱类型应该少用。</p>
 <p>因为 装箱的类型 会占用更多的内存。</p>
 <h3 id="内存占用相关的内容" class="heading-element">
@@ -353,7 +346,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-11-13 13:25:45">更新于 2023-11-13&nbsp;</span>
+        <span title="更新于 2024-10-04 20:33:31">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

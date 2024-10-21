@@ -4,9 +4,17 @@
     <link>https://fantasyplayer.link/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</lastBuildDate>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 21 Oct 2024 21:10:14 &#43;0800</lastBuildDate>
       <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>娱乐至死   读后感</title>
+  <link>https://fantasyplayer.link/2024/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+  <pubDate>Mon, 21 Oct 2024 21:10:14 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/2024/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+  <description><![CDATA[媒介即隐喻： 铅字，电视机都是媒介，每种媒介有不一样的特点，特性。 每个媒介在大脑中都会附带一些额外信息。 印刷机统治下的美国和电视机统治下的美国]]></description>
+</item>
+<item>
   <title>使用docker搭建lobe chat - 本地的openai客户端</title>
   <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
   <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Aincvy</author>
   <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</guid>
   <description><![CDATA[实现的思路是使用GnuPG 进行签名， 所以需要先生成密钥对， 然后将私钥转移到yubikey里面。 先说明一下 GPG(GunPG) 和 OpenPGP 的关联： OpenPGP 是一个标准: OpenPGP 是一个]]></description>
-</item>
-<item>
-  <title>使用yubikey Otp 验证sudo</title>
-  <link>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</link>
-  <pubDate>Mon, 30 Sep 2024 21:10:15 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/</guid>
-  <description><![CDATA[简述笔者使用的是 yubico PAM 模块实现的。 参考网址： https://developers.yubico.com/yubico-pam/ 主要内容笔者使用的 Debian 系统， 所以在本文说明一下 Debian 系统如何操作。 安装 Yubico PAM 模块由于 yubico pam 模块并没有提供d]]></description>
 </item>
 </channel>
 </rss>

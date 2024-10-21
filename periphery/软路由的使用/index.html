@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="简述 软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给" /><meta name="keywords" content='pfSense, self-hosted, 软路由' /><meta itemprop="name" content="pfSense 软路由的使用">
 <meta itemprop="description" content="简述 软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给"><meta itemprop="datePublished" content="2020-06-27T20:49:31+08:00" />
-<meta itemprop="dateModified" content="2023-07-30T11:24:44+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T20:33:31+08:00" />
 <meta itemprop="wordCount" content="3160"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="pfSense,self-hosted,软路由," /><meta property="og:title" content="pfSense 软路由的使用" />
 <meta property="og:description" content="简述 软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
 <meta property="article:published_time" content="2020-06-27T20:49:31+08:00" />
-<meta property="article:modified_time" content="2023-07-30T11:24:44+08:00" />
+<meta property="article:modified_time" content="2024-10-04T20:33:31+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="pfSense 软路由的使用"/>
@@ -37,7 +37,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8\/"
     },"genre": "posts","keywords": "pfSense, self-hosted, 软路由","wordcount":  3160 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8\/","datePublished": "2020-06-27T20:49:31+08:00","dateModified": "2023-07-30T11:24:44+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/periphery\/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8\/","datePublished": "2020-06-27T20:49:31+08:00","dateModified": "2024-10-04T20:33:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>pfSense 软路由的使用</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-06-27 20:49:31"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-06-27">2020-06-27</time></span>&nbsp;<span title="更新于 2023-07-30 11:24:44"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-30">2023-07-30</time></span>&nbsp;<span title="3160 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-06-27 20:49:31"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-06-27">2020-06-27</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="3160 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -230,14 +230,7 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><div class="details admonition note open">
-      <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-      </div>
-      <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2023-07-30，文中内容可能已过时。</div>
-      </div>
-    </div><h3 id="简述" class="heading-element">
+      </div><div class="content" id="content"><h3 id="简述" class="heading-element">
   <a href="#%e7%ae%80%e8%bf%b0" class="heading-mark"></a>简述</h3><ul>
 <li>软路由系统: <code>pfSense</code>， 基于<code>FreeBSD</code></li>
 <li>软路由是放在 <code>esxi</code>上的一个虚拟机</li>
@@ -575,7 +568,7 @@ Collisions 0</p>
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-07-30 11:24:44">更新于 2023-07-30&nbsp;</span>
+        <span title="更新于 2024-10-04 20:33:31">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

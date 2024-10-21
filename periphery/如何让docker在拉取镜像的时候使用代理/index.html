@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况" /><meta name="keywords" content='linux, docker' /><meta itemprop="name" content="如何让docker在拉取镜像的时候使用代理">
 <meta itemprop="description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况"><meta itemprop="datePublished" content="2024-06-30T12:04:51+08:00" />
-<meta itemprop="dateModified" content="2024-06-30T15:41:02+08:00" />
+<meta itemprop="dateModified" content="2024-10-04T20:33:31+08:00" />
 <meta itemprop="wordCount" content="567"><meta itemprop="image" content="https://fantasyplayer.link/logo.png" />
 <meta itemprop="keywords" content="linux,docker," /><meta property="og:title" content="如何让docker在拉取镜像的时候使用代理" />
 <meta property="og:description" content="主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" /><meta property="og:image" content="https://fantasyplayer.link/logo.png" /><meta property="article:section" content="periphery" />
 <meta property="article:published_time" content="2024-06-30T12:04:51+08:00" />
-<meta property="article:modified_time" content="2024-06-30T15:41:02+08:00" />
+<meta property="article:modified_time" content="2024-10-04T20:33:31+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://fantasyplayer.link/logo.png" /><meta name="twitter:title" content="如何让docker在拉取镜像的时候使用代理"/>
@@ -37,7 +37,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86\/"
     },"genre": "posts","keywords": "linux, docker","wordcount":  567 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86\/","datePublished": "2024-06-30T12:04:51+08:00","dateModified": "2024-06-30T15:41:02+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/periphery\/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86\/","datePublished": "2024-06-30T12:04:51+08:00","dateModified": "2024-10-04T20:33:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -189,7 +189,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>如何让docker在拉取镜像的时候使用代理</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-06-30 12:04:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-30">2024-06-30</time></span>&nbsp;<span title="更新于 2024-06-30 15:41:02"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-30">2024-06-30</time></span>&nbsp;<span title="567 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2024-06-30 12:04:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-30">2024-06-30</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="567 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -250,7 +250,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-06-30 15:41:02">更新于 2024-06-30&nbsp;</span>
+        <span title="更新于 2024-10-04 20:33:31">更新于 2024-10-04&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">

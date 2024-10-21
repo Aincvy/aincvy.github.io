@@ -29,6 +29,14 @@
   <description><![CDATA[使用这部分资源可能会造成法律问题。 详情见帖子： https://forum.unity.com/threads/unable-to-download-Disabled-assets.1202350/ 主要内容笔者这里就简略的翻译一下上面帖子的内容。 U： 资源商店的资源被标记成了 Disabled ，这正常吗？ A]]></description>
 </item>
 <item>
+  <title>Unity Asset Store 一些插件的介绍</title>
+  <link>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</link>
+  <pubDate>Sun, 26 Feb 2023 15:57:12 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</guid>
+  <description><![CDATA[插件这东西并不是越多越好， 还是符合自己的需求最好。 🈚 免费 🈶 要钱 📖 开源 主要内容 代码工具类 日志插件： 🈚📖 Unity File Debug 简介： 这个插件可以记录 console log 到文件里]]></description>
+</item>
+<item>
   <title>Unity 相关的几个小问题记录</title>
   <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
   <pubDate>Sun, 08 Jan 2023 22:18:51 &#43;0800</pubDate>

@@ -4,7 +4,15 @@
     <link>https://fantasyplayer.link/tags/esxi/</link>
     <description>esxi - 标签 | Fanstasy Player / 幻想系玩家</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Thu, 09 Jul 2020 20:24:27 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/esxi/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 31 Jul 2020 23:46:23 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/esxi/" rel="self" type="application/rss+xml" /><item>
+  <title>Esxi显卡直通的操作</title>
+  <link>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+  <pubDate>Fri, 31 Jul 2020 23:46:23 &#43;0800</pubDate>
+  <author>Aincvy</author>
+  <guid>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+  <description><![CDATA[这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。 ESXi 的操作登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启]]></description>
+</item>
+<item>
   <title>ESXi更换硬盘的记录</title>
   <link>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
   <pubDate>Thu, 09 Jul 2020 20:24:27 &#43;0800</pubDate>

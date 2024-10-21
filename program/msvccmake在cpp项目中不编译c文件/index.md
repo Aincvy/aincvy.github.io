@@ -1,6 +1,18 @@
 # Msvc,cmake在cpp项目中不编译c文件的问题的处理
 
 
+## 2024年10月6日更新 
+```cmake
+project(name
+    VERSION 0.0.1
+    DESCRIPTION &#34;A WIP vs code extension.&#34;
+    LANGUAGES CXX C
+)
+```
+这里可以使用 LANGUAGES 选项设置启用的语言是什么， 添加上C 就可以了。 
+
+## 原文
+
 先看一段 CMakeLists.txt 的文件内容： 
 ```cmake
 add_executable(bead-server program.cpp)
