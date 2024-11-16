@@ -219,6 +219,6 @@ vagrant@bullseye:~/storage1$
 
 ---
 
-> 作者: Aincvy  
+> 作者:   
 > URL: https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/  
 

@@ -1,40 +1,42 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>软路由 - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
-    <description>软路由 - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 25 Jan 2021 22:28:55 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="self" type="application/rss+xml" /><item>
-  <title>Openwrt的ipv6的dhcp功能</title>
-  <link>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</link>
-  <pubDate>Mon, 25 Jan 2021 22:28:55 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</guid>
-  <description><![CDATA[笔者曾经有一段时间发现，在Windows机器上设置了ipv4的dns服务器之后没有效果。 之前返回的是什么，修改之后返回的还是什么。。 在把ip]]></description>
-</item>
-<item>
-  <title>家里的网络图示</title>
-  <link>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</link>
-  <pubDate>Sat, 29 Aug 2020 12:55:39 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</guid>
-  <description><![CDATA[图示 其他说明我家里就一台二手服务器,所有的虚拟机都在这台服务器里。 pfSense 的作用 pppoe 拨号上网 DHCP 服务 推送的网关为 192.168.200.2 即 openwrt的地址， 而非pfSe]]></description>
-</item>
-<item>
-  <title>软路由上的DNS使用记录</title>
-  <link>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
-  <pubDate>Thu, 09 Jul 2020 20:25:06 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
-  <description><![CDATA[简述 软路由系统： pfSense 使用的 DNS 服务： DNS Resolver 可以考虑的 DNS 服务： BIND DNS 笔者曾经成功的设置好了 BIND DNS ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下]]></description>
-</item>
-<item>
-  <title>pfSense 软路由的使用</title>
-  <link>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-  <pubDate>Sat, 27 Jun 2020 20:49:31 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-  <description><![CDATA[简述 软路由系统: pfSense， 基于FreeBSD 软路由是放在 esxi上的一个虚拟机 使用电信拨号上网 LAN 口1 192.168.200.0/24 自用 LAN 口2 192.168.100.0/24 因某些原因分享网络给]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openwrt的ipv6的dhcp功能</title>
+      <link>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Mon, 25 Jan 2021 22:28:55 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</guid>
+      <description>&lt;p&gt;笔者曾经有一段时间发现，在Windows机器上设置了ipv4的dns服务器之后没有效果。 之前返回的是什么，修改之后返回的还是什么。。 在把ipv6关掉之后修改才会生效。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>家里的网络图示</title>
+      <link>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</link>
+      <pubDate>Sat, 29 Aug 2020 12:55:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E9%87%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%A4%BA/</guid>
+      <description>&lt;h2 id=&#34;图示&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;图示&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%9b%be%e7%a4%ba&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://fantasyplayer.link/img/periphery/home_network.png&#34; alt=&#34;Home Network&#34; srcset=&#34;https://fantasyplayer.link/img/periphery/home_network.png?size=small, https://fantasyplayer.link/img/periphery/home_network.png?size=medium 1.5x, https://fantasyplayer.link/img/periphery/home_network.png?size=large 2x&#34; data-title=&#34;Home Network&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>软路由上的DNS使用记录</title>
+      <link>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 09 Jul 2020 20:25:06 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%8A%E7%9A%84dns%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h2 id=&#34;简述&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简述&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e8%bf%b0&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;软路由系统： &lt;code&gt;pfSense&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;使用的 DNS 服务： &lt;code&gt;DNS Resolver&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;可以考虑的 DNS 服务： &lt;code&gt;BIND DNS&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;笔者曾经成功的设置好了 &lt;code&gt;BIND DNS&lt;/code&gt; ,但是最近这次的安装，怎么都无法成功设置， 所以就尝试了下自带的&lt;code&gt;DNS Resolver&lt;/code&gt; ，非常简单，一次搞定。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>pfSense 软路由的使用</title>
+      <link>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sat, 27 Jun 2020 20:49:31 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h3 id=&#34;简述&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简述&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e8%bf%b0&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;软路由系统: &lt;code&gt;pfSense&lt;/code&gt;， 基于&lt;code&gt;FreeBSD&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;软路由是放在 &lt;code&gt;esxi&lt;/code&gt;上的一个虚拟机&lt;/li&gt;&#xA;&lt;li&gt;使用电信拨号上网&lt;/li&gt;&#xA;&lt;li&gt;LAN 口1 &lt;code&gt;192.168.200.0/24&lt;/code&gt; 自用&lt;/li&gt;&#xA;&lt;li&gt;LAN 口2 &lt;code&gt;192.168.100.0/24&lt;/code&gt; 因某些原因分享网络给其他一起合租的租客使用。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;开始&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;开始&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%bc%80%e5%a7%8b&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;我现在是电信1000M/100M 的宽带， 之前使用的不到300块钱的 TPLink 路由器在 speedtest.cn 上只能跑700M 左右的下行。 更换了之后能跑到1000M 左右， 感觉还是 OK 的。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

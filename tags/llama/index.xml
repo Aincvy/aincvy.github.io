@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>llama - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Llama - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/llama/</link>
-    <description>llama - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 21 Aug 2023 15:29:52 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/llama/" rel="self" type="application/rss+xml" /><item>
-  <title>Llama Gpt 项目的简单介绍以及切换CUDA的方法</title>
-  <link>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</link>
-  <pubDate>Mon, 21 Aug 2023 15:29:52 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-  <description><![CDATA[llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。 官方 github 地址： https://github.com/getumbrel/llama-gpt.git 官方简介： A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/llama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Llama Gpt 项目的简单介绍以及切换CUDA的方法</title>
+      <link>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 21 Aug 2023 15:29:52 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/llama-gpt-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%87%E6%8D%A2cuda%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器人，由Llama 2 提供支持。&lt;/p&gt;&#xA;&lt;p&gt;官方 github 地址： &lt;a href=&#34;https://github.com/getumbrel/llama-gpt.git&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://github.com/getumbrel/llama-gpt.git&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;官方简介：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your device.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

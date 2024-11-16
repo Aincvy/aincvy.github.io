@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Shell - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/shell/</link>
-    <description>shell - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 14 Sep 2020 20:38:01 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/shell/" rel="self" type="application/rss+xml" /><item>
-  <title>在bash脚本中拼接参数的问题</title>
-  <link>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-  <pubDate>Mon, 14 Sep 2020 20:38:01 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-  <description><![CDATA[在脚本里面使用rsync 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。 笔者刚开始在做这件事的时候碰到了一]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在bash脚本中拼接参数的问题</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 14 Sep 2020 20:38:01 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;在脚本里面使用&lt;code&gt;rsync&lt;/code&gt; 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。&lt;/p&gt;&#xA;&lt;p&gt;笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

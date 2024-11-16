@@ -1,56 +1,56 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unity - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Unity - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/unity/</link>
-    <description>unity - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sat, 06 Apr 2024 11:31:05 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/unity/" rel="self" type="application/rss+xml" /><item>
-  <title>Simple History   Unity的选择历史工具</title>
-  <link>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Sat, 06 Apr 2024 11:31:05 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Unity里如何处理一条小河的流水音效</title>
-  <link>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</link>
-  <pubDate>Thu, 18 Jan 2024 12:03:54 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</guid>
-  <description><![CDATA[主要内容需求： 如何正确播放一条河的水流音效？ 是一条小河，且河流的长度不是很长。 解答： 要让音效听起来像真正河流那样的话， 就需要满足下面几个需求]]></description>
-</item>
-<item>
-  <title>Unity Asset Store被标记成disable的资源</title>
-  <link>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</link>
-  <pubDate>Fri, 19 May 2023 10:21:59 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</guid>
-  <description><![CDATA[使用这部分资源可能会造成法律问题。 详情见帖子： https://forum.unity.com/threads/unable-to-download-Disabled-assets.1202350/ 主要内容笔者这里就简略的翻译一下上面帖子的内容。 U： 资源商店的资源被标记成了 Disabled ，这正常吗？ A]]></description>
-</item>
-<item>
-  <title>Unity Asset Store 一些插件的介绍</title>
-  <link>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</link>
-  <pubDate>Sun, 26 Feb 2023 15:57:12 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</guid>
-  <description><![CDATA[插件这东西并不是越多越好， 还是符合自己的需求最好。 🈚 免费 🈶 要钱 📖 开源 主要内容 代码工具类 日志插件： 🈚📖 Unity File Debug 简介： 这个插件可以记录 console log 到文件里]]></description>
-</item>
-<item>
-  <title>Unity 相关的几个小问题记录</title>
-  <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
-  <pubDate>Sun, 08 Jan 2023 22:18:51 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
-  <description><![CDATA[主要内容 动画播放结束会模型会卡住一段时间的问题动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而]]></description>
-</item>
-<item>
-  <title>Protobuf number overflow 的解决方法</title>
-  <link>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
-  <pubDate>Wed, 10 May 2017 21:11:12 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-  <description><![CDATA[基本信息: java 服务端 网络框架用的 netty Unity的客户端，用的 tcpClient. 通信协议选择的 protobuf. java端采用的是谷歌提供的解析器， 而客户端则采用的protobu]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Sat, 05 Oct 2024 11:05:35 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple History   Unity的选择历史工具</title>
+      <link>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 06 Apr 2024 11:31:05 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</guid>
+      <description>Simple History   Unity的选择历史工具</description>
+    </item>
+    <item>
+      <title>Unity里如何处理一条小河的流水音效</title>
+      <link>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</link>
+      <pubDate>Thu, 18 Jan 2024 12:03:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/unity%E7%9A%84audiosource%E7%9A%84%E6%89%A9%E6%95%A3%E5%8F%82%E6%95%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/</guid>
+      <description>&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;需求： 如何正确播放一条河的水流音效？  是一条小河，且河流的长度不是很长。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unity Asset Store被标记成disable的资源</title>
+      <link>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 19 May 2023 10:21:59 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</guid>
+      <description>&lt;p&gt;使用这部分资源可能会造成法律问题。&lt;/p&gt;&#xA;&lt;p&gt;详情见帖子：  &lt;a href=&#34;https://forum.unity.com/threads/unable-to-download-Disabled-assets.1202350/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://forum.unity.com/threads/unable-to-download-Disabled-assets.1202350/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;笔者这里就简略的翻译一下上面帖子的内容。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unity Asset Store 一些插件的介绍</title>
+      <link>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Sun, 26 Feb 2023 15:57:12 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/unity-asset-store%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%86%E7%B1%BB/</guid>
+      <description>&lt;p&gt;&lt;em&gt;插件这东西并不是越多越好， 还是符合自己的需求最好。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;🈚  免费&lt;/li&gt;&#xA;&lt;li&gt;🈶  要钱&lt;/li&gt;&#xA;&lt;li&gt;📖  开源&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;代码工具类&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;代码工具类&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%bb%a3%e7%a0%81%e5%b7%a5%e5%85%b7%e7%b1%bb&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;h4 id=&#34;日志插件--unity-file-debughttpsassetstoreunitycompackagestoolsutilitiesunity-file-debug-72250&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;日志插件： 🈚📖 &lt;a href=&#34;https://assetstore.unity.com/packages/tools/utilities/unity-file-debug-72250&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Unity File Debug&lt;/a&gt;&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%97%a5%e5%bf%97%e6%8f%92%e4%bb%b6--unity-file-debughttpsassetstoreunitycompackagestoolsutilitiesunity-file-debug-72250&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h4&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/4488db8c-b006-4ea0-b498-7b3177337081.webp&#34; alt=&#34;log viwer&#34; srcset=&#34;https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/4488db8c-b006-4ea0-b498-7b3177337081.webp?size=small, https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/4488db8c-b006-4ea0-b498-7b3177337081.webp?size=medium 1.5x, https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/4488db8c-b006-4ea0-b498-7b3177337081.webp?size=large 2x&#34; data-title=&#34;log viwer&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unity 相关的几个小问题记录</title>
+      <link>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 08 Jan 2023 22:18:51 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;动画播放结束会模型会卡住一段时间的问题&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;动画播放结束会模型会卡住一段时间的问题&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%8a%a8%e7%94%bb%e6%92%ad%e6%94%be%e7%bb%93%e6%9d%9f%e4%bc%9a%e6%a8%a1%e5%9e%8b%e4%bc%9a%e5%8d%a1%e4%bd%8f%e4%b8%80%e6%ae%b5%e6%97%b6%e9%97%b4%e7%9a%84%e9%97%ae%e9%a2%98&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而是会在受击状态结束后卡住一会才会切换。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Protobuf number overflow 的解决方法</title>
+      <link>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 10 May 2017 21:11:12 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/protobuf-net-parse-from-string-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;基本信息:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;java 服务端&lt;/li&gt;&#xA;&lt;li&gt;网络框架用的 netty&lt;/li&gt;&#xA;&lt;li&gt;Unity的客户端，用的 tcpClient.&lt;/li&gt;&#xA;&lt;li&gt;通信协议选择的 protobuf.&lt;/li&gt;&#xA;&lt;li&gt;java端采用的是谷歌提供的解析器， 而客户端则采用的protobuf-net&lt;/li&gt;&#xA;&lt;li&gt;我在设计中 使用了一个叫 GameMsg 的协议来封装所有协议的内容。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;在本来中设计中 使用了一个 &lt;code&gt;string paramStr = 1; &lt;/code&gt; 的字段来存放协议的具体内容。 然后发现 在 unity 端中 如果协议的属性带有负数， 则报出一个 &lt;code&gt;number overflow &lt;/code&gt;的异常。 把 string 改成 bytes 就好了。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

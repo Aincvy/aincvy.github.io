@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories - 分类 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/categories/</link>
-    <description>Categories - 分类 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 21 Oct 2024 21:10:14 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/categories/" rel="self" type="application/rss+xml" /><item>
-  <title>book</title>
-  <link>https://fantasyplayer.link/categories/book/</link>
-  <pubDate>Mon, 21 Oct 2024 21:10:14 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/categories/book/</guid>
-  <description><![CDATA[]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Mon, 21 Oct 2024 21:33:51 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book</title>
+      <link>https://fantasyplayer.link/categories/book/</link>
+      <pubDate>Mon, 21 Oct 2024 21:10:14 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/categories/book/</guid>
+      <description>Book</description>
+    </item>
+  </channel>
 </rss>

@@ -1,88 +1,146 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>所有文章 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/posts/</link>
-    <description>所有文章 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 21 Oct 2024 21:10:14 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>娱乐至死   读后感</title>
-  <link>https://fantasyplayer.link/2024/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
-  <pubDate>Mon, 21 Oct 2024 21:10:14 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2024/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
-  <description><![CDATA[媒介即隐喻： 铅字，电视机都是媒介，每种媒介有不一样的特点，特性。 每个媒介在大脑中都会附带一些额外信息。 印刷机统治下的美国和电视机统治下的美国]]></description>
-</item>
-<item>
-  <title>黑客与画家   读后感</title>
-  <link>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
-  <pubDate>Fri, 04 Oct 2024 16:16:39 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
-  <description><![CDATA[本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。 学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。 学校和监狱是有类似氛]]></description>
-</item>
-<item>
-  <title>逻辑学   书摘</title>
-  <link>https://fantasyplayer.link/2024/%E9%80%BB%E8%BE%91%E5%AD%A6-%E4%B9%A6%E6%91%98/</link>
-  <pubDate>Sun, 26 May 2024 10:39:43 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2024/%E9%80%BB%E8%BE%91%E5%AD%A6-%E4%B9%A6%E6%91%98/</guid>
-  <description><![CDATA[作者： 高尔斯基， 是一本老书 作者名字没有写错，不是高尔基。 正篇 01 逻辑学的对象和意义借助于概念， 我们就能能认识到以前没有被我们感知过的事物。 在思]]></description>
-</item>
-<item>
-  <title>Simple History   Unity的选择历史工具</title>
-  <link>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Sat, 06 Apr 2024 11:31:05 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>精力管理   书摘</title>
-  <link>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</link>
-  <pubDate>Mon, 18 Dec 2023 13:09:06 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</guid>
-  <description><![CDATA[精力 而非时间， 是高效表现的基础。 原则1 全情投入需要下面的四个要素 体能 情感 思维 意志 原则2 因为使用过度和使用不足都会削弱精力， 必须不时更新精力以]]></description>
-</item>
-<item>
-  <title>文石tab8c   彩色墨水屏使用的体验</title>
-  <link>https://fantasyplayer.link/2023/%E6%96%87%E7%9F%B3tab8c-%E5%BD%A9%E8%89%B2%E5%A2%A8%E6%B0%B4%E5%B1%8F%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
-  <pubDate>Sun, 12 Nov 2023 21:40:47 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/%E6%96%87%E7%9F%B3tab8c-%E5%BD%A9%E8%89%B2%E5%A2%A8%E6%B0%B4%E5%B1%8F%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
-  <description><![CDATA[文字介绍和感想笔者是今天早上收到的这个彩色墨水屏平板 文石 tab8c 。 这是一个7.8寸的小平板， 下面给出一些相关信息： 发售日期： 2023年9月20日 C]]></description>
-</item>
-<item>
-  <title>认识商业   书摘</title>
-  <link>https://fantasyplayer.link/2023/%E8%AE%A4%E8%AF%86%E5%95%86%E4%B8%9A-%E4%B9%A6%E6%91%98/</link>
-  <pubDate>Sun, 12 Nov 2023 21:35:33 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/%E8%AE%A4%E8%AF%86%E5%95%86%E4%B8%9A-%E4%B9%A6%E6%91%98/</guid>
-  <description><![CDATA[内容 人脉和知识一样重要。 “你知道什么并不重要，认识谁才是问题核心” 面试前需要准备一些东西。 面试演练， 可以和朋友，父母进行一番演练 需要建立人脉]]></description>
-</item>
-<item>
-  <title>极简人工智能： 你一定爱读的AI通识书   读后感</title>
-  <link>https://fantasyplayer.link/2023/%E6%9E%81%E7%AE%80%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E4%BD%A0%E4%B8%80%E5%AE%9A%E7%88%B1%E8%AF%BB%E7%9A%84ai%E9%80%9A%E8%AF%86%E4%B9%A6-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
-  <pubDate>Fri, 13 Oct 2023 17:08:29 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/%E6%9E%81%E7%AE%80%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E4%BD%A0%E4%B8%80%E5%AE%9A%E7%88%B1%E8%AF%BB%E7%9A%84ai%E9%80%9A%E8%AF%86%E4%B9%A6-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
-  <description><![CDATA[本书介绍了 关于 AI的一些历史， 谁在那一年提出了什么理论，以及一些 AI 想法的来源， 比如 神经元。 笔者感觉， 没有什么干货， 发展历史其实并不重要，读不]]></description>
-</item>
-<item>
-  <title>穷爸爸，富爸爸   读后感</title>
-  <link>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
-  <pubDate>Tue, 12 Sep 2023 19:08:24 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
-  <description><![CDATA[豆瓣图书： https://book.douban.com/subject/1033778/ 第一章的故事很有意思， 比较吸引人， 可惜就一章 要学会不为钱工作 资产： 可以给自己带来金钱的东西， 负债： 需要自己不断支出的东西 房子， 车]]></description>
-</item>
-<item>
-  <title>VR游戏| 作为术士，我要应付月中测验</title>
-  <link>https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/</link>
-  <pubDate>Fri, 05 May 2023 12:26:59 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/</guid>
-  <description><![CDATA[这是笔者做的一款独立游戏。 主要内容这个游戏的核心部分是近战反击，远程反击，与适时的技能爆发。 玩家扮演一个年轻的术士， 去完成他的月中测验。 测验]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Mon, 21 Oct 2024 21:33:51 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>娱乐至死   读后感</title>
+      <link>https://fantasyplayer.link/2024/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Mon, 21 Oct 2024 21:10:14 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2024/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;p&gt;媒介即隐喻： 铅字，电视机都是媒介，每种媒介有不一样的特点，特性。 每个媒介在大脑中都会附带一些额外信息。&lt;/p&gt;&#xA;&lt;p&gt;印刷机统治下的美国和电视机统治下的美国完全不一样， 印刷机和电视机有不同的特点， 这种特点是绑定于工具自身的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>黑客与画家   读后感</title>
+      <link>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Fri, 04 Oct 2024 16:16:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2024/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;p&gt;&lt;em&gt;本博文是笔者读完之后2个月写的，所以部分内容记得不是很准。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;学校的作用就是把孩子们关起来， 好让他们的父母可以去做别的事情。&lt;/p&gt;&#xA;&lt;p&gt;学校和监狱是有类似氛围的场所， 因为学生自身的能力和技术并不会直接对他们产生正向效用。 如果在社会上，技术高超的人会获取更多的报酬。报酬的多少可以直接影响一个人的各个方面， 而学生却不会感受到这种东西。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>逻辑学   书摘</title>
+      <link>https://fantasyplayer.link/2024/%E9%80%BB%E8%BE%91%E5%AD%A6-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Sun, 26 May 2024 10:39:43 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2024/%E9%80%BB%E8%BE%91%E5%AD%A6-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;p&gt;作者： 高尔斯基， 是一本老书   &lt;em&gt;作者名字没有写错，不是高尔基。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;正篇&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;正篇&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%ad%a3%e7%af%87&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;01-逻辑学的对象和意义&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;01 逻辑学的对象和意义&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#01-%e9%80%bb%e8%be%91%e5%ad%a6%e7%9a%84%e5%af%b9%e8%b1%a1%e5%92%8c%e6%84%8f%e4%b9%89&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;借助于概念， 我们就能能认识到以前没有被我们感知过的事物。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Simple History   Unity的选择历史工具</title>
+      <link>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 06 Apr 2024 11:31:05 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2024/simple-history-unity%E7%9A%84%E9%80%89%E6%8B%A9%E5%8E%86%E5%8F%B2%E5%B7%A5%E5%85%B7/</guid>
+      <description>Simple History   Unity的选择历史工具</description>
+    </item>
+    <item>
+      <title>精力管理   书摘</title>
+      <link>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Mon, 18 Dec 2023 13:09:06 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2023/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;p&gt;精力 而非时间， 是高效表现的基础。&lt;/p&gt;&#xA;&lt;p&gt;原则1&#xA;全情投入需要下面的四个要素&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;体能&lt;/li&gt;&#xA;&lt;li&gt;情感&lt;/li&gt;&#xA;&lt;li&gt;思维&lt;/li&gt;&#xA;&lt;li&gt;意志&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;原则2&#xA;因为使用过度和使用不足都会削弱精力， 必须不时更新精力以平衡消耗。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>文石tab8c   彩色墨水屏使用的体验</title>
+      <link>https://fantasyplayer.link/2023/%E6%96%87%E7%9F%B3tab8c-%E5%BD%A9%E8%89%B2%E5%A2%A8%E6%B0%B4%E5%B1%8F%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Sun, 12 Nov 2023 21:40:47 +0800</pubDate>
+      <guid>https://fantasyplayer.link/2023/%E6%96%87%E7%9F%B3tab8c-%E5%BD%A9%E8%89%B2%E5%A2%A8%E6%B0%B4%E5%B1%8F%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+      <description>&lt;h2 id=&#34;文字介绍和感想&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;文字介绍和感想&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%96%87%e5%ad%97%e4%bb%8b%e7%bb%8d%e5%92%8c%e6%84%9f%e6%83%b3&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;笔者是今天早上收到的这个彩色墨水屏平板 文石 tab8c 。  这是一个7.8寸的小平板， 下面给出一些相关信息：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>认识商业   书摘</title>
+      <link>https://fantasyplayer.link/2023/%E8%AE%A4%E8%AF%86%E5%95%86%E4%B8%9A-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Sun, 12 Nov 2023 21:35:33 +0800</pubDate>
+      <guid>https://fantasyplayer.link/2023/%E8%AE%A4%E8%AF%86%E5%95%86%E4%B8%9A-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://img2.doubanio.com/view/subject/l/public/s3932863.jpg&#34; alt=&#34;封面&#34; srcset=&#34;https://img2.doubanio.com/view/subject/l/public/s3932863.jpg?size=small, https://img2.doubanio.com/view/subject/l/public/s3932863.jpg?size=medium 1.5x, https://img2.doubanio.com/view/subject/l/public/s3932863.jpg?size=large 2x&#34; data-title=&#34;封面&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>极简人工智能： 你一定爱读的AI通识书   读后感</title>
+      <link>https://fantasyplayer.link/2023/%E6%9E%81%E7%AE%80%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E4%BD%A0%E4%B8%80%E5%AE%9A%E7%88%B1%E8%AF%BB%E7%9A%84ai%E9%80%9A%E8%AF%86%E4%B9%A6-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Fri, 13 Oct 2023 17:08:29 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2023/%E6%9E%81%E7%AE%80%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E4%BD%A0%E4%B8%80%E5%AE%9A%E7%88%B1%E8%AF%BB%E7%9A%84ai%E9%80%9A%E8%AF%86%E4%B9%A6-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;p&gt;本书介绍了 关于 AI的一些历史，  谁在那一年提出了什么理论，以及一些 AI 想法的来源， 比如 神经元。&lt;/p&gt;&#xA;&lt;p&gt;笔者感觉， 没有什么干货， 发展历史其实并不重要，读不读都无所谓的书籍把。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>穷爸爸，富爸爸   读后感</title>
+      <link>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Tue, 12 Sep 2023 19:08:24 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2023/%E7%A9%B7%E7%88%B8%E7%88%B8%E5%AF%8C%E7%88%B8%E7%88%B8-%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;p&gt;豆瓣图书：  &lt;a href=&#34;https://book.douban.com/subject/1033778/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://book.douban.com/subject/1033778/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;第一章的故事很有意思， 比较吸引人， 可惜就一章&lt;/li&gt;&#xA;&lt;li&gt;要学会不为钱工作&lt;/li&gt;&#xA;&lt;li&gt;资产： 可以给自己带来金钱的东西，  负债： 需要自己不断支出的东西&#xA;&lt;ul&gt;&#xA;&lt;li&gt;房子， 车子是负债&lt;/li&gt;&#xA;&lt;li&gt;房地产是资产， 股票是资产&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;要多多购买资产， 减少负债&lt;/li&gt;&#xA;&lt;li&gt;国家的税很高，需要找方法避税&#xA;&lt;ul&gt;&#xA;&lt;li&gt;将 &lt;code&gt;交税 -&amp;gt; 购买其他物品&lt;/code&gt; 转换成 &lt;code&gt;购买其他物品 -&amp;gt; 交税&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;使用公司的方式可以这样运作。   因为交税是基于收入的，所以调换顺序可以减少交税&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;离开学校之后才是学习的开始， 而不是终点， 教育很重要。&lt;/li&gt;&#xA;&lt;li&gt;投资是要有回报的&lt;/li&gt;&#xA;&lt;li&gt;多认识些朋友， 有些富人的朋友会给你内线消息， 然后你可以使用内线消息进行交易&lt;/li&gt;&#xA;&lt;li&gt;要获得并不断提高财商&lt;/li&gt;&#xA;&lt;li&gt;不要被小鸡思想困住， 不要被受到小鸡思想困住的人干扰判断&#xA;&lt;ul&gt;&#xA;&lt;li&gt;无法理性分析， 完全被恐惧心理占据， 就是小鸡式的思想&lt;/li&gt;&#xA;&lt;li&gt;要勇敢一些&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;失败是成功的必经之地&lt;/li&gt;&#xA;&lt;li&gt;开拓思维，  从 &lt;code&gt;我可付不起&lt;/code&gt; 转换到 &lt;code&gt;我怎么样才能付得起？&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;肯定句会禁锢思维， 而疑问句会引导自己寻找答案&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;如果你一定会破产， 那最好在30岁之前。&lt;/li&gt;&#xA;&lt;li&gt;去参加一些研讨会， 认识更多的人， 学习更多的知识。&lt;/li&gt;&#xA;&lt;li&gt;应该更全面的发展自己， 否则在主业失业之后， 就将面临巨大的危险。  尤其是年老之后&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;看起来， 作者的主要发家之路是依赖的房地产， 这让笔者想起之前在知乎看到的文章， 早在几年前的时候，在北京上海这种地方做二房东， 应该是很划算的投资。    但是现在都不行了。 新的赚钱方式应该还是存在的， 只是需要去寻找。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VR游戏| 作为术士，我要应付月中测验</title>
+      <link>https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/</link>
+      <pubDate>Fri, 05 May 2023 12:26:59 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2023/vr%E6%B8%B8%E6%88%8F-%E4%BD%9C%E4%B8%BA%E6%9C%AF%E5%A3%AB%E6%88%91%E8%A6%81%E5%BA%94%E4%BB%98%E6%9C%88%E4%B8%AD%E6%B5%8B%E9%AA%8C/</guid>
+      <description>&lt;p&gt;这是笔者做的一款独立游戏。&lt;/p&gt;&#xA;&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;这个游戏的核心部分是近战反击，远程反击，与适时的技能爆发。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>彼得·林奇的成功投资 - 书摘</title>
+      <link>https://fantasyplayer.link/2022/%E5%BD%BC%E5%BE%97%E6%9E%97%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Tue, 20 Dec 2022 22:31:27 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2022/%E5%BD%BC%E5%BE%97%E6%9E%97%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;笔者评论&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;笔者评论&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ac%94%e8%80%85%e8%af%84%e8%ae%ba&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;本书谈论的是基本面分析的方法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>短线交易秘诀 - 书摘</title>
+      <link>https://fantasyplayer.link/2022/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E7%A7%98%E8%AF%80-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Tue, 06 Dec 2022 14:25:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2022/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E7%A7%98%E8%AF%80-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;笔者评论&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;笔者评论&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ac%94%e8%80%85%e8%af%84%e8%ae%ba&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;笔者感觉这本书可读可不读， 有价值的内容并不是特别多， 尤其是对于寻找交易方式的人来说。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>期货市场技术分析   书摘</title>
+      <link>https://fantasyplayer.link/2022/%E6%9C%9F%E8%B4%A7%E5%B8%82%E5%9C%BA%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Sun, 27 Nov 2022 12:12:51 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2022/%E6%9C%9F%E8%B4%A7%E5%B8%82%E5%9C%BA%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;笔者评论&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;笔者评论&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ac%94%e8%80%85%e8%af%84%e8%ae%ba&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;本书介绍了一些技术分析的手段， 并提供了一些技术分析之所以有效的原因。&#xA;主要涉及的内容大概是&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>穷查理宝典   书摘</title>
+      <link>https://fantasyplayer.link/2022/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Sun, 20 Nov 2022 16:41:30 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2022/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;笔者评论&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;笔者评论&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ac%94%e8%80%85%e8%af%84%e8%ae%ba&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;本书大多讲述了一些关于生活的指导性方针， 解决问题的几个思路。&#xA;对于如何选股，以及如何赚钱并没有太多描述。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何阅读一本书   书摘</title>
+      <link>https://fantasyplayer.link/2022/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6-%E4%B9%A6%E6%91%98/</link>
+      <pubDate>Sun, 06 Nov 2022 10:08:45 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2022/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6-%E4%B9%A6%E6%91%98/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;检视阅读---略读&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;检视阅读 /  略读&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%a3%80%e8%a7%86%e9%98%85%e8%af%bb---%e7%95%a5%e8%af%bb&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;方法1&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;方法1&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%96%b9%e6%b3%951&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;读书名， 以及序&lt;/li&gt;&#xA;&lt;li&gt;读目录&lt;/li&gt;&#xA;&lt;li&gt;读附录&lt;/li&gt;&#xA;&lt;li&gt;读书皮 （ 外包装的新皮）&lt;/li&gt;&#xA;&lt;li&gt;挑几个和主题息息相关的篇章来看&lt;/li&gt;&#xA;&lt;li&gt;打开书， 东翻翻，西翻翻， 念个一两段，有时候可以几页 但不要太多。不要忽略最后的两三页&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;方法二--粗浅的阅读&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;方法二  粗浅的阅读&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%96%b9%e6%b3%95%e4%ba%8c--%e7%b2%97%e6%b5%85%e7%9a%84%e9%98%85%e8%af%bb&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;头一次面对一本难度的书的时候，从头到尾读一遍，碰到不懂的地方不要停下来查询或者思索。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;结构笔记&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;结构笔记&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%bb%93%e6%9e%84%e7%ac%94%e8%ae%b0&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;在略读的时候可以尝试问一下这个问题： 这是一本什么样子的书？ 它在谈什么？&#xA;并把答案记录成笔记， 以便后面再翻阅。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>读书笔记 - 日本蜡烛图技术</title>
+      <link>https://fantasyplayer.link/2022/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%97%A5%E6%9C%AC%E8%9C%A1%E7%83%9B%E5%9B%BE%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 05 Mar 2022 17:23:10 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2022/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%97%A5%E6%9C%AC%E8%9C%A1%E7%83%9B%E5%9B%BE%E6%8A%80%E6%9C%AF/</guid>
+      <category domain="https://fantasyplayer.link/categories/book/">Book</category>
+      <description>&lt;h2 id=&#34;译者序-部分&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;译者序 部分&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e8%af%91%e8%80%85%e5%ba%8f-%e9%83%a8%e5%88%86&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;知行合一： 认真学习， 积极参与， 深刻总结。   即用而学， 学而用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>目录介绍</title>
+      <link>https://fantasyplayer.link/2020/%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Sat, 08 Aug 2020 16:02:30 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/2020/%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/</guid>
+      <description>&lt;h2 id=&#34;目录&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;目录&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%9b%ae%e5%bd%95&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;关于程序和编程相关的文章： &lt;a href=&#34;../program&#34;&gt;Program&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;关于一些胡思乱想的文章： &lt;a href=&#34;../caprice&#34;&gt;Caprice&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;关于软件使用/linux的文章： &lt;a href=&#34;../periphery&#34;&gt;Periphery&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;   &lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

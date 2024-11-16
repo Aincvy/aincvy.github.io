@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/game/</link>
-    <description>Game - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 11 May 2020 21:50:15 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/game/" rel="self" type="application/rss+xml" /><item>
-  <title>PUBG崩溃的解决办法</title>
-  <link>https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-  <pubDate>Mon, 11 May 2020 21:50:15 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-  <description><![CDATA[方法一 使用显卡超频工具降频显卡 笔者是微星 GTX1070 ，所以去微星的官网下载超频工具，然后对频率进行下降限制。 之后就不会掉线了。 方法二 打开机箱侧板 因为这]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PUBG崩溃的解决办法</title>
+      <link>https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Mon, 11 May 2020 21:50:15 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/pubg%E5%B4%A9%E6%BA%83%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;方法一 使用显卡超频工具降频显卡&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;笔者是微星 GTX1070 ，所以去微星的官网下载超频工具，然后对频率进行下降限制。&lt;/p&gt;&#xA;&lt;p&gt;之后就不会掉线了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;方法二 打开机箱侧板&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

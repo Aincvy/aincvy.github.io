@@ -1,88 +1,126 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Linux - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/linux/</link>
-    <description>linux - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/linux/" rel="self" type="application/rss+xml" /><item>
-  <title>使用docker搭建lobe chat - 本地的openai客户端</title>
-  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
-  <pubDate>Fri, 04 Oct 2024 16:54:11 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db-%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</guid>
-  <description><![CDATA[简述项目主页： https://github.com/lobehub/lobe-chat 这是一个使用API 调用多家 LLM服务商的本地聊天客户端。 支持： OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek 支持文件上传，向量化，引用文件内容 网页]]></description>
-</item>
-<item>
-  <title>在linux里面安装homebrew</title>
-  <link>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</link>
-  <pubDate>Fri, 04 Oct 2024 14:20:48 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</guid>
-  <description><![CDATA[homebrew 是一个包管理器， 可以用这个工具安装很多软件包，开发库等。 这个工具在macos 上是比较出名的。 注意，在linux上， 应该考虑把 homebrew 安装到目录/]]></description>
-</item>
-<item>
-  <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
-  <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Sun, 30 Jun 2024 14:37:07 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1-%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[github: https://github.com/searxng/searxng 容器的github地址： https://github.com/searxng/searxng-docker 一些不完全的文档： https://docs.searxng.org/admin/index.html 主要内容 安装使用下面的步骤来安装， 翻译自 searxng-docker 的仓库： 安装docker 从github上把仓库 克]]></description>
-</item>
-<item>
-  <title>如何让docker在拉取镜像的时候使用代理</title>
-  <link>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</link>
-  <pubDate>Sun, 30 Jun 2024 12:04:51 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</guid>
-  <description><![CDATA[主要内容在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。 本文假设读者的docker 是使用 systemctl 进行控制的， 在这种情况]]></description>
-</item>
-<item>
-  <title>在debian11 中 安装xrdp</title>
-  <link>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</link>
-  <pubDate>Mon, 13 Nov 2023 10:46:11 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
-  <description><![CDATA[正文笔者的是 xfce 桌面环境 执行下面的命令 即可进行安装 1 2 3 4 5 sudo apt install xrdp sudo adduser xrdp ssl-cert echo xfce4-session &gt;~/.xsession sudo apt install dbus-x11 sudo service xrdp restart 然后修改配置文件 /etc/xrdp/star]]></description>
-</item>
-<item>
-  <title>Debian 从官网下载，然后安装N卡驱动</title>
-  <link>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
-  <pubDate>Fri, 13 Oct 2023 18:08:47 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
-  <description><![CDATA[安装流程 从 https://www.nvidia.com/en-us/drivers/unix/linux-amd64-display-archive/ 上下载驱动， 注意不要下载 beta 版本的驱动。 下载之后， 使用 sftp, scp,ftp 等工具上传到服务器。 任选其一即可 安装 build-essential， libglvnd 比]]></description>
-</item>
-<item>
-  <title>Ubuntu 22.04 扩充磁盘， 虚拟机扩充磁盘</title>
-  <link>https://fantasyplayer.link/periphery/ubuntu-22.04-%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98/</link>
-  <pubDate>Fri, 13 Oct 2023 17:51:00 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/ubuntu-22.04-%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98/</guid>
-  <description><![CDATA[主要内容 扩充磁盘需求： 宿主机是debian， 现在需要修改ubuntu 虚拟机的磁盘大小。 宿主机是什么其实无所谓。 流程： 关闭虚拟机 修改磁盘大小，]]></description>
-</item>
-<item>
-  <title>Vagrant   虚拟机模板工具</title>
-  <link>https://fantasyplayer.link/periphery/vagrant-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</link>
-  <pubDate>Thu, 15 Jun 2023 20:58:39 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/vagrant-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</guid>
-  <description><![CDATA[简介如果需要频繁的创建和销毁虚拟机，这个工具还是有作用的，否则还是手动执行比较方便。 Vagrant 需要一个虚拟机工具来创建虚拟机， 比如 VirtualBox, VMware Fusion, 或者 Hyper-V. 预期的]]></description>
-</item>
-<item>
-  <title>Manjaro使用了一段时间的体验</title>
-  <link>https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
-  <pubDate>Sun, 23 Oct 2022 11:33:37 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
-  <description><![CDATA[图片预警！（文件尺寸较大） 安装笔者使用的是manjaro-KDE ， 是从官方网站下载的包。 安装过程很简单， 基本上就是下一步下一步，如果自己不懂]]></description>
-</item>
-<item>
-  <title>在manjaro中使用urbackup</title>
-  <link>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</link>
-  <pubDate>Sun, 25 Sep 2022 17:03:10 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</guid>
-  <description><![CDATA[本文介绍的是安装客户端。 笔者最近从黑苹果切换到了 manjaro-KDE ，所以使用的是linux的桌面版。 笔者urback的server是使用 openmediav]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用docker搭建lobe chat - 本地的openai客户端</title>
+      <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db---%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 04 Oct 2024 16:54:11 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAlobe-chat-db---%E4%B8%80%E4%B8%AAai%E5%8A%A9%E6%89%8B%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;h2 id=&#34;简述&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简述&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e8%bf%b0&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;项目主页：  &lt;a href=&#34;https://github.com/lobehub/lobe-chat&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://github.com/lobehub/lobe-chat&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在linux里面安装homebrew</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</link>
+      <pubDate>Fri, 04 Oct 2024 14:20:48 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</guid>
+      <description>&lt;p&gt;homebrew 是一个包管理器， 可以用这个工具安装很多软件包，开发库等。  这个工具在macos 上是比较出名的。&lt;/p&gt;&#xA;&lt;p&gt;注意，在linux上， 应该考虑把 homebrew 安装到目录&lt;code&gt;/home/linuxbrew/.linuxbrew&lt;/code&gt; 里面， 如果不想安装到此目录， 可以先建立一个软连接， 然后再执行安装脚本。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用docker 搭建searxng服务 - 一个搜索引擎聚合工具</title>
+      <link>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1---%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sun, 30 Jun 2024 14:37:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8docker-%E6%90%AD%E5%BB%BAsearxng%E6%9C%8D%E5%8A%A1---%E4%B8%80%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%81%9A%E5%90%88%E5%B7%A5%E5%85%B7/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;github: &lt;a href=&#34;https://github.com/searxng/searxng&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://github.com/searxng/searxng&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;容器的github地址： &lt;a href=&#34;https://github.com/searxng/searxng-docker&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://github.com/searxng/searxng-docker&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;一些不完全的文档：  &lt;a href=&#34;https://docs.searxng.org/admin/index.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://docs.searxng.org/admin/index.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;安装&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;安装&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%ae%89%e8%a3%85&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;使用下面的步骤来安装， &lt;em&gt;翻译自 searxng-docker 的仓库&lt;/em&gt;：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何让docker在拉取镜像的时候使用代理</title>
+      <link>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sun, 30 Jun 2024 12:04:51 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%A6%82%E4%BD%95%E8%AE%A9docker%E5%9C%A8%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E7%9A%84%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/</guid>
+      <description>&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;在某些情况下， 我们需要设置代理才能从 docker hub上拉取镜像， 本文描述了如何去做。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在debian11 中 安装xrdp</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</link>
+      <pubDate>Mon, 13 Nov 2023 10:46:11 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8debian11-%E4%B8%AD-%E5%AE%89%E8%A3%85xrdp/</guid>
+      <description>&lt;h2 id=&#34;正文&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;正文&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%ad%a3%e6%96%87&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;笔者的是 xfce 桌面环境&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debian 从官网下载，然后安装N卡驱动</title>
+      <link>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+      <pubDate>Fri, 13 Oct 2023 18:08:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/debian-%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85n%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+      <description>&lt;h2 id=&#34;安装流程&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;安装流程&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%ae%89%e8%a3%85%e6%b5%81%e7%a8%8b&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;从 &lt;a href=&#34;https://www.nvidia.com/en-us/drivers/unix/linux-amd64-display-archive/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://www.nvidia.com/en-us/drivers/unix/linux-amd64-display-archive/&lt;/a&gt; 上下载驱动， 注意不要下载 beta 版本的驱动。&lt;/li&gt;&#xA;&lt;li&gt;下载之后， 使用 sftp, scp,ftp 等工具上传到服务器。   &lt;em&gt;任选其一即可&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;安装 build-essential， libglvnd&#xA;&lt;ul&gt;&#xA;&lt;li&gt;比如 &lt;code&gt;sudo apt install build-essential libglvnd&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;关闭桌面环境，  笔者是xfce,  使用命令： &lt;code&gt;sudo systemctl stop lightdm&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;如果是 GNOME 的话， 可能需要使用命令 &lt;code&gt;sudo systemctl stop gdm3&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;如果不能确定自己的桌面环境是哪个服务的话， 可以使用命令&lt;code&gt;systemctl | grep running&lt;/code&gt;  寻找一个包含&lt;code&gt;dm&lt;/code&gt; 的服务&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;执行命令： &lt;code&gt;sudo ./驱动文件&lt;/code&gt;    比如： &lt;code&gt;sudo ./NVIDIA-Linux-x86_64-525.116.04.run&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;32位兼容性， 似乎很多人说 x-org 不要安装。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;安装成功之后， 使用 &lt;code&gt;nvidia-smi&lt;/code&gt;  命令查看信息&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;nvidia-smi -L&lt;/code&gt;  查看GPU型号&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;拓展阅读&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;拓展阅读&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%8b%93%e5%b1%95%e9%98%85%e8%af%bb&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/lien0906/article/details/54312166&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://blog.csdn.net/lien0906/article/details/54312166&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/569514/how-to-disable-and-enable-gui-of-debian-10&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://unix.stackexchange.com/questions/569514/how-to-disable-and-enable-gui-of-debian-10&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 22.04 扩充磁盘， 虚拟机扩充磁盘</title>
+      <link>https://fantasyplayer.link/periphery/ubuntu-22.04-%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98/</link>
+      <pubDate>Fri, 13 Oct 2023 17:51:00 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/ubuntu-22.04-%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E7%A3%81%E7%9B%98/</guid>
+      <description>&lt;h2 id=&#34;主要内容&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;主要内容&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;扩充磁盘&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;扩充磁盘&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%89%a9%e5%85%85%e7%a3%81%e7%9b%98&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;需求： 宿主机是debian， 现在需要修改ubuntu 虚拟机的磁盘大小。   &lt;em&gt;宿主机是什么其实无所谓。&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vagrant   虚拟机模板工具</title>
+      <link>https://fantasyplayer.link/periphery/vagrant---%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Thu, 15 Jun 2023 20:58:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/vagrant---%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7/</guid>
+      <description>&lt;h2 id=&#34;简介&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简介&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e4%bb%8b&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;如果需要频繁的创建和销毁虚拟机，这个工具还是有作用的，否则还是手动执行比较方便。&lt;br&gt;&#xA;Vagrant 需要一个虚拟机工具来创建虚拟机， 比如 VirtualBox, VMware Fusion, 或者 Hyper-V.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Manjaro使用了一段时间的体验</title>
+      <link>https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Sun, 23 Oct 2022 11:33:37 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/manjaro%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;图片预警！（文件尺寸较大）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;安装&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%ae%89%e8%a3%85&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;笔者使用的是&lt;code&gt;manjaro-KDE&lt;/code&gt; ， 是从官方网站下载的包。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在manjaro中使用urbackup</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</link>
+      <pubDate>Sun, 25 Sep 2022 17:03:10 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8manjaro%E4%B8%AD%E4%BD%BF%E7%94%A8urbackup/</guid>
+      <description>&lt;p&gt;本文介绍的是安装客户端。&lt;/p&gt;&#xA;&lt;p&gt;笔者最近从黑苹果切换到了 manjaro-KDE ，所以使用的是linux的桌面版。 笔者urback的server是使用 openmediavault带的插件进行安装的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crontab碰到得小问题</title>
+      <link>https://fantasyplayer.link/periphery/crontab%E7%A2%B0%E5%88%B0%E5%BE%97%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 28 Mar 2021 12:16:25 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/crontab%E7%A2%B0%E5%88%B0%E5%BE%97%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;笔者碰到得问题有两个：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;程序好像没执行&lt;/li&gt;&#xA;&lt;li&gt;重定向输出到了文件，但是却没有看到文件。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;笔者得有问题得时候，定时任务大概是这样得：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# move film on 10AM at every saturday&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0 10 * * 6  /Users/alias/Projects/self-use-scripts/trello/shMoveFilm.sh &amp;gt;/Users/alias/temp/log/moveFilm.log 2&amp;gt;&amp;amp;1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# move blog&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;35 2 * * 1  /Users/alias/Projects/self-use-scripts/trello/shMoveBlog.sh &amp;gt;/Users/alias/temp/log/moveBlog.log 2&amp;gt;&amp;amp;1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# clean blog&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0 2 * * 3  /Users/alias/Projects/self-use-scripts/trello/shRun.sh clean blog &amp;gt;&amp;gt;/Users/alias/temp/log/clean.log 2&amp;gt;&amp;amp;1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;修改之后，能成功运行得脚本 大概是这样得：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>家用服务器突然断电的后续情况处理</title>
+      <link>https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 27 Feb 2021 10:37:27 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E7%9A%84%E5%90%8E%E7%BB%AD%E6%83%85%E5%86%B5%E5%A4%84%E7%90%86/</guid>
+      <description>&lt;p&gt;前些天，不知道什么原因，家里突然跳闸了。等来电的时候，家里服务器就出现了一些状况，所以开帖记录一下是什么状况，以及笔者是如何处理的。&lt;/p&gt;&#xA;&lt;p&gt;笔者的家用服务器使用的是ESXi 系统。 ESXi 系统本身没有什么问题， 大部分虚拟机也没有什么问题，只有一个debian 9 的虚拟机出现了问题。 而这个虚拟机运行了笔者大部分的服务，所以这次问题让笔者大感头痛。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在bash脚本中拼接参数的问题</title>
+      <link>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 14 Sep 2020 20:38:01 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%9C%A8bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%8B%BC%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;在脚本里面使用&lt;code&gt;rsync&lt;/code&gt; 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。&lt;/p&gt;&#xA;&lt;p&gt;笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>关于linux扩充分区的随笔</title>
+      <link>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Sun, 19 Jul 2020 10:52:13 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%85%B3%E4%BA%8Elinux%E6%89%A9%E5%85%85%E5%88%86%E5%8C%BA%E7%9A%84%E9%9A%8F%E7%AC%94/</guid>
+      <description>&lt;h2 id=&#34;简介&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简介&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e4%bb%8b&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;之前给&lt;code&gt;OpenMediaVault&lt;/code&gt;的硬盘空间不够大， 新增硬盘似乎不太方便， 就考虑扩大硬盘空间， 踩了坑之后终于弄好了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>从阿里云上把系统弄到本地的一些记录</title>
+      <link>https://fantasyplayer.link/periphery/%E4%BB%8E%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8A%E6%8A%8A%E7%B3%BB%E7%BB%9F%E5%BC%84%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 11 Aug 2018 21:08:58 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E4%BB%8E%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8A%E6%8A%8A%E7%B3%BB%E7%BB%9F%E5%BC%84%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;声明： 本人在操作的时候 并不算完美的恢复了，只是现在是可用了，使用的平台是虚拟机（esxi 6.5） 里面恢复的&lt;/p&gt;&#xA;&lt;p&gt;先推荐一个 工具 &lt;strong&gt;mondo rescue&lt;/strong&gt;: &lt;a href=&#34;http://www.mondorescue.org/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;http://www.mondorescue.org/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;这个工具可以用来备份磁盘和在本地进行恢复。 不过似乎有点bug , 并且你磁盘过大的时候似乎也不太友好。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>前几天，我的vps 被黑了</title>
+      <link>https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/</link>
+      <pubDate>Sun, 07 Aug 2016 21:33:32 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/%E5%89%8D%E5%87%A0%E5%A4%A9%E6%88%91%E7%9A%84vps-%E8%A2%AB%E9%BB%91%E4%BA%86/</guid>
+      <description>&lt;p&gt;具体情况我也不知道， 不清楚他是怎么黑进去的。。&lt;/p&gt;&#xA;&lt;p&gt;上周三晚上好像。  我在网吧玩剑灵， 截了一些图， 在下机之前的时候准备上传到网盘里面。 结果， 网盘的速度超慢，超慢的。 我就用手机连接服务器的ssh ，看看什么情况。  一看不要紧。 我发现一个叫做  minerd 的程序 吃满了CPU 。。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

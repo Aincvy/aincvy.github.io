@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>996 - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/996/</link>
-    <description>996 - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 30 Nov 2020 20:47:40 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/996/" rel="self" type="application/rss+xml" /><item>
-  <title>关于996工作时间的一点闲谈</title>
-  <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/</link>
-  <pubDate>Mon, 30 Nov 2020 20:47:40 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/</guid>
-  <description><![CDATA[因为有不少公司都实行996工作制，笔者想对996的工作时间发表一些浅谈。 众所周知， 996就是朝九晚九，一周六天班。 至于谁先开始的，怎么流行的]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/996/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于996工作时间的一点闲谈</title>
+      <link>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/</link>
+      <pubDate>Mon, 30 Nov 2020 20:47:40 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E5%85%B3%E4%BA%8E996%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E7%82%B9%E9%97%B2%E8%B0%88/</guid>
+      <description>&lt;p&gt;因为有不少公司都实行996工作制，笔者想对996的工作时间发表一些浅谈。&lt;/p&gt;&#xA;&lt;p&gt;众所周知， 996就是朝九晚九，一周六天班。 至于谁先开始的，怎么流行的，笔者并没有仔细考虑过，所以笔者决定跳过这部分。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

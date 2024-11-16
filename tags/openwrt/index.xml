@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>openwrt - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Openwrt - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/openwrt/</link>
-    <description>openwrt - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 25 Jan 2021 22:28:55 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/openwrt/" rel="self" type="application/rss+xml" /><item>
-  <title>Openwrt的ipv6的dhcp功能</title>
-  <link>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</link>
-  <pubDate>Mon, 25 Jan 2021 22:28:55 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</guid>
-  <description><![CDATA[笔者曾经有一段时间发现，在Windows机器上设置了ipv4的dns服务器之后没有效果。 之前返回的是什么，修改之后返回的还是什么。。 在把ip]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openwrt的ipv6的dhcp功能</title>
+      <link>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Mon, 25 Jan 2021 22:28:55 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/openwrt%E7%9A%84ipv6%E7%9A%84dhcp%E5%8A%9F%E8%83%BD/</guid>
+      <description>&lt;p&gt;笔者曾经有一段时间发现，在Windows机器上设置了ipv4的dns服务器之后没有效果。 之前返回的是什么，修改之后返回的还是什么。。 在把ipv6关掉之后修改才会生效。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

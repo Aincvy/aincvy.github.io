@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rider - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Rider - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/rider/</link>
-    <description>rider - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 24 May 2021 13:36:35 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/rider/" rel="self" type="application/rss+xml" /><item>
-  <title>Rider卡在了开启界面的解决办法</title>
-  <link>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-  <pubDate>Mon, 24 May 2021 13:36:35 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-  <description><![CDATA[在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。 原因可能是因为项目的缓存坏掉了， 所以就无法启动。 解决方案是]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/rider/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rider卡在了开启界面的解决办法</title>
+      <link>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Mon, 24 May 2021 13:36:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/rider%E5%8D%A1%E5%9C%A8%E4%BA%86%E5%BC%80%E5%90%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>&lt;p&gt;在rider打开的时候， 电脑如果意外关闭了， 则可能会造成rider无法启动的情况。&lt;/p&gt;&#xA;&lt;p&gt;原因可能是因为项目的缓存坏掉了， 所以就无法启动。&lt;/p&gt;&#xA;&lt;p&gt;解决方案是清理掉缓存。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

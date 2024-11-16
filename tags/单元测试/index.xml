@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>单元测试 - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
-    <description>单元测试 - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 05 Oct 2020 20:22:34 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
-  <title>关于单元测试的一点小想法</title>
-  <link>https://fantasyplayer.link/program/%E5%85%B3%E4%BA%8E%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E6%83%B3%E6%B3%95/</link>
-  <pubDate>Mon, 05 Oct 2020 20:22:34 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E5%85%B3%E4%BA%8E%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E6%83%B3%E6%B3%95/</guid>
-  <description><![CDATA[编程语言： Java 因为笔者并没有完成过单元测试， 所以本篇内容比较少，也是一些小想法。 笔者在项目开发到了一定阶段的时候，考虑加入单元测试辅助开发。 但]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于单元测试的一点小想法</title>
+      <link>https://fantasyplayer.link/program/%E5%85%B3%E4%BA%8E%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E6%83%B3%E6%B3%95/</link>
+      <pubDate>Mon, 05 Oct 2020 20:22:34 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/%E5%85%B3%E4%BA%8E%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E6%83%B3%E6%B3%95/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;编程语言： Java&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;因为笔者并没有完成过单元测试， 所以本篇内容比较少，也是一些小想法。&lt;/p&gt;&#xA;&lt;p&gt;笔者在项目开发到了一定阶段的时候，考虑加入单元测试辅助开发。 但是呢，在搜索文档和简单测试的时候发现， 笔者现在的项目结构似乎无法进行单元测试， 所以就没再继续下去。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

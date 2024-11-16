@@ -1,4 +1,4 @@
-# 自制脚本语言[5.2] if-else_if-else语句
+# 自制脚本语言[5.2] If-Else_if-Else语句
 
 
 本篇来尝试描述一下`if-else_if-else` 语句如何进行实现。

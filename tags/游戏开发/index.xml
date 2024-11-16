@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>游戏开发 - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
-    <description>游戏开发 - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Tue, 27 Dec 2016 21:11:56 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="self" type="application/rss+xml" /><item>
-  <title>[状态机变种]有关状态栈的一些记录</title>
-  <link>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
-  <pubDate>Tue, 27 Dec 2016 21:11:56 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
-  <description><![CDATA[写这篇文章的时候，笔者还是一个很菜的菜鸟， 本文可能有误。 我在弄我们公司的项目的时候。 地图 上面的每一个实体，我是当作一个单位来看的。每隔若干毫]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[状态机变种]有关状态栈的一些记录</title>
+      <link>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 27 Dec 2016 21:11:56 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8F%98%E7%A7%8D%E6%9C%89%E5%85%B3%E7%8A%B6%E6%80%81%E6%A0%88%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;写这篇文章的时候，笔者还是一个很菜的菜鸟， 本文可能有误。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;我在弄我们公司的项目的时候。 地图&#xA;上面的每一个实体，我是当作一个单位来看的。每隔若干毫秒对地图所有的实体进行一个update&#xA;，更新他们的状态。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

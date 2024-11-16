@@ -1,24 +1,28 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>esxi - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Esxi - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/esxi/</link>
-    <description>esxi - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Fri, 31 Jul 2020 23:46:23 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/esxi/" rel="self" type="application/rss+xml" /><item>
-  <title>Esxi显卡直通的操作</title>
-  <link>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
-  <pubDate>Fri, 31 Jul 2020 23:46:23 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
-  <description><![CDATA[这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。 ESXi 的操作登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启]]></description>
-</item>
-<item>
-  <title>ESXi更换硬盘的记录</title>
-  <link>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
-  <pubDate>Thu, 09 Jul 2020 20:24:27 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
-  <description><![CDATA[简述家里使用的服务器，主要硬盘消耗是 openmediavault。 就是一个文件存储服务， 可以用来放电影，音乐，漫画等， 还可以支持TimeMa]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Sat, 05 Oct 2024 11:05:35 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Esxi显卡直通的操作</title>
+      <link>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 31 Jul 2020 23:46:23 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/esxi%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <description>&lt;p&gt;这个是一个不是很难的操作， 但是执行起来可能需要踩一些坑。&lt;/p&gt;&#xA;&lt;h3 id=&#34;esxi-的操作&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;ESXi 的操作&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#esxi-%e7%9a%84%e6%93%8d%e4%bd%9c&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;登录后台，点击管理， 找到硬件， 把显卡和 显卡的HDMI 音频都切换直通， 之后重启(&lt;em&gt;重新引导&lt;/em&gt;)ESXi 主机。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ESXi更换硬盘的记录</title>
+      <link>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 09 Jul 2020 20:24:27 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/esxi%E6%9B%B4%E6%8D%A2%E7%A1%AC%E7%9B%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h2 id=&#34;简述&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简述&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e8%bf%b0&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;家里使用的服务器，主要硬盘消耗是 &lt;code&gt;openmediavault&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

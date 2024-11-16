@@ -112,6 +112,9 @@ Trello 提供一些拓展， 用于增强看板得功能。
 
 ### Trello Gold 个人版本得收费服务
 
+**GOLD前几年已经被干掉了**
+
+
 一年 45$ 。
 
 笔者因为是重度用户，所以开了一年得这个会员， 感觉还可以。 
@@ -130,9 +133,9 @@ Trello 提供一些拓展， 用于增强看板得功能。
 
 
 
-笔者得[推广链接](https://trello.com/worldhidedragon/recommend) ，点点不要钱。 说是分享给朋友可以免费获取12个月得Gold。
+~~笔者得[推广链接](https://trello.com/worldhidedragon/recommend) ，点点不要钱。 说是分享给朋友可以免费获取12个月得Gold。~~
 
-
+**GOLD前几年已经被干掉了**
 
 ### 看板得用处
 

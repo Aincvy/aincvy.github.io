@@ -36,6 +36,6 @@
 
 ---
 
-> 作者: Aincvy  
+> 作者:   
 > URL: https://fantasyplayer.link/about/  
 

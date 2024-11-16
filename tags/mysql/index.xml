@@ -1,24 +1,28 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mysql - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Mysql - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/mysql/</link>
-    <description>mysql - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/mysql/" rel="self" type="application/rss+xml" /><item>
-  <title>如何在java中使用ebean</title>
-  <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
-  <pubDate>Sun, 02 Jun 2024 17:33:49 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean-%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
-  <description><![CDATA[简介笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。 体验下来感觉使用上是比较方便的，但是]]></description>
-</item>
-<item>
-  <title>Mysql 时区的问题</title>
-  <link>https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-  <pubDate>Mon, 07 Sep 2020 21:33:07 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-  <description><![CDATA[在链接字符串尾部添加参数 serverTimezone=Asia/Shanghai 即可让 mysql 的链接使用上海的时区。 其他说明我刚开始尝试的是 serverTimezone=GMT+8 但是不知道为啥，没有生效。 目前考虑可能是 +的问题, 使用GM]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在java中使用ebean</title>
+      <link>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean---%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</link>
+      <pubDate>Sun, 02 Jun 2024 17:33:49 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E5%9C%A8java%E4%B8%AD%E4%BD%BF%E7%94%A8ebean---%E4%B8%80%E4%B8%AAmysql-%E6%93%8D%E4%BD%9C%E5%BA%93/</guid>
+      <description>&lt;h2 id=&#34;简介&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简介&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e4%bb%8b&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;笔者在寻找一个轻量级 ORM 工具的时候， chat gpt 告诉笔者 ebean 是比较轻量的， 所以笔者就尝试了一下ebean 这个库。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mysql 时区的问题</title>
+      <link>https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 07 Sep 2020 21:33:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/mysql-%E6%97%B6%E5%8C%BA%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;在链接字符串尾部添加参数 &lt;code&gt;serverTimezone=Asia/Shanghai&lt;/code&gt;  即可让 mysql 的链接使用上海的时区。&lt;/p&gt;&#xA;&lt;h3 id=&#34;其他说明&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;其他说明&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e5%85%b6%e4%bb%96%e8%af%b4%e6%98%8e&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&lt;p&gt;我刚开始尝试的是 &lt;code&gt;serverTimezone=GMT+8&lt;/code&gt;  但是不知道为啥，没有生效。  目前考虑可能是 &lt;code&gt;+&lt;/code&gt;的问题, 使用&lt;code&gt;GMT%2b8&lt;/code&gt;   可能有效（&lt;em&gt;笔者没有尝试&lt;/em&gt;）。  这是 &lt;strong&gt;URLEncode&lt;/strong&gt; 之后的代码。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

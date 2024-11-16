@@ -1,16 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Hugo - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/hugo/</link>
-    <description>hugo - 标签 | Fanstasy Player / 幻想系玩家</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
-      <webMaster>aincvy@gmail.com (Aincvy)</webMaster><lastBuildDate>Mon, 19 Jul 2021 17:11:25 &#43;0800</lastBuildDate><atom:link href="https://fantasyplayer.link/tags/hugo/" rel="self" type="application/rss+xml" /><item>
-  <title>Google Analyis 不能在keepIt主题中使用的问题</title>
-  <link>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-  <pubDate>Mon, 19 Jul 2021 17:11:25 &#43;0800</pubDate>
-  <author>Aincvy</author>
-  <guid>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-  <description><![CDATA[KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。 https://github.com/Fastbyte01/KeepIt 笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。 经过一番搜索之后，]]></description>
-</item>
-</channel>
+    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
+    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <language>zh-CN</language>
+    <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
+    <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
+    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <atom:link href="https://fantasyplayer.link/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Analyis 不能在keepIt主题中使用的问题</title>
+      <link>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 19 Jul 2021 17:11:25 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/google-analyis-%E4%B8%8D%E8%83%BD%E5%9C%A8keepit%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;KeepIt 是一个优美的Hugo 主题， 笔者目前使用的正是这个主题。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/Fastbyte01/KeepIt&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://github.com/Fastbyte01/KeepIt&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;笔者在使用这个主题的时候发现， 部分情况下的谷歌分析是使用不了的。&lt;/p&gt;&#xA;&lt;p&gt;经过一番搜索之后， 笔者发现，这个主题似乎只支持老版的谷歌分析的API。 即&lt;code&gt;UA-&lt;/code&gt; 开头的跟踪ID，而&lt;code&gt;GA-&lt;/code&gt; 开头的则不支持。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
