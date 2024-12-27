@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Thu, 14 Nov 2024 21:57:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Dec 2024 17:38:26 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>羽绒被的使用感受</title>
+      <link>https://fantasyplayer.link/caprice/%E7%BE%BD%E7%BB%92%E8%A2%AB%E7%9A%84%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/</link>
+      <pubDate>Fri, 27 Dec 2024 17:38:26 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/caprice/%E7%BE%BD%E7%BB%92%E8%A2%AB%E7%9A%84%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/</guid>
+      <description>&lt;p&gt;羽绒被的特点有：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;价格贵&lt;/li&gt;&#xA;&lt;li&gt;保暖性能好&lt;/li&gt;&#xA;&lt;li&gt;一块一块的不易闭合。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;羽绒被的价格比蚕丝被还贵一些， 笔者买的冬被是1200g 90% 的灰鸭绒被子，  国补后的价格是1186元。&lt;/p&gt;&#xA;&lt;p&gt;身体被盖到的地方，保暖性能很好。  同时羽绒被很轻， 不会有压迫的感觉。&lt;br&gt;&#xA;笔者之前盖一个大豆蚕丝被（秋冬）+ 一个夏天的蚕丝被， 室内温度10°得时候感觉很冷。 换上这个羽绒被之后 就没有冷的感觉了。&lt;/p&gt;&#xA;&lt;p&gt;不易闭合真的是一个比较大的问题， 在全闭合情况下， 非常保暖， 但是如果被子和床中间有一个缝隙， 那么就会有冷风窜到被子里面。&lt;br&gt;&#xA;而且羽绒被很轻， 同时是一坨一坨的，如果被子尺寸过大，则容易产生一个小的三角缝隙， 会漏风。&lt;/p&gt;&#xA;&lt;p&gt;蚕丝被的贴合度则非常之高， 但是因为蚕丝被透气性好的问题，不能防风。所以如果窗户漏风，在夜里的时候冷风吹进屋里，则可能会穿过蚕丝被直接吹到身上。&lt;/p&gt;&#xA;&lt;p&gt;羽绒被保暖的原理是隔绝或者说减缓热量的散失， 这使得羽绒被一定要在蓬松状态下才会保暖，如果压迫羽绒被得话， 会使其丧失保暖能力。&lt;/p&gt;&#xA;&lt;p&gt;一般来说，羽绒被只使用一床可能会好一些， 就是不和其他得被子混用。&lt;/p&gt;&#xA;&lt;p&gt;总的来说，如果能处理好羽绒被的闭合问题， 那么保暖性能非常不错， 体验也不错。&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>香港自由行记录</title>
       <link>https://fantasyplayer.link/caprice/%E9%A6%99%E6%B8%AF%E8%87%AA%E7%94%B1%E8%A1%8C%E8%AE%B0%E5%BD%95/</link>
@@ -74,13 +81,6 @@
       <pubDate>Fri, 04 Oct 2024 14:00:56 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/periphery/docker-compose%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9C%BA%E5%88%B6/</guid>
       <description>&lt;p&gt;docker compose 存在一个项目机制， 官方文档参考： &lt;a href=&#34;https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://docs.docker.com/reference/cli/docker/compose/#use--p-to-specify-a-project-name&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;项目名称的遵从下面的顺序来设置：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用 -p 的命令行参数&lt;/li&gt;&#xA;&lt;li&gt;环境变量： &lt;code&gt;COMPOSE_PROJECT_NAME&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;配置文件里面的顶层配置项 &lt;code&gt;name:&lt;/code&gt; (或者在指定了一系列配置文件时最后一个&lt;code&gt;name:&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;配置文件所在的目录名字（或者第一个配置文件所在的目录的目录名字）&lt;/li&gt;&#xA;&lt;li&gt;如果没有指定项目名称， 那么将会使用当前目录的目录名字作为项目名称。 目录名字必须由这些元素组成： 小写字母，数字，- 或_ 。 同时必须以小写字母或者数字开头， 否则就必须使用其他机制来指定项目名称。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;当完全没有指定过项目名称的时候， 将会使用&lt;code&gt;docker-compose.yaml&lt;/code&gt; 文件所在目录的目录名作为项目名称， 所以如果存在 A/X, B/X 两个目录的时候， 两个项目名称都将会是 X 。&lt;/p&gt;&#xA;&lt;p&gt;这意味着，在 B/X 目录下执行 docker compose up 的时候， 会把 A/X 的容器给顶掉， 反过来也一样。&lt;/p&gt;&#xA;</description>
-    </item>
-    <item>
-      <title>Yubikey使用一周的体验</title>
-      <link>https://fantasyplayer.link/caprice/yubikey%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
-      <pubDate>Fri, 04 Oct 2024 13:48:32 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/caprice/yubikey%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
-      <description>&lt;p&gt;Yubikey 是一个物理密钥， 形状类似于U盘，接口有 USB-A, USB-C, LIGHTNING 接口的， 同时允许使用NFC无线连接手机。&lt;/p&gt;&#xA;&lt;p&gt;应用场景有：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-otp-%E9%AA%8C%E8%AF%81sudo/&#34;&gt;使用yubikey-Otp验证sudo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey-%E7%AD%BE%E5%90%8Dgit%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/&#34;&gt;使用yubikey签名git提交记录&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AD%98%E5%82%A8wireguard%E7%9A%84%E7%A7%81%E9%92%A5/&#34;&gt;使用yubikey存储wireguard的私钥&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AE%9E%E7%8E%B0ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/&#34;&gt;使用yubikey实现ssh免密登录&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://fantasyplayer.link/caprice/%E4%BD%BF%E7%94%A8yubikey%E5%AF%B9keepass%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%8A%A0%E5%AF%86/&#34;&gt;使用yubikey对keepass数据库进行加密&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;需要注意的点：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;手机上NFC链接的时候 无法输入静态密码， 因为yubikey是模拟键盘输入的， 而NFC无法做到模拟键盘。&lt;/li&gt;&#xA;&lt;li&gt;槽位只有2个（短按和长按） 所以只能从下面4个功能中选择2个： 静态密码， OTP（出厂自带），挑战-响应， HTOP&#xA;&lt;ul&gt;&#xA;&lt;li&gt;挑战-响应 不需要手动键入， 但是仍然需要占用槽位。&lt;/li&gt;&#xA;&lt;li&gt;OTP是出厂自带， 会占用1个槽位， 所以能配置的只有1个。 简单来说2个槽位不够用。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;最大支持 64个 TOTP ， 所以可能需要考虑配合一个密码管理工具来使用。&lt;/li&gt;&#xA;&lt;li&gt;价格不低， 笔者淘宝上买了2个 5NFC， 花了1000块。&#xA;&lt;ul&gt;&#xA;&lt;li&gt;一般都是建议买2个， 一个主要使用，一个是备用的。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;国内软件基本上都不支持， 但是国外软件支持的很多。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
     </item>
   </channel>
 </rss>
