@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Mon, 21 Oct 2024 21:33:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Mar 2025 21:27:35 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cpp在windows下关闭程序但是仍然占用tcp端口得问题</title>
+      <link>https://fantasyplayer.link/program/cpp%E5%9C%A8windows%E4%B8%8B%E5%85%B3%E9%97%AD%E7%A8%8B%E5%BA%8F%E4%BD%86%E6%98%AF%E4%BB%8D%E7%84%B6%E5%8D%A0%E7%94%A8tcp%E7%AB%AF%E5%8F%A3%E5%BE%97%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 08 Mar 2025 21:27:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/program/cpp%E5%9C%A8windows%E4%B8%8B%E5%85%B3%E9%97%AD%E7%A8%8B%E5%BA%8F%E4%BD%86%E6%98%AF%E4%BB%8D%E7%84%B6%E5%8D%A0%E7%94%A8tcp%E7%AB%AF%E5%8F%A3%E5%BE%97%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;笔者碰到得状况是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用调试启动程序， 监听TCP端口&lt;/li&gt;&#xA;&lt;li&gt;野指针调用了， 或者 断言 失败了， 程序进入断点模式。&lt;/li&gt;&#xA;&lt;li&gt;手动关闭调试模式，终止程序。&lt;/li&gt;&#xA;&lt;li&gt;调整代码后再次启动程序， 无法监听TCP端口， 程序自动退出&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;笔者尝试使用下面得方式处理问题，但是失败了：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Java中子类隐藏父类的静态函数</title>
       <link>https://fantasyplayer.link/program/java%E4%B8%AD%E5%AD%90%E7%B1%BB%E9%9A%90%E8%97%8F%E7%88%B6%E7%B1%BB%E7%9A%84%E5%87%BD%E6%95%B0/</link>
