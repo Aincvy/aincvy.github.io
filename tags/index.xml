@@ -8,21 +8,49 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sat, 08 Mar 2025 21:27:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 14:45:43 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android</title>
+      <link>https://fantasyplayer.link/tags/android/</link>
+      <pubDate>Sun, 09 Mar 2025 14:45:43 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/android/</guid>
+      <description>Android</description>
+    </item>
+    <item>
+      <title>Google</title>
+      <link>https://fantasyplayer.link/tags/google/</link>
+      <pubDate>Sun, 09 Mar 2025 14:45:43 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/google/</guid>
+      <description>Google</description>
+    </item>
+    <item>
+      <title>Mattermost</title>
+      <link>https://fantasyplayer.link/tags/mattermost/</link>
+      <pubDate>Sun, 09 Mar 2025 14:45:43 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/mattermost/</guid>
+      <description>Mattermost</description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://fantasyplayer.link/tags/windows/</link>
+      <pubDate>Sun, 09 Mar 2025 14:21:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/windows/</guid>
+      <description>Windows</description>
+    </item>
+    <item>
+      <title>美化</title>
+      <link>https://fantasyplayer.link/tags/%E7%BE%8E%E5%8C%96/</link>
+      <pubDate>Sun, 09 Mar 2025 14:21:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/%E7%BE%8E%E5%8C%96/</guid>
+      <description>美化</description>
+    </item>
     <item>
       <title>Cpp</title>
       <link>https://fantasyplayer.link/tags/cpp/</link>
       <pubDate>Sat, 08 Mar 2025 21:27:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/cpp/</guid>
       <description>Cpp</description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>https://fantasyplayer.link/tags/windows/</link>
-      <pubDate>Sat, 08 Mar 2025 21:27:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/windows/</guid>
-      <description>Windows</description>
     </item>
     <item>
       <title>Yubikey</title>
