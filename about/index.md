@@ -5,10 +5,7 @@
 
 ## 简略
 
-
-
-有事请给我发邮件， 一般都会看得 &gt;  📧aincvy@gmail.com
-
+个人邮箱 &gt;  📧aincvy@gmail.com
 
 
 ## 计划
@@ -28,10 +25,9 @@
 一般随缘， 如果有碰到程序中得问题， 也会记录下来。  如果没有得话， 那么随想和周边内容则会较多。
 
 
-
 ----
 
-
+All of the fantasy is reasonable, but unnecessary.
 
 
 ---

@@ -1,62 +1,116 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fantasyplayer.link/tags/android/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
+    <loc>https://fantasyplayer.link/tags/docker/</loc>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/tags/google/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/mattermost/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/periphery/mattermost%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E6%8A%98%E8%85%BE/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
+    <loc>https://fantasyplayer.link/tags/linux/</loc>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/self-hosted/</loc>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/ssl/</loc>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/</loc>
-    <lastmod>2025-03-09T14:45:43+08:00</lastmod>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8acme.sh%E7%94%B3%E8%AF%B7ssl%E8%AF%81%E4%B9%A6%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F/</loc>
+    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/java/</loc>
+    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/program/</loc>
+    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/spring-boot/</loc>
+    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/program/springboot%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/android/</loc>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/google/</loc>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/mattermost/</loc>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/mattermost%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E6%8A%98%E8%85%BE/</loc>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/windows/</loc>
-    <lastmod>2025-03-09T14:21:54+08:00</lastmod>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/windows%E7%BE%8E%E5%8C%96%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-03-09T14:21:54+08:00</lastmod>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/%E7%BE%8E%E5%8C%96/</loc>
-    <lastmod>2025-03-09T14:21:54+08:00</lastmod>
+    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -68,12 +122,6 @@
   </url>
   <url>
     <loc>https://fantasyplayer.link/program/cpp%E5%9C%A8windows%E4%B8%8B%E5%85%B3%E9%97%AD%E7%A8%8B%E5%BA%8F%E4%BD%86%E6%98%AF%E4%BB%8D%E7%84%B6%E5%8D%A0%E7%94%A8tcp%E7%AB%AF%E5%8F%A3%E5%BE%97%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2025-03-08T21:48:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/program/</loc>
     <lastmod>2025-03-08T21:48:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -97,25 +145,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/tags/docker/</loc>
-    <lastmod>2025-03-08T21:48:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://fantasyplayer.link/tags/komga/</loc>
-    <lastmod>2025-03-08T21:48:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/linux/</loc>
-    <lastmod>2025-03-08T21:48:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/self-hosted/</loc>
     <lastmod>2025-03-08T21:48:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -212,12 +242,6 @@
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/%E5%9C%A8linux%E9%87%8C%E9%9D%A2%E5%AE%89%E8%A3%85homebrew/</loc>
-    <lastmod>2024-10-04T20:33:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/java/</loc>
     <lastmod>2024-10-04T20:33:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

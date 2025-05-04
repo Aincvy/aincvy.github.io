@@ -8,8 +8,50 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sun, 09 Mar 2025 14:45:43 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 May 2025 12:39:54 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://fantasyplayer.link/tags/docker/</link>
+      <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/docker/</guid>
+      <description>Docker</description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://fantasyplayer.link/tags/linux/</link>
+      <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/linux/</guid>
+      <description>Linux</description>
+    </item>
+    <item>
+      <title>Self-Hosted</title>
+      <link>https://fantasyplayer.link/tags/self-hosted/</link>
+      <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/self-hosted/</guid>
+      <description>Self-Hosted</description>
+    </item>
+    <item>
+      <title>Ssl</title>
+      <link>https://fantasyplayer.link/tags/ssl/</link>
+      <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/ssl/</guid>
+      <description>Ssl</description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://fantasyplayer.link/tags/java/</link>
+      <pubDate>Sun, 04 May 2025 11:35:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/java/</guid>
+      <description>Java</description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>https://fantasyplayer.link/tags/spring-boot/</link>
+      <pubDate>Sun, 04 May 2025 11:35:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/spring-boot/</guid>
+      <description>Spring Boot</description>
+    </item>
     <item>
       <title>Android</title>
       <link>https://fantasyplayer.link/tags/android/</link>
@@ -60,32 +102,11 @@
       <description>Yubikey</description>
     </item>
     <item>
-      <title>Docker</title>
-      <link>https://fantasyplayer.link/tags/docker/</link>
-      <pubDate>Sat, 08 Mar 2025 21:00:33 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/docker/</guid>
-      <description>Docker</description>
-    </item>
-    <item>
       <title>Komga</title>
       <link>https://fantasyplayer.link/tags/komga/</link>
       <pubDate>Sat, 08 Mar 2025 21:00:33 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/komga/</guid>
       <description>Komga</description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://fantasyplayer.link/tags/linux/</link>
-      <pubDate>Sat, 08 Mar 2025 21:00:33 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/linux/</guid>
-      <description>Linux</description>
-    </item>
-    <item>
-      <title>Self-Hosted</title>
-      <link>https://fantasyplayer.link/tags/self-hosted/</link>
-      <pubDate>Sat, 08 Mar 2025 21:00:33 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/self-hosted/</guid>
-      <description>Self-Hosted</description>
     </item>
     <item>
       <title>生活</title>
@@ -121,13 +142,6 @@
       <pubDate>Fri, 04 Oct 2024 16:54:11 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/lobe/</guid>
       <description>Lobe</description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>https://fantasyplayer.link/tags/java/</link>
-      <pubDate>Fri, 04 Oct 2024 14:14:50 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/java/</guid>
-      <description>Java</description>
     </item>
     <item>
       <title>装箱拆箱</title>
