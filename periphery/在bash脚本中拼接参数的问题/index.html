@@ -132,7 +132,14 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-09-14 20:38:01"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-09-14">2020-09-14</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="489 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>在脚本里面使用<code>rsync</code> 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。</p>
+    </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2024-10-04，文中内容可能已过时。</div>
+      </div>
+    </div><p>在脚本里面使用<code>rsync</code> 这个命令的时候， 需要根据文件的情况动态的给予参数，所以考虑使用变量来实现这个需求。</p>
 <p>笔者刚开始在做这件事的时候碰到了一个比较蛋疼的事情。</p>
 <p>拼接的参数会自动使用一个引号括起来， <code>rsync</code> 识别不到那么多参数， 好像只是识别到了第一个，后面的都被忽略掉了。</p>
 <p>我刚开始好像是使用一个单一的变量来尝试控制参数。（<em>大约1，2个月以前的东西​，记得不是很清楚&#x1f602;</em>)</p>

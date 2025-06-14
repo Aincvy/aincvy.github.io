@@ -132,7 +132,14 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2016-04-17 21:36:18"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2016-04-17">2016-04-17</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="1436 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>简述一下环境：　java netty 的服务端， cocos2dx 的客户端</p>
+    </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2024-10-04，文中内容可能已过时。</div>
+      </div>
+    </div><p>简述一下环境：　java netty 的服务端， cocos2dx 的客户端</p>
 <p>昨天测试的时候 发生了一个奇怪的现象。  服务端在本地跑的时候，  都是正常的。 放到阿里云的服务器上面去的时候。 在客户端与服务端进行第一次连接的时候一切OK，然后第二次连接的时候 就出现了问题。。。 问题具体发生的原因我现在也还没弄明白。。。</p>
 <p>然后，我就查阅了一下  有关 windows select IO 异步模型的资料。 虽然这病没有帮助我解决问题， 但总归是有了些启发。</p>
 <p>然后我想，我加一下发送的数据包的长度进去吧。 于是乎，我在 netty 上面加了一个 解码器， 标注了发来的数据包会标准它的长度。  然后客户端在发送的时候会先发一个 表示长度的数据。 一般是采用 4个字节长度的大小。</p>

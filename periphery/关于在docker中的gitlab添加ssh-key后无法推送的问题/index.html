@@ -128,7 +128,14 @@
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2020-08-17 10:52:13"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-08-17">2020-08-17</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="354 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多人都推荐使用<code>ssh</code>的方式推送，这样也不需要用户名和密码。</p>
+    </div><div class="content" id="content"><div class="details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2024-10-04，文中内容可能已过时。</div>
+      </div>
+    </div><p>在使用unity的时候， 经常需要推送一些大的资源文件到项目里面， 使用http的方式，就会出现一些错误， 被拒绝。 我在谷歌转了几圈之后发现，大多人都推荐使用<code>ssh</code>的方式推送，这样也不需要用户名和密码。</p>
 <p>我按照常规方式配置好<code>ssh key</code>之后，竟然无法推送。应该是提示了 “ssh: connect to host port 22: Connection refused”。</p>
 <p>经过调试，我发现 <strong>我的gitlab 是装在docker里面的</strong>。</p>
 <p>22端口是我的debian 虚拟机的sshd 服务在使用， 而不是gitlab 容器在使用。</p>

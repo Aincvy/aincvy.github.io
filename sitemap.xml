@@ -1,74 +1,104 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fantasyplayer.link/tags/docker/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <loc>https://fantasyplayer.link/tags/book/</loc>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/categories/book/</loc>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/categories/</loc>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/tags/linux/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/self-hosted/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/ssl/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <loc>https://fantasyplayer.link/posts/</loc>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/2025/%E7%89%9B%E5%A5%B6%E5%8F%AF%E4%B9%90%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E4%B9%A6%E6%91%98/</loc>
+    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/docker/</loc>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/linux/</loc>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/</loc>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/self-hosted/</loc>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/ssl/</loc>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/%E4%BD%BF%E7%94%A8acme.sh%E7%94%B3%E8%AF%B7ssl%E8%AF%81%E4%B9%A6%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F/</loc>
-    <lastmod>2025-05-04T12:39:54+08:00</lastmod>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/java/</loc>
-    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/program/</loc>
-    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/spring-boot/</loc>
-    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/program/springboot%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2025-05-04T11:35:28+08:00</lastmod>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -189,30 +219,6 @@
   <url>
     <loc>https://fantasyplayer.link/caprice/%E9%A6%99%E6%B8%AF%E9%93%B6%E8%A1%8C%E5%8D%A1%E5%8A%9E%E7%90%86/</loc>
     <lastmod>2024-11-16T11:31:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/book/</loc>
-    <lastmod>2024-10-21T21:33:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/categories/book/</loc>
-    <lastmod>2024-10-21T21:33:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/categories/</loc>
-    <lastmod>2024-10-21T21:33:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/posts/</loc>
-    <lastmod>2025-03-08T21:48:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1628,7 +1634,7 @@
   </url>
   <url>
     <loc>https://fantasyplayer.link/about/</loc>
-    <lastmod>2024-04-06T12:39:05+08:00</lastmod>
+    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

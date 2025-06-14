@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sun, 04 May 2025 12:39:54 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 15:10:39 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book</title>
+      <link>https://fantasyplayer.link/tags/book/</link>
+      <pubDate>Sat, 14 Jun 2025 15:10:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/book/</guid>
+      <description>Book</description>
+    </item>
     <item>
       <title>Docker</title>
       <link>https://fantasyplayer.link/tags/docker/</link>
@@ -128,13 +135,6 @@
       <pubDate>Thu, 14 Nov 2024 21:57:26 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E9%A6%99%E6%B8%AF/</guid>
       <description>香港</description>
-    </item>
-    <item>
-      <title>Book</title>
-      <link>https://fantasyplayer.link/tags/book/</link>
-      <pubDate>Mon, 21 Oct 2024 21:10:14 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/book/</guid>
-      <description>Book</description>
     </item>
     <item>
       <title>Lobe</title>
