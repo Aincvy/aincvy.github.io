@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fantasyplayer.link/tags/book/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/categories/book/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/categories/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
+    <loc>https://fantasyplayer.link/tags/docker/</loc>
+    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/posts/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/2025/%E7%89%9B%E5%A5%B6%E5%8F%AF%E4%B9%90%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E4%B9%A6%E6%91%98/</loc>
-    <lastmod>2025-06-14T15:10:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/docker/</loc>
-    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/linux/</loc>
-    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
+    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/</loc>
+    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/</loc>
+    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/%E8%AE%A9docker-compose.yaml%E6%8C%82%E8%BD%BD%E4%B8%80%E4%B8%AAsmb%E8%BF%9C%E7%A8%8B%E7%9B%AE%E5%BD%95/</loc>
+    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/book/</loc>
+    <lastmod>2025-06-14T15:14:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/categories/book/</loc>
+    <lastmod>2025-06-14T15:14:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/categories/</loc>
+    <lastmod>2025-06-14T15:14:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/posts/</loc>
+    <lastmod>2025-06-14T15:14:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/2025/%E7%89%9B%E5%A5%B6%E5%8F%AF%E4%B9%90%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E4%B9%A6%E6%91%98/</loc>
+    <lastmod>2025-06-14T15:14:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/linux/</loc>
     <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -8,21 +8,21 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sat, 14 Jun 2025 15:10:39 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 22:48:21 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://fantasyplayer.link/tags/docker/</link>
+      <pubDate>Wed, 18 Jun 2025 22:31:29 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/docker/</guid>
+      <description>Docker</description>
+    </item>
     <item>
       <title>Book</title>
       <link>https://fantasyplayer.link/tags/book/</link>
       <pubDate>Sat, 14 Jun 2025 15:10:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/book/</guid>
       <description>Book</description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://fantasyplayer.link/tags/docker/</link>
-      <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/docker/</guid>
-      <description>Docker</description>
     </item>
     <item>
       <title>Linux</title>
