@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fantasyplayer.link/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/java/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/mattermost/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/program/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/spring-boot/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2025-06-25T21:58:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://fantasyplayer.link/tags/docker/</loc>
     <lastmod>2025-06-18T22:48:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2025-06-18T22:48:21+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/</loc>
     <lastmod>2025-06-18T22:48:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -85,24 +115,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/tags/java/</loc>
-    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/program/</loc>
-    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/spring-boot/</loc>
-    <lastmod>2025-05-04T17:30:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://fantasyplayer.link/program/springboot%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2025-05-04T17:30:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -116,12 +128,6 @@
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/google/</loc>
-    <lastmod>2025-03-09T15:06:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/mattermost/</loc>
     <lastmod>2025-03-09T15:06:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
