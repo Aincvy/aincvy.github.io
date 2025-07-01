@@ -13,7 +13,7 @@
   <meta itemprop="description" content="安装mattermost 之后， 它会自带一个boards插件， 这个插件允许使用 restful api 做一些自动化操作。
 主要内容获取请求插件需要的 csrf token调用 Mattermost 的登录api (/api/v4/users/login) 时， 附加一个header X-Requested-With: XMLHttpRequest ， 在返回值中就会多获得一个 cookie MMCSRF，这个cookie 的值就是 请求boards需要的 csrf token">
   <meta itemprop="datePublished" content="2025-06-25T21:58:58+08:00">
-  <meta itemprop="dateModified" content="2025-06-25T21:58:58+08:00">
+  <meta itemprop="dateModified" content="2025-06-25T22:36:27+08:00">
   <meta itemprop="wordCount" content="934">
   <meta itemprop="image" content="https://fantasyplayer.link/logo.png">
   <meta itemprop="keywords" content="Java,Spring Boot,Mattermost"><meta property="og:url" content="https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/">
@@ -25,7 +25,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="program">
     <meta property="article:published_time" content="2025-06-25T21:58:58+08:00">
-    <meta property="article:modified_time" content="2025-06-25T21:58:58+08:00">
+    <meta property="article:modified_time" content="2025-06-25T22:36:27+08:00">
     <meta property="article:tag" content="Java">
     <meta property="article:tag" content="Spring Boot">
     <meta property="article:tag" content="Mattermost">
@@ -40,7 +40,7 @@
 <meta name="twitter:creator" content="@Aincvy" /><meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/" title="使用restful api 访问mattermost 的boards 插件的记录 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/periphery/%E8%AE%A9docker-compose.yaml%E6%8C%82%E8%BD%BD%E4%B8%80%E4%B8%AAsmb%E8%BF%9C%E7%A8%8B%E7%9B%AE%E5%BD%95/" title="让docker compose 挂载一个smb远程目录" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/index.md" title="使用restful api 访问mattermost 的boards 插件的记录 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/" title="使用restful api 访问mattermost 的boards 插件的记录 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/periphery/%E8%AE%A9docker-compose.yaml%E6%8C%82%E8%BD%BD%E4%B8%80%E4%B8%AAsmb%E8%BF%9C%E7%A8%8B%E7%9B%AE%E5%BD%95/" title="让docker compose 挂载一个smb远程目录" /><link rel="next" type="text/html" href="https://fantasyplayer.link/periphery/void---cursor-%E7%9A%84%E5%BC%80%E6%BA%90%E4%BB%A3%E6%9B%BF%E4%BA%A7%E5%93%81-%E7%9A%84%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/" title="Void - 一个Cursor 的开源代替产品 的体验记录" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/index.md" title="使用restful api 访问mattermost 的boards 插件的记录 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -52,7 +52,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95\/"
     },"genre": "posts","keywords": "java, spring boot, mattermost","wordcount":  934 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95\/","datePublished": "2025-06-25T21:58:58+08:00","dateModified": "2025-06-25T21:58:58+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/program\/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95\/","datePublished": "2025-06-25T21:58:58+08:00","dateModified": "2025-06-25T22:36:27+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -132,7 +132,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>使用restful Api 访问mattermost 的boards 插件的记录</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-06-25 21:58:58"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-06-25">2025-06-25</time></span>&nbsp;<span title="934 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-06-25 21:58:58"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-06-25">2025-06-25</time></span>&nbsp;<span title="更新于 2025-06-25 22:36:27"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-06-25">2025-06-25</time></span>&nbsp;<span title="934 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -420,7 +420,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2025-06-25 21:58:58">更新于 2025-06-25&nbsp;</span>
+        <span title="更新于 2025-06-25 22:36:27">更新于 2025-06-25&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
@@ -443,7 +443,7 @@
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/periphery/%E8%AE%A9docker-compose.yaml%E6%8C%82%E8%BD%BD%E4%B8%80%E4%B8%AAsmb%E8%BF%9C%E7%A8%8B%E7%9B%AE%E5%BD%95/" class="post-nav-item" rel="prev" title="让docker Compose 挂载一个smb远程目录"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>让docker Compose 挂载一个smb远程目录</a></div>
+  </div><div class="post-nav"><a href="/periphery/%E8%AE%A9docker-compose.yaml%E6%8C%82%E8%BD%BD%E4%B8%80%E4%B8%AAsmb%E8%BF%9C%E7%A8%8B%E7%9B%AE%E5%BD%95/" class="post-nav-item" rel="prev" title="让docker Compose 挂载一个smb远程目录"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>让docker Compose 挂载一个smb远程目录</a><a href="/periphery/void---cursor-%E7%9A%84%E5%BC%80%E6%BA%90%E4%BB%A3%E6%9B%BF%E4%BA%A7%E5%93%81-%E7%9A%84%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="next" title="Void - 一个Cursor 的开源代替产品 的体验记录">Void - 一个Cursor 的开源代替产品 的体验记录<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
