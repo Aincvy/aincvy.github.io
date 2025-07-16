@@ -2,31 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-07-01T21:02:31+08:00</lastmod>
+    <lastmod>2025-07-16T22:06:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/mcp%E7%BB%93%E6%9E%84%E5%BE%97%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2025-07-16T22:06:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2025-07-01T21:02:31+08:00</lastmod>
+    <lastmod>2025-07-16T22:06:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/</loc>
-    <lastmod>2025-07-01T21:02:31+08:00</lastmod>
+    <lastmod>2025-07-01T21:18:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/void---cursor-%E7%9A%84%E5%BC%80%E6%BA%90%E4%BB%A3%E6%9B%BF%E4%BA%A7%E5%93%81-%E7%9A%84%E4%BD%93%E9%AA%8C%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2025-07-01T21:02:31+08:00</lastmod>
+    <lastmod>2025-07-01T21:18:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/vscode/</loc>
-    <lastmod>2025-07-01T21:02:31+08:00</lastmod>
+    <lastmod>2025-07-01T21:18:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
