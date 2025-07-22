@@ -8,8 +8,22 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 01 Jul 2025 21:18:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jul 2025 21:59:28 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://fantasyplayer.link/tags/java/</link>
+      <pubDate>Tue, 22 Jul 2025 21:59:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/java/</guid>
+      <description>Java</description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>https://fantasyplayer.link/tags/spring-boot/</link>
+      <pubDate>Tue, 22 Jul 2025 21:59:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/spring-boot/</guid>
+      <description>Spring Boot</description>
+    </item>
     <item>
       <title>Vscode</title>
       <link>https://fantasyplayer.link/tags/vscode/</link>
@@ -18,25 +32,11 @@
       <description>Vscode</description>
     </item>
     <item>
-      <title>Java</title>
-      <link>https://fantasyplayer.link/tags/java/</link>
-      <pubDate>Wed, 25 Jun 2025 21:58:58 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/java/</guid>
-      <description>Java</description>
-    </item>
-    <item>
       <title>Mattermost</title>
       <link>https://fantasyplayer.link/tags/mattermost/</link>
       <pubDate>Wed, 25 Jun 2025 21:58:58 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/mattermost/</guid>
       <description>Mattermost</description>
-    </item>
-    <item>
-      <title>Spring Boot</title>
-      <link>https://fantasyplayer.link/tags/spring-boot/</link>
-      <pubDate>Wed, 25 Jun 2025 21:58:58 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/spring-boot/</guid>
-      <description>Spring Boot</description>
     </item>
     <item>
       <title>Docker</title>
