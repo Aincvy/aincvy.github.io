@@ -13,7 +13,7 @@
   <meta itemprop="description" content="先看一段代码：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 @Service public class A { private SomeRepository repo @Transactional public void m1(){ m2(); } @Transactional public void m2(){ Some s = xxxx; repo.save(s); } } @Service @AllArgsConstructor public class B { private final A a; private final ApplicationEventPublisher eventPublisher; @TransactionalEventListener(fallbackExecution = true) public void onEvent(Event e){ a.m1(); } public void doSomething(){ Event e = new Event(); eventPublisher.publishEvent(e); } } @Service @AllArgsConstructor public class C { private final B b; @Transactional public void finish(){ b.doSomething(); } } @RestController() @RequestMapping(&#34;/v1&#34;) @AllArgsConstructor @Slf4j public class Controller { private final C c; @PostMapping(&#34;/test&#34;) public void test(){ c.finish(); } } 在这种调用链路之下，当一个 /v1/test请求过来得时候， 最后得 a service 得 m1, m2 方法都成功调用了， 日志也有。 但是数据s 就是无法入库。 从别的路线调用 a service 得 m1方法的时候， 数据会入库。">
   <meta itemprop="datePublished" content="2025-07-22T21:59:28+08:00">
-  <meta itemprop="dateModified" content="2025-07-22T21:59:28+08:00">
+  <meta itemprop="dateModified" content="2025-07-22T22:09:28+08:00">
   <meta itemprop="wordCount" content="456">
   <meta itemprop="image" content="https://fantasyplayer.link/logo.png">
   <meta itemprop="keywords" content="Java,Spring Boot"><meta property="og:url" content="https://fantasyplayer.link/program/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">
@@ -25,7 +25,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="program">
     <meta property="article:published_time" content="2025-07-22T21:59:28+08:00">
-    <meta property="article:modified_time" content="2025-07-22T21:59:28+08:00">
+    <meta property="article:modified_time" content="2025-07-22T22:09:28+08:00">
     <meta property="article:tag" content="Java">
     <meta property="article:tag" content="Spring Boot">
     <meta property="og:image" content="https://fantasyplayer.link/logo.png">
@@ -39,7 +39,7 @@
 <meta name="twitter:creator" content="@Aincvy" /><meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/program/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="@TransactionalEventListener 调用别得Service,事务不保存得问题记录 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/periphery/mcp%E7%BB%93%E6%9E%84%E5%BE%97%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/" title="MCP结构得简要说明" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/program/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/index.md" title="@TransactionalEventListener 调用别得Service,事务不保存得问题记录 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/program/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="@TransactionalEventListener 调用别得Service,事务不保存得问题记录 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/periphery/mcp%E7%BB%93%E6%9E%84%E5%BE%97%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/" title="MCP结构得简要说明" /><link rel="next" type="text/html" href="https://fantasyplayer.link/caprice/%E6%8F%90%E5%8D%87%E5%B9%B8%E7%A6%8F%E6%84%9F%E5%BE%97%E7%94%9F%E6%B4%BB%E7%89%A9%E5%93%81%E6%8E%A8%E8%8D%90/" title="提升幸福感得生活物品推荐" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/program/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/index.md" title="@TransactionalEventListener 调用别得Service,事务不保存得问题记录 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -51,7 +51,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/"
     },"genre": "posts","keywords": "java, spring boot","wordcount":  456 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2025-07-22T21:59:28+08:00","dateModified": "2025-07-22T21:59:28+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/program\/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2025-07-22T21:59:28+08:00","dateModified": "2025-07-22T22:09:28+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -131,7 +131,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>@TransactionalEventListener 调用别得Service,事务不保存得问题记录</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-07-22 21:59:28"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-07-22">2025-07-22</time></span>&nbsp;<span title="456 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-07-22 21:59:28"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-07-22">2025-07-22</time></span>&nbsp;<span title="更新于 2025-07-22 22:09:28"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-07-22">2025-07-22</time></span>&nbsp;<span title="456 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
     </div><div class="content" id="content"><p>先看一段代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -312,7 +312,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2025-07-22 21:59:28">更新于 2025-07-22&nbsp;</span>
+        <span title="更新于 2025-07-22 22:09:28">更新于 2025-07-22&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
@@ -335,7 +335,7 @@
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/periphery/mcp%E7%BB%93%E6%9E%84%E5%BE%97%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/" class="post-nav-item" rel="prev" title="MCP结构得简要说明"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>MCP结构得简要说明</a></div>
+  </div><div class="post-nav"><a href="/periphery/mcp%E7%BB%93%E6%9E%84%E5%BE%97%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E/" class="post-nav-item" rel="prev" title="MCP结构得简要说明"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>MCP结构得简要说明</a><a href="/caprice/%E6%8F%90%E5%8D%87%E5%B9%B8%E7%A6%8F%E6%84%9F%E5%BE%97%E7%94%9F%E6%B4%BB%E7%89%A9%E5%93%81%E6%8E%A8%E8%8D%90/" class="post-nav-item" rel="next" title="提升幸福感得生活物品推荐">提升幸福感得生活物品推荐<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
