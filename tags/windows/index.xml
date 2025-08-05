@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Sun, 09 Mar 2025 15:06:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Aug 2025 22:08:16 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows实现wireguard自动重连</title>
+      <link>https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/</link>
+      <pubDate>Tue, 05 Aug 2025 22:08:16 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/</guid>
+      <description>&lt;p&gt;笔者家里得公网IP是非固定得， 所以使用DDNS 来实现域名得动态解析， 笔者使用wireguard来和其他电脑组成内网。&lt;/p&gt;&#xA;&lt;p&gt;这种操作下有一个致命得问题， 那就是DDNS变化之后， wireguard 会断网， 同时它不会自动重连。。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Windows美化工具与实用工具</title>
       <link>https://fantasyplayer.link/periphery/windows%E7%BE%8E%E5%8C%96%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</link>
@@ -30,6 +37,13 @@
       <pubDate>Sat, 08 Mar 2025 21:19:10 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/caprice/yubikey%E5%9C%A8windows%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8ssh-add%E5%8A%A0%E8%BD%BD%E5%85%AC%E9%92%A5%E5%BE%97%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;h2 id=&#34;简述&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;简述&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e7%ae%80%e8%bf%b0&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;使用 yubikey 访问ssh得时候，需要在本地得 ssh-agent 里面加载 yubikey 密钥对得公钥得一部分。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Win10装不上蓝牙驱动的问题记录</title>
+      <link>https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 23 Oct 2021 11:10:48 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/win10%E8%A3%85%E4%B8%8D%E4%B8%8A%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;笔者的原因是因为系统中已经有一个蓝牙设备处于激活中了，把那个设备禁用了之后就好了。&lt;/p&gt;&#xA;&lt;p&gt;似乎不禁用那个设备也可以安装驱动， 但是设备无法正常运转。&lt;/p&gt;&#xA;&lt;p&gt;两个蓝牙设备则分别是： 板载蓝牙和一个 PCI-e 的蓝牙设备。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
