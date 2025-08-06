@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 05 Aug 2025 22:08:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Aug 2025 22:22:47 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/wireguard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows实现wireguard自动重连</title>
