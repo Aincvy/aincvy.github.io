@@ -13,7 +13,7 @@
   <meta itemprop="description" content="笔者家里得公网IP是非固定得， 所以使用DDNS 来实现域名得动态解析， 笔者使用wireguard来和其他电脑组成内网。
 这种操作下有一个致命得问题， 那就是DDNS变化之后， wireguard 会断网， 同时它不会自动重连。。">
   <meta itemprop="datePublished" content="2025-08-05T22:08:16+08:00">
-  <meta itemprop="dateModified" content="2025-08-05T22:22:47+08:00">
+  <meta itemprop="dateModified" content="2025-08-06T21:48:14+08:00">
   <meta itemprop="wordCount" content="842">
   <meta itemprop="image" content="https://fantasyplayer.link/logo.png">
   <meta itemprop="keywords" content="Windows,Wireguard"><meta property="og:url" content="https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/">
@@ -25,7 +25,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="periphery">
     <meta property="article:published_time" content="2025-08-05T22:08:16+08:00">
-    <meta property="article:modified_time" content="2025-08-05T22:22:47+08:00">
+    <meta property="article:modified_time" content="2025-08-06T21:48:14+08:00">
     <meta property="article:tag" content="Windows">
     <meta property="article:tag" content="Wireguard">
     <meta property="og:image" content="https://fantasyplayer.link/logo.png">
@@ -39,7 +39,7 @@
 <meta name="twitter:creator" content="@Aincvy" /><meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/" title="Windows实现wireguard自动重连 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/caprice/%E6%8F%90%E5%8D%87%E5%B9%B8%E7%A6%8F%E6%84%9F%E5%BE%97%E7%94%9F%E6%B4%BB%E7%89%A9%E5%93%81%E6%8E%A8%E8%8D%90/" title="提升幸福感得生活物品推荐" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/index.md" title="Windows实现wireguard自动重连 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/" title="Windows实现wireguard自动重连 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/caprice/%E6%8F%90%E5%8D%87%E5%B9%B8%E7%A6%8F%E6%84%9F%E5%BE%97%E7%94%9F%E6%B4%BB%E7%89%A9%E5%93%81%E6%8E%A8%E8%8D%90/" title="提升幸福感得生活物品推荐" /><link rel="next" type="text/html" href="https://fantasyplayer.link/periphery/macbook%E5%B7%AE%E7%82%B9%E5%8F%98%E7%A0%96%E5%BE%97%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95/" title="Macbook差点变砖得事件记录" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/index.md" title="Windows实现wireguard自动重连 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -51,7 +51,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/periphery\/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E\/"
     },"genre": "posts","keywords": "windows, wireguard","wordcount":  842 ,
-    "url": "https:\/\/fantasyplayer.link\/periphery\/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E\/","datePublished": "2025-08-05T22:08:16+08:00","dateModified": "2025-08-05T22:22:47+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/periphery\/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E\/","datePublished": "2025-08-05T22:08:16+08:00","dateModified": "2025-08-06T21:48:14+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -131,7 +131,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Windows实现wireguard自动重连</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-08-05 22:08:16"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-05">2025-08-05</time></span>&nbsp;<span title="更新于 2025-08-05 22:22:47"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-05">2025-08-05</time></span>&nbsp;<span title="842 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-08-05 22:08:16"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-05">2025-08-05</time></span>&nbsp;<span title="更新于 2025-08-06 21:48:14"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2025-08-06">2025-08-06</time></span>&nbsp;<span title="842 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="content" id="content"><p>笔者家里得公网IP是非固定得， 所以使用DDNS 来实现域名得动态解析， 笔者使用wireguard来和其他电脑组成内网。</p>
 <p>这种操作下有一个致命得问题， 那就是DDNS变化之后， wireguard 会断网， 同时它不会自动重连。。</p>
 <p>所以这时候就需要有一个Windows 脚本来监控链接， 如果网络断开了得话， 就自动重连一下。</p>
@@ -246,7 +246,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2025-08-05 22:22:47">更新于 2025-08-05&nbsp;</span>
+        <span title="更新于 2025-08-06 21:48:14">更新于 2025-08-06&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
@@ -269,7 +269,7 @@
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/caprice/%E6%8F%90%E5%8D%87%E5%B9%B8%E7%A6%8F%E6%84%9F%E5%BE%97%E7%94%9F%E6%B4%BB%E7%89%A9%E5%93%81%E6%8E%A8%E8%8D%90/" class="post-nav-item" rel="prev" title="提升幸福感得生活物品推荐"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>提升幸福感得生活物品推荐</a></div>
+  </div><div class="post-nav"><a href="/caprice/%E6%8F%90%E5%8D%87%E5%B9%B8%E7%A6%8F%E6%84%9F%E5%BE%97%E7%94%9F%E6%B4%BB%E7%89%A9%E5%93%81%E6%8E%A8%E8%8D%90/" class="post-nav-item" rel="prev" title="提升幸福感得生活物品推荐"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>提升幸福感得生活物品推荐</a><a href="/periphery/macbook%E5%B7%AE%E7%82%B9%E5%8F%98%E7%A0%96%E5%BE%97%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="next" title="Macbook差点变砖得事件记录">Macbook差点变砖得事件记录<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.

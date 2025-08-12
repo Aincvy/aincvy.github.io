@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 05 Aug 2025 22:22:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Aug 2025 21:56:18 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Macbook差点变砖得事件记录</title>
+      <link>https://fantasyplayer.link/periphery/macbook%E5%B7%AE%E7%82%B9%E5%8F%98%E7%A0%96%E5%BE%97%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 12 Aug 2025 21:56:18 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/macbook%E5%B7%AE%E7%82%B9%E5%8F%98%E7%A0%96%E5%BE%97%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;因为mbp 比较老旧， 安装了新版系统之后很卡， 简直不能使用， 所以想退回旧版本的系统。&lt;br&gt;&#xA;于是从 app store 里面下载了 big sur, 然后使用命令  &lt;code&gt;sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume&lt;/code&gt; 创建了镜像，但是创建之前笔者没格式化U盘，后面在系统启动选项上看不到这个U盘 （不知道是不是没格式化得影响）&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Windows实现wireguard自动重连</title>
       <link>https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/</link>

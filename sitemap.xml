@@ -2,37 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-08-05T22:22:47+08:00</lastmod>
+    <lastmod>2025-08-12T21:56:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/macbook-pro/</loc>
+    <lastmod>2025-08-12T21:56:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/macbook%E5%B7%AE%E7%82%B9%E5%8F%98%E7%A0%96%E5%BE%97%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2025-08-12T21:56:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/macos/</loc>
+    <lastmod>2025-08-12T21:56:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2025-08-05T22:22:47+08:00</lastmod>
+    <lastmod>2025-08-12T21:56:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/</loc>
-    <lastmod>2025-08-05T22:22:47+08:00</lastmod>
+    <lastmod>2025-08-12T21:56:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/windows/</loc>
-    <lastmod>2025-08-05T22:22:47+08:00</lastmod>
+    <lastmod>2025-08-06T21:48:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/periphery/windows%E5%AE%9E%E7%8E%B0wireguard%E8%87%AA%E5%8A%A8%E9%87%8D%E8%BF%9E/</loc>
-    <lastmod>2025-08-05T22:22:47+08:00</lastmod>
+    <lastmod>2025-08-06T21:48:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://fantasyplayer.link/tags/wireguard/</loc>
-    <lastmod>2025-08-05T22:22:47+08:00</lastmod>
+    <lastmod>2025-08-06T21:48:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
