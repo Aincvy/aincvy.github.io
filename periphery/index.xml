@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 12 Aug 2025 21:56:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2025 21:31:47 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mattermost中文搜索不生效的问题处理</title>
+      <link>https://fantasyplayer.link/periphery/mattermost%E4%B8%AD%E6%96%87%E6%90%9C%E7%B4%A2%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 02 Sep 2025 21:31:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/mattermost%E4%B8%AD%E6%96%87%E6%90%9C%E7%B4%A2%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</guid>
+      <description>&lt;p&gt;原因是pgsql 默认不支持 中文分词搜索，所以调整一下数据库就可以了&lt;br&gt;&#xA;官方文档可见：  &lt;a href=&#34;https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;手动编译数据库插件然后启动太麻烦了，所以笔者直接使用的别人build好的镜像： &lt;code&gt;abcfy2/zhparser:13-alpine&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;镜像来源可见  &lt;a href=&#34;https://hub.docker.com/r/abcfy2/zhparser&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;https://hub.docker.com/r/abcfy2/zhparser&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;docker compose 里调整一下 image 即可， 别的都不需要变动&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;启动数据库&lt;/li&gt;&#xA;&lt;li&gt;在数据库里执行sql 语句开启一下扩展&lt;/li&gt;&#xA;&lt;li&gt;重启一下mattermost 就可以使用中文搜索了&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;数据库执行的语句参考&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Macbook差点变砖得事件记录</title>
       <link>https://fantasyplayer.link/periphery/macbook%E5%B7%AE%E7%82%B9%E5%8F%98%E7%A0%96%E5%BE%97%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>

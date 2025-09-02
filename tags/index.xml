@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 12 Aug 2025 21:56:18 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2025 21:31:47 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mattermost</title>
+      <link>https://fantasyplayer.link/tags/mattermost/</link>
+      <pubDate>Tue, 02 Sep 2025 21:31:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/mattermost/</guid>
+      <description>Mattermost</description>
+    </item>
     <item>
       <title>Macbook Pro</title>
       <link>https://fantasyplayer.link/tags/macbook-pro/</link>
@@ -72,13 +79,6 @@
       <pubDate>Tue, 01 Jul 2025 21:02:31 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/vscode/</guid>
       <description>Vscode</description>
-    </item>
-    <item>
-      <title>Mattermost</title>
-      <link>https://fantasyplayer.link/tags/mattermost/</link>
-      <pubDate>Wed, 25 Jun 2025 21:58:58 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/mattermost/</guid>
-      <description>Mattermost</description>
     </item>
     <item>
       <title>Docker</title>
