@@ -22,7 +22,7 @@
 
 笔者的操作方式是 先升级 minor,然后升级patch . 然后升级 major 。
 
-在这个链接[Docker hub: gitlab CE](https://hub.docker.com/r/gitlab/gitlab-ce/tags/?page=1&amp;ordering=last_updated)寻找指定版本的镜像即可。 
+在这个链接[Docker hub: gitlab CE](https://hub.docker.com/r/gitlab/gitlab-ce/tags/?page=1&ordering=last_updated)寻找指定版本的镜像即可。 
 
 gitlab的版本号格式是： `(Major).(Minor).(Patch)`
 

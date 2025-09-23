@@ -17,9 +17,9 @@
 
 ```cpp
 // 纯手写代码， 并没有经过测试
-#include &#34;uv.h&#34;
-#include &lt;iostream&gt;
-#include &lt;thread&gt;
+#include "uv.h"
+#include <iostream>
+#include <thread>
 
 static struct {
   uv_loop_t* uvLoop = nullptr;
@@ -29,8 +29,8 @@ static struct {
 
 // 回调函数
 void callback(uv_async_t *handle){
-  auto p = (int*)handle-&gt;data;
-  std::cout &lt;&lt; *p &lt;&lt; std::endl;
+  auto p = (int*)handle->data;
+  std::cout << *p << std::endl;
   free(p);
 }
 
@@ -51,11 +51,11 @@ void threadA(){
   
   // 释放内存
   // free uv
-  uv_loop_close(status-&gt;uvLoop);
-  free(status-&gt;uvLoop);
-  status-&gt;uvLoop = nullptr;
-  delete status-&gt;uvAsync;
-  status-&gt;uvAsync = nullptr;
+  uv_loop_close(status->uvLoop);
+  free(status->uvLoop);
+  status->uvLoop = nullptr;
+  delete status->uvAsync;
+  status->uvAsync = nullptr;
 }
 
 // 线程 B 的函数
@@ -64,11 +64,11 @@ void threadB(){
   std::this_thread::sleep_for(std::chrono::milliseconds(500));
   
   // 
-  auto async = g_UIStatus-&gt;uvAsync;
+  auto async = g_UIStatus->uvAsync;
   // 准备数据
   auto p = (int*)calloc(1, sizeof(int));
   *p = 1;
-  async-&gt;data = p;
+  async->data = p;
   // 发送给另外一个线程
   uv_async_send(async);
 }
@@ -92,8 +92,8 @@ int main(void){
 
 ## 拓展阅读
 
-- [C&#43;&#43;创建对象时区分圆括号( )和大括号{ }](https://zhuanlan.zhihu.com/p/268894227)
-- [GitHub - fffaraz/awesome-cpp: A curated list of awesome C&#43;&#43; (or C) frameworks, libraries, resources, and shiny things. Inspired by awesome-... stuff.](https://github.com/fffaraz/awesome-cpp#standard-libraries)
+- [C++创建对象时区分圆括号( )和大括号{ }](https://zhuanlan.zhihu.com/p/268894227)
+- [GitHub - fffaraz/awesome-cpp: A curated list of awesome C++ (or C) frameworks, libraries, resources, and shiny things. Inspired by awesome-... stuff.](https://github.com/fffaraz/awesome-cpp#standard-libraries)
 - [uv_run()函数的第二个参数详解](https://stackoverflow.com/a/17329626/11226492)
 - [Threads — libuv documentation](http://docs.libuv.org/en/v1.x/guide/threads.html#synchronization-primitives)
 - [Can I do custom events with libuv?](https://stackoverflow.com/a/15718043/11226492)

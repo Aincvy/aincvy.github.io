@@ -38,11 +38,11 @@
 
 - 词法分析器： flex(lex)  [doc](http://dinosaur.compilertools.net/lex/index.html) 。  
 - 语法分析器： yacc(bison)  [doc](https://www.gnu.org/software/bison/manual/html_node/index.html) 。  
-- 语法分析&#43;词法分析： tree-sitter  [doc](https://tree-sitter.github.io/tree-sitter/)  。
+- 语法分析+词法分析： tree-sitter  [doc](https://tree-sitter.github.io/tree-sitter/)  。
 
 
 
-笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， lex&#43;yacc是一起配合使用的。
+笔者这里统一使用 lex 称呼 flex/lex , 使用yacc 称呼 yacc/bison， lex+yacc是一起配合使用的。
 
 Tree-sitter 则是一个单独使用的工具，  下面笔者就来更详细的介绍一下这几个工具。
 
@@ -66,7 +66,7 @@ tree-sitter可以生成在程序里面使用的语法分析文件(*\*.h,\**.c)�
 
 更多详细的内容可以阅读官方文档： https://tree-sitter.github.io/tree-sitter/
 
-### lex &#43; yacc
+### lex + yacc
 
 在 https://github.com/Aincvy/langX/tree/dev/extern  这个目录里面的 a.l 是词法分析文件(*lex*)， a.y是语法分析文件(*yacc*)。
 
@@ -92,7 +92,7 @@ lex的语法是使用 `%%` 符号进行分割, 整个文件将会被两个`%%` �
 // 用户定义内容
 
 %{
-#include &#34;y.tab.h&#34;
+#include "y.tab.h"
 
 // 当前行
 int now_line = 1 ;
@@ -107,27 +107,27 @@ void count(void);
 %%
 
 // 词法内容 
-&#34;/*&#34;			{ comment(); }
-&#34;//&#34;[^\n]*      { /* consume //-comment */  }
+"/*"			{ comment(); }
+"//"[^\n]*      { /* consume //-comment */  }
 
-&#34;auto&#34; {count(); return KEY_AUTO;}
-&#34;if&#34; {count(); return KEY_IF;}
-&#34;else&#34; {count(); return KEY_ELSE;}
-&#34;while&#34; {count(); return KEY_WHILE;}
+"auto" {count(); return KEY_AUTO;}
+"if" {count(); return KEY_IF;}
+"else" {count(); return KEY_ELSE;}
+"while" {count(); return KEY_WHILE;}
 
 
-\&#34;(\\.|[^\\&#34;\n])*\&#34;   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
+\"(\\.|[^\\"\n])*\"   {count();  yylval.sValue = strdup(yytext); return TSTRING;}
 [$_a-zA-Z][$_a-zA-Z0-9]*  {count(); yylval.sValue=strdup(yytext); return IDENTIFIER;}
 
 0|([1-9][0-9]*)           {count();  yylval.iValue = atoi(yytext);  return TINTEGER; }
-(0|[1-9][0-9]*)\.[0-9]&#43; { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
+(0|[1-9][0-9]*)\.[0-9]+ { count(); yylval.dValue = atof(yytext); return TDOUBLE;}
 
-&#34;&gt;&#34; {count(); return &#39;&gt;&#39;; }
-&#34;&lt;&#34; {count(); return &#39;&lt;&#39;; }
-&#34;{&#34; {count(); return &#39;{&#39;; }
-&#34;}&#34; {count(); return &#39;}&#39;; }
+">" {count(); return '>'; }
+"<" {count(); return '<'; }
+"{" {count(); return '{'; }
+"}" {count(); return '}'; }
 
-[\n]   {count(); now_line&#43;&#43;; }
+[\n]   {count(); now_line++; }
 
 %%
 
@@ -139,32 +139,32 @@ void comment(void)
 
 	while ((c = yyinput()) != 0)      /* (EOF maps to 0) */
 	{
-		if (c == &#39;\n&#39;) {
-			now_line&#43;&#43; ;
+		if (c == '\n') {
+			now_line++ ;
 			column = 0;
 		}
-		if (c == &#39;/&#39; &amp;&amp; prev == &#39;*&#39;)
+		if (c == '/' && prev == '*')
 			return;
 		prev = c;
 	}
-	//error(&#34;unterminated comment&#34;);
+	//error("unterminated comment");
 }
 
 void count(void)
 {
 	int i;
 
-	for (i = 0; yytext[i] != &#39;\0&#39;; i&#43;&#43;) {
-		if (yytext[i] == &#39;\n&#39;){
+	for (i = 0; yytext[i] != '\0'; i++) {
+		if (yytext[i] == '\n'){
 			column = 0;
-		} else if (yytext[i] == &#39;\t&#39;)
-			column &#43;= 8 - (column % 8);
+		} else if (yytext[i] == '\t')
+			column += 8 - (column % 8);
 		else {
-			column&#43;&#43;;
+			column++;
 		}
 	}
 
-	// printf(&#34;after count %s, column: %d\n&#34;, yytext, column);
+	// printf("after count %s, column: %d\n", yytext, column);
 }
 
 ```
@@ -191,10 +191,10 @@ Yacc 同样使用符号`%%` 进行三段式分割，使用 `%{` 和`%}` 来插�
 
 - `%union{}`  这个结构就是 在lex 中的变量`yylval` 的数据类型。
 - `%token`  用于声明token，每一个token 将会生成一个宏定义。 在源码包含`y.tab.h` 头文件之后即可使用。 在lex 中return 的也是这个。
-- `%type&lt;X&gt;` 用于声明一个并非token 的中间类型，主要方便语法文件的抽象。 `X` 则表示类型，具体值为`%union{}` 中的字段名
+- `%type<X>` 用于声明一个并非token 的中间类型，主要方便语法文件的抽象。 `X` 则表示类型，具体值为`%union{}` 中的字段名
 - `%nonassoc`   无关联性的优先级指示。
-- `%left` 用于指定左结合的`%token` 。 例如： `,` `&#43;` `-` 等等。
-- `%right` 用于指定右结合的`%token`。 例如：`=` `&#43;=`  `-=` 等等
+- `%left` 用于指定左结合的`%token` 。 例如： `,` `+` `-` 等等。
+- `%right` 用于指定右结合的`%token`。 例如：`=` `+=`  `-=` 等等
 - `%glr-parser` 指示 yacc使用 glr的方式解析语法。
 - `%start`  指定一个语法规则的入口
 
@@ -229,7 +229,7 @@ statement
     ;
 
 _extra_nothing
-    : &#39;;&#39;         { $$ = NULL; }
+    : ';'         { $$ = NULL; }
     ;
 
 out_declare_stmt
@@ -241,7 +241,7 @@ out_declare_stmt
  
 // 命名空间的声明语句
 namespace_declare_stmt
-    : KEY_SET KEY_PUBLIC &#39;=&#39; namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
+    : KEY_SET KEY_PUBLIC '=' namespace_name_stmt { $$ = opr(OPR_CHANGE_NAME_SPACE, 1, $4); }
     ;
 
 // 引用命名空间
@@ -251,7 +251,7 @@ namespace_ref_stmt
 
 namespace_name_stmt
     : id_expr  { $$ = opr(OPR_GET_NAME_SPACE, 2, NULL, $1); }
-    | namespace_name_stmt &#39;.&#39; id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
+    | namespace_name_stmt '.' id_expr { $$ = opr(OPR_GET_NAME_SPACE, 2, $1, $3); }
     ;
  
 int_expr
@@ -270,7 +270,7 @@ double_expr
 - `$$` 表示规则名称的结果， 即当前规则向上返回的时候 返回的内容
 - `$1,$2...`  `$n`表示第n个元素。 
 - `//` 表示单行注释
-- `number($1);  intNode($1);`  这些是笔者自定义的函数， 用于生成一个`XNode*` 。 上述代码中的`double_expr/int_expr...` 等等基本上都是使用 `%type&lt;node&gt;` 进行声明的，所以都是一个`XNode*` 类型。
+- `number($1);  intNode($1);`  这些是笔者自定义的函数， 用于生成一个`XNode*` 。 上述代码中的`double_expr/int_expr...` 等等基本上都是使用 `%type<node>` 进行声明的，所以都是一个`XNode*` 类型。
 - 上述内容选自 文件：  https://github.com/Aincvy/langX/blob/dev/extern/a.y    配合该文件一起看这篇博文可能更容易理解一些。
 
 - 这里还有一些需要注意的地方是，仔细看`statement_list` 规则， 它可以是`statement_list statement` 或者一个空。
@@ -293,17 +293,17 @@ double_expr
 
 ### 其他
 
-Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以当时就选择了lex&#43;yacc, 笔者目前只是使用tree-sitter来做语法高亮。
+Tree-sitter 的文档还是比较丰富的， 只是需要一定的英文水平， 并且tree-sitter提供了一些开源的示例可以参考，所以难度应该不是很大。在笔者编写langX的时候好像还没有tree-sitter这个工具，所以当时就选择了lex+yacc, 笔者目前只是使用tree-sitter来做语法高亮。
 
-在使用lex&#43;yacc 的时候， 建议刚开始从一些小的文件开始， 慢慢熟悉结构了之后 自然就会把文件写的较为复杂了。  当复杂到一定程度之后 可能会碰到很多冲突(*shift/reduce,reduce/reduce*)的警告，此时就需要考虑对语法文件进行重构， 笔者建议使用思维导图进行整理思路。 *注： 部分警告不是一定要解决的，但是建议能解决的都解决掉。*
+在使用lex+yacc 的时候， 建议刚开始从一些小的文件开始， 慢慢熟悉结构了之后 自然就会把文件写的较为复杂了。  当复杂到一定程度之后 可能会碰到很多冲突(*shift/reduce,reduce/reduce*)的警告，此时就需要考虑对语法文件进行重构， 笔者建议使用思维导图进行整理思路。 *注： 部分警告不是一定要解决的，但是建议能解决的都解决掉。*
 
-语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的，即你目前可以选择lex&#43;yacc,后面不爽了可以换成纯手写的。 （*替换会产生成本就是了:joy:*） 
+语法分析会产生一个抽象语法树，之后的操作大多是基于这个抽象语法树的。所以理论上来说词法分析和语法分析的实现是可替换的，即你目前可以选择lex+yacc,后面不爽了可以换成纯手写的。 （*替换会产生成本就是了:joy:*） 
 
 
 
 ### 拓展阅读
 
-本文的内容有点偏于介绍性，而非入门型， 所以建议笔者同时阅读下面的文章以深入了解lex&amp;&amp;yacc。
+本文的内容有点偏于介绍性，而非入门型， 所以建议笔者同时阅读下面的文章以深入了解lex&&yacc。
 
 - https://segmentfault.com/a/1190000000396608
 - https://www.jianshu.com/p/728e4011a61e

@@ -22,21 +22,21 @@
 
 *以下引用上面教程原文*
 
-&gt;Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:
-&gt;
-&gt;- Virtual Machines relying on AppleHV
-&gt;  - This includes VMWare, Parallels, Docker, Android Studios, etc
-&gt;  - VirtualBox is the sole exception as they have their own hypervisor
-&gt;  - VMware 10 and Parallels 13.1.0 do support their own hypervisor, however using such outdated VM software poses a large security threat
-&gt;- Adobe Support
-&gt;  - Most of Adobe&#39;s suite relies on Intel&#39;s Memfast instruction set, resulting in crashes with AMD CPUs
-&gt;  - You can disable functionality like RAW support to avoid the crashing: [Adobe Fixes](https://gist.github.com/naveenkrdy/26760ac5135deed6d0bb8902f6ceb6bd)
-&gt;- 32-Bit support
-&gt;  - For those still relying on 32-Bit software in Mojave and below, note that the Vanilla patches do not support 32-bit instructions
-&gt;  - A work-around is to install a [custom kernel](https://amd-osx.com/download/kernel.html), however you lose iMessage support
-&gt;- Stability issues on many apps
-&gt;  - Audio-based apps are the most prone to issues, ie. Logic Pro
-&gt;  - DaVinci Resolve has been known to have sporadic issues as well
+>Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:
+>
+>- Virtual Machines relying on AppleHV
+>  - This includes VMWare, Parallels, Docker, Android Studios, etc
+>  - VirtualBox is the sole exception as they have their own hypervisor
+>  - VMware 10 and Parallels 13.1.0 do support their own hypervisor, however using such outdated VM software poses a large security threat
+>- Adobe Support
+>  - Most of Adobe's suite relies on Intel's Memfast instruction set, resulting in crashes with AMD CPUs
+>  - You can disable functionality like RAW support to avoid the crashing: [Adobe Fixes](https://gist.github.com/naveenkrdy/26760ac5135deed6d0bb8902f6ceb6bd)
+>- 32-Bit support
+>  - For those still relying on 32-Bit software in Mojave and below, note that the Vanilla patches do not support 32-bit instructions
+>  - A work-around is to install a [custom kernel](https://amd-osx.com/download/kernel.html), however you lose iMessage support
+>- Stability issues on many apps
+>  - Audio-based apps are the most prone to issues, ie. Logic Pro
+>  - DaVinci Resolve has been known to have sporadic issues as well
 
 N卡的话， 则是因为在mac上没有驱动， 只能使用老旧的 webDriver，所以不推荐。 
 
@@ -77,7 +77,7 @@ AMD的GPU， 笔者尝试的 Rx580, 5700XT 都是免驱的，装好系统，插�
 2. 划分的空间要比备份的大， 但是不必完全一样。
 3. 文件系统我是用的 APFS。
 4. 进入TimeMachine ， 找到 `XXX的iMac` 这个目录，会发现里面有一个叫做`mac_extend`的目录， 进入之后会发现 文件还在。
-5. 我是进入这个目录之后， 使用CMD&#43;A全选， 然后点击下面的恢复。 
+5. 我是进入这个目录之后， 使用CMD+A全选， 然后点击下面的恢复。 
 6. 等待若干时间之后就成功恢复了全部的文件。  （**部分文件可能需要输入密码才能恢复**）
 
 

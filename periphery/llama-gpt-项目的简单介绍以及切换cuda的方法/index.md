@@ -5,7 +5,7 @@ llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器�
 官方 github 地址： https://github.com/getumbrel/llama-gpt.git
 
 官方简介：  
-&gt; A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your device.
+> A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your device.
 
 ## 主要内容
 
@@ -25,22 +25,22 @@ llama-gpt 是一个 需要自己架设，离线，类似ChatGPT的聊天机器�
 虽然排版很难受， 但是生成出现的东西， 还是可以考虑的。 
 
 ```cpp 
-#include &lt;iostream&gt;
+#include <iostream>
 
-#include &#34;imgui.h&#34;
+#include "imgui.h"
 
 int main() {
   ImGui::CreateContext();
-  ImGui::StyleColor( &amp; ImGuiCol_Text, ImVec4(1.0 f, 1.0 f, 1.0 f, 1.0 f));
-  ImGui::Begin(&#34;Form&#34;, nullptr);
-  ImGui::Text(&#34;Name:&#34;);
+  ImGui::StyleColor( & ImGuiCol_Text, ImVec4(1.0 f, 1.0 f, 1.0 f, 1.0 f));
+  ImGui::Begin("Form", nullptr);
+  ImGui::Text("Name:");
   ImGui::SameLine();
-  ImGui::InputText(&#34;name&#34;, name, IM_ARRAYSIZE(name));
-  ImGui::Text(&#34;Age:&#34;);
+  ImGui::InputText("name", name, IM_ARRAYSIZE(name));
+  ImGui::Text("Age:");
   ImGui::SameLine();
-  ImGui::InputText(&#34;age&#34;, age, IM_ARRAYSIZE(age));
-  ImGui::Button(&#34;Submit&#34;);
-  ImGui::Button(&#34;Reset&#34;);
+  ImGui::InputText("age", age, IM_ARRAYSIZE(age));
+  ImGui::Button("Submit");
+  ImGui::Button("Reset");
   ImGui::End();
   ImGui::DestroyContext();
   return 0;
@@ -49,25 +49,25 @@ int main() {
 *使用 https://codebeautify.org/cpp-formatter-beautifier 自动格式化*
 
 ```cpp
-#include &lt;iostream&gt;
+#include <iostream>
 
-#include &#34;imgui.h&#34;
+#include "imgui.h"
 
 int main() {
   ImGui::CreateContext();
-  ImGui::StyleColor( &amp; ImGuiCol_Text, ImVec4(1.0 f, 1.0 f, 1.0 f, 1.0 f));
-  ImGui::Begin(&#34;Form&#34;, nullptr);
-  ImGui::Text(&#34;Name:&#34;);
+  ImGui::StyleColor( & ImGuiCol_Text, ImVec4(1.0 f, 1.0 f, 1.0 f, 1.0 f));
+  ImGui::Begin("Form", nullptr);
+  ImGui::Text("Name:");
   ImGui::SameLine();
-  ImGui::InputText(&#34;name&#34;, name, IM_ARRAYSIZE(name));
-  ImGui::Text(&#34;Age:&#34;);
+  ImGui::InputText("name", name, IM_ARRAYSIZE(name));
+  ImGui::Text("Age:");
   ImGui::SameLine();
-  ImGui::InputInt(&#34;age&#34;, age);
-  if (ImGui::Button(&#34;Submit&#34;)) {
-    std::cout &lt;&lt; &#34;Submit button pressed!&#34; &lt;&lt; std::endl;
+  ImGui::InputInt("age", age);
+  if (ImGui::Button("Submit")) {
+    std::cout << "Submit button pressed!" << std::endl;
   }
-  if (ImGui::Button(&#34;Reset&#34;)) {
-    name[0] = &#39;\0&#39;;
+  if (ImGui::Button("Reset")) {
+    name[0] = '\0';
     age = 0;
   }
   ImGui::End();
@@ -135,22 +135,22 @@ int main() {
 6. 寻找一个目录作为 docker compose 的目录， 比如： `/home/debian/docker-compose/llama-gpt-cuda`
 7. 新建文件 `docker-compose.yaml` ,并填充下面的内容
 ```yaml
-version: &#39;3.6&#39;
+version: '3.6'
 
 services:
   llama-gpt-api-13b:
-    # image: &#39;ghcr.io/getumbrel/llama-gpt-api-llama-2-13b-chat:latest&#39;
-    image: &#39;llama-cpp-python-cuda:latest&#39;
+    # image: 'ghcr.io/getumbrel/llama-gpt-api-llama-2-13b-chat:latest'
+    image: 'llama-cpp-python-cuda:latest'
     # build:
     #   context: ./api
     #   dockerfile: 13B.Dockerfile
     restart: on-failure
     environment:
-      MODEL: &#39;/models/llama-2-13b-chat.bin&#39;
+      MODEL: '/models/llama-2-13b-chat.bin'
       USE_MLOCK: 1
     volumes:
-      - &#39;/home/debian/docker/llama-models:/models/&#39;
-      - &#39;./data:/home&#39;
+      - '/home/debian/docker/llama-models:/models/'
+      - './data:/home'
     cap_add:
       - IPC_LOCK
       - SYS_RESOURCE
@@ -164,17 +164,17 @@ services:
     command: /bin/sh /home/run.sh
 
   llama-gpt-ui:
-    image: &#39;getumbrel/llama-gpt-ui:latest&#39;
-    container_name: &#39;llama-gpt-ui&#39;
+    image: 'getumbrel/llama-gpt-ui:latest'
+    container_name: 'llama-gpt-ui'
     ports: 
       - 3000:3000
     restart: on-failure
     environment:
-      - &#39;OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXX&#39;
-      - &#39;OPENAI_API_HOST=http://llama-gpt-api-13b:8000&#39;
-      - &#39;DEFAULT_MODEL=/models/llama-2-13b-chat.bin&#39;
-      - &#39;WAIT_HOSTS=llama-gpt-api-13b:8000&#39;
-      - &#39;WAIT_TIMEOUT=600&#39;
+      - 'OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXX'
+      - 'OPENAI_API_HOST=http://llama-gpt-api-13b:8000'
+      - 'DEFAULT_MODEL=/models/llama-2-13b-chat.bin'
+      - 'WAIT_HOSTS=llama-gpt-api-13b:8000'
+      - 'WAIT_TIMEOUT=600'
 
 ```
 8. 创建一个目录： `data` 
@@ -197,16 +197,16 @@ n_gpu_layers=37
 # Define batch size
 n_batch=2096
 # If total RAM is less than 8GB, set batch size to 1024
-total_ram=$(cat /proc/meminfo | grep MemTotal | awk &#39;{print $2}&#39;)
+total_ram=$(cat /proc/meminfo | grep MemTotal | awk '{print $2}')
 if [ $total_ram -lt 8000000 ]; then
     n_batch=1024
 fi
 
-echo &#34;Initializing server with:&#34;
-echo &#34;Batch size: $n_batch&#34;
-echo &#34;Number of CPU threads: $n_threads&#34;
-echo &#34;Number of GPU layers: $n_gpu_layers&#34;
-echo &#34;Context window: $n_ctx&#34;
+echo "Initializing server with:"
+echo "Batch size: $n_batch"
+echo "Number of CPU threads: $n_threads"
+echo "Number of GPU layers: $n_gpu_layers"
+echo "Context window: $n_ctx"
 
 exec python3 -m llama_cpp.server --n_ctx $n_ctx --n_threads $n_threads --n_gpu_layers $n_gpu_layers --n_batch $n_batch
 ```  

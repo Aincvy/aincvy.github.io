@@ -5,7 +5,7 @@
 ```cmake
 project(name
     VERSION 0.0.1
-    DESCRIPTION &#34;A WIP vs code extension.&#34;
+    DESCRIPTION "A WIP vs code extension."
     LANGUAGES CXX C
 )
 ```
@@ -35,19 +35,19 @@ target_sources(bead-server PRIVATE
 使用上面的配置生成 vcxproj 文件的内容将会如下： 
 
 ```xml
-  &lt;ItemGroup&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\program.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\network.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\bead.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\db.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\ast.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\log.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\completion.cpp&#34; /&gt;
-    &lt;None Include=&#34;G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\parser.c&#34;&gt;
-    &lt;/None&gt;
-    &lt;None Include=&#34;G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\scanner.c&#34;&gt;
-    &lt;/None&gt;
-  &lt;/ItemGroup&gt;
+  <ItemGroup>
+    <ClCompile Include="G:\nodeProjects\bead\server\program.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\network.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\bead.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\db.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\ast.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\log.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\completion.cpp" />
+    <None Include="G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\parser.c">
+    </None>
+    <None Include="G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\scanner.c">
+    </None>
+  </ItemGroup>
 ```
 
 可以看到两个c文件相关的内容是  `None` 而不是 `ClCompile`， 这样就会产生一个问题， 在编译的时候不会编译这两个文件， 从而会产生符号未定义的情况。 
@@ -62,35 +62,35 @@ set_source_files_properties(dependencies/tree-sitter-cpp/src/scanner.c PROPERTIE
 
 现在再来看一下 vcxproj 文件的内容， 已经变成了 
 ```xml
-  &lt;ItemGroup&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\program.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\network.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\bead.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\db.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\ast.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\log.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\src\completion.cpp&#34; /&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\parser.c&#34;&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Debug|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Debug|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Release|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Release|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;MinSizeRel|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;MinSizeRel|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;RelWithDebInfo|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;RelWithDebInfo|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-    &lt;/ClCompile&gt;
-    &lt;ClCompile Include=&#34;G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\scanner.c&#34;&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Debug|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Debug|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Release|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;Release|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;MinSizeRel|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;MinSizeRel|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-      &lt;CompileAs Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;RelWithDebInfo|x64&#39;&#34;&gt;CompileAsC&lt;/CompileAs&gt;
-      &lt;ScanSourceforModuleDependencies Condition=&#34;&#39;$(Configuration)|$(Platform)&#39;==&#39;RelWithDebInfo|x64&#39;&#34;&gt;false&lt;/ScanSourceforModuleDependencies&gt;
-    &lt;/ClCompile&gt;
-  &lt;/ItemGroup&gt;
+  <ItemGroup>
+    <ClCompile Include="G:\nodeProjects\bead\server\program.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\network.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\bead.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\db.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\ast.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\log.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\src\completion.cpp" />
+    <ClCompile Include="G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\parser.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="G:\nodeProjects\bead\server\dependencies\tree-sitter-cpp\src\scanner.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+  </ItemGroup>
 ```
 
 可以看到， 已经是 `ClCompile`  标签了。 

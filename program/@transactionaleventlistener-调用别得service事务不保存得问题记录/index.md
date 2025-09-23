@@ -57,14 +57,14 @@ public class C {
 }
 
 @RestController()
-@RequestMapping(&#34;/v1&#34;)
+@RequestMapping("/v1")
 @AllArgsConstructor
 @Slf4j
 public class Controller {
 
     private final C c;
     
-    @PostMapping(&#34;/test&#34;)
+    @PostMapping("/test")
     public void test(){
 	    c.finish();
     }
@@ -99,7 +99,7 @@ public class Controller {
 ```java
         boolean isInTransaction = TransactionSynchronizationManager.isActualTransactionActive();
         if (!isInTransaction) {
-          log.warn(&#34;[onCallWebhookEvent] 事务没有开启，执行了 webhook: {}&#34;, event);
+          log.warn("[onCallWebhookEvent] 事务没有开启，执行了 webhook: {}", event);
         }
 ```
 这个警告 会被打印出来。。  这就说明当前不在一个事务里面。。 

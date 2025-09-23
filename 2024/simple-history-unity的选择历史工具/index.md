@@ -1,7 +1,7 @@
 # Simple History   Unity的选择历史工具
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 商店地址：  https://assetstore.unity.com/packages/tools/utilities/simple-history-273290
 

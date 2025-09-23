@@ -36,7 +36,7 @@
     public static class ServerRunningInfo {
         private int id;
         private int onlineCount;
-        private String group = &#34;test&#34;;
+        private String group = "test";
         private String host;
         private int port;
         private String uuid;
@@ -49,14 +49,14 @@
     public static void main(String[] args) {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Client client = Client.builder().endpoints(&#34;http://127.0.0.1:2379&#34;)
-            .password(seq(&#34;123456&#34;)).build();
+        Client client = Client.builder().endpoints("http://127.0.0.1:2379")
+            .password(seq("123456")).build();
         
         KV kvClient = client.getKVClient();
 
         var option = GetOption.builder().isPrefix(true).build();
-        kvClient.get(seq(&#34;/servers/Fight/&#34;), option).thenAccept(r -&gt; {
-            if (r.getCount() &lt;= 0) {
+        kvClient.get(seq("/servers/Fight/"), option).thenAccept(r -> {
+            if (r.getCount() <= 0) {
                 return;
             }
 
@@ -88,7 +88,7 @@
         ServerRunningInfo myInfo = new ServerRunningInfo();
         try {
             PutOption putOption = PutOption.builder().withLeaseId(leaseId).build();
-            kvClient.put(seq(&#34;/servers/Gate/&#34; &#43; myInfo.getId()), 
+            kvClient.put(seq("/servers/Gate/" + myInfo.getId()), 
                 ByteSequence.from(objectMapper.writeValueAsBytes(myInfo)),
                 putOption)
                 .join();    // 如果主线程或者说当前线程有其他任务的话， 就不需要join 
@@ -97,7 +97,7 @@
         }
 
         Watch watchClient = client.getWatchClient();
-        watchClient.watch(seq(&#34;/config/test/A.json&#34;), r -&gt; {
+        watchClient.watch(seq("/config/test/A.json"), r -> {
             for (WatchEvent e : r.getEvents()) {
                 KeyValue keyValue = e.getKeyValue();
                 long oldModRevision = 1;      // 应该保存在某处， 在此地获取

@@ -17,7 +17,7 @@ kind: PersistentVolume
 metadata:
   name: example-pv
   labels:
-    release: &#34;test&#34;
+    release: "test"
 spec:
   capacity:
     storage: 2Gi
@@ -78,7 +78,7 @@ spec:
   storageClassName: local-storage
   selector:
     matchLabels:
-      release: &#34;test&#34;
+      release: "test"
 ```
 - 如果 填写了`matchExpressions` 那么里面的条件也必须被满足， 才会绑定到对应的卷。 
 - `matchLabels` 则绑定的 `metadata.labels`  属性。 
@@ -177,7 +177,7 @@ $ kubectl exec --stdin --tty nginx-deployment-7dd456d7-pmvdf -- ls /data
 ## 其他
 
 - 删除资源的时候， 应该先删除 PVC， 再删除PV。 
-- 如果先尝试删除了PV， 则会提示 PV的资源已经删除， 但是命令会卡主。 当你 ctrl&#43;c 强制结束的时候， 再次查看， PV和PVC 都是还在的。
+- 如果先尝试删除了PV， 则会提示 PV的资源已经删除， 但是命令会卡主。 当你 ctrl+c 强制结束的时候， 再次查看， PV和PVC 都是还在的。
 - 当你手动删除PVC的时候， PV 就会自动被删除。 
 
 如果PVC 被挂载到了一个 POD， 在删除的时候就会卡主。
@@ -189,12 +189,12 @@ $ kubectl exec --stdin --tty nginx-deployment-7dd456d7-pmvdf -- ls /data
 
 ```shell
 vagrant@bullseye:~/storage1$ kubectl delete -f pv-example.yaml
-persistentvolume &#34;example-pv&#34; deleted
+persistentvolume "example-pv" deleted
 
 \
 
 ^Cvagrant@bullseye:~/storage1$ kubectl delete -f pvc-example2.yaml
-persistentvolumeclaim &#34;example-pvc2&#34; deleted
+persistentvolumeclaim "example-pvc2" deleted
 vagrant@bullseye:~/storage1$ kubectl get pv
 NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                    STORAGECLASS    REASON   AGE
 example-pv   2Gi        RWO            Delete           Terminating   nginx-test/example-pvc   local-storage            18m
@@ -202,9 +202,9 @@ vagrant@bullseye:~/storage1$ kubectl get pvc
 NAME          STATUS   VOLUME       CAPACITY   ACCESS MODES   STORAGECLASS    AGE
 example-pvc   Bound    example-pv   2Gi        RWO            local-storage   15m
 vagrant@bullseye:~/storage1$ kubectl delete -f pvc-example.yaml
-persistentvolumeclaim &#34;example-pvc&#34; deleted
+persistentvolumeclaim "example-pvc" deleted
 vagrant@bullseye:~/storage1$ kubectl delete -f pv-example.yaml
-Error from server (NotFound): error when deleting &#34;pv-example.yaml&#34;: persistentvolumes &#34;example-pv&#34; not found
+Error from server (NotFound): error when deleting "pv-example.yaml": persistentvolumes "example-pv" not found
 vagrant@bullseye:~/storage1$
 vagrant@bullseye:~/storage1$ kubectl get pvc
 No resources found in nginx-test namespace.
@@ -219,6 +219,6 @@ vagrant@bullseye:~/storage1$
 
 ---
 
-> 作者:   
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/non-menu/k8s/4.-%E6%8C%81%E4%B9%85%E5%8D%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/  
 

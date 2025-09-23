@@ -28,21 +28,21 @@ bat文件示例和解释：
 ```bat
 @echo off
 
-set &#34;wireguard_exe=C:\Program Files\WireGuard\wg.exe&#34;
+set "wireguard_exe=C:\Program Files\WireGuard\wg.exe"
 
 @REM 文件名是随机生成的128个字符，这样用于避免文件冲突
-set &#34;private_key_file=%tmp%\HdBNzfQpu035yaa11OLu4VNibm8UeFYZBt9A15oDXwxgAfVKc71D4Bl1Dc1GP1nPYJF9nrGYfF4upWn2FSTfwT8GLCKTslA9gKOdTammvDPPWjxwKEW7xvBrHdKjV0fH.txt&#34;
+set "private_key_file=%tmp%\HdBNzfQpu035yaa11OLu4VNibm8UeFYZBt9A15oDXwxgAfVKc71D4Bl1Dc1GP1nPYJF9nrGYfF4upWn2FSTfwT8GLCKTslA9gKOdTammvDPPWjxwKEW7xvBrHdKjV0fH.txt"
 
 @REM 删除文件，以防存在
 del /q %private_key_file%
 
 @REM  写入私钥到临时文件
-ykman piv objects export 0x5fc106 &#34;%private_key_file%&#34;
+ykman piv objects export 0x5fc106 "%private_key_file%"
 @REM 设置私钥
-&#34;%wireguard_exe%&#34; set _name private-key &#34;%private_key_file%&#34;
+"%wireguard_exe%" set _name private-key "%private_key_file%"
 
 @REM 使用结束，删除文件
-del /q &#34;%private_key_file%&#34;
+del /q "%private_key_file%"
 if errorlevel 1 (
     echo 删除文件失败
 )

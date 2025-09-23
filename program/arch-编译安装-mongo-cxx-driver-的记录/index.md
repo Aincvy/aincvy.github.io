@@ -26,7 +26,7 @@ sudo make install
 随后，需要手动把 mongo-cxx-driver 的编译结果添加到 cmake 里。
 `CMakeLists.txt` 文件内容参考
 ```cmake
-SET(CMAKE_PREFIX_PATH &#34;/opt/mongo/lib/cmake/&#34;)
+SET(CMAKE_PREFIX_PATH "/opt/mongo/lib/cmake/")
 
 SET(EXTRA_LIBS 
     mongo::bsoncxx_shared

@@ -10,8 +10,8 @@
 在目录 `/usr/lib/systemd/system/docker.service.d` 添加一个 `任意名称.conf` 文件， 比如`http.conf`， 并添加如下内容： 
 ```conf
 [Service]
-Environment=&#34;HTTP_PROXY=http://hostname_or_ip:port&#34;
-Environment=&#34;HTTPS_PROXY=http://hostname_or_ip:port&#34;
+Environment="HTTP_PROXY=http://hostname_or_ip:port"
+Environment="HTTPS_PROXY=http://hostname_or_ip:port"
 ```
 注：
 - 将 `hostname_or_ip` 替换成读者的代理服务器，  将 `port` 替换成读者的代理服务器端口。

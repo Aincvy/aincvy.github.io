@@ -1,7 +1,7 @@
-# C&#43;&#43; Notes for Pro 读书笔记
+# C++ Notes for Pro 读书笔记
 
 
-笔者这几天抽空读完了这本`C&#43;&#43; Notes for Professionals book`， 所以写一篇读书笔记， 记录下笔者还记得的内容。
+笔者这几天抽空读完了这本`C++ Notes for Professionals book`， 所以写一篇读书笔记， 记录下笔者还记得的内容。
 
 https://goalkicker.com/CPlusPlusBook/
 
@@ -11,7 +11,7 @@ https://goalkicker.com/CPlusPlusBook/
 
 ## 详细内容
 
-*本篇内容基本上都是以 c&#43;&#43;17的版本来写的。*
+*本篇内容基本上都是以 c++17的版本来写的。*
 
 *绝大部分代码都是纯手写，可能会出现部分错误。*
 
@@ -42,7 +42,7 @@ class D4: B2{};    // 等同于 D2
 
 ### 模板的理解
 
-- c&#43;&#43;的模板在笔者的理解里面更偏向于是一种代码生成技术。
+- c++的模板在笔者的理解里面更偏向于是一种代码生成技术。
 
 - 模板类的代码混合类型，模板函数的代码混合参数 生成一个具体的类，结构，函数。
 - 很多模板类的代码很复杂， 难懂。
@@ -62,29 +62,29 @@ class D4: B2{};    // 等同于 D2
 ```cpp
 // 模板特定化
 // 
-template&lt;class T&gt;
+template<class T>
 struct S {
 	using type = T;		
 }
 
 // 将 char,short 都重定位到 int
-template&lt;&gt;
-struct S&lt;char&gt; {
+template<>
+struct S<char> {
 	using type = int;		
 }
-template&lt;&gt;
-struct S&lt;short&gt; {
+template<>
+struct S<short> {
 	using type = int;		
 }
 
 // 使用例子
 void test(){
-  S&lt;char&gt;::type a = 1;
-  S&lt;float&gt;::type b = 1.0f;
+  S<char>::type a = 1;
+  S<float>::type b = 1.0f;
 }
 
 // 使用具体值的模板
-template&lt;class T, std::size_t N&gt;
+template<class T, std::size_t N>
 struct MyArray{
   T* arrayPointer = nullptr;
   MyArray() {
@@ -102,7 +102,7 @@ struct MyArray{
 }
 
 void test(){
-  MyArray&lt;int, 5&gt; a1;      // 注意这里的5
+  MyArray<int, 5> a1;      // 注意这里的5
   a1.arrayPointer[0] = 15;
   a1.arrayPointer[1] = 25;
   a1.size();
@@ -114,39 +114,39 @@ void test(){
 // 翻译过来大致是 在模板里面的部分代码如果是无效的格式，只会从备选列表中移出该模板， 而不会产生一个编译错误
 // 当然， 如果移出完了之后， 没有可用的模板的话， 仍然还是会产生一个错误
 // 这个可用于排除某些模板
-template &lt;class T&gt;
-auto myBegin(T&amp; t) -&gt; decltype(t.begin()){
+template <class T>
+auto myBegin(T& t) -> decltype(t.begin()){
   return t.begin();
 }
 
-template &lt;class T&gt;
-auto myBegin(T&amp; t) -&gt; decltype(t.start()){
+template <class T>
+auto myBegin(T& t) -> decltype(t.start()){
   return t.start();
 }
 
 void test() {
-  std::vector&lt;int&gt; notUsed;
+  std::vector<int> notUsed;
   auto iter = myBegin(notUsed);
   int a = *iter;
 }
 
-// 上述代码中会调用第一个 myBegin() 因为 std::vector&lt;int&gt; 类型没有 start 函数，只有 begin 函数
+// 上述代码中会调用第一个 myBegin() 因为 std::vector<int> 类型没有 start 函数，只有 begin 函数
 // 而如果一个类型有 start 函数，没有 begin 函数的话， 应该就会使用第二个
 // 如果一个类型既有 start 函数，又有 begin 函数的话， 应该就会报错了， 因为模糊不清的调用
 // 上述示例只是一个说明示例， 一般情况下，不会这么写代码。
-// 在 SFINAE 中， 比较常用的应该是 std::enable_if&lt;&gt;
+// 在 SFINAE 中， 比较常用的应该是 std::enable_if<>
 // 后面的 = 0 是 模板参数的默认值
-template&lt;typename Int, std::enable_if_t&lt;std::is_signed&lt;Int&gt;::value, int&gt; = 0&gt;
-void incr2(Int&amp; target, Int amount);
-template&lt;typename Int, std::enable_if_t&lt;std::is_unsigned&lt;Int&gt;::value, int&gt; = 0&gt; 
-void incr2(Int&amp; target, Int amount);
+template<typename Int, std::enable_if_t<std::is_signed<Int>::value, int> = 0>
+void incr2(Int& target, Int amount);
+template<typename Int, std::enable_if_t<std::is_unsigned<Int>::value, int> = 0> 
+void incr2(Int& target, Int amount);
 
 // forwarding reference
-template&lt;class F, typename... Args&gt;
-void func(F f,Args&amp;&amp;... args){
-  f(std::forward&lt;Args&gt;(args) ...);  
+template<class F, typename... Args>
+void func(F f,Args&&... args){
+  f(std::forward<Args>(args) ...);  
 }
-// 这里的 两个&amp;&amp; 表示 forwarding reference,而不是右值引用
+// 这里的 两个&& 表示 forwarding reference,而不是右值引用
 // ... 是 fold 表达式， 用于展开参数列表
 
 ```
@@ -157,31 +157,31 @@ void func(F f,Args&amp;&amp;... args){
 
 可以使用下列类型： 
 
-- `std::tuple&lt;A,B,C,D,E&gt;`
+- `std::tuple<A,B,C,D,E>`
 - 自定义结构
-- `std::pair&lt;a,b&gt;`
-- 使用 c&#43;&#43;17的结构绑定 可以很方便的使用上面的返回值
-- `std::vector&lt;x&gt;`
+- `std::pair<a,b>`
+- 使用 c++17的结构绑定 可以很方便的使用上面的返回值
+- `std::vector<x>`
 - 使用参数。 （指针， 或者回调函数）
 
 下面给一些示例
 
 ```cpp
-// std::tuple&lt;&gt; 在 ≥ c&#43;&#43;17 的时候， 是一个比较不错的选择
-std::tuple&lt;int, float, char&gt; randomData(){
-  return {1, 1.0f, &#39;A&#39;};   // 也可以用 std::make_tuple&lt;&gt;()
+// std::tuple<> 在 ≥ c++17 的时候， 是一个比较不错的选择
+std::tuple<int, float, char> randomData(){
+  return {1, 1.0f, 'A'};   // 也可以用 std::make_tuple<>()
 }
 // 使用 stuple 传递引用
-std::tuple&lt;int&amp;&gt; xxx(){
+std::tuple<int&> xxx(){
   static int a = 1;
   return std::forward_as_tuple(a);  
 }
 
 void test(){
-  // ≥ c&#43;&#43;17 结构绑定
+  // ≥ c++17 结构绑定
   auto [i,f,c] = randomData();
-  // 如果不使用结构绑定， 应该是使用 std::get&lt;0&gt;(tuple), std::get&lt;1&gt;(tuple) 这种方式
-  std::out &lt;&lt; i &lt;&lt; &#39;,&#39; &lt;&lt; f &lt;&lt; &#39;,&#39; &lt;&lt; c &lt;&lt; std::endl;
+  // 如果不使用结构绑定， 应该是使用 std::get<0>(tuple), std::get<1>(tuple) 这种方式
+  std::out << i << ',' << f << ',' << c << std::endl;
   
   auto [ref] = xxx();
   ref = 15;
@@ -197,8 +197,8 @@ auto customStructReturns(){
 
 void test(){
   auto [x,y] = customStructReturns();
-  std::out &lt;&lt; x &lt;&lt; std::endl;
-  std::out &lt;&lt; y &lt;&lt; std::endl;
+  std::out << x << std::endl;
+  std::out << y << std::endl;
 }
 // 这种方式使用起来没有 std::tuple  那么清晰， 因为使用 auto 的话，调用者不知道结构的内容
 
@@ -207,7 +207,7 @@ void test(){
 ### lambda 表达式
 
 - lambda 表达式是一个语法糖，代表了一个匿名函数。
-- 格式为：  [捕获列表]\(参数列表) -&gt; 返回值 { 代码块}
+- 格式为：  [捕获列表]\(参数列表) -> 返回值 { 代码块}
 - 返回值的部分可以省略， 让编译器自行推断。
 - 默认情况下， 按值捕获的变量不可修改， 可以使用`mutable`关键字改变这个情况。
 - Generic lambda ， 当成模板的 lambda 表达式。
@@ -219,45 +219,45 @@ void test(){
 ```cpp
  void test(){
    auto abc = [](int i) {
-     std::cout &lt;&lt; i &lt;&lt; std::endl;
+     std::cout << i << std::endl;
    };
    abc(1);
    
    int a = 0; int b = 1;
-   auto la1 = [a,&amp;b](){     // a 是按值捕获， b 是按引用捕获
+   auto la1 = [a,&b](){     // a 是按值捕获， b 是按引用捕获
      a = 10;
      b = 20;
    };
    la1();   // 在调用的时候 不需要传递捕获部分的变量， 只需要传递参数即可。
-   std::cout &lt;&lt; a;     // 0
-   std::cout &lt;&lt; b;     // 20 
+   std::cout << a;     // 0
+   std::cout << b;     // 20 
    
-   auto la2 = [](bool b) -&gt; float {
+   auto la2 = [](bool b) -> float {
      return b ? 1 : 1.5f;
    }
    la2(true);
    
-   auto la3 = [a]() mutable -&gt; float{
-     return &#43;&#43;a;
+   auto la3 = [a]() mutable -> float{
+     return ++a;
    }
    la3();   // 1 
    la3();   // 2, 虽然这里是2， 但是 当前作用域里面的 a 的值并无变化
-   std::cout &lt;&lt; a;    // 0 
+   std::cout << a;    // 0 
    // 上面的 la3 的内容 参考自  https://blog.csdn.net/Trouble_provider/article/details/90521215
    
    // generic lambda
    auto gl1 = [](auto a, auto b) {
-     return a &#43; b;
+     return a + b;
    }
    
    gl1(1, 2);   // 3
    gl1(1.5f, 2.5f);  // 4
    
-   auto lamb1 = [](int &amp;&amp;x) {return x &#43; 5;}; 
-   auto lamb2 = [](auto &amp;&amp;x) {return x &#43; 5;}; 
+   auto lamb1 = [](int &&x) {return x + 5;}; 
+   auto lamb2 = [](auto &&x) {return x + 5;}; 
    int x = 10;
    lamb1(x);    // 非法， 因为 x 不是一个右值， 需要使用 `std::move(x)` 
-   lamb2(x);    // 合法，  x 会变成一个 int&amp;
+   lamb2(x);    // 合法，  x 会变成一个 int&
  }
 ```
 
@@ -304,7 +304,7 @@ class D : Base {
 
 void test(){
   Base *b = new D();
-  auto d = dynamic_cast&lt;D*&gt;(b);   // 向子类指针转换， 如果无法转换，则d 是一个 nullptr
+  auto d = dynamic_cast<D*>(b);   // 向子类指针转换， 如果无法转换，则d 是一个 nullptr
   
   delete b;        // 如果这里的 Base::~Base() 不是虚函数的话， D::~D() 可能就不会调用，就会产生内存泄露
   b = nullptr; 
@@ -346,13 +346,13 @@ class D : Base {
 // v8::Context::Scope 的源代码
 class V8_NODISCARD Scope {
   public:
-  explicit V8_INLINE Scope(Local&lt;Context&gt; context) : context_(context) {
-    context_-&gt;Enter();
+  explicit V8_INLINE Scope(Local<Context> context) : context_(context) {
+    context_->Enter();
   }
-  V8_INLINE ~Scope() { context_-&gt;Exit(); }
+  V8_INLINE ~Scope() { context_->Exit(); }
 
   private:
-  Local&lt;Context&gt; context_;
+  Local<Context> context_;
 };
 // 可以看到，在构造函数里面 Enter, 在 析构函数里面 Exit
 // 除此之外， 这类类型一般也会把 拷贝，移动函数都禁用掉。 
@@ -365,9 +365,9 @@ class Lock{
   void unlock(){}
 }
 class LockHelper {
-  Lock&amp; lock;      
+  Lock& lock;      
   
-  LockHelper(Lock&amp; lock) : lock(lock){
+  LockHelper(Lock& lock) : lock(lock){
     lock.lock();
   }
   ~LockHelper(){
@@ -376,11 +376,11 @@ class LockHelper {
   
   // 禁用拷贝函数， 移动函数
   LockHelper() = delete;
-  LockHelper(LockHelper const&amp;) = delete;
-  void operator=(LockHelper const&amp;) = delete;
+  LockHelper(LockHelper const&) = delete;
+  void operator=(LockHelper const&) = delete;
   
-  LockHelper(LockHelper&amp;&amp;) = delete;
-  void operator=(LockHelper&amp;&amp;) = delete;
+  LockHelper(LockHelper&&) = delete;
+  void operator=(LockHelper&&) = delete;
   
 };
 
@@ -399,13 +399,13 @@ void test(){
 - `lvalue` left value: 左值。 一般可具有名字的都是左值
 - `xvalue` expiring value: 将亡值。     `std::move()`函数的返回值 
 - `prvalue` pure right value: 纯右值。  没有名字的表达式的。 
-  - 一个临时对象 `std::string(&#34;123&#34;)`
+  - 一个临时对象 `std::string("123")`
   - 函数的返回值 （除了引用）
-  - 字面量  `1, true,  0.5f, &#39;a&#39;`
+  - 字面量  `1, true,  0.5f, 'a'`
   - lambda 表达式
 - `rvalue` right value: 右值， `xvalue` 和 `prvalue`的统称。
 - `glvalue`  `lvalue` 和`xvalue`的统称
-- 函数参数中， 可以用`Type&amp;&amp;` 表示需要一个右值。
+- 函数参数中， 可以用`Type&&` 表示需要一个右值。
 - 使用右值对应的 move 语义可以提高程序性能。
 
 看下面的示例代码： 
@@ -420,11 +420,11 @@ void test(){
    ~Foo() = default;
    
    // copy
-   Foo(Foo const&amp; rhs){
+   Foo(Foo const& rhs){
      this.i = rhs.i;
    }
-   Foo&amp; operator=(Foo const&amp; rhs){
-     if(this == &amp;rhs){
+   Foo& operator=(Foo const& rhs){
+     if(this == &rhs){
        return;  // 防止 自我拷贝赋值  除了这样写，还可以使用 copy-swap 的写法
      }
      this.i = rhs.i;
@@ -432,7 +432,7 @@ void test(){
    }
    
    // move
-   Foo(Foo&amp;&amp; rhs){
+   Foo(Foo&& rhs){
      this.i = rhs.i;
      rhs.i = 0;
      // 这里相当于把 rhs 的数据偷了过来。  当前类里面并没有包含动态内存， 所以效果不明显
@@ -440,8 +440,8 @@ void test(){
      // 在把 rhs 的数据偷过来之后， 要保证 rhs 是能够正常析构和复制的。
    }
    
-   // 这里是 Foo::operator=() 函数的另外一个重载。 区别于 Foo const&amp;
-   Foo&amp; operator=(Foo&amp;&amp; rhs){
+   // 这里是 Foo::operator=() 函数的另外一个重载。 区别于 Foo const&
+   Foo& operator=(Foo&& rhs){
      // 这里应该可以不做 自我移动赋值的判断。 
      // 除非有人这样写：  Foo f;  f = std::move(f); 
      
@@ -453,18 +453,18 @@ void test(){
    }
  };
 
-void bar(Foo &amp;&amp;f){
-  std::cout &lt;&lt; f.get();
+void bar(Foo &&f){
+  std::cout << f.get();
 }
 
 void test(){
   
   Foo f1;
   Foo f2;
-  f2 = f1;    // Foo::Foo(Foo const&amp; rhs)  复制构造函数
-  f1 = {};    // Foo::operator=(Foo&amp;&amp; rhs)   移动
-  Foo f3 = {};  // Foo::Foo(Foo&amp;&amp; rhs)    移动构造函数
-  Foo f4 = std::move(f2);      // Foo::Foo(Foo&amp;&amp; rhs) 
+  f2 = f1;    // Foo::Foo(Foo const& rhs)  复制构造函数
+  f1 = {};    // Foo::operator=(Foo&& rhs)   移动
+  Foo f3 = {};  // Foo::Foo(Foo&& rhs)    移动构造函数
+  Foo f4 = std::move(f2);      // Foo::Foo(Foo&& rhs) 
   // 现在 f2 应该是无法继续使用了。 如果使用的话， 可能会产生一个未定义的行为
   
   bar(Foo());
@@ -484,20 +484,20 @@ void test(){
 ```cpp
 void test(){
   auto i = 1;   // i = int
-  auto c = &#39;a&#39;; // c = char
+  auto c = 'a'; // c = char
   
-  std::vector&lt;int&gt; v1;
-  auto begin = v1.begin();    // begin = std::vector&lt;int&gt;::iterator
+  std::vector<int> v1;
+  auto begin = v1.begin();    // begin = std::vector<int>::iterator
   
-  auto&amp; ri = i ;    // ri = int&amp;
+  auto& ri = i ;    // ri = int&
   
   // 相当于  
-  // for(auto iter = v1.begin(); iter != v1.end(); &#43;&#43;iter) {
-  //   auto const&amp; item = *iter;
+  // for(auto iter = v1.begin(); iter != v1.end(); ++iter) {
+  //   auto const& item = *iter;
   //   ...  代码
   // }
-  for( auto const&amp; item : v1){
-    std::cout &lt;&lt; item;
+  for( auto const& item : v1){
+    std::cout << item;
   }
 }
 ```
@@ -507,7 +507,7 @@ void test(){
 ### 指针的运算和比较
 
 - 指针的比较只能在同一个数组里面， 否则会产生 未定义的行为
-- 指针最多可以到数组最后一个元素的地址 &#43;1个元素 的位置。 
+- 指针最多可以到数组最后一个元素的地址 +1个元素 的位置。 
 - 有效的指针进行相减的时候会得到元素个数
 
 
@@ -521,13 +521,13 @@ void test(){
   std::begin(a);   // 类似迭代器 [begin]
   std::end(a);     // 类似迭代器 [end]
   
-  std::vector&lt;int&gt; b;
+  std::vector<int> b;
   std::begin(b);
   std::end(b);  
   
   auto iter1 = std::find(b.begin(), b.end(), 1);    // 寻找元素
   // 使用函数查找元素
-  auto iter2 = std::find_if(std::begin(a), std::end(b), [](int i) { return i &gt; 5; }); 
+  auto iter2 = std::find_if(std::begin(a), std::end(b), [](int i) { return i > 5; }); 
   
   std::vector v;
   v.push_back(1);
@@ -565,13 +565,13 @@ void test(){
     a ^= b;
     ```
 
-- `&amp;` 按位与，两个操作数的同一个位的值都为1的时候，值为1，否则为0.
+- `&` 按位与，两个操作数的同一个位的值都为1的时候，值为1，否则为0.
 
-- `&lt;&lt;` 左移，  将操作数的每一个位的值都左移 N 位， 多的部分会被省略
+- `<<` 左移，  将操作数的每一个位的值都左移 N 位， 多的部分会被省略
 
   - N 不能为负数， 也不能大于类型所占的位数。
 
-- `&gt;&gt;` 右移，  将操作数的每一个位的值都右移 N 位， 多的部分会被省略
+- `>>` 右移，  将操作数的每一个位的值都右移 N 位， 多的部分会被省略
 
 `std::bitset`
 
@@ -584,8 +584,8 @@ void test(){
 - `bitset::test(N)` 检查第 N 位的值是否为1
 
 - ```cpp
-  std::bitset&lt;10&gt; x;
-  x.set(); // Sets all bits to &#39;1&#39;
+  std::bitset<10> x;
+  x.set(); // Sets all bits to '1'
   ```
 
   
@@ -594,22 +594,22 @@ void test(){
 
 ```cpp
 // 结构外重载
-T operator&#43;(T lhs, const T&amp; rhs) {
-  lhs &#43;= rhs;
+T operator+(T lhs, const T& rhs) {
+  lhs += rhs;
   return lhs; 
 }
-T&amp; operator&#43;=(T&amp; lhs, const T&amp; rhs) {
+T& operator+=(T& lhs, const T& rhs) {
   //Perform addition
   return lhs; 
 }
 
 // 结构内重载
-T operator&#43;(const T&amp; rhs)
+T operator+(const T& rhs)
 {
-    *this &#43;= rhs;
+    *this += rhs;
     return *this;
 }
-T&amp; operator&#43;=(const T&amp; rhs) {
+T& operator+=(const T& rhs) {
     //Perform addition
     return *this;
 }
@@ -621,21 +621,21 @@ T&amp; operator&#43;=(const T&amp; rhs) {
 
 可以重载的操作符大致有下面这些
 
-- 算数操作符 `&#43;,-,*,/,%,...`
-- 逻辑判断操作符 `&gt;,&lt;,==,...`
-- 位操作运算符 `&amp;,|,^,&lt;&lt;,&gt;&gt;,...`
+- 算数操作符 `+,-,*,/,%,...`
+- 逻辑判断操作符 `>,<,==,...`
+- 位操作运算符 `&,|,^,<<,>>,...`
 - 函数调用的操作符 `()`
 - 方括号的这个操作符 `[]`
-- 指针相关的操作符 `-&gt;, -&gt;*`
+- 指针相关的操作符 `->, ->*`
 - 类型转换的操作符
 - *new 和 delete 操作符也能重载？* 
 
 ### 文件操作
 
 - `std::ofstream, std::ifstream, std::fstream`  使用写模式，读模式，读写模式打开文件
-- 上面的类型可以使用操作符 `&gt;&gt;` 读取内容， `&lt;&lt;` 写入内容
+- 上面的类型可以使用操作符 `>>` 读取内容， `<<` 写入内容
 - `imbue()`  函数可以用于修改 Locale
-- c&#43;&#43;17 新增了一个叫做`std::filesystem` 的命名空间 *好像是来自 boost?*
+- c++17 新增了一个叫做`std::filesystem` 的命名空间 *好像是来自 boost?*
 - `std::filesystem::exists(path)`  检测文件是否存在
 - `std::filesystem::copy_file(path1, path2)`  复制文件
 - `std::filesystem::directory_iterator`  目录迭代器  
@@ -644,23 +644,23 @@ T&amp; operator&#43;=(const T&amp; rhs) {
 部分示例代码
 
 ```cpp
-std::ofstream output(&#34;foo.txt&#34;);
-output &lt;&lt; &#34;text!&#34;;
+std::ofstream output("foo.txt");
+output << "text!";
 output.flush();     // 刷新流
 output.close();     // 关闭流，  这一步应该会自动刷新一遍，  如果没有手动调用这个函数的话，析构函数应该会调用这个
 
-std::ifstream file(&#34;file3.txt&#34;); 
-std::vector&lt;std::string&gt; v;
+std::ifstream file("file3.txt"); 
+std::vector<std::string> v;
 std::string s;
-while(file &gt;&gt; s) // 一直读取文件内容
+while(file >> s) // 一直读取文件内容
 {
 	v.push_back(s); 
 }
 
 // 遍历目录
 using directory_iterator = std::filesystem::directory_iterator;
-for (auto it = directory_iterator {&#34;./plugins&#34;}; it != directory_iterator {}; &#43;&#43;it) {
-	std::cout &lt;&lt; it-&gt;path().string() &lt;&lt; std::endl;
+for (auto it = directory_iterator {"./plugins"}; it != directory_iterator {}; ++it) {
+	std::cout << it->path().string() << std::endl;
 }
 ```
 
@@ -671,7 +671,7 @@ for (auto it = directory_iterator {&#34;./plugins&#34;}; it != directory_iterato
 cmake 项目的编译比较简单， 执行诸如下面的命令就可以了。 
 
 ```shell
-mkdir build &amp;&amp; cd build
+mkdir build && cd build
 cmake ..
 make
 ```
@@ -686,7 +686,7 @@ cmake_minimum_required(VERSION 3.10)     # 设置最低可运行的版本
 # 设置一些编译属性
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CMAKE_BUILD_TYPE &#34;Debug&#34;)
+set(CMAKE_BUILD_TYPE "Debug")
 set(CMAKE_EXPORT_COMPILECOMMANDS ON)
 
 # 添加一个新的 target 叫做 sight, 类型是可执行程序
@@ -721,7 +721,7 @@ target_include_directories(
 find_package(yaml-cpp REQUIRED)      ##  查找 yaml-cpp 这个包
 target_include_directories(sight PRIVATE YAML_CPP_INCLUDE_DIR)   # 添加 Include 目录
 target_link_libraries(sight PRIVATE ${YAML_CPP_LIBRARIES})       # 链接 yaml 的动态库
-MESSAGE(STATUS &#34;Found yaml-cpp at: ${YAML_CPP_INCLUDE_DIR}&#34;)     # 输出日志信息
+MESSAGE(STATUS "Found yaml-cpp at: ${YAML_CPP_INCLUDE_DIR}")     # 输出日志信息
 ```
 
 
@@ -736,5 +736,5 @@ MESSAGE(STATUS &#34;Found yaml-cpp at: ${YAML_CPP_INCLUDE_DIR}&#34;)     # 输�
 ---
 
 > 作者: Aincvy  
-> URL: https://fantasyplayer.link/program/c&#43;&#43;-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/  
+> URL: https://fantasyplayer.link/program/c++-notes-for-pro-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/  
 

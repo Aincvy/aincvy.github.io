@@ -32,11 +32,11 @@ LocalDate nDate = localDate.plusYears(1).plusDays(15);
 //         LocalDateTime, date and time
 LocalDateTime localDateTime = LocalDateTime.now();
 LocalDateTime dateTime1 = LocalDateTime.of(2020,10,15,10,30);      // 参数列表: year, month, dayOfMonth, hour, minute
-LocalDateTime dateTime2 = LocalDateTime.now(ZoneId.of(&#34;Asia/Shanghai&#34;));     // 时区
-System.out.println(&#34;dateTime2: &#34; &#43; dateTime2);    // dateTime2: 2020-05-21T17:58:24.494799200
+LocalDateTime dateTime2 = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));     // 时区
+System.out.println("dateTime2: " + dateTime2);    // dateTime2: 2020-05-21T17:58:24.494799200
 
 LocalDateTime dateTime3 = localDateTime.plusYears(1).plusMonths(1).plusHours(-1).plusSeconds(-1000);
-System.out.println(&#34;dateTime3: &#34; &#43; dateTime3);    // dateTime3: 2021-06-21T16:41:44.494799200
+System.out.println("dateTime3: " + dateTime3);    // dateTime3: 2021-06-21T16:41:44.494799200
 
 var localDateX = localDateTime.toLocalDate();
 var localTimeX = localDateTime.toLocalTime();
@@ -44,18 +44,18 @@ var localTimeX = localDateTime.toLocalTime();
 
 var zoneOffset = OffsetDateTime.now().getOffset();
 var instant = localDateTime.toInstant(zoneOffset);
-System.out.println(&#34;instant: &#34; &#43; instant);    //  instant: 2020-05-21T09:58:24.494799200Z
+System.out.println("instant: " + instant);    //  instant: 2020-05-21T09:58:24.494799200Z
 
 long timestamp = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
 var date1 = new Date(timestamp);
-System.out.println(&#34;date1: &#34; &#43; date1);      // date1: Thu May 21 17:58:24 CST 2020
+System.out.println("date1: " + date1);      // date1: Thu May 21 17:58:24 CST 2020
 ```
 
 
 
 简单来说， 有下面的几个要点
 
-- `LocalDate` 只表示日期， `LocalTime` 只表示时间， `LocalDateTime` 则表示日期&#43;时间
+- `LocalDate` 只表示日期， `LocalTime` 只表示时间， `LocalDateTime` 则表示日期+时间
 - 三个类的API都是类似的， 或者说一样的
 - 3个类的对象应该都是不可变的， 即 当调用`plusXXX()` 方法的时候， 旧对象并没有改动，返回的新对象是改动过的。 类似`String.subString()` 方法。
 - `ZoneId` 表示时区， 用`of()`方法获取一个时区的实例。
@@ -84,11 +84,11 @@ DateTime dateTime3 = dateTime.plusWeeks(1).plusDays(1);
 Date date = dateTime.withTimeAtStartOfDay().toDate();
 System.out.println(date);            // Thu May 21 00:00:00 CST 2020
 
-var zone = DateTimeZone.forID(&#34;Asia/Shanghai&#34;);
+var zone = DateTimeZone.forID("Asia/Shanghai");
 DateTime dateTime4 = dateTime.withZone(zone).plusYears(1);
-System.out.println(dateTime4);       // 2021-05-21T18:37:03.806&#43;08:00
+System.out.println(dateTime4);       // 2021-05-21T18:37:03.806+08:00
 
-System.out.println(dateTime.toString(&#34;E MM/dd/yyyy HH:mm:ss.SSS&#34;));    // 周四 05/21/2020 18:37:03.806
+System.out.println(dateTime.toString("E MM/dd/yyyy HH:mm:ss.SSS"));    // 周四 05/21/2020 18:37:03.806
     
 ```
 
@@ -97,8 +97,8 @@ System.out.println(dateTime.toString(&#34;E MM/dd/yyyy HH:mm:ss.SSS&#34;));    /
 下面是`joda-time` 的一些特点
 
 - 方法命名上， 没有采用`getHour()` 这类形式 ，而是使用了`getHourOfDay()` 这类形式，可读性更高了
-- 更多的API 。除了常规的时间属性之外， 还有`withTimeAtStartOfDay()` 获取一天开始的时间，获取今天是今年的第几周 等等。  :&#43;1::&#43;1::&#43;1:
-- `toDate()` 直接转换成 `java.util.Date`类型 :&#43;1::&#43;1::&#43;1:
+- 更多的API 。除了常规的时间属性之外， 还有`withTimeAtStartOfDay()` 获取一天开始的时间，获取今天是今年的第几周 等等。  :+1::+1::+1:
+- `toDate()` 直接转换成 `java.util.Date`类型 :+1::+1::+1:
 - `org.joda.time.DateTimeZone` 用于表示时区。 
 - `toString()` 方法可以直接格式化日期字符串
 - `joda-time` 的时间也是具有不可变性， 各种方法返回的都是一个新的对象。

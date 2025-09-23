@@ -30,46 +30,46 @@ TIN 的地方 选择我有， 然后填写外国的 TIN， 具体数值就是身
 
 基本上在1天之内， 就会收到邮件结果， 可能会变成真正的验证通过， 也可能会要求补充信息。  
 下面是笔者收到的邮件。 
-&gt; Hello,
-&gt; 
-&gt; At this time, we are unable to validate your Steam account. This is because the permanent and or mailing address you entered in the tax interview cannot be verified
-&gt; 
-&gt; You must now provide us with proof of your address.
-&gt; 
-&gt; Please provide one of the following documents, showing the same address as you have entered it in the tax interview:
-&gt; 
-&gt; ·        Recent utility bill (if it shows your address)
-&gt; 
-&gt; ·        Recent bank statement (if it shows your address)
-&gt; 
-&gt; ·        Government ID Card (if it shows your address)
-&gt; 
-&gt; ·        Tenant Lease (if it shows your address)
-&gt; 
-&gt; ·        OR for a company / business you can provide a company registration certificate (if it shows your address)
-&gt; 
-&gt; Please do not give us the address of your bank or utility company.
-&gt; 
-&gt; Forward your documents as an attachment to this email.
-&gt; 
-&gt; Your Steam account will not be validated until we can verify the address.
-&gt; 
-&gt; Please note that Valve uses Lilaham, a third-party tax provider, to gather tax information.
-&gt; 
-&gt; Important Notice: Information in this document does not constitute tax, legal, or other professional advice. If you have other questions, please contact your tax, legal, or other professional advisor.
-&gt; 
-&gt;  
-&gt; Best regards,   
-&gt; XXXX | Valve
+> Hello,
+> 
+> At this time, we are unable to validate your Steam account. This is because the permanent and or mailing address you entered in the tax interview cannot be verified
+> 
+> You must now provide us with proof of your address.
+> 
+> Please provide one of the following documents, showing the same address as you have entered it in the tax interview:
+> 
+> ·        Recent utility bill (if it shows your address)
+> 
+> ·        Recent bank statement (if it shows your address)
+> 
+> ·        Government ID Card (if it shows your address)
+> 
+> ·        Tenant Lease (if it shows your address)
+> 
+> ·        OR for a company / business you can provide a company registration certificate (if it shows your address)
+> 
+> Please do not give us the address of your bank or utility company.
+> 
+> Forward your documents as an attachment to this email.
+> 
+> Your Steam account will not be validated until we can verify the address.
+> 
+> Please note that Valve uses Lilaham, a third-party tax provider, to gather tax information.
+> 
+> Important Notice: Information in this document does not constitute tax, legal, or other professional advice. If you have other questions, please contact your tax, legal, or other professional advisor.
+> 
+>  
+> Best regards,   
+> XXXX | Valve
 
 这里可以看到， 允许提供 `Government ID Card` 就是身份证照片，  笔者把身份证正反面拍照了之后提交上去了。 
 文字部分笔者是这么写 
-&gt; This is my China  Government ID Card.
-&gt; 
-&gt; Address part is [英文机翻地址，和提交的地址保持一致 （  中文地址部分 ）。]   
-&gt; 
-&gt; Best wishes,   
-&gt; [自己的名字]
+> This is my China  Government ID Card.
+> 
+> Address part is [英文机翻地址，和提交的地址保持一致 （  中文地址部分 ）。]   
+> 
+> Best wishes,   
+> [自己的名字]
 
 笔者是英渣， 看着写就可以了。 
 
@@ -88,8 +88,8 @@ TIN 的地方 选择我有， 然后填写外国的 TIN， 具体数值就是身
 
 创建应用之后， 就可以准备商店页面了。 
 在商店编辑页面底部有一段文字 
-&gt; Valve 保密
-&gt; 本页含有 Valve 的机密信息，设有访问限制。您必须与 Valve 签订涵盖机密信息条款的保密协议和/或许可协议，方能使用和访问本页面。
+> Valve 保密
+> 本页含有 Valve 的机密信息，设有访问限制。您必须与 Valve 签订涵盖机密信息条款的保密协议和/或许可协议，方能使用和访问本页面。
 
 所以详情内容， 笔者就不透露了。 
 
@@ -108,18 +108,18 @@ TIN 的地方 选择我有， 然后填写外国的 TIN， 具体数值就是身
 steam work 的设置页面 每个标签看过去， 带*的都写上就差不多了。 
 
 对了， 小于2GB的 压缩包可以通过 web界面上传， 但是注意， 压缩包要直接包含 可启动的exe程序。    
-比如， 设置的启动程序是： Sorcerer&#39;s mid-month exam.exe    
+比如， 设置的启动程序是： Sorcerer's mid-month exam.exe    
 那么压缩包的内容可以是
 - MonoBleedingEdge
-- Sorcerer&#39;s mid-month exam_Data
-- Sorcerer&#39;s mid-month exam.exe
+- Sorcerer's mid-month exam_Data
+- Sorcerer's mid-month exam.exe
 - UnityCrashHandler64.exe
 - UnityPlayer.dll
 
 但是不能是
-- Sorcerer&#39;s mid-month exam\MonoBleedingEdge
-- Sorcerer&#39;s mid-month exam\Sorcerer&#39;s mid-month exam_Data
-- Sorcerer&#39;s mid-month exam\Sorcerer&#39;s mid-month exam.exe
+- Sorcerer's mid-month exam\MonoBleedingEdge
+- Sorcerer's mid-month exam\Sorcerer's mid-month exam_Data
+- Sorcerer's mid-month exam\Sorcerer's mid-month exam.exe
 
 大于 2GB的程序 使用 sdk上传。 
 

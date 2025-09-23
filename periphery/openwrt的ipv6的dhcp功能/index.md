@@ -15,7 +15,7 @@ ipv4的dhcp服务由pfSense提供，pfSense会把openwrt的地址作为网关和
 
 似乎是因为 windows 和安卓在开了ipv6得时候， 会主动使用ipv6得dns 而忽略ipv4的dns。
 
-在openwrt中找到 `network &gt; interface &gt; LAN edit &gt; DHCP Server &gt; IPV6`
+在openwrt中找到 `network > interface > LAN edit > DHCP Server > IPV6`
 全部停用即可停用 LAN接口的服务， 如果存在多个接口，则可能需要每一个接口都设置一下。 
 
 

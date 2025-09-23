@@ -15,7 +15,7 @@
 
 ```java
 @Data
-public class WeightObject&lt;T&gt; {
+public class WeightObject<T> {
     private T obj;
     private int weight;
 }
@@ -23,24 +23,24 @@ public class WeightObject&lt;T&gt; {
 public final class Util {
 
     public static int mask(int v, int i) {
-        return v | (1 &lt;&lt; i);
+        return v | (1 << i);
     }
 
     public static boolean isMask(int v, int i) {
-        return (v &amp; (1 &lt;&lt; i)) != 0;
+        return (v & (1 << i)) != 0;
     }
 
     /**
      * 计算总权重
      */
-    public static&lt;T&gt; int totalWeight(List&lt;WeightObject&lt;T&gt;&gt; list, int mask){
+    public static<T> int totalWeight(List<WeightObject<T>> list, int mask){
         int total = 0;
-        for (int i = 0; i &lt; list.size(); i&#43;&#43;) {
+        for (int i = 0; i < list.size(); i++) {
             if (isMask(mask, i)) {
                 continue;
             }
 
-            total &#43;= list.get(i).getWeight();
+            total += list.get(i).getWeight();
         }
         return total;    
     }
@@ -49,27 +49,27 @@ public final class Util {
         return 0;   // 省略
     }
 
-    public static&lt;T&gt; List&lt;T&gt; weightRandomDistinct(List&lt;WeightObject&lt;T&gt;&gt; list, int count) {
+    public static<T> List<T> weightRandomDistinct(List<WeightObject<T>> list, int count) {
         int mask = 0;
 
-        if(list.size() &gt;= 32) {
+        if(list.size() >= 32) {
             // 此处可以考虑使用 long类型， 或者使用 BitSet, 或者回归var tmp = new ArrayList(list);  tmp.remove(j) 的形式。
-            throw new IllegalArgumentException(&#34;size must be less than 32&#34;);
+            throw new IllegalArgumentException("size must be less than 32");
         }
 
-        var result = new ArrayList&lt;T&gt;(count);
-        for (int i = 0; i &lt; count; i&#43;&#43;) {
+        var result = new ArrayList<T>(count);
+        for (int i = 0; i < count; i++) {
             var total = totalWeight(list, mask);
             var randomWeight = random(total);
             var currentWeight = 0;
-            for (int j = 0; j &lt; list.size(); j&#43;&#43;) {
+            for (int j = 0; j < list.size(); j++) {
                 if (isMask(mask, j)) {
                     continue;
                 }
 
                 var element = list.get(j);
-                currentWeight &#43;= element.getWeight();
-                if (currentWeight &gt;= randomWeight) {
+                currentWeight += element.getWeight();
+                if (currentWeight >= randomWeight) {
                     mask = mask(mask, j);
                     result.add(element.getObj());
                     break;

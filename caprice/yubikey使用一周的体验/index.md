@@ -4,11 +4,11 @@
 Yubikey 是一个物理密钥， 形状类似于U盘，接口有 USB-A, USB-C, LIGHTNING 接口的， 同时允许使用NFC无线连接手机。
 
 应用场景有： 
-- [使用yubikey-Otp验证sudo]({{&lt; ref &#34;使用yubikey Otp 验证sudo&#34; &gt;}})
-- [使用yubikey签名git提交记录]({{&lt; ref &#34;使用yubikey 签名git提交记录&#34; &gt;}})
-- [使用yubikey存储wireguard的私钥]({{&lt; ref &#34;使用yubikey存储wireguard的私钥&#34; &gt;}})
-- [使用yubikey实现ssh免密登录]({{&lt; ref &#34;使用yubikey实现ssh免密登录&#34; &gt;}})
-- [使用yubikey对keepass数据库进行加密]({{&lt; ref &#34;使用yubikey对keepass数据库进行加密&#34; &gt;}})
+- [使用yubikey-Otp验证sudo]({{< ref "使用yubikey Otp 验证sudo" >}})
+- [使用yubikey签名git提交记录]({{< ref "使用yubikey 签名git提交记录" >}})
+- [使用yubikey存储wireguard的私钥]({{< ref "使用yubikey存储wireguard的私钥" >}})
+- [使用yubikey实现ssh免密登录]({{< ref "使用yubikey实现ssh免密登录" >}})
+- [使用yubikey对keepass数据库进行加密]({{< ref "使用yubikey对keepass数据库进行加密" >}})
 
 需要注意的点： 
 - 手机上NFC链接的时候 无法输入静态密码， 因为yubikey是模拟键盘输入的， 而NFC无法做到模拟键盘。

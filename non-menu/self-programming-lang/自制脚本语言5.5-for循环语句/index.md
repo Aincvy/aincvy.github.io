@@ -26,7 +26,7 @@
 
 for语句的实现思路也比较简单， 先执行`for_1`语句， 然后执行`condition`语句， 如果是true就执行`loop_body`块，然后执行`for_3`，否则跳出循环。
 
-`for_1 -&gt; condition -&gt; loop_body -&gt; for_3 -&gt; condition -&gt; loop_body -&gt; for_3 -&gt; condition(false) -&gt; break`
+`for_1 -> condition -> loop_body -> for_3 -> condition -> loop_body -> for_3 -> condition(false) -> break`
 
 *不知道读者能不能看得懂上面的流程。。。 :joy:*
 

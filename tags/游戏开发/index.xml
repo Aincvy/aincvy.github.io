@@ -4,11 +4,11 @@
     <title>游戏开发 - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
-    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.4.0-alpha.2-20250919092044-50488dfb</generator>
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Fri, 04 Oct 2024 20:33:31 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Dec 2016 21:11:56 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[状态机变种]有关状态栈的一些记录</title>

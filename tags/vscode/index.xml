@@ -4,11 +4,11 @@
     <title>Vscode - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/vscode/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
-    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.4.0-alpha.2-20250919092044-50488dfb</generator>
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 01 Jul 2025 21:18:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jul 2025 21:02:31 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Void - 一个Cursor 的开源代替产品 的体验记录</title>
@@ -29,7 +29,7 @@
       <link>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Sat, 25 Sep 2021 17:33:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/periphery/vscode%E5%BC%80%E5%8F%91c&#43;&#43;%E7%9A%84%E4%BD%93%E9%AA%8C/</guid>
-      <description>&lt;p&gt;笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。&lt;/p&gt;&#xA;&lt;p&gt;笔者是使用Mac版本的 vs code，不过应该都差不多把。&lt;/p&gt;&#xA;&lt;h2 id=&#34;拓展&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;拓展&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%8b%93%e5%b1%95&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。&lt;/p&gt;</description>
+      <description>&lt;p&gt;笔者也是刚开始使用vs-code， 部分技巧还不是很熟练， 不过感觉没有CLion 那么好用。&lt;/p&gt;&#xA;&lt;p&gt;笔者是使用Mac版本的 vs code，不过应该都差不多把。&lt;/p&gt;&#xA;&lt;h2 class=&#34;heading-element&#34; id=&#34;拓展&#34;&gt;&lt;span&gt;拓展&lt;/span&gt;&#xD;&#xA;  &lt;a href=&#34;#%e6%8b%93%e5%b1%95&#34; class=&#34;heading-mark&#34;&gt;&#xD;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&lt;p&gt;vscode 本身能做的事情比较少， 还是要借助拓展来实现功能。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

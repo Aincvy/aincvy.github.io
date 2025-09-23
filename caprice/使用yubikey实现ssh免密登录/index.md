@@ -30,13 +30,13 @@ yubikey 是一个硬件密钥，  形状类型于U盘， 接口有 USB-A, USB-C,
 实现思路和常规思路是一样的， 生成密钥对， 然后把公钥上传到服务器上就可以了。
 
 - 插上 yubikey
-- 使用管理员模式 打开一个 powershell窗口， 随后执行命令：  `ssh-keygen -t ed25519-sk -O resident -O verify-required -C &#34;yubikey1&#34;`
+- 使用管理员模式 打开一个 powershell窗口， 随后执行命令：  `ssh-keygen -t ed25519-sk -O resident -O verify-required -C "yubikey1"`
   - 如果提示读者“某个XX不存在， 需要覆盖吗 ？”  这个看读者的经验， 如果KEY是新的话， 就直接覆盖即可。 
   - `-O resident` 表示公钥也写入到密钥里面
   - `-O verify-required`  表示使用的时候需要验证 
   - 在生成证书的时候应该会要求设置一个PIN， 输入一个8位的PIN 即可。 
 - 复制公钥到服务器上
-  - 可以手动复制， 或者使用命令 `ssh-copy-id &#34;[公钥文件路径， 比如id_ed25519_sk.pub]&#34; 用户名@服务器地址`
+  - 可以手动复制， 或者使用命令 `ssh-copy-id "[公钥文件路径， 比如id_ed25519_sk.pub]" 用户名@服务器地址`
     - 这个命令执行一次就可以了， 执行多次， 就会复制多次
   - 公钥的内容将会被复制到服务器上的 `~/.ssh/authorized_keys` 文件里面， 如果想要手动复制的话， 也是将公钥文件的内容复制进来，一行一个。 
 - 使用 `ssh -v 用户名@服务器地址`  测试一下是否可用。   `-v` 表示开启更多的日志输出。 

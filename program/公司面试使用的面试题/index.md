@@ -35,8 +35,8 @@ public class Student {
 public class StudentFilter{
     
     public static void test(){
-        var list = new ArrayList&lt;Student&gt;();
-        list.add(new Student(1,&#34;学生1&#34;, 7, 2));
+        var list = new ArrayList<Student>();
+        list.add(new Student(1,"学生1", 7, 2));
         // 此处省略添加 学生信息 N 个
         
         // 问题： 请输出8~10岁（都包含） 在上三年级的学生数量，以及信息
@@ -56,16 +56,16 @@ public class StudentFilter{
 -- 年级表
 CREATE TABLE `grade` (
 	id INT(11) PRIMARY KEY ,
-    `name` VARCHAR(255) NOT NULL COMMENT &#39;年级的名字&#39;,
-    `type` INT(11) NOT NULL DEFAULT 1 COMMENT &#39;1小学，2初中，3....&#39;
+    `name` VARCHAR(255) NOT NULL COMMENT '年级的名字',
+    `type` INT(11) NOT NULL DEFAULT 1 COMMENT '1小学，2初中，3....'
 );
 
 -- 学生表
 CREATE TABLE `student` (
-	`no` INT(11) PRIMARY KEY COMMENT &#39;学号&#39;,
-    `name` VARCHAR(255) NOT NULL COMMENT &#39;学生姓名&#39;,
-    `age` INT(11) NOT NULL DEFAULT 1 COMMENT &#39;年龄&#39;,
-    `grade` INT(11) NOT NULL DEFAULT 1 COMMENT &#39;年级表id&#39;
+	`no` INT(11) PRIMARY KEY COMMENT '学号',
+    `name` VARCHAR(255) NOT NULL COMMENT '学生姓名',
+    `age` INT(11) NOT NULL DEFAULT 1 COMMENT '年龄',
+    `grade` INT(11) NOT NULL DEFAULT 1 COMMENT '年级表id'
 );
 
 -- 问题: 请查询出小学生的数量 （写SQL语句即可）
@@ -100,8 +100,8 @@ CREATE TABLE `student` (
 🥳 下面是示例的解题代码。  （*纯手写， 并没有经过 IDE 测试*）
 
 ```java
-var result = list.stream().filter(s -&gt; s.getGrade() == 3)      // 过滤年级
-  .filter(s -&gt; s.getAge() &gt;= 8 &amp;&amp; s.getAge() &lt;= 10)    // 过滤年龄
+var result = list.stream().filter(s -> s.getGrade() == 3)      // 过滤年级
+  .filter(s -> s.getAge() >= 8 && s.getAge() <= 10)    // 过滤年龄
   .collect(Collectors.toList());
 
 // 输出数量以及信息

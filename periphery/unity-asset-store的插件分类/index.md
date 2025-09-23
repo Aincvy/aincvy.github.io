@@ -40,23 +40,23 @@
 
 ```csharp
 var clickStream = Observable.EveryUpdate()
-    .Where(_ =&gt; Input.GetMouseButtonDown(0));
+    .Where(_ => Input.GetMouseButtonDown(0));
 
 clickStream.Buffer(clickStream.Throttle(TimeSpan.FromMilliseconds(250)))
-    .Where(xs =&gt; xs.Count &gt;= 2)
-    .Subscribe(xs =&gt; Debug.Log(&#34;DoubleClick Detected! Count:&#34; &#43; xs.Count));
+    .Where(xs => xs.Count >= 2)
+    .Subscribe(xs => Debug.Log("DoubleClick Detected! Count:" + xs.Count));
 
 // Another example
-public static IObservable&lt;float&gt; ToObservable(this UnityEngine.AsyncOperation asyncOperation)
+public static IObservable<float> ToObservable(this UnityEngine.AsyncOperation asyncOperation)
 {
-    if (asyncOperation == null) throw new ArgumentNullException(&#34;asyncOperation&#34;);
+    if (asyncOperation == null) throw new ArgumentNullException("asyncOperation");
 
-    return Observable.FromCoroutine&lt;float&gt;((observer, cancellationToken) =&gt; RunAsyncOperation(asyncOperation, observer, cancellationToken));
+    return Observable.FromCoroutine<float>((observer, cancellationToken) => RunAsyncOperation(asyncOperation, observer, cancellationToken));
 }
 
-static IEnumerator RunAsyncOperation(UnityEngine.AsyncOperation asyncOperation, IObserver&lt;float&gt; observer, CancellationToken cancellationToken)
+static IEnumerator RunAsyncOperation(UnityEngine.AsyncOperation asyncOperation, IObserver<float> observer, CancellationToken cancellationToken)
 {
-    while (!asyncOperation.isDone &amp;&amp; !cancellationToken.IsCancellationRequested)
+    while (!asyncOperation.isDone && !cancellationToken.IsCancellationRequested)
     {
         observer.OnNext(asyncOperation.progress);
         yield return null;
@@ -69,9 +69,9 @@ static IEnumerator RunAsyncOperation(UnityEngine.AsyncOperation asyncOperation, 
 }
 
 // usecase
-Application.LoadLevelAsync(&#34;testscene&#34;)
+Application.LoadLevelAsync("testscene")
     .ToObservable()
-    .Do(x =&gt; Debug.Log(x)) // output progress
+    .Do(x => Debug.Log(x)) // output progress
     .Last() // last sequence is load completed
     .Subscribe();
 
@@ -85,7 +85,7 @@ public class TestArgs
 ---
 
 // Subscribe message on global-scope.
-MessageBroker.Default.Receive&lt;TestArgs&gt;().Subscribe(x =&gt; UnityEngine.Debug.Log(x));
+MessageBroker.Default.Receive<TestArgs>().Subscribe(x => UnityEngine.Debug.Log(x));
 
 // Publish message
 MessageBroker.Default.Publish(new TestArgs { Value = 1000 });
@@ -115,9 +115,9 @@ MessageBroker.Default.Publish(new TestArgs { Value = 1000 });
 这个也是可视化编辑工具。   
 从Github 上获取不要钱， 但是从 asset store 上获取则需要10刀。 
 
-&gt; xNode is a very powerful and intuitive node editor framework ideal for coding your own dialogue systems, state machines, procedural generation, behaviour trees etc. 
+> xNode is a very powerful and intuitive node editor framework ideal for coding your own dialogue systems, state machines, procedural generation, behaviour trees etc. 
 
-笔者使用这个工具来做 行为树。 笔者使用的是老版本， 当节点到达 500&#43; 的时候， 编辑节点就会感觉到卡顿， 不知道最新版有没有变化。  
+笔者使用这个工具来做 行为树。 笔者使用的是老版本， 当节点到达 500+ 的时候， 编辑节点就会感觉到卡顿， 不知道最新版有没有变化。  
 
 代替品考虑：  
 - https://github.com/alelievr/NodeGraphProcessor      *笔者暂时没有使用过*
@@ -130,7 +130,7 @@ public class NaughtyComponent : MonoBehaviour
 	[Button]
 	private void MethodOne() { }
 
-	[Button(&#34;Button Text&#34;)]
+	[Button("Button Text")]
 	private void MethodTwo() { }
 }
 ```
@@ -139,16 +139,16 @@ public class NaughtyComponent : MonoBehaviour
 
 简介：
 
-&gt; NaughtyAttributes is an extension for the Unity Inspector.
+> NaughtyAttributes is an extension for the Unity Inspector.
 
 给组件添加一些注解之后，  Inspector 上的渲染方式会发生改变。  
 
 
-#### json &amp;&amp; bson: 🈚 [JSON .NET For Unity](https://assetstore.unity.com/packages/tools/input-management/json-net-for-unity-11347#description)
+#### json && bson: 🈚 [JSON .NET For Unity](https://assetstore.unity.com/packages/tools/input-management/json-net-for-unity-11347#description)
 
 简介： 
 
-&gt; JSON .NET brings the power of Json and Bson serialization to Unity with support for 4.7.2 and up and is compatible with both .NET and IL2CPP backends.
+> JSON .NET brings the power of Json and Bson serialization to Unity with support for 4.7.2 and up and is compatible with both .NET and IL2CPP backends.
 
 这个好像是 Newtonsoft.Json  
 没什么好说的， 就是json 和bson 的序列化和反序列化工具。 

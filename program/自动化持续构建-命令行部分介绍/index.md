@@ -22,12 +22,12 @@
 
 ### 编译，打包 以及打压缩包。
 
-使用命令 `mvn clean &amp;&amp; mvn install` 基本上就可以完成编译打包的命令。  *maven相关的配置文件这里就不描述了。*
+使用命令 `mvn clean && mvn install` 基本上就可以完成编译打包的命令。  *maven相关的配置文件这里就不描述了。*
 
 使用cpp的话， 如果使用cmake的话， 就使用下面的命令。
 
 ```shell
-mkdir build &amp;&amp; cd build
+mkdir build && cd build
 cmake ..
 make
 ```
@@ -72,7 +72,7 @@ make
 下面是一个示例     *笔者并没有实际测试过正确性。*
 
 ```shell
-set /p pid=&lt;pid.txt
+set /p pid=<pid.txt
 Taskkill /PID %pid% /F
 ```
 
@@ -86,7 +86,7 @@ Taskkill /PID %pid% /F
 
 同样在Linux下也可以采取写入pid到文件的方式， 同时这里也提供另外一种方式。那就是使用`ps` 命令， 这个命令加上参数之后可以获取进程启动附带的参数， 所以使用其他命令组合在一起就可以完成杀死旧进程的目标了。
 
-这里是一个示例： `ps ax | grep -E &#39;keyword1|keyword2&#39; | grep -v grep | awk &#39;{print $1}&#39; | xargs kill`
+这里是一个示例： `ps ax | grep -E 'keyword1|keyword2' | grep -v grep | awk '{print $1}' | xargs kill`
 
 将`keyword1`和`keyword2` 替换成自己要启动的jar文件的名称即可。   *多个文件使用 | 符号分割。*
 
@@ -110,18 +110,18 @@ Taskkill /PID %pid% /F
 
 ```shell
 # 使用环境变量的方式给予 sshpass 相关的密码
-export SSHPASS=&#34;$pass&#34;
+export SSHPASS="$pass"
 # ssh 命令的一些参数
 SSH_FLAGS=(-q -o StrictHostKeyChecking=no -p ${s_port})
 # 在目标服务器上创建文件夹
-$(sshpass -e ssh &#34;${SSH_FLAGS[@]}&#34; ${user}@${s_addr} &#34;mkdir -p ${real_remote_folder}&#34;)
+$(sshpass -e ssh "${SSH_FLAGS[@]}" ${user}@${s_addr} "mkdir -p ${real_remote_folder}")
 
 # 杀掉目标服务器上的进程
-sshpass -e ssh &#34;${SSH_FLAGS[@]}&#34; ${user}@${s_addr} &#34;bash ${remote_target_folder}/control_scripts/killservers.sh&#34;
+sshpass -e ssh "${SSH_FLAGS[@]}" ${user}@${s_addr} "bash ${remote_target_folder}/control_scripts/killservers.sh"
 
 # 传送文件
-FLAGS=(--include=&#34;*.jar&#34; --include=&#34;lib&#34;)
-sshpass -e rsync -e &#34;ssh -o StrictHostKeyChecking=no -p ${s_port}&#34; -avz  &#34;${FLAGS[@]}&#34; --exclude=&#34;*&#34; ./ ${user}@${s_addr}:${real_remote_folder}
+FLAGS=(--include="*.jar" --include="lib")
+sshpass -e rsync -e "ssh -o StrictHostKeyChecking=no -p ${s_port}" -avz  "${FLAGS[@]}" --exclude="*" ./ ${user}@${s_addr}:${real_remote_folder}
 ```
 
 下面对上述脚本的变量做一些解释。

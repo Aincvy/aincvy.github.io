@@ -82,7 +82,7 @@ codegen 和 codegen2 是使用 fauxpilot 进行加载的。
 ```bash
 cd converter/
 conda activate textgen
-MODEL=&#34;codegen2-3_7B&#34;
+MODEL="codegen2-3_7B"
 NUM_GPUS=1
 python3 huggingface_gptj_convert.py -in_file ~/ai/text-generation-webui/models/michaelfeil_codegen2-3_7B-gptj -saved_dir ../models/${MODEL}-${NUM_GPUS}gpu/fastertransformer/1 -infer_gpu_num ${NUM_GPUS}
 cp models/codegen2-3_7B-1gpu/fastertransformer/config.pbtxt ../models/codegen2-3_7B-1gpu/fastertransformer/
@@ -115,16 +115,16 @@ chat 不行， 但是 instruct 可以。
 ```python
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-checkpoint = &#34;codet5p-2b&#34;
-device = &#34;cuda&#34; # for GPU usage or &#34;cpu&#34; for CPU usage
+checkpoint = "codet5p-2b"
+device = "cuda" # for GPU usage or "cpu" for CPU usage
 
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint,
                                               torch_dtype=torch.float16,
                                               trust_remote_code=True).to(device)
 
-encoding = tokenizer(&#34;def print_hello_world():&#34;, return_tensors=&#34;pt&#34;).to(device)
-encoding[&#39;decoder_input_ids&#39;] = encoding[&#39;input_ids&#39;].clone()
+encoding = tokenizer("def print_hello_world():", return_tensors="pt").to(device)
+encoding['decoder_input_ids'] = encoding['input_ids'].clone()
 outputs = model.generate(**encoding, max_length=15)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
@@ -132,10 +132,10 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```python
 # 来点新内容尝试
 
-encoding = tokenizer(&#34;### Instruction:\n\nwrite a bubble sort method in csharp, the argument is `int[]`\n\n### Response:&#34;, return_tensors=&#34;pt&#34;).to(device)
+encoding = tokenizer("### Instruction:\n\nwrite a bubble sort method in csharp, the argument is `int[]`\n\n### Response:", return_tensors="pt").to(device)
 
 
-encoding = tokenizer(&#34;using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\nusing NaughtyAttributes;\nusing UnityQuery;\n\npublic class CapturedEnergyBallTest : KXMonoBehaviour\n{\n    public float destroyTime = 10f;\n\n    public Transform startPosTarget;\n\n    // Start is called before the first frame update\n    void Start()\n    {\n\n    }\n\n    // Update is called once per frame\n    void Update()\n    {\n        \n    }\n\n    [Button]\n    public void MakeOne(){\n        var effectPrefab = BattleController.Instance.EffectPrefabMgr.capturedEnergyBallEffect;\n        var effect = EffectPrefabMgr.InsCommonEffect(effectPrefab);\n        effect.transform.position = startPosTarget.position;\n\n        var capturedEnergyBall = effect.GetComponent&lt;CapturedEnergyBall&gt;();\n        capturedEnergyBall.handTarget = this.CachedTransform;\n\n        // destroy effect in 12s&#34;, return_tensors=&#34;pt&#34;).to(device)
+encoding = tokenizer("using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\nusing NaughtyAttributes;\nusing UnityQuery;\n\npublic class CapturedEnergyBallTest : KXMonoBehaviour\n{\n    public float destroyTime = 10f;\n\n    public Transform startPosTarget;\n\n    // Start is called before the first frame update\n    void Start()\n    {\n\n    }\n\n    // Update is called once per frame\n    void Update()\n    {\n        \n    }\n\n    [Button]\n    public void MakeOne(){\n        var effectPrefab = BattleController.Instance.EffectPrefabMgr.capturedEnergyBallEffect;\n        var effect = EffectPrefabMgr.InsCommonEffect(effectPrefab);\n        effect.transform.position = startPosTarget.position;\n\n        var capturedEnergyBall = effect.GetComponent<CapturedEnergyBall>();\n        capturedEnergyBall.handTarget = this.CachedTransform;\n\n        // destroy effect in 12s", return_tensors="pt").to(device)
 ```
 ![Alt text](/img/periphery/codegen_models/image-3.png)
 
@@ -148,7 +148,7 @@ encoding = tokenizer(&#34;using System.Collections;\nusing System.Collections.Ge
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-checkpoint = &#34;teknium_Replit-v2-CodeInstruct-3B&#34;
+checkpoint = "teknium_Replit-v2-CodeInstruct-3B"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
   checkpoint,
@@ -157,7 +157,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 model.cuda()
 
-inputs = tokenizer(&#34;### Instruction:\n\nwrite a bubble sort method in csharp, the argument is `int[]`\n\n### Response:\n&#34;, return_tensors=&#34;pt&#34;).to(&#34;cuda&#34;)
+inputs = tokenizer("### Instruction:\n\nwrite a bubble sort method in csharp, the argument is `int[]`\n\n### Response:\n", return_tensors="pt").to("cuda")
 tokens = model.generate(
   **inputs,
   max_new_tokens=160, 
@@ -182,27 +182,27 @@ print(tokenizer.decode(tokens[0], skip_special_tokens=True))
 from transformers import AutoModelForCausalLM, AutoConfig
 import torch
 
-checkpoint = &#34;replit_replit-code-v1-3b&#34;
+checkpoint = "replit_replit-code-v1-3b"
 config = AutoConfig.from_pretrained(
     checkpoint,
     trust_remote_code=True
 )
-config.attn_config[&#39;attn_impl&#39;] = &#39;triton&#39;
+config.attn_config['attn_impl'] = 'triton'
 
 model = AutoModelForCausalLM.from_pretrained(checkpoint, config=config, trust_remote_code=True)
-model.to(device=&#39;cuda:0&#39;, dtype=torch.bfloat16)
+model.to(device='cuda:0', dtype=torch.bfloat16)
 
 # forward pass
 x = torch.tensor([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]])
-x = x.to(device=&#39;cuda:0&#39;)
+x = x.to(device='cuda:0')
 y = model(x)
 
 from transformers import AutoTokenizer
 # load tokenizer
 tokenizer = AutoTokenizer.from_pretrained(checkpoint, trust_remote_code=True)
 
-# single input encoding &#43; generation
-x = tokenizer.encode(&#39;def hello():\n  print(&#34;hello world&#34;)\n&#39;, return_tensors=&#39;pt&#39;)
+# single input encoding + generation
+x = tokenizer.encode('def hello():\n  print("hello world")\n', return_tensors='pt')
 y = model.generate(x)
 
 # decoding, clean_up_tokenization_spaces=False to ensure syntactical correctness
@@ -214,14 +214,14 @@ print(generated_code)
 # version 2
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-checkpoint = &#34;replit_replit-code-v1-3b&#34;
+checkpoint = "replit_replit-code-v1-3b"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(checkpoint, trust_remote_code=True)
 model.cuda()
 
-x = tokenizer.encode(&#39;### Instruction:\n\nwrite a bubble sort method in csharp, the argument is `int[]`\n\n### Response:\n&#39;, return_tensors=&#39;pt&#39;).to(&#34;cuda&#34;)
-x = tokenizer.encode(&#39;def fibonacci(n): &#39;, return_tensors=&#39;pt&#39;).to(&#34;cuda&#34;)
-x = tokenizer.encode(&#39;using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\nusing NaughtyAttributes;\nusing UnityQuery;\n\npublic class CapturedEnergyBallTest : KXMonoBehaviour\n{\n    public float destroyTime = 10f;\n\n    public Transform startPosTarget;\n\n    // Start is called before the first frame update\n    void Start()\n    {\n\n    }\n\n    // Update is called once per frame\n    void Update()\n    {\n        \n    }\n\n    [Button]\n    public void MakeOne(){\n        var effectPrefab = BattleController.Instance.EffectPrefabMgr.capturedEnergyBallEffect;\n        var effect = EffectPrefabMgr.InsCommonEffect(effectPrefab);\n        effect.transform.position = startPosTarget.position;\n\n        var capturedEnergyBall = effect.GetComponent&lt;CapturedEnergyBall&gt;();\n        capturedEnergyBall.handTarget = this.CachedTransform;\n\n        // destroy effect in 12s&#39;, return_tensors=&#39;pt&#39;).to(&#34;cuda&#34;)
+x = tokenizer.encode('### Instruction:\n\nwrite a bubble sort method in csharp, the argument is `int[]`\n\n### Response:\n', return_tensors='pt').to("cuda")
+x = tokenizer.encode('def fibonacci(n): ', return_tensors='pt').to("cuda")
+x = tokenizer.encode('using System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\nusing NaughtyAttributes;\nusing UnityQuery;\n\npublic class CapturedEnergyBallTest : KXMonoBehaviour\n{\n    public float destroyTime = 10f;\n\n    public Transform startPosTarget;\n\n    // Start is called before the first frame update\n    void Start()\n    {\n\n    }\n\n    // Update is called once per frame\n    void Update()\n    {\n        \n    }\n\n    [Button]\n    public void MakeOne(){\n        var effectPrefab = BattleController.Instance.EffectPrefabMgr.capturedEnergyBallEffect;\n        var effect = EffectPrefabMgr.InsCommonEffect(effectPrefab);\n        effect.transform.position = startPosTarget.position;\n\n        var capturedEnergyBall = effect.GetComponent<CapturedEnergyBall>();\n        capturedEnergyBall.handTarget = this.CachedTransform;\n\n        // destroy effect in 12s', return_tensors='pt').to("cuda")
 y = model.generate(x, max_new_tokens=120, do_sample=True, top_p=0.95, top_k=4, temperature=0.2, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
 
 # decoding, clean_up_tokenization_spaces=False to ensure syntactical correctness
@@ -260,7 +260,7 @@ codellama
 
 
 笔者想找一个既能支持行间补全， 又能聊天的模型， 但是没有找到。  
-现在的方案是  fauxpilot &#43; openai API 来实现的。。  
+现在的方案是  fauxpilot + openai API 来实现的。。  
 
 
 ---

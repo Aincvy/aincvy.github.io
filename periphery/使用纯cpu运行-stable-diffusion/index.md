@@ -12,7 +12,7 @@
 ```shell
 # Linux版
 export CUDA_VISIBLE_DEVICES=-1
-export COMMANDLINE_ARGS=&#34;--use-cpu all --no-half --precision full --skip-torch-cuda-test&#34;
+export COMMANDLINE_ARGS="--use-cpu all --no-half --precision full --skip-torch-cuda-test"
 ```
 
 下面是一些额外的信息
@@ -24,7 +24,7 @@ export COMMANDLINE_ARGS=&#34;--use-cpu all --no-half --precision full --skip-tor
   - 下载并执行脚本： https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
     - ```shell
         wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
-        chmod &#43;x webui.sh
+        chmod +x webui.sh
         ./webui.sh
         # Check `webui-user.sh` for options.
   - `files.pythonhosted.org`  的连接速度可能会非常慢，需要加速一下。 
@@ -43,13 +43,13 @@ export COMMANDLINE_ARGS=&#34;--use-cpu all --no-half --precision full --skip-tor
 ‌
 ## 参考阅读
 
-- [https://ivonblog.com/posts/stable-diffusion-running-on-cpu/](https://ivonblog.com/posts/stable-diffusion-running-on-cpu/ &#34;smartCard-inline&#34;)
+- [https://ivonblog.com/posts/stable-diffusion-running-on-cpu/](https://ivonblog.com/posts/stable-diffusion-running-on-cpu/ "smartCard-inline")
 
-- [https://github.com/microsoft/TaskMatrix/issues/250#issuecomment-1477468422](https://github.com/microsoft/TaskMatrix/issues/250#issuecomment-1477468422 &#34;smartCard-inline&#34;)
+- [https://github.com/microsoft/TaskMatrix/issues/250#issuecomment-1477468422](https://github.com/microsoft/TaskMatrix/issues/250#issuecomment-1477468422 "smartCard-inline")
 
-- [https://blog.csdn.net/qq_27825451/article/details/89237574](https://blog.csdn.net/qq_27825451/article/details/89237574 &#34;‌&#34;)
+- [https://blog.csdn.net/qq_27825451/article/details/89237574](https://blog.csdn.net/qq_27825451/article/details/89237574 "‌")
 
-- [https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/10117#issuecomment-1537294185](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/10117#issuecomment-1537294185 &#34;smartCard-inline&#34;)
+- [https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/10117#issuecomment-1537294185](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/10117#issuecomment-1537294185 "smartCard-inline")
 
 
 

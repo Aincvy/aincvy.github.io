@@ -26,13 +26,13 @@
 ```cmake
 # 先使用 wget 或者其他工具把该文件下载到本地， 并保存到项目目录下的cmake 子目录。 
 # add directory 
-set(CMAKE_MODULE_PATH APPEND &#34;${CMAKE_SOURCE_DIR}/cmake/&#34; )
+set(CMAKE_MODULE_PATH APPEND "${CMAKE_SOURCE_DIR}/cmake/" )
 
 # sight 是笔者正在做的一个工具。 
 add_executable(sight program.cpp)
 
 # V8
-set(V8_DIR &#34;/usr/local/opt/v8/libexec/&#34;)
+set(V8_DIR "/usr/local/opt/v8/libexec/")
 find_package(V8 REQUIRED)
 target_include_directories(sight PRIVATE ${V8_INCLUDE_DIR})
 
@@ -98,7 +98,7 @@ https://github.com/pmed/v8pp
 ```shell
 # 1. 
 cd somewhere
-git clone &#39;https://chromium.googlesource.com/chromium/tools/depot_tools.git&#39;
+git clone 'https://chromium.googlesource.com/chromium/tools/depot_tools.git'
 
 # 添加环境变量 
 # add path , you may need add to ~/.bashrc or ~/.zshrc or config.fish 
@@ -126,13 +126,13 @@ gm x64.release.check
 gn args out/x64.release
 
 # 读者可以使用下面的命令附加参数  | 此命令和上面那个使用1个即可。 
-gn gen out/x64.release --args=&#39;is_debug=false target_cpu=&#34;x64&#34; v8_target_cpu=&#34;arm64&#34;&#39;
+gn gen out/x64.release --args='is_debug=false target_cpu="x64" v8_target_cpu="arm64"'
 
 # 可以使用这个命令查看所有可用的参数  
 gn args out/x64.release --list
 
 # 因为参数会很多， 所以建议读者把输出重定向到文件， 然后阅读文件  
-gn args out/x64.release --list &gt; args.txt 
+gn args out/x64.release --list > args.txt 
 
 # 注意   参数 `is_component_build = true`  会编译出动态库， 如果需要动态库就加上这条配置。 
 # 然后根据args.txt 文件里面的内容 选取想要的参数， 添加到 out/x64.release/args.gn 里面即可。 
@@ -148,17 +148,17 @@ ninja -C out/x64.release
 # 等待一段时间， 应该就可以编译成功了。 
 ```
 
-默认情况下， v8 应该会使用自带的`clang`编译器进行编译， 在笔者的环境下是 `clang 13.0` 。  该执行程序位于`somewhere/v8/third_party/llvm-build/Release&#43;Asserts/bin/` 。
+默认情况下， v8 应该会使用自带的`clang`编译器进行编译， 在笔者的环境下是 `clang 13.0` 。  该执行程序位于`somewhere/v8/third_party/llvm-build/Release+Asserts/bin/` 。
 
 这个和笔者的系统默认编译器不是同一个， 笔者的默认编译器是`clang 12.0` 。 
 
-在上述的环境下编译`hello-world.cc`这个示例文件， 可能会出现 `std::unique_ptr&lt;v8::Platform&gt; platform = v8::platform::NewDefaultPlatform();` 这行语句报错的情况。 
+在上述的环境下编译`hello-world.cc`这个示例文件， 可能会出现 `std::unique_ptr<v8::Platform> platform = v8::platform::NewDefaultPlatform();` 这行语句报错的情况。 
 
 笔者就卡死在处理`NewDefaultPlatform()`语句的情况下了。。 
 
-使用`c&#43;&#43;filt -n xxxxx` 可以还原符号的内容， 会发现`libv8_libplatform.dylib` 文件里面的符号是 `v8::platform::NewDefaultPlatform(int, v8::platform::IdleTaskSupport, v8::platform::InProcessStackDumping, std::__1::unique_ptr&lt;v8::TracingController, std::__1::default_delete&lt;v8::TracingController&gt; &gt;)` 
+使用`c++filt -n xxxxx` 可以还原符号的内容， 会发现`libv8_libplatform.dylib` 文件里面的符号是 `v8::platform::NewDefaultPlatform(int, v8::platform::IdleTaskSupport, v8::platform::InProcessStackDumping, std::__1::unique_ptr<v8::TracingController, std::__1::default_delete<v8::TracingController> >)` 
 
-*使用nm 命令可以查看符号， 然后使用c&#43;&#43;filt 命令还原。*
+*使用nm 命令可以查看符号， 然后使用c++filt 命令还原。*
 
 他引用的命名空间是 `std::__1` ， 然后查看我们自己的文件， 会发现它引用的命名空间是`std::__cr` 。
 
@@ -169,7 +169,7 @@ ninja -C out/x64.release
 - 使用我们自己的编译工具编译v8 
   - 笔者尝试了好几次， 总是无法编译。。
   - 在使用`ninja` 工具的地方出错
-- 什么都不修改编译成功之后， 在相应的目录会生成一个叫做`libc&#43;&#43;.dylib`的文件， 使用这个动态链接库代替系统的。 
+- 什么都不修改编译成功之后， 在相应的目录会生成一个叫做`libc++.dylib`的文件， 使用这个动态链接库代替系统的。 
   - 笔者没有找到合适的资料讲述如何完成这个步骤，所以没有尝试
   - 在尝试了homebrew 之后， 笔者成功了， 所以就没有继续考虑这个该怎么做。 
 

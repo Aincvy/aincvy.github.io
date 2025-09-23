@@ -25,7 +25,7 @@ swi prolog 是prolog 语言的一个解释器的实现， 源码可在 https://g
 - PL_open_query, PL_close_query    开启和关闭一个查询
 - PL_next_solution      寻求下一个解决方案，  本函数是虚拟机循环的入口
 - PL_initialise, setupProlog    初始化函数
-- prologToplevel(&#34;$toplevel&#34;)  表示打开一个交互式的 窗口
+- prologToplevel("$toplevel")  表示打开一个交互式的 窗口
 - compileClause()      编译从句/子句
 - nextClause()     下一条从句/子句
 - assertProcedure()    添加一个 Procedure
@@ -60,7 +60,7 @@ swi prolog 是prolog 语言的一个解释器的实现， 源码可在 https://g
 - H_FUNCTOR 子句头部的函数符 (A functor in the head)
 - H_LIST 类似 H_FUNCTOR，但使用 ./2 作为预定义函数符 (As H_FUNCTOR, but using ./2 as predefined functor)
 - H_POP 弹出由 H_FUNCTOR 和 H_LIST 推送的保存的参数指针 (Pop the saved argument pointer pushed by H_FUNCTOR and H_LIST)
-- B_VAR, B_VAR&amp;lt;N&amp;gt; 子句体中的变量，既不是匿名的，也不是第一次使用的 (A variable in the body which is not an anonymous one and is not used for the first time)
+- B_VAR, B_VAR&lt;N&gt; 子句体中的变量，既不是匿名的，也不是第一次使用的 (A variable in the body which is not an anonymous one and is not used for the first time)
 - matched against 配对 
 - a choice point 选择点 
 - The clause must start with I_CHP 子句必须以 I_CHP 开头 
@@ -92,7 +92,7 @@ cd build
 cmake -DSWIPL_PACKAGES_X=OFF -DSWIPL_PACKAGES_QT=OFF -DSWIPL_PACKAGES_JAVA=OFF -DSWIPL_PACKAGES_PYTHON=OFF  -DINSTALL_DOCUMENTATION=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
 ```
 
-编译成功之后会在 build/src 目录里面 swipl 程序， 运行 `chmod &#43;x ./swipl`  就可以添加运行权限了。 
+编译成功之后会在 build/src 目录里面 swipl 程序， 运行 `chmod +x ./swipl`  就可以添加运行权限了。 
 
 ### 程序使用简述
 
@@ -102,9 +102,9 @@ cmake -DSWIPL_PACKAGES_X=OFF -DSWIPL_PACKAGES_QT=OFF -DSWIPL_PACKAGES_JAVA=OFF -
 
 ## 查询原理的推测
 
-&gt; 在 SWI-Prolog 中，`unify` 是指将两个术语（terms）进行统一（unification）的过程。统一是 Prolog 的核心操作之一，它用于匹配和绑定变量，使得两个术语变得相同。统一操作在 Prolog 的推理引擎中扮演着重要角色。
-&gt; 
-&gt; 来源： chat gpt
+> 在 SWI-Prolog 中，`unify` 是指将两个术语（terms）进行统一（unification）的过程。统一是 Prolog 的核心操作之一，它用于匹配和绑定变量，使得两个术语变得相同。统一操作在 Prolog 的推理引擎中扮演着重要角色。
+> 
+> 来源： chat gpt
 
 
 根据chatgpt所述， swi prolog 的核心是 unify , 即统一， 统一就是两个“东西” 是一模一样， 完全匹配的存在。 

@@ -40,16 +40,16 @@ minikube 推送镜像的时候好像会简单一些，详情可见： https://mi
   - 使用 `$(minikube ip):5000` 作为 registry 的url 前置部分。 
 - 以及其他等等
 
-{{&lt; admonition &#34;info&#34; &gt;}}  
+{{< admonition "info" >}}  
 有关 Service 的 Type 部分。   
 ~~Minikube 不支持 LoadBalancer 的Service 类型，如果指定了此类型， 会自动转成 NodePort~~  
 现在好像支持了， 官方文档原话： `To access a LoadBalancer deployment, use the “minikube tunnel” command` 
 
 当使用 NodePort类型的时候， 使用命令 `minikube ip` 可以获取到 minikube的 IP地址。
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 Driver
-&gt; minikube relies on docker-machine drivers to manage machines
+> minikube relies on docker-machine drivers to manage machines
 
 简单来说， minikube 依赖于一个 docker-machine driver 去管理机器。  拓展阅读： https://minikube.sigs.k8s.io/docs/contrib/drivers/
 
@@ -87,9 +87,9 @@ Driver
     - 官方文档：  https://docs.docker.com/engine/install/
     - 清华大学镜像源： https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/
   - ~~修改配置文件： `/etc/containerd/config.toml`~~
-    - 去掉`disabled_plugins = [&#34;cri&#34;]` 中的 `&#34;cri&#34;` 
+    - 去掉`disabled_plugins = ["cri"]` 中的 `"cri"` 
     - 重启containerd   `systemctl restart containerd`  
-    - 如果不这么做的话， 在初始化kubeadm的时候， 可能会提示： ` CRI v1 runtime API is not implemented for endpoint \&#34;unix:///var/run/containerd/containerd.sock\&#34;`
+    - 如果不这么做的话， 在初始化kubeadm的时候， 可能会提示： ` CRI v1 runtime API is not implemented for endpoint \"unix:///var/run/containerd/containerd.sock\"`
   - containerd的配置文件处理
     - 参考：  https://github.com/kubernetes/kubeadm/issues/2851#issuecomment-1535770518
     - 解释： 即使在kubeadm init命令中使用了国内的镜像， 但是这个 sandbox_image 还是需要额外处理。
@@ -104,7 +104,7 @@ Driver
     export http_proxy=YOUR_PROXY_
     export https_proxy=YOUR_PROXY_
     curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
-    echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
     apt update
     apt-get install -y kubelet kubeadm kubectl
     apt-mark hold kubelet kubeadm kubectl
@@ -142,14 +142,14 @@ Driver
 
 #### 其他问题记录 
 
-使用清华大学镜像提示的命令之后在执行 apt update 之后， 提示：“W: GPG error: https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial InRelease: The following signatures couldn&#39;t be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05 ”   
+使用清华大学镜像提示的命令之后在执行 apt update 之后， 提示：“W: GPG error: https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05 ”   
 解决办法：  删除key,  删除list 使用谷歌提示的方式来操作。  
 ```shell
 $ rm -f /usr/share/keyrings/kubernetes-archive-keyring.gpg
 $ rm -f /etc/apt/sources.list.d/kubernetes.list
 $ apt update
 $ curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
-$ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main&#34; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+$ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 $ apt update
 ```
 
@@ -164,7 +164,7 @@ $ apt update
 
 备选的镜像加速地址：  https://github.com/DaoCloud/public-image-mirror  
 下面是官方给出的命令
-&gt; kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io
+> kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io
 
 想要使用的话， 可以使用 `k8s-gcr.m.daocloud.io` 替换 `kubeadm init ....` 中的 `registry.aliyuncs.com/google_containers` 部分。 
 
@@ -176,8 +176,8 @@ $ apt update
 这个安装和使用非常简单。 
 
 官方的自我介绍
-&gt; 使用图形化的界面离线安装、维护、升级高可用的 K8S 集群  
-&gt; https://kuboard-spray.cn
+> 使用图形化的界面离线安装、维护、升级高可用的 K8S 集群  
+> https://kuboard-spray.cn
 
 
 安装方法： 
@@ -197,10 +197,10 @@ $ apt update
 - 支持备份和恢复 etcd 
 
 
-{{&lt; admonition &#34;warning&#34; &gt;}}  
+{{< admonition "warning" >}}  
 理论上来说，  kuboard-spray  应该是可以用于生产环境的， 但是笔者并没有进行过测试。 
 
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 
 ## 其他

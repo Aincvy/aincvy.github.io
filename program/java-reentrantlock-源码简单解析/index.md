@@ -41,9 +41,9 @@ FairSync 和 NonfairSync 的不同之处在于 加锁的时候会判断有无等
                 setExclusiveOwnerThread(current);
                 return true;
             } else if (getExclusiveOwnerThread() == current) {
-                int c = getState() &#43; 1;
-                if (c &lt; 0) // overflow
-                    throw new Error(&#34;Maximum lock count exceeded&#34;);
+                int c = getState() + 1;
+                if (c < 0) // overflow
+                    throw new Error("Maximum lock count exceeded");
                 setState(c);
                 return true;
             } else
@@ -54,7 +54,7 @@ FairSync 和 NonfairSync 的不同之处在于 加锁的时候会判断有无等
          * Acquire for non-reentrant cases after initialTryLock prescreen
          */
         protected final boolean tryAcquire(int acquires) {
-            if (getState() == 0 &amp;&amp; compareAndSetState(0, acquires)) {
+            if (getState() == 0 && compareAndSetState(0, acquires)) {
                 setExclusiveOwnerThread(Thread.currentThread());
                 return true;
             }
@@ -76,13 +76,13 @@ FairSync 和 NonfairSync 的不同之处在于 加锁的时候会判断有无等
             Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
-                if (!hasQueuedThreads() &amp;&amp; compareAndSetState(0, 1)) {
+                if (!hasQueuedThreads() && compareAndSetState(0, 1)) {
                     setExclusiveOwnerThread(current);
                     return true;
                 }
             } else if (getExclusiveOwnerThread() == current) {
-                if (&#43;&#43;c &lt; 0) // overflow
-                    throw new Error(&#34;Maximum lock count exceeded&#34;);
+                if (++c < 0) // overflow
+                    throw new Error("Maximum lock count exceeded");
                 setState(c);
                 return true;
             }
@@ -93,7 +93,7 @@ FairSync 和 NonfairSync 的不同之处在于 加锁的时候会判断有无等
          * Acquires only if thread is first waiter or empty
          */
         protected final boolean tryAcquire(int acquires) {
-            if (getState() == 0 &amp;&amp; !hasQueuedPredecessors() &amp;&amp;
+            if (getState() == 0 && !hasQueuedPredecessors() &&
                 compareAndSetState(0, acquires)) {
                 setExclusiveOwnerThread(Thread.currentThread());
                 return true;
@@ -142,9 +142,9 @@ JDK 内部的源代码。
          */
 
         for (;;) {
-            if (!first &amp;&amp; (pred = (node == null) ? null : node.prev) != null &amp;&amp;
+            if (!first && (pred = (node == null) ? null : node.prev) != null &&
                 !(first = (head == pred))) {
-                if (pred.status &lt; 0) {
+                if (pred.status < 0) {
                     cleanQueue();           // predecessor cancelled
                     continue;
                 } else if (pred.prev == null) {
@@ -156,7 +156,7 @@ JDK 内部的源代码。
                 boolean acquired;
                 try {
                     if (shared)
-                        acquired = (tryAcquireShared(arg) &gt;= 0);
+                        acquired = (tryAcquireShared(arg) >= 0);
                     else
                         acquired = tryAcquire(arg);
                 } catch (Throwable ex) {
@@ -192,22 +192,22 @@ JDK 内部的源代码。
                     node.setPrevRelaxed(null);  // back out
                 else
                     t.next = node;
-            } else if (first &amp;&amp; spins != 0) {
+            } else if (first && spins != 0) {
                 --spins;                        // reduce unfairness on rewaits
                 Thread.onSpinWait();
             } else if (node.status == 0) {
                 node.status = WAITING;          // enable signal and recheck
             } else {
                 long nanos;
-                spins = postSpins = (byte)((postSpins &lt;&lt; 1) | 1);
+                spins = postSpins = (byte)((postSpins << 1) | 1);
                 if (!timed)
                     LockSupport.park(this);
-                else if ((nanos = time - System.nanoTime()) &gt; 0L)
+                else if ((nanos = time - System.nanoTime()) > 0L)
                     LockSupport.parkNanos(this, nanos);
                 else
                     break;
                 node.clearStatus();
-                if ((interrupted |= Thread.interrupted()) &amp;&amp; interruptible)
+                if ((interrupted |= Thread.interrupted()) && interruptible)
                     break;
             }
         }
@@ -220,7 +220,7 @@ JDK 内部的源代码。
   - 解释： https://stackoverflow.com/a/44637990/11226492
   - 大致是说， 当前线程还是处于运行状态， 但是指示CPU 分配给当前线程的资源少一些
 - `LockSupport.park()`    
-  - &gt; Disables the current thread for thread scheduling purposes unless the permit is available.
+  - > Disables the current thread for thread scheduling purposes unless the permit is available.
 - 尝试获取锁的时候会调用 `tryAcquireShared` 或者`tryAcquire` , 但是 AQS 本身没实现这两个方法， 是交给子类去实现的
 - 队列应该是使用了一个双向链表实现的， 类是 `AbstractQueuedSynchronizer.Node`, 头尾的字段分别是 `head, tail`
 - 关于 `acquire`方法中的`Node node` 参数， 只有 `public class ConditionObject implements Condition, java.io.Serializable` 类里调用的时候会传值，在AQS 内部进行调用的时候， 都是传入的null 
@@ -231,13 +231,13 @@ JDK 内部的源代码。
     - 分支1： `initialTryLock()`       见上述源码部分即可
     - 分支2： `tryAcquireNanos(1, nanos)`
       - `if (tryAcquire(arg)) return true;`  tryAcquire(arg) 见上述源码即可
-      - `acquire(null, arg, false, true, true, System.nanoTime() &#43; nanosTimeout)`   
+      - `acquire(null, arg, false, true, true, System.nanoTime() + nanosTimeout)`   
         - 重点参数
           - `Node node` 参数的传入值是 null 
           - `boolean shared`   传入值false
         - 第一轮循环
           - 第一段主要 if  不会执行， 因为 `node == null`
-            - `if (!first &amp;&amp; (pred = (node == null) ? null : node.prev) != null &amp;&amp;
+            - `if (!first && (pred = (node == null) ? null : node.prev) != null &&
                   !(first = (head == pred)))`
           - 第二段 主要 if 会执行， 因为 ` pred == null `
             - 因为 `shared==false`, 所以实际上会调用 `acquired = tryAcquire(arg)` 语句
@@ -270,7 +270,7 @@ JDK 内部的源代码。
           - 第二段主要 if 会执行， 因为 `first == true `
             - 假如没有拿到锁，则会进入 第三段主要if 
           - 第三段主要 if 会进入到 最终的 `else` 部分
-            - 执行 `spins = postSpins = (byte)((postSpins &lt;&lt; 1) | 1);`， 结果是 `spins = postSpins = 1`
+            - 执行 `spins = postSpins = (byte)((postSpins << 1) | 1);`， 结果是 `spins = postSpins = 1`
             - 因为 `timed == true`,以及目标超时时间大于当前时间， 所以会执行 `LockSupport.parkNanos(this, nanos);`
               - 如果目标超时时间已经过掉了， 则终止循环， 调用 `cancelAcquire(node, interrupted, interruptible);`
             - `LockSupport.parkNanos`  将会暂时停止调度当前线程， 直到等待的时间到达了。  这个约等于 `Thread.sleep()` 但是别的线程可以调用 `LockSupport.unpark(Thread thread)` 来恢复调度当前线程
@@ -283,7 +283,7 @@ JDK 内部的源代码。
           - 第一段主要 if 不会执行， 因为 `first == true `
           - 第二段主要 if 会执行， 因为 `first == true `
             - 假如没有拿到锁，则会进入 第三段主要if 
-          - 第三段主要 if 会进入到 `else if (first &amp;&amp; spins != 0)`   因为目前 spins 是1
+          - 第三段主要 if 会进入到 `else if (first && spins != 0)`   因为目前 spins 是1
             - `--spins; ` 
             - 会调用 `Thread.onSpinWait();`  指示 runtime  现在处于 忙等待状态
           - 随后进入第六轮循环

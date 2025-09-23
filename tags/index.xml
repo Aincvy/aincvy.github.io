@@ -1,588 +1,588 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Tags on Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/</link>
-    <description>个人博客， 技术博客， 思想分享，开发日志。</description>
-    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <description>Recent content in Tags on Fanstasy Player / 幻想系玩家</description>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 02 Sep 2025 21:31:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 23 Sep 2025 10:08:45 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book</title>
+      <link>https://fantasyplayer.link/tags/book/</link>
+      <pubDate>Tue, 23 Sep 2025 10:08:45 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/book/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Mattermost</title>
       <link>https://fantasyplayer.link/tags/mattermost/</link>
       <pubDate>Tue, 02 Sep 2025 21:31:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/mattermost/</guid>
-      <description>Mattermost</description>
+      <description></description>
     </item>
     <item>
       <title>Macbook Pro</title>
       <link>https://fantasyplayer.link/tags/macbook-pro/</link>
       <pubDate>Tue, 12 Aug 2025 21:56:18 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/macbook-pro/</guid>
-      <description>Macbook Pro</description>
+      <description></description>
     </item>
     <item>
       <title>Macos</title>
       <link>https://fantasyplayer.link/tags/macos/</link>
       <pubDate>Tue, 12 Aug 2025 21:56:18 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/macos/</guid>
-      <description>Macos</description>
+      <description></description>
     </item>
     <item>
       <title>Windows</title>
       <link>https://fantasyplayer.link/tags/windows/</link>
       <pubDate>Tue, 05 Aug 2025 22:08:16 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/windows/</guid>
-      <description>Windows</description>
+      <description></description>
     </item>
     <item>
       <title>Wireguard</title>
       <link>https://fantasyplayer.link/tags/wireguard/</link>
       <pubDate>Tue, 05 Aug 2025 22:08:16 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/wireguard/</guid>
-      <description>Wireguard</description>
+      <description></description>
     </item>
     <item>
       <title>方法</title>
       <link>https://fantasyplayer.link/tags/%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 30 Jul 2025 22:00:53 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E6%96%B9%E6%B3%95/</guid>
-      <description>方法</description>
+      <description></description>
     </item>
     <item>
       <title>生活</title>
       <link>https://fantasyplayer.link/tags/%E7%94%9F%E6%B4%BB/</link>
       <pubDate>Wed, 30 Jul 2025 22:00:53 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%94%9F%E6%B4%BB/</guid>
-      <description>生活</description>
+      <description></description>
     </item>
     <item>
       <title>Java</title>
       <link>https://fantasyplayer.link/tags/java/</link>
       <pubDate>Tue, 22 Jul 2025 21:59:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/java/</guid>
-      <description>Java</description>
+      <description></description>
     </item>
     <item>
       <title>Spring Boot</title>
       <link>https://fantasyplayer.link/tags/spring-boot/</link>
       <pubDate>Tue, 22 Jul 2025 21:59:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/spring-boot/</guid>
-      <description>Spring Boot</description>
+      <description></description>
     </item>
     <item>
       <title>Vscode</title>
       <link>https://fantasyplayer.link/tags/vscode/</link>
       <pubDate>Tue, 01 Jul 2025 21:02:31 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/vscode/</guid>
-      <description>Vscode</description>
+      <description></description>
     </item>
     <item>
       <title>Docker</title>
       <link>https://fantasyplayer.link/tags/docker/</link>
       <pubDate>Wed, 18 Jun 2025 22:31:29 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/docker/</guid>
-      <description>Docker</description>
-    </item>
-    <item>
-      <title>Book</title>
-      <link>https://fantasyplayer.link/tags/book/</link>
-      <pubDate>Sat, 14 Jun 2025 15:10:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/book/</guid>
-      <description>Book</description>
+      <description></description>
     </item>
     <item>
       <title>Linux</title>
       <link>https://fantasyplayer.link/tags/linux/</link>
       <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/linux/</guid>
-      <description>Linux</description>
+      <description></description>
     </item>
     <item>
       <title>Self-Hosted</title>
       <link>https://fantasyplayer.link/tags/self-hosted/</link>
       <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/self-hosted/</guid>
-      <description>Self-Hosted</description>
+      <description></description>
     </item>
     <item>
       <title>Ssl</title>
       <link>https://fantasyplayer.link/tags/ssl/</link>
       <pubDate>Sun, 04 May 2025 12:39:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/ssl/</guid>
-      <description>Ssl</description>
+      <description></description>
     </item>
     <item>
       <title>Android</title>
       <link>https://fantasyplayer.link/tags/android/</link>
       <pubDate>Sun, 09 Mar 2025 14:45:43 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/android/</guid>
-      <description>Android</description>
+      <description></description>
     </item>
     <item>
       <title>Google</title>
       <link>https://fantasyplayer.link/tags/google/</link>
       <pubDate>Sun, 09 Mar 2025 14:45:43 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/google/</guid>
-      <description>Google</description>
+      <description></description>
     </item>
     <item>
       <title>美化</title>
       <link>https://fantasyplayer.link/tags/%E7%BE%8E%E5%8C%96/</link>
       <pubDate>Sun, 09 Mar 2025 14:21:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%BE%8E%E5%8C%96/</guid>
-      <description>美化</description>
+      <description></description>
     </item>
     <item>
       <title>Cpp</title>
       <link>https://fantasyplayer.link/tags/cpp/</link>
       <pubDate>Sat, 08 Mar 2025 21:27:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/cpp/</guid>
-      <description>Cpp</description>
+      <description></description>
     </item>
     <item>
       <title>Yubikey</title>
       <link>https://fantasyplayer.link/tags/yubikey/</link>
       <pubDate>Sat, 08 Mar 2025 21:19:10 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/yubikey/</guid>
-      <description>Yubikey</description>
+      <description></description>
     </item>
     <item>
       <title>Komga</title>
       <link>https://fantasyplayer.link/tags/komga/</link>
       <pubDate>Sat, 08 Mar 2025 21:00:33 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/komga/</guid>
-      <description>Komga</description>
+      <description></description>
     </item>
     <item>
       <title>羽绒被</title>
       <link>https://fantasyplayer.link/tags/%E7%BE%BD%E7%BB%92%E8%A2%AB/</link>
       <pubDate>Fri, 27 Dec 2024 17:38:26 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%BE%BD%E7%BB%92%E8%A2%AB/</guid>
-      <description>羽绒被</description>
+      <description></description>
     </item>
     <item>
       <title>香港</title>
       <link>https://fantasyplayer.link/tags/%E9%A6%99%E6%B8%AF/</link>
       <pubDate>Thu, 14 Nov 2024 21:57:26 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E9%A6%99%E6%B8%AF/</guid>
-      <description>香港</description>
+      <description></description>
     </item>
     <item>
       <title>Lobe</title>
       <link>https://fantasyplayer.link/tags/lobe/</link>
       <pubDate>Fri, 04 Oct 2024 16:54:11 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/lobe/</guid>
-      <description>Lobe</description>
+      <description></description>
     </item>
     <item>
       <title>装箱拆箱</title>
       <link>https://fantasyplayer.link/tags/%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</link>
       <pubDate>Fri, 04 Oct 2024 14:11:45 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/</guid>
-      <description>装箱拆箱</description>
+      <description></description>
     </item>
     <item>
       <title>Cmake</title>
       <link>https://fantasyplayer.link/tags/cmake/</link>
       <pubDate>Mon, 05 Aug 2024 21:33:40 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/cmake/</guid>
-      <description>Cmake</description>
+      <description></description>
     </item>
     <item>
       <title>Searxng</title>
       <link>https://fantasyplayer.link/tags/searxng/</link>
       <pubDate>Sun, 30 Jun 2024 14:37:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/searxng/</guid>
-      <description>Searxng</description>
+      <description></description>
     </item>
     <item>
       <title>Mysql</title>
       <link>https://fantasyplayer.link/tags/mysql/</link>
       <pubDate>Sun, 02 Jun 2024 17:33:49 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/mysql/</guid>
-      <description>Mysql</description>
+      <description></description>
     </item>
     <item>
       <title>Unity</title>
       <link>https://fantasyplayer.link/tags/unity/</link>
       <pubDate>Sat, 06 Apr 2024 11:31:05 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/unity/</guid>
-      <description>Unity</description>
+      <description></description>
     </item>
     <item>
       <title>Csharp</title>
       <link>https://fantasyplayer.link/tags/csharp/</link>
       <pubDate>Thu, 18 Jan 2024 12:03:54 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/csharp/</guid>
-      <description>Csharp</description>
+      <description></description>
     </item>
     <item>
       <title>神经网络</title>
       <link>https://fantasyplayer.link/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Wed, 17 Jan 2024 16:03:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
-      <description>神经网络</description>
+      <description></description>
     </item>
     <item>
       <title>失眠</title>
       <link>https://fantasyplayer.link/tags/%E5%A4%B1%E7%9C%A0/</link>
       <pubDate>Tue, 16 Jan 2024 20:46:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E5%A4%B1%E7%9C%A0/</guid>
-      <description>失眠</description>
+      <description></description>
     </item>
     <item>
       <title>心理</title>
       <link>https://fantasyplayer.link/tags/%E5%BF%83%E7%90%86/</link>
       <pubDate>Tue, 16 Jan 2024 20:46:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E5%BF%83%E7%90%86/</guid>
-      <description>心理</description>
+      <description></description>
     </item>
     <item>
       <title>Llm</title>
       <link>https://fantasyplayer.link/tags/llm/</link>
       <pubDate>Tue, 16 Jan 2024 18:13:01 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/llm/</guid>
-      <description>Llm</description>
+      <description></description>
     </item>
     <item>
       <title>Openai</title>
       <link>https://fantasyplayer.link/tags/openai/</link>
       <pubDate>Tue, 16 Jan 2024 18:13:01 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/openai/</guid>
-      <description>Openai</description>
+      <description></description>
     </item>
     <item>
       <title>服务器</title>
       <link>https://fantasyplayer.link/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Fri, 15 Dec 2023 18:23:13 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-      <description>服务器</description>
+      <description></description>
     </item>
     <item>
       <title>装机</title>
       <link>https://fantasyplayer.link/tags/%E8%A3%85%E6%9C%BA/</link>
       <pubDate>Fri, 15 Dec 2023 18:23:13 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E8%A3%85%E6%9C%BA/</guid>
-      <description>装机</description>
+      <description></description>
     </item>
     <item>
       <title>Nvidia</title>
       <link>https://fantasyplayer.link/tags/nvidia/</link>
       <pubDate>Fri, 15 Dec 2023 18:06:59 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/nvidia/</guid>
-      <description>Nvidia</description>
+      <description></description>
     </item>
     <item>
       <title>Text-to-Image</title>
       <link>https://fantasyplayer.link/tags/text-to-image/</link>
       <pubDate>Fri, 15 Dec 2023 18:06:59 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/text-to-image/</guid>
-      <description>Text-to-Image</description>
+      <description></description>
     </item>
     <item>
       <title>工作</title>
       <link>https://fantasyplayer.link/tags/%E5%B7%A5%E4%BD%9C/</link>
       <pubDate>Fri, 15 Dec 2023 17:19:18 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E5%B7%A5%E4%BD%9C/</guid>
-      <description>工作</description>
+      <description></description>
     </item>
     <item>
       <title>V8</title>
       <link>https://fantasyplayer.link/tags/v8/</link>
       <pubDate>Mon, 13 Nov 2023 11:07:14 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/v8/</guid>
-      <description>V8</description>
+      <description></description>
     </item>
     <item>
       <title>E-Ink</title>
       <link>https://fantasyplayer.link/tags/e-ink/</link>
       <pubDate>Sun, 12 Nov 2023 21:40:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/e-ink/</guid>
-      <description>E-Ink</description>
+      <description></description>
     </item>
     <item>
       <title>Goods</title>
       <link>https://fantasyplayer.link/tags/goods/</link>
       <pubDate>Sun, 12 Nov 2023 21:40:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/goods/</guid>
-      <description>Goods</description>
+      <description></description>
     </item>
     <item>
       <title>Debian</title>
       <link>https://fantasyplayer.link/tags/debian/</link>
       <pubDate>Fri, 13 Oct 2023 18:08:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/debian/</guid>
-      <description>Debian</description>
+      <description></description>
     </item>
     <item>
       <title>Git</title>
       <link>https://fantasyplayer.link/tags/git/</link>
       <pubDate>Fri, 13 Oct 2023 17:34:37 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/git/</guid>
-      <description>Git</description>
+      <description></description>
     </item>
     <item>
       <title>Gitlab</title>
       <link>https://fantasyplayer.link/tags/gitlab/</link>
       <pubDate>Fri, 13 Oct 2023 17:34:37 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/gitlab/</guid>
-      <description>Gitlab</description>
+      <description></description>
     </item>
     <item>
       <title>Llama</title>
       <link>https://fantasyplayer.link/tags/llama/</link>
       <pubDate>Mon, 21 Aug 2023 15:29:52 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/llama/</guid>
-      <description>Llama</description>
+      <description></description>
     </item>
     <item>
       <title>K8s</title>
       <link>https://fantasyplayer.link/tags/k8s/</link>
       <pubDate>Sat, 29 Jul 2023 22:23:40 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/k8s/</guid>
-      <description>K8s</description>
+      <description></description>
     </item>
     <item>
       <title>Vagrant</title>
       <link>https://fantasyplayer.link/tags/vagrant/</link>
       <pubDate>Thu, 15 Jun 2023 20:58:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/vagrant/</guid>
-      <description>Vagrant</description>
+      <description></description>
     </item>
     <item>
       <title>Steam</title>
       <link>https://fantasyplayer.link/tags/steam/</link>
       <pubDate>Mon, 08 May 2023 17:39:53 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/steam/</guid>
-      <description>Steam</description>
+      <description></description>
     </item>
     <item>
       <title>独立游戏</title>
       <link>https://fantasyplayer.link/tags/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F/</link>
       <pubDate>Mon, 08 May 2023 17:39:53 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F/</guid>
-      <description>独立游戏</description>
+      <description></description>
     </item>
     <item>
       <title>VR游戏</title>
       <link>https://fantasyplayer.link/tags/vr%E6%B8%B8%E6%88%8F/</link>
       <pubDate>Fri, 05 May 2023 12:26:59 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/vr%E6%B8%B8%E6%88%8F/</guid>
-      <description>VR游戏</description>
+      <description></description>
     </item>
     <item>
       <title>Gogs</title>
       <link>https://fantasyplayer.link/tags/gogs/</link>
       <pubDate>Wed, 28 Dec 2022 21:44:42 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/gogs/</guid>
-      <description>Gogs</description>
+      <description></description>
     </item>
     <item>
       <title>Apple</title>
       <link>https://fantasyplayer.link/tags/apple/</link>
       <pubDate>Sun, 20 Feb 2022 11:10:48 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/apple/</guid>
-      <description>Apple</description>
+      <description></description>
     </item>
     <item>
       <title>理财</title>
       <link>https://fantasyplayer.link/tags/%E7%90%86%E8%B4%A2/</link>
       <pubDate>Sat, 22 Jan 2022 11:06:00 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%90%86%E8%B4%A2/</guid>
-      <description>理财</description>
+      <description></description>
     </item>
     <item>
       <title>Libuv</title>
       <link>https://fantasyplayer.link/tags/libuv/</link>
       <pubDate>Sat, 25 Dec 2021 11:47:09 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/libuv/</guid>
-      <description>Libuv</description>
+      <description></description>
     </item>
     <item>
       <title>Jenkins</title>
       <link>https://fantasyplayer.link/tags/jenkins/</link>
       <pubDate>Sat, 07 Aug 2021 14:43:20 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/jenkins/</guid>
-      <description>Jenkins</description>
+      <description></description>
     </item>
     <item>
       <title>Hugo</title>
       <link>https://fantasyplayer.link/tags/hugo/</link>
       <pubDate>Mon, 19 Jul 2021 17:11:25 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/hugo/</guid>
-      <description>Hugo</description>
+      <description></description>
     </item>
     <item>
       <title>食物</title>
       <link>https://fantasyplayer.link/tags/%E9%A3%9F%E7%89%A9/</link>
       <pubDate>Mon, 14 Jun 2021 11:15:47 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E9%A3%9F%E7%89%A9/</guid>
-      <description>食物</description>
+      <description></description>
     </item>
     <item>
       <title>Jetbrains</title>
       <link>https://fantasyplayer.link/tags/jetbrains/</link>
       <pubDate>Mon, 24 May 2021 13:36:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/jetbrains/</guid>
-      <description>Jetbrains</description>
+      <description></description>
     </item>
     <item>
       <title>Rider</title>
       <link>https://fantasyplayer.link/tags/rider/</link>
       <pubDate>Mon, 24 May 2021 13:36:35 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/rider/</guid>
-      <description>Rider</description>
+      <description></description>
     </item>
     <item>
       <title>黑苹果</title>
       <link>https://fantasyplayer.link/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</link>
       <pubDate>Mon, 05 Apr 2021 21:30:41 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</guid>
-      <description>黑苹果</description>
+      <description></description>
     </item>
     <item>
       <title>面试</title>
       <link>https://fantasyplayer.link/tags/%E9%9D%A2%E8%AF%95/</link>
       <pubDate>Sun, 14 Mar 2021 16:44:21 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E9%9D%A2%E8%AF%95/</guid>
-      <description>面试</description>
+      <description></description>
     </item>
     <item>
       <title>Openwrt</title>
       <link>https://fantasyplayer.link/tags/openwrt/</link>
       <pubDate>Mon, 25 Jan 2021 22:28:55 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/openwrt/</guid>
-      <description>Openwrt</description>
+      <description></description>
     </item>
     <item>
       <title>软路由</title>
       <link>https://fantasyplayer.link/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Mon, 25 Jan 2021 22:28:55 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</guid>
-      <description>软路由</description>
+      <description></description>
     </item>
     <item>
       <title>职业</title>
       <link>https://fantasyplayer.link/tags/%E8%81%8C%E4%B8%9A/</link>
       <pubDate>Mon, 14 Dec 2020 21:45:55 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E8%81%8C%E4%B8%9A/</guid>
-      <description>职业</description>
+      <description></description>
     </item>
     <item>
       <title>规范</title>
       <link>https://fantasyplayer.link/tags/%E8%A7%84%E8%8C%83/</link>
       <pubDate>Mon, 07 Dec 2020 18:48:17 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E8%A7%84%E8%8C%83/</guid>
-      <description>规范</description>
+      <description></description>
     </item>
     <item>
       <title>996</title>
       <link>https://fantasyplayer.link/tags/996/</link>
       <pubDate>Mon, 30 Nov 2020 20:47:40 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/996/</guid>
-      <description>996</description>
+      <description></description>
     </item>
     <item>
       <title>Kindle</title>
       <link>https://fantasyplayer.link/tags/kindle/</link>
       <pubDate>Mon, 02 Nov 2020 20:08:20 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/kindle/</guid>
-      <description>Kindle</description>
+      <description></description>
     </item>
     <item>
       <title>单元测试</title>
       <link>https://fantasyplayer.link/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 05 Oct 2020 20:22:34 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
-      <description>单元测试</description>
+      <description></description>
     </item>
     <item>
       <title>Shell</title>
       <link>https://fantasyplayer.link/tags/shell/</link>
       <pubDate>Mon, 14 Sep 2020 20:38:01 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/shell/</guid>
-      <description>Shell</description>
+      <description></description>
     </item>
     <item>
       <title>数据库</title>
       <link>https://fantasyplayer.link/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Mon, 07 Sep 2020 21:33:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      <description>数据库</description>
+      <description></description>
     </item>
     <item>
       <title>PfSense</title>
       <link>https://fantasyplayer.link/tags/pfsense/</link>
       <pubDate>Sat, 29 Aug 2020 12:55:39 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/pfsense/</guid>
-      <description>PfSense</description>
+      <description></description>
     </item>
     <item>
       <title>Esxi</title>
       <link>https://fantasyplayer.link/tags/esxi/</link>
       <pubDate>Fri, 31 Jul 2020 23:46:23 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/esxi/</guid>
-      <description>Esxi</description>
+      <description></description>
     </item>
     <item>
       <title>淘宝</title>
       <link>https://fantasyplayer.link/tags/%E6%B7%98%E5%AE%9D/</link>
       <pubDate>Thu, 09 Jul 2020 20:26:02 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E6%B7%98%E5%AE%9D/</guid>
-      <description>淘宝</description>
+      <description></description>
     </item>
     <item>
       <title>学习</title>
       <link>https://fantasyplayer.link/tags/%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Mon, 01 Jun 2020 21:22:15 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E5%AD%A6%E4%B9%A0/</guid>
-      <description>学习</description>
+      <description></description>
     </item>
     <item>
       <title>Game</title>
       <link>https://fantasyplayer.link/tags/game/</link>
       <pubDate>Mon, 11 May 2020 21:50:15 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/game/</guid>
-      <description>Game</description>
+      <description></description>
     </item>
     <item>
       <title>PUBG</title>
       <link>https://fantasyplayer.link/tags/pubg/</link>
       <pubDate>Mon, 11 May 2020 21:50:15 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/pubg/</guid>
-      <description>PUBG</description>
+      <description></description>
     </item>
     <item>
       <title>多线程</title>
       <link>https://fantasyplayer.link/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
       <pubDate>Mon, 11 May 2020 21:50:00 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
-      <description>多线程</description>
+      <description></description>
     </item>
     <item>
       <title>Protobuf</title>
       <link>https://fantasyplayer.link/tags/protobuf/</link>
       <pubDate>Wed, 10 May 2017 21:11:12 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/protobuf/</guid>
-      <description>Protobuf</description>
+      <description></description>
     </item>
     <item>
       <title>游戏开发</title>
       <link>https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
       <pubDate>Tue, 27 Dec 2016 21:11:56 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</guid>
-      <description>游戏开发</description>
+      <description></description>
     </item>
     <item>
       <title>Netty</title>
       <link>https://fantasyplayer.link/tags/netty/</link>
       <pubDate>Sun, 17 Apr 2016 21:36:18 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/netty/</guid>
-      <description>Netty</description>
+      <description></description>
     </item>
   </channel>
 </rss>

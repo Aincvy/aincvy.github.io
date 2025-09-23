@@ -5,7 +5,7 @@
 ```java
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println(&#34;Try programiz.pro&#34;);
+        System.out.println("Try programiz.pro");
         
         Basic.printNumber();
         Child.printNumber();

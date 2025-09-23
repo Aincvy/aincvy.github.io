@@ -8,14 +8,14 @@
 - 调整代码后再次启动程序， 无法监听TCP端口， 程序自动退出
 
 笔者尝试使用下面得方式处理问题，但是失败了：
-- 命令 `netstat -ano | findstr &#34;31551&#34;`  给出得结果是端口确实被占用了，  但是给出得PID 在任务管理器里面根本找不到。
+- 命令 `netstat -ano | findstr "31551"`  给出得结果是端口确实被占用了，  但是给出得PID 在任务管理器里面根本找不到。
 - 使用 `taskkill /F /PID $PID`  会提示无法完成该操作。
 
-经过一番仔细探查， 笔者终于找到了原因： 笔者使用 system() 函数打开了 notepad&#43;&#43;.exe ， 此时notepad&#43;&#43;.exe 会成为 当前进程得一个子进程， 如果notepad&#43;&#43;.exe 没有关闭得话，父进程得 TCP端口资源就不会被释放。 
+经过一番仔细探查， 笔者终于找到了原因： 笔者使用 system() 函数打开了 notepad++.exe ， 此时notepad++.exe 会成为 当前进程得一个子进程， 如果notepad++.exe 没有关闭得话，父进程得 TCP端口资源就不会被释放。 
 
-当笔者手动关闭 notepad&#43;&#43;.exe 之后， 父进程自动消失了， TCP端口也自动释放了。 
+当笔者手动关闭 notepad++.exe 之后， 父进程自动消失了， TCP端口也自动释放了。 
 
-随后笔者使用 `system(&#34;start notepad&#43;&#43;.exe xxx_file&#34;)` 得方式来启动 notepad&#43;&#43;.exe 就避免了这个问题。
+随后笔者使用 `system("start notepad++.exe xxx_file")` 得方式来启动 notepad++.exe 就避免了这个问题。
 
 
 参考阅读： 

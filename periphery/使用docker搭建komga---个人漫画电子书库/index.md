@@ -20,7 +20,7 @@
 
 笔者使用得 docker-compose.yaml 为： 
 ```yaml
-version: &#39;3.3&#39;
+version: '3.3'
 services:
   komga:
     image: gotson/komga
@@ -30,7 +30,7 @@ services:
       - ./data/content:/data
     ports:
       - 25600:25600
-    user: &#34;1000:1000&#34;
+    user: "1000:1000"
     environment:
       - TZ=Asia/Shanghai
     restart: unless-stopped
@@ -73,7 +73,7 @@ server {
     # TLS certificates
     ssl_certificate     /root/cert/acme/fullchain.pem;   #  你得 ssl 证书
     ssl_certificate_key /root/cert/acme/your_pem_file;    #  你得 ssl 证书
-    add_header Strict-Transport-Security &#34;max-age=63072000&#34; always;
+    add_header Strict-Transport-Security "max-age=63072000" always;
 
     location / {
         proxy_pass http://komgaserver;

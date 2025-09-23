@@ -36,16 +36,16 @@ DROP INDEX idx_posts_message_txt;
 DROP INDEX idx_posts_hashtags_txt;
 
 -- 为消息内容创建中文全文搜索索引
-CREATE INDEX idx_posts_message_txt ON posts USING gin (to_tsvector(&#39;chinese_zh&#39;::regconfig, message::text));
+CREATE INDEX idx_posts_message_txt ON posts USING gin (to_tsvector('chinese_zh'::regconfig, message::text));
 
 -- 为标签创建中文全文搜索索引
-CREATE INDEX idx_posts_hashtags_txt ON posts USING gin (to_tsvector(&#39;chinese_zh&#39;::regconfig, hashtags::text));
+CREATE INDEX idx_posts_hashtags_txt ON posts USING gin (to_tsvector('chinese_zh'::regconfig, hashtags::text));
 
 -- 查看索引是否创建成功
 \d posts
 
 -- 测试中文搜索功能
-SELECT id, message FROM posts WHERE to_tsvector(&#39;chinese_zh&#39;, message) @@ to_tsquery(&#39;chinese_zh&#39;, &#39;测试&#39;);
+SELECT id, message FROM posts WHERE to_tsvector('chinese_zh', message) @@ to_tsquery('chinese_zh', '测试');
 ```
 
 记得一定要重启一下 mattermost 实例。 

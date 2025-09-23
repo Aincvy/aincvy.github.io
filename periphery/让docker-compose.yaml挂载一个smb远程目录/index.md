@@ -18,8 +18,8 @@ volumes:
     #driver: local
     driver_opts:
       type: cifs
-      device: &#34;//192.168.200.23/音频/immich&#34;
-      o: &#34;username=yohello,password=******,vers=3.0&#34;
+      device: "//192.168.200.23/音频/immich"
+      o: "username=yohello,password=******,vers=3.0"
 ```
 
 详细解释： 

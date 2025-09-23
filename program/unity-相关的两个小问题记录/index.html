@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
@@ -11,7 +10,7 @@
   <meta itemprop="name" content="Unity 相关的几个小问题记录">
   <meta itemprop="description" content="主要内容动画播放结束会模型会卡住一段时间的问题动画播放是使用 Animator Controller 实现的， 笔者碰到的问题是在一个受击动画播放结束之后，没有马上切换到 Idle 状态， 而是会在受击状态结束后卡住一会才会切换。">
   <meta itemprop="datePublished" content="2023-01-08T22:18:51+08:00">
-  <meta itemprop="dateModified" content="2024-10-04T20:33:31+08:00">
+  <meta itemprop="dateModified" content="2023-01-08T22:18:51+08:00">
   <meta itemprop="wordCount" content="3351">
   <meta itemprop="image" content="https://fantasyplayer.link/logo.png">
   <meta itemprop="keywords" content="Unity,Csharp"><meta property="og:url" content="https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">
@@ -22,7 +21,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="program">
     <meta property="article:published_time" content="2023-01-08T22:18:51+08:00">
-    <meta property="article:modified_time" content="2024-10-04T20:33:31+08:00">
+    <meta property="article:modified_time" content="2023-01-08T22:18:51+08:00">
     <meta property="article:tag" content="Unity">
     <meta property="article:tag" content="Csharp">
     <meta property="og:image" content="https://fantasyplayer.link/logo.png">
@@ -35,9 +34,9 @@
 <meta name="twitter:creator" content="@Aincvy" /><meta name="application-name" content="Fanstasy Player / 幻想系玩家">
 <meta name="apple-mobile-web-app-title" content="Fanstasy Player / 幻想系玩家"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="Unity 相关的几个小问题记录 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" /><link rel="next" type="text/html" href="https://fantasyplayer.link/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/" title="Vscode .Net Sdk 找不到的问题 记录" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/index.md" title="Unity 相关的几个小问题记录 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/style.min.a2aa282e08caced70722685b6330357696ad219c96160cda1abc0b46c9b713a4.css" integrity="sha256-oqooLgjKztcHImhbYzA1dpatIZyWFgzaGrwLRsm3E6Q="><link rel="preload" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.534c7ac9d4ef5cb29828c4d571a05399871edec50f5b8c72372379bed20fb033.css" integrity="sha256-U0x6ydTvXLKYKMTVcaBTmYce3sUPW4xyNyN5vtIPsDM="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="Unity 相关的几个小问题记录 - Fanstasy Player / 幻想系玩家" /><link rel="prev" type="text/html" href="https://fantasyplayer.link/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端" /><link rel="next" type="text/html" href="https://fantasyplayer.link/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/" title="Vscode .Net Sdk 找不到的问题 记录" /><link rel="alternate" type="text/markdown" href="https://fantasyplayer.link/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/index.md" title="Unity 相关的几个小问题记录 - Fanstasy Player / 幻想系玩家"><link rel="stylesheet" href="/css/config.min.7541742fb7e225260126b3cceffe209363937bf7fa35fe9c51c948df46b0217d.css" integrity="sha256-dUF0L7fiJSYBJrPM7/4gk2OTe/f6Nf6cUclI30awIX0="><link rel="stylesheet" href="/css/style.min.13553df79057a0ecf737105cc0fa122d249fe19181f758af23028efb123ea75c.css" integrity="sha256-E1U995BXoOz3NxBcwPoSLSSf4ZGB91ivIwKO+xI+p1w="><link rel="preload" href="/lib/fontawesome-free/all.min.3cc0b2bc9e0e07c346863f1b57891f62d9f9d8aee7c60e391891b0e23f641a21.css" integrity="sha256-PMCyvJ4OB8NGhj8bV4kfYtn52K7nxg45GJGw4j9kGiE=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.3cc0b2bc9e0e07c346863f1b57891f62d9f9d8aee7c60e391891b0e23f641a21.css" integrity="sha256-PMCyvJ4OB8NGhj8bV4kfYtn52K7nxg45GJGw4j9kGiE="></noscript><link rel="preload" href="/lib/animate/animate.min.a61e123314188bd0453320008e01b4bbb665bee09039f4cbd9bef44de410ce67.css" integrity="sha256-ph4SMxQYi9BFMyAAjgG0u7ZlvuCQOfTL2b70TeQQzmc=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.a61e123314188bd0453320008e01b4bbb665bee09039f4cbd9bef44de410ce67.css" integrity="sha256-ph4SMxQYi9BFMyAAjgG0u7ZlvuCQOfTL2b70TeQQzmc="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -47,7 +46,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/"
     },"genre": "posts","keywords": "unity, csharp","wordcount":  3351 ,
-    "url": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2023-01-08T22:18:51+08:00","dateModified": "2024-10-04T20:33:31+08:00","publisher": {
+    "url": "https:\/\/fantasyplayer.link\/program\/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95\/","datePublished": "2023-01-08T22:18:51+08:00","dateModified": "2023-01-08T22:18:51+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -58,7 +57,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
-      <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="Fanstasy Player / 幻想系玩家"><img class="logo" src='/images/3.jpeg' alt="Fanstasy Player / 幻想系玩家" height="32" width="32"><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a class="menu-link" href="/program/">Program</a></li><li class="menu-item">
@@ -86,7 +85,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="Fanstasy Player / 幻想系玩家"><img loading="lazy" src="/images/3.jpeg" alt="Fanstasy Player / 幻想系玩家" data-title="Fanstasy Player / 幻想系玩家" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="Fanstasy Player / 幻想系玩家"><img class="logo" src='/images/3.jpeg' alt="Fanstasy Player / 幻想系玩家" height="26" width="26"><span class="header-title-text">Fanstasy Player / 幻想系玩家</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -121,13 +120,13 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
     <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="/"><a href="/program/" title="Programs">Programs</a></li><li class="breadcrumb-item active" data-separator="/" aria-current="page">Unity 相关的几个小问题记录</li>
     </ol>
-  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+  </nav><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Unity 相关的几个小问题记录</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2023-01-08 22:18:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-08">2023-01-08</time></span>&nbsp;<span title="更新于 2024-10-04 20:33:31"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="3351 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+      Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2023-01-08 22:18:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-08">2023-01-08</time></span>&nbsp;<span title="3351 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -157,18 +156,18 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><div class="details admonition note open">
+      </div><div class="content" id="content"><div class="expiration-reminder details admonition warning open">
       <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
       </div>
       <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2024-10-04，文中内容可能已过时。</div>
+        <div class="admonition-content">本文最后更新于 2023-01-08，文中内容可能已过时。</div>
       </div>
-    </div><h2 id="主要内容" class="heading-element"><span>主要内容</span>
+    </div><h2 class="heading-element" id="主要内容"><span>主要内容</span>
   <a href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="动画播放结束会模型会卡住一段时间的问题" class="heading-element"><span>动画播放结束会模型会卡住一段时间的问题</span>
+</h2><h3 class="heading-element" id="动画播放结束会模型会卡住一段时间的问题"><span>动画播放结束会模型会卡住一段时间的问题</span>
   <a href="#%e5%8a%a8%e7%94%bb%e6%92%ad%e6%94%be%e7%bb%93%e6%9d%9f%e4%bc%9a%e6%a8%a1%e5%9e%8b%e4%bc%9a%e5%8d%a1%e4%bd%8f%e4%b8%80%e6%ae%b5%e6%97%b6%e9%97%b4%e7%9a%84%e9%97%ae%e9%a2%98" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -176,7 +175,7 @@
 <p>因为是受击动画，所以笔者没有使用条件，而是使用了 <code>Has Exit Time</code></p>
 <p>经过一段时间的查找， 笔者发现原因是： 当动画的 <code>Exit Time</code> 比实际的动画要更长的时候， 就会出现这个问题。</p>
 <p>解决方法是： 找到受击状态与 Idle 状态的过渡线， 点开<code>Settings</code> ， 里面有个 <code>Exit Time</code> ,改小一些就可以了。</p>
-<h3 id="使用代码修改粒子特效的属性" class="heading-element"><span>使用代码修改粒子特效的属性</span>
+<h3 class="heading-element" id="使用代码修改粒子特效的属性"><span>使用代码修改粒子特效的属性</span>
   <a href="#%e4%bd%bf%e7%94%a8%e4%bb%a3%e7%a0%81%e4%bf%ae%e6%94%b9%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88%e7%9a%84%e5%b1%9e%e6%80%a7" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -201,7 +200,7 @@
 </div>
 </div><p>上面两种方式一种会产生报错， 一种会产生警告， 使用最后那种方式修改就好了。</p>
 <p>修改其他属性的时候， 也可以使用类似的方式， 比如 <code>item.main</code> 等。</p>
-<h3 id="transformposition-获取的位置和看到的位置不一样的问题记录" class="heading-element"><span>transform.position 获取的位置和看到的位置不一样的问题记录。</span>
+<h3 class="heading-element" id="transformposition-获取的位置和看到的位置不一样的问题记录"><span>transform.position 获取的位置和看到的位置不一样的问题记录。</span>
   <a href="#transformposition-%e8%8e%b7%e5%8f%96%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%92%8c%e7%9c%8b%e5%88%b0%e7%9a%84%e4%bd%8d%e7%bd%ae%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%e9%97%ae%e9%a2%98%e8%ae%b0%e5%bd%95" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -213,7 +212,7 @@
 或者更好的处理 两者的关系。<br>
 使用 NavMeshAgent 的时候就设置 Rigidbody.isKinematic = true.<br>
 使用 Rigidbody 的时候就设置，  NavMeshAgent.enable = false.</p>
-<h3 id="更改-asset-store-的下载目录" class="heading-element"><span>更改 Asset store 的下载目录</span>
+<h3 class="heading-element" id="更改-asset-store-的下载目录"><span>更改 Asset store 的下载目录</span>
   <a href="#%e6%9b%b4%e6%94%b9-asset-store-%e7%9a%84%e4%b8%8b%e8%bd%bd%e7%9b%ae%e5%bd%95" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -230,7 +229,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> c:/Users/<span class="o">[</span>用户名<span class="o">]</span>/AppData/Roaming
 </span></span><span class="line"><span class="cl">mklink /d Unity D:<span class="se">\R</span>oamingUnity</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="layer-和-layer-mask-的一点内容" class="heading-element"><span>layer 和 layer mask 的一点内容</span>
+</div><h3 class="heading-element" id="layer-和-layer-mask-的一点内容"><span>layer 和 layer mask 的一点内容</span>
   <a href="#layer-%e5%92%8c-layer-mask-%e7%9a%84%e4%b8%80%e7%82%b9%e5%86%85%e5%ae%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -255,13 +254,13 @@ layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表�
 </span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">layerMask</span><span class="p">);</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考阅读：  <a href="https://docs.unity3d.com/Manual/layers-and-layermasks.html"target="_blank" rel="external nofollow noopener noreferrer">https://docs.unity3d.com/Manual/layers-and-layermasks.html</a></p>
-<h3 id="动画过渡相关的一点内容" class="heading-element"><span>动画过渡相关的一点内容</span>
+<h3 class="heading-element" id="动画过渡相关的一点内容"><span>动画过渡相关的一点内容</span>
   <a href="#%e5%8a%a8%e7%94%bb%e8%bf%87%e6%b8%a1%e7%9b%b8%e5%85%b3%e7%9a%84%e4%b8%80%e7%82%b9%e5%86%85%e5%ae%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>动画过渡的 settings 里面的 exit time 是比例(normalized time)， 不是秒</p>
 <p>duration 可以设置是 秒还是 比例。</p>
-<h3 id="navmesh和-navmeshagent-相关的一点内容" class="heading-element"><span>NavMesh和 NavMeshAgent 相关的一点内容</span>
+<h3 class="heading-element" id="navmesh和-navmeshagent-相关的一点内容"><span>NavMesh和 NavMeshAgent 相关的一点内容</span>
   <a href="#navmesh%e5%92%8c-navmeshagent-%e7%9b%b8%e5%85%b3%e7%9a%84%e4%b8%80%e7%82%b9%e5%86%85%e5%ae%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -275,7 +274,7 @@ layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表�
 </ul>
 <p>似乎以<code>Mask</code>结尾的东西都是移位之后的数值。</p>
 <p><em>笔者在自己测试的时候发现，修改NavMeshAgent的 radius,height 属性之后 似乎没有什么作用。具体原因笔者没有深究。</em></p>
-<h3 id="unity-message" class="heading-element"><span>Unity Message</span>
+<h3 class="heading-element" id="unity-message"><span>Unity Message</span>
   <a href="#unity-message" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -306,7 +305,7 @@ layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表�
 <p><del>如果去掉访问修饰符， 或者使用 <code>protected</code> <code>public</code> 的话， 在 VS Code 里面就可以看到一个警告。</del><br>
 如果使用修饰符 <code>protected</code> 或者 <code>public</code> 的话， 在 VS Code 里面就可以看到一个警告。</p>
 <p>拓展阅读：  <a href="https://forum.unity.com/threads/monobehaviour-inheritance-and-awake-start-onenable-etc.303834/#post-1985265"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/monobehaviour-inheritance-and-awake-start-onenable-etc.303834/#post-1985265</a></p>
-<h3 id="动画预览" class="heading-element"><span>动画预览</span>
+<h3 class="heading-element" id="动画预览"><span>动画预览</span>
   <a href="#%e5%8a%a8%e7%94%bb%e9%a2%84%e8%a7%88" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -316,7 +315,7 @@ layer 是唯一的， 只能表示一个，  但是 layer mask 可以同时表�
 <p>如果需要手动填写动画时间的时候， 需要注意一个差别， 1秒 等于 1000 毫秒，  即 预览里看到的是 0:30 的时候， 时间上应该填写 0.5s<br>
 不过， 笔者发现 手动填写动画时间 并不靠谱，更应该考虑动画事件， 这样在时间上更精确一些。<br>
 只是动画事件的回调，在 transition的过程中也会调用， 这是一个问题。</p>
-<h3 id="地形与树木" class="heading-element"><span>地形与树木</span>
+<h3 class="heading-element" id="地形与树木"><span>地形与树木</span>
   <a href="#%e5%9c%b0%e5%bd%a2%e4%b8%8e%e6%a0%91%e6%9c%a8" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -351,7 +350,7 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 </li>
 <li>WindZone 如果设置成 Directional ， 那么将影响整个场景， 想设置一个范围都不行- -</li>
 </ul>
-<h3 id="trigger-collider-的回调函数" class="heading-element"><span>trigger collider 的回调函数</span>
+<h3 class="heading-element" id="trigger-collider-的回调函数"><span>trigger collider 的回调函数</span>
   <a href="#trigger-collider-%e7%9a%84%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -378,15 +377,14 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 如果当前的 GameObject 被禁用了的话， OnTriggerExit 就永远不会被调用了。</p>
 <p>这里有一个脚本提供了可靠性的调用保证： <a href="https://forum.unity.com/threads/fix-ontriggerexit-will-now-be-called-for-disabled-gameobjects-colliders.657205/"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/fix-ontriggerexit-will-now-be-called-for-disabled-gameobjects-colliders.657205/</a></p>
 <blockquote>
-<p>// OnTriggerExit is not called if the triggering object is destroyed, set inactive, or if the collider is disabled. This script fixes that</p>
-</blockquote>
+<p>// OnTriggerExit is not called if the triggering object is destroyed, set inactive, or if the collider is disabled. This script fixes that</p></blockquote>
 <p>但是笔者并没有使用这个脚本， 而是选择了 <code>OnTriggerStay</code> 函数。</p>
-<h3 id="unity-回调函数的执行顺序" class="heading-element"><span>UNITY 回调函数的执行顺序</span>
+<h3 class="heading-element" id="unity-回调函数的执行顺序"><span>UNITY 回调函数的执行顺序</span>
   <a href="#unity-%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0%e7%9a%84%e6%89%a7%e8%a1%8c%e9%a1%ba%e5%ba%8f" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>官方文档地址：  <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html"target="_blank" rel="external nofollow noopener noreferrer">https://docs.unity3d.com/Manual/ExecutionOrder.html</a></p>
-<p><img loading="lazy" src="https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg" alt="unity callback execute order" srcset="https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg?size=small, https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg?size=medium 1.5x, https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg?size=large 2x" data-title="unity callback execute order" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src='https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg' alt="unity callback execute order"></p>
 <p><code>Awake</code> 和 <code>OnEnable</code> 最先执行， 之后是 <code>Reset</code>  ， 但是<code>Reset</code> 只在编辑器里面会调用， 在添加组件的时候。</p>
 <p>然后是 <code>Start</code> 函数， 然后是 物理部分。<br>
 物理部分 一帧可能会调用多次， 当 fixed time step 小于帧的 update time  的时候。<br>
@@ -395,7 +393,7 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 <p><code>Update</code> 要在物理和 输入事件部分之后调用, 之后是 Coroutine 相关的部分。<br>
 <code>LateUpdate</code> 在 <code>GameLogic</code> 的最后一部分执行，但是之后还有渲染和其他一些内容。</p>
 <p><code>OnDisable</code> 和 <code>OnDestroy</code> 是在最后的最后执行的。</p>
-<h3 id="dotween--插件" class="heading-element"><span>DOTween  插件</span>
+<h3 class="heading-element" id="dotween--插件"><span>DOTween  插件</span>
   <a href="#dotween--%e6%8f%92%e4%bb%b6" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -403,13 +401,13 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 此外，这个插件实现的内容其实并不是特别多，如果需要自己实现的话， Ease 可能麻烦点，其他的应该还好。</p>
 <p>如果你一定要用的话， 出了问题可以尝试联系作者， 他可能会回复你。</p>
 <p><em>说是这么说， 但是如果你在上班的时候出现了问题，你发了邮件给作者，作者基本上不可能立即回复你的，而且可能还会有时差。而这个时候你也不可能等他把，不然工作进度慢了，还是需要加班。</em></p>
-<h3 id="光照探针组-无法编辑探针位置" class="heading-element"><span>光照探针组 无法编辑探针位置</span>
+<h3 class="heading-element" id="光照探针组-无法编辑探针位置"><span>光照探针组 无法编辑探针位置</span>
   <a href="#%e5%85%89%e7%85%a7%e6%8e%a2%e9%92%88%e7%bb%84-%e6%97%a0%e6%b3%95%e7%bc%96%e8%be%91%e6%8e%a2%e9%92%88%e4%bd%8d%e7%bd%ae" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>尝试重置编辑器布局成默认布局。</p>
 <p>参考阅读： <a href="https://forum.unity.com/threads/cant-select-light-probes.716924/#post-5309718"target="_blank" rel="external nofollow noopener noreferrer">https://forum.unity.com/threads/cant-select-light-probes.716924/#post-5309718</a></p>
-<h3 id="网格剔除" class="heading-element"><span>网格剔除</span>
+<h3 class="heading-element" id="网格剔除"><span>网格剔除</span>
   <a href="#%e7%bd%91%e6%a0%bc%e5%89%94%e9%99%a4" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -417,7 +415,7 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 <p>这几天发现这个想法错了。 只要物体在摄像机的角度内， 就会渲染， 也会接受光照效果， 所以如果地图比较大的话， 就需要一个物体管理的脚本 以优化性能。</p>
 <p>比如 A 是一个很大的物体，B是一个很小的物体， A 挡住了B之后， 笔者原本以为B就不会被渲染了。 <em>渲染指渲染方面的计算， set pass calls, draw calls 等</em></p>
 <p>但是实际上， 只要B出现在摄像机的角度里面， B 的渲染还是会进行计算， 只是不会显示出来。</p>
-<h3 id="烘焙后灯光效果就消失了" class="heading-element"><span>烘焙后灯光效果就消失了</span>
+<h3 class="heading-element" id="烘焙后灯光效果就消失了"><span>烘焙后灯光效果就消失了</span>
   <a href="#%e7%83%98%e7%84%99%e5%90%8e%e7%81%af%e5%85%89%e6%95%88%e6%9e%9c%e5%b0%b1%e6%b6%88%e5%a4%b1%e4%ba%86" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -430,8 +428,7 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
-      <div class="post-info-mod">
-        <span title="更新于 2024-10-04 20:33:31">更新于 2024-10-04&nbsp;</span>
+      <div class="post-info-mod"><span title="更新于 2023-01-08 22:18:51">更新于 2023-01-08&nbsp;</span>
       </div><div class="post-info-license">
             <span>Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
@@ -451,10 +448,9 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 
   <div class="post-info-more">
     <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/unity/" class="post-tag" title="标签 - Unity">Unity</a><a href="/tags/csharp/" class="post-tag" title="标签 - Csharp">Csharp</a></section>
-    <section>
-      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/periphery/gogs-%E6%B7%BB%E5%8A%A0ssh-key-%E4%B9%8B%E5%90%8E%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%84%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95-ssh%E7%BB%88%E7%AB%AF/" class="post-nav-item" rel="prev" title="Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Gogs 添加ssh Key 之后 无法登录到 系统Ssh终端</a><a href="/periphery/vscode-.net-sdk-%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="next" title="Vscode .Net Sdk 找不到的问题 记录">Vscode .Net Sdk 找不到的问题 记录<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
@@ -462,7 +458,7 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.138.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.15"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.150.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.0-alpha.2-20250919092044-50488dfb"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">
               <a href="/">Aincvy</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div></div>
@@ -470,8 +466,7 @@ GameObject name, collider, GameObject layer, 都是地形碰撞体的。<br>
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="preload" href="/lib/katex/katex.min.7fcad90fec5779332198a785f8ffb5af9cdf8d41a6fac42ff420bbb526d9c01b.css" integrity="sha256-f8rZD+xXeTMhmKeF+P+1r5zfjUGm+sQv9CC7tSbZwBs=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.7fcad90fec5779332198a785f8ffb5af9cdf8d41a6fac42ff420bbb526d9c01b.css" integrity="sha256-f8rZD+xXeTMhmKeF+P+1r5zfjUGm+sQv9CC7tSbZwBs="></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.9f45307c5794ed247a0d095f3a62e52ef2215a67b2327203a7fd919959ae79d1.js" integrity="sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=" defer></script><script src="/lib/katex/auto-render.min.7b57d427ac6270677daf8d8380ded2cc73336f9149a167b8e1fe0d6ef66604ae.js" integrity="sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=" defer></script><script src="/lib/katex/copy-tex.min.07770af90943a1de1a1010794bc78c6a7346d46d48fb63e35cc76ba76b827604.js" integrity="sha256-B3cK+QlDod4aEBB5S8eManNG1G1I+2PjXMdrp2uCdgQ=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Aincvy/aincvy.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50},"version":"v0.3.15"};</script><script src="/js/theme.min.ae7e4724d92ddcd99387ab308ff93769f5e1ffa46b7f473559433ac75ed3a132.js" integrity="sha256-rn5HJNkt3NmTh6swj/k3afXh/6Rrf0c1WUM6x17ToTI=" defer></script><script>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8+v6cZD7cF47fSZTlbOK1YO0A="><script src="/lib/autocomplete/autocomplete.min.efcd9994416f8ef0e9904c0ebc34d39ab92f5fe72a60224553434d3a818b25e5.js" integrity="sha256-782ZlEFvjvDpkEwOvDTTmrkvX+cqYCJFU0NNOoGLJeU=" defer></script><script src="/lib/lightgallery/lightgallery.min.fd89888c69a37f6850ff5718231f26bf502310de8489dc5111da0db5d9f51b57.js" integrity="sha256-/YmIjGmjf2hQ/1cYIx8mv1AjEN6EidxREdoNtdn1G1c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.a502d6f402482d60810b3e6965bd06cac0290f5284a79037c90bece078ed29cd.js" integrity="sha256-pQLW9AJILWCBCz5pZb0GysApD1KEp5A3yQvs4HjtKc0=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.d26a9098ce778cc15f30cf87b310bd6850f4d6601b06dbde5205454058b8cbc3.js" integrity="sha256-0mqQmM53jMFfMM+HsxC9aFD01mAbBtveUgVFQFi4y8M=" defer></script><script src="/lib/sharer/sharer.min.120e6e8efffc699bdbb3b51ae482f45d0b9670e4e3032651a29beac9d5692878.js" integrity="sha256-Eg5ujv/8aZvbs7Ua5IL0XQuWcOTjAyZRopvqydVpKHg=" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script src="/program/unity-%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/config.js" defer></script><script src="/js/theme.min.d581cda645498cc0d21f3ab92d1e60eb3298fa9e29d3574813b9dc9b39789d97.js" integrity="sha256-1YHNpkVJjMDSHzq5LR5g6zKY+p4p01dIE7ncmzl4nZc=" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-P74XPSRPG3');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-P74XPSRPG3" async></script></body>

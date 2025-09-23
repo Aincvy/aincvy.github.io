@@ -19,25 +19,25 @@
 先给出几个示例 。
 
 ```java
-// in jdk10&#43; ，低于jdk10的时候， var 换成 String 即可
+// in jdk10+ ，低于jdk10的时候， var 换成 String 即可
 int a = 1, b = 2 ;
-var str1 = String.format(&#34;%d &#43; %d = %d&#34;, a , b , (a &#43; b) );  // 1 &#43; 2 = 3
+var str1 = String.format("%d + %d = %d", a , b , (a + b) );  // 1 + 2 = 3
 
 float f = 1.5678f;
-var str2 = String.format(&#34;f = %f&#34;, f);          // f = 1.5678
-var str3 = String.format(&#34;f = %.2f&#34; , f);       // f = 1.56
+var str2 = String.format("f = %f", f);          // f = 1.5678
+var str3 = String.format("f = %.2f" , f);       // f = 1.56
 
-var tmp1 = &#34;jack&#34; ;
-var str4 = String.format(&#34;hello,%s&#34;,  tmp1);     // hello,jack
+var tmp1 = "jack" ;
+var str4 = String.format("hello,%s",  tmp1);     // hello,jack
 
 var p = new PlayerInfo();
-var str5 = String.format(&#34;a player: %s&#34; , p) ;   // a player: xxxxx
+var str5 = String.format("a player: %s" , p) ;   // a player: xxxxx
 // 此处 p 的内容取决于 以下几个情况
 // 当 p = null 的时候， 输出 null
 // 当 p != null 的时候，  PlayerInfo 实现了 toString() 方法， 则输出 toString() 方法的返回值
 // 			 否则输出 PlayerInfo@xxxx  这种字符串 。 
 
-var str6 = String.format(&#34;a: %d\tb: %d\t%%.2f= %.2f%n&#34;);
+var str6 = String.format("a: %d\tb: %d\t%%.2f= %.2f%n");
 // a: 1    b: 2    %.2f= 1.56
 // \t 表示制表符， 一般是 4个或者8个空格。 %% 表示 一个%  %n 表示换行(\n 或者\r\n  取决于系统)
 ```
@@ -75,19 +75,19 @@ var str6 = String.format(&#34;a: %d\tb: %d\t%%.2f= %.2f%n&#34;);
 ```java
 public class Format {
     public static void main(String[] args) {
-        System.out.format(&#34;%f, %1$&#43;020.10f %n&#34;, Math.PI);
+        System.out.format("%f, %1$+020.10f %n", Math.PI);
     }
 }
 
 // output
-// 3.141593, &#43;00000003.1415926536
+// 3.141593, +00000003.1415926536
 ```
 
-`%1$&#43;020.10f` 这一长段的含义是 。
+`%1$+020.10f` 这一长段的含义是 。
 
 - %  格式开始的符号 ，也可以理解为占位符开始的地方。
-- 1$   参数索引，也可以用 `&lt;` 符号来指定 前一个变量
-- &#43;0   flags
+- 1$   参数索引，也可以用 `<` 符号来指定 前一个变量
+- +0   flags
 - 20    宽度，低于这个宽度自动补0
 - .10   浮点数长度
 - f     转换字符， 代表 浮点数 
@@ -100,13 +100,13 @@ public class Format {
 
 ```java
 Date date = new Date();
-System.out.printf(&#34;%tT%n&#34;, date);     // 13:51:15
+System.out.printf("%tT%n", date);     // 13:51:15
 
-System.out.printf(&#34;hours %tH: minutes %tM: seconds %tS%n&#34;, date, date, date);
+System.out.printf("hours %tH: minutes %tM: seconds %tS%n", date, date, date);
 // hours 13: minutes 51: seconds 15
 
-System.out.printf(&#34;%1$tH:%1$tM:%1$tS %1$tp %1$tL %1$tN %1$tz %n&#34;, date);
-// 13:51:15 pm 061 061000000 &#43;0400
+System.out.printf("%1$tH:%1$tM:%1$tS %1$tp %1$tL %1$tN %1$tz %n", date);
+// 13:51:15 pm 061 061000000 +0400
 ```
 
 详细说明下 `%t` 后面跟的内容
@@ -139,7 +139,7 @@ System.out.printf(&#34;%1$tH:%1$tM:%1$tS %1$tp %1$tL %1$tN %1$tz %n&#34;, date);
 我时候的时候非常简单， 像下面这种方式使用
 
 ```java
-MessageFormat.format(&#34;hello,{0}&#34;, &#34;jack&#34;);   // hello,jack
+MessageFormat.format("hello,{0}", "jack");   // hello,jack
 ```
 
 

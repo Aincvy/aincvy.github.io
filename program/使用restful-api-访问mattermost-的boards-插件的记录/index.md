@@ -13,14 +13,14 @@
 
 ```java 
     private String getCSRFToken(Response response) {
-        List&lt;String&gt; cookies = response.headers(&#34;Set-Cookie&#34;);
+        List<String> cookies = response.headers("Set-Cookie");
         String mmcsrf = null;
         for (String cookie : cookies) {
-            if (cookie.startsWith(&#34;MMCSRF=&#34;)) {
-                // cookie 格式类似于 &#34;MMCSRF=some-real-chars; Path=/; Expires=...&#34;
+            if (cookie.startsWith("MMCSRF=")) {
+                // cookie 格式类似于 "MMCSRF=some-real-chars; Path=/; Expires=..."
                 // 截取等号后面直到遇到分号之前的部分
-                int start = &#34;MMCSRF=&#34;.length();
-                int end = cookie.indexOf(&#39;;&#39;, start);
+                int start = "MMCSRF=".length();
+                int end = cookie.indexOf(';', start);
                 if (end == -1) {
                     end = cookie.length();
                 }
@@ -38,7 +38,7 @@
 **获取board上的全部cards的接口**
 
 ```http
-GET ${MATTERMOST_SERVER_URL}/plugins/focalboard/api/v2/boards/${BOARD_ID}/cards?page=0&amp;per_page=100
+GET ${MATTERMOST_SERVER_URL}/plugins/focalboard/api/v2/boards/${BOARD_ID}/cards?page=0&per_page=100
 Authorization: Bearer ${MATTERMOST_TOKEN}
 X-CSRF-Token: ${CSRF_TOKEN}
 X-Requested-With: XMLHttpRequest
@@ -56,55 +56,55 @@ X-Requested-With: XMLHttpRequest
 ```json
 [
   {
-    &#34;id&#34;: &#34;c71g38nnsd7nrpksfyygdnuuj8e&#34;,
-    &#34;boardId&#34;: &#34;bceibm6eysi8pjj98tp6581phpy&#34;,
-    &#34;createdBy&#34;: &#34;xybegg9i53f4i8gydadyk8neqr&#34;,
-    &#34;modifiedBy&#34;: &#34;xybegg9i53f4i8gydadyk8neqr&#34;,
-    &#34;title&#34;: &#34;每周一篇博客&#34;,
-    &#34;contentOrder&#34;: [],
-    &#34;icon&#34;: &#34;&#34;,
-    &#34;isTemplate&#34;: false,
-    &#34;properties&#34;: {
-      &#34;a969ar3tgfkk8ny5o7gdm4n1gbh&#34;: &#34;{\&#34;from\&#34;:1749405600016}&#34;,
-      &#34;a9whgdeet9fqtrwrn7ap1r6ph3w&#34;: &#34;akb4d3qaz5srqtuq7u1zpnaegwy&#34;
+    "id": "c71g38nnsd7nrpksfyygdnuuj8e",
+    "boardId": "bceibm6eysi8pjj98tp6581phpy",
+    "createdBy": "xybegg9i53f4i8gydadyk8neqr",
+    "modifiedBy": "xybegg9i53f4i8gydadyk8neqr",
+    "title": "每周一篇博客",
+    "contentOrder": [],
+    "icon": "",
+    "isTemplate": false,
+    "properties": {
+      "a969ar3tgfkk8ny5o7gdm4n1gbh": "{\"from\":1749405600016}",
+      "a9whgdeet9fqtrwrn7ap1r6ph3w": "akb4d3qaz5srqtuq7u1zpnaegwy"
     },
-    &#34;createAt&#34;: 1749405610056,
-    &#34;updateAt&#34;: 1749405610056,
-    &#34;deleteAt&#34;: 0
+    "createAt": 1749405610056,
+    "updateAt": 1749405610056,
+    "deleteAt": 0
   },
   {
-    &#34;id&#34;: &#34;c97r7gby6q3g9tfce5qbaqik6kr&#34;,
-    &#34;boardId&#34;: &#34;bceibm6eysi8pjj98tp6581phpy&#34;,
-    &#34;createdBy&#34;: &#34;xybegg9i53f4i8gydadyk8neqr&#34;,
-    &#34;modifiedBy&#34;: &#34;xybegg9i53f4i8gydadyk8neqr&#34;,
-    &#34;title&#34;: &#34;每周一篇博客&#34;,
-    &#34;contentOrder&#34;: [],
-    &#34;icon&#34;: &#34;&#34;,
-    &#34;isTemplate&#34;: false,
-    &#34;properties&#34;: {
-      &#34;a969ar3tgfkk8ny5o7gdm4n1gbh&#34;: &#34;{\&#34;from\&#34;:1750010400014}&#34;,
-      &#34;a9whgdeet9fqtrwrn7ap1r6ph3w&#34;: &#34;akb4d3qaz5srqtuq7u1zpnaegwy&#34;
+    "id": "c97r7gby6q3g9tfce5qbaqik6kr",
+    "boardId": "bceibm6eysi8pjj98tp6581phpy",
+    "createdBy": "xybegg9i53f4i8gydadyk8neqr",
+    "modifiedBy": "xybegg9i53f4i8gydadyk8neqr",
+    "title": "每周一篇博客",
+    "contentOrder": [],
+    "icon": "",
+    "isTemplate": false,
+    "properties": {
+      "a969ar3tgfkk8ny5o7gdm4n1gbh": "{\"from\":1750010400014}",
+      "a9whgdeet9fqtrwrn7ap1r6ph3w": "akb4d3qaz5srqtuq7u1zpnaegwy"
     },
-    &#34;createAt&#34;: 1750010410071,
-    &#34;updateAt&#34;: 1750010410071,
-    &#34;deleteAt&#34;: 0
+    "createAt": 1750010410071,
+    "updateAt": 1750010410071,
+    "deleteAt": 0
   },
   {
-    &#34;id&#34;: &#34;csxx3ej1qeibiipxxjjddxc6f7w&#34;,
-    &#34;boardId&#34;: &#34;bceibm6eysi8pjj98tp6581phpy&#34;,
-    &#34;createdBy&#34;: &#34;xybegg9i53f4i8gydadyk8neqr&#34;,
-    &#34;modifiedBy&#34;: &#34;xybegg9i53f4i8gydadyk8neqr&#34;,
-    &#34;title&#34;: &#34;推进40分钟主要目标&#34;,
-    &#34;contentOrder&#34;: [],
-    &#34;icon&#34;: &#34;&#34;,
-    &#34;isTemplate&#34;: false,
-    &#34;properties&#34;: {
-      &#34;a969ar3tgfkk8ny5o7gdm4n1gbh&#34;: &#34;{\&#34;from\&#34;:1750600200037}&#34;,
-      &#34;a9whgdeet9fqtrwrn7ap1r6ph3w&#34;: &#34;akb4d3qaz5srqtuq7u1zpnaegwy&#34;
+    "id": "csxx3ej1qeibiipxxjjddxc6f7w",
+    "boardId": "bceibm6eysi8pjj98tp6581phpy",
+    "createdBy": "xybegg9i53f4i8gydadyk8neqr",
+    "modifiedBy": "xybegg9i53f4i8gydadyk8neqr",
+    "title": "推进40分钟主要目标",
+    "contentOrder": [],
+    "icon": "",
+    "isTemplate": false,
+    "properties": {
+      "a969ar3tgfkk8ny5o7gdm4n1gbh": "{\"from\":1750600200037}",
+      "a9whgdeet9fqtrwrn7ap1r6ph3w": "akb4d3qaz5srqtuq7u1zpnaegwy"
     },
-    &#34;createAt&#34;: 1750600210040,
-    &#34;updateAt&#34;: 1750600210040,
-    &#34;deleteAt&#34;: 0
+    "createAt": 1750600210040,
+    "updateAt": 1750600210040,
+    "deleteAt": 0
   }
 ]
 ```
@@ -132,11 +132,11 @@ Content-Type: application/json
 *请求体*
 ```json
 {
-    &#34;title&#34;: &#34;create-by-api&#34;,
-    &#34;icon&#34;: &#34;😒&#34;,
-    &#34;isTemplate&#34;: false,
-    &#34;properties&#34;: {
-      &#34;a9whgdeet9fqtrwrn7ap1r6ph3w&#34;: &#34;akb4d3qaz5srqtuq7u1zpnaegwy&#34;
+    "title": "create-by-api",
+    "icon": "😒",
+    "isTemplate": false,
+    "properties": {
+      "a9whgdeet9fqtrwrn7ap1r6ph3w": "akb4d3qaz5srqtuq7u1zpnaegwy"
     }
 }
 ```

@@ -10,8 +10,8 @@ vs code 里面已经设置了正确的 dotnetPath  和 sdkPath ， 但是还是�
 参考的设置内容是： 
 ```json
 {
-    &#34;omnisharp.dotnetPath&#34;: &#34;C:\\Program Files\\dotnet&#34;,
-    &#34;omnisharp.sdkPath&#34;: &#34;C:\\Program Files\\dotnet\\sdk\\7.0.102&#34;
+    "omnisharp.dotnetPath": "C:\\Program Files\\dotnet",
+    "omnisharp.sdkPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102"
 }
 ```
 

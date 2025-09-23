@@ -24,11 +24,11 @@
 | float    | Float    | 4 bytes / 16 bytes           |
 | double   | Double   | 8 bytes / 16 bytes           |
 
-&gt; 1 byte 是一个字节 
-&gt;
-&gt; 1 byte = 8 bit
-&gt;
-&gt; 1 KB = 1024 byte
+> 1 byte 是一个字节 
+>
+> 1 byte = 8 bit
+>
+> 1 KB = 1024 byte
 
 由表中的数据可知， 装箱类型的内存占用比私有类型大很多， 因为 装箱类型都是 `java class` 。每个对象都需要存储类信息。 
 
@@ -54,7 +54,7 @@
 使用 `valueOf()` 方法， 避免使用 `new` 关键字。  因为装箱类型在JVM 里面会有缓存，所以这样做会有效的减少内存的占用。
 
 ```java
-var num1 = new Integer(10);      // in jdk13, 你会看到 &#39;Integer(int)&#39; is deprecated  这样的说明， 并且会建议你 使用 valueOf(x) 方法
+var num1 = new Integer(10);      // in jdk13, 你会看到 'Integer(int)' is deprecated  这样的说明， 并且会建议你 使用 valueOf(x) 方法
 var num2 = new Integer(10);     
 var num3 = new Integer(10); 
 // 此时会有 3个 Integer 的对象。  占用 差不多 3 x 8 = 24 个字节。
@@ -65,7 +65,7 @@ var num13 = Integer.valueOf(10);
 // 此时 num11,num12,num13   都是使用的同一个缓存的对象。 占用 1 x 8 = 8 个字节
 ```
 
-默认情况下， JVM 会缓存 -128 ~ &#43;127 这个数字范围的 Integer 对象。
+默认情况下， JVM 会缓存 -128 ~ +127 这个数字范围的 Integer 对象。
 
 
 
@@ -77,7 +77,7 @@ var num13 = Integer.valueOf(10);
 var num1 = 1f;
 var num2 = 0.99f;
 var num3 = num1 - num2;
-System.out.println(&#34;num3: &#34; &#43; num3);        // num3: 0.00999999
+System.out.println("num3: " + num3);        // num3: 0.00999999
 ```
 
 在上面的代码里面 , num3应该等于`0.001` 才对， 但是实际上输出的结果并不是。

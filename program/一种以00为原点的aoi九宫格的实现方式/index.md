@@ -36,7 +36,7 @@ class HelloWorld {
     
     public static void a(float x) {
         int offset = 15000;
-        System.out.println((int)((x &#43; offset) / 15));
+        System.out.println((int)((x + offset) / 15));
     }
     
     public static void b(float x) {
@@ -69,7 +69,7 @@ class HelloWorld {
 
     public static int c(float x) {
         float gridBorder = 15;
-        if (x &gt;= 0) x &#43;= gridBorder;
+        if (x >= 0) x += gridBorder;
         else x -= gridBorder;
         return (int)((x) / 15);
     }
@@ -93,7 +93,7 @@ class HelloWorld {
 
 class AOIManager {
     // 行， 列， 格子
-    com.google.common.collect.Table&lt;Integer, Integer, AOIGrid&gt; gridTable;
+    com.google.common.collect.Table<Integer, Integer, AOIGrid> gridTable;
 }
 
 @Data
@@ -114,9 +114,9 @@ class AOIGrid {
      * @param b    偏移量
      */
     public static int addAndPassZero(int a, int b) {
-        int x = a &#43; b;
-        if(x == 0 || (a ^ x) &lt; 0) {
-            return b &gt;= 0 ? x &#43; 1 : x - 1;
+        int x = a + b;
+        if(x == 0 || (a ^ x) < 0) {
+            return b >= 0 ? x + 1 : x - 1;
         } 
         return x;
     }

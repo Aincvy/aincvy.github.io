@@ -4,11 +4,11 @@
     <title>Wireguard - 标签 - Fanstasy Player / 幻想系玩家</title>
     <link>https://fantasyplayer.link/tags/wireguard/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
-    <generator>Hugo 0.138.0 &amp; FixIt v0.3.15</generator>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.4.0-alpha.2-20250919092044-50488dfb</generator>
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Wed, 06 Aug 2025 21:48:14 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Aug 2025 22:08:16 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/wireguard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows实现wireguard自动重连</title>

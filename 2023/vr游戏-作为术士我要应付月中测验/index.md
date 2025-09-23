@@ -35,10 +35,10 @@
 
 
 B站宣传片： 
-{{&lt; bilibili BV14M4y1b7qQ &gt;}}
+{{< bilibili BV14M4y1b7qQ >}}
 
 
-B站流程视频：[点击观看](https://www.bilibili.com/list/27285915?sid=3268591&amp;spm_id_from=333.999.0.0&amp;desc=1&amp;oid=910761401&amp;bvid=BV1GM4y1b7Qh)
+B站流程视频：[点击观看](https://www.bilibili.com/list/27285915?sid=3268591&spm_id_from=333.999.0.0&desc=1&oid=910761401&bvid=BV1GM4y1b7Qh)
 
 
 
@@ -55,7 +55,7 @@ B站流程视频：[点击观看](https://www.bilibili.com/list/27285915?sid=326
 美术资源， 包括模型， 贴图， 动画，粒子特效都是从 unity asset store 上购买的。   
 其中部分资源 经过了笔者的手动修改。
 
-[详细的技术细节]({{&lt; ref &#34;../periphery/作为术士，我要应付月中测验 - 技术细节&#34; &gt;}})
+[详细的技术细节]({{< ref "../periphery/作为术士，我要应付月中测验 - 技术细节" >}})
 
 ### 未来规划
 

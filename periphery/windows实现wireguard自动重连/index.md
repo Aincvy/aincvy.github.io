@@ -11,10 +11,10 @@
 # PingMonitor.ps1
 # Requires -Version 3.0
 # 目标 IP 与要重启的服务名
-$target      = &#39;192.168.1.1&#39;
-$svcToRestart= &#39;WireGuardTunnel$home-wg&#39;
+$target      = '192.168.1.1'
+$svcToRestart= 'WireGuardTunnel$home-wg'
 # 上次重启时间初始化为一个很久以前的时间
-$lastRestart = Get-Date &#39;1970-01-01&#39;
+$lastRestart = Get-Date '1970-01-01'
 $minInterval = [TimeSpan]::FromSeconds(30)
 
 while ($true) {
@@ -26,9 +26,9 @@ while ($true) {
             # 重启服务
             try {
                 Restart-Service -Name $svcToRestart -Force -ErrorAction Stop
-                Write-Output &#34;$($now): 无法 ping 通 $target，已重启服务 $svcToRestart&#34;
+                Write-Output "$($now): 无法 ping 通 $target，已重启服务 $svcToRestart"
             } catch {
-                Write-Output &#34;$($now): 重启服务 $svcToRestart 失败：$_&#34;
+                Write-Output "$($now): 重启服务 $svcToRestart 失败：$_"
             }
             $lastRestart = $now
         }
@@ -53,17 +53,17 @@ while ($true) {
 
 
 ```xml
-&lt;service&gt;
-  &lt;id&gt;WireGuardHomeTunnelMonitor&lt;/id&gt;
-  &lt;name&gt;WireGuard Home Tunnel Monitor&lt;/name&gt;
-  &lt;description&gt;监控 192.168.1.1，可用性检查失败则重启 WireGuardTunnel$home-wg&lt;/description&gt;
-  &lt;executable&gt;C:\Program Files\PowerShell\7\pwsh.exe&lt;/executable&gt;
-  &lt;arguments&gt;-NoProfile -ExecutionPolicy Bypass -File &#34;D:\Documents\PingMonitor.ps1&#34;&lt;/arguments&gt;
-  &lt;startmode&gt;Automatic&lt;/startmode&gt;
-  &lt;stoptimeout&gt;15sec&lt;/stoptimeout&gt;
-  &lt;logpath&gt;D:\Documents\logs&lt;/logpath&gt;
-  &lt;logmode&gt;rotate&lt;/logmode&gt;
-&lt;/service&gt;
+<service>
+  <id>WireGuardHomeTunnelMonitor</id>
+  <name>WireGuard Home Tunnel Monitor</name>
+  <description>监控 192.168.1.1，可用性检查失败则重启 WireGuardTunnel$home-wg</description>
+  <executable>C:\Program Files\PowerShell\7\pwsh.exe</executable>
+  <arguments>-NoProfile -ExecutionPolicy Bypass -File "D:\Documents\PingMonitor.ps1"</arguments>
+  <startmode>Automatic</startmode>
+  <stoptimeout>15sec</stoptimeout>
+  <logpath>D:\Documents\logs</logpath>
+  <logmode>rotate</logmode>
+</service>
 ```
 
 将上面得脚本保存一下， 比如到`D:\WireGuardHomeTunnelMonitor.xml` ， 

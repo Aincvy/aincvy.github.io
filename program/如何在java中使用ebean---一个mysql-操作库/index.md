@@ -23,39 +23,39 @@
 
 Maven 依赖库： 
 ```xml
-        &lt;!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;jakarta.persistence&lt;/groupId&gt;
-            &lt;artifactId&gt;jakarta.persistence-api&lt;/artifactId&gt;
-            &lt;version&gt;${jakarta.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>${jakarta.version}</version>
+        </dependency>
 
-        &lt;!-- https://mvnrepository.com/artifact/io.ebean/ebean --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;io.ebean&lt;/groupId&gt;
-            &lt;artifactId&gt;ebean-core&lt;/artifactId&gt;
-            &lt;version&gt;${ebean.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <!-- https://mvnrepository.com/artifact/io.ebean/ebean -->
+        <dependency>
+            <groupId>io.ebean</groupId>
+            <artifactId>ebean-core</artifactId>
+            <version>${ebean.version}</version>
+        </dependency>
 
-        &lt;!-- https://mvnrepository.com/artifact/io.ebean/ebean-platform-mysql --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;io.ebean&lt;/groupId&gt;
-            &lt;artifactId&gt;ebean-platform-mysql&lt;/artifactId&gt;
-            &lt;version&gt;${ebean.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <!-- https://mvnrepository.com/artifact/io.ebean/ebean-platform-mysql -->
+        <dependency>
+            <groupId>io.ebean</groupId>
+            <artifactId>ebean-platform-mysql</artifactId>
+            <version>${ebean.version}</version>
+        </dependency>
 
-        &lt;!-- https://mvnrepository.com/artifact/io.ebean/ebean-querybean --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;io.ebean&lt;/groupId&gt;
-            &lt;artifactId&gt;ebean-querybean&lt;/artifactId&gt;
-            &lt;version&gt;${ebean.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <!-- https://mvnrepository.com/artifact/io.ebean/ebean-querybean -->
+        <dependency>
+            <groupId>io.ebean</groupId>
+            <artifactId>ebean-querybean</artifactId>
+            <version>${ebean.version}</version>
+        </dependency>
 
-        &lt;dependency&gt;
-            &lt;groupId&gt;io.ebean&lt;/groupId&gt;
-            &lt;artifactId&gt;ebean-agent&lt;/artifactId&gt;
-            &lt;version&gt;${ebean.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <dependency>
+            <groupId>io.ebean</groupId>
+            <artifactId>ebean-agent</artifactId>
+            <version>${ebean.version}</version>
+        </dependency>
 ```
 
 - `ebean.version` 变量用于指定ebean的版本， 示例值为： `15.1.0`   
@@ -67,44 +67,44 @@ Maven 依赖库：
 
 Maven 插件： 
 ```xml
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-                &lt;configuration&gt;
-                    &lt;annotationProcessorPaths&gt;
-                        &lt;path&gt;
-                            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-                            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
-                            &lt;version&gt;${lombok.version}&lt;/version&gt;
-                        &lt;/path&gt;
-                        &lt;path&gt;
-                            &lt;!-- generate ebean query beans --&gt;
-                            &lt;groupId&gt;io.ebean&lt;/groupId&gt;
-                            &lt;artifactId&gt;querybean-generator&lt;/artifactId&gt;
-                            &lt;version&gt;${ebean.version}&lt;/version&gt;
-                        &lt;/path&gt;
-                    &lt;/annotationProcessorPaths&gt;
-                &lt;/configuration&gt;
-            &lt;/plugin&gt;
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <!-- generate ebean query beans -->
+                            <groupId>io.ebean</groupId>
+                            <artifactId>querybean-generator</artifactId>
+                            <version>${ebean.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
 
-            &lt;?m2e execute onConfiguration,onIncremental?&gt;
-            &lt;plugin&gt;
-                &lt;!-- perform ebean enhancement --&gt;
-                &lt;groupId&gt;io.ebean&lt;/groupId&gt;
-                &lt;artifactId&gt;ebean-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;${ebean.version}&lt;/version&gt;
-                &lt;extensions&gt;true&lt;/extensions&gt;
-                &lt;executions&gt;
-                &lt;execution&gt;
-                    &lt;?m2e execute onConfiguration,onIncremental?&gt;
-                        &lt;id&gt;enhance&lt;/id&gt;
-                        &lt;phase&gt;process-classes&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;enhance&lt;/goal&gt;
-                        &lt;/goals&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;
+            <?m2e execute onConfiguration,onIncremental?>
+            <plugin>
+                <!-- perform ebean enhancement -->
+                <groupId>io.ebean</groupId>
+                <artifactId>ebean-maven-plugin</artifactId>
+                <version>${ebean.version}</version>
+                <extensions>true</extensions>
+                <executions>
+                <execution>
+                    <?m2e execute onConfiguration,onIncremental?>
+                        <id>enhance</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>enhance</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 ```
 
 - 如果项目中没有使用lombok, 则可以去掉相关的部分。   
@@ -157,9 +157,9 @@ public class Test {
     public void setup() {
         // datasource
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setUsername(&#34;root&#34;);
-        dataSourceConfig.setPassword(&#34;123456&#34;);
-        dataSourceConfig.setUrl(&#34;jdbc:mysql://localhost:3306/mydb&#34;);
+        dataSourceConfig.setUsername("root");
+        dataSourceConfig.setPassword("123456");
+        dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/mydb");
 
 
         // configuration ...
@@ -181,7 +181,7 @@ public class Test {
     }
 
     public void testUpdate(){
-        List&lt;Order&gt; orders = new QOrder().goodsId.equalTo(15001).findList();
+        List<Order> orders = new QOrder().goodsId.equalTo(15001).findList();
 
         for( Order o : orders) {
             if(o.getStatus() == 0) {
@@ -206,7 +206,7 @@ public class Test {
   - 编辑器插件在打包之后的运行是不需要的。
 - 手动添加jvm参数的话， 需要先将 `ebean-agent` 的jar 复制到项目路径， 随后在启动配置中添加jvm 参数 `-javaagent:${ebean-agent-jar-path}` 即可。
   - `ebean-agent` 的jar文件可以在 本地的.m2 目录里面找到。 路径应该是 `XXXXX/.m2/io/ebean/ebean-agent/xxx.jar` 
-  - vs code 添加jvm参数需要修改 `launch.json` 配置文件，添加内容： `&#34;vmArgs&#34;: &#34;-javaagent:${ebean-agent-jar-path}&#34;` 
+  - vs code 添加jvm参数需要修改 `launch.json` 配置文件，添加内容： `"vmArgs": "-javaagent:${ebean-agent-jar-path}"` 
   - idea 需要在 `VM options` 那一栏里添加， 新版本这个选项默认隐藏了， 需要打开一下。 
 
 

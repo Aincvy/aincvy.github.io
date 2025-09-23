@@ -5,7 +5,7 @@
 
 ## 简略
 
-个人邮箱 &gt;  📧aincvy@gmail.com
+个人邮箱 >  📧aincvy@gmail.com
 
 
 ## 计划
@@ -32,6 +32,6 @@ All of the fantasy is reasonable, but unnecessary.
 
 ---
 
-> 作者:   
+> 作者: Aincvy  
 > URL: https://fantasyplayer.link/about/  
 

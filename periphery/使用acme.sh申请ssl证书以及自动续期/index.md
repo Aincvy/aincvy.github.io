@@ -20,8 +20,8 @@ services:
     tty: true
     restart: always
     environment:
-      - Ali_Key=&lt;YOUR_ALIYUN_KEY&gt;
-      - Ali_Secret=&lt;YOUR_ALIYUN_SECRET&gt;
+      - Ali_Key=<YOUR_ALIYUN_KEY>
+      - Ali_Secret=<YOUR_ALIYUN_SECRET>
       - DEPLOY_DOCKER_CONTAINER_LABEL=sh.acme.autoload.domain=aincvy.com
       - DEPLOY_DOCKER_CONTAINER_RELOAD_CMD=nginx -s reload
 ```
@@ -33,23 +33,23 @@ services:
 
 下面是 nginx 的 docker-compose 配置文件
 ```yaml
-version: &#39;3.1&#39;
+version: '3.1'
 
 services:
     web:
-      image: &#39;nginx:1.25&#39;
+      image: 'nginx:1.25'
       restart: always
       container_name: nginx
       environment:
         TZ: Asia/Shanghai
       ports:
-        - &#39;80:80&#39;
-        - &#39;443:443&#39;
+        - '80:80'
+        - '443:443'
       volumes:
-        - &#39;./data/etc:/etc/nginx&#39;
-        - &#39;./data/html:/usr/share/nginx/html&#39;
-        - &#39;./data/mkcerts:/root/cert&#39;
-        - &#39;./data/root-certs:/root/.local/share/mkcert&#39;
+        - './data/etc:/etc/nginx'
+        - './data/html:/usr/share/nginx/html'
+        - './data/mkcerts:/root/cert'
+        - './data/root-certs:/root/.local/share/mkcert'
       labels:
         - sh.acme.autoload.domain=aincvy.com
 ```

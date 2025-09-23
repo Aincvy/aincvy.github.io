@@ -16,9 +16,9 @@
   cd somewhere
   git clone https://github.com/searxng/searxng-docker.git
   cd searxng-docker
-&lt;!-- - ```  --&gt;
+<!-- - ```  -->
 - 修改 `.env`文件， 将SEARXNG_HOSTNAME 修改成主机名， 如果是自用的话或者是使用HTTP的话， 就不需要设置 LETSENCRYPT_EMAIL
-- 使用命令 `sed -i &#34;s|ultrasecretkey|$(openssl rand -hex 32)|g&#34; searxng/settings.yml` 生成 密钥
+- 使用命令 `sed -i "s|ultrasecretkey|$(openssl rand -hex 32)|g" searxng/settings.yml` 生成 密钥
 - 使用`chmod -R 777 searxng` 修改文件夹的权限；  这一步是可选的， 如果启动容器之后发现没权限， 再执行这一步也可以。
 - 修改 `searxng/settings.yml` 配置文件，  全部配置项可见： https://github.com/searxng/searxng/blob/master/searx/settings.yml
 - 当读者需要使用代理服务器的时候， 可以按照如下方式设置： 
@@ -33,9 +33,9 @@
       all://:
         - http://hostname_or_ip:port
 
-&lt;!-- ``` --&gt;
+<!-- ``` -->
 - 如果不需要使用 LetsEncrypt  服务的话， 就把 `docker-compose.yaml` 文件里面的 caddy 部分都删除了。 
-- 修改 docker compose 配置文件， 将 `- &#34;127.0.0.1:8080:8080&#34;`  修改成 `- &#34;8080:8080&#34;`， 除非读者是在本机进行服务搭建的。
+- 修改 docker compose 配置文件， 将 `- "127.0.0.1:8080:8080"`  修改成 `- "8080:8080"`， 除非读者是在本机进行服务搭建的。
 - 使用 `docker compose up` 运行容器，随后看看有没有问题。 如果有Timeout 的报错， 有时候也是正常的。  但是如果提示 `Permission Denied`  之类的， 则是启动失败了。 
 - 配置 nginx 反代
 ```conf
@@ -61,12 +61,12 @@
 
         # include /etc/nginx/options-ssl-nginx.conf;
 
-        add_header          X-Xss-Protection            &#34;1; mode=block&#34; always;
-        add_header          X-Content-Type-Options      &#34;nosniff&#34; always;
-        add_header          Strict-Transport-Security   &#34;max-age=15552000; preload&#34; always;
-        add_header          X-Frame-Options             &#34;SAMEORIGIN&#34; always;
-        add_header          &#39;Referrer-Policy&#39;           &#39;origin-when-cross-origin&#39;;
-        add_header          X-XSS-Protection            &#34;1; mode=block&#34; always;
+        add_header          X-Xss-Protection            "1; mode=block" always;
+        add_header          X-Content-Type-Options      "nosniff" always;
+        add_header          Strict-Transport-Security   "max-age=15552000; preload" always;
+        add_header          X-Frame-Options             "SAMEORIGIN" always;
+        add_header          'Referrer-Policy'           'origin-when-cross-origin';
+        add_header          X-XSS-Protection            "1; mode=block" always;
 
         proxy_hide_header   X-Powered-By;
         proxy_buffering     off;
@@ -81,7 +81,7 @@
             proxy_pass         http://192.168.200.101:18090/;
             proxy_http_version 1.1;
             proxy_set_header   Upgrade $http_upgrade;
-            proxy_set_header   Connection &#34;upgrade&#34;;
+            proxy_set_header   Connection "upgrade";
         }
     }
 ```

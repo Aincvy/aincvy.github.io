@@ -6,7 +6,7 @@
 ```cpp
 void uiChangeGraph(std::string_view path) {
   char tmp[FILENAME_BUF_SIZE]{ 0 };
-  auto t = currentProject()-&gt;openGraph(path, tmp);
+  auto t = currentProject()->openGraph(path, tmp);
 }
 
 SightNodeGraph* Project::openGraph(std::string_view path, char* pathWithoutExtOut) {
@@ -14,12 +14,12 @@ SightNodeGraph* Project::openGraph(std::string_view path, char* pathWithoutExtOu
   std::filesystem::path temp(targetPath);
   if (temp.has_extension()) {
     std::string ext = temp.extension().generic_string();
-    if (ext == &#34;.json&#34; || ext == &#34;.yaml&#34;) {
-      targetPath = std::string(targetPath, 0, targetPath.rfind(&#39;.&#39;));
+    if (ext == ".json" || ext == ".yaml") {
+      targetPath = std::string(targetPath, 0, targetPath.rfind('.'));
     }
   }
   if (pathWithoutExtOut) {
-    sprintf(pathWithoutExtOut, &#34;%s&#34;, targetPath.c_str());
+    sprintf(pathWithoutExtOut, "%s", targetPath.c_str());
   }
   return currentGraph();
 }

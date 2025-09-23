@@ -1,4 +1,4 @@
-#  Code Server &#43; Jdk17 的docker 镜像
+#  Code Server + Jdk17 的docker 镜像
 
 
 ## 基本内容
@@ -17,16 +17,16 @@ ADD OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz /opt/
 ADD apache-maven-3.9.2-bin.tar.gz /opt/
 
 
-ENV JAVA_HOME /opt/jdk-17.0.7&#43;7
+ENV JAVA_HOME /opt/jdk-17.0.7+7
 ENV MAVEN_HOME /opt/apache-maven-3.9.2
-ENV PATH=&#34;${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin&#34;
+ENV PATH="${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
 
 EXPOSE 8080/tcp
 USER 1000
 
 ENV USER=coder
 WORKDIR /home/coder
-ENTRYPOINT [&#34;/usr/bin/entrypoint.sh&#34;, &#34;--bind-addr&#34;, &#34;0.0.0.0:8080&#34;, &#34;.&#34;]
+ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
 ```
 
 先从 https://adoptium.net/zh-CN/temurin/releases/   下载jdk文件   
@@ -42,10 +42,10 @@ ENTRYPOINT [&#34;/usr/bin/entrypoint.sh&#34;, &#34;--bind-addr&#34;, &#34;0.0.0.
 
 成功安装了 Language Support for Java(TM) by Red Hat 插件之后， 在vs code 的 `settings.json` 文件里面添加内容
 ```json
-&#34;java.configuration.runtimes&#34;: [
+"java.configuration.runtimes": [
         {
-            &#34;name&#34;: &#34;JavaSE-17&#34;,
-            &#34;path&#34;: &#34;/opt/jdk-17.0.7&#43;7&#34;
+            "name": "JavaSE-17",
+            "path": "/opt/jdk-17.0.7+7"
         }
     ],
 ```
@@ -77,18 +77,18 @@ ENTRYPOINT [&#34;/usr/bin/entrypoint.sh&#34;, &#34;--bind-addr&#34;, &#34;0.0.0.
 
 ### 使用 docker compose 运行java 程序
 ```yaml
-version: &#39;3.1&#39;
+version: '3.1'
 
 services:
     myApp:
-      image: &#39;eclipse-temurin:17-jre-alpine&#39;
+      image: 'eclipse-temurin:17-jre-alpine'
       restart: always
       container_name: myApp
       working_dir: /home
       environment:
         TZ: Asia/Shanghai
       volumes:
-        - &#39;./data:/home&#39;
+        - './data:/home'
       command: java -jar my-app.jar
 ```
 目录结构如下： 
@@ -111,5 +111,5 @@ services:
 ---
 
 > 作者: Aincvy  
-> URL: https://fantasyplayer.link/periphery/-code-server-&#43;-jdk17-%E7%9A%84docker-%E9%95%9C%E5%83%8F/  
+> URL: https://fantasyplayer.link/periphery/-code-server-+-jdk17-%E7%9A%84docker-%E9%95%9C%E5%83%8F/  
 

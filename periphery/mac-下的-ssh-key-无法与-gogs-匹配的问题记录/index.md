@@ -46,7 +46,7 @@ Host debian.mylab
 
 ### 参考阅读
 
-- [关于在docker中的gitlab添加ssh-key后无法推送的问题]({{&lt; ref &#34;关于在docker中的gitlab,添加ssh key后无法推送的问题&#34; &gt;}})
+- [关于在docker中的gitlab添加ssh-key后无法推送的问题]({{< ref "关于在docker中的gitlab,添加ssh key后无法推送的问题" >}})
 
 
 ---

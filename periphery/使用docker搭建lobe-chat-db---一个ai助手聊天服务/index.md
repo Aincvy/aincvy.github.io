@@ -38,7 +38,7 @@ lobe-chat 有2个版本， 一个是单用户版本， 使用一个固定code访
   - 使用 nginx 反代 logto 的服务
     - 将证书复制 nginx 能访问到的目录里面， 使用下面的nginx 配置来配置反代
   - 修改 docker-compose.yaml 文件
-    - 修改 `lobe` 的环境变量： `- &#39;LOGTO_ISSUER=https://auth.logto.mylab/oidc&#39;`
+    - 修改 `lobe` 的环境变量： `- 'LOGTO_ISSUER=https://auth.logto.mylab/oidc'`
     - 将 mkcert 生成的 rootCA.pem 复制到 可访问的地方， 然后映射到容器里面
     - 设置node.js 的环境变量， 使CA证书生效，  node.js 有自己的信任机制， 它不信任linux系统的证书列表。 
   - 注意： 这里没有代理 管理页面的端口3002， 所以如果需要访问管理页面的话， 还是需要使用上面的那种端口转发的形式。 
@@ -68,7 +68,7 @@ lobe-chat 有2个版本， 一个是单用户版本， 使用一个固定code访
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection &#34;upgrade&#34;;
+            proxy_set_header Connection "upgrade";
             proxy_pass http://NAS的IP:3001; 
             proxy_read_timeout 90;
             proxy_redirect http://NAS的IP:3001 https://auth.logto.mylab; 
@@ -85,12 +85,12 @@ lobe-chat 有2个版本， 一个是单用户版本， 使用一个固定code访
     container_name: lobe-database
     # 其他的选项省略了
     volumes:
-      - &#39;./root_certs/rootCA.pem:/usr/local/share/ca-certificates/mkcertRootCA.crt&#39;
+      - './root_certs/rootCA.pem:/usr/local/share/ca-certificates/mkcertRootCA.crt'
     environment:
-      - &#39;LOGTO_ISSUER=https://auth.logto.mylab/oidc&#39;
-      - &#39;S3_ENDPOINT=http://NAS的IP:${MINIO_PORT}&#39;
-      - &#39;S3_PUBLIC_DOMAIN=http://NAS的IP:${MINIO_PORT}&#39;
-      - &#39;NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/mkcertRootCA.crt&#39;
+      - 'LOGTO_ISSUER=https://auth.logto.mylab/oidc'
+      - 'S3_ENDPOINT=http://NAS的IP:${MINIO_PORT}'
+      - 'S3_PUBLIC_DOMAIN=http://NAS的IP:${MINIO_PORT}'
+      - 'NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/mkcertRootCA.crt'
       # 其他的省略了
 ```
 

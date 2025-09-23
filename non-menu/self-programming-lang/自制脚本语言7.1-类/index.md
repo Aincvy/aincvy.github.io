@@ -21,25 +21,25 @@ Student {
   name;
   age = 10 ;
 
-  Student =&gt; (name,age){
+  Student => (name,age){
     this.name = name;
     this.age = age;
-    printInfo(&#34;in ctor.&#34;);
+    printInfo("in ctor.");
   }
 
-  a =&gt; { print(&#34;hello,a!\n&#34;);}
+  a => { print("hello,a!\n");}
 
-  printInfo =&gt; (a3){ print(&#34;name: &#34; &#43; name &#43; &#34;\n&#34;);  print(&#34;age: &#34; &#43; age &#43; &#34;\n&#34; ); print(&#34;a3: &#34; &#43; a3 &#43; &#34;\n&#34;);}
+  printInfo => (a3){ print("name: " + name + "\n");  print("age: " + age + "\n" ); print("a3: " + a3 + "\n");}
 
 }
 
 // 声明一个对象
-s2 = new Student(&#34;hideDragon&#34;,20);
+s2 = new Student("hideDragon",20);
 b = s2.age;
 c = s2.name;
-print(&#34;b: &#34; &#43; b &#43; &#34;\n&#34;);
-print(&#34;c: &#34; &#43; c &#43; &#34;\n&#34;);
-print(&#34;s2.age: &#34; &#43; s2.age &#43; &#34;\n&#34;);
+print("b: " + b + "\n");
+print("c: " + c + "\n");
+print("s2.age: " + s2.age + "\n");
 ```
 
 在 langX 里， 笔者使用`类名 { 字段列表 和 函数列表 }` 的形式来声明一个类。  读者可以设计自己喜欢的语法。 

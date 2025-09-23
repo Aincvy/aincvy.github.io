@@ -14,16 +14,16 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(apiAuthInterceptor)
-                .addPathPatterns(&#34;/**&#34;)
+                .addPathPatterns("/**")
                 .excludePathPatterns(ApiAuthInterceptor.IGNORE_URI_SET.toArray(new String[0]));
     }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping(&#34;/**&#34;)
-                .allowedOrigins(&#34;*&#34;)
-                .allowedMethods(&#34;GET&#34;, &#34;POST&#34;, &#34;PUT&#34;, &#34;DELETE&#34;)
-                .allowedHeaders(&#34;*&#34;)
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("*")
                 .maxAge(3600);
     }
 }
@@ -38,7 +38,7 @@ public class WebConfig implements WebMvcConfigurer {
 ```java
 	private void writeCode401(HttpServletResponse response) throws Exception {
 
-        response.addHeader(&#34;Content-Type&#34;, &#34;application/json&#34;);
+        response.addHeader("Content-Type", "application/json");
 
         response.getWriter().write(code401Json);
 
