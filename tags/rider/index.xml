@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rider - 标签 - Fanstasy Player / 幻想系玩家</title>
+    <title>Rider - 标签</title>
     <link>https://fantasyplayer.link/tags/rider/</link>
     <description>个人博客， 技术博客， 思想分享，开发日志。</description>
-    <generator>Hugo 0.150.0 &amp; FixIt v0.4.0-alpha.2-20250919092044-50488dfb</generator>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.4.0-alpha.2-20251114075837-113ad247</generator>
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
