@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fantasyplayer.link/tags/ebean/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/java/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/mysql/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/program/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/program/%E5%A6%82%E4%BD%95%E8%AE%A9ebean%E5%A4%84%E7%90%86%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E6%88%90json/</loc>
+    <lastmod>2025-12-20T10:41:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://fantasyplayer.link/categories/book/</loc>
     <lastmod>2025-09-23T10:08:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -19,19 +61,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2025-09-23T10:08:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://fantasyplayer.link/posts/</loc>
-    <lastmod>2025-09-23T10:08:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/</loc>
     <lastmod>2025-09-23T10:08:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -122,18 +152,6 @@
   </url>
   <url>
     <loc>https://fantasyplayer.link/program/@transactionaleventlistener-%E8%B0%83%E7%94%A8%E5%88%AB%E5%BE%97service%E4%BA%8B%E5%8A%A1%E4%B8%8D%E4%BF%9D%E5%AD%98%E5%BE%97%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2025-07-22T21:59:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/java/</loc>
-    <lastmod>2025-07-22T21:59:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/program/</loc>
     <lastmod>2025-07-22T21:59:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -459,12 +477,6 @@
   <url>
     <loc>https://fantasyplayer.link/program/%E4%B8%80%E7%A7%8D%E4%BB%A500%E4%B8%BA%E5%8E%9F%E7%82%B9%E7%9A%84aoi%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</loc>
     <lastmod>2024-06-10T10:14:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/mysql/</loc>
-    <lastmod>2024-06-02T17:33:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

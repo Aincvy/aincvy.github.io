@@ -8,8 +8,29 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Tue, 23 Sep 2025 10:08:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Dec 2025 10:41:27 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ebean</title>
+      <link>https://fantasyplayer.link/tags/ebean/</link>
+      <pubDate>Sat, 20 Dec 2025 10:41:27 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/ebean/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://fantasyplayer.link/tags/java/</link>
+      <pubDate>Sat, 20 Dec 2025 10:41:27 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>https://fantasyplayer.link/tags/mysql/</link>
+      <pubDate>Sat, 20 Dec 2025 10:41:27 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/tags/mysql/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Book</title>
       <link>https://fantasyplayer.link/tags/book/</link>
@@ -64,13 +85,6 @@
       <link>https://fantasyplayer.link/tags/%E7%94%9F%E6%B4%BB/</link>
       <pubDate>Wed, 30 Jul 2025 22:00:53 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/%E7%94%9F%E6%B4%BB/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>https://fantasyplayer.link/tags/java/</link>
-      <pubDate>Tue, 22 Jul 2025 21:59:28 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/java/</guid>
       <description></description>
     </item>
     <item>
@@ -197,13 +211,6 @@
       <link>https://fantasyplayer.link/tags/searxng/</link>
       <pubDate>Sun, 30 Jun 2024 14:37:07 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
       <guid>https://fantasyplayer.link/tags/searxng/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mysql</title>
-      <link>https://fantasyplayer.link/tags/mysql/</link>
-      <pubDate>Sun, 02 Jun 2024 17:33:49 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
-      <guid>https://fantasyplayer.link/tags/mysql/</guid>
       <description></description>
     </item>
     <item>
