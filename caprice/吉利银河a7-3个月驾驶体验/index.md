@@ -58,6 +58,9 @@
 ![IMG_0276_preview](/img/caprice/car/IMG_0276_preview.jpeg)
 ![IMG_0274_preview](/img/caprice/car/IMG_0274_preview.jpeg)
 
+### 其他
+
+买车的时候有个区补 3000块 （ 1000现金 + 2000优惠券）  说是半年到账， 笔者还在等。 
 
 ---
 
