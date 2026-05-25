@@ -133,7 +133,14 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Aincvy</span></span></div><div class="post-meta-line"><span title="发布于 2025-09-02 21:31:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-09-02">2025-09-02</time></span>&nbsp;<span title="398 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Mattermost中文搜索不生效的问题处理"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
-    </div><div class="content" id="content"><p>原因是pgsql 默认不支持 中文分词搜索，所以调整一下数据库就可以了<br>
+    </div><div class="content" id="content"><div class="expiration-reminder details admonition note open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2025-09-02，文中内容可能已过时。</div>
+      </div>
+    </div><p>原因是pgsql 默认不支持 中文分词搜索，所以调整一下数据库就可以了<br>
 官方文档可见：  <a href="https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html"target="_blank" rel="external nofollow noopener noreferrer">https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html</a></p>
 <ul>
 <li>手动编译数据库插件然后启动太麻烦了，所以笔者直接使用的别人build好的镜像： <code>abcfy2/zhparser:13-alpine</code>
