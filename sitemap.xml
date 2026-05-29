@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fantasyplayer.link/tags/docker/</loc>
+    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/</loc>
+    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/jellyfin/</loc>
+    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/</loc>
+    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/</loc>
+    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/%E4%B8%80%E6%AC%A1%E6%9B%B4%E6%96%B0jellyfin%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://fantasyplayer.link/tags/618/</loc>
     <lastmod>2026-05-25T22:16:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -8,18 +44,6 @@
   </url>
   <url>
     <loc>https://fantasyplayer.link/caprice/</loc>
-    <lastmod>2026-05-25T22:16:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2026-05-25T22:16:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/</loc>
     <lastmod>2026-05-25T22:16:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -133,12 +157,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2025-09-02T21:31:47+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://fantasyplayer.link/tags/macbook-pro/</loc>
     <lastmod>2025-08-12T21:56:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -219,12 +237,6 @@
   <url>
     <loc>https://fantasyplayer.link/program/%E4%BD%BF%E7%94%A8restful-api-%E8%AE%BF%E9%97%AEmattermost-%E7%9A%84boards-%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2025-06-25T21:58:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/docker/</loc>
-    <lastmod>2025-06-18T22:31:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
