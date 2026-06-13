@@ -1,31 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fantasyplayer.link/tags/decky-ludusavi/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/ludusavi/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/steam/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/steam-deck/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/periphery/steam-deck-%E5%AD%98%E6%A1%A3%E5%90%8C%E6%AD%A5windows%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fantasyplayer.link/tags/</loc>
+    <lastmod>2026-06-13T11:22:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://fantasyplayer.link/tags/docker/</loc>
     <lastmod>2026-05-29T22:18:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fantasyplayer.link/</loc>
-    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://fantasyplayer.link/tags/jellyfin/</loc>
-    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/periphery/</loc>
-    <lastmod>2026-05-29T22:18:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/</loc>
     <lastmod>2026-05-29T22:18:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -873,12 +903,6 @@
   <url>
     <loc>https://fantasyplayer.link/periphery/unity-asset-store%E8%A2%AB%E6%A0%87%E8%AE%B0%E6%88%90disable%E7%9A%84%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2023-05-19T10:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://fantasyplayer.link/tags/steam/</loc>
-    <lastmod>2023-05-08T17:39:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

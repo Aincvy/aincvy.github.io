@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Fri, 29 May 2026 22:18:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 11:22:14 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/periphery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Steam Deck 存档同步windows折腾的记录</title>
+      <link>https://fantasyplayer.link/periphery/steam-deck-%E5%AD%98%E6%A1%A3%E5%90%8C%E6%AD%A5windows%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 13 Jun 2026 11:22:14 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/steam-deck-%E5%AD%98%E6%A1%A3%E5%90%8C%E6%AD%A5windows%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;现在的效果是 steamdeck 游戏结束后可以自动上传备份到 webdav 服务器， 然后windows 使用 webdav(owncloud) 客户端自动下载文件。&lt;br&gt;&#xA;windows 随后可以打开 ludusavi 手动 restore 文件。&lt;/p&gt;&#xA;&lt;p&gt;steamdeck 还有两个按钮可以手动 backup / restore 存档。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>一次更新jellyfin折腾的记录</title>
       <link>https://fantasyplayer.link/periphery/%E4%B8%80%E6%AC%A1%E6%9B%B4%E6%96%B0jellyfin%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</link>

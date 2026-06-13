@@ -8,8 +8,15 @@
     <language>zh-CN</language>
     <managingEditor>aincvy@gmail.com (Aincvy)</managingEditor>
     <webMaster>aincvy@gmail.com (Aincvy)</webMaster>
-    <lastBuildDate>Mon, 08 May 2023 17:39:53 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 11:22:14 +0800</lastBuildDate>
     <atom:link href="https://fantasyplayer.link/tags/steam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Steam Deck 存档同步windows折腾的记录</title>
+      <link>https://fantasyplayer.link/periphery/steam-deck-%E5%AD%98%E6%A1%A3%E5%90%8C%E6%AD%A5windows%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sat, 13 Jun 2026 11:22:14 +0800</pubDate><author>aincvy@gmail.com (Aincvy)</author>
+      <guid>https://fantasyplayer.link/periphery/steam-deck-%E5%AD%98%E6%A1%A3%E5%90%8C%E6%AD%A5windows%E6%8A%98%E8%85%BE%E7%9A%84%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;现在的效果是 steamdeck 游戏结束后可以自动上传备份到 webdav 服务器， 然后windows 使用 webdav(owncloud) 客户端自动下载文件。&lt;br&gt;&#xA;windows 随后可以打开 ludusavi 手动 restore 文件。&lt;/p&gt;&#xA;&lt;p&gt;steamdeck 还有两个按钮可以手动 backup / restore 存档。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Steam上架后的一些感想</title>
       <link>https://fantasyplayer.link/periphery/steam%E4%B8%8A%E6%9E%B6%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/</link>
