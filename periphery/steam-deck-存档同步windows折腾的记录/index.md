@@ -45,6 +45,7 @@ steamdeck 可以开启 sshd 服务， 也可以使用windows 进行一定的操�
    1. `export http_proxy=http://代理ip:代理端口`  
    2. `export https_proxy=http://代理ip:代理端口`
 2. 安装 ludusavi： `flatpak install flathub com.github.mtkennerly.ludusavi`
+   1. 如果没有安装速度可以考虑使用国内源， 详见： https://cloud.tencent.com/developer/article/2553230
 3. 安装  decky-loader：  `curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sh`
    1.  如果不行的话， 就使用 `curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sudo -E sh`
 
